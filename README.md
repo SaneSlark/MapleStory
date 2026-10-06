@@ -1,10 +1,10 @@
 # 冒险岛 v079 本地便携服务端
 
-双击 `MapleStoryPortable.exe`：自动启动数据库和游戏服务端，等待加载完成后启动客户端。未放入客户端时会提示放置位置。启动、保存及停服均由 C# 完成，不依赖 PowerShell 或 CMD。目标系统为 Windows 7 SP1 / Windows 10 64 位，需要 .NET Framework 4.x（建议 4.8）；尚未在两种系统上实测。运行不需要安装 Java、数据库或配置 JAVA_HOME，不注册 Windows 服务。当前运行组件为 Windows x64。
+双击 `MapleStoryPortable.exe`：自动启动数据库和游戏服务端，等待加载完成后启动客户端。未放入客户端时会提示放置位置。启动、保存及停服均由 C# 完成，不依赖 PowerShell 或 CMD。目标系统为 Windows 7 SP1 / Windows 10 64 位，需要 .NET Framework 4.x（建议 4.8）；本次已在 Windows 10 验证客户端启动、游戏窗口创建和正常退出，Windows 7 SP1 尚未实测。运行不需要安装 Java、数据库或配置 JAVA_HOME，不注册 Windows 服务。当前运行组件为 Windows x64。
 
 ## 客户端放置
 
-将完整的**国服 079 客户端**放到 `App\MapleStory\Client`，保留原版 `MapleStory.exe`、全部 WZ 和 DLL。启动组件位于 `App\MapleStory\Launcher`，当前启动器优先使用本地构建的 `CMSLauncher.exe` 与 `Hook.dll`，处理旧 HackShield 和登录地址；`d3d8.dll` 提供 Direct3D 8 到 9 的兼容转换，并将本包 079 图形初始化改为 32 位色。Launcher 目录同时带有 x86 VC++ 运行库。服务端 XML WZ 不能代替客户端二进制 WZ。
+将完整的**国服 079 客户端**放到 `App\MapleStory\Client`，保留原版 `MapleStory.exe`、全部 WZ 和 DLL。启动组件位于 `App\MapleStory\Launcher`，当前启动器优先使用本地构建的 `CMSLauncher.exe` 与 `Hook.dll`，处理旧 HackShield 和登录地址；`d3d8.dll` 提供 Direct3D 8 到 9 的兼容转换，并将本包 079 图形初始化改为 32 位色。Launcher 目录同时带有 x86 VC++ 运行库和 `D3DX9_43.dll`；这些本地依赖无需安装到系统目录。服务端 XML WZ 不能代替客户端二进制 WZ。
 
 登录目标固定为 `127.0.0.1:9595`。上游说明的客户端需要对应的私服兼容组件；未经适配的官方原版客户端可能连接失败。下载来源和客户端版本需自行核实。同一目录只允许一个启动器运行，已有数据不会重复初始化。配置启用了自动注册，可用新的账号和密码登录。
 
@@ -72,9 +72,9 @@ MapleStoryPortable/
 6. 生成实际数据库连接配置，直接运行内置 Java 的 portable.Bootstrap。
 7. 等待 ready 文件和登录端口，再运行 App/MapleStory/Launcher/CMSLauncher.exe，以 App/MapleStory/Client 为游戏工作目录，参数为 127.0.0.1 9595。
 8. 客户端退出后通知服务端保存并退出，再正常关闭数据库。
-9. 关闭启动器窗口会设置内存关闭请求；请求游戏窗口关闭并等待退出，随后执行同样的保存和停服步骤。成功后启动器自动退出。
+9. 关闭启动器窗口会设置内存关闭请求；请求游戏窗口关闭并等待退出，随后执行同样的保存和停服步骤。成功后释放子进程句柄并删除 `Data/Run`、`Data/Temp`，再自动退出。
 
-数据库监听 127.0.0.1:13379；登录 9595；频道 2525–2530；商城 8600；实例 6350。日志位于 Data/Logs，临时数据库配置位于 Data/Run。为适配 MariaDB 10.4 的 Windows 路径解析，数据库配置使用系统代码页；其他文本日志与 C# 配置默认 UTF-8。中文系统下的中文及空格路径已通过测试。跨系统语言的非 ASCII 路径未实测；建议使用英文目录提高迁移兼容性。
+数据库监听 127.0.0.1:13379；登录 9595；频道 2525–2530；商城 8600；实例 6350。日志位于 `Data/Logs`；服务运行期间的临时数据库配置位于 `Data/Run`，退出后该目录会删除。`Data/Temp` 同样仅在运行期间存在。配置、数据库存档和日志保留在 `Data`。为适配 MariaDB 10.4 的 Windows 路径解析，数据库配置使用系统代码页；其他文本日志与 C# 配置默认 UTF-8。中文系统下的中文及空格路径已通过测试。跨系统语言的非 ASCII 路径未实测；建议使用英文目录提高迁移兼容性。
 
 ### 端口与配置
 
@@ -130,6 +130,15 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 旧清理清单针对整理前目录，已由本节替代。`Other/Downloads` 是下载缓存；`Other/Build/classes` 与 C++ 的 `*.obj` 是可重建的编译产物。删除构建工具或源码会影响重新编译，日常运行仅依赖根目录启动器、App 和 Data。
 
 ## 更新日志
+
+### 2026-10-06 · 修复 Win10 客户端启动并清理运行目录
+
+- 修正客户端注入时的 DLL 搜索顺序：先将搜索目录设为便携 `Launcher`，再加载 Hook，确保使用随包 x86 VC++ 运行库，避免误载 Win10 系统目录中不匹配的 `MSVCP140.dll`。
+- 客户端路径按便携包目录解析，不依赖开发机上的固定绝对路径；整个便携目录可迁移到其他盘符或目录。
+- 将 `D3DX9_43.dll` x86 随 `d3d8.dll` 一同放在 `App/MapleStory/Launcher`，无需在目标机安装完整 DirectX End-User Runtime。
+- 正常退出并完成数据库关闭后，释放客户端、Java 和 MariaDB 进程句柄，删除 `Data/Run` 与 `Data/Temp`；保留 `Data/Config`、`Data/Database` 和 `Data/Logs`。
+- 收紧 `.gitignore`：`App/MapleStory/Client` 仅放行 TXT 说明文件；`Other/` 仍整体忽略。
+- 验证：构建与生命周期代码编译通过；D3DX DLL 为 x86，启动所需文件均与构建产物匹配。根据 Win10 实测日志，客户端完成初始化、创建游戏窗口并以退出码 0 正常结束。Windows 7 SP1 尚未实测；登录角色和游戏内存档流程未在此轮实测。
 
 ### 2026-10-06 · 修复数据库没有完全便携化处理
 
