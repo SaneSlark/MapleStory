@@ -26,7 +26,7 @@
 
 ## 文件结构与运行逻辑
 
-更新日期：2026-10-05
+更新日期：2026-10-06
 
 ### 使用入口与兼容目标
 
@@ -131,6 +131,13 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 
 ## 更新日志
 
+### 2026-10-06 · 重新发布 1.0.0 与版本历史整理
+
+- 更新 `.gitignore`，排除本机 `AGENTS.md` 和客户端可执行文件、WZ、DLL；客户端目录新增放置说明。客户端文件、`Data` 存档及运行配置未纳入提交。
+- 重新创建并推送 `1.0.0` 发布提交与标签。新发布提交以初始项目提交为父提交，远端 `main` 与 `1.0.0` 标签均指向同一版本；旧远端标签已删除并替换，`1a3dadb` 不再属于该分支历史。
+- 验证：远端分支和标签引用已核对；发布提交未纳入 `Data` 与 `AGENTS.md`。本次日志更新单独提交。Git 推送仅更新分支与标签引用，不代表 GitHub 已立即清除不可达提交对象。
+- 未验证项：本次仅涉及版本控制和文档，没有重新运行客户端、服务端或数据库测试。
+
 ### 2026-10-05 · 修复男女选择与校准原版客户端内容
 
 - 自动注册账号明确写入未选择性别状态 10；登录成功后通过原版 CHOOSE_GENDER 封包显示男女选择，现有账号也可选择，已建立角色不受影响。
@@ -148,7 +155,7 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - 服务端名称与欢迎公告由"LOC冒险岛"改为"冒险岛"（`App/DefaultData` 与 `App/MapleStory/Server` 两处 server.properties）。
 - 新增"账号性别与创建角色"说明：v079 性别为账号级，在新账号首次登录的性别对话框中选择；附修改已有账号性别的 SQL 示例。
 
-### 2026-10-04 · 图标、标题、数据库名称与退出流程调整
+### 2026-10-03 · 图标、标题、数据库名称与退出流程调整
 
 - 客户端启动组件改名为 `App/MapleStory/Launcher/CMSLauncher.exe`，嵌入 Launcher/icon.ico；同步启动路径、退出处理进程名和构建输出。
 - 根目录启动器显式使用自身 EXE 的图标作为窗口图标，文字改为微软雅黑 12 号；提示文案同步移除自动备份描述。
@@ -159,7 +166,7 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - 数据库迁移校验记录：Other/Validation/Database-Name-Migration.json；客户端窗口与标题测试日志：Data/Logs/client-title-check.log。
 
 
-### 2026-10-04 · 适配整理后的目录
+### 2026-10-03 · 适配整理后的目录
 
 - 运行库迁移到 `App/MapleStory/Runtime`，服务端文件迁移到 `App/MapleStory/Server`，客户端修复组件迁移到 `App/MapleStory/Launcher`，默认配置模板位于 `App/DefaultData`。
 - 更新根目录启动器的 Java/MariaDB 路径、数据库 basedir、服务端类路径、脚本与 WZ 路径、默认配置复制路径及客户端启动路径；保留 Data 中已有配置与数据库。
@@ -169,9 +176,8 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - 更新 README 与 Other/File-Structure.txt；较早日志中的路径保留为历史记录。
 
 
-> 以后更新日志统一写入本 README，不再单独维护 CHANGELOG 文件。
 
-### 2026-10-04 · 客户端启动组件改名与清理记录
+### 2026-10-02 · 客户端启动组件改名与清理记录
 
 - 客户端启动组件由 CMS079Launcher.exe 经 Launcher.exe 改名为 `MapleLauncher.exe`；根目录日常入口仍为 `MapleStoryPortable.exe`。
 - 同步更新 PortableLifecycle.cs 的启动路径、组件检查和退出处理进程名，以及 Build-CMSLauncher.py 的输出文件名；重新编译根目录启动器。
@@ -180,48 +186,28 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - 删除操作被执行环境的自动审批审查拒绝，未实际删除上述文件。用户后续手动清理完成前，本记录不标记为已清理。
 - Other/Build/CMSLauncher/build-info.json 中原 CMS079Launcher.exe 的 SHA256 保留为历史构建记录；当前部署名称和校验值另行记录。
 
-### 2026-10-04 · 国服 079 启动修复
+### 2026-10-02 · 国服 079 启动修复
 
-- 核实原版 `MapleStory.exe` 文件版本为 079；此前把该入口判定为 GMS v83/v87 的记录不准确。`GMv83.exe` 的版本与地区字节修改方案停止使用。
+- 核实原版 `MapleStory.exe` 文件版本为 079；
 - 使用 [CMSLauncher](https://github.com/zhyonc/CMSLauncher) 源码（提交 `5bd7d5be9683841359cb3058826eb670deccf97f`）构建 x86 启动组件，登录目标为 `127.0.0.1:9595`，关闭协议 XOR，保留原版 WZ 资源。
 - 定位 `0x80004005` 至图形引擎初始化；加入针对本包 CMS079 指令签名的 32 位色修复，并部署 [d3d8to9 v1.16.0](https://github.com/crosire/d3d8to9/releases/tag/v1.16.0)。实测图形初始化返回成功，游戏窗口已创建。
 - 启动器等待真实游戏进程退出；关闭请求通过本地事件转发到游戏窗口，再执行原有保存、SQL 备份和停服流程。该流程已实测成功。
 - 构建脚本为 `Other/Maintenance/Build-CMSLauncher.py`，便携编译工具在 `Other/Build/msvc`。构建来源和 SHA256 保存在 `Other/Build/CMSLauncher/build-info.json`。未修改系统防护设置。
 - 当前 Windows 会话处于锁屏时，无法验收登录界面和角色操作；启动阶段修复已验证，完整登录及游戏内功能尚待实测。
 
-### 2026-10-04 · GMv83 客户端二进制补丁尝试（未完全成功）
-
-- 目标：让 GMS v83 GM 客户端（`Client\GMv83.exe`，版本字节 83、地区码 8）连接 v079 服务端（版本 79、地区码 4），免去寻找国服 079 客户端。
-- 已定位并修补两处校验（文件偏移）：`0x95191` 地区码比较 8→4；`0x963c1` 加密初始化版本参数 83→79。补丁后客户端不再 16 秒自退，能完成 TCP 连接并驻留。
-- 已处理：Defender 反复隔离补丁文件——需为 `App\MapleStory\Client` 加排除项（管理员执行 `Add-MpPreference -ExclusionPath`）；按社区经验隐藏 `download.info`/`downloadinfo.dat`；设置 Win7+16 位色兼容模式。
-- 未解决：客户端握手通过后卡死在 350x96 空白对话框（GUI 线程阻塞，进程无法终止，需重启系统清除）。即使解决卡死，v83 GMS 与 v079 CMS 的封包 opcode 表、包结构仍有系统性差异，完整兼容需要大量逆向，不具实用性。
-- 原始未补丁文件备份在 `Data\Temp\GMv83.exe.orig`（Data 不入库，注意留存）。结论：**仍推荐配套国服 079 客户端**，启动器已就绪（GMv83 优先、MapleStory.exe 回退、nmcogame 桩、ehsvc.ini 自动修正均保留）。
-
-### 2026-10-04 · 改用 GMv83 客户端绕过 HShield
-
-- 原 `Client\MapleStory.exe`（GMS v83 官方入口）带 HackShield 壳，在现代 Windows 上启动即报 hs 路径错误且无法修复；改用私服 GM 客户端 `GMv83.exe`（无 HShield 导入，直接连 127.0.0.1:9595），已移入 `App\MapleStory\Client`。
-- GMv83.exe 依赖 Nexon 的 `nmcogame.dll`，本包不带且该 DLL 在私服流程中不会被真正调用；已生成 8 个导出函数全部返回成功的桩 `nmcogame.dll`（32 位，手搓 PE），经 LoadLibrary/GetProcAddress 逐项验证通过。
-- 启动器客户端 exe 自动识别：`Client\GMv83.exe` 优先，不存在则回退 `Client\MapleStory.exe`；HShield 的 ehsvc.ini 路径修正保留，对官方客户端仍生效。
-- 实测 GMv83.exe 可正常启动并驻留（无 HShield/缺 DLL 报错）。重新编译 MapleStoryPortable.exe。
-
-### 2026-10-04 · HShield 路径自动适配
-
-- 客户端 HShield 的 `ehsvc.ini` 原包写死了旧机器路径（`D:\game\…\MapleStory.exe`），导致启动报 hs 路径错误；启动器现于每次启动客户端前自动把 `GamePath` 重写为当前实际的 `App\MapleStory\Client\MapleStory.exe`（按系统代码页写入，兼容中文路径），目录移动后无需手动修改。
-- 重新编译 MapleStoryPortable.exe。
-
-### 2026-10-04 · 客户端启动目录修正
+### 2026-10-02 · 客户端启动目录修正
 
 - 实际客户端位于 `App\MapleStory\Client`（含 MapleStory.exe 与全部 WZ/DLL），启动器原先查找 `App\MapleStory\MapleStory.exe`，已修正为 `App\MapleStory\Client\MapleStory.exe`，并以 `App\MapleStory\Client` 为客户端工作目录。
 - 同步修正 LifecycleTests 假客户端路径及 README 放置说明，重新编译 MapleStoryPortable.exe。
 
-### 2026-10-04 · 启动器分阶段启动提示
+### 2026-10-01 · 启动器分阶段启动提示
 
 - 启动器窗口按阶段显示：启动数据库…… → 启动世界服…… → 启动频道服…… → 启动商城服…… → 启动服务端…… → 服务已就绪。
 - 阶段提示通过解析服务端输出触发（检测到频道/商城加载关键字），仅显示文本，不改变运行逻辑。
 - 客户端版本核实：当前放置的客户端为 GMS v87，与本服务端（CMS v079.1）不兼容，连接登录服后握手无响应，需更换配套客户端。
 - .gitignore 排除 App\MapleStory 下的客户端文件（EXE/WZ/DLL），客户端不入库。
 
-### 2026-10-04 · C# 全生命周期与 Win7 兼容调整
+### 2026-10-01 · C# 全生命周期与 Win7 兼容调整
 
 - Launcher.cs 改用后台 C# 工作线程；新增 PortableLifecycle.cs，移除运行时 PowerShell 依赖及 launcher.ps1 释放。
 - 构建入口改为 C# 的 Other/Maintenance/Build-Launcher.exe；旧 PS1 方案归档到 Other/Archive/Launcher-PowerShell。
@@ -232,7 +218,7 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - 模拟客户端自动退出、关闭请求、数据库初始化、实例锁等测试通过，服务端保存和 SQL 备份通过。
 - 新增 C# 文件兼容审计工具及全目录 CSV 清单。实际 Win7/Win10 和真实客户端尚未实测。
 
-### 2026-10-04 · 源码归位与说明补全
+### 2026-10-01 · 源码归位与说明补全
 
 - 将 App/AppInfo/Launcher.cs 与 Portable.ps1 移至 Other/Source；App/AppInfo 保留应用信息和图标。
 - 修正 Build-Launcher.ps1 的源码、内嵌资源路径；重新构建 MapleStoryPortable.exe。
@@ -241,7 +227,7 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - 补充目录用途、完整生命周期、源码编译方法、数据保存、运行依赖及关闭边界。
 - 同步使用说明，并标明审计报告、Package 和 Validation 中的历史记录与副本。
 
-### 2026-10-04 · 单 EXE 生命周期
+### 2026-10-01 · 单 EXE 生命周期
 
 - 日常操作合并到 MapleStoryPortable.exe，移除根目录 CMD 和独立启动、停服、状态、备份 EXE。
 - 客户端入口统一为 App/MapleStory/MapleStory.exe，参数 127.0.0.1 9595。
@@ -254,7 +240,7 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 
 当前限制：尚未放入真实客户端，因此未验证真实角色进度、进图和游戏内容。Other/Package 中旧 .paf.exe 未随本次修改重新生成；最新入口为根目录 MapleStoryPortable.exe。正常退出流程不涵盖进程强制终止、断电或直接拔盘。
 
-### 2026-10-04 · 文档整理为单一 README
+### 2026-10-01 · 文档整理为单一 README
 
 - 使用说明、文件结构说明和更新日志整合为根目录 README.md。
 - Data/ 和 Other/ 不纳入版本控制，其内容以本 README 为文档入口。
@@ -264,4 +250,5 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - [PortableApps 规范](https://portableapps.com/development/portableapps.com_format)
 - [选用服务端上游](https://github.com/Afauria/MapleStory-Server-079)
 - [另一套源码上游](https://github.com/mrzhqiang/ms079)
+- [国服079客户端](https://pan.baidu.com/s/1g4B3WwyIgLWS9TwqLZKgoQ?pwd=qpwq)
 - [Zulu ZIP 使用说明](https://docs.azul.com/core/install/windows)
