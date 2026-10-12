@@ -5,7 +5,7 @@
 | 版本 | 版本分支 | 使用说明 | 安装包下载 |
 | --- | --- | --- | --- |
 | GMS062 | [v062](https://github.com/SaneSlark/MapleStory/tree/v062) | [使用说明](https://github.com/SaneSlark/MapleStory/blob/v062/MapleStory062/Other/使用说明.txt) | [1.0.6.2 Release](https://github.com/SaneSlark/MapleStory/releases/tag/v1.0.6.2) |
-| CMS072 | [v072](https://github.com/SaneSlark/MapleStory/tree/v072) | [使用说明](https://github.com/SaneSlark/MapleStory/blob/v072/MapleStory072/Other/使用说明.txt) | [1.0.7.2 Release](https://github.com/SaneSlark/MapleStory/releases/tag/v1.0.7.2) |
+| CMS072 | [v072](https://github.com/SaneSlark/MapleStory/tree/v072) | [使用说明](https://github.com/SaneSlark/MapleStory/blob/v072/MapleStory072/Other/使用说明.txt) | [0.7.2.0 Release](https://github.com/SaneSlark/MapleStory/releases/tag/v0.7.2.0) |
 | CMS079 | [v079](https://github.com/SaneSlark/MapleStory/tree/v079) | [使用说明](https://github.com/SaneSlark/MapleStory/blob/v079/MapleStory079/Other/使用说明.txt) | [1.0.7.9 Release](https://github.com/SaneSlark/MapleStory/releases/tag/v1.0.7.9) |
 
 下载对应 Release 的 `.paf.exe` 安装包，使用 `SHA256SUMS.txt` 核对文件。Release 标签分别指向对应版本分支，附件仅包含安装包和校验文件。
