@@ -1,59 +1,12 @@
-# 冒险岛多版本便携包
+# 冒险岛 072 独立版本分支
 
-本仓库集中维护冒险岛 062、国服 072 和国服 079 三个版本的本地便携包，包含各自的启动器、客户端目录、服务端、运行组件、存档和维护资料。每个版本独立运行和维护，可用于对应版本的本地体验、兼容性修复及资源核对。
+本分支 `v072` 仅维护 `MapleStory072/` 中的对应版本。完整多版本仓库位于 [main 分支](https://github.com/SaneSlark/MapleStory/tree/main)。
 
-**三个版本不能混用。** 客户端、服务端、WZ、脚本、数据库、配置和运行库必须与所在版本配套；文件同名或资源编号相同不代表兼容。
+- [版本介绍](MapleStory072/README.md)
+- [使用说明](MapleStory072/Other/使用说明.txt)
+- [游戏帮助](MapleStory072/Other/help.html)
 
-## 版本与说明
+保留现有版本目录结构，启动入口为 `MapleStory072/MapleStoryPortable.exe`。客户端、服务端、运行库、配置和存档必须与本版本配套，不能与其他版本混用。
 
-| 目录 | 版本 | 使用说明 | 维护规则 |
-| --- | --- | --- | --- |
-| [MapleStory062](MapleStory062/) | 冒险岛 GMS062 | [README](MapleStory062/README.md) | [AGENTS.md](MapleStory062/AGENTS.md) |
-| [MapleStory072](MapleStory072/) | 国服 CMS072 | [README](MapleStory072/README.md) | [AGENTS.md](MapleStory072/AGENTS.md) |
-| [MapleStory079](MapleStory079/) | 国服 CMS079 | [README](MapleStory079/README.md) | [AGENTS.md](MapleStory079/AGENTS.md) |
+本分支包含该版本现有的 Git 跟踪文件；客户端、用户存档及本地源码、工具、备份继续遵循 Git 忽略规则。
 
-各版本的系统要求、组件架构、配置位置和构建流程存在差异，请以对应目录中的说明为准。已有兼容修复和自定义内容不代表所有功能均已验证，也不代表完整还原官方原版。
-
-## 仓库结构
-
-```text
-MapleStory/
-├─ README.md                 仓库介绍与版本导航
-├─ AGENTS.md                 仓库维护与版本隔离规则
-├─ .gitignore                Git 忽略配置
-├─ MapleStory062/            062 独立便携包
-├─ MapleStory072/            072 独立便携包
-└─ MapleStory079/            079 独立便携包
-```
-
-各版本通常包含以下目录，具体布局以该版本说明为准：
-
-| 包内路径 | 用途 |
-| --- | --- |
-| `MapleStoryPortable.exe` | 该版本的日常启动入口 |
-| `App/MapleStory/Client` | 对应版本的客户端程序、二进制 WZ 和 DLL |
-| `App/MapleStory/Server` | 服务端程序、脚本及 XML 资源 |
-| `App/MapleStory/Runtime` | 该版本配套的 Java 和数据库组件 |
-| `Data` | 当前存档、用户配置和运行日志 |
-| `Other` | 源码、维护工具、说明及验证或备份资料 |
-
-## 开始使用
-
-1. 选择需要运行的版本，阅读上表链接的使用说明。
-2. 检查该版本的 `App/MapleStory/Client` 是否包含完整且配套的客户端；缺失时按该版本说明放置客户端，保留所需 EXE、WZ 和 DLL。
-3. 进入所选版本目录，运行其中的 `MapleStoryPortable.exe`。例如 079 使用 `MapleStory079/MapleStoryPortable.exe`。
-4. 按启动器提示等待服务就绪后进入游戏。结束时通过启动器的正常退出流程保存数据并关闭服务。
-
-客户端二进制 WZ 与服务端 XML 是不同格式，不能互相替代。数据库组件使用包内配套版本，不要将其他版本的数据库目录或初始化模板复制过来。
-
-不同版本可能占用相同端口，日常使用建议一次运行一个版本。切换版本前，先让当前版本正常保存并停服；遇到端口占用时核实进程归属，不直接结束未知进程。
-
-## 存档与维护
-
-- 存档属于各自版本的 `Data` 目录，不能跨版本共享或直接替换。不要为排错删除、重建或覆盖已有存档。
-- 修改前阅读根目录 [AGENTS.md](AGENTS.md) 及目标版本的维护规则，明确本次修改的版本和范围。
-- 构建、部署和测试使用目标版本的工具与运行库，生成结果只部署到该版本目录。
-- 跨版本资料可用于只读对照；移植功能需要按目标版本核对协议、接口、资源和数据库结构，不能整包覆盖。
-- 按版本要求保留备份，使用隔离存档测试，并记录修改原因、验证结果和未验证项。
-
-反馈问题时请注明版本、复现步骤、相关日志及最近的修改，便于定位到正确的便携包。
