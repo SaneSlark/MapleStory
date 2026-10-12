@@ -1,0 +1,164 @@
+========== Check 1028
+imgdir 1028
+  imgdir 1
+    int npc = 1002101
+  imgdir 0
+    int npc = 22000
+    int lvmax = 10
+    string startscript = q1028s
+    imgdir job
+      int 0 = 0
+    imgdir quest
+      imgdir 0
+        int id = 1027
+        int state = 2
+    imgdir item
+      imgdir 0
+        int id = 1042003
+        int count = 1
+========== Act 1028
+imgdir 1028
+  imgdir 0
+  imgdir 1
+    int exp = 130
+    imgdir item
+      imgdir 0
+        int id = 2010001
+        int count = 10
+        int gender = 2
+      imgdir 1
+        int id = 2010004
+        int count = 10
+        int gender = 2
+========== Say 1028
+imgdir 1028
+  imgdir 0
+    int npc = 22000
+    imgdir job
+      int 0 = 0
+    imgdir quest
+      imgdir 0
+        int id = 1027
+        int state = 2
+  imgdir 1
+    string 0 = 快来#m104000000#吧。是第一次来维多利亚岛吧？什么？受#p12000#的委托而来的？
+    imgdir yes
+      string 0 = 恩～ 是吗？光靠#p12100#一个人守护枫之岛有些困难是吗？好。那我联系长老再找一个人吧。朋友开口了，这点小事没问题～ 你也辛苦了。
+    imgdir stop
+========== Info 1028
+imgdir 1028
+  string name = 迈向利斯海港！
+  string parent = 迈向新的世界
+  int order = 2
+  string 0 = 听#p12000#的吩咐，想给#p1002101#传话的话，得去维多利亚岛。想去维多利亚岛的话只有给 #m60000#的#p22000#钱一种方法…… 幸好#p12000#已经提前和#p22000#打过招呼了。没什么可担心的，先去#b#p22000##k那儿吧。
+  string 1 = 已经听到#p12000#的消息了，#p22000#让我免费上船。好，终于来到了维多利亚岛！是#m104000000#！现在只要找到#b#p1002101##k就行了？比枫之岛大多了，能找到吗？
+  string 2 = #m104000000#第一次见到了#p1002101#。恩～这么强悍的叔叔和这个小小的#p12000#居然是朋友？好神奇啊。幸好#p1002101#说会帮#p12000#的忙。希望可以多帮助些好人，让枫之岛的第一个旅行地枫之岛永远和平。 
+  int area = 20
+========== Check 2124
+imgdir 2124
+  imgdir 0
+    int npc = 2012019
+    imgdir quest
+      imgdir 0
+        int id = 2123
+        int state = 2
+  imgdir 1
+    int npc = 2101002
+    string endscript = q2124e
+    imgdir item
+      imgdir 0
+        int id = 4031619
+        int count = 1
+========== Act 2124
+imgdir 2124
+  imgdir 1
+  imgdir 0
+    imgdir item
+      imgdir 0
+        int id = 4031619
+        int count = 1
+        int gender = 2
+========== Say 2124
+imgdir 2124
+  imgdir 0
+    string 0 = 汪！汪汪！（莫皮的脖子上似乎挂着一个小盒子。）\\r\\n#L0# #b查看盒子。#l
+    string 1 = 你想把莫皮脖子上的盒子取下来看看吗？
+    imgdir yes
+      string 0 = 盒子里写着一句话。\\n\\n#b'致#m260000000#的#p2101002#……'#k
+    imgdir no
+      string 0 = 汪汪-！
+    int ask = 1
+    imgdir stop
+      imgdir 0
+        int answer = 1
+  imgdir 1
+    imgdir stop
+      imgdir npc
+        string 0 = 汪汪-！
+      imgdir item
+        string 0 = 你不是有东西要给我吗……？就是从#m200000000#的#p2012019#那里拿到的那个。
+    imgdir lost
+      string 0 = 汪汪-！（莫皮不知从哪儿叼来一个小盒子。）
+========== Info 2124
+imgdir 2124
+  string name = 沙漠小队的补给品
+  string parent = 沙漠小队的委托
+  int order = 2
+  string 1 = 我在#m200000000#遇到了一只流浪狗#p2012019#。#p2012019#的脖子上挂着一个小盒子，盒子上写着一行字：#b"致#m260000000#的#p2101002#……"#k
+  string 2 = 我把挂在#p2012019#脖子上的盒子安全地交给了#m260000000#的#p2101002#。
+  int area = 30
+========== Check 10002
+imgdir 10002
+  imgdir 1
+    int npc = 9000034
+    string endscript = q10002e
+    imgdir item
+      imgdir 0
+        int id = 4031988
+        int count = 1
+  imgdir 0
+    int npc = 9000034
+    int lvmin = 10
+    int interval = 0
+    string start = 2008071000
+    string end = 2008090500
+    imgdir quest
+      imgdir 0
+        int id = 10001
+        int state = 2
+========== Act 10002
+imgdir 10002
+  imgdir 0
+  imgdir 1
+========== Say 10002
+imgdir 10002
+  imgdir 1
+    imgdir stop
+      imgdir item
+        string 0 = 工作人员箱子上装有特殊的保安装置，解除之后需要过30分钟才会出现。请你在猎区中等30分钟，等工作人员箱子出现之后，把里面的特殊工作人员徽章收回来。
+  imgdir 0
+    string 0 = %#b(就像看不到我一样，盯着远处的虚空。)\r\n#L0#你好。你是特殊工作人员O吗？我……是佳佳……不，是工作人员G派来的。#l
+    string 1 = 工作人员G？那是谁啊？我不认识他。\r\n#b#L0#嗯？就是那个脸有点长，戴着蝴蝶结……嗯……还有……#l
+    string 2 = 啊……你是说不久前刚进来的那个糊里糊涂的新工作人员吧。我虽然没见过他，但听说他好像在负责新工作人员的招募工作。不过你找我有什么事吗？我现在正在执行任务，所以很忙。#b\r\n#L0#他让我来帮你执行任务。#l
+    string 3 = 你也是工作人员吗？嗯……看上去像是个新人……不过没关系。首先，你同意执行这个任务吗？可能会有生命危险。请你慎重考虑一下之后再回答。
+    imgdir yes
+      string 0 = 我想你应该听说“头目M”的事情了吧？那是个拥有非常强大的力量……因而很危险的人物。现在最重要的是要把他找到。但是把他找出来是件非常困难的事情。
+      string 1 = 所以现在组织里的特殊工作人员都在枫之岛世界的各地搜集情报，然后储存在徽章里，不断地发回来。包含着情报的特殊工作人员徽章装在特别制作的工作人员箱子里，正在源源不断地送往村庄。你要做的事情，就是到村庄去，把特殊工作人员徽章找回来。
+      string 2 = 但是那并不容易。工作人员箱子装有特殊的保安装置，接触之后必须经过5分钟才会显现出来。请你在村庄中等5分钟，等工作人员箱子出现之后，把里面的特殊工作人员徽章收回来。
+      string 3 = 每次搜集到10个特殊工作人员徽章给我，我会把我的#b尼龙手套#k送给你。你回收到的特殊工作人员徽章每达到100个，我就会把我心爱的#b皮手套#k送给你。
+    imgdir no
+      string 0 = ……如果心里怀有恐惧，就无法当一个好的工作人员。如果不能压制住内心的恐惧，最终必定会因为恐惧而伤到自己。
+    int ask = 1
+    imgdir stop
+      imgdir 0
+        int answer = 1
+      imgdir 1
+        int answer = 1
+      imgdir 2
+        int answer = 1
+========== Info 10002
+imgdir 10002
+  string name = 特殊工作人员徽章的次数
+  string 1 = 特殊工作人员O让我进入村庄，把30分钟后出现的工作人员箱子里的#b#t4031988##k回收回来。\r\n#i4031988# #t4031988# #b#c4031988# / 1\n\n#k回收回来的特殊工作人员徽章每次达到10个时，可以获得#b工作人员O的尼龙手套#k，徽章的个数每次超过100个时，可以获得#b工作人员O的皮手套#k。
+  string 2 = 接受了让特殊工作人员O解除村庄的工作人员箱子的保安装置，回收特殊工作人员徽章的任务，并顺利地完成了。
+  int area = 50

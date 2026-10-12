@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="01312043.img">
+    <imgdir name="info">
+        <canvas name="icon" width="33" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAgRJREFUWEfFlg2RgzAQhbGABSxgoRawgAUsYAELtXAWauEs1EK6b4+XWZYAgcsUZnaA/uR92d9U1X1XEGnYLZeK9/0Q2vZxC0gI4R3Cb6MAdV1/HSICAOL91FB8NRwrgOdwAwTcTw/cAgDxrus1B24DQPyN+L/zgMmUs5BWgAO43BOisGRXvObM3oIJ4zgVK0OrG4ZhioYv8J4oM40/vIB7iTJUCIpjUQoYT1ihsh6ACAE2xH18i3oghgAesAA7vb6oB7C7pAcA0NSNmomzPpfMAV0wFQIAWAiCoAmVHEarEDDxPIBOQU7CptI+UGoYKYTLeCZeDAPDgTvnQCsgpVrxUT3r7lX8LZ54vUKH0J0byTlddrejKoQKC4CsFn6QkGKZXjjaZFY7l13/xR7CAJjE4BlAuIqxC6r4RmfNEl4tZkFsfrjSjbmF0i0GwFLErjgV6QECsIo4MwhgEv70zhdewMkYIKwe7wULcBUiJ2t9YmkeeHG+X/HClczdBbgEcTJ5kgAcdFcAYlc0IMmDim/j1vUWIAFR52aktm27mG3hqdh7YYpjM6YiHrJOO1sj90OgxRDzp6mUKD/jb7nAvIFB7rRenqXPKdAxCMc5F7Tnyq1nJ45wjsYAcgoClKBNnrAXp17zYn4PMQpi5zCGJCsczB+A4A80P+JT7zbu9r9Yi7aZnx99RDzM07dwTQAAAABJRU5ErkJggg==">
+            <vector name="origin" x="-1" y="33"/>
+        </canvas>
+        <canvas name="iconRaw" width="33" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAdlJREFUWEfFlg2RgzAQhbGABSxgoRawgAUs1AIWauEs1MJZwEIub68vsywBQsg0zGSAltn3ZX/TNPUu56WxqlwiPo6T6/tHFRDn3OLcbycAbdt+HSIAAGJ5SSi+Go4NwGuqAAH30wNVACA+DKPkQDUAxF+J384DJlOKIakAA5DdE4Kwz65wfTJ7D8Y9n3OxMtS6bprmsPAH3iNlJvGHF3AvUYYCQXEYpYDyhBYq6wGIEGBH3Ma3qAdCCOABDXDQ64t6ALuLegAAXdvJUnGW55I5IAZjIQCAhiAImlDJYbQJARPPAsgU5CTsGukDpYaRQJiMZ+KFMDAcuHMO9B6kVCs+q2fZvYgv3hPvtxsQumsjOaXLHnZUgRBhD+CtuR8kpF+JXjjbZFI797v+jz2EATD7Bc8AwlSMNijiO501SXhjTIPo/DClG3ILpVsMgKWIXXEq0gMEYBVxZhBAJfzlna+8gJMxQFg91gsaIBciJWttYkkeWHG+53ghJ3MPAbIgLiZPFICDLgcgdEUFEj2o2DauXa8BbkEgi7Ux3cJjsbfCFMdm7lTEaojZ01RMlL/xWxq4e6QL45wG9bly79mIp1RbUs+InrBXp970k3eS4NlHdsTH3s9sHP7/B3WBMhtnLrTbAAAAAElFTkSuQmCC">
+            <vector name="origin" x="-1" y="33"/>
+        </canvas>
+        <string name="islot" value="Wp"/>
+        <string name="vslot" value="Wp"/>
+        <int name="walk" value="1"/>
+        <int name="stand" value="1"/>
+        <short name="attack" value="1"/>
+        <string name="afterImage" value="swordOL"/>
+        <string name="sfx" value="swordL"/>
+        <int name="reqJob" value="1"/>
+        <int name="reqLevel" value="90"/>
+        <int name="reqSTR" value="260"/>
+        <int name="reqDEX" value="0"/>
+        <int name="reqINT" value="0"/>
+        <int name="reqLUK" value="0"/>
+        <int name="incPAD" value="90"/>
+        <int name="tuc" value="8"/>
+        <int name="price" value="400000"/>
+        <int name="attackSpeed" value="6"/>
+        <int name="cash" value="0"/>
+        <int name="tradeBlock" value="1"/>
+        <int name="tradeAvailable" value="1"/>
+    </imgdir>
+    <imgdir name="walk1">
+        <imgdir name="0">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="25" y="7"/>
+                <imgdir name="map">
+                    <vector name="hand" x="12" y="6"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="49" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADEAAAAZCAYAAACYY8ZHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlJJREFUWEe1lw21wyAMhWehFmphFmZhFmahFmZhFmbhWZiFWZgFxqW9vED5CYX1HE7/aMjHTQI9ncYdxppC4xHfjxup0xId2zlstmMD4a3s3zn02M93DuLBsjxc4xHfE26sK33Wkg7T8dQ5Uqpv9MTXMo61xv3M0+Hr9WbiloOJckc7ZrHfoQScpmnn9Pl8MWwlIKgyGqTHoHcazs/z7FoN5icQkP3gzLjvJABBJIxIaqceC8DBMZNh5XKuw+CqwLSqELdEVfodRIMawYIGpz/Pk2sA4RnPCxPj3nVOXqCIM6aEMLfb4hcwOGre1hnbrtYpNFwDRKmstp+qgmlBXPzTSeuxB/izAA/bLsdAVE7WOnkIJF4pDABh3muoUAHz+SCpDEGgCEDPs1qRmn+q9wFEDWSNZ+v4Fkbm9cpCPBcPMjR0clQ5kNTgIQSUsCAIJ6oAQCgBRbAwQkGcZblV5o1KBXbaQchFSw7OMirVYGLDaQLgPb6Dsvf7w50Jk4FqclithgSJr1112sIK5ZWVCteJGXfPCIOzVAi2Cyo1haJXAyU33v+kIHYL3D9AaqICR6VChAIY1x1CYdzW3ApAUjAMC7ndkNuPxCqdVV7OPu2i+qExn/Ac1wBBE6oVw2/3c1ODiVXakrg1xgOlAAK7gCAUYET1rP5G+K2B/HPLwaT+JxoUySqFMFvzblWHaxTH01a4QzASthNmG9+CWBhAwR62P2ILpFY8gInVKf2SRr+m1RDIeCRDDV2aKlZs0xvziZO5+PXCpp7+SsfseqCN1RGOfAEpARraDrxTJAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="25" y="7"/>
+                <imgdir name="map">
+                    <vector name="hand" x="13" y="12"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <uol name="weapon" value="../0/weapon"/>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="weapon" width="47" height="26" basedata="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAaCAYAAAAnkAWyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAkpJREFUWEfFmA+VwjAMxkHCLMwCFs4CFrAwC1jAAhbOAhbOAhZ6/bJ+Jcu1a/aHg/fyuhba/vItzTKOh/WfkKYeU8s+V+T4+h3eMBOQgR9c674df8P+zSUFSBknZOhhuAUYP+zbcTrW3HHnHxTVtZDn8yXUjM4lEdbilUR0rVVU18KeTl8BxnHeMfQ3OCDQ9+Fl6HddJ+aixwStNgEJbFujci38WnvLPKwN+Od9NOzN/bx3U+C12hq47/sAw1hjwTm1Jk4CFOpiT1yHn16M8JfL0NprIk6GJzihdetVwySDHApUGKAMQwEPT7Hr9bYu/qHEBLyLihtzKC+bcy22VJQK0znAArqS+VqhN/2eoSFqK3AqhjGrKvuYq6EBBmijpg2HReHh8UbAw89B2nNUEoY+nDj1Y3Zg3BKaoA5gD8Pq36RDNELfklkHEAJQ/dOw+enKEIDKAvuMBym238kwRvV3i9WGxp6EL4cVYHAgxsgL/vHIDmj4BZlndQhgogseuZWhIKlLqx8dIHi8DbsfsjnvvJtNMol2IIPjEMdM5BBkXb4ueCGHyrGhnjpmnHQHctpMT1s6UKhBcvm8cL+q+FI9LnGg9HTVY7p8YCGFljXSXuA5k7B+UQ+Zmrf5SQvIGrStNHWdvzs81NcFWMGJXOnVKkoLzGLuneBZfesAQ6kGO/ciwlr+P8D/OGDL4BaoVbn0OrgpoTsnF99LW697c++we8d4y4/JPwIWrNbPXscLx8FvMWz+fuKEhitdK2DPU3sznHeBap3+SeBfDZP4AiLTxMcAAAAASUVORK5CYII=">
+                <vector name="origin" x="25" y="7"/>
+                <imgdir name="map">
+                    <vector name="hand" x="10" y="3"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stand1">
+        <imgdir name="0">
+            <canvas name="weapon" width="47" height="26" basedata="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAaCAYAAAAnkAWyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAkpJREFUWEfFmA+VwjAMxkHCLMwCFs4CFrAwC1jAAhbOAhbOAhZ6/bJ+Jcu1a/aHg/fyuhba/vItzTKOh/WfkKYeU8s+V+T4+h3eMBOQgR9c674df8P+zSUFSBknZOhhuAUYP+zbcTrW3HHnHxTVtZDn8yXUjM4lEdbilUR0rVVU18KeTl8BxnHeMfQ3OCDQ9+Fl6HddJ+aixwStNgEJbFujci38WnvLPKwN+Od9NOzN/bx3U+C12hq47/sAw1hjwTm1Jk4CFOpiT1yHn16M8JfL0NprIk6GJzihdetVwySDHApUGKAMQwEPT7Hr9bYu/qHEBLyLihtzKC+bcy22VJQK0znAArqS+VqhN/2eoSFqK3AqhjGrKvuYq6EBBmijpg2HReHh8UbAw89B2nNUEoY+nDj1Y3Zg3BKaoA5gD8Pq36RDNELfklkHEAJQ/dOw+enKEIDKAvuMBym238kwRvV3i9WGxp6EL4cVYHAgxsgL/vHIDmj4BZlndQhgogseuZWhIKlLqx8dIHi8DbsfsjnvvJtNMol2IIPjEMdM5BBkXb4ueCGHyrGhnjpmnHQHctpMT1s6UKhBcvm8cL+q+FI9LnGg9HTVY7p8YCGFljXSXuA5k7B+UQ+Zmrf5SQvIGrStNHWdvzs81NcFWMGJXOnVKkoLzGLuneBZfesAQ6kGO/ciwlr+P8D/OGDL4BaoVbn0OrgpoTsnF99LW697c++we8d4y4/JPwIWrNbPXscLx8FvMWz+fuKEhitdK2DPU3sznHeBap3+SeBfDZP4AiLTxMcAAAAASUVORK5CYII=">
+                <vector name="origin" x="25" y="7"/>
+                <imgdir name="map">
+                    <vector name="hand" x="8" y="1"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <uol name="weapon" value="../0/weapon"/>
+        </imgdir>
+        <imgdir name="2">
+            <uol name="weapon" value="../0/weapon"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="alert">
+        <imgdir name="0">
+            <canvas name="weapon" width="49" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADEAAAAZCAYAAACYY8ZHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlJJREFUWEe1lw21wyAMhWehFmphFmZhFmahFmZhFmbhWZiFWZgFxqW9vED5CYX1HE7/aMjHTQI9ncYdxppC4xHfjxup0xId2zlstmMD4a3s3zn02M93DuLBsjxc4xHfE26sK33Wkg7T8dQ5Uqpv9MTXMo61xv3M0+Hr9WbiloOJckc7ZrHfoQScpmnn9Pl8MWwlIKgyGqTHoHcazs/z7FoN5icQkP3gzLjvJABBJIxIaqceC8DBMZNh5XKuw+CqwLSqELdEVfodRIMawYIGpz/Pk2sA4RnPCxPj3nVOXqCIM6aEMLfb4hcwOGre1hnbrtYpNFwDRKmstp+qgmlBXPzTSeuxB/izAA/bLsdAVE7WOnkIJF4pDABh3muoUAHz+SCpDEGgCEDPs1qRmn+q9wFEDWSNZ+v4Fkbm9cpCPBcPMjR0clQ5kNTgIQSUsCAIJ6oAQCgBRbAwQkGcZblV5o1KBXbaQchFSw7OMirVYGLDaQLgPb6Dsvf7w50Jk4FqclithgSJr1112sIK5ZWVCteJGXfPCIOzVAi2Cyo1haJXAyU33v+kIHYL3D9AaqICR6VChAIY1x1CYdzW3ApAUjAMC7ndkNuPxCqdVV7OPu2i+qExn/Ac1wBBE6oVw2/3c1ODiVXakrg1xgOlAAK7gCAUYET1rP5G+K2B/HPLwaT+JxoUySqFMFvzblWHaxTH01a4QzASthNmG9+CWBhAwR62P2ILpFY8gInVKf2SRr+m1RDIeCRDDV2aKlZs0xvziZO5+PXCpp7+SsfseqCN1RGOfAEpARraDrxTJAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="23" y="10"/>
+                <imgdir name="map">
+                    <vector name="hand" x="15" y="9"/>
+                </imgdir>
+                <string name="z" value="weaponOverHand"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="49" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADEAAAAZCAYAAACYY8ZHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlJJREFUWEe1lw21wyAMhWehFmphFmZhFmahFmZhFmbhWZiFWZgFxqW9vED5CYX1HE7/aMjHTQI9ncYdxppC4xHfjxup0xId2zlstmMD4a3s3zn02M93DuLBsjxc4xHfE26sK33Wkg7T8dQ5Uqpv9MTXMo61xv3M0+Hr9WbiloOJckc7ZrHfoQScpmnn9Pl8MWwlIKgyGqTHoHcazs/z7FoN5icQkP3gzLjvJABBJIxIaqceC8DBMZNh5XKuw+CqwLSqELdEVfodRIMawYIGpz/Pk2sA4RnPCxPj3nVOXqCIM6aEMLfb4hcwOGre1hnbrtYpNFwDRKmstp+qgmlBXPzTSeuxB/izAA/bLsdAVE7WOnkIJF4pDABh3muoUAHz+SCpDEGgCEDPs1qRmn+q9wFEDWSNZ+v4Fkbm9cpCPBcPMjR0clQ5kNTgIQSUsCAIJ6oAQCgBRbAwQkGcZblV5o1KBXbaQchFSw7OMirVYGLDaQLgPb6Dsvf7w50Jk4FqclithgSJr1112sIK5ZWVCteJGXfPCIOzVAi2Cyo1haJXAyU33v+kIHYL3D9AaqICR6VChAIY1x1CYdzW3ApAUjAMC7ndkNuPxCqdVV7OPu2i+qExn/Ac1wBBE6oVw2/3c1ODiVXakrg1xgOlAAK7gCAUYET1rP5G+K2B/HPLwaT+JxoUySqFMFvzblWHaxTH01a4QzASthNmG9+CWBhAwR62P2ILpFY8gInVKf2SRr+m1RDIeCRDDV2aKlZs0xvziZO5+PXCpp7+SsfseqCN1RGOfAEpARraDrxTJAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="23" y="10"/>
+                <imgdir name="map">
+                    <vector name="hand" x="14" y="8"/>
+                </imgdir>
+                <string name="z" value="weaponOverHand"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="weapon" width="49" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADEAAAAZCAYAAACYY8ZHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlJJREFUWEe1lw21wyAMhWehFmphFmZhFmahFmZhFmbhWZiFWZgFxqW9vED5CYX1HE7/aMjHTQI9ncYdxppC4xHfjxup0xId2zlstmMD4a3s3zn02M93DuLBsjxc4xHfE26sK33Wkg7T8dQ5Uqpv9MTXMo61xv3M0+Hr9WbiloOJckc7ZrHfoQScpmnn9Pl8MWwlIKgyGqTHoHcazs/z7FoN5icQkP3gzLjvJABBJIxIaqceC8DBMZNh5XKuw+CqwLSqELdEVfodRIMawYIGpz/Pk2sA4RnPCxPj3nVOXqCIM6aEMLfb4hcwOGre1hnbrtYpNFwDRKmstp+qgmlBXPzTSeuxB/izAA/bLsdAVE7WOnkIJF4pDABh3muoUAHz+SCpDEGgCEDPs1qRmn+q9wFEDWSNZ+v4Fkbm9cpCPBcPMjR0clQ5kNTgIQSUsCAIJ6oAQCgBRbAwQkGcZblV5o1KBXbaQchFSw7OMirVYGLDaQLgPb6Dsvf7w50Jk4FqclithgSJr1112sIK5ZWVCteJGXfPCIOzVAi2Cyo1haJXAyU33v+kIHYL3D9AaqICR6VChAIY1x1CYdzW3ApAUjAMC7ndkNuPxCqdVV7OPu2i+qExn/Ac1wBBE6oVw2/3c1ODiVXakrg1xgOlAAK7gCAUYET1rP5G+K2B/HPLwaT+JxoUySqFMFvzblWHaxTH01a4QzASthNmG9+CWBhAwR62P2ILpFY8gInVKf2SRr+m1RDIeCRDDV2aKlZs0xvziZO5+PXCpp7+SsfseqCN1RGOfAEpARraDrxTJAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="23" y="10"/>
+                <imgdir name="map">
+                    <vector name="hand" x="15" y="7"/>
+                </imgdir>
+                <string name="z" value="weaponOverHand"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingO1">
+        <imgdir name="0">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAhhJREFUWEfNWIGRgyAQtAVbsAVbSAtpIS3YQlpIC2nhW0gLacEWePbI+vsEFDOEkZkbPT1glzvOw65r25yfDsIW623R7JyNYB3bi0ysx+QOQ9KAaJumm4Owqb5Bbufa1TN/AwvQ5/PFhARUV3JR+NVDtXMkw0SwSoDAU1faH5JEDHgcTy4lanc4IgDHuFfwwzA4Fb6Dfd/3mtF2BkI9cwspgk+l2ZgEdZI5jDcKgARv9OKV131B39ySV/diyYBGYr53gYzc1yYSh0YJuJLgtHEJ3D07d/Y6BPcg9iERS+fa1xTE6n3qFoEexfxHOsYchwAYwE9+rpuXHyGD55n9tbZQluZJxAggY4AdJqMwk+gz2EHYZ+uKSdCfROAFkvAInJvn4Bn3NEBm+7eAqySATxJM5y6XyTrbi+ewCHQ812e0u17Dl3rramWKH1OJwBNG4vEQInMoabwt8BSE2ltYgbV1BCg/8iLQa4QWxgQRH0u24uYBJeHDCjY7QmspdXKEv77Zubl1s4MEEkGBF2zRWQloWJVknJo2BhhkmH6xN/S7Il6J5zWiWmgWEq+JP4Ru7suO53ENFoe01mM8CrQkYgSY5XI111Yh2ZrE2/7Kle17gLcmwThcPVCtnUdy7/Rc03pzZ4+4W4csBR0fi1eSQNXNnBpsCbXUuT0FWs/z8Y+Kr6MtnCBJ6t+fiZeS+AAXTtHebKta+AjRLy7Q89Bd8A52AAAAAElFTkSuQmCC">
+                <vector name="origin" x="11" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="1" y="9"/>
+                </imgdir>
+                <string name="z" value="weaponBelowBody"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="47" height="26" basedata="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAaCAYAAAAnkAWyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAmVJREFUWEfNWIuxwiAQ1BLSQlqwhdeCLdhCWrAFW7CF14It2IIt8FjC4nFCOKJxXmZuIoTP7v043O++8zi1zT622c/2d9AYdwE4px/0yX62jWtuOwxgJbhpujgpJMM+tiMJggtr9BLrnlBQRcADcMfjqSolUhWr1LU9DIODYOJ1ekova/qxBM41SOJw+HEQTUpbAW1liSKBsBgXfFx3DgIS6FtBoGbutA/300SkJSzAwcadTlMC7+6jg4AAtAOL4LfyP509pFYWvwHwOI5BJAlpCavWs+A4ny/e4o9ZPAEsiA1IBiSki60IqAScBCQJErBqXftR0jAIgEwKoGgRuhfeIMK3kYgbB691LcIKMfbeToc6YDLXATFoCm9JQsVJNgegGVMZAQ8e5OPct4G3FqgSYZzQIin4xzkRuLuPJQ8UAgJo473WVVpALd+LZAAI8XJQwC++HwICAC8SgmWvzcdksUPwAPsbxQ/wYfVIBIwxsznwlySgwQfgt9sTvLsHsrCAiJkW0KWU3Jrb9d15lc9nhwbu3QaZjS6GM8fo/2+Dt57AIb/TvxmwaBN4p9tYCTY1HIowsXmawHpJHkhMkQS+ItOEFG20ThM8BqSSlycwcz9LgIxALA9kn2kXZCgPXCjLOG15WCqBZRmsCzBZ1+japqHJoGkA7617rOyKBHQpXCLEvoLrJdAE/mmtS3IZgdZlhIVfiRA1TfJYa0vgJJGurPqmtHSrqn2Tl5RPBumSO815Oz6aRMsipfvut4BnbiRJ8HpYIlO7pJdSsDUIPzVO1Dov/4QUO/4D6BL50pWy55qZ1vwD28P4AjZzeEcAAAAASUVORK5CYII=">
+                <vector name="origin" x="11" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="8" y="3"/>
+                </imgdir>
+                <string name="z" value="weaponBelowBody"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="weapon" width="36" height="35" basedata="iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZlJREFUWEfNmGGxgzAQhFsJWIgFLDwLtYAFLNRCLdTC0/IqoZWQl712mYM5MoXJJTCT6Z9APvb2NqTnU4MrdCFayz5ej3NVHIBgjOMtXi6DjL7/AZwAroG6QGoQQHwWn2BcFrUeulRlAVONQxayyqOUaQcDVZRX4jCMdUu19MvHtDHGZ4x/0mH1gCyYN8gb4nnPwphxsLu2ORiAGDBaLV8YeiatIiD38RRDSDmUBkuGHEIm4WIW7VZD37jqmQQDoN80AEJz47cqDD1THYZZo7cAwtAzWhmtSvEy6eCb/JK6qQ9zz7BMRonKmthUJ2UMcgZQa8oUNa9lZKrDsumOcjXvsh3RWYDAG1+vN+mgrutmueLWSZlsmL5pCKfm+mRMDsZQhtN12JU3rwGVVcalpfcqU3Unx2LsJsMzRbahLQ+xumnL/UXnHksZSd95zhR92y0Pk62A6esW+18QSeIeBgaBx5MlvvSaKsOTAX1zGJjWvpGMgSqH8Q2/XVorg4aTjMHxFt8z+u+RL7rRZcp0PKm9Mebepmlra7B/hTk0EAWnP9UAAAAASUVORK5CYII=">
+                <vector name="origin" x="11" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-24" y="43"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingO2">
+        <imgdir name="0">
+            <canvas name="weapon" width="36" height="35" basedata="iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZlJREFUWEfNmGGxgzAQhFsJWIgFLDwLtYAFLNRCLdTC0/IqoZWQl712mYM5MoXJJTCT6Z9APvb2NqTnU4MrdCFayz5ej3NVHIBgjOMtXi6DjL7/AZwAroG6QGoQQHwWn2BcFrUeulRlAVONQxayyqOUaQcDVZRX4jCMdUu19MvHtDHGZ4x/0mH1gCyYN8gb4nnPwphxsLu2ORiAGDBaLV8YeiatIiD38RRDSDmUBkuGHEIm4WIW7VZD37jqmQQDoN80AEJz47cqDD1THYZZo7cAwtAzWhmtSvEy6eCb/JK6qQ9zz7BMRonKmthUJ2UMcgZQa8oUNa9lZKrDsumOcjXvsh3RWYDAG1+vN+mgrutmueLWSZlsmL5pCKfm+mRMDsZQhtN12JU3rwGVVcalpfcqU3Unx2LsJsMzRbahLQ+xumnL/UXnHksZSd95zhR92y0Pk62A6esW+18QSeIeBgaBx5MlvvSaKsOTAX1zGJjWvpGMgSqH8Q2/XVorg4aTjMHxFt8z+u+RL7rRZcp0PKm9Mebepmlra7B/hTk0EAWnP9UAAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="11" y="39"/>
+                </imgdir>
+                <string name="z" value="weaponBelowBody"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="26" height="49" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAxCAYAAADEIbk7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiVJREFUWEfdmGG1wjAMhbEwC7WABSxgAQuzgAUsYAELWMDCLITdsIQ0a7eO13LOY+f0x4OdfL1pehPeblf20PgaVrOHAX1/ITwTrCmUgx+PJwY6aBOVkcKvAKFOUmqAbdQJzJ1hdRif2c/BVNU3lM1grYqjWNUWa/GuQPv9gZcUhi17b1ullsIBT6fevq8gC0O5p0reWsrSHaDhuiN6hMjzQggzVYsgfGlMMwWMAV2ggGVAXlWqKFgVYMhxxqU5MD2galo0zGBrlzgCycvYoUABeaVudHE4+bgYSA9W5VOYSx9SFcGkmjiIg9AwEJbAfAqtqtX0ASQ7FRAC37AhrPudFz7bApqlLgJNqhD0YmCAqqpM9XlFqyA5n4OBASKf23PanDpVNZWxLwb++/ZKnRTN5hLHrnz6EAzBZQGyDzwdiY1FdpRriMn0CczeLQSXNZbfzP9KWkayxJ050rWXs4nsSNxEu+5Su1i6uNaW9EyMk0Tfl8wRbEViR5lAfMG7rqPzWT1yO0h8bwWmB58Yl0s7wtuOnNFGu4YiFEtCVTEo8j7TQnz74PQl0lvaTDWeztoZWFbRJ1Mk784N91rKGUWfcN7qEg2RU5c5pz/Bki2+haok6OcUqUuYGaP6+Wj1uZnv/4NeThJPse1UfeNORS080XWrqYu6blMQzkhb/DhHNIXZWSLTeaukUP+Ns9D+q4A4iFSe+2VYD2Ai6S/AxCxRHThr5U9gPwiGU3d43AAAAABJRU5ErkJggg==">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="28" y="46"/>
+                </imgdir>
+                <string name="z" value="weaponBelowBody"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="weapon" width="26" height="49" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAxCAYAAADEIbk7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAhpJREFUWEfFmG21gzAMhrGAhVrAwixgAQtYmIVZmIVZmIVZmIXcJjQ5aekXuwvjnPy4G5enb/I2DRuG+AL/J4bpBdN0obCGwbKsBBrH0V7VPC+AEVSZAOF6vQG8HLzvA9xXqpUNCOANGAnIEHaWKq6TpQOpTsp5JmnjTUomQFNYmUF3A3GfNew80Fl1wjRShwjtyNYU7EDzOp2uKEmfbrhfS2mpTr4nbtd/urxepXSKTJ1gXX23j4HdJ3PaDVrOIxgDe02jUyHtqNH7aCFHYTmQ7KdCJyfQERhBcGW5WqCqysbdwWoprIKSGSKyNCplVaxMuXFnDgGph+6OjcIsIWNaCyQQTF0OhHPE5AYJtXfAOReBarBIDd6YFJ4A8BhoaOFAGEI4dApLdq+BwI1OIDN2dDp9NyBB/PepqkMgXik/FAEPHzcflxQWlLVUZRXhPyEMQQzxdhMYfsZqetNXBeHDKF3P5xYBhp9R+kLqOH2HzcCKqEZBFbz9JOsjqtMnNWJ78+uL1AleAkshbPWejbvbR2zxSBXO5V4ZBypNWo2cTR+lT8PUw1sHHn2fs3lTle4G/GrTcf7sToQqKO0U/GbYAaJjJr1vZ3Ndq0I9eo/uqONnVWWabO/Dq/dlVXWm6NACfqOKN7BV+sgpPEP8BGZRK5kXeBItHPOHDNC6eXunDZcayb424KcLiIDWP+PolpLOgmYKs32sVIc/6WkIhtry+F4AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-25" y="2"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingO3">
+        <imgdir name="0">
+            <canvas name="weapon" width="26" height="49" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAxCAYAAADEIbk7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFUWEe9lwuxwkAMRbFQC7WABSxgAQu1gAUsYAELWHgWsBD2ppu8dL/97NKZnYGh5PRmk7vp6XTsIvd3rC6XBCdc0/TQ761oHFCu6/XWF9BDATKhCgAwKlpliePoHvwU0kNNpORnkK4gBJfVuimTKfuZmvP5QliBqq3WozaVVCOQAES325SC53pr8VBF0DiO1m6I/kb6PNlMa4bKce19CpICsGoAGod5+T/VfI5/R6NbUFUNAEQfp8S5hV8GKilTOB42hCStRtSwErdcdAZc3VNi4TNSZxXiP7YliqAwbZIygdDHqXIrhOE+ebicmoWiHIgDv9/zcp9fXpmoEuWiKqWmChI1CC6Qhwdxgfj0iip52NWp0/3x+wFVgAFysft0FCRlzBX3mjc/KgYp+yN7ZJqMzqNLm4cBKM26JW1rTlLuIcBk2aYNK65UdVFBpAxUbOc5RdazqrS1q4MZzRqkHUoif1vTqItgJdD9/qBhGHImqo6AkjbjWHZSipzW38mBEmcSp9z2Ta5RQ2IKRFADSEYRg0RJeCSUhr/oJEWgUtr2QKzd62dRlDjk9CjYoiR7DGcU6ahseqqUqeJvuf0JT9ndAE1bZX8OA9bsTzOI9kih4prASr3TBPDvfetnt0PgLUPibtD8UuwUJZp0d9DI7yre1g6E09SOXb1U+dF3HuITp2kTRTPErQBSe2PYDGdvK8wGmwMWz6PgvbW5GrYceZPzttNUgQ2mY1OvSlvAekG+lswIhixQ2BgAAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-26" y="49"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="49" height="11" basedata="iVBORw0KGgoAAAANSUhEUgAAADEAAAALCAYAAADWfWXXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAR1JREFUSEu9VYERgyAMxBFYgRVcoSu4giuwgiu4git0lq7gCilPjRcRaaBnvfvjCAn5T8LZmfaPlKGd0u82NxDNwvuZNLiKv4OxmugwjNT3j4M/9qmNycOOmFTwdq7VkuN3iD0lQFImywRTkkQr0cvQuhhy1kVIW+9MOHeXnSx06BQzTfPn7g3Yi/hdjCrZOPqdmCQcgilCCIMICEQyFASJNSuKBfEM7qS0cYHBp7KjJo4ME+MuLN7QMxAFpA0icIYk1toYq1nhgxwM7EFa2rDnu2pFoG17x5wLI1QARNSMTMkXBUBBGMloa9/VyS9W9hv4bfGKx91SuQuB7eR5xlOCOcIgnftyj7KZUWVgllDJ+M9/hEZL63xr7v7Z5w1fgh+ZIkVG0AAAAABJRU5ErkJggg==">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="45" y="2"/>
+                </imgdir>
+                <string name="z" value="weaponOverBody"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="weapon" width="49" height="10" basedata="iVBORw0KGgoAAAANSUhEUgAAADEAAAAKCAYAAAAdIbZyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAQ5JREFUSEu9VIERgyAM1BFYgRVcoSu4giuwgiu4git0FldwhZRPGy+lIkTbevdHE8LzD6Ft85+PjNu0xvqvl0PwG0KYyIJkvVnghwADA6/VYvt+oK677XES5gAtGLWSF57XfJUMJhvHiYjWDYjTUz0T0+Kp8w2tc0O0RMQ9IBjQuQx3nYFhCEyIU8CGAjlJnZM6GMR8aYQwCE1NxNMhIDWBvaDHcgNwyQaccywKpALEyOscYkDWlEbwz+FpAqOIvsc8oHOb4UwLlm6KnUMQSAW5fj7TUuka7zwBOS5pNxn1W4n9uH17N3bpYWtyPExpx1TQUVwQe0Vf1dvi1kyhjdX8PrjlahG/KLT+w5k1PAAOQQ14X5C5cwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-2" y="1"/>
+                </imgdir>
+                <string name="z" value="weaponBelowBody"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingOF">
+        <imgdir name="0">
+            <canvas name="weapon" width="26" height="49" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAxCAYAAADEIbk7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAhpJREFUWEfFmG21gzAMhrGAhVrAwixgAQtYmIVZmIVZmIVZmIXcJjQ5aekXuwvjnPy4G5enb/I2DRuG+AL/J4bpBdN0obCGwbKsBBrH0V7VPC+AEVSZAOF6vQG8HLzvA9xXqpUNCOANGAnIEHaWKq6TpQOpTsp5JmnjTUomQFNYmUF3A3GfNew80Fl1wjRShwjtyNYU7EDzOp2uKEmfbrhfS2mpTr4nbtd/urxepXSKTJ1gXX23j4HdJ3PaDVrOIxgDe02jUyHtqNH7aCFHYTmQ7KdCJyfQERhBcGW5WqCqysbdwWoprIKSGSKyNCplVaxMuXFnDgGph+6OjcIsIWNaCyQQTF0OhHPE5AYJtXfAOReBarBIDd6YFJ4A8BhoaOFAGEI4dApLdq+BwI1OIDN2dDp9NyBB/PepqkMgXik/FAEPHzcflxQWlLVUZRXhPyEMQQzxdhMYfsZqetNXBeHDKF3P5xYBhp9R+kLqOH2HzcCKqEZBFbz9JOsjqtMnNWJ78+uL1AleAkshbPWejbvbR2zxSBXO5V4ZBypNWo2cTR+lT8PUw1sHHn2fs3lTle4G/GrTcf7sToQqKO0U/GbYAaJjJr1vZ3Ndq0I9eo/uqONnVWWabO/Dq/dlVXWm6NACfqOKN7BV+sgpPEP8BGZRK5kXeBItHPOHDNC6eXunDZcayb424KcLiIDWP+PolpLOgmYKs32sVIc/6WkIhtry+F4AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-24" y="12"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="39" height="39" basedata="iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlhJREFUWEfNmA2RgzAQhakELGChFs4CFmoBC7VQC7VQC7VQC1jI5S3ssqRJCCThjpmdYdo0fLz9yW4vzTmXiTzmcg7C8hTAiJnIpdZVZyQg9xqGhwkZiLC+JuQKygXp+5sJGa/lF5ohi6koQmmoGJDvOw1ZCpDAUqCu1x/DpuOR7xkYeyk3H1ZwBeZTQwPhfiOuVgmUo14UzIVSYKlKMGjqellXG4wfFKuNQeggXAHFdiulf7ALrOs67Z7DrkolFjidAK5igOpaawucMZ/O3G5DNcAk1QA0PpuVIfP4s5wsjCm4qRopZq23MNoAVvN44iOQCq7PpYAynwnKjONi7/f0mf3uNNUQZ6wUx5jAWSBLMtnZcD4XIQEY7mGhXrPhHsrVdC3FG9wZcg3BvSYQAGljOM5eqN62rS6yq/4vtXRItUasRWLGXLuGDAq5CcFlBXBcdmY42jP3sI+qRv2irWMaEC6GAVbHJsPpLiQbLqYaPwggDEhqzYV4Cy63RQodwuZ+X0qLJ1GiquGlclULxSe5GnCRlkjg9BGn62SVDpgfoALb9xKSAG6ssWql4cSVG03k34BtudLtUtwWXs8cuckgtY5jzONKKaIpY2BpODnsIzEWbKncOVYP3bnNAMUOFEkYVLwzLJcLZ3DO7lKmyr+chSlDh/cvCWdW3Xt8fq0nMJjqKPZsmnWYB4sr3hJqZYDteYnktTYsxpTgT96w1EICY1eqBCi1/+F9BIpd+Rwm1x7eseAPyZUaLLf+lGKjYZdr2cHMLMXyXTIAx9P4f3Glpsyu1jWk+wWHlo02Cq3i9AAAAABJRU5ErkJggg==">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="43"/>
+                </imgdir>
+                <string name="z" value="backWeapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="weapon" width="39" height="39" basedata="iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlhJREFUWEfNmA2RgzAQhakELGChFs4CFmoBC7VQC7VQC7VQC1jI5S3ssqRJCCThjpmdYdo0fLz9yW4vzTmXiTzmcg7C8hTAiJnIpdZVZyQg9xqGhwkZiLC+JuQKygXp+5sJGa/lF5ohi6koQmmoGJDvOw1ZCpDAUqCu1x/DpuOR7xkYeyk3H1ZwBeZTQwPhfiOuVgmUo14UzIVSYKlKMGjqellXG4wfFKuNQeggXAHFdiulf7ALrOs67Z7DrkolFjidAK5igOpaawucMZ/O3G5DNcAk1QA0PpuVIfP4s5wsjCm4qRopZq23MNoAVvN44iOQCq7PpYAynwnKjONi7/f0mf3uNNUQZ6wUx5jAWSBLMtnZcD4XIQEY7mGhXrPhHsrVdC3FG9wZcg3BvSYQAGljOM5eqN62rS6yq/4vtXRItUasRWLGXLuGDAq5CcFlBXBcdmY42jP3sI+qRv2irWMaEC6GAVbHJsPpLiQbLqYaPwggDEhqzYV4Cy63RQodwuZ+X0qLJ1GiquGlclULxSe5GnCRlkjg9BGn62SVDpgfoALb9xKSAG6ssWql4cSVG03k34BtudLtUtwWXs8cuckgtY5jzONKKaIpY2BpODnsIzEWbKncOVYP3bnNAMUOFEkYVLwzLJcLZ3DO7lKmyr+chSlDh/cvCWdW3Xt8fq0nMJjqKPZsmnWYB4sr3hJqZYDteYnktTYsxpTgT96w1EICY1eqBCi1/+F9BIpd+Rwm1x7eseAPyZUaLLf+lGKjYZdr2cHMLMXyXTIAx9P4f3Glpsyu1jWk+wWHlo02Cq3i9AAAAABJRU5ErkJggg==">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="3" y="41"/>
+                </imgdir>
+                <string name="z" value="weaponBelowBody"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="weapon" width="48" height="16" basedata="iVBORw0KGgoAAAANSUhEUgAAADAAAAAQCAYAAABQrvyxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWZJREFUSEvFloHVgjAMhHUEVugKrPCv4AqswAqu4Aqu8M/iCq4QuejVENpasQrv5SEK6XfJNbjfbXNI5bL7yvu+fhuAY4zjSWrCPmM+fx2WC2SBD4dBSlES9wshCm4hPGzf/8mrSFXf5nz83rwbEdxC52AzFmHnUnAzK7YWofAEBzQBKcADTzeIXIKIXDXwO66HYSyJaF51JExVxk6aCEdYwP9PcT0/RSAPrltXdo3imSBA92EOC3gKoIgQwibwi+ofj3cr8QxbUABhAQ9gG9Z2LbqQq8YM2IISGCBd1+mkwZm2SAH7DY58nDZrRmaEQ9sB5P3tgS0ogf0z5/Hu69w0stCA90eNEF0AwHGTTW1HYkwEnRSP8MCVb0vNlXpBLWinLxI5i/tQIVEdLAJQtByBa1qA3n03uY7GwlFZgLIAth7AAEXLEYlNVfsnrDRafYXXTLnFM9Gj9GuN75qs3DjJJnP4Ew035fBqkn80pU0AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-22" y="22"/>
+                </imgdir>
+                <string name="z" value="weaponBelowBody"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabO1">
+        <imgdir name="0">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="11" y="5"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="50" y="15"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabO2">
+        <imgdir name="0">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="14" y="19"/>
+                </imgdir>
+                <string name="z" value="weaponBelowArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="49" y="14"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabOF">
+        <imgdir name="0">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="19" y="9"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="15" y="6"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="55" y="14"/>
+                </imgdir>
+                <string name="z" value="weapon"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="proneStab">
+        <imgdir name="0">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="5" y="3"/>
+                <imgdir name="map">
+                    <vector name="navel" x="40" y="11"/>
+                </imgdir>
+                <string name="z" value="weaponBelowArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="weapon" width="50" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiBJREFUWEfNmAu1gzAMhrGABSxgYRZmYRawMAuzMAvXwizMAhZ6+wf+LgvtaKF7cE4OtOsjX5M07ZqmzuP8MBA+tlxnlkqjULmF0m5+ZhgWU+0rqbNvmIWSqBiGiwgfW0Y9IfdNX7f3Qunj8eQgBLBlDWlcsK5mG0ZbKE3lY28CEuiXYMQClL4/uJhYKO1yPwPTtq2AEKDrOqdFgzE+6H4qZjY4Q/0uSQgCRQI8BP27YHQOKEGerNAqa8zfGa7zllyzHcQrPl6bCUZ9Z4BgwbbOG11s8fWNgwqEuzfu6JWC4JtglXOHTbCLRZCttADk4edeaUL8eYiLl4OC6bvGXQdZ9d2CzQNjUVC2CyUJOdMqEuBYcQziKSYrjCNStyMM6tAGIGyLXQ59c95og34U7pC6DvpyLG2EbJDTafD6dzPI+AC53QKMBmFbTHw+X2SetTeA0Y+CMvrpOm790OcJBO6Va5XH4dBbYo4PsYqHIYQ3j1jEm2u3W2E+wGMsCsqxGAzulQkjOw52KRlYBTuDH799Oti5lUnQ81jxQglRMGRxgbmH7RdQCqIkJ1VrK1bRMMo6YXXtmcoeTXS5skWKQKMwawfE1BmLu9S3gFZh1sBSR/pEPila6dLGAcZell7dO1K/2fvIuw6MKcg5V0wXWK1MDlxM+W9feZ+A7L08Bqivtkb5qofEUjcL27P28fBPQ+LDxMPWOT/Sby1jf0QJTvIPvfTz0M6kuh8AAAAASUVORK5CYII=">
+                <vector name="origin" x="5" y="3"/>
+                <imgdir name="map">
+                    <vector name="navel" x="55" y="11"/>
+                </imgdir>
+                <string name="z" value="weaponBelowArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="prone">
+        <imgdir name="0">
+            <uol name="weapon" value="../../proneStab/0/weapon"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="heal">
+        <imgdir name="0">
+            <uol name="weapon" value="../../alert/1/weapon"/>
+        </imgdir>
+        <imgdir name="1">
+            <uol name="weapon" value="../../swingO2/1/weapon"/>
+        </imgdir>
+        <imgdir name="2">
+            <uol name="weapon" value="../../swingO2/0/weapon"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="fly">
+        <imgdir name="0">
+            <canvas name="weapon" width="26" height="49" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAxCAYAAADEIbk7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFUWEe9lwuxwkAMRbFQC7WABSxgAQu1gAUsYAELWHgWsBD2ppu8dL/97NKZnYGh5PRmk7vp6XTsIvd3rC6XBCdc0/TQ761oHFCu6/XWF9BDATKhCgAwKlpliePoHvwU0kNNpORnkK4gBJfVuimTKfuZmvP5QliBqq3WozaVVCOQAES325SC53pr8VBF0DiO1m6I/kb6PNlMa4bKce19CpICsGoAGod5+T/VfI5/R6NbUFUNAEQfp8S5hV8GKilTOB42hCStRtSwErdcdAZc3VNi4TNSZxXiP7YliqAwbZIygdDHqXIrhOE+ebicmoWiHIgDv9/zcp9fXpmoEuWiKqWmChI1CC6Qhwdxgfj0iip52NWp0/3x+wFVgAFysft0FCRlzBX3mjc/KgYp+yN7ZJqMzqNLm4cBKM26JW1rTlLuIcBk2aYNK65UdVFBpAxUbOc5RdazqrS1q4MZzRqkHUoif1vTqItgJdD9/qBhGHImqo6AkjbjWHZSipzW38mBEmcSp9z2Ta5RQ2IKRFADSEYRg0RJeCSUhr/oJEWgUtr2QKzd62dRlDjk9CjYoiR7DGcU6ahseqqUqeJvuf0JT9ndAE1bZX8OA9bsTzOI9kih4prASr3TBPDvfetnt0PgLUPibtD8UuwUJZp0d9DI7yre1g6E09SOXb1U+dF3HuITp2kTRTPErQBSe2PYDGdvK8wGmwMWz6PgvbW5GrYceZPzttNUgQ2mY1OvSlvAekG+lswIhixQ2BgAAAAASUVORK5CYII=">
+                <vector name="origin" x="13" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-11" y="46"/>
+                </imgdir>
+                <string name="z" value="weaponOverArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <uol name="weapon" value="../0/weapon"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="jump">
+        <imgdir name="0">
+            <canvas name="weapon" width="26" height="49" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAxCAYAAADEIbk7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFUWEe9lwuxwkAMRbFQC7WABSxgAQu1gAUsYAELWHgWsBD2ppu8dL/97NKZnYGh5PRmk7vp6XTsIvd3rC6XBCdc0/TQ761oHFCu6/XWF9BDATKhCgAwKlpliePoHvwU0kNNpORnkK4gBJfVuimTKfuZmvP5QliBqq3WozaVVCOQAES325SC53pr8VBF0DiO1m6I/kb6PNlMa4bKce19CpICsGoAGod5+T/VfI5/R6NbUFUNAEQfp8S5hV8GKilTOB42hCStRtSwErdcdAZc3VNi4TNSZxXiP7YliqAwbZIygdDHqXIrhOE+ebicmoWiHIgDv9/zcp9fXpmoEuWiKqWmChI1CC6Qhwdxgfj0iip52NWp0/3x+wFVgAFysft0FCRlzBX3mjc/KgYp+yN7ZJqMzqNLm4cBKM26JW1rTlLuIcBk2aYNK65UdVFBpAxUbOc5RdazqrS1q4MZzRqkHUoif1vTqItgJdD9/qBhGHImqo6AkjbjWHZSipzW38mBEmcSp9z2Ta5RQ2IKRFADSEYRg0RJeCSUhr/oJEWgUtr2QKzd62dRlDjk9CjYoiR7DGcU6ahseqqUqeJvuf0JT9ndAE1bZX8OA9bsTzOI9kih4prASr3TBPDvfetnt0PgLUPibtD8UuwUJZp0d9DI7yre1g6E09SOXb1U+dF3HuITp2kTRTPErQBSe2PYDGdvK8wGmwMWz6PgvbW5GrYceZPzttNUgQ2mY1OvSlvAekG+lswIhixQ2BgAAAAASUVORK5CYII=">
+                <vector name="origin" x="13" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="-13" y="46"/>
+                </imgdir>
+                <string name="z" value="weaponOverArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+</imgdir>

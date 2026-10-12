@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="01702214.img">
+    <imgdir name="info">
+        <canvas name="icon" width="29" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAc5JREFUSEu1lguVgzAQRVsJawELtYCFWMACFrCABbSshbVQC9ncLC87CYF+SHvOnBAIufNmJlOul/rPF7evO+ua3faL6zMLO5dONINpI/899P4+umhc48QKtmMzcAICm/t/A4oTjMuyNIUnhQJKIfP+dvPOuWhct4JnUJPLqAwQ1nU5fJqmU8q9n8cIRlmlgD4CfwRNxdZSeYKaij2q0kPl4zA8FfYEpXpfOJ+HcH+P53z3rEeozukL0N2w+/mv6A6hagjA34BmcICqeNNcsnSlDoTSk9AMbhtLWSARSgE1hG5aaxm9dD4/AR1DU1EbtWpjSGkKJwpp73h5oLWUfQoaRdSgEfgzuPiQvNZC8eZ/2TFUHhXQ6U1YVkSkrRSSQotSFGOu686c1U3lll0uQgGqyljQCAp804NT6yuhzE90pcOsJJXEXUrJq+Y1T0/m+bKBKunqw4Ib5V8B+qxV/UudSOFlJKcYBaUvQ0bmq/I+jI/sFtZg3epkcoAjkTV7HR2jrPYJynvWxjCv2RDuuxVOdHJwkTuBtPEcnh9Z6QRznNiFQscLQkHI8IzF2J4Ce19rBeB9jL2q4bWKARN/mXJiR21UPrPvKYcqNsu4/ALO3F5JTpeQvgAAAABJRU5ErkJggg==">
+            <vector name="origin" x="0" y="30"/>
+        </canvas>
+        <canvas name="iconRaw" width="29" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAbCAYAAACAyoQSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXZJREFUSEu1lg11g0AQhBMrWIgFLJwFLGABC1hASy3UQixsM9vO9v7bcEve2wdHCN/N/ky43+ofyS7fG/e5XZYjzEm8npxvwg3GB8nHMstzDRo4xyZ+wPHRDWxAwPb5NwDFJnA8jsMVbgoJpEKs58dDQggaOPeCJ9ColqoMIMQ0pfBt24aUi+yrgqGs0kCXwP+CWrN5Kjdo1LG9Lu0qX5flX2k3KLr3jfnswuWpc96cdYVyTt+ANtMu+3fTdaE0BMBPQBM4gOz4yFyScpkDQekgNIHHxpI3iELRQI7Qwlrz7Nl8XgFdX6ZCG43VakphCgON1BovAbRWsqugKqIGVeDnEvRL1LWWipP/ZX0od5RBt5OwpIlQtlyIpRZKoRgRpmlkVovOzV1OoQCyy3CDExTwwoPN+nIo1gOu1K2KqUTeqRR15bq208E63wooi04fJtxTuTkR04sjaopAQ/HNEEesPVKOkUjMnqMTKbvkFVTBjRgtX/H7Lz9yPovaJwuWAAAAAElFTkSuQmCC">
+            <vector name="origin" x="0" y="30"/>
+        </canvas>
+        <string name="islot" value="Wp"/>
+        <string name="vslot" value="Wp"/>
+        <int name="reqJob" value="0"/>
+        <int name="reqLevel" value="0"/>
+        <int name="reqSTR" value="0"/>
+        <int name="reqDEX" value="0"/>
+        <int name="reqINT" value="0"/>
+        <int name="reqLUK" value="0"/>
+        <int name="cash" value="1"/>
+    </imgdir>
+    <imgdir name="30">
+        <imgdir name="walk1">
+            <imgdir name="0">
+                <canvas name="weapon" width="51" height="19" basedata="iVBORw0KGgoAAAANSUhEUgAAADMAAAATCAYAAAA9DTUcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYpJREFUWEfVloFxgzAMRZtVWCErsIJXYAVWYAVWYIWs0BW6QlZQ8wXfEZgmIjYhzZ1PB7GNnr4l+fR1zE8yP3vKXP/ScjidjPp8lmEYxNqu6/SZtm0afaYVGZ9DCNzvJYe2LorOX9sgGN9NrUOuIxidqqrROY/F2gVMrroPudRR6dsI0Ne1tIjuNKgSnMIAhNdKf5+v35kCszXSnvkRggCwVMQcNe61evzWjuRf76D49J/HP/ccBYHjAMAYwgiyAuHe9MlEVX/avyu6KQFsfuwRNeO0BjBUVTF1ohoWYi/5F9GPMAhkbuASEALlbrzhyBQBirlBAFjkyRtBwDwrOlu/rc5CVjjPpD8IJFZFtgIvjELExmf6CJU5QBV7Gp+eiFhWtXPfAJbN8ENAkhRLGhiPESGoCvuIBXlT9XLXhVmjo+O0OEKEsHB4/2kgs+sFnbad3KrEZAcIC4A38dyhLTgxXhapAnMFAFTjP4AkFcJeFn+asRxfbnbHO1dBXdKtcIlbFohiF7vSnv8CaWknCStJkt0AAAAASUVORK5CYII=">
+                    <vector name="origin" x="38" y="3"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="-1"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="47" height="22" basedata="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAWCAYAAABQUsXJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZxJREFUWEfNl42VgyAQhC+t2EJasAVasAVbsAVbsJZrIS2khT1ncchKyPkDIcl7PIwKfrM7Lnj5OfeTxLDLuanqjhIZe5Hb6Nt8fO8dxLCRxp5Lia1LDcAAvkDfOie/XStj6xtFtNerTNMk7I24lNAqQjz8Am6PEX2IkLvPAKCdc9I0vsf/YRhWfULQW0U8wGfLAHhyj2hbGMCiAZ69FYPzfdfpNfaRmOJCFJheN+CpB608b0W8EiPixUDkIqSoAIHHAW9e0r0PiF/gp8zAchF8URHe1+sKsxd+MzsyPmymxWEW45qmmACtKGqdWcAbUhtXIn2WqWI5gdKxIfolJ31BpfCIvi3DOUHTClM6Iv+EVLMMARSREzSNAry/UW2yU2wmWK0vJ4pFmEqhKSAnhQfVFdluBHiUzYrwB7Wmbw/wOekrQnJwEvUeLfMt8Ft+0utcnADP3eSnbRPKHiIZ7c0DtAVHpfm6qHNPzhqe2vISPKfWHrTq7tvDRwUF0N+Errg47Ya2N6pVuIexX0nREn1q8lqDnrawn345Y+F/WRkG1NWwV/kAAAAASUVORK5CYII=">
+                    <vector name="origin" x="31" y="6"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="2">
+                <canvas name="weapon" width="52" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAADQAAAAMCAYAAAAtUZ4rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVxJREFUSEvFlIGVgjAQRLUVWrAFWkgLtEALtEAL1HIt2IIt7DEbBifRKEHO8719IYZd5mc2OZ/+/2cfSjh/mL87HcIfor1cbJom03EYBp9z7LvO5xzN4jyEwHq7RdUmrgA29pbELcJRWNNEgVtGm3MzoLcuP93NChrPV4BrF+yna21sY9AtCEMAZOto4/19/86yOc/0RSHX8R7zzt764JG1TDl/cYMQAMEzauB5qcP80uZt/l+0JZoihADkbUIwEZV8FOvIwToCc0IVYCpML76qmz2su6QgFKYAFEmhWEPrqGh1ggAAImTmzBEwqOH1Q9Mkzq9tpTDs+R43zBKAUAc4JzwdIcgfw0SgubMUaG0zLGrb8MwAhoeZYDkU1/E/WzVrzaMc0ToOw25hB+g5cGKJ5OCWwOjOF0GSowJ35Oas2jiHpRsYFfILjuRiH9ypopGXX12pe2vuzUsug194ykGIP2K5wAAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="41" y="3"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="3">
+                <canvas name="weapon" width="46" height="23" basedata="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAXCAYAAAB0zH1SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZJJREFUWEfNl4GNgzAMRdtVWIEVWIEVWIEVWIEVmOVW6Apdwe13+K4TcaWFBHoS8ilK8PPPj0mvl9//E4d4/WVcgNoj0klT19K2rR8/nT+CBHDfBVBGuV8i8HtvBRwKH4ECcBgGBWOEslUVFEaUsdaIOSjsDHBNPk2TRQ9IUMwhKGJkm7GXtqo4VlxxS06veuB3oDM0AUVu42HgurXwKSAA6UG9mu7/JSUVGu8am6a44k9/9poIPv0Cchl8tklpcIXOpJC+C94uDQ3FdGuR6Nbtbl8mwF9X1iaCBLRJpvZ1yMfHDhIKyAS+2vr2VhbUftrkUOidh8m8CJscAa4q4yDtAH9Bz/0W4BkO5luLWNIN4HZ/QOGhZ4c2WLoDaOsiMLd3pV/aOcA6rk2hS6sdgXu7OMWirx4tAGDAYQ3GPDjHkrvGamfYMsGSp/CAIixA8XCM8SxoU53KpfCApS0YWcCZ0HZtpMcJlUJ6hQm8cCfxvxG37P6mNepnFuBVBmD6uK9i8avmp9X8dw1dGv/0nVnnPQCfxHI1LzxFjgAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="37" y="5"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="stand1">
+            <imgdir name="0">
+                <canvas name="weapon" width="49" height="16" basedata="iVBORw0KGgoAAAANSUhEUgAAADEAAAAQCAYAAAC/bJePAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAUFJREFUSEvFVoERgyAMrKu4giuwAiu4Aiu4gis4S2dxhbQJPg1UTwpiveMCpwn/+RDpHvc+VLldV+lf5M6gwzDDQMuykLbTNMka1o2jrGGJ/NpaizhFQEqcZEPb9zJo9UQApu89qBzLvgmJWjWz+NBzNAJ+dVbmUIPB8GDwuZbmz/ccBwnJQlL4kYCejRECbDcCCBeVly613DnHTWIWQj12E+A0O7E7JGo3lORsJKbaYHv+ogJKqAEB3lMSxKXaSo1IBXUWrkxYINEiSaKCLqNGJCI1riYSVNAHu5HkkqyDxvGz6qHT6MN8A4mgRkmnitojug8HQhlpAg3LKW3XX9k/7OMMFoAZNCRdrG+lmtQNBHbLJrom4Lrg3n9XDXBvjrYKgn8jwKDT8kC2tYUaqSqqNpv177MTW30VaNSFznCH9y91T89jJzQItAAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="37" y="1"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <uol name="weapon" value="../0/weapon"/>
+            </imgdir>
+            <imgdir name="2">
+                <uol name="weapon" value="../0/weapon"/>
+            </imgdir>
+        </imgdir>
+        <imgdir name="alert">
+            <imgdir name="0">
+                <canvas name="weapon" width="43" height="21" basedata="iVBORw0KGgoAAAANSUhEUgAAACsAAAAVCAYAAADfLRcdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWhJREFUSEvFloGNgzAMRa+rsEJXYIWswAqswAqswCy3QlfoCj5905/aFNRLcESlyFBa++Xnh/j20/Yjm/S3tuXKsgMuj/5+l2VZhNE+M9dlFQJ+rYBz38vvsA7cAzKlJF23RtxP0+TizgQCcI5TKNxzTBoBjEFYAAKW0cLj+3EY9BnjBj4U/AP0MSTaAIWcLSz0EbzICo9Jvf4fAqwKAk7mMV9/KeDgqb6dhDzf9on0taoKUAATvEINNwGZ37ZBLsBX5HSroZCEPQG6t8QOHnshBBaKIlkwrJ2A5n/BTrXm1SRUtyUsaqSuq1bXWYCvq4jl2lFOa4XA0gJQtgGsgrJGrW/zAcBEPBRqEx54MavKQ6bUsw60tQVOq4o3AJVkL9DAAhSxfmPZl39jVUtX3B8CR6DYBMFeLQZ1pwg7KUbbZV0FmgEJtaRe7CAk28HLQAHAUwlLux183rLf/M/6f7Rt2z70akBO4g9yIf6rm5ar1AAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="39" y="7"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="46" height="20" basedata="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAUCAYAAADyWA/8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXFJREFUSEvFlg/RgzAMxb9ZwcIsYKEWsIAFLGABLbMwC7OQ3Qt7Xfpnx0dpYXe9wIDk99I07e2v/U+iELf2IcsiANSP/n6XZVmE1j4z12WRKn2lsHPfy2NYB+4B7JyTrlst7qdpCmxGTCWkbTcK+hqdWsBjEBywAKe1QvD/OAz6jPYsIQn0c3AsFUgOSscK+CUE/4usYiDy42M7fTve0MwCVObRX28ECoRwVqwgXMvrW2Yt1oJmG9CAp4iCDCWzIvO3vOAPQgr8ZudAgQl+ADrnPJkVrJ+q4Mg0nFYGj8VojA/4tKOU8xmHM2a9NTjiuK47nPWgTNgCa05nlCqNVwWcPZtlwj5eqw5z4Ih1BN5vNHbDaZhtavAttzQ52vqYYW7xZ4GXxgn69Qm1nXSXvdnW1Ww3GQuNhbPX4dGW9uv7YAPgoclae6i6GtrDWsDF9WIHgbkwL4cGCDcUTH08+NwsjsvLIzkXZM7D8TutSvTfft+safvQbJGwZQAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="39" y="6"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="2">
+                <canvas name="weapon" width="47" height="19" basedata="iVBORw0KGgoAAAANSUhEUgAAAC8AAAATCAYAAAAAn1R6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXBJREFUSEvNlo0RgjAMhXUVVnAFVugKrMAKrMAKzOIKruAK0Rd8Na1otT+c3vUCQpPvhTTt8bDPT6Iwx33C5kUBrB/96STLsgitfWau8yJVnKXAc9/LeVgH7gHtnJOuWy3up2kK7IagilhpVwp7HZ1aCMAgPIABT2vF4P9xGPQZbSQmHb3gjRfwy+BYNnAblJEV8U6MyCoGIh/zC/DeT9UMA1bm0V8nAgZi+HWsKLk+y63lutCsAxwCKCQjW4EgmZ9lBl8Qk+Hz49fy0Kj1AvCtIIEY+K8OD6fIegN4K0j9P+CnGsWv0CwZdpgWGdKyucdyXVct+74t2vbYGp7ttyT7AThLhptSieMPc332SwVoZ4k3pUZZp55gbeUu3qAl2lpvnHnd7NgcfoH3bcv2cgsOp784LCitZJygx/KcEluWDRfsTvCbuj1wDLm4XjgsMKD/Apwg3HRQBvGw7/C65bnjm9J6OSTFp8DE/TcxmrxzA8C0AlDQcZRJAAAAAElFTkSuQmCC">
+                    <vector name="origin" x="41" y="5"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="swingO1">
+            <imgdir name="0">
+                <canvas name="weapon" width="44" height="23" basedata="iVBORw0KGgoAAAANSUhEUgAAACwAAAAXCAYAAABwOa1vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVhJREFUWEfNloERwiAMRe0qXcEVWIEVWKErdIWu0FlcwRVcIfqpnwuIigoV77gcQuHlJwSGQ/wT1R2Ssa66ABVrrZjjUUSc7yetG2C5TDYGvhw8+ORcsBkHdDR2dSYAA3Icbwovm4XitBib59k7QPuvKIgdxxvkFKUAQOkArXYA4+u6+jm0dweaq70BnxcCc8OPHAD4XorLYoxPiwy0VusBSEeAwCdnBA1rKgeqqu4XT9KidIMHJ7AWGqAhAmyLVPkFOnVOzs42hw5hZIkrlfjJvACNw0wHaitdM+cCJGAB3So1fhQ2+jxAI2oEr61yM2CoXCndajLGCgOQFYNpoS6oZht/u7BXNC1x3avMSwSgrMs9Q2dVxgHs9fCFG4+pwZrcNTQrxAvorhQPKjOH+d5I7V6vvZIqEkHrA7haI2xvHCjZp+ocH3bCaouUyTU955+HNPfQL/7vCrkgBtSsUMr7AAAAAElFTkSuQmCC">
+                    <vector name="origin" x="5" y="7"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponBelowBody"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="52" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAADQAAAAMCAYAAAAtUZ4rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVZJREFUSEu1lWsRhDAMhA8rWMACFmoBC1jAAhbQchawcBZybGAzIbzKj95MJ/SV7tckvepz/MnJ2Juh6s3i0mslpSRt04hIp7bv9nYYBh2nnaZJ+7SLQFzIWSut/eBfRRjQ7yN13Wg/1wIMPmTZK2O/awGyOJyKwKEQBQAZV8t+jiUQ/Ixtq+3btTJ36QouF+x11OXXp6tNb8cpUmHgF0D4jnAuamdgdi58oGnU59Ha1f4BEw4o99Zy1hkUYXAO4SDw6iJ5GQbiUjgCbmCmR1JdK32cyFGcsUYB4J+RoqAYOYwjTTlPcFoPwm8Ce+0r0BLKQkBgNigPBiAvnjAEQL/HS7s11iQhPNQOiI5KQ0UwCOfjEWE8BMFYM4w40zVGSZ0WTjufmZoJFMU6Ym3dgTgn/qHSDIgPhOVuwbSL5WZgjBJgfMQeXsHH8i1ZQ3eH3/0tPIqOC/4WL0GIJMWYHwAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="9" y="4"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weapon"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="2">
+                <canvas name="weapon" width="38" height="43" basedata="iVBORw0KGgoAAAANSUhEUgAAACYAAAArCAYAAAAUo/pwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZVJREFUWEftmMGtwkAMRKGVtJAW0sK2kBbSQlpIC6mFWmjB/DF/LLNAxAXbB5Cs5MQ+zXi82T2f4n7SLXWOW/r9SnJdmtZlnmSbJkCy0vgUBAWoN4ApcAZGQDxfqBcKZwp5EAJmwj2pBTv3drfWK/ffc2GqaYO3YbAiEOHYdy4QYXBYSBsfRcg+EGlgHA+v4DJ7zdtjynnVuvkWaucDHKBgq59vWXb2KhgY04knQhGd0I/AYGk2mKbVzzPaWhIMCf2BHWRfrUTDQymGoIxiAOMcK2UlYLh3lgHzNlax0qY+bawwXHWG+d6qMsNMLQJV2CcflKKN2VuRjQUPlJlE3Wb8KYkJzICyQ60H4ie2A+pP6F/7SFSgfd9lGkdTikDuBJ4D1FoTVAcSBqPzCLWuqypEIL5nbMifAMUrtMzzkUI/IBmGsYxC2thoZrmeDAyAXdq+NneO/thSJtuocC7+KUA2BhD7KkB3C/+O77CwgkK0ptZphcrwsiNj13+6Q+Duz0s12ZYap2FecQOoCpT1VcbnyNG8uQE8mHotie9SGAAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="9" y="35"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="swingO2">
+            <imgdir name="0">
+                <canvas name="weapon" width="23" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAhCAYAAAAyCTAQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWxJREFUSEu1VoGRgzAMa1dhha7AClmBFViBFboCs/wKv0JXcJH7yrltgp3wcOeDI44sFEfhevEvKaRc/Wl+hsh9/optWqmgj2YyFPQxJ7mPo/xMr/idkr4/WiADA5CBYkcLKDswRqRh0OAXHAanHAD9kyAXADjGe6XRyQaYS6HvoD3Ge7TPTAvMskw90sh4u+X4d/B1XSWlpAVq4PM2RmladFfQYXhFZaJKgwKtuovDHAvbBR5hXQSPtKUsy7Knd25H6G1lQed42oeZE5ztGNlUTcyxqATFZvLYR5mr7mSPO8B5L8kj8zRF9P7SHV9AH6qxb2GdmdMpreeX/KaZOa2YzCELnz9bs5W5srceb6Wx7EVkEnlctoWpbvna+aj9bXWn9+fFoRPu+Il3+FqbfsvVLtlxQg/YHa9WdmcGElRzzx8COMUUNaKeMzFS8Fxwni6nsedPzxkF3v4LTyvQevBGFjXv2M8t3DLZ5j4B46QcAwXLJpQAAAAASUVORK5CYII=">
+                    <vector name="origin" x="5" y="14"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponBelowBody"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="24" height="50" basedata="iVBORw0KGgoAAAANSUhEUgAAABgAAAAyCAYAAABGQBuoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXBJREFUWEfVl91xg0AMhHErtOAWaOFauBZogRZogVrSQlpwCworvMpByEMU6eE8c2O/+NvVDzrxGPI+koceBlmnCQIpIrKVSV5z6VNA3SM9WRGowPx8hqaHMHUO+H/cG+zdIQrF+ahHWrxwBcs6nw6B/IaIpzUN2gI/a1HXLKq37xVOMKAEA94et3PACebvq3OPe3MOOKO4A3vgmFEKJZxpYcc0fe4v6h38AnYPy5N7pIUPkKeQVxc/4NGPvgmgYyKdnwqL/BPu7ZK7Apl75B0FjYRbBC08UsDcs6iR8Fv3ES3Z1kEjyMg7RUwg2vm3wEt3mJQ9RmvQHPeM+e2PMu09z5MRhWzbJqUUFUkRAHgcj5MikB2BFjk9imVZOq9D9xFooedaO69D9xEcN5tUkX10y5o0NjhV0+YSpmrmZE2/fI467DUo45gyuu2O5m6acT9oFBBAFM0CFh6RrjIQoVD0tmcbX/ummZGy69v9n9aaL0WWOwW0exmlAAAAAElFTkSuQmCC">
+                    <vector name="origin" x="3" y="44"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponBelowBody"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="2">
+                <canvas name="weapon" width="43" height="38" basedata="iVBORw0KGgoAAAANSUhEUgAAACsAAAAmCAYAAABdw2IeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYVJREFUWEftmIFthDAMRW8WVrgVWCErsAIrsAIrMEtnuRXcflffMmmPtuCojnRI0UU6zrz7+TZxbrf8l3wgYqS/ZB1HecylC+C+YMswiKxzemVV1R5g+wGFmkiqzIlFX4o8tFSl9amUUnSM93taSBZ6VROww5AbVgExZM0NCmV16THSqzpPUxfLb6oyuTJvWISqdlEBANmFqsuy9FNXX6o26CW0pnbh1W3bXl6NdoC0ULXVXjLUqwqJ3Tl6nwavPi/CpXMABWSPzkYtcLdu8a+KYGrWsG9TmMIKGxFPYRGIAalsRHAoyVWLiKeg9Gow8E6EqxbQPaVffsy38qkyWmKMk4pYnCgLWMNWq1sDuwrxUyZr1hOQ9oo8A7Dg3g70mlcZSrsq8WXOlSFkq1PAHTAe5h/owZ/NsRr+d5xHqupfqztgHuEcgQMQw9/rk7QVqPm3Ljf0M4HqT3xPj3vVTybmqT2JJcpvLMB7aIXAt9+f4C2JvCefqfxfkN/9o8NKEFH0j2R8B0kmfSj4/57uAAAAAElFTkSuQmCC">
+                    <vector name="origin" x="32" y="13"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="swingO3">
+            <imgdir name="0">
+                <canvas name="weapon" width="24" height="50" basedata="iVBORw0KGgoAAAANSUhEUgAAABgAAAAyCAYAAABGQBuoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWNJREFUWEfVl9ENgzAMRJmFFViBFbICK7ACK7ACs3SFrsAKbs6tI4NoKxEfEkgRf345n504TdM08ln5x/lk7nsqRNYxyZJ4kGsASBNVxdh1XAB8AMQZHm68eoH1GHoFHcCqoRrcQPaXeRS/anun7B6mA/gc3sr2wJoG1cD7BZCHQdVZSFFh5euVeFAYxIOQKgQ2NVUQM9RKGCBTY5AagD9eNd8GYkEA3ECiVZgihVgZUyHwBKbD8CgvigoEN0+sdGkQb/rZ5ju6sEtDQgkg0Qq0qixVMJ3hxQbCUrGBMNK06Q8mQJXIyh3m7I7AP/yTPperrch+KB4geEp5UlyW07fdL9nStp0ugG6n4LrdT9PESc9l+b+lAi1L1P84DDfP/y0V5Hu40yNahJj/S05QVBHjgNNbrPZZ9fOITm1LuyZ1JsJsGpmakg4Ex+4jAWVURGBNTcVD8HAWjXzKfjPWV8zf0eQFF2E8A2xm3HYAAAAASUVORK5CYII=">
+                    <vector name="origin" x="20" y="36"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="58" height="15" basedata="iVBORw0KGgoAAAANSUhEUgAAADoAAAAPCAYAAAC1DNw2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYpJREFUSEvVlg2RgzAQhVsrWMACFmIBC1jAAhbQchZqoRb2eAsv3aQhpHcMk3YmEyA/7LfvZcv99p0/MWHfvxMhHTXAfBPppWtbcc4Fz+2c7brqHLwFP/QrGHt53gJQ3D8HJ65ptE1dp82AVwEcgAFoHEcFYQ/lmmZVEL1MrfaYEyg9DSKPyUMD9qf3wJfBJm2GYOd51qDRWyCCYYxg6COLWgAdA6ws0FT3Chu/zhWybdtiNwTAs2YBD8BsIdpTaQVe3gdL50D3Dnmp/P5FhHv0Tm0Unx9AWbBEQSkBywKnBl/SQ/7NAsiKyUwuQwEg4QCIa+yRODM5K5Ym9qN5b2CB1TYbRMEGQWIMawCDhnvC7kB+FOAZk72fqR79zQAZPAHwHDa0MFY5rgMo4a8oCkfJ0IBjSJ6pAf9hW2PJJjDvuZYKErAqSFudrP1YGADJIkJga0+OEZqWN+fxPwXlSKTi8fgLIvVFoc/2gK0TIgWrACzOhJmowFZBC1+bgn8BjNfkPqbP2P/0PX4Bx3lVdCjHAy8AAAAASUVORK5CYII=">
+                    <vector name="origin" x="44" y="2"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="2">
+                <canvas name="weapon" width="53" height="23" basedata="iVBORw0KGgoAAAANSUhEUgAAADUAAAAXCAYAAACrggdNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbVJREFUWEfdmIFxgzAMRZtVWCErsIJXYAVWYAVWYJaukBWygsoX+UZ2TJyAD7ftnc4X28h6fCHbvXy9/ydm6uX9x+rPROBJc85Je72KSJcarx95IgINdGxbNdc0avfeidwXSA81/wZc33W+3XgRVUHlu1thFOQ2iox9oAhAmmZWalxaQLLF2DAMCsk2AXoqpFcHIAAyAdlAfD9gCMnWQmJ8miadw/bh8zSwJc1CZXKLByrmIAEXKZfzX2Sci+519lQ8rJKEwveJF3i2anuhUs89geJ7RCEyWVFyvWq+FCpK92rBlFpYbp1b1FoLUinf1fyoSkxBbCV/+fviW1QowHA//A9QgPNgSMGDam3tqaen4go1740sHDsVO/p8MXgtFjYFD4B5KPjYOAkVCzznaIV6qBWB2WvOK18BVO2NPVQrAjPBvaqOHogH8upQNhCcMKAU+5CeCJBpmjjx+7ncIg6kcC6rPhoPArNggKMBjGb7CcE74MEq+lHgucmbYFQLStCoXAqodurFoP7WzTMhVWNKWtUIiD6C/yaVknDcnPXCGplVjSeT2mU8l4p2fPMfQImi8eT3B4pQdGZMqhMHAAAAAElFTkSuQmCC">
+                    <vector name="origin" x="6" y="4"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponBelowBody"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="swingOF">
+            <imgdir name="0">
+                <canvas name="weapon" width="55" height="22" basedata="iVBORw0KGgoAAAANSUhEUgAAADcAAAAWCAYAAABkKwTVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZtJREFUWEfVlw2Rg0AMhVsrWMACFtYCFrCABSxgoRbOQi3UQsoLvEy2cL2bLkwJM5mU8vc+8rPheomziZN6jSN7WylgzERaaepaUkrZ//6c5ffpuFeCu3aGoZfHJYPD/qNLkqpKbWgaNQf7NcgMBhB936t4ekSoquZIwctQq8c5WUSHTuQ+GCgAf1qDPBRwM4UgcBxHFQrvIQiDY4SBf0k/L1qPAVAmUEbxqBQ1IUgbGN4kDKmEh7J2PNQfML6Z/BaNGXICxDP3hstuDhikSIe6WYxvHyAeZqMp/AfmLeSe+WhvjEDMfZf/XvC7NNtTV/G9FIyRAtSYsqIuiUKxuJIbaH4TyNfX3jlfIvKTay1aHuqIYv5EXMk1KzACho8YpwECwaPOIoOpeIABhk0kOphC2UK8LJLYZ+SiRc3WIZ0sML85KEYPx84Otpr/mHaEYtReaw1gZ++Otk4RwnsAEMrDRgDjcmDNgiB+YfZpCSgYG0qkDmnDL4FYa4TynTIS2OobyQ+/93Zu/7fJuym+ZBD4+rX9xucI/guxPQFxuDiz7ThqhwAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="39" y="3"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="45" height="31" basedata="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAfCAYAAABzqEQ8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbVJREFUWEfVmIHRgjAMhX9XYQVXYIWu0BVYgRVYgVlcwRVcofICL6b+9eC03KXe9SIWypeXNG29/B3/JHPr5fhj598JsGILIaT+ek0pxVL/+WSFNwjI1PfSQtdJewwhpcfqhEIv14AfYlT7wdFTHUm3+IIV0PuU0jRkigK06xalp9XCCVr0jeMoTtAWHKnqhKoLUACbF9oX6e+ApRO01gn0z/Ms99C+OfGzA2sa5MruDZpFYc8JwAMaqYZI1YoCB9qD/dT/D8RGQqEXYM6bewwiFlrtKHzrBJ4rViFEFKCEx3wiPH7z5EA2Nzh36ADAbQP8sKXUL6rVflYUBahUqq1aUXFWM4/gmkKEfIf3qjgjmOW5pI/J/S3Pa0e7yngZOFRuDlxTZlPcs9qS5yyJLYELNBYflkGmSRNqAxrwzG/30FSaqdKM2tyfzOFVSZpQG0rLytlKFaHSTUFzIhIe1n16sOTZjZRnaK3RmISs2/juEVq3rFwNvQLraYXpwFMNgXGNPk8q69HLwlpgc46ssp2sNYieE1mX7RnSm8rZ2ZGgsHYZ95QWpShlipuTea2InjLOob8Qnlg0kI5MiUyYAAAAAElFTkSuQmCC">
+                    <vector name="origin" x="33" y="16"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="backWeapon"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="2">
+                <canvas name="weapon" width="24" height="50" basedata="iVBORw0KGgoAAAANSUhEUgAAABgAAAAyCAYAAABGQBuoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXBJREFUWEfVl91xg0AMhHErtOAWaOFauBZogRZogVrSQlpwCworvMpByEMU6eE8c2O/+NvVDzrxGPI+koceBlmnCQIpIrKVSV5z6VNA3SM9WRGowPx8hqaHMHUO+H/cG+zdIQrF+ahHWrxwBcs6nw6B/IaIpzUN2gI/a1HXLKq37xVOMKAEA94et3PACebvq3OPe3MOOKO4A3vgmFEKJZxpYcc0fe4v6h38AnYPy5N7pIUPkKeQVxc/4NGPvgmgYyKdnwqL/BPu7ZK7Apl75B0FjYRbBC08UsDcs6iR8Fv3ES3Z1kEjyMg7RUwg2vm3wEt3mJQ9RmvQHPeM+e2PMu09z5MRhWzbJqUUFUkRAHgcj5MikB2BFjk9imVZOq9D9xFooedaO69D9xEcN5tUkX10y5o0NjhV0+YSpmrmZE2/fI467DUo45gyuu2O5m6acT9oFBBAFM0CFh6RrjIQoVD0tmcbX/ummZGy69v9n9aaL0WWOwW0exmlAAAAAElFTkSuQmCC">
+                    <vector name="origin" x="-1" y="41"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponBelowBody"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="3">
+                <canvas name="weapon" width="38" height="43" basedata="iVBORw0KGgoAAAANSUhEUgAAACYAAAArCAYAAAAUo/pwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZVJREFUWEftmMGtwkAMRKGVtJAW0sK2kBbSQlpIC6mFWmjB/DF/LLNAxAXbB5Cs5MQ+zXi82T2f4n7SLXWOW/r9SnJdmtZlnmSbJkCy0vgUBAWoN4ApcAZGQDxfqBcKZwp5EAJmwj2pBTv3drfWK/ffc2GqaYO3YbAiEOHYdy4QYXBYSBsfRcg+EGlgHA+v4DJ7zdtjynnVuvkWaucDHKBgq59vWXb2KhgY04knQhGd0I/AYGk2mKbVzzPaWhIMCf2BHWRfrUTDQymGoIxiAOMcK2UlYLh3lgHzNlax0qY+bawwXHWG+d6qMsNMLQJV2CcflKKN2VuRjQUPlJlE3Wb8KYkJzICyQ60H4ie2A+pP6F/7SFSgfd9lGkdTikDuBJ4D1FoTVAcSBqPzCLWuqypEIL5nbMifAMUrtMzzkUI/IBmGsYxC2thoZrmeDAyAXdq+NneO/thSJtuocC7+KUA2BhD7KkB3C/+O77CwgkK0ptZphcrwsiNj13+6Q+Duz0s12ZYap2FecQOoCpT1VcbnyNG8uQE8mHotie9SGAAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="14" y="34"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="-1"/>
+                    </imgdir>
+                    <string name="z" value="weaponBelowBody"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="stabO1">
+            <imgdir name="0">
+                <canvas name="weapon" width="52" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAADQAAAAMCAYAAAAtUZ4rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVxJREFUSEvFlIGVgjAQRLUVWrAFWkgLtEALtEAL1HIt2IIt7DEbBifRKEHO8719IYZd5mc2OZ/+/2cfSjh/mL87HcIfor1cbJom03EYBp9z7LvO5xzN4jyEwHq7RdUmrgA29pbELcJRWNNEgVtGm3MzoLcuP93NChrPV4BrF+yna21sY9AtCEMAZOto4/19/86yOc/0RSHX8R7zzt764JG1TDl/cYMQAMEzauB5qcP80uZt/l+0JZoihADkbUIwEZV8FOvIwToCc0IVYCpML76qmz2su6QgFKYAFEmhWEPrqGh1ggAAImTmzBEwqOH1Q9Mkzq9tpTDs+R43zBKAUAc4JzwdIcgfw0SgubMUaG0zLGrb8MwAhoeZYDkU1/E/WzVrzaMc0ToOw25hB+g5cGKJ5OCWwOjOF0GSowJ35Oas2jiHpRsYFfILjuRiH9ypopGXX12pe2vuzUsug194ykGIP2K5wAAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="42" y="2"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="47" height="22" basedata="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAWCAYAAABQUsXJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZxJREFUWEfNl42VgyAQhC+t2EJasAVasAVbsAVbsJZrIS2khT1ncchKyPkDIcl7PIwKfrM7Lnj5OfeTxLDLuanqjhIZe5Hb6Nt8fO8dxLCRxp5Lia1LDcAAvkDfOie/XStj6xtFtNerTNMk7I24lNAqQjz8Am6PEX2IkLvPAKCdc9I0vsf/YRhWfULQW0U8wGfLAHhyj2hbGMCiAZ69FYPzfdfpNfaRmOJCFJheN+CpB608b0W8EiPixUDkIqSoAIHHAW9e0r0PiF/gp8zAchF8URHe1+sKsxd+MzsyPmymxWEW45qmmACtKGqdWcAbUhtXIn2WqWI5gdKxIfolJ31BpfCIvi3DOUHTClM6Iv+EVLMMARSREzSNAry/UW2yU2wmWK0vJ4pFmEqhKSAnhQfVFdluBHiUzYrwB7Wmbw/wOekrQnJwEvUeLfMt8Ft+0utcnADP3eSnbRPKHiIZ7c0DtAVHpfm6qHNPzhqe2vISPKfWHrTq7tvDRwUF0N+Errg47Ya2N6pVuIexX0nREn1q8lqDnrawn345Y+F/WRkG1NWwV/kAAAAASUVORK5CYII=">
+                    <vector name="origin" x="33" y="5"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="stabO2">
+            <imgdir name="0">
+                <canvas name="weapon" width="52" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAADQAAAAMCAYAAAAtUZ4rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVxJREFUSEvFlIGVgjAQRLUVWrAFWkgLtEALtEAL1HIt2IIt7DEbBifRKEHO8719IYZd5mc2OZ/+/2cfSjh/mL87HcIfor1cbJom03EYBp9z7LvO5xzN4jyEwHq7RdUmrgA29pbELcJRWNNEgVtGm3MzoLcuP93NChrPV4BrF+yna21sY9AtCEMAZOto4/19/86yOc/0RSHX8R7zzt764JG1TDl/cYMQAMEzauB5qcP80uZt/l+0JZoihADkbUIwEZV8FOvIwToCc0IVYCpML76qmz2su6QgFKYAFEmhWEPrqGh1ggAAImTmzBEwqOH1Q9Mkzq9tpTDs+R43zBKAUAc4JzwdIcgfw0SgubMUaG0zLGrb8MwAhoeZYDkU1/E/WzVrzaMc0ToOw25hB+g5cGKJ5OCWwOjOF0GSowJ35Oas2jiHpRsYFfILjuRiH9ypopGXX12pe2vuzUsug194ykGIP2K5wAAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="40" y="1"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponBelowArm"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="47" height="22" basedata="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAWCAYAAABQUsXJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZxJREFUWEfNl42VgyAQhC+t2EJasAVasAVbsAVbsJZrIS2khT1ncchKyPkDIcl7PIwKfrM7Lnj5OfeTxLDLuanqjhIZe5Hb6Nt8fO8dxLCRxp5Lia1LDcAAvkDfOie/XStj6xtFtNerTNMk7I24lNAqQjz8Am6PEX2IkLvPAKCdc9I0vsf/YRhWfULQW0U8wGfLAHhyj2hbGMCiAZ69FYPzfdfpNfaRmOJCFJheN+CpB608b0W8EiPixUDkIqSoAIHHAW9e0r0PiF/gp8zAchF8URHe1+sKsxd+MzsyPmymxWEW45qmmACtKGqdWcAbUhtXIn2WqWI5gdKxIfolJ31BpfCIvi3DOUHTClM6Iv+EVLMMARSREzSNAry/UW2yU2wmWK0vJ4pFmEqhKSAnhQfVFdluBHiUzYrwB7Wmbw/wOekrQnJwEvUeLfMt8Ft+0utcnADP3eSnbRPKHiIZ7c0DtAVHpfm6qHNPzhqe2vISPKfWHrTq7tvDRwUF0N+Errg47Ya2N6pVuIexX0nREn1q8lqDnrawn345Y+F/WRkG1NWwV/kAAAAASUVORK5CYII=">
+                    <vector name="origin" x="35" y="5"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="stabOF">
+            <imgdir name="0">
+                <canvas name="weapon" width="48" height="16" basedata="iVBORw0KGgoAAAANSUhEUgAAADAAAAAQCAYAAABQrvyxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAUFJREFUSEu9VoERgyAMrKu4giuwAiu4Aiuwgis4S1foCq6Q9oOxEbWiQL3LBe4g+XxCYvP4/0eZLpvM+5evA/AiputoHEfS2nvPe9Gu73kvmijsrbVi5zKIOxfYmW1bFppCEAKkbQOgFI27UQC5WTyNh569YeCTs7yWLAAIBMBTNQ3f87AjZJyiuHmAAQ/GMHjoGbyYW5WULq/UNexGNm9C3V5bQNPg9sCXcMQ+5gB8CYPaBrMvZbPDfgl/BHJQnqWzsGG/hhN+AxUCWFiX0qkJ/uBt3c7u8mgFvHSg0inW7JcoT67BuOPIvgJ4MHzU2ZLYX7U/MCAiKa0MPm7Du6APe7T7DB8AhLz6MJwgo/3Z85OYKXFoNfZl/AO0ZlqvpV3Gk7YEmKs2uKfqcsBj1AKQsejfg0r1nhxHzmhPdlLr4BsjgK10QeOa6AAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="38" y="2"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="52" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAADQAAAAMCAYAAAAtUZ4rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVxJREFUSEvFlIGVgjAQRLUVWrAFWkgLtEALtEAL1HIt2IIt7DEbBifRKEHO8719IYZd5mc2OZ/+/2cfSjh/mL87HcIfor1cbJom03EYBp9z7LvO5xzN4jyEwHq7RdUmrgA29pbELcJRWNNEgVtGm3MzoLcuP93NChrPV4BrF+yna21sY9AtCEMAZOto4/19/86yOc/0RSHX8R7zzt764JG1TDl/cYMQAMEzauB5qcP80uZt/l+0JZoihADkbUIwEZV8FOvIwToCc0IVYCpML76qmz2su6QgFKYAFEmhWEPrqGh1ggAAImTmzBEwqOH1Q9Mkzq9tpTDs+R43zBKAUAc4JzwdIcgfw0SgubMUaG0zLGrb8MwAhoeZYDkU1/E/WzVrzaMc0ToOw25hB+g5cGKJ5OCWwOjOF0GSowJ35Oas2jiHpRsYFfILjuRiH9ypopGXX12pe2vuzUsug194ykGIP2K5wAAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="8" y="6"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverHand"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="proneStab">
+            <imgdir name="0">
+                <canvas name="weapon" width="57" height="6" basedata="iVBORw0KGgoAAAANSUhEUgAAADkAAAAGCAYAAAB5NDb9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMtJREFUOE+tVAsRwyAMRUst1AIWsIAFLGABC2iZllrI9qBhGaN8ru1dLg0kL3kkoNT9jz4QK+JFypW4lu/96isEFPeX6GU1QQ5nklBwRXgNmv0kht53ijGS1N77ZLN21iabNVG2jTGPkf4BCloTiyTGJOR+75+OfFhc7Lblomc0YiVJ2MiPfBcTVXrVdEAgd6BFDntyvSYuO3jVSRQMcrOawtefSfWm6PRRpdC64N7oXZFjMlJXJyxvwVN3coSz9GiMwIYj8/hLMQH4BnHDpfF3OW30AAAAAElFTkSuQmCC">
+                    <vector name="origin" x="42" y="0"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="52" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAADQAAAAICAYAAAC2wNw9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAPBJREFUOE/FVIENhCAMfFdhBVdgBVZwBVdgBVdwlp/FFfq58uc3CI9EE02aWtvCHVwdXv2PVFqG/qWe7QAR2eagJsusxhi5rz2LsrE7Qcp78gp+8f5gzCFviOU3med640sHpZsBfHBOyZCIBY93m0MNbwzfLTk/jrKuq1gfY9SYfp4mjelFUhzC4aBqsi+S3omATE6EBJCrGXpIXLYkRQJzLgE849FrCSGmSjIlHOS+nyZBtoiUpMdvlig3BjAYiJz1svzquU4+w4U5TtKiXDjsLMxvhLWVEyrNBWXQOzO1eWyts/+dWoX/Bv7SwN7Z/AHi85fwfgGwYwAAAABJRU5ErkJggg==">
+                    <vector name="origin" x="38" y="3"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="prone">
+            <imgdir name="0">
+                <uol name="weapon" value="../../proneStab/0/weapon"/>
+            </imgdir>
+        </imgdir>
+        <imgdir name="heal">
+            <imgdir name="0">
+                <uol name="weapon" value="../../alert/1/weapon"/>
+            </imgdir>
+            <imgdir name="1">
+                <uol name="weapon" value="../../swingO2/1/weapon"/>
+            </imgdir>
+            <imgdir name="2">
+                <uol name="weapon" value="../../swingO2/0/weapon"/>
+            </imgdir>
+        </imgdir>
+        <imgdir name="fly">
+            <imgdir name="0">
+                <canvas name="weapon" width="23" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAhCAYAAAAyCTAQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWxJREFUSEu1VoGRgzAMa1dhha7AClmBFViBFboCs/wKv0JXcJH7yrltgp3wcOeDI44sFEfhevEvKaRc/Wl+hsh9/optWqmgj2YyFPQxJ7mPo/xMr/idkr4/WiADA5CBYkcLKDswRqRh0OAXHAanHAD9kyAXADjGe6XRyQaYS6HvoD3Ge7TPTAvMskw90sh4u+X4d/B1XSWlpAVq4PM2RmladFfQYXhFZaJKgwKtuovDHAvbBR5hXQSPtKUsy7Knd25H6G1lQed42oeZE5ztGNlUTcyxqATFZvLYR5mr7mSPO8B5L8kj8zRF9P7SHV9AH6qxb2GdmdMpreeX/KaZOa2YzCELnz9bs5W5srceb6Wx7EVkEnlctoWpbvna+aj9bXWn9+fFoRPu+Il3+FqbfsvVLtlxQg/YHa9WdmcGElRzzx8COMUUNaKeMzFS8Fxwni6nsedPzxkF3v4LTyvQevBGFjXv2M8t3DLZ5j4B46QcAwXLJpQAAAAASUVORK5CYII=">
+                    <vector name="origin" x="3" y="18"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+            <imgdir name="1">
+                <canvas name="weapon" width="22" height="34" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAiCAYAAABbXymAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWFJREFUSEu1lYsRgjAQRLUVWrAFWkgLaYEWaIEWqMUWbMEWTvZwMxnN507QmRsZIC/L5rK5Xvo/Kbxy7Q9rvyGyTF+1DSlNZp5Lgc8pyDKOco97PWLQ+0fgCQoYCxMdgasqKEWFYdCi8kNgWgDg+7MTHGA8/8UOHZhBuTB6D17judfrpLCgKFnjtUPG2y3VqeB1XSWEoPAaeNqe0Q6rzwochr0qg9QOwD0+S0cxFtENtqj9DTzPc8vf1HLw12OFWTHBbLneZhGPYiwgwfhvdYdbMZRj9/G/BJcpRou/uni0AqqZKTXVVrUJzLTL87qUHS7FjFIqxhfw+tMOj2JVnedzbkeuWkSiyPOyLUR1G5fOM+2E3GdcM7t1diZaIx9aB2U1ZrUbGolmPn2rn2WNQM9M6vFfwL397lGZv6vt4z0cLZPt4Mdyuh2pH8+Gp2P9L3YwA86GaxzWwsSyUNbteYj1AinmEfwllcV9AAAAAElFTkSuQmCC">
+                    <vector name="origin" x="2" y="19"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="jump">
+            <imgdir name="0">
+                <canvas name="weapon" width="23" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAhCAYAAAAyCTAQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWxJREFUSEu1VoGRgzAMa1dhha7AClmBFViBFboCs/wKv0JXcJH7yrltgp3wcOeDI44sFEfhevEvKaRc/Wl+hsh9/optWqmgj2YyFPQxJ7mPo/xMr/idkr4/WiADA5CBYkcLKDswRqRh0OAXHAanHAD9kyAXADjGe6XRyQaYS6HvoD3Ge7TPTAvMskw90sh4u+X4d/B1XSWlpAVq4PM2RmladFfQYXhFZaJKgwKtuovDHAvbBR5hXQSPtKUsy7Knd25H6G1lQed42oeZE5ztGNlUTcyxqATFZvLYR5mr7mSPO8B5L8kj8zRF9P7SHV9AH6qxb2GdmdMpreeX/KaZOa2YzCELnz9bs5W5srceb6Wx7EVkEnlctoWpbvna+aj9bXWn9+fFoRPu+Il3+FqbfsvVLtlxQg/YHa9WdmcGElRzzx8COMUUNaKeMzFS8Fxwni6nsedPzxkF3v4LTyvQevBGFjXv2M8t3DLZ5j4B46QcAwXLJpQAAAAASUVORK5CYII=">
+                    <vector name="origin" x="3" y="18"/>
+                    <imgdir name="map">
+                        <vector name="hand" x="0" y="0"/>
+                    </imgdir>
+                    <string name="z" value="weaponOverGlove"/>
+                </canvas>
+            </imgdir>
+        </imgdir>
+        <imgdir name="sit">
+        </imgdir>
+    </imgdir>
+    <imgdir name="31">
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="stand1" value="../30/stand1"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingO1" value="../30/swingO1"/>
+        <uol name="swingO2" value="../30/swingO2"/>
+        <uol name="swingO3" value="../30/swingO3"/>
+        <uol name="swingOF" value="../30/swingOF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="heal" value="../30/heal"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="32">
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="stand1" value="../30/stand1"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingO1" value="../30/swingO1"/>
+        <uol name="swingO2" value="../30/swingO2"/>
+        <uol name="swingO3" value="../30/swingO3"/>
+        <uol name="swingOF" value="../30/swingOF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="heal" value="../30/heal"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="33">
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="stand1" value="../30/stand1"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingO1" value="../30/swingO1"/>
+        <uol name="swingO2" value="../30/swingO2"/>
+        <uol name="swingO3" value="../30/swingO3"/>
+        <uol name="swingOF" value="../30/swingOF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="heal" value="../30/heal"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="37">
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="stand1" value="../30/stand1"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingO1" value="../30/swingO1"/>
+        <uol name="swingO2" value="../30/swingO2"/>
+        <uol name="swingO3" value="../30/swingO3"/>
+        <uol name="swingOF" value="../30/swingOF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <imgdir name="shoot1">
+        </imgdir>
+        <imgdir name="shootF">
+        </imgdir>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="heal" value="../30/heal"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="38">
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="stand1" value="../30/stand1"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingO1" value="../30/swingO1"/>
+        <uol name="swingO2" value="../30/swingO2"/>
+        <uol name="swingO3" value="../30/swingO3"/>
+        <uol name="swingOF" value="../30/swingOF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="shoot1" value="../37/shoot1"/>
+        <uol name="shootF" value="../37/shootF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="heal" value="../30/heal"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="40">
+        <imgdir name="stand2">
+        </imgdir>
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingT1" value="../45/swingT1"/>
+        <imgdir name="swingT2">
+        </imgdir>
+        <uol name="swingT3" value="../45/swingT3"/>
+        <imgdir name="swingTF">
+        </imgdir>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="41">
+        <uol name="walk2" value="../43/walk2"/>
+        <uol name="stand2" value="../40/stand2"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingT1" value="../45/swingT1"/>
+        <uol name="swingT2" value="../40/swingT2"/>
+        <uol name="swingT3" value="../45/swingT3"/>
+        <uol name="swingTF" value="../40/swingTF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="42">
+        <uol name="walk2" value="../43/walk2"/>
+        <uol name="stand2" value="../40/stand2"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingT1" value="../45/swingT1"/>
+        <uol name="swingT2" value="../40/swingT2"/>
+        <uol name="swingT3" value="../45/swingT3"/>
+        <uol name="swingTF" value="../40/swingTF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="43">
+        <uol name="walk1" value="../30/walk1"/>
+        <imgdir name="walk2">
+        </imgdir>
+        <uol name="stand1" value="../30/stand1"/>
+        <imgdir name="stand2">
+        </imgdir>
+        <uol name="alert" value="../30/alert"/>
+        <imgdir name="swingT2">
+        </imgdir>
+        <imgdir name="swingP1">
+        </imgdir>
+        <imgdir name="swingP2">
+        </imgdir>
+        <imgdir name="swingPF">
+        </imgdir>
+        <imgdir name="stabT1">
+        </imgdir>
+        <imgdir name="stabT2">
+        </imgdir>
+        <imgdir name="stabTF">
+        </imgdir>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="44">
+        <uol name="walk1" value="../43/walk1"/>
+        <uol name="walk2" value="../43/walk2"/>
+        <uol name="stand1" value="../43/stand1"/>
+        <uol name="stand2" value="../43/stand2"/>
+        <uol name="alert" value="../43/alert"/>
+        <uol name="swingT2" value="../43/swingT2"/>
+        <uol name="swingP1" value="../43/swingP1"/>
+        <uol name="swingP2" value="../43/swingP2"/>
+        <uol name="swingPF" value="../43/swingPF"/>
+        <uol name="stabT1" value="../43/stabT1"/>
+        <uol name="stabT2" value="../43/stabT2"/>
+        <uol name="stabTF" value="../43/stabTF"/>
+        <uol name="proneStab" value="../43/proneStab"/>
+        <uol name="prone" value="../43/prone"/>
+        <uol name="fly" value="../43/fly"/>
+        <uol name="jump" value="../43/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="45">
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="stand1" value="../30/stand1"/>
+        <uol name="alert" value="../30/alert"/>
+        <imgdir name="swingT1">
+        </imgdir>
+        <imgdir name="swingT3">
+        </imgdir>
+        <uol name="shoot1" value="../37/shoot1"/>
+        <uol name="shootF" value="../37/shootF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="46">
+        <imgdir name="walk2">
+        </imgdir>
+        <uol name="stand2" value="../40/stand2"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingT1" value="../45/swingT1"/>
+        <imgdir name="shoot2">
+        </imgdir>
+        <imgdir name="stabT1">
+        </imgdir>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+    <imgdir name="47">
+        <uol name="walk1" value="../30/walk1"/>
+        <uol name="stand1" value="../30/stand1"/>
+        <uol name="alert" value="../30/alert"/>
+        <uol name="swingO1" value="../30/swingO1"/>
+        <uol name="swingO2" value="../30/swingO2"/>
+        <uol name="swingO3" value="../30/swingO3"/>
+        <uol name="swingOF" value="../30/swingOF"/>
+        <uol name="stabO1" value="../30/stabO1"/>
+        <uol name="stabO2" value="../30/stabO2"/>
+        <uol name="stabOF" value="../30/stabOF"/>
+        <uol name="proneStab" value="../30/proneStab"/>
+        <uol name="prone" value="../30/prone"/>
+        <uol name="heal" value="../30/heal"/>
+        <uol name="fly" value="../30/fly"/>
+        <uol name="jump" value="../30/jump"/>
+        <uol name="sit" value="../30/sit"/>
+    </imgdir>
+</imgdir>

@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="01052205.img">
+    <imgdir name="info">
+        <canvas name="icon" width="26" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAhCAYAAADH97ugAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAzdJREFUSEudlgG1qzAMQPckzAIWsIAFLNRCLdQCFrCABSxgAQv5uRnpC3wYe+OcnG5tyE3SNOXncf5ImP650PHpqMvcnX41J/M4yTIvNurs0RCKPi/TNMlQBil5kNSXK/3/fBVZpT7ruso0ztWoA+ZpFtZ41uWlg3wK20GchsduiHFQz3eQbb2kohFli+ouMgPNaswfDFpUlp5i4hB0PG1ZAThQFNI9OovsIuW/+5PbrC9kA2J0WZYXd33KMj3NuMNzUl2NpKRBcv+Qodexu98nGVWxf/aSmyxTGWVUAwAIUpfk2a8ylofklNRrjVDXiYB3iGAaGkltMrmKyCAYaR+t/Z7SKEW9IwqH9OOq3j/MuAsQN9w0jaxza/9b1TmDmecoRpDDPG04EiEeTQR1XSezRjak53VUKAGy1GlEiKfzCIgQ9gfvcRQbjLfFgJLtgxaFpVOFFJKis5SVDeKgpPv3EQiPeIm9IWVWhQEEEMEZ9utg1CK6i0qiNxhAgLlxRt8vXx9zbUfWmpjHjjt87D110T3EII/BwjmqgC0i0hnKue7TVVRmi3ThlRcD++PVGAFW8mHPDudGu4Qe7JPKM4BvOiA/R4ysOcQLxVMZiyNGxW86RK9jLHPb7AgiIi8GjJsjmiok/v8EFA9uBVFhFhEHM1RPjCj+puoob87RVUQ7EAD3DlDfa1vRymH0SnJA27Y2j/Db5weF+n3lLQjIsRXtLjc8HQa9MfeHr0KB5KzO7btAvImPl+Xl10AFnZSpAQB5VHft5t03h4FOvLZDSco8tZ6+b2EGuQKxL75P1ogV/A3IDql3Ay/pgyE93VvH0PHQht5lardWGynVyOGkOI4gK+3QbP2q+JiyKZqRdyBzQHXSdjS+BtEpHMQZI4UhKosUCLD43fDniBzkh9k/QNTQcxNJjX6kxEtx+0jZ1t8yqxHvfSegTi0gFUQnsM7yC2p1HWmOUABMsri7wk9ARXUQA5G+E1DW9aTSbzaxb6kAgpcs1PKOexRSN6gOYiB75leJ09dCVKcgIqmgbdNfH4/bTRqKAW+RWCBWKH2rnbyrRfM2dUTmKbQ0HsRzH9f8HUbX972uBfEP7Q90HRUHIDYAAAAASUVORK5CYII=">
+            <vector name="origin" x="-4" y="33"/>
+        </canvas>
+        <canvas name="iconRaw" width="26" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAhCAYAAADH97ugAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAv9JREFUSEudlg2VrDAMhVkJYwELWMBCLdRCLdRCLWABC1jAAhbycrPcvsDSgRnO6elMW/Llv/x014+45Z/GGS77s1i7O1/FyTLNsi6rzbp6FoSDXJd5nqXkIjkViSG3zv/RVWST+mzbJvO0VKEELPMi2MOzrb9nMJ7CDhDSoDEFYS6q+QGy7+eY1aJkVt1ZZqBFhfGBQLPK3JNtEIIzdFtSABTIChm70SxruPx/fNKQ9IVkQAhd1/WXu71knV8mnPAU9axakmORFDopQefxPk4y6cHwCpL6JHOeZFIBAMBI3ZJX2GTKnaQYVWu1UPdhAd6BBXPpJQ7RRssig0DI0A32e46TZNUOVhASpk2170w4ByAU3Pe9bMtg/wc9cwUzzXHQgwij26CIh9AaDxrHURa1rMRX2yocAshcpxZh0J1ngIcgPtAeikIG5ttkwCGLgyaFuVMHXAgXXbks7xCCosbvEQga4SXEBi6zLHQgADGgDOJ1EmoW3VklXhsIwACMwjEzXtyfUm1H1pqwDjlU+Nx76iY1hEA8BnN1VAG7RXCnS+cap5ZVJgvuglZMBsSH2egBlvIuZqe60S6hhX2ReQZg0AFiHWHGHiFMFLrSJ4e3Cr/RIYLOPs0t2B4Ei5gMEG6KqKsw/P8nIF+4FYQMM4tQmC57vEX+N7IO6Y06all0AAFA7QAKQduKZg5mZhIBwzDYOgZ+c70olPcVWxAg51Z0uNygaSl6Yx6Lr0IBSUmVO3YBfxOfL8vm10AFXaSpAQCiVXft5t03h4EutLaihMvoWrrvW5hBWiDEhXGyRqzgb0BWpOwGTOmTIK3uvWPofGpD7zx12KuNFNmI4kRynEGW2q7Z8qp4TNkPmpB3IFNAz8S9NL4GoVMQhBqDC51VZikggPnvho8tIojFzA8QJ0hirx8p/lLcP1I+gdXe9wSETmCd5UPQ4Qq/A8F9X4OY3j5GLddZGSy/KY6+9olVtU/Zx+N+k56SwTqEW7N3wqCdfPxTCo9C9q45XnWDZof4B1HuaI+2HSSfAAAAAElFTkSuQmCC">
+            <vector name="origin" x="-4" y="33"/>
+        </canvas>
+        <string name="islot" value="MaPn"/>
+        <string name="vslot" value="MaPn"/>
+        <int name="reqJob" value="0"/>
+        <int name="reqLevel" value="0"/>
+        <int name="reqSTR" value="0"/>
+        <int name="reqDEX" value="0"/>
+        <int name="reqINT" value="0"/>
+        <int name="reqLUK" value="0"/>
+        <int name="incSTR" value="1"/>
+        <int name="incDEX" value="1"/>
+        <int name="incLUK" value="1"/>
+        <int name="incINT" value="1"/>
+        <int name="cash" value="1"/>
+    </imgdir>
+    <imgdir name="walk1">
+        <imgdir name="0">
+            <canvas name="mail" width="19" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYhJREFUSEullQ2xgzAQhKkELGDhWYgFLGABC7FQC7GAhVqoBSzcy17YTBqSEtLOZArk8t3eD8dj6PtJcuzRhxgGQGTbNsFv33e9L8G4UTNQACEAAeqcO9mrFxrCKPOo+1zYx3paW3QcvRaAJ0eAYJVUMeQPZeFmlPc2RhVUA9C6LPV84SCMNLn+2r1E5qfIOO/ibEi6GYzM45zmtlhImaZJjWCMwwTNLsAAymDVjviArX9rUOchKagZhsNQhsOAYVEN/+0S9mu9BanxIK4RLsApDACAsMdVbVZ4piqAFHhUEyACAGxSx+QzX6kKKkNxWguhlazBsHcbFsM8qslcabvcUZbmJw2T1wy3JW9aWTZvCdZSzbSTxRjf6X4dpVc4n3XBFv8Sp/3UC9NQAQOAIeM6d9A6qhXEw8xjLyyqy0O9epVqamPi0+oydD5rDVXVcQwxVA4BjqZv0+PyiwW4NX5k+/HEt4EtdEelKuW4yoFXM+6bozgQqPAXmKoEAGFzQt8NM7c/faX+AUTeVR+tt+etAAAAAElFTkSuQmCC">
+                <vector name="origin" x="6" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJCAYAAADkZNYtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGxJREFUKFONj1ENwDAIRGuhFrAwC7VQLbVQC7MwC3jCAsvjq1tCUxLCB+9yd8XMnOGqqt9zeskGEGBcw3vtgDkMCATsVv2ZAaeieAC11mJFJHbnEk+gVbRzodpH9IuWdyfaUXEcAI/hJW9EewHXf2DTKZdoqAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-6" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="20" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZZJREFUSEudlQ2xgzAQhKkELGDhWcACFrCABSzUQixgoRZqAQv3sgebuaYkR8NMhra5fNn77aNrf8QcfbRjug4g2bZN8Oz7rt9LQG6WjBRCEGAAhxAu7fU2GsMwu1n3ubCP9VzXosJ0+wX06zKAlnlWoAulK4fcXt5bn9RQFUGAlmKoh1PA4+fwEpmeIv20S1iPRIzdKFM/2biVEzIMgwL1QAQQNoUDCBiBsKllF1kXC1z+FlUMkIVZqAdUKBYAAGIRwPc6d8IFu2oNAkClUGeBOAwQvLDLU6nqAMMhZhm/EWIV4rOrEsFm/KwSKsS+DYOXHM1wCYi9JmBy+cwyY6el9KtCG688AfhO1+/ET8tmHGPxxsWavIL+lOU59iaBOdReRqhbNldA1mYObIVxGGsYcvW10S8FdU3A1BVObI4OOssJBc7+z92XdYwTOPay00oKKw0NC1Ugi9YJtrZePo1yIR9A40r135FgvDntU8Bxo+1VryTOg2k6fbjLMUUop8ld6FdCmClm726f1mowuV4qgzuHYfMPQdSWZtu02/MAAAAASUVORK5CYII=">
+                <vector name="origin" x="7" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="14" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAAOCAYAAADjXQYbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGdJREFUKFNjYICCVatW/YexUWiQhAuDC0gSQwFYoty4/P+qDrAkpoL/7wT/KykpYZcESbi4uBBWgNVofLrBRmIzGuxamKOQHQaW6HDpgNBpmN4BS4QKhoIxVgfhkgAFJ05dsLBGCToAzvtUAupmmw4AAAAASUVORK5CYII=">
+                <vector name="origin" x="-6" y="8"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="18" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAcCAYAAABsxO8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXhJREFUSEudlQGRhDAMRXclYAELZ6EWagELWMDCWqgFLJyFs4CF7P2U3wlt2LIw09nSJi+/Seg+H/ceMW7POwgAZF1XwbNtm77XIC66m3DgAwAGgCmlg71uMAoMqki6bwGweS1LE7REc2BNEAAwjJrD8Q6K8ssgf+ugR4AjfzGfp0nV1KrUicaYp1+R+BIZ4iZpyQkOjyBxiDaXTcFkHEc1gCEcCYkpgwCpQG7VD6D5Z1aFAFjIJRAcoQiOAGFQBX+XKe97vQN5xQlzHBFQC4IzINjjcBsREakGEIXtVQOEzoB1VTHRzI+NTkUoRC/ppWJnIECugDRXMCxH26vG3GhLXFCkIJsPezTOecRenhTGxvRAvarZDpUQQoERjLXp/9v6BqSqCKM6QOwa13s3Yxd01tkeWGFwqNV8AyFYW4HtcPU4rip+vGyLO2rKx8wmZMPegWknQ9UJrPkb+lTFU5i5cntdoPs54eZK4dqnC85N+J6T+sJvbsk39lpEMF8RgyAAAAAASUVORK5CYII=">
+                <vector name="origin" x="6" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJCAYAAADkZNYtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGxJREFUKFONj1ENwDAIRGuhFrAwC7VQLbVQC7MwC3jCAsvjq1tCUxLCB+9yd8XMnOGqqt9zeskGEGBcw3vtgDkMCATsVv2ZAaeieAC11mJFJHbnEk+gVbRzodpH9IuWdyfaUXEcAI/hJW9EewHXf2DTKZdoqAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-6" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="mail" width="23" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaxJREFUSEutlQ2RhDAMhVkJWMDCWagFLGABC7WwFmoBC2fhLGAhty/s64S225YdmOlQ+vPlNUnDY7jvEYN63IUFVLZtEzz7vut3D5wLP21QIKEAw0gIoWlAVXAjNiWKsnmseXrfBONUUVXBQAYGdF0WhfcYkHmcT8qPj1H+tlGPDwjfhNJAy+8KisF69cOvyPwUGeddgj+C6AanDULewKZbxDkn0zTpQmwEjOA5HHCCE3gzUTL4+rPqSQBNwVfgJzCUAwY4mlWLvl+G2LCu5msFQCFdgsXoY8zCAQIYc7aV4GqRm40CVU1jzBaMEWiVo5+qz45qrGsw7WkIpXLM1wKbppCtC1U4wC14LXWOi/SOAbOFvtb0bCivwq1/0+Dhm+4p+buZ8MwWvksGWtlSVW9vK6/48ipSHCe8VU8+GTldrDvBWn55qe4G8zTSAe76vaXu0YvClLQ+xjjjgIy56nfNZe98LL10Eashb2ircJUCqmCUAF4YWx4A5hx/Lj35rYG0qo0L7H51Bev8FbfE2lJQncXlCliV46hoHfBeb5zWxWN/Wz96rHb/3Qn7B5Whi7UFV6ezAAAAAElFTkSuQmCC">
+                <vector name="origin" x="11" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="13" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHdJREFUKFNj+A8E7969+7979+7/DAwMyBjIxQFAimd2dPwPFQwF47u7Bf+v6oBrxq4LpKHcuByM/78T/O/i4gLGSkpKeG1FcRZIMQjDNBLSDHMK2BCYRpDtd3czEHYyVDdYIczpIP9CAwp3AME0ghSTqhE9GsB8AHa0YxV/hlSKAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-6" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="walk2">
+        <imgdir name="0">
+            <canvas name="mail" width="20" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZxJREFUSEullQ2RhDAMhVkJWMDCWcACFrCABSyshVrAwlk4C1jI9aW8TtottCzMdOhuky+/Da/u+0eM6ut7TNCUbdsEz77vAFt4wubhlVAEAQawc64or9ZoFYIFy8k5ZN7rempchfnQ+gFVJWsMoGWeFViFEhYIvfxtvYYGRb4JIvQsj7L8LCHhHuR+Raa3SD/t4tZQCELHbqzmO0C8IqzhTdjkAhAQu66qq60wjsEqlOApDZRgxsNiCypsGIboHYBYuVfr3AkWIzlr6AQIMLyzQAAAwhnXZUMDwNxhr9CjyoARUvDw45aoJ1M/xfxhTyhB9BBnTAN18rCT8kP4DIj/W4DWgFqPIR9txNxpKzV4mABtvmwB8tBbKk1wbJ8SsLXKadi+J9nkqDwg+M1ebWmbD+DsJ4lVfALUawigvT3Y50bujH2FEcCwnwCjl3nYWf5OvyUl72MxODRYnLtFSQpkZyRBdqzVZmLR0+S74m/POvrvyXH/s8l9p04qq/cesBxam481S3qnOYSxfwpUbwFBPjlLa160nNvRp/L/diRiEnyfI4AAAAAASUVORK5CYII=">
+                <vector name="origin" x="7" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGhJREFUKFNjYICC3bt3/4exUeiZHR3/y9PS/oNonBLYFPx3YXD5X25c/j9UMBSkE8P4///fCf5f1cHwX0lJCbsCFxcX3JIgXSAFWI2GSeI0GiSBUxKXo+DeASlAthfsRxhGdxBMJYoOANn+Vassm1vXAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-6" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="20" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZRJREFUSEudlQuRg0AMhlsJWMDCWcACFrCABSzUwlrAwlk4C1hI+UP/TNjbR6Y7s0O7JF+eG56P75c41ef3mEtT9n0XrOM4APbwG5svW0IGAgzglFJRXq3RKgQLlm/vIfPatqpxFeai9Q9UlbwxgNZlUWAXSthFGORvHzQ0KPJJEKG1PJoSQOlXZH6JDPMhabsKQej0mCL51moJhAEgbE4XEOfY4zjqblWXpTbg+rNquAB5mIeGgQABiE0An9tyGeDuQS0cQgkCADCGGwlbw4UiYFBglXFGAKD5LnmpEBaE+fPe0MN5mP+loQgEpAcELArUC0+ghfypMnOnrRT00NrG5ysvAP4zdOYxXGU2bgnqz7rAaTpvw7l9W/B3/i5yW2Q5J0gOhBdQLhlrTWpVALDStAaNNLVWueKdFYxeRoB2KzrCGgWHRmuEyTadE/hsbrRFo3IKqw0Nr2dAZ7WWb716+TTKHbkBI1B/TXn3bx7SIsPpNezHfZtONxjygpWHEYXmcvaxUbAbCEFgq7etwqEPUIn0Bmlvk+AKX7khAAAAAElFTkSuQmCC">
+                <vector name="origin" x="7" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGhJREFUKFNjYICC3bt3/4exUeiZHR3/Qbg8LQ1VAbIEVgUuDC7/y43L/4cKhoJ0Yhj/f1UHw///7wTBNFYFLi4u/5WUlLBLgiRACrDqhEni1Y1TEuQgbJJw76C7GOxHGEZ3EMyFKC4FAIECVXhjY5QNAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-5" y="8"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="19" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAcCAYAAACDBoQZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYdJREFUSEudlQHRgzAMhZkELGDht1ALWMACFmphFmoBC7MwC1jIz0t5vbQUyuCuR0eTry9p0r26548Y19dTDCCyLIvgWddVf9dgXDgzUGdCMAc0hHCwzwxhVNkxgbCO8fa+urEa8uGuO1AdqIiQeZoUdgkkKHr38l36pIIgQgis5U3mvzkmd4OEj8j4FunHVYKPSQcEb9e5y/xGwOaEXfAmaAwRBoAdZ6eIkxXn4m5wgELCayCj7FAVChqGIakCDKNU46dOMBhBtb4sDFCosjA4A4I1jtNihTNzhbkC99MEiICKsqz6VcHYjylfmBNICJVhjaHTx4aaHTEMz2D43oJlYMBSmHupMFdaLg1lGczmxya7DJe5u6o1rTeWSAnDifPUadO6x7KaIxyQaWvsX2GpG2w9laC7ym7BWrkqw0+9+jS8A5Bd0Gqh1kFouN557RCWzK/hZXVHGK+cWgvdUaXK4AwgK5/fdoXVv7gruIJ4GViFT1Rqr9rrCKrsFX83TA21Muz3xPoHmh5SMxtMkzYAAAAASUVORK5CYII=">
+                <vector name="origin" x="7" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGdJREFUKFNjYICC3bt3/4exUeiZHR3/y9PS/oNonBJYFbgwuPwvNy7/HyoYCtKJYfz//+8E/6/qYPivpKSEXYGLiwtuSZAukAKsRsMkcRoNksApictRcO+AFCDbC/YjDKM7CKYSRQcAvQ1UrCyGLSIAAAAASUVORK5CYII=">
+                <vector name="origin" x="-6" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="mail" width="19" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZVJREFUSEullQuRhDAMhlkJWMDCWaiFWsACFmphLdQCFs7CWcBCbv8sfyb0sbC7zHSgbfI1zYvb8PkjTvX2CQYAHeu6Cp5t27hW8Ux4VyoFFEAIQIDmnCugnkJBCDWAh33I3FNqWmanNoCq4NcBWeZZYS2gxDEeFJ6TUf7WUa8DJb4JIbC8hSqacx/f+Vck3kXGuElOg8LCEHTgYAaj5V+ZpkkFIAhlgmJ+wggqYM2skBCCwZafRS0FpASdwRREy6AMGIa3Bt9pHmxArnlF+gtADMw9DIoAcZ/vyvFQokOhBJAC92hijcreMnyX1h2iAij95a2gZdi/Ggi1sAfD3tswu+YeTfpK0+Udy7x/Smdjzuu2/NVKOEuRFuwsmlWb8TnHkpkfRc31Xlr0GuQhib8B4QC76rcgWisXQP4/0P0NaGIyRbyPsE4/IqKd9m5gzaUUkrUiNgB2C1ZAr9C9iQpivTpL1JeYc4/NoRtFb1UBMl8Cyj736ppWmyybF8Ln/oLpGBdg3egdfMZrXK2/K9Szv3vF+AfeHXA3bHWjKgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="7" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGpJREFUKFNjYACCVatW/Z/Z0fEfxMYA5WlpYEkMBTAJEB0qGIqp24XB5X+5cTlMEkPB///vBP+v6mAASWC1+7+Li8t/JSUlrArAEiAF2HTDJfHqxikJchQ2Sbh30F0N9iMMozsI5kIUlwIAwcpSJg/sttAAAAAASUVORK5CYII=">
+                <vector name="origin" x="-7" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stand1">
+        <imgdir name="0">
+            <canvas name="mail" width="18" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAeCAYAAAAhDE4sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYRJREFUSEutlYGRhCAMRWnBFmzhWqAFWrAFW7CFbWFbsIVtYVughZw/+pmACHpzzDAqkJefENC5vzfZTNEfNxrqM8ao/QqWLTauZF1XNWTDO8Zey3KCpYUVT9kcAFcQOE/e8IKFh+xLyDxNVUU5LA7yXlzyTAU0bkIQrwDwEQkvkSHEDOadF/QwBJvL067J/DOrISHhvYMIqICqW6+gxe+qvuseWglZJqfjrRoSLAIIvQTAGPPjOGpvgrBAQ9tyQBC+0QnoKVIPNNA6OHaNACpq5UlzAxCeANCYCqHCqix2Lkt4EwTIXZAWYwrN7BpVPSmBLCQbng1Rd7ZTAuK9l2k7P3haEL7LsVYJPAL1LrVMEU8/vJequiCGV0j/PxBV3Tki+320bT1aqQilgTkmvRsai48Vbgy0KFlrPZCq4r1UqsI4YailHkyvEcKsIlQ3YXi/DWKYFmZBPVhSVANh7I4qTSYWcrG56NPBJowHuRaixq0lcFxsRVJ78+c/Co/HRUJPv/Zfzf+a+aD/kAwAAAAASUVORK5CYII=">
+                <vector name="origin" x="5" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="8" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAYAAABfnvydAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGZJREFUKFNj2L179/+ZHR3/GRgYQBgTgCTL09JwK4JJujC44DTl//93gv9XdYCtwG4NSMLFxeW/kpISblNAkvgUgXUTVABzS0cadvf8Lzcu/x8qGPofl48IKwDphpmA0xRoWMC9CwBYNVYRuNgQ8wAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-9" y="8"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="20" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAatJREFUSEullQ2RgzAQhVsJWKiFs4AFLGABC1iohVrAwlk4C1jY4730ZbbphuSuzGSA/Hx5+5dcL5895pZfP0EBZPu+54b/CMiJroVzANKD723b7L6uWpfXcDc8ege7vswBqAYDNcvP2x8fXrHf0MOWeQ4VEoqJ3iTbB3usqR9m6S3IGYxAALCQoG+z6W42TPsbdBqmpr9tHEe73W6cCFWCTY8EHC8jG2AOWM0WAgFbvhZbx6TyZ0smCybgOudsCIFv6gBE8yB8Aw6YLKnJSz47JkMhJuMfZgmIMTSMoTUVwkz5DjBCmZRpI4GkUKZHFUKfycnef4LgLZBXXQvMS/jPgIquj3athuVbqs0muyhLZRntJtD7y5tc+hBBURDPji06H/moJBco6mulTjZ7PordV41SKYK2TGY9B0D2/xuIhYAWJmV3yA096qgEC86AhTvOYsIxpo2qpFSJyCqtehUSqiQuUqPW31apcoyAGmsdEH4XHl01lQCioWp6zSZQSopDgBsJ2AvtAvaqZI3KrOD+SPfNH1TSL0yd5+FaOL81Xr+0ng6vOT68Rn8Bh9C+YGhBme0AAAAASUVORK5CYII=">
+                <vector name="origin" x="7" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="9" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAAAkAAAAMCAYAAACwXJejAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGdJREFUKFNj2L17938QZsAHQApmdnT8L09Lw60QpgBEAw3DrXBVB8P//+8E/4NofAr/u7i4/FdSUgJjXArBkjCFBBURVEiM2/6HCob+LzcuB9MuDC643QZTiFcRSBKkkKBpUN/BrQMAUatbP9Wo/w0AAAAASUVORK5CYII=">
+                <vector name="origin" x="-8" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="21" height="31" basedata="iVBORw0KGgoAAAANSUhEUgAAABUAAAAfCAYAAAAIjIbwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAatJREFUSEutlQ2VwyAQhGMhFmLhLGAhFmKhFmKhFmohFs7CWYgFejN0uM0WCO217/EoCfsx+8NmGD7zi5/BJApgcds2zv8FE7Lve8QPcw2s0+xcOjzDLBDQ67oeFHOjPRkGBZee1AFWAjI2Hki//sBFdwW7LAtVeqUEY5NVjHUK2hhv60AjD2oBCZWxXOL6O8b5GuM47wfwPM5dOYghhDhNEzevYSVEwPmWoGEIHAbarCRCAbx8XQjFgNqfLbkvYC/0oBIAQTFbGP7z/ZIKvyWTirAJ7mNgjQE3BQUMQ3taULqrGMEIsAw32dczKcVhNXBWY+MppQJhFsyqr0LVGEpJ8lAAe6A21jnzCoHNvtTaxJ0lixfAx9Qq9THtqQBCYYh61UUoQe2zLqUwWH4bhL1dttT8gT1Qqi1Aq150Q6EGYPWBRyafQtMLzIoErYHd82ZTyS1QfbQEVYt8RSnBKnKUmDFO7fBxAXpLSm7kfgCAB6tXtO5+KR5sfVLkGjIPxHgLKkUeivU7aqn0DPqKWsZQLioEpWQJ2hMGZlv9tPDpOHvfrFn/Cfabq+/v80Lr/fu4h7MAAAAASUVORK5CYII=">
+                <vector name="origin" x="8" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="10" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAYAAABbayygAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGhJREFUKFNj2L17938QZiAEQIpmdnT8L09Lw68YpghEAw3Fq/j/qg6G///fCYJpgoqVlJT+u7i4/AfR+BSDFcAUkqSYoBOIde//UMHQ/+XG5WDahcEFv3thigkqBCkAKSbKVKhn4FYDAE4FW9jJBuSEAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-7" y="8"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stand2">
+        <imgdir name="0">
+            <canvas name="mail" width="18" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAeCAYAAAAhDE4sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYdJREFUSEutloGRhCAMRWnBFmzhWqAFWrAFW7CFbWFbsIVr4VqwhZw/+pmQRdCbY4bRheTxEwJuCH9vsruiP2501Oe2bdqvYIWxWUrWdVVHNrxj7LUsH7BsWFmpmAPgCoLF82p4geEp+xIyT1NVUQnbBnkvIa9MBXRuQhCvAPAtkl4iQ9oKWAxR0NOQbC4/dk3mr1kdCUnvA0RABVTdegUt8VD1sx6hecgyBR1v1ZDACCB0D4Az5sdx1N4EwUBD23NAEH6jE9BTpCvQQevg3DUCqKiVJ80NQHgCQGcqhAqr0u1cTngXBMgdkBZiEZrZNap6UgJFSDY8G6LubKcEJMYo035+8LQg/PZjrRJ4BOpdaoUi5g6re1VdEMNz0v8PRFV3jshxH+1bj+YVobIxx6R3Q2PxscKNgxYlj1EPpKp4L3lVGCcMtdSD6TVCmFWE6iYM77dBDNPCLKgHy4pqIIzdUaXJhCGNzUWv+ePFh3ke5FqIGreWwHmxuaT25ouPgf9s+z8K1flf3mygFtoG56UAAAAASUVORK5CYII=">
+                <vector name="origin" x="5" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGlJREFUKFNjYICC3bt3/4exUWiQBAjP7OhAVQASKE9LA0vAaHQT/v9/J/h/VQcDSCeG8f+VlJT+u7i4gGmsCvBKwnSTbDTYLpDDsNn7P1QwFIyxuRos4cLg8r8jDdVLYEEYxuogqCA8EABJiVchUA3CXgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-6" y="8"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="20" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAatJREFUSEullQ2RgzAQhVsJWKiFs4AFLGABC1iohVrAwlk4C1jY4730ZbbphuSuzGSA/Hx5+5dcL5895pZfP0EBZPu+54b/CMiJroVzANKD723b7L6uWpfXcDc8ege7vswBqAYDNcvP2x8fXrHf0MOWeQ4VEoqJ3iTbB3usqR9m6S3IGYxAALCQoG+z6W42TPsbdBqmpr9tHEe73W6cCFWCTY8EHC8jG2AOWM0WAgFbvhZbx6TyZ0smCybgOudsCIFv6gBE8yB8Aw6YLKnJSz47JkMhJuMfZgmIMTSMoTUVwkz5DjBCmZRpI4GkUKZHFUKfycnef4LgLZBXXQvMS/jPgIquj3athuVbqs0muyhLZRntJtD7y5tc+hBBURDPji06H/moJBco6mulTjZ7PordV41SKYK2TGY9B0D2/xuIhYAWJmV3yA096qgEC86AhTvOYsIxpo2qpFSJyCqtehUSqiQuUqPW31apcoyAGmsdEH4XHl01lQCioWp6zSZQSopDgBsJ2AvtAvaqZI3KrOD+SPfNH1TSL0yd5+FaOL81Xr+0ng6vOT68Rn8Bh9C+YGhBme0AAAAASUVORK5CYII=">
+                <vector name="origin" x="7" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGlJREFUKFNjYICC3bt3/4exUWiQBAjP7OhAVQASKE9LA0vAaHQT/v9/J/h/VQcDSCeG8f+VlJT+u7i4gGmsCvBKwnSTbDTYLpDDsNn7P1QwFIyxuRos4cLg8r8jDdVLYEEYxuogqCA8EABJiVchUA3CXgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-6" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="21" height="31" basedata="iVBORw0KGgoAAAANSUhEUgAAABUAAAAfCAYAAAAIjIbwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAa9JREFUSEutlQ2VgzAQhLGABSzUQixgAQtYwEIt1AIWzsJZwEJ6M+nQZZuEtNe+l5cGsl9mf7J03Xd+8TuYRAEsruvK+b9gQrZti/hhLoF1mp1zh+8wCwT0uiwHxdxoT4ZBxqUXdYDlgIyNB9KvJzjrrmDzNFGlV0owNlnFWKeg9fG2dDTyoBqQUBnLJa5/YhyvMfbjdgCP/diUgxhCiMMwcPMSFkIEHG8JGrrAYaDVSiIUwPkyE4oBtb9rcl/AVuhBJQCCYrYw/Of7KRV+TSYVYRPcx8AaA24KChiG9tSgdFcxghFgO9xkX8+kFIeVwAQKqnhKqUCYBbPqq1Cd6pPkoRKgkFRDoI5jlSq2yr7U2sSdJYsXwMfUKvUxbakAQmGIetVFyEHtsyalMJj+GoS9XbbU/IEtUKrNQIteNEOhBmD1gceteQlNK3BXJGgJ7J5Xm8reAtVHc1C1yHeUEqwiR4kZ49QOHzewtaTkxt4PAPBg9Yra3c/Fg61PilxD5oEYH0GlyEOx/kQtlZ5B31HLGMpF2xZVr0qWoC1hYLbVTzOfjrP31Zr1n2C/ufj+Drog73GCV+qDAAAAAElFTkSuQmCC">
+                <vector name="origin" x="8" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGZJREFUKFNjYACC3bt3/wfRWAFIcmZHB6aC8rQ0sASMxqb7//93gv9XdTCAdGOY8F9JSem/i4sLmMaqAK8kTDfJRoPtAjkMm73/QwVDwRibq8ESLgwu/zvSUL0EFoRhrA6CCsIDAQAMU1FJhSxAMwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-6" y="8"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="alert">
+        <imgdir name="0">
+            <canvas name="mail" width="19" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAcCAYAAACDBoQZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYhJREFUSEullY3RgyAMhlmBFVyhK7ACK7iCK7BCV3AFV+gsrpCvb+qbiwhqv3LHcUp48ksI4bch7+OYPw2FYKzregrkZk+jQQBalkXmeW4CVRPGs5SWgIEAgUxHLhiIGnFgi8nOLYKmcVRYyzLdgCAnvj+mRJlLsH38JwhrKwm7QwoC5CWSnyIxrwZMIUmOuR/bGKOklGQYBhWaHpMeJijPHxhAFexQFmYVQSUVwaSLHkRYGbXGDllXs2k6DgJCIK3hin2A6EVtmmoADIIQwgQQ/zzE7/csI9yAACnQZZNKaNlV7AA19wisId5al9VjIpBFH3yCsGp2t9jeyipgmObmVrCMVSurvc6hifBB9pbV7iIBkD1rQ1q8LOAWrP7XtQyQ8X3fWjAq8Xtfgdg1aI23+jbItR6rwdr9drfYCpPaOxp3sexahVLgVTrJjF2xswzq3UOhYr1ItdagbwqtZ0mFWNVn1gF0BVTQf4AtT6yL3gXiurFxdt8AClz1Kv9q9Z7z3dP27Zv/B1iBe11ylIXUAAAAAElFTkSuQmCC">
+                <vector name="origin" x="9" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="8" height="13" basedata="iVBORw0KGgoAAAANSUhEUgAAAAgAAAANCAYAAACUwi84AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIlJREFUKFN9UAkRgDAMGxKwMAtYqAUsgIQhoRawgIVpmASQgIVAerzHRu9yvTVtmrWKMWJJyTH6YWCq7HHGqIrQdWAm9jpxB0kVRVu3mKPDpNbwajISaw3vveGjchQgIoZSE/fa9K8SV9FHTgWhCZfhrFn+hk3i5MdogbwMlqbPy2Wln4d9n3lnNpArXHnnhktzAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-5" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="18" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAdCAYAAACnmDyCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZJJREFUSEudlQ2RxCAMhWsBC2vhLGChFmqhFrCwFmqhFk5LLeT2pX2ZQAm3u8wwvYPw5ZEfdpq+H/I6ivn1UADGcRwhjBuRJwMAsu+7bNt2g6kHjGcpPU8GAQA2PTuD0BOMrxhUVyFkXRYFtYp0EUac+P+UkGQrk+1jnRB824BXBxQCwK/I/BRJ82GwPGWZ01ypNVhKSXLO8ng81GD9WfUgIfN2ggBpQFXqTQ0hJRfB5LU8hKCyaA1V2VWplItDABBGFfxiHxCq95KUDBCMYIAJGNY8wO/3FBFqMEAU5rJGB1Q0ihWAGmjGh4fxJcCrdNm79dsQxFj+lz1TZFe7ipGx6WUvegGqgPurtTFCsAEOQb3Do7UQhApnlRPQW+vVkaUfB5ZXI/p2gcceaKikA9EEwLuHhRBkCcNfqTF+D4QiRG0w7R2P1jbDTKGSARoZsep9g7flrC1BVdH92diwi2DWFiz9EQygCKbX4vXw9yeqfDg0NvT0jirN8tWH/l06f26Czdv7cD6v7azf7sagw4iX/gAKuI+eoNqS1gAAAABJRU5ErkJggg==">
+                <vector name="origin" x="8" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAAMCAYAAACulacQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGtJREFUKFNj2L179/+ZHR3/GbABkER5Whp2BSCJUMHQ/y4MLiDdGCb873DpACvoSANLYir4/07wv5KSEhhjVeDi4oJTEuTe/7gUgO2FGY9s9P9y43Kww0D0qg5Uh8ElQLqxOgiXBCzwUHQBAKRUTsPfoQ1gAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-5" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="18" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAeCAYAAAAhDE4sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZNJREFUSEutlg1xxCAQhWMBC7FQC1jAQizEAhbOAhZioVpigfI2PGYhQO5uygyTa1i+ffsD6bJ8P2Laivn1EADGeZ5DGBdGngoAkOM4YgjhBhMPGC/ve54KBADY9OwKhJ5gnHNQhULIvm0CahXJSxhx4u9LgonBL2Ud7wnB85ZwY4xsomQB/MboXjEadxaYXWx0xlVqCwyQdV1l4uX+s8tGQly4QIA0oFvpRQ0h3vqIybA0hCC/SQ9V1RWplItNmIRRBZ+yliBUryWVeGHEEKEGcA3Q6z1FhMpGGAMCoK4aHVDRY66QaOaHm/EkQKtU1bsnfQZiLt+qHkAltNyMzE2veqMbQELQIbW/GSKSjd9DkLWp6dKcwXTzji6juKXz82+gxqOoa+Gz27FSowxvoKcrtvLaGFewqRqUHGOQyKvTcztMQegfNBp7qGNcDve07DgWvIcGHsURHQ77hyAYT6QLaAZ7NMiNV1T1YHLaufCgCLxhiHJmPgFJhXMF9QV3fbfUSZ/dfgxRf/Pa89Z+Yj765+APf8SEqSlBf1AAAAAASUVORK5CYII=">
+                <vector name="origin" x="8" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="15" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAAPCAYAAAAoAdW+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHRJREFUKFNj2L179/+ZHR3/GbABkER5Whp2BSCJUMHQ/y4MLiDdmCZ0uHQgK8Cw4D9IwaoOsE4M3f//vxP8r6SkBMZYFbi4uBCWxKYbbDTIXnRJsIPKjcvBXkJ3GIoksoNQJLAFBtj5OEMJGizYgxBJEh58AOG+XzsMuiEeAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-5" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingO1">
+        <imgdir name="0">
+            <canvas name="mail" width="23" height="26" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAaCAYAAABctMd+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAX1JREFUSEullQ2xwyAQhFMJsRALtYCFWoiFWMBCLcRCPMUCL7vtMgcDBF4zc0PTge+OvZ88pv4nmK2P/mPtnYCGfd/D23uueP8VTshxHNEKDrqdKKIIPc8z4MEKJ4rcTS685lfA+r1F8zYRwh/mseBtXQn0zhPu1yk452jLshQd5LwkWkkBqCKlgwsMoOzWgaIEEIboZIIXpEic1JLNyCxQ18d/u58YLawAsNpXCylqCjCAMitBxcFtdRIWzpkmHQG2keuGo/VO/VQBAAqs0lMy/+MgiVzSlJLa0L+uOev30tsabmAd2DIc0T9CBLfSSHeb3Frz1ML/SMO+n5MazqF6H0lsEWgr56fIcXi95gjMzg4LRbStli/JwqgFLcmgKaiS7ZWmCM5Gqp3fsSeU6Nb4TbrSbGy1NZOPhtqeG1c1WZ5kbkCF4MBABXCvwLWzbBxFMADXzeik1VSEZ5+w22mXbaje+qP7VzvzYRh1UNxPr9J9ZG6MeO/6stwB/wCxLjvBs3Y7/gAAAABJRU5ErkJggg==">
+                <vector name="origin" x="9" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="8" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAF9JREFUKFNjZMAO/uMQBwv/B4F3796BaXSFYEFkgKGgw6UDbsLu3btRTPgPkgThUMHQ/y4MLmAMMwFoqSBYAk0SrOC/i4vLfyUlJbCiVR1APkQnQjdIEoahEpiuxyUBAOeLWO1+NWyeAAAAAElFTkSuQmCC">
+                <vector name="origin" x="12" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="18" height="31" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAfCAYAAADqUJ2JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXlJREFUSEudlYtxgzAQRGnBLdBCWlALtEALbkEtpAVaoCdauGQv2fNaEliCmRvhGelp78N6mvof69/a3gmA7fvu6yiMh+w4DsODtRcWh3GAAIV85/xRlS2PxW8sAVQCCPZs2dPTiGx9AwKHNAAGgJC8TjbPs6WUfBWowxzy/Hratm2uCisBeflTgn04CAAhFMAmOCSn7IF3bkhTMgRBRUqx/xTk6n5vRyAdpiTtdzgvrkAA2PF4S4GpAFbMUagPEGsEiBZSFTHNEqa/XQEhVKR1gppGvaohj5YCosVuwaTwNYiKAGEQ4kX9n5+Twr8GkkNGRVp0nR0WHuvZBxxDBhhCD7XeT0F6MzrHOANeWUqoWNf1EtTjSw4gaCSlsoUB4WBKYT96kcIqNUjjqkst643pZkp3IO5LZevFNoY8P3yIzkcr6enSW33oMfye6AqFsXWpC6dswUaA4Xzqx+Hpr3+QPlWaohr/cK3QPbWR293jKNztWvW5jCj5AS5KXotKdVeSAAAAAElFTkSuQmCC">
+                <vector name="origin" x="3" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="7" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAYAAADebrddAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGpJREFUKFOFkIEJwCAMBOMIruAKXSErOIsrOEuGywpfPjRFWksDj/D5P8Ui78HGo1VWnyGoagheMY4BdweHuwyjtRYhnimbgl77WpCgcJGhi5I0mFkUSMbUGQQW1ut2b7/Df8EgP/TxGSInJilOgY8Un3QAAAAASUVORK5CYII=">
+                <vector name="origin" x="10" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="34" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACIAAAAZCAYAAABU+vysAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYJJREFUSEvFl4GNgzAQBGmBFmjhW3ALtEALacEtpIW0QAtfCy3cZ1e/1uEHAuKsRzpFRMYedte+pOs+X/YegvrXy3AtyyKY5kB7b11Anjnb2I/N1bF5nutFVhCpS4ZqDUP5HQwhbOntlTsC+GoJQwjBEODbbHya9ePyBwZwwzA0s8lyyoYsYCFBjK99EIxrsaPoP2BQsoVQ7+9ljdSQZc6msB3FBT2MoI5AFODo3NAWFBQRiFcI2dgKsJ6LsoohRKWUCKPCPUpWbamkZ8Ng9HZa3H96EI0TOMZF7yZmBWp4CNzLGoVWENM0cWykKtySWtTbo0XqTwAIJEIVAmjS+g33IPBMpCofAX4D6LuwP8w2Ya6GtvQVZcIF7kr7vw3D8+Lx9WBAbx7bBUZZydP5NrACCTghy86BsmoVztrDX3pURKpEwGjnaV71qjNAtGYD5k4zY8Y0L+Y+C0QpPUyAOrCCQLXqgDpSqPSX6EZWq3Nmc9TnReRfidWLXj1rIkGKVR7iB/dobxQS3HJNAAAAAElFTkSuQmCC">
+                <vector name="origin" x="7" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="13" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHxJREFUKFONkYEJwCAMBLOCK7hCV8gKztIVXKErdAV3ygpp/4ulQtEIguCd/0GR+PI4+pCuopDCIoV9272kEhIHIZLmOWd3S0wIC6pK8aycZToPwS7gPBN4iToRgXBrjb1R5fP6fyXA2Eetr7TqL2Y2pCwFfDWknhISbugCZitoZdeTJkkAAAAASUVORK5CYII=">
+                <vector name="origin" x="-2" y="19"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingO2">
+        <imgdir name="0">
+            <canvas name="mail" width="18" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAdCAYAAACnmDyCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWRJREFUSEullQ2RwyAQhVMJsRALtYCFWoiFWMBCLZyFeIoFjvemj1k42DK5zDCk5fHtD8vmscw/qZE+ZrdiYxkpP9d1pfM8OX/WXBZFENtHvwV7x+jCUgyRVmXZAmchcJNWAHmtL46whATrguP92Hf+NwovbdvGRUEEAkxDa16OKhBCvAPKR7IWbwDxQHEvp/nn1LgR7v7Ehe89ENcyRCloKWUTQBDBO5tsADCwhuF6pCQDQhgrcK0A8giJh6HhqSkkweSBADb5t0E21K8eQVxC+4Sl3GBu62kYmk2owrKzQkSy8e5Wdgi5ivOwgN5/oxJQSaQ93yOBVA7/Bskq5h7MvW/thpFX3xpblR8jZs6sEdebthBvg2wddU6l3EPv6Nkdj+fBOzQQslihQWG6odnW0RESIGMerOpBA4v0WF71YIRMWCteCdb2phK/WoWTA2rVq1odk2cFThesvsCjT+2UqLf5F5iFU1RzdGI0AAAAAElFTkSuQmCC">
+                <vector name="origin" x="7" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="18" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAICAYAAAD0g6+qAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAH5JREFUKFOlkYENgDAIBFmhK3QFV2CFruAKXYFZHM4VXp8EbbSaGkk+NE05HipyBvYj9Stgaiip/II5gKAL7LM7d0FYALEmqGq4G83HSrxgMUHO2UVYK96xSbhnrlMFo7dYBwaszYSyEYtDMcnbD91GCqjNAmoE8tSgty9/uwGF73UUnOXnxgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="17" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="22" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAdCAYAAACuc5z4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWFJREFUSEutloGNgzAMRVmhK7DCrZAVugIrsEJWuBW6Ajuxgptv3bdMaJoYLpIFUsLLj+3YTNP4kLIU9m9Dgdu2yb7vt+D82IBSBqCA/+Z8CS7Px1M/JAjPu1D4TsHe1mVRlTC+R30tOWUzD09TEloUqmpHwHnRzAhlRxMM9a9cNi7QeZ7jYAComq4AEAYgLapag0aw7I8DkBtcUW1gQKmOQB/AKFwVEoonjC65BYbKlJICa19jA8KhOKJajw/wJ3jtY7pqJPUsWATTHXVW+AwZAesl8X72gNb7KFjhnyB00RW1LODmZw+5C5alVDNAquBYYCNBM6UNqM0zayL1oqW07m92mtGg2Y3rqDkEtgeX9WfVq4tU6y1m1rBIfVtvYPa7Tn/X00FM1VVOxV/VUvWAYuuN/Ka1wQE8qFrhbL5+A98EDuUxALY09DXFn1h3ZjCibeeP7n9yTiH6OtkJ6Gn6DdUVIQ0Fxwe6AAAAAElFTkSuQmCC">
+                <vector name="origin" x="8" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="17" height="6" basedata="iVBORw0KGgoAAAANSUhEUgAAABEAAAAGCAYAAAAlvnXZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGdJREFUKFNjYCAf/AdqBWEUABPEkICqQpb/3+HS8T9UMBSMYaaABWESUBtQNCkpKf13cXH5//+dILoBYEPgJoJMBRkEUgjSgI5BBoHwqg6IHnTvwG0FKYApRqexuBBniKJ4A00jVk0AhU1ctRgz+PsAAAAASUVORK5CYII=">
+                <vector name="origin" x="18" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="28" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAABwAAAAbCAYAAABvCO8sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZZJREFUSEu1lgutwzAMRTsIpVAKj0IohEIplEIojMIolMKwlIKXa/VGTrppyZI3ydqndY6vf+tt6nuJcb/VHgUna9V+El/Hcci+7/Sv8pXtb4ueszjnauFgJdg9BNnWtRoqfvbyCJMsy6JQwE3UNm1Q0AXTA6wBCqOC81q6D4FAEd/x2dxTldLyJj0AB9KoCsqRCcKQRmSnF8gAVAlMQU8RfxeZ/aFQgKwNg6KhFHDC/OMKxPWhwOBOlfFgqy6sk8BQ82FAAJBSKAXYTU6h7GrAAB2lUqPXro1QNg1/AwQwBAEb0UAaOUCcUcwpPjO1hI2CatSsIbeRBeK6hfaqVCDrR6U2pUwrG4i17Wmii8qyaRiAfe8C2jq+O7ysb++Y6EKn/TdQ1rgv2ZmElQsf36myuKdpmV9gBvTuoCwLrTVMg94QcaayGYhR4OJucM42UoPfpDCYDn5cX5XOyY/LoNJPS5SAcG5w/BmaqRwELZ+PUvOlvySm9YcUZfX8VhZNof1L4q5sSG168PoyTtmIlc+pH1NSO+Evb2haszh9N7QAAAAASUVORK5CYII=">
+                <vector name="origin" x="12" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="13" height="11" basedata="iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAYAAACksgdhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIJJREFUKFOd0EENwCAMBVCQMAtYmIVawAKTABKwMAuzgAYszErHb9KFE4w1+QmHPmixpRS+azWoIyUrh1mdOXMMgeMeufVqxkxQA8iVDTvn5thvXpoVEBEjQwyE6GhoRhR2eDiyXKAQE5Chb7sCAmBXoCWI5t9w5SUsvzRa/1v4iLcePxJeVW74I9QAAAAASUVORK5CYII=">
+                <vector name="origin" x="-4" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingO3">
+        <imgdir name="0">
+            <canvas name="mail" width="37" height="24" basedata="iVBORw0KGgoAAAANSUhEUgAAACUAAAAYCAYAAAB9ejRwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaZJREFUSEu9lwGRg0AMRbGAhVo4C1jAAhZqYS3UQi1g4bRgIcf/5WfClussBZaZTCksm8dPNlma5prDrpl2e1Y4i7Y1ysZx1JjT2HLH/r9vezqULYDRMe/hmKbpENgKwqbWbrebdV1HwzmuASh1iSbHQRHOEYEeKfGZDfAi9ez+c3eHOH+mhjDRcA0GRzA4lWIvaVreh0ICOgIFcncmp1nuvIVUYIT5NesfZm0/EaxrZpVnOwpFsIIklvQeTqq3APXPNRTAcP/bEBbFORvkIVfookoASsMrDWqC0RmAkPwKO34jEMDOCmWJcr4QAIZDYFooAqoKJaVUQrQKFTIl/JmJX6QWQkelZou1TeVDQFCtVm75KsyhpBZglPCqezVWI8EUyrgSBREVxLUqUCwFS0vKO0HesmpA2TAMK6C8CAvyn3Elebt7zBZQPgnDBTiAXZ1X3oQLQ+K7jyvBuLtQkhcmr2+FrioPDpXtLD7lANXVy6CGFb7Mrrz6CgwvsQF2GiAn18ZwR0gYdj2rJr7j+Y/KeYsJpaBUaiqjFnUWkG/4DubF29fRH9W7RINlWYIBAAAAAElFTkSuQmCC">
+                <vector name="origin" x="20" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="14" height="6" basedata="iVBORw0KGgoAAAANSUhEUgAAAA4AAAAGCAYAAADzG6+8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAF5JREFUKFNjYCAN/AcqB2EwQOFgMQcm/7/DpQOh9t27d/9BGMkAFPb/d4JgDSAcKhgKxnBbZ3ZAJECKXFxc4FhJSek/CK/qYEDXBHEuSAKEYQqRaSwuQfENTqfiCjsAR99SBEuAoXkAAAAASUVORK5CYII=">
+                <vector name="origin" x="-2" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="19" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAbCAYAAACeA7ShAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVVJREFUSEutlA0RgzAMhZmEWcDCLNQCFrAwC7UwC7OAJyx0vGwvC6E0vdu4y7VA+93L72X4PsXsL9vev5vf7W0Zx1ENoGVZyrqusjpwCFUQAHgIeuRMmFXaBMrlGmi6ToX2UdiEqipcoqI0pALDN0DyPOzCcCZtB6MKwiyQcW3FUGD3213MuvXMb0W0LjcJ4goIzGYYe3yLMquqACvrVSGEUhlcDmFwjaCUkgABsvEDkHFsxowKBLQ9PnaAAkRgqA4xgSIbP5sMlgbWKHZygC7SZbpbS0aoDjACufcZ7ak1FLSAqJAwrDVgpEyB8zwX2Jm6HhDbTSCEQRUu+xEVzqHPAYX9ChJX/6aK5UBVVNubReu+Vr8rzF2/9iZg10ruknRIZeqeTl45bHvTzbDq3GvNuQPQu4zLdpiGvWqbHO5V4iRun/w7lKG0VnA4HJbaCT0z30p4AUUl/ARQz8IzAAAAAElFTkSuQmCC">
+                <vector name="origin" x="4" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="14" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAYAAADJEc7MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGhJREFUKFNjYCAP/CdFG0gxGL97944ojWDF/98J/i83LgfjUMFQrBrhJoM0KCkp/XdxcQHTIM2rOiC2gpyKoRCmGKQBpgkkhqQW7EW4E0AmoivGpgE5YMDuBmEkp2DYgC0kUZxLTFADANx+UwPs3Ch/AAAAAElFTkSuQmCC">
+                <vector name="origin" x="15" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="23" height="26" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAaCAYAAABctMd+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAX1JREFUSEullQ2xwyAQhFMJsRALtYCFWoiFWMBCLcRCPMUCL7vtMgcDBF4zc0PTge+OvZ88pv4nmK2P/mPtnYCGfd/D23uueP8VTshxHNEKDrqdKKIIPc8z4MEKJ4rcTS685lfA+r1F8zYRwh/mseBtXQn0zhPu1yk452jLshQd5LwkWkkBqCKlgwsMoOzWgaIEEIboZIIXpEic1JLNyCxQ18d/u58YLawAsNpXCylqCjCAMitBxcFtdRIWzpkmHQG2keuGo/VO/VQBAAqs0lMy/+MgiVzSlJLa0L+uOev30tsabmAd2DIc0T9CBLfSSHeb3Frz1ML/SMO+n5MazqF6H0lsEWgr56fIcXi95gjMzg4LRbStli/JwqgFLcmgKaiS7ZWmCM5Gqp3fsSeU6Nb4TbrSbGy1NZOPhtqeG1c1WZ5kbkCF4MBABXCvwLWzbBxFMADXzeik1VSEZ5+w22mXbaje+qP7VzvzYRh1UNxPr9J9ZG6MeO/6stwB/wCxLjvBs3Y7/gAAAABJRU5ErkJggg==">
+                <vector name="origin" x="5" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="8" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAF9JREFUKFNjZMAO/uMQBwv/B4F3796BaXSFYEFkgKGgw6UDbsLu3btRTPgPkgThUMHQ/y4MLmAMMwFoqSBYAk0SrOC/i4vLfyUlJbCiVR1APkQnQjdIEoahEpiuxyUBAOeLWO1+NWyeAAAAAElFTkSuQmCC">
+                <vector name="origin" x="8" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingOF">
+        <imgdir name="0">
+            <canvas name="mail" width="30" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAa5JREFUSEu1lg2RgzAQhVMJWMDCWYgFLGChFmrhLNQCFk4LFvb6tn07u2mY0hCYYehP2G9/X3JJ515SmL+ci0sJQBnHUWQd5PpzlWmY9LfX3ZVvhgHkfb8lhQJeOHAYrkAaRoQezCgBd1Efh8rjWtfVokGEAFfS2pTqskngMZh6Lcui0fSuo0bkmkI/M1JCezaOAQCh4SdxEKSU0Jxyl259Ah/GkToYZ3QK/BOZfkWGaVU4oD3A2hg5Z33CMDsWDuhovKDTPYK5tqVd1bAfBz8KflywzkeLiG9zmziEAS+8DwJAB/BkmgH1GdobdYBWhtwygWxQAgkmFM9vRcIPdnXwWXfUHjcdoFh4aFd1Yu0JpAOURoDPgL/VGA54uI8cDhzpcN8fVjvUldAy3X5jcFq9t88211ldS8DW9177rqWW4lID8r9euq0zOs+zKVqx7dlpw9e9R8QKBJhRbhgNcnu0zgYt0rjVDAbXJmzctUyxdkLpjOk4puCblOtieEtZbJjL8P4neAD6TeDTi5W87waH9BDaOBZhU9mTrSD+DVEGtXNO1w6Kb0lqOoK26OI/yBJufb3hPSgAAAAASUVORK5CYII=">
+                <vector name="origin" x="14" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="32" height="34" basedata="iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAYAAAA+stv/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAfpJREFUWEfFlguRg0AQRBMJsRALZwELsYAFLGDhLGAhnrCwuZ6jp5rhu7ndHFUUVCD0m57P7vXye6TpistV7j9ym5qmSff73c4JRoGqQ5gwIDZACFUNxKNXiKG/pObSpMftoa5Uc8ZEmAZc03hzAEA8n880jmOEKQ7kAhEC4jgA+t33ftasGRNjKpAOhfg4CASZBrNickMcqN5BZnuEAAicwe94PgxDNRDrCEIQRMXxrGs7e0+6p0j7Wi3go33T26kgLMq2ab1z8M4GRPZc8fZEa9rxc6UARFCg8SQswGXUv+WORQ/ROCc4K1ScRdm3UwdNYx6/EyonRTNL1QHCAA5iFNRo44h3uO30LOpllndaD/sNJrgiixk/tLrOsJ7CKrwU51rAwlMA1sCOAzMIukHn4NghgFZ9FFeAlRqI0SzWmkNxRMbio910YkscIAcfPj2kZrnjPkFB4I6uE3ThKLKzU8kB2rZNOHWzAhCII5/I5YkUnNX191YB4q5JCyoMnGzBtT9Y1DF6HUbxvpT9mz2sSy/FN/aSRRzARzwVYddsz/R5zZ31HsQCREd0yZQcQTgIZ0f31Vl3FIc4EaGJAqAKBIfRTnQ+QUsOp0VUewAs0L/OBp/btJOWZuT27RpwcViu+cwQLzcLdOtVsqpzCK2w/kvcR3MO8dl3X3FJJim7KISjAAAAAElFTkSuQmCC">
+                <vector name="origin" x="13" y="16"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="backMailChestOverPants"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="29" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAcCAYAAACdz7SqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZtJREFUSEvFloG1gyAMRe0IXcEV/gqs0BVcoSuwwl+hK7iTK1Bf7OPHFAWU9ntOTq1CLi8kxEv3dwV1f1H3NbdVPkKYruHhO0zSlgOuxof5+vU+jOOY9SFA55xY3/fRzAK0CnEK59M0gSW/MDwD+Ha9iSkfKwGiEDCCNRzvrAMChPa6LBAwzIMg+H7B12A81Cr1AjDROx+NIbTqXDdHazY/LFtE4BaUK4jh0AvAvVaMBUAF4DqUGAMg51bmh6zBJpWACadywPmcMIBhak9zCbn7XhbCPQaY+cBo4L8O814y1a5EwIBy33T4NRSKGYlUMlWDU0BGgQllc+MsWBKGhwphqT1O1H6twHWpsb4ZXr3HVmWudEpXEssDdZ0DtoLG0tIHQUqhqd1SUclx8YjbO0qbAhHSYRgimM5t89g69I/IFaBuDjy/7bMjzrfmfB341iCgMqFQ9+CWgpfmsAH8LLT1qVMSllQPLZl3akyEmo7y0fDKvuJUuv/cxdjeznaVklBIk/8P8JLN8wcaFX9Dbaxh8wFfEqkmY5Lfu0/BJDTahdhIaQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="17" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="mail" width="31" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAbCAYAAACEP1QvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAblJREFUSEu1lguRg0AQRIkELGDhLGABC1iIBSzEQixg4bSshTl6SG81CwcEdlO1RT6VfdPzf1TlX5YgHuWRVQWotVUbDz6XBDsQx0Jtz5+nn5IGRGDTNNa2k9Lp4P17mJXTIHnecsBCYQrF5wSYB5bGEeoAKwZkzEIINo5jjCHBudwJ97jLmCxd3TnsNQwOxhO/A5wT6nGBOgAA99eUtQARTC8UKRtAcBz6a9a9zOouxMwtDodyqCW4e6/hUkK3Mln/bIgx402Xs161WQz9nOU53e9wNQCG8DvCCWYjyZl47nIcKCcYT3oCUBiAk7t1xqYBCIDMejYTz4dPCSo8Vx4s1MMAgunqNBQA02NX8mA1AFQV1NMATiwawBAkbfZ0FcRpxKmEpw4HVe+h+DQf7e1X4H6RjkJeoobE+Cch0HBcgnsrlUupeOvire+2DD8b97htyLBgvBau/88YwPu+j0vETvNZDSOvVa47BxZvbSWeiAcGLPa5VORi1zrrMklnvxxGwAPqIY5fCGR1rOBfqN8roegFTT5dJmHAlri76mOeqHLtCXszYG6lUr8X3L8y4JuNJ+fWebhm/QEf0YYy40a22AAAAABJRU5ErkJggg==">
+                <vector name="origin" x="14" y="17"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="16" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAAQCAYAAADagWXwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAG9JREFUKFNjZsAC3r17919JULABXeo/SGL37t1gjCz5HwRgkjM7OlAlsekA6f4fKhgKxxh2lRuXgyVXdTCgGAfWCZKESmBK/n8n+F9JSQkkgSnp4uJCZcn/MCOx2QkMFkHcLoX5EatL8UpCdWD4EQDw2myPMgrBdQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="15" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingT1">
+        <imgdir name="0">
+            <canvas name="mail" width="18" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAcCAYAAABsxO8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVxJREFUSEudlAuRwzAMRFMIoRAKpWAKphAKoWAKpWAKoVAsoaC71WU9sutfLzOeZlrpdSV59Vj+90iR9hhhkFAmCZ7ruuQ8T4kx1mIyrgYXIE12i9PPVwhy7PsYdDwPTbhhqgQQHoBGigQQnL86VolhEb/6DDStRgFvEf8SWf2lMKuo0r+PnqsaVXFDfPwepCWk0u6ySjVQNlKkSlAWYWVvwr5ozBC0bZs45xQGCEFIBgS/4/RASQ0gCjNTIwCwkSotJ7ighzAAAaEiTg5KW6o+QFRBkO3XFAhqkMzLyN7Y6XVBnJhVUr5P9YgTQ19Qv4WwV/a77uT2X0cziYZlsoVNQ4q7ouqmQZ3ADNRVA0hRknXzPIgjb/xbuvU9eySDdsyYtkLPsGoJ2KNzyRKIt7umXEF0eqs0eIy7qrWPMlBnaWWqqorsEpvpE1exhWU7aLD5stiqIlphtD5bcT/8LRd/zXQqrwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="7" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="12" height="17" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAARCAYAAADpPU2iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHFJREFUOE9jYCAM/hNWglDxv9y4HKQBhvHqBSsG4VDB0P8uDC54NWEoJqjh/ztBuMkEFbu4uPwH4VUdDISdoqSkBFYMokEY6mGcniVNMbLphEwGWUlj02GeJMqjpCgGu51sDcSEDDhCiI0k9NgjKt0DAPLKbAwEmvTfAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-6" y="23"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHairBelowWeapon"/>
+            </canvas>
+            <canvas name="mailArmOverHair" width="12" height="17" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAARCAYAAADpPU2iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHFJREFUOE9jYCAM/hNWglDxv9y4HKQBhvHqBSsG4VDB0P8uDC54NWEoJqjh/ztBuMkEFbu4uPwH4VUdDISdoqSkBFYMokEY6mGcniVNMbLphEwGWUlj02GeJMqjpCgGu51sDcSEDDhCiI0k9NgjKt0DAPLKbAwEmvTfAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-6" y="23"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="22" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAeCAYAAAAo5+5WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWJJREFUSEutlg0RgzAMhbGABSzMAhZqAQtYwMIsYAEL04KFjJft9dLy1wDc5caO8vX1JaStqvJLlqGIxy4FzvMs0zQ9AlcILkLfwyCIq8qjQgvsu+4eNNRBbADYVq3GZaW/ddcyDlUCJ/gqXMaPSHiL1GFO4LfBhIZxHzx0WnKusos25FYAxmiaxg9G0vpXr8EEYhLAbHhVK8yCCcWvVe1NYgSjMhBQSVtsAjGJB64QAgHFva1pwt1g+ti2ywexxBGY1pRUiComdAtOr20ib4EB3KoOT+klqq3fecnxf4liNvBVEgGhNV4b7K4gHTrakjwLuQteQf9L1UnsZC4LcqXZywm8FLynNN84o+pisK2Ag5cS38/gsZuhVs8G4zk/97PxSZssAWN16ILZXrhq/rGroeEUgOF78s7eBMkgD3xrAmvPqosVqo5fKvt37vnvxPPf9s8SsnNwo4Wbm+zhQ+9J8AvpOytHKObCmgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="7" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="14" height="11" basedata="iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAABPhbxiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHtJREFUKFNjYEAF/4FcECYagDWECoaCMbGa/7swuIA1dLh0kKQR5CzqaP7/TvC/kpIS0U4G27yqgwGsycXFhXTNII1YNMNcgDfUwRphmkG2g5xfblwODkAQjS++4JpBBoC8AIsuaJThjWuw82C2gzR3pEEwsSkE2X9gNgBJA2WsDrnm6AAAAABJRU5ErkJggg==">
+                <vector name="origin" x="13" y="17"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHairBelowWeapon"/>
+            </canvas>
+            <canvas name="mailArmOverHair" width="14" height="11" basedata="iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAABPhbxiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHtJREFUKFNjYEAF/4FcECYagDWECoaCMbGa/7swuIA1dLh0kKQR5CzqaP7/TvC/kpIS0U4G27yqgwGsycXFhXTNII1YNMNcgDfUwRphmkG2g5xfblwODkAQjS++4JpBBoC8AIsuaJThjWuw82C2gzR3pEEwsSkE2X9gNgBJA2WsDrnm6AAAAABJRU5ErkJggg==">
+                <vector name="origin" x="13" y="17"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="35" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACMAAAAZCAYAAAC7OJeSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZ1JREFUSEu9lg1xxCAUhHMSYiEWagELZyEWYgELtVAL8RQLtLvTffNCaSGFXGYYbjh+PvYtDx5T25eybo+2YWN7ASIdx5Hwod73nW1jl/l9Ni1GAH0CeY8xobwCKD3n50kJD7GtK0HCFF4HAyAUhASLewiAoOD/u9XhItvbxiIo1QJBHdcpLctyK9AJJgcqwXxEmvkWQ5saUqcEJFVQZyEbCvUvGAHd4aME6dMxs3j/oB0FXpEqeehGh42LqRCKGW+2NiwIFUoe0rhRPqIhpY4H02/BAAgKyUO+7wiYFEKwI4sQQRG0qV1h8iEDhO8zQh0LxfeuqI73j0BKagFm/crQgu7JQSkGu284ISbOJy9BaFGpgzE94TKQGoQUK9S4dgmRh+uqd2hYnRiEwvsmW7j2cjCgbnWUbTtzRTcQQ+VT/1V5M8lOvtFBcCrXFJ5+3Na9QAy/y+LabCuU3dp6NrQO/GOr9CRAoL6PQMvcthv/nulUiafNQ/k7rwZlFyXijXQ/AEbimR2uHBh7mA8EMSBl9s6TWz0IrR38ZjnmEwn8exsCvZ1WAAAAAElFTkSuQmCC">
+                <vector name="origin" x="10" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="15" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAPCAYAAAAyPTUwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHRJREFUKFNjZMAP/ocKhoJVrH6/mhGf0v/lxuVgDNTwH6gQhLECuML/7wT/r+oAK8St+D8IABUqKSnhVwhS4OLiQlAhyE1whVQzFWwtzHqCpoI8RIxb4eEJCiaCppIcAaCYIhRb4OAiJlqR45ooU1E04EtZAJ7Oa0XE1Kp5AAAAAElFTkSuQmCC">
+                <vector name="origin" x="14" y="6"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingT2">
+        <imgdir name="0">
+            <canvas name="mail" width="26" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAdCAYAAAC0T3x2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAa5JREFUSEutloERgjAMRXEEV2AFV+gKrMAKrNAVXIEV2IkVqj/ye2mBmqDe5Yray2uSn5Rb9/mkbeVyq77/5Wvq+z6FEMTwvIFr+BnMvL8AOYEpdO8DbnaQmd3hBKYjAzCt9xRD1CfmMx0U/wFogmETgVjn2AmINtyHBGNq4Xhd14QP1mVZ0jzPJhiFkYGAEYAVzrRzQPAb7RmjC1YA49gVtSCsBhCCA6k0WkUl0i9ALD4ca5uGqdiHbCgVm1rkFKZVh2fWkBA3iKmoHZ+BVC/aU0dnOKUosaoZ/1eKNKVJbxLHNE4OpAOwGvgTCE7RuJwYjIj9RiB+tzTrUagSiQYBSOkSoBvcC/oo7D2CxnGUaOiMIMJQmysRCQBOAYAxXQAQyEnRUFtTCLkOGqDTspuBlfIsQpC8T49JaqKVxV7QkDPlWeojEA5OpR7daLtrpI7QBfpygeUa6qjcI4ZRGS6vfEEyKks0+abUoC+wAuSByN0D+Xqj8qYtR8V+4ZhpnFYOBrs6euoXkVbzHWXAfCV4xnvuP7aGQUge/8XeDHPU9zoMdXLU9zIovzG1ru8XLrqBrgTUj2EAAAAASUVORK5CYII=">
+                <vector name="origin" x="11" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="29" height="24" basedata="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAYCAYAAAAGXva8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYNJREFUSEu1lgHRgzAMhZkELGDht1ALtYCFWaiFWZgFLEwLFvLvhb0ulAJtj3HX47Y1+fLSJN2tu+6RxNXtOtddB+dc1q/gmedZpmnK/d4UgzqCQzh+hGDhvwECRCUALh96eYYlEHzHtwmoSR2NJLgQFSrsJeIfIr2fN+BP+ouAaSGsgL73MgyDLqgj0D8XqOucLuwrhapBZnNMYRiX4oFiLKbWAmugMUITpQKcc1EdK5ZQvLGfCpuVwgkUAJYBIt2aSoJTKLKBhT3FKaZTnh3eifH3TN8BEgoI1oHdaVGt+s/sVsfIBJzblrEF1qL2KCJVxiKyqjTl77TadNdUcTMUkJ9BY3o/04hn2do6Z4e9KRabYg6Ny880bSULPWizMzG7v8s4jtlhwaGBACy4tE/3iHvAdL9CEVymv6vVxt4scHaJWrn/3bUVKkZbvAySWV6sNkIrm10DZcDmBtu7PlcBqWHGuCTqDZjXY5ExBgLvzxpDVra1L63q9AIoSlGiZvUP8h+Jiy16gmF6BQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="15" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="15" height="6" basedata="iVBORw0KGgoAAAANSUhEUgAAAA8AAAAGCAYAAAAc2cSCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGBJREFUKFNjYCAd/AdqAWGiAUzD/w6Xjv+hgqH/lZSUwAbAJXCxXVxc/v9/JwjWWG5cDtYMsx0sAJKASYIUgjTAMMgWEF7VgWIR2Nlgk5AxSBFMA9R5yK5D8StBZ+MKGQBMq1LQmKrH6wAAAABJRU5ErkJggg==">
+                <vector name="origin" x="10" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="34" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACIAAAAZCAYAAABU+vysAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZFJREFUSEvFlgttxDAQREMhFEKhFEzBFELhKIRCKRyFUCiFUggF92Z64+75rMRR1mokKx859tvZn4fh+EqPKRj/fqV1XQXTHWjP6rRtG2HiGLurY622LiAELtzDELrDZKuf8UDLfwnGdF8GggKkNww3kvUZ4Cul+JnSGDfCCATP0zR1c1NawpKBsJkg4r0Ogjk9Mor+B4yG3FJTQ99MALtlFEFKGEHhO1wjt1g4/eepDjfCgBo1dRAbFsLGjaerGIQYIQTCaOBdEFKgDF7966VMVgWbl4NB/HSh1BO4YL1AUNC4GV1gYKCOVFGsCGKeZ871VIUpaYPye/1710b2DgCBeKhCAC1aWlgDUFHzVOUQwJb+4pmurMGcjZWXnlJIe6b9X4Zhvbh93HKAnrXEtOsMI4OWub0NvIA4nDly5tgMM+7cPelREaniAcNjxCPdta7WbgGiayowV5oZYwxrql20AmUrVD0d1GFWWSCr/p5Cub+gqJ0JtoZj/purjhqlTdsrrqmx5e5+BNFg2OUpb/XpB1fLbI5DW7VSAAAAAElFTkSuQmCC">
+                <vector name="origin" x="10" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="20" height="16" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMRJREFUOE+lk4ENhDAIRXUEV+gKrtAVnMUVbpZboTt1Be4+sQ3EQok2IcRIHvCBdZk/EiHrPHwScWwH1VoJ/h/a7DkXsFIKG6AC/AwK0PezMOjcT/b4vqp1oV4QQ6hubDlnSim5UNYJz8nM/wBqQAvKMLQDH2hHQUcFKH2CGnWoVYCCQifRjtxDOQTW05s8ayRFB9QB3zqz9O/tSPGNAYQXXk0U4LaLgyosSYY72mVoS/36Uq40Sq/IlUTu8v0dD7JM9foBs2HQmNmQYP4AAAAASUVORK5CYII=">
+                <vector name="origin" x="9" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHeadOverMailChest"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingT3">
+        <imgdir name="0">
+            <canvas name="mail" width="22" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAcCAYAAABlL09dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpJREFUSEutlgGxgzAQRLGABSx8C1jAAhZqIRZqoRaw8LVg4cru72aOm/ATKJm5gTLh3WZzOdp17cO2qYhbhy3LYs+UvoKXXrZ1Xb+CGwbUfZbNq4e+UmdppiXNthCKAdDfTW8AyYapnwgchuEcGABCAfw1m55m/bQSPnYj4wqcL6UxESTo9LoRDLhs8GqhGP7Kilavs2KAEViBLPBQgWVLrbBpAZQiIlxKcUUI6uCHVcIlKpjAVQaeAxg3EWDFUQnuFPskuOeGBmsKqouu7DyGYg8HOMJbbFCm7K28FlBJdPJgC+5bT2BWHRVHa/S7FQzlVHIE8s/PQAkex+34bhHh8fkZsM3zvIP6LodESngHNG/sFfCR0liXtOeMah7jhp3encxaudnj58Eyq038yKcIvfNfI8qdrLFbUQTAaFRK4DY521eaUO2EJXg84jl7rUuFbDzOUKzgF8h9aLNnYVk11bkMfV+J9Z0b/JXPuz9EJTW7/xKtco/mvQFBb0aBF2OU4gAAAABJRU5ErkJggg==">
+                <vector name="origin" x="8" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="13" height="12" basedata="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHxJREFUKFOVUYENwCAI8wVf8BZe8Cdv2Qv+5AvMNjPBhG1IQmKgpUVSCsQYQ5EeFMWVW19neCQWvWaIAFDv3bVi5QlaSnhfjTZDoTVXbdLmAtnd7W0KVURESylnRBBANIohu1SEVSRsm3N8DiB47WmIvx9EhRPCdpbHHms3WhCCBxuRn6kAAAAASUVORK5CYII=">
+                <vector name="origin" x="7" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="26" height="22" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAWCAYAAADeiIy1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAUJJREFUSEutlQ2RwyAQhamEWIiFWsACFmKhFmKhFmohFk4LFrb3tveYZdsLgTQzTDKlvI+3P3AJ+4+Y6Uvjv6emJecMmAWeEvSLVRyQGKKOb8C8iOiTJ3msoYC+AbPheQF+RNJdZEq5ggF8xpmkKcm2bQqEGCHpUYPWJcg8z+dha1wFg2HzoSPIOOsuEnVFEN/4jcUAcbghDN+j7jRsGHBEV6UoYtQ5AvgeyVslEn+F/bAgOLPueovkzZWFwQVde2cjYaxyhdBR1H77DYyAcEqUXEGAObMuAFqWRcM7WhhvAhbwlwsV97CePP23Szap7ZsK1uOqlHTHogLrWBPkdr1pg7rOb3V/VSxH+0phBLorYu+M02jYtUfypYJcZKFo0B0BjcYHWCsiL1F7HB3Ypa4hsPfS/FRxreu8d4Mtvd35aoNPH13KRnz4sYkAAAAASUVORK5CYII=">
+                <vector name="origin" x="8" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="21" height="14" basedata="iVBORw0KGgoAAAANSUhEUgAAABUAAAAOCAYAAADABlfOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKpJREFUOE+dktENwyAMRMMqrNAVvFNWYIWs0BXYiRVcnRWQE0F8DRJfsR9+F6eNP+pKE9+2rtTWmt1aK+D+gff8DjxK+Qvai1dTKID7Z9dvsUnDaRWH0DOgiGjO+RE8gDfFVVYGvIGnU48pycwuYBfHBW4qsonpRWqngvWgHjmjF3eW9UwtWhmDAfz08wZ4pTV5hdsGr8WsT6TTv1NaLMzXhVm9gaKHysvDfxEXpKJ8MwzYAAAAAElFTkSuQmCC">
+                <vector name="origin" x="10" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHeadOverMailChest"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="34" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAACIAAAAeCAYAAABJ/8wUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAcFJREFUWEfNl4FxgzAMRckIrMAKXYEVsgIrsAIrdIWuwE6soPBVvk4ohiTY0HLncyCJ9fiSv+BW/R6yzJxu4fyyU+m/ernXdwBFqMsgVJF/AyJTLT+DqvG3ijRNIxwOhmB+Pj1VEUTPFygZx1G+h+ESxVaBCTBNk+DADJgrUqdBcNcI6A9C4LsrVNHt6xWIAH3XSVu1p6uiIBhQhDUBBQgACIyz/UYDwE/oKQTDTAjMQ1f5eiq+i1YgESYFcpbvWGqoSgqGamAOaSpmhIdACFO6btTmYfcYvl5wHQMmRzViukqmytwVARVI3ay26wi2VbyJFpFVyKaK7z/8TBDAQBnWzEavygKxxwIo0bazd8wDgZganyZc978pqYo6J4OxXgiRUgkgHVx3AXbN8pAiCsBF48IpAAakKvhPbopeArAbJ2ZNZSpFn3Zq2xmQn/JuBNyT2mCOqiJDOze25eE50wuyYFYgBRxyVScseqfwbgE/dd1P8xtW18L37hzeEnb7knVftv9372LnFhUIEEi/L4FXa9td+GeRTHV0V3kg38P2gKzpIb+w8AIgFM1K4N3NEd9nDjnkxp+sl2Xu0CJMTy9sD5wvoZ8/o9QcAAAAAElFTkSuQmCC">
+                <vector name="origin" x="10" y="15"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="2" height="10" basedata="iVBORw0KGgoAAAANSUhEUgAAAAIAAAAKCAYAAACe5Y9JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABRJREFUGFdjUFJS+s9AbdCRxvAfAH1lA1NovQmBAAAAAElFTkSuQmCC">
+                <vector name="origin" x="3" y="-3"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingTF">
+        <imgdir name="0">
+            <canvas name="mail" width="19" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAhCAYAAAA74pBqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXdJREFUSEutlQ2RwyAUhGOhFmLhLGAhFrAQC1g4C2chnmKBY7e3b4DSAOkx86ZpJnzs+2VZyhXTX9jHK26PjfYfQIL2r/1jYPwJyx1QMyTROUfghItNDwha15U2CLOQ1AIMNghSpulJLeAuDNCXvaTL1Vl1rX0ExvORB/WqeBlblFLTVbxU0XYKt/jOLe0qsAzFtM7zVGaL3+8Q4nEc/Bagq4NZuAAJWP8CBGAPxOzgpOCep+cLB8yAChiAYdupQuadp6IRVYQho1iEJYPban5Agl9ovdZjrckArWGAqO16rcfTpAzQZxaS0mSqp2FlmmdQ9E6ZYtaLm9UZYgSY4qWYQdUwzNxMILWXXKzd7CWhCG4e6Kvnd4OBMO+9WZ7d/Hk4o9gE4AioVx428PJRfsfN/OJt3Qs2PUbdLID5BJZLrXej179lWL2oWE7eZnYeCxjF+lcG1l6T9wWBBgEQ3aAuuAOze1IKM5Wj4Wp+151jM/T8cnnZ9wtRh0wVGVNSAAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="9" y="19"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="backMailChest"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="21" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABUAAAAeCAYAAADD0FVVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYdJREFUSEullQuRwzAMRFMIpRAKpWAKpRAKpWAKpXAUwikUfFlNViP7rETOeUZTN5+n1cfKY/JXcW499uu9e7h+usq6rmLbtuke/wFMUyrv51sMe5jjSJ1UQEAJ5q8Fh6FQQJUW+s25VSYKf7Kkw0vXpGF9Xp8CCOD47YWbUirzPIudQuG1bM8CqLUelMBLKB6AAqwWyvyZwlChHzpVAijgQ3Gr8iqHLHmVy5yyKCUYEKjLyyR2FW4FZbiACnhXymIQFikMoH9UAggHLZRKrxpdoJrLXZmufW+rC2C00QVqX7Z7OINZYORIKhS5W5ZFcniE11UaCb2CEuzBo62k1WfYAFvVbJ9o1dvZJ2G3cLaUvRdNgXVQ5RRtxbDvqq3gAHIQyww9ptIdpVI8tA4OgO3N6KjzvikCtCqZ07tquyoP71rI4faSM+9/0GQmcByO5FePp/NSFc0Q+ORhhTZ592oUvi4p6BQ0DOg9qGrZeiNpOPNcqR3tCLef0QmyzHH+V/zsXc5fhv8Lii46O3NEZQ4AAAAASUVORK5CYII=">
+                <vector name="origin" x="10" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="12" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHFJREFUKFNjZCAM/iMpYcSnHKTw//93gv9DBUPBGMRH1wAT/K+kpATGLi4u/1d1MKBogCsqNy4HmwhTCFIMYoM0wE3fvXv3f5BCmGKQIphCkGKoQoRTYO4DmQJzBlaFMMeDFMIUI5mG4Tlkz2JaiyfsAE+SUvSrkdP0AAAAAElFTkSuQmCC">
+                <vector name="origin" x="-2" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHeadOverMailChest"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="26" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAABoAAAAbCAYAAABiFp9rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWpJREFUSEu9lgsRwjAQRGOhFmoBC7UQC7WAhVrAQi3UAlpi4cgebOZaCpMfZCZD6aT3snebj3N5TeIw9J828YPX3hN2FiyBesIE7TXz9EtFvUCyTIuEEBQmYZB1cbJtm0xu0t4rhQpC4PUu4m8igw8KI4iw1lrpjBGYEL++g5bZyTiOTcZQEFQxbQqN76AEAEKaQQgMEDtrgvcIjk5gizE0ENSgE0aITiKqssaordWz8FN0WOx0HuA2hT2MofVQRbERaEGsV6uqnRks6EwV0gil1emzzqMBCGKdrPtqHaizRPqsMazrLJzPpap2dTkLyHfHtJaAZJ5nBR1mmf5bMMZhfKmiTxAecm+7OQB2YrmK0pZTUFhVQ1XZIDjtermqEeCozA/rVBF2OHO+3ROqVKEeuyM7czEmQ5jxWZeYtI4y06cTxLpjJrA9mavA11tTbo1sEP3GHvcG+JMr2n9h3MZ4UheUoVj9cZG7B7a9+87KQPSvAAAAAElFTkSuQmCC">
+                <vector name="origin" x="8" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="17" height="19" basedata="iVBORw0KGgoAAAANSUhEUgAAABEAAAATCAYAAAB2pebxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKdJREFUOE/NlF0NwCAMhGcBC2jBAp7QMgt4wkK3NqPp+Kd7GQlP0I9r78Jx9BfcR7g/LfDGZ5AaBsEFCVIp+hEEkoEz0HBVMwFrLe9dCLuBEOccgVYgXCgt3YaglQ07ScWqGgLMILO2CNBx4qVmBCIbB7J7oMr2We8VCJWXrjFESC5foiKZnxJUOZFS6uWDQa008yHOBy/EGHVxl5Kfl1RfABYtRT3TL3URxDwjCVfjAAAAAElFTkSuQmCC">
+                <vector name="origin" x="12" y="24"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="mail" width="36" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACQAAAAZCAYAAABZ5IzrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaFJREFUSEu9louRgzAMREkJtEALacEtpAVaoAW3cC2kBXqiBSWrYXXCxxwOFmFG48QR+LH65dbVX1K43upvjfUEiCzLIriwzvOse7HH/P80HqgQvAjzk7PAvgUlj/6xUcSDTOOoMKlLXwFSGG8IDwA8CGBg8LtaJYOZ7pPASkDCYM1jJ8MwXAr1B6iE2gN6Zk3wy5K8CorqYC3CFw52CohQV+SVyo8wyNKr+XzCPgy5Q3XKMEaH0BIVh8IUTLtir99hOBRq7OUUfaLySlJKBuUheJAHAhSUYk55nwggDReBWNKAwh73GTIfPvh6n1aVFIQHu97yO0LWfCKMV4KfATS+O3n5Qp/OPM0F9ptVZn0oHl4esAfCF6BKuKc1dDYGjkAIvLNCCAUpQ3c2l6ySEBaf2MXhRxEwqGaVcnoP0XV+NfaSECjxQAEdd5NHrEin9pHS+vumK0dAsXrZ7cviqaHaVJ2Dahma2j4Agyj4SNQqZjPM/x86Wy1OhQ2Yn5E1YDZcEX+MhgAgsllqfFpE1qkDYQyK/ygaK7omDat9/AvrTS+8+oWZr5vIlQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="13" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="1" height="1" basedata="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAA1JREFUGFdj6Ehj+A8ABFYB7i0AzjUAAAAASUVORK5CYII=">
+                <vector name="origin" x="3" y="-10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingP1">
+        <imgdir name="0">
+            <canvas name="mail" width="18" height="28" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAcCAYAAABsxO8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVhJREFUSEudlAGRxCAMRbsSaqEW1gIWsFALtYCFtYCFWjgtWMj15/YzwBXCbmeY7WzzH5+E5LF890gje1gYCFqR4EkpyXmeEmO8i6m4GtyAVOwWp7+vEOTYdxvEnd8wdQIIF0CWI93xeB4qlrRKDEt2Q9CUG4UA8CPiXyKrTwojxK/ePBISpW4gJMTHz0GC3QDKri5g6QauZhypCMciDKIyyWH/A99cjbrs27aJc05hgBAEMSD4jjUCZTeAKKyoGgGAWa70OMEFXYQBCAgdzVTuH4guCCrzNUp4BsENxLyMzM3sXco5Kp2071M5YsWQF1SlhDBX5X/Dyu1XR1PEhqW4hE1Dmrui7qZBg8AKNHQDSHOk8srPg1jyzm5VRXuOcoMOmjFPhVHDVp3ec8Txwtt9F6cgY87k74w1QQDOuOqCsBNsW3nijGrjqhlkTL4q9tYRW8Ean724X+ZOG0ijq14UAAAAAElFTkSuQmCC">
+                <vector name="origin" x="8" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="23" height="38" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAmCAYAAAAvDACoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKlJREFUSEvtl10NwCAMhLGABSzMQi3MAhawgJaJm4UuvdDs5/n6sKQkDW/fHUchUAp3KBd303Rsw+BeNB2Ap0zMUoQm8ALvdefC9awQoINFRK2OWbiODdp719Yaam0mZSMBNgE6+Oma6diWHefaYoiIA64dTM861LW3Hds1Ivn0NPcWDIWv44fjzu5vsMPA7pxygSQkE8gEMoFM4B8J2IM9zKn/BkIEIuEXEbaGnFqhfnwAAAAASUVORK5CYII=">
+                <vector name="origin" x="6" y="24"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHairBelowWeapon"/>
+            </canvas>
+            <canvas name="mailArmOverHair" width="23" height="38" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAmCAYAAAAvDACoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKlJREFUSEvtl10NwCAMhLGABSzMQi3MAhawgJaJm4UuvdDs5/n6sKQkDW/fHUchUAp3KBd303Rsw+BeNB2Ap0zMUoQm8ALvdefC9awQoINFRK2OWbiODdp719Yaam0mZSMBNgE6+Oma6diWHefaYoiIA64dTM861LW3Hds1Ivn0NPcWDIWv44fjzu5vsMPA7pxygSQkE8gEMoFM4B8J2IM9zKn/BkIEIuEXEbaGnFqhfnwAAAAASUVORK5CYII=">
+                <vector name="origin" x="6" y="24"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="31" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAeCAYAAADU8sWcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbBJREFUSEu9lgGRhDAMRbGABSycBSxgAQtYwMJawAIWTgsWcvsz/Eza60I728JMB2a35OX/BELX1T3kHQ7r0UOhx3HIvu+PJaAgAF/ramdct3QgUAoY1jLPem4Khr202ENbJ/APOvWTYI3daKuVctHj6GVbO4U+BZd17mT7FZleIv10BAl45dhXU70qVLUneNpCOP4HFGsYhiL41WazGWpoubcd11iAcpWol+VnSSUg4zhaQMChEHux6AaBSIDqUYYc64Ng5w16YwyO4XABYCr3XY8kchKwjoUaBAQ0Acb72pQTjHOq63PhGhQrrptzgYNC9/gEY3isvqT5WKdP9VKb6QzPPgFfd/ZCTu1zxqC548G+7r7ja8O1RLSedU8B/W+1lFvtU8C4UUvqnWO7wef3+PRPhO+FpqpjMJ8KJtCi1lrvD+CgHHSkZq3vwJZAE7jv7gtVwYCpod7e/3jMMgJqApyAGfsvm13WcbXPpYxgCsas4EdG4lWd/XSVwoMh9G0SNr8jJXfZa4n4DcChU/KhoSpoIwNkWO8T0/u/6QG7uTTzMws/Me8cS/7/dQAf9Q/D9X7RotkJzgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="16" y="15"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="14" height="11" basedata="iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAABPhbxiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGNJREFUKFNjYECA/0AmCJME/ocKhoIxKZr/lxuXgzHJGkEaKNb8/53gfyUlJdKcvKqDAazJxcWFdM0gjdTWTJTzwbbCbAb5GxZdILojDX98g22AGQDSDAoDQpqQUw/Micg0AwCUnF6R4pX4LQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="12" y="18"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="35" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACMAAAAZCAYAAAC7OJeSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaJJREFUSEu9loFxwyAMRZ0RvIJX6AqskBW8gldgha7QFbyTV1D7dfmqrNIYBxzfcSQY0ONLSL4NdY+Eabe6ZX1nAUK2bRM86Nd11bG+Zv7fjcYUgA9BPnMWtHcAyX2875TwEMs8K0ga0vtgAIQGl8C4hwAIGt5frY4aWT4WbYRiTxD0eR5kmqZLgXYwEagE85U1mC8JaFOD6pSAqAr64LKuUC/BEOiKOBJIL9uozccPxtEQK1Qluq632zQGYBBNoTTjjTYGg1ChFENc1yuO7JZ4ABpBTxgAQSHGkJ/TA0ZSSqYANgQQxjhON3mXAcLP6aGOueJxqt+y8IgfgngF+Bsw80+Gjod5pYZJTlZvdENsHDcvQTDxUR2saXGXpfYjiKiY+w8BFCK662zsqDt4Y+AKSl0wfqS6ATWpAzcx2zbmimYgjRmf+s/KGyTbxQ1vXnDrU5X/VOtWIKaGWOdqoaxq87OhduGTY2pMAgjqew/U7G01yX/PNKqkt81D+Zp3BGWFEv5Guu8AQ/EsHM5cGMvAHUEMiF8GjTf3KNVUv/eH1UXfyl12MSo5o7EAAAAASUVORK5CYII=">
+                <vector name="origin" x="10" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="15" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAPCAYAAAAyPTUwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIBJREFUKFNjZMAN/ne4dDC8f/+e4d69ewyr369mxKOWAaT4f7lx+f9QwdD/QIUgjBXAFf5/J/h/VQdYIW7F/0EAqFBJSQm/QpACFxcXggpBboIrpJqpYGth1hM0FeQhYtwKDypQMBE0leQIAMUUodgCBxcx0Yoc10SZiqIBX8oCAHLhcqpYrBBJAAAAAElFTkSuQmCC">
+                <vector name="origin" x="14" y="7"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingP2">
+        <imgdir name="0">
+            <canvas name="mail" width="22" height="37" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAlCAYAAABGWhk4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAX9JREFUSEvVl9ERgjAQRNOCLdCCLaQFW6AFW0gLtmAL9EQL0V3dM4BAEsOHzNyASt4tm9wFnfsc8XmJaHrE6/nKeMObJSD0crowWio/BBzjeIr34Nqr9d7HrusIb2qDwIA3BQP4/3BM6MaaTn/Lso+TiAA4+MBIEvB6GIY4jiPPiFuwezarloO1/FAwOADSWUBBc8HKygSqRkC/AUuhBhcYZ+88H1uBz7UtwBQrAWBp1IAXUKk+BAx46B2jpgVwkHp02lIB1JKsskFrWXAkQuD7WsX0VpDX4n21VUHlcaliswBAPbba6nwCS+DHgVnGb7WyQZOmUq+xw/xMbZhbUjOBbPpp419LoO9zd53Y9/23HYUTOU/6K9SaEsBIXLI/rilNmzcVF4PTdbvyiFRaAma1oXwzGov5n+OvgTMqaVKNe3ADq5PtDGABqXj23lAnqlFZG/DJveofa/fTX6iQ6h/gi/drqkz7w54lmnTtiSj1rTElb/b2pBkrqvhvyELIA7JLc8vAdQBLAAAAAElFTkSuQmCC">
+                <vector name="origin" x="9" y="20"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="18" height="7" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAHCAYAAAAF1R1/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHlJREFUKFNjYEAF/9H4JHNBBvwvNy4H01BMjCEo6v+HCoaCMcggEAaxCRgIlu9w6YDrgdkKlkA28P87wf8uLi7IBsLZIDlkQ1Z1gH2BAsCKQRJKSkpgDDIMhNPS0sAYxAaJg9TAML6ggNsOMxCZRvI2KeEJD3y84QYARxNoy6pKW9YAAAAASUVORK5CYII=">
+                <vector name="origin" x="17" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="31" height="31" basedata="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAa1JREFUWEfFVwG1gzAMxAIWsPAt1AIWsDALtTALWMDCtGAh4wLJ0jDe6Kfd+l4e0FHuLkmTrmleg5Zb2FcHg97+br8B79ueYD8nQHN7xQOyNjt8NMaGuq6jEEIuAX5/nmeaponuMeau5zxjcEfAqnmniDAALNcriZsQQBiQC1AEAPfhHfAV5bLNGES8gHAgIR0BBcZ8aAL/jveuKLf73LucP44hhPAMYLGS4L7gLMFtaXwQtf38lgDAQayU+sQTrPhO1I8puHggDmu4qoCz26F+ywMpUHgWYFxrqOeYe5P6AMUARvxrxJ5VWxNgUV4z+dZsXwjINsT1W5mvLreuBhkbilrqtft59TYJBbxG4iUE1jL3CoPE3m257C53dKLhGHvlNgf8fek9z20XZoFkzs6XBubWOwzDDhzznlBp8B3wBsAltabqI2BtxXIQKV3fd4l24FJVX9LlFEPkU82HpqHHsFLqFfjk8Vq9VKK7KTiq1wl3cmcDUenzJimz/xHlgvN2tASukGAVMKnbJ9QzAZistaedk+vZS9rDEcN/xDFZnwOse9gWk+zAbV6wwE/Wx2zBvYFTwQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="16" y="16"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="15" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAA8AAAAICAYAAAAm06XyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGpJREFUKFNjYCAd/C83Lv9PujYGBrDGUMFQkGaSDIBrJFYzzIb/SkpK//+/E/y/qgNsI4qtcEVQCTAfpMHFxQWMQWwQxtAI8gcMg0yHaUDWhE0jKNDAAQDDIGfBbEHSgDOAsDoZyfk4YwUAm/5WRPsTeR8AAAAASUVORK5CYII=">
+                <vector name="origin" x="13" y="7"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="34" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACIAAAAZCAYAAABU+vysAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZFJREFUSEvFlgttxDAQREMhFEKhFEzBFELhKIRCKRyFUCiFUggF92Z64+75rMRR1mokKx859tvZn4fh+EqPKRj/fqV1XQXTHWjP6rRtG2HiGLurY622LiAELtzDELrDZKuf8UDLfwnGdF8GggKkNww3kvUZ4Cul+JnSGDfCCATP0zR1c1NawpKBsJkg4r0Ogjk9Mor+B4yG3FJTQ99MALtlFEFKGEHhO1wjt1g4/eepDjfCgBo1dRAbFsLGjaerGIQYIQTCaOBdEFKgDF7966VMVgWbl4NB/HSh1BO4YL1AUNC4GV1gYKCOVFGsCGKeZ871VIUpaYPye/1710b2DgCBeKhCAC1aWlgDUFHzVOUQwJb+4pmurMGcjZWXnlJIe6b9X4Zhvbh93HKAnrXEtOsMI4OWub0NvIA4nDly5tgMM+7cPelREaniAcNjxCPdta7WbgGiayowV5oZYwxrql20AmUrVD0d1GFWWSCr/p5Cub+gqJ0JtoZj/purjhqlTdsrrqmx5e5+BNFg2OUpb/XpB1fLbI5DW7VSAAAAAElFTkSuQmCC">
+                <vector name="origin" x="10" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="20" height="16" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMNJREFUOE+lk4ENhCAMRXUEV2AFV2AFZ3GFm+VWYCdW6N1vLGkjBQImhBjro30t+9Z/SIXs/fBOxHVclHMm7P9QWfNcwFJKvABV4DkoQN/PxqD7vHnH+5PtHBQ/A0L54BVjpBBCE8qe8DRO5m8ACdCDMgzlYB8ox0BrCRg/g44K1EvAQOFJlaPnUDeBfbY6z460dEAb4Fdlnv9SjpbvNGB44E1HAZZZrGThKanOaNEgQ718U55jjK/VWyKpr9/jioSurx8+dM6atgHGRAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="9" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="swingPF">
+        <imgdir name="0">
+            <canvas name="mail" width="39" height="26" basedata="iVBORw0KGgoAAAANSUhEUgAAACcAAAAaCAYAAAA0R0VGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAd5JREFUWEfNl4GNhCAQRW3BFmzhWqAFW7CFbYEWtoVtwRauFlvg/KOffFmCbGTNmUwkHjfz+DAzbNd95wmrW9j/evq+C/M8BzwY30FHJdL3W2wA4VmW5WtwB4jHzyPAEJCBn96/BVcwqJebc0VJgxqGITjnzMLSG5gCIrAGBxS3E0D8m+tcE/UMCgCAARQAaS/fhbEfozE435ucfcA8BWsBF1UhAIIAbM+4w5tzIhigfkMYn2sCjIsBAorWImujKglQ7ogE73w0U3UHG1/fgQNETW2yRSgcjwIgU9Wgnp+q/F7Jk/i/BqcJwjG+63YCFGByPJoAlJyYOjj8aRYrHM8swG5VTrOYkEwSKEcwKtcyMc6kPyhHUC0l+MbS0zprT+H0zFE5VRPbqEreqlyaEABM4bRo3w5HQIKxOzA7ubU8d3dlrdVCZiz7rypXGrfoFtmuAMfTNJl9CqW9uiWgKXUGlevB+o23HKpa2Y2KyRmLrbWl5KZS0YPVuS1SFYfPwqLOqsZ2hYIhATLOTh1kJlhmwxf8ah3kWOKUldOygXGj87KpuHaTXI/mRaIm1qHRC2CLHy4RMlWwVj27SrF0cIvhrGZllft+6ewZIIztine3hoCV6yhPO/1p2CTK7uQPkJDMpTnYpRAAAAAASUVORK5CYII=">
+                <vector name="origin" x="16" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="18" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAJFJREFUKFONkdENgCAMRGEEV2AFV+gKzMIKzuIK7OQKNVc9BNMQTPpje++uJYa1T52xuCYNAWIrEWmVUlLU25uybAjDBFDMfzNYcy97Ub02g/QAppjBFGKWBNHzeBJ1KzQjpkUPhpi1NWutLoT3cY5gYkBgnrf8gZCCSSaAnmmAAYQuIIsAwnzQylP+VhxuBv0NzC6NykhzP68AAAAASUVORK5CYII=">
+                <vector name="origin" x="-7" y="17"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="35" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACMAAAAZCAYAAAC7OJeSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAddJREFUSEu1lw2RgzAQhakELGDhLMQCFrBQC7FQC7WAhWrBwt69pS/dhgRCyDGzQ9uEzZe3P6G3rs0lCTe3Nq7LvABAbVkWmedZ7eE9fy/zcmFWAMCi1gBEqDfkhWXSj4bFsQAuLBiD4DvHoM7Yj83VEe+83H/uKr+9ALSu3svTfyAZptYwAQQwFkjBAPESGR8i/bgoEH53nVNrDsNd+6lT5zAoBcPiBBmfKwxBWsJorIdhEOec3lkxuBMGd8LGIK1gAkQEwtRWBRAyQlExqwphMLemqvQhLILd5kCgEgxzYMwlAFkYhJWhrYKBY+4ys6O1av4gLJRVBuOA4HitMgiDwmCHmd3oONUjlC1vQlCZK7ljEzXV/gIMw2NVAgiV+Y+qioGKYOL8ad1vviqJyRvC9O7AzJVYnVYwX/2FvYd5cXRn3gDO9KqqgzOU+DRNYo1lfwQTj9eUuFYVEhRJyF0BILYcTG7eZRiW+VkVAEQ1Mw3Uhmu3ilUVqmP6ziaH7JkVfybQDoz6YwT2lNsDKk1CDS0UorIWmL3I9qxDoPgANA5LoDZAPOEJQf8lR8d6KJo3OpTsyWQMyvCQTaVAid9cnpSosklS+96TUDj1V+fsOqfmH51/3S/h0AJv32mF5QAAAABJRU5ErkJggg==">
+                <vector name="origin" x="14" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="19" height="7" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAHCAYAAADqF3ZBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIpJREFUKFONkVENwCAMREECFrAwC7WAhVnAQi3MwizgaRY6jqSsZP1gySVLeve4Qgz7nzjWuBtHeCrnLFZ8ztmPtwQBuTnMMBGJCkB5ktSjSklFcxMoF/MYqgEmBCxAW+EgtILHBbbWxlBlWwFi19V/C1saohmFvkqXuQsL8e7ZO+Rb1zTYfaTF9wKZTXVJFt0YyAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-6" y="16"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="20" height="37" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAlCAYAAABCr8kFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaNJREFUSEutlgGRhDAMRVkJWMDCWagFLGBhLWBhLdQCFk4LFnr8LL+TKzTp7pSZDExJX3+akPIYvr+SmvpowegJpX/a9z3hwv14afnKXMtRQNu2iQ/uMUYXKo6wc/V8B+y1rhczVRKGie+4xhTXQRbAWBiC2DzOesHqNubVBfSb0vxKaZx3gRJWAM2cyMrPn6cACJtjB+AajpDPcEt1N2HXQ6ZCAGFQq0Pl87oMEoVXNuIEZTUg3gM2TZOYC6QjEgx1VAgQjO8B9VRmdVCIibpsCKLCln3MGYYqQEM4au4wwKiw3E9Vj5fEXIBUReBdckwgE5JDPlSydGoqTSAypsPUCvUzE1JLiqR+WRYx7hnGasByXJfOBaSd2W302F0E/4DcIyoqWhYzJ1EAXALLws6fF/bDqfrPgFa2TpkXYE1AVvkJ1PqO+wOhjK3KUZnD9jpN7ixOctqBunyMQ+Ldhc5O7vZCz4HZRjfC1qBZNM6xD7LuQJ473RT2Bsr/T/ew9QHWJTEMWz4Kv7GYWZaQCYTS7sCWPwhXIlTyUOuxhxK2MhHwB4p4n/ba3eXXAAAAAElFTkSuQmCC">
+                <vector name="origin" x="12" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="12" height="17" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAARCAYAAADpPU2iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHNJREFUOE9jYCAM/hNWglDxP1QwFKSBKE1gxeXG5URpgiuGaSBkE9hkohWv6mD4//+dINgWgia7uLj8B2ElJaX/II2EPPw/LS0NrBiEiVIMM52QYlDIDybTO9IY4CFDlNtBGogNGXAyI0kxWRqQ0jvBZAwAFp5vPOWGFUAAAAAASUVORK5CYII=">
+                <vector name="origin" x="-1" y="24"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+            <canvas name="mailArmOverHair" width="12" height="17" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAARCAYAAADpPU2iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHNJREFUOE9jYCAM/hNWglDxP1QwFKSBKE1gxeXG5URpgiuGaSBkE9hkohWv6mD4//+dINgWgia7uLj8B2ElJaX/II2EPPw/LS0NrBiEiVIMM52QYlDIDybTO9IY4CFDlNtBGogNGXAyI0kxWRqQ0jvBZAwAFp5vPOWGFUAAAAAASUVORK5CYII=">
+                <vector name="origin" x="-1" y="24"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="mail" width="21" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAABUAAAAZCAYAAADe1WXtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVtJREFUSEullYGRgzAMBEkJtEAL34JbSAu0kBbcwrfwLdATLTichtOfif0InhkPMBHr00lyHkPsKhL2iH3SjwKsTNNUcC3LYu93oPzQYAQCuq5r+c75Mrg8x6cvk7fDoBLAO2oNiA8JgzoC05AKFmKu2OAqCYI6wvR+BVylr1b8B1xBX1+v6h3gnzyUPP8uFPLMCofklAugBJd13Mo/ekewM7BBxAoLApRgheFZ1UaLZ1CqBMB6dVdKnwmD0mhHGNiBW39ROe4KJpR+d/2l+T5Rm0qFqgWIYeF6RSspJS8G517TBxAxGsfNW9CPQEBhgYIIjEA/FAI4z7OtMxCVqp9+vFG+wjS11vMO6g6A/cAiHHb34/AACZ2tVX9KOtUkCTh0XvsUyei1gCGYBv0JbqQfsgAbVGBVrcchp+7slKoUH+ed8OovZxuGK1BTrB2BcdT07yitVHcq3lT5BhPMKhdMXzDOAAAAAElFTkSuQmCC">
+                <vector name="origin" x="12" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="15" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAPCAYAAAAyPTUwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHhJREFUKFNjYMAP/pcbl/8PFQz9T0Adw/8Olw5kxTg1oCjsSGMAKcSt+P87wf+rOoCmE1KopKT038XF5T+IxmciyB9whYQUg00jxlQUhdQzFRSmoBAAmUjQVFgEgIILb5gixxQ0aomLLULhCg5bkImETEVOTARjCwAufW60GWhzxgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="16" y="7"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabO1">
+        <imgdir name="0">
+            <canvas name="mail" width="28" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAYAAAAiwE4nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZ5JREFUSEutlguRhDAQRGMBC1g4C7GABSysBSychbWAhdOChdz1QKeaT8hsDqpSZJfMvMyHDiF8eHVdSH8mGKXr7tlHNAMty2JjAx8d2LPKhlzQ9Pp6mTNcvG+OCbD/53m20QLNjt5TSEM32FAo52npEtYAROgdMDvWHfd9n2KMNjCHQzxXqIF+Uhq+U+qGJUNjWG2KRUa6MOCAEIJguBlnINdb5BtseK9AwDBuI2S6YECAQsTYIiSQm4SdwqrAY/Hl96kL4ViBmDMq3qex+ur4OpXRI/UKVSBgkh2X42KtER1gcIg7SwEgnhH2RIS72mWovZTrK8HoAavV0BP2ZbNogzFCT5c+BtRatiiNbuQ6pVs6WTtG+UgN2TCsn6azNG+NcicGHpBKYgvUgOqkElFef5BFT6+s7Q7YOI5ZyB3KtINS+D1EM7yAuW3tQKiIOZyZ2mOxNklDPUwCoUgl6O4I0lOkAWYbn+KUoerjdNapTjbCisCTbBF2c0y5aog08lSBT24814pK8U8QN2Oizj44durxu8YTQW3N1bdS+AV+Gne2pbvSrgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="16" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="12" height="10" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGlJREFUKFNjYGBg+A/FQIoIsHv37v8gjKQRvwHv3r0DawgVDAXj/+8E/yspKSEbgGotsuJVHQxgxS4uLmCMpBHDrRhOgmnEpwndFLhtJGkC+QnkVGJD8n+5cTk8QIjRBNYA00SUBvT4AQDmvFovCRAfmAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-5" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArm"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="31" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAZCAYAAADJ9/UkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZxJREFUSEutlg2xgzAQhKmEWsBCLcRCLWABC1h4FmoBT1hI3950M5vj6NAEZm6YUpL97jfchnNXltdu55a0vQWhyrZty+u65r9l0edtu39ZlefHXCzLpQDP+5MQlwKYMLzEBUHe6TnhXksdnV6KDI9gaUh5niYLM+/0FqKwlJLZOI5mkqomjkocAN4IQEHcDyB+Biji9F7Fl2nIsCDc5jmj8IlAmzhzqgAQVW8JwGdB+PvFAUBhes67VLzP+8/CWGBh11aDh/AOgj7/eMYC7S22Ik6AvN1NGADaBb4O8Bv/Sy00eV55r+KIRgSgqZB2axdnH7OYAKFFiP8pqkXo+r0PQDcGAIw1EIleJW7hVyGmIBL1Q6Yn/NVpBgAIRwIcLNP/GNY+bxE3UWzEzSjoN9Y5fgVAyeeRh/58l2oyaED4CJwds2W4MM9fxI6quBmgaqWzxAFFdcCwO5wju2WVOCZWDwDW6mzQiXg0hkvoeZp1AFirwuyj5PNZFkBUUbga4BACE9I7Z4NFp1n0UuPc3O0dRXb32dwoFi3zew9vjp6H/ciOJKoAAAAASUVORK5CYII=">
+                <vector name="origin" x="9" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="17" height="5" basedata="iVBORw0KGgoAAAANSUhEUgAAABEAAAAFCAYAAACjKgd3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAE5JREFUKFNjZCAO/CekDKQAL1ZSUvrv4uICxv/fCf4vNy6H41DBULAFKIIgRTANyDTIIBhe1cHwH6QZhsGGIAuAFCBrwMUGqYNhsCGUYgAQbWVYorx/KgAAAABJRU5ErkJggg==">
+                <vector name="origin" x="21" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabO2">
+        <imgdir name="0">
+            <canvas name="mail" width="30" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAdCAYAAAC9pNwMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbRJREFUSEu1lw21gzAMhZkELGDhWcACFrCABSzMQi1gYVpqIY+b7fakpWxQys7JKb/5epMmZY/m/p8YxON+XNMAKN57wQ8jzkvAfDEdc74CbFkWhWJ0zkXwPYfRdTtzKnjOc05BBMUzgGKEWbhMf5Oa+Fb6vt9Y13V6Dw4IxTHsE74w2vsATeOolkIZJumbFbiamxsBKGe4RwVU8Z5Jq+/xmlXIY8LNZJV9KNx8jmFT4EtkeIq0g9/AKcbmuXSBhQghNVBJ6ODeYMI4XgXZlStDO0TrAsAcFPDbwFCequT5PIYUlpTv5h1Vp2FelcNSMICw6oqx4lF2Wn6famBFAMiK4HGtcAfFCjflZIGAMhrVwMgrnLLhEIjwA8iGVB1MhwDbRsOVnea+mmLkk1B2Lebzzlr+2lYRAYa85uKKNpC9nm6v1wizQsd1p8FI52mf5+6W3L/UQCKoAaZOcxMrBuege87qgm3p/MibpoHpuJJjbYvcBg86qqJaoSf3V1XNGj842e1uVADWrxpGqnSXihycdFISrUh5tP2dCF006ZIPA82X7ctn4GihV/J95B9Erraz7/0DqwDKVI7UCIYAAAAASUVORK5CYII=">
+                <vector name="origin" x="17" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="6" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAD1JREFUKFNjZCAO/CdOGUQVSDFYAyFd/0MFQyGKXRhc4LqwWAVW2JEGNRnEgHMQ1oENQJNDcQ/MBmw0WCEAD+cmhqqVEB4AAAAASUVORK5CYII=">
+                <vector name="origin" x="-7" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="31" height="26" basedata="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAaCAYAAABPY4eKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYhJREFUSEu1lg2VwyAQhLFQC7FwFrBQC7EQC7FQC2chnmKBu5nXoXt7JKUB8h6P/PLNDsuGEOqOVPda37cATdu2sX+2vgQ3Wgbt+06w+tHwtHwtbADiEBgiHus6LPo0TRPBAFkwBAB8v92H2c/B0WKIaZlnAtHjGk3wESL+wAX0vRXwveYkbF4NGa7oLXidQ1ITFNMUY+R0tSYj4Uo4KwBQAGzzArrDIUBgGznObQ70iBzLPUcOBxAdBhbMT4MV0Bo54bI+7TeCIcCugjcCmqpfEQ4XSgLsVHSzXnZjQDhgkxDPBPVJ2MV6C5cAiPD3R8A59z56Dzq6bo0+128IQMQoJComHuqfXYUTOv/WcjQNegQtidC9TwX8gx7Mp/2r5XO9a4XWCqC1stdCze7l3Y8jl96CgNNv81JSkl3cMtEJK14r5Gw8wlVEau06KWUUofpgK2JJRG+4dFGEClRBRNY/SgBrBndGz70hzlEhrcO0SaWzg/V+Vji2EtvsgF7RX0y02j+ZX6bhBws9Utvv8TqiAAAAAElFTkSuQmCC">
+                <vector name="origin" x="7" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="19" height="18" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHVJREFUOE9jZCAd/MenBSRJNP7/TvB/h0sHGJcbl/8HgXfv3oFpkCX/QwVDwRJgSaBiJSWl/y4uLhgYJA6Sh6kF0SC9MANhLgYLwvCqDgawgbgwSB6EYepdGFxQvE60N/EECemhP6pjNARGQ2BwhwCs/EJ2JQAGJXt1RVGYjwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="20" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabOF">
+        <imgdir name="0">
+            <canvas name="mail" width="18" height="24" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAYCAYAAAD3Va0xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAATlJREFUOE+llA0VwjAMhIeEWZgFLNRCLczCLMwCFrAwC2iphcAdXMl+28He62MdyZdLmvTSnHvMmV/OuX6tDU9KyaZpAtBDq5nVEEVYRuLeK7mNow19v6koG8rhI5vfLbV2HxumA0hs42Fqs6hwIuBhFm9mbUwZBhDAWzViJDhrYQ9jQeL9DRKk67pjGAwlH+9K6wCyOjlGkzNka+9/AYSa0tFTbgjBG9MJ32shaihCBENqoQl7rVFsQsKgYLgOXEqvlNIWOauAon9AgK9q9YuiXDPUS8udWPHkfJrWv2YKS8UHyK8ahTWA4jXCjl6q0CDXqMh1wZG7wWQ9lNIGaLdebELA1Iw7dcldf6RyBfOpwlHBUIZSujTWovNnDtX1+G/vbpodP6LpKhn792XGwf5h/pYD6/ez0XoCdWqkffMOsjkAAAAASUVORK5CYII=">
+                <vector name="origin" x="13" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="13" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAYAAADpeqZqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHZJREFUKFNjZICA/1AaRDEisXEy/4PAu3fv/u/evRukGdkA7JpACkEaYBqhmvBrRtYQKhj6f1UHw38XF5f/SkpKMI2YNoNsAuGZHR1gDSDFIAzSiKYZt/+QnQfS/P+dINgwovwKC1WQk8uNy/+DaJprRA4QMBsASSVoAS5xiFEAAAAASUVORK5CYII=">
+                <vector name="origin" x="3" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="40" height="24" basedata="iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYxJREFUWEfNlgGRhDAMRbsSsICFs1ALWMDCWsDCWVgLWDgttZC7H/idwBYWKNBjJsPC0vblJ2nzcM7Jnx29HisDOe/aN5vWlefXU62pGjUJlXjvk6b/OS993wPAOsdnvYcQBFemAOqALmjt1Tmp63rREpAKg/cYywuQCUc2qWY/mng+erz5HQAU7Eek+RapmqCQhENEzlBxt1fjAE0JABGueQ2ANiIlIRWw810M7xwOoHgHK6GkLgxAGGDX8hmpUAwSi1tIFgyLjcqWCHesdlYy4Owu8B9yUkMNKLt/4jmVk0VU5AZPFQk6B2TB3J2PWhypk4gqEsyG/u6CGU6RMf9wnxcK4aAuft8OuHY82vwsoaK0basF8gkyBXq1kkm4pTOdgHOHroJ8gzNgS+e75h7UXoDM6U8na2rl2k15pwoKSkXZwmHOmfpHGxmnTS6bgZ1wk3YP1c+mmWd5bnOhYATMgCPoEHYzZ+5GHuFMSA6HwgyMoDmAcQM+Ge4t7DmRUU9z8+SD5KdU8+XH1S8JUjWVuQNa0QAAAABJRU5ErkJggg==">
+                <vector name="origin" x="26" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="14" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAYAAADJEc7MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAG1JREFUKFNjYGBg+A/FQIoE8O7du/+7d++GaUam8ZsC09jh0vHfhcHl/6oOhv9KSkroBmE3JFQwFKzp/ztBsCYXFxcwBrHRDMFqAIot6AaAXEJseMAVglxSblwOdhUIkxKYYA0gzaRogvkLRRMArd5QsN0fQj8AAAAASUVORK5CYII=">
+                <vector name="origin" x="2" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="38" height="25" basedata="iVBORw0KGgoAAAANSUhEUgAAACYAAAAZCAYAAABdEVzWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAcpJREFUSEu9lw2RgzAQhamEWsDCWcACFrCABSzUQi1g4bRgIdf3yMstaY4LIZSZnTAh2Xzd3/TWlD0use1WpqrOLgBRlmVxeDDO86z5Oqcc0BKALMxjmgiFEeKhD6g9t9T19/7NQoIZh4FQXdN9FIxQsMrqt7t7Tg1BLBCgJJ+wGlkIBaBv5/qHc/d+IZyF0fs0NA5yJRxhYC0IQATVP1cwfbNQbds6SU24EOBQ3nUdAQQhN1oowcFKApLV8E0ZfC7EXyVg/BppKUDhICkWAL5LNIdRYBiti7XmjPU2bjNQ+rG0HKBjOMxjPaAAEsce5rGmBG4DtWN+AgCO4rNULpSLLZh1ceLHZnk4Nx5oGbhaEoPJtTFUKVgWPawpt1k4uVPJItgY/gq4YFHVKblUULZUWLDh1RmUTDXBCJRyXQrkL7jaYHSbVZo62CSLjVO+W8vVKrxvWWfrWgSzF5/V4UK9UgyV1CFPHOASLSt14dxNxACGulRaIM0JGzi1N9PwDwGyiqPSV7rSMO7Y8rzeM7prw8GIa6b7O1wCLtt6V8BtANV/SzwTemTJ5n/aSrggKPaOJNrvnxF/va58U41rYG6L3KzLbfhFyrXpB6aDmqZI+O3/AAAAAElFTkSuQmCC">
+                <vector name="origin" x="17" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="17" height="6" basedata="iVBORw0KGgoAAAANSUhEUgAAABEAAAAGCAYAAAAlvnXZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAF1JREFUKFNjZCAd/MemBSRINP4PBB0uHWBcblz+f/fu3WBD4YIgCRBwcXHBif+/EwRrhuF3795BDEEWBClSUlLCi1d1MPwPFQyFY7AhyAIgBaR4D6oWHEzoGkkKbgDvhnW/n7dvEQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="21" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabT1">
+        <imgdir name="0">
+            <canvas name="mail" width="21" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABUAAAAdCAYAAABFRCf7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZRJREFUSEudlQ2VxCAMhHcl1EItnAUsYKEWaqEWzsJaqIXTggW2k3a4wPKTbt/jsT/hYxiS9PmwPVGFPW1L6lEAydj3PeIJIcjnb6GyGBA+BGK+NrvFzmBaIcHzPN8Gp6P+y5ziazttcA8nw0/ebEMODAfsL0b/G+Pkg4AJxWyx4cNDQAj0r0/opbarOF0Ojrn+rDIi1B7wUiWUbsuZHa0bE48AwWIE8jvh+K6PDiAurHdpSRGDAIdKQjETTCBmjJYNsqNzLu1MFRqMxdgM/wE2urQMSgsIAPhMi0niav62skEWUJk6UipXeH0bCgX0rnOrCUxPMfNUtXVN04u0STdP73uZIOYbKuUWFIK0h7W8TkBkC8coZwnKLoib6ePiNw3tVheDS0BxCgEuyzKuLASxCFQJlvUtIB3bUpkFDRpxprIJZEcyGG5Xubkt61KdF5BNJYCEWnJUesHVZ5tHJ9DSySUz0KAPIWyF1dLUUCsYcT1w1pmsUKgt3wpasVQOPRq9d9QFSmfS/tbWjmq+2gfKKkPQGz2ThHilYAnaAAAAAElFTkSuQmCC">
+                <vector name="origin" x="11" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="20" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAINJREFUKFOlkVENwCAMRIsELGBhFmphWrCAllnAExa6HQmk6zYgGcl9NE3e9Q5HRHJp9Nxk/1znnKWUInGLXUciCSHATGudDagGSvHCzF0v8HEyJpbd71XtOkCaLNwYfF5uI/bZwjHDGKlULeuV6C41LHGqUCRb+OB5EsAA/QOzLjfYCScYchnx5TBZAAAAAElFTkSuQmCC">
+                <vector name="origin" x="0" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="31" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAbCAYAAACEP1QvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAActJREFUSEu1loGRgyAQRU0JtmAL1wIt2IItpAVaSAtpwRauFlvYy9/wmQUxBOUyw2Ac5P39uy7ehvJPCrdvB2u73pZt2wQ/zOu6ysN7iCkJ6g8GlGArIIjoCuRmCswHI/9PB74Cu8HJPM7dUxBzzHzLNsrTD5pzDIAJx/2eNaCAt4IX9FdkfoiM86YCCMbsl0GmadL7QcAlIW9g2AwzwfMzhROMmS4gDVdSIc45jQaRYCOKUSGv/wDhGmsItm5cqYUEfv+5i3deB64ZGQTR7hzMdJyphcR2wHIBBAOOa7pBEUwH3WtpBDFC2A71GICwALEpB+EQgHUWzDUtb0JStRbEa9QE64LRswbsmjPw3KVd9IRTQAmcC2yJfieAhYb8w2pubvOPSCmoJxxiYu5pdQ62KcL6ZVlibVyJPB42ueWlmmCnA9z2jJaq31mPzeyGWUHZQlWnAO4RfQ16FNTuuVb7Y9MpRFpzMomePcMcQLXnh9h0zrRLgFigtj2bw+fjKZj09FbbQmjxkIKAXAS64qd9ewjQIuRJSRGYa44q3CpuyVshsfHNYNOqOaqFd5C3auGUBPDAqoGjZXq6hS+dWq6+UNT8ydXlW60k7A9T584dq78KWAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="8" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="19" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAYAAAAbQcSUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIVJREFUKFNjZMAN/uOQYsSjhwGkCQMrKSn9x4aR1GKaObOj4z8IlxuXw/H/d4L/XVxc4BhmKEwMxIcaimng7t27UQxc1cEAdxWyq0GGEGUgyHWhgqH/YQbh8A7cEpDrQWpxuhBJElfgg7z1H2QQKFhAlrswuOA2EF9MIcmBDaKqgWipgAEAp0F3JT6gjbcAAAAASUVORK5CYII=">
+                <vector name="origin" x="-1" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="48" height="23" basedata="iVBORw0KGgoAAAANSUhEUgAAADAAAAAXCAYAAABNq8wJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAd1JREFUWEfNVot1gzAMJCOwAit0BVZgBVbICl4hK2QFVugsrODmRE8VKgY/YtPynl7CQ7bv9Dn51pR74s5Wt3LHlN0JoMWmaVrZPM/yPrQDfcqefGI3BZsCDcAAjudfEGjbJtKeoZFoWnAASaDLhzbCD0QeIcS+6cVqZ+FXZBnhruuiNQAMfVASCh7AP2McHjG2wywkCP4KEvH+cVcDSA/cvgMcDEQYacnON/jhuU0gjEuvnCjdrCVKAOnGYZ4Es8Jf8XuRoLF8WGo2A9yvJgmpU5oHm4ic+FsS+G/3YbYQDICv2Q++D3LSJqXEvrBEpNlNKRL8Ff2QA9z6LMr0AmsbnOCZAfj4ksK3mj2RS0QIUAS8AODdlhQy4fvrL0lIBBHJFAHUPpt7SxgoFFeTEODjOIr1fa8lRMAEtiXJ8IdZlbuSgAwxD8yDYk94KYafJW6JXEVCygV1zSbcG3qpb56IK6Vqww6NrQTM/SZ5FbHzZIsMM5coqSpEVHVOXNBWRI8yZ2S2uNxuZSFXdlczxE982/xUtsTt4Mx5umaVhROZ2Dtcs2TnC/vOkXmPhI1QJQURMp4Iybx7pmp/yagkQqoDk/Is1/kC13PduMRmGfWwpXYZy45diqvE8ZE/Hl+MrfBQbGNoIAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="21" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="12" height="7" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGVJREFUKFNjZECA/0hsbExGuOC7d+/+7969+3+oYOj/VR0M/5WUlMDYxcUFjEFsoGIMA2GCcBqXJrCCDpeO///fCaKYDDMdZiPMFrBiGAZpQlYIVYThJLAGmB9wKUIOCXT34wwwAGuxVQNEEhL9AAAAAElFTkSuQmCC">
+                <vector name="origin" x="-2" y="11"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabT2">
+        <imgdir name="0">
+            <canvas name="mail" width="25" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABkAAAAdCAYAAABfeMd1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbBJREFUSEutlouRgzAMREkJtEAL14JboAVaSAtuIS2kBVq4WmhByYpbj+L4IzPHjIeQAT2ttBbcprFDCrffxkK075bjOGTfd8HB3+9HSuAhLgLoQlAeBPwHKGWcohsFBDxilHVemcyYAgRh9laFHLM846RlC1PQdRkSQ9RACYDgvyLrQ2ReDwURcgX07uqZbdzOfiBTXBOwPssQryJZlkVCCHrGIuT+c0/wXAWUICH833NbEWAhAGHZMhHApFogzT5X8GcVzRAlLEGgAACcsVol0yC2RMaL6X+CEAgKACegZwKBk5BlRWpSgoDn5jmNgetSfwBEPNufBKlI1RKw8XlZ3RCODnO2OzdBWiD2hC7zOM0NYdnYT3vu2TmfQVp7BkRPbF9KAO6xkWGWHFYKyD7ZLTAKkW3bPvZQDkJZGvusK+YLUDCJWjVPxNuPkQf13spmbippTYEP911WwTnl8Htt5vV7gVHDGdWpr5aJlvb2AhnoqPFCoBbK+XLzgnTKjoAIwXNeiKqxO5uv4kqh03xzqk9h0jdXZXB+jR6aZRTUdYh9ufENmn+IjATx3FtU/wLOPb+jDyCgnwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="13" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="16" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAINJREFUKFNjZICA/1AamWLEIoZV6H+oYOj/DpeO/7t37wazV3WADcSFMQ159+4dWDPIEJgBLi4u/2FYSUnpPwwjGYxqEEgjTDOyBhAbj0EYrsHqbJiBIINAbJAXO9LgXiQqqOAG/38nCHYpCOMIfLwG/i83Lgdjcg0ARzklLoA5D+58ADYMasu87NvGAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-2" y="15"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="32" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAACAAAAAbCAYAAAAdx42aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAdFJREFUSEu9louRgzAMREkJtEAL1wIt0AItpAW3kBbSAi1cLbSgsLqsRxYONp9cZjzhJ+2ztDbcms8/cbduG89efkvmeRb88D9NE2A80OWiTLgS/0+IRNxW4BGCDO3w1UpsiqMNfdN/DWIl/meAVp6hUQ8QgBC4fqUvEsOp8K/I8BBph1khIMwRxka6rtPrb4hTMIk4eo3EFB+eKQDF8c9qwBtn/BGXGcRRaiRj+RVmOYcYjjFzituqnPGH3H/ucQYQC31IBmcIKJbei+McYEe8EQEY7CEASHEA4JhV8b7A/b3m1GQsL4JxjAEhrgYk5iAA4+gL+8xuCAbT1TYZjvt+WQXLsBCE5jV7fzcAg01gUgUC8LmcuIfcAxFn54K0PfQABawfWJ1clWoBktJ6AHqB5vPivu/jOMY2VQMUzBP7b3vsPULvACDTzs1XdyTOLCFBQpvUm9VsxRBR8UNVcIk0WUH406xWcbWtsAnjVpyZcelLKKkC95TMBLfbwu0Zm8yBGWhbYVjmcS+sYs4k8ACAthCDy9iD1EzsCogsCGBqXloKYMkPVoK9jh8v3Nhq8q36WBO04a64vdfmUWp9K76/D2t6V1gmRQPm4i/59sslfgFLsvV+19D+JwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="13" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="19" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAJCAYAAADQHRcxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIpJREFUKFNjZCAM/qMpYSSsBaICpBEFKykp/XdxcQFjEBtJHqeZYEUzOzr+hwqG/l/VwQDWiGwIjA+ikQzFMPD/7t27wRhkmAuDy///7wTBGtBcAreAkIEM6Abh8A7cEpDrO9LgQYLVy8SECdjl5cbl4CAB+QRqMbHxghk0IIOobiAxsUuMkzG8BwDvjnAsz+aNqAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="5" y="16"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="46" height="24" basedata="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAYCAYAAACFms+HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAfJJREFUWEfNlw2RgzAQhakELGDhLGABC1iohViohVrAwmnBQsrb8nKbJYVASa+dydBC2Hxv/5JeqnM+3pi5nGO2jBXAyhiGIRrz/TKrvmE1CUv4cRxFxDfBCwzBrJdxHx8+7+ruK+AjKMAR8Pmg9nf3TJmbc76tWv/f4OI1gF1/rgE+QAP41/vu5n3djQIPaI5Pw4eia5rGt+0EMg1Auf6vGOFZ3CN0d1+CYz5slMz3JCyAsTAHuwg86Vong2kiIqb79DahcS3leQGQVJhC/wrWeE1gCI8rfnNABMQCumTaCDQW5YL07EqIZS6EWnjcA7TN9xIFq0OZm4/yDqMEWHYXQtP7ulgRAQg6K+ePGorgdS1AiE4dADPnSxdramMNBQyPsRjpdQ2O7yxaDZwo9Dc28LxXpWj7vpfBApYUmXOaV0JbIfb3Wemyhh+8pxdnf9ddSAtJgfMd017zXHdgVmiXLCwLZYFeQduIqXy3x+IDmMtXArjaSKINaystbKQ+JSAFruVFRWv2gFWBNlKqVR7tdAu3b8HnhDYpkNEANDoUN8NEdHPWWAc/+ewRBLH3WwFGxG4BZ3h9a1ERkSFgy054Hs7kiVBmG9kxUQTwPKR3Yh6tc22FPxR6R9xrJHexeV5UE9wjjp51UgW2k+fwdL129QDIvBJwDo3DYwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="20" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="13" height="14" basedata="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIpJREFUKFOVkVENwCAMREECFrAwC1iYFixMyyzgqRa6XZM2DRkDSC7pR1+53MUQAr/SF908HltrDBERYK9/HkA9quhMJ9/XIoxliClxKUWUc57+bgtYhjzsDgxtywEP69wF93nA4M7uNGSzumJRr0k4O/YA9jXMraEG7W8lBLOnHe5AZnEXElC/fgA/im+TC86e1QAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-1" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmBelowHead"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="stabTF">
+        <imgdir name="0">
+            <uol name="mail" value="../../swingPF/0/mail"/>
+            <uol name="mailArm" value="../../swingPF/0/mailArm"/>
+        </imgdir>
+        <imgdir name="1">
+            <uol name="mail" value="../../swingPF/1/mail"/>
+            <uol name="mailArm" value="../../swingPF/1/mailArm"/>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="20" height="38" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAmCAYAAADEO7urAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZVJREFUSEu1lgGRgzAQRbGABSzUQixgAQu1EAu1UAtYOC1Y2N7f9uc2KWQDk2MmQ6dsXv5m/waG4fol16d+zxRcv3+fgh4FK2zbNlnXtRkq8zjvBWewR4zngAaqE6EIEN4PFv3aIFUXQ0zjLWuUZ/yDIuYSUEE/IvNDZJw3hYYh6LgEBICw+dkBiNSZrlUHhXEZVLFnHw0ChPvIFHnHc8CmadLhAhkIKPbJggDj89MKMdFWmCAqbClOZhkoJAR3gqxqr9oukP6z0Jp9EpDqbIWpktCmlFlhm2r5GzFM3yuMWmBZFgkhZPtXW2DPOglkYYCXICzEYZ9ZL6ZO2FP1CUzgJiA6AhtM0xJSdIBmAWC5JWWnaIuxN502UqUu0NrgLPAoPutZD1oWbu/tp0C6vwuQPUn3V6CZbWqLp2OdFT8IzrxZBbLt0L81hXqsfV5a7uFqPFj70pD77a573vIKaPlkSUAcDp7KJiDUQSX2uwsQoJ5AZJHS7qbyX9PuoVILQvt0A/IM6OZHdIzTWS02TDH0YPp8fgGAtpNFds566QAAAABJRU5ErkJggg==">
+                <vector name="origin" x="12" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="13" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGZJREFUKFOVj1ENwDAIRLFQC9WChXpCyyzgCQu3HQnLfkg7kst9wIND3B2siEiXk1pjocBnntARCIKUqaX/BgkhRoHbq7hMElBVzDlTn8jtoneYYMFcxOhUFz0bdYnOBPX37t8uGm48oGNq6esf2QAAAABJRU5ErkJggg==">
+                <vector name="origin" x="6" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHairBelowWeapon"/>
+            </canvas>
+            <canvas name="mailArmOverHair" width="19" height="7" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAHCAYAAADqF3ZBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHpJREFUKFNjZCAN/MejnJGQUSDNcOzi4vIfhv+/E/zf4dIBxqGCoTA1cPNQNIIMQdYMYispKcHxqg4GsCEgw6AWgg0Cc3bv3o1iE8hmZM0gNrIrYWwUV/0HApBBMzsgzgXZCMI4NGMLFsxwRLIB2QWEwhSnPL6YIspQADlBZSalXr/qAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-2" y="16"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <uol name="mail" value="../../stabT1/2/mail"/>
+            <uol name="mailArm" value="../../stabT1/2/mailArm"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="shoot1">
+        <imgdir name="0">
+            <canvas name="mail" width="29" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAeCAYAAADQBxWhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZ9JREFUSEu9lwHNhDAMhbGABSz8FrCABSxgAQtnAQtY+LVgobdXeE1vGdzIxpE0JNvo15Z3Ldc0v7kkYGA/uRS2rqssy1IE5sP+nspAcG3bJq95VvPglJPTNTryDhOlMyCyjIGIUKa/yUy2Vvq+N+u6LoTb2j4iJxAOYQfU7n4fwGkcFezOamWkbwIo2DI3AlBsWOcZwpjFHkWrz3KNd8AQaAxU6F3je1LYv8jwEmmH7QOMIId2+PbubynaKkPgsOxQViSC3nJ+dvhDB4DFwEegXmAQo89wHhuBIZCajUHF5sEUYizGWlDNAEAFO/VS9divna2qEiUlmDCWFPsst1NwkZguoYA8BrXyHo0BWSJjlPYR6FnnevSdwjl7dNwyU+vVFJwLrQXUfj2G6cEsfe9mFaK9IuXuUymMP0JT8xT71aEA0nEK6rOtVV7N8gJq1QC8BtQG9heH1ptrNH1tf2zuF1lok+DZ0mzNEcBXUOzXgMrchw+tI9OM6LUiN84nf1a5WfLhYqgNbI6snEw5d0vEZMrNdJL7b+Brtyr+pHwDsKGjvbFsBNYAAAAASUVORK5CYII=">
+                <vector name="origin" x="19" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="14" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAG1JREFUKFNjZGBg+A/E+AAjLsn/5cblcPz/neB/FxcXMFZSUgIZioxRzPjvwgBUCMWrOhjAGkAYZgCaIXDN6KbC+TADYIYguYCA75CcSY5mkOlgV+ByMl7rO9IQficiJhBmwQKNJE1Q7bBAA3MBFNRQCBYtNbYAAAAASUVORK5CYII=">
+                <vector name="origin" x="4" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="29" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAeCAYAAADQBxWhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZ9JREFUSEu9lwHNhDAMhbGABSz8FrCABSxgAQtnAQtY+LVgobdXeE1vGdzIxpE0JNvo15Z3Ldc0v7kkYGA/uRS2rqssy1IE5sP+nspAcG3bJq95VvPglJPTNTryDhOlMyCyjIGIUKa/yUy2Vvq+N+u6LoTb2j4iJxAOYQfU7n4fwGkcFezOamWkbwIo2DI3AlBsWOcZwpjFHkWrz3KNd8AQaAxU6F3je1LYv8jwEmmH7QOMIId2+PbubynaKkPgsOxQViSC3nJ+dvhDB4DFwEegXmAQo89wHhuBIZCajUHF5sEUYizGWlDNAEAFO/VS9divna2qEiUlmDCWFPsst1NwkZguoYA8BrXyHo0BWSJjlPYR6FnnevSdwjl7dNwyU+vVFJwLrQXUfj2G6cEsfe9mFaK9IuXuUymMP0JT8xT71aEA0nEK6rOtVV7N8gJq1QC8BtQG9heH1ptrNH1tf2zuF1lok+DZ0mzNEcBXUOzXgMrchw+tI9OM6LUiN84nf1a5WfLhYqgNbI6snEw5d0vEZMrNdJL7b+Brtyr+pHwDsKGjvbFsBNYAAAAASUVORK5CYII=">
+                <vector name="origin" x="19" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAICAYAAAAvOAWIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdJREFUKFNjYMAN/gOlQJgg+B8qGPrfhcGFKA1gxcRqAJsI07CqA+wcrE76r6SkBMYgBSCFMDbI8TBdYNrFxQWOYZrgimE6kSWQTUYyDBwqKCaj8VGCDQCcbkNGVhofQAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-6" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <uol name="mail" value="../1/mail"/>
+            <uol name="mailArm" value="../1/mailArm"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="shoot2">
+        <imgdir name="0">
+            <canvas name="mail" width="23" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAeCAYAAADHJYVoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAY9JREFUSEvVluFxgzAMhVmBFVghK7ACK7ACK7BCVmAFVugsrKDmiT6d0NnYbtMf4c6XNMifnp9ku1333kdeOIy3Pgrd9122batKwCD/mVIkeI7jkOe66iglsAl+YmLJFgfVNWCoUyUE4zsm/8Dtk+8JXuZZE5R8Nw8JxqQzWy/bevo7duNlILYIBmB5LDoIUOiXyPQU6adDE0R4DmxLHYZBxnE0het8QgAjeNoa4VAJdQAjAQfUcBW0JKUaArLKAcAkD2UB8Xu0iZZgZRiIScHNu9AN7GlNqLb0k8Xiby8GMUm4gyY3CSG+W7hCvKP6UqdEuKplPXwtaIVfDb63JLiFA/ZnOLoEqtktUJ2qQ7PyWDRvDROUOiZ3/qpC9H7s/9RvuY65O9xlfh1IEc6kccO13hIXONs2wlu6xDaQVx0AZtlv7NBz/Qau72lXq/ISWOHenpYE/wvnpil4qgcYYmuV6+nHm6gwqSVWG+VyxX0MXP3zl3ONctjIGt3Fa2H8fVmCh4JWFbb0b5zt4txN9g3y9YP/CwLUagAAAABJRU5ErkJggg==">
+                <vector name="origin" x="11" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="10" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGxJREFUKFNjYGBg+D+zo+M/kMYP3r179x+EQYp3794N0oCMUTTDFYUKhv4vNy7/D6JXdWDX8N+FwQWMYSa6uAD5QKykpAQTg5sOFgCZ9v+dIFgBToUwq0Emg6wGKcZmIshoDCdAnYIRIjh9DADV5lNYJp9YagAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-5" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="23" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAeCAYAAADHJYVoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAY9JREFUSEvVluFxgzAMhVmBFVghK7ACK7ACK7BCVmAFVugsrKDmiT6d0NnYbtMf4c6XNMifnp9ku1333kdeOIy3Pgrd9122batKwCD/mVIkeI7jkOe66iglsAl+YmLJFgfVNWCoUyUE4zsm/8Dtk+8JXuZZE5R8Nw8JxqQzWy/bevo7duNlILYIBmB5LDoIUOiXyPQU6adDE0R4DmxLHYZBxnE0het8QgAjeNoa4VAJdQAjAQfUcBW0JKUaArLKAcAkD2UB8Xu0iZZgZRiIScHNu9AN7GlNqLb0k8Xiby8GMUm4gyY3CSG+W7hCvKP6UqdEuKplPXwtaIVfDb63JLiFA/ZnOLoEqtktUJ2qQ7PyWDRvDROUOiZ3/qpC9H7s/9RvuY65O9xlfh1IEc6kccO13hIXONs2wlu6xDaQVx0AZtlv7NBz/Qau72lXq/ISWOHenpYE/wvnpil4qgcYYmuV6+nHm6gwqSVWG+VyxX0MXP3zl3ONctjIGt3Fa2H8fVmCh4JWFbb0b5zt4txN9g3y9YP/CwLUagAAAABJRU5ErkJggg==">
+                <vector name="origin" x="11" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="16" height="5" basedata="iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFlJREFUKFNjZECA/0hsXExGXBL/y43LwThUMPT//3eC/11cXFCwkpISyAIYRjEHrAmGV3Uw/AcpRscgA0FyLgwuGIYgm4yTDTMQlyFEeB9iOwiDDOlIg3gHAPuDRgE/MT5dAAAAAElFTkSuQmCC">
+                <vector name="origin" x="7" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <canvas name="mail" width="23" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAeCAYAAADHJYVoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAY9JREFUSEvVluFxgzAMhVmBFVghK7ACK7ACK7BCVmAFVugsrKDmiT6d0NnYbtMf4c6XNMifnp9ku1333kdeOIy3Pgrd9122batKwCD/mVIkeI7jkOe66iglsAl+YmLJFgfVNWCoUyUE4zsm/8Dtk+8JXuZZE5R8Nw8JxqQzWy/bevo7duNlILYIBmB5LDoIUOiXyPQU6adDE0R4DmxLHYZBxnE0het8QgAjeNoa4VAJdQAjAQfUcBW0JKUaArLKAcAkD2UB8Xu0iZZgZRiIScHNu9AN7GlNqLb0k8Xiby8GMUm4gyY3CSG+W7hCvKP6UqdEuKplPXwtaIVfDb63JLiFA/ZnOLoEqtktUJ2qQ7PyWDRvDROUOiZ3/qpC9H7s/9RvuY65O9xlfh1IEc6kccO13hIXONs2wlu6xDaQVx0AZtlv7NBz/Qau72lXq/ISWOHenpYE/wvnpil4qgcYYmuV6+nHm6gwqSVWG+VyxX0MXP3zl3ONctjIGt3Fa2H8fVmCh4JWFbb0b5zt4txN9g3y9YP/CwLUagAAAABJRU5ErkJggg==">
+                <vector name="origin" x="11" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="8" height="4" basedata="iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAYAAACzzX7wAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAD1JREFUGFdjZICA/1AanWKECfwvNy7///+d4H8XFxcwVlJSAmkCa/zvwgAUBOJVHQxgCRiGK4AyYDqQaQYA8+8ffeYAc4kAAAAASUVORK5CYII=">
+                <vector name="origin" x="-6" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="3">
+            <canvas name="mail" width="23" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABcAAAAeCAYAAADHJYVoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZVJREFUSEvVlv2RgyAQxW3BFmwhLdgCLdiCLdhCWqAFW7habGGTt+Yx6x6IXHJ/xBkmHyy/fTwWsOs++8gTh/bRR6HrukqM8VICBtlPr0j78GzbJvdl0VZLkAbYgZkppziovgKGOlVCML5j8AuePtlP8DxNmqDme/KQYAzas/USl93fsRsPDbFVMADzbdZGgEJ/RMJdpA+bJvDwEjhNdRgGGccxKVymHQIYwSE2wqES6gBGAjao4SxoSU41BBSVA4BBFsoFxP/eJlqCmaEhJgdP3rlqYE1rQiYgFL+tGMRk4Qaa27YJYquFM0QCqq9Vyq8dGPqglsBvuxa0Av2cDb63JJAzOPrehlM1qwWquQ5vwf2iWWuYoFYxpfNXFaL2ff3n/itVzNnhLtPzQPJwJvUbrvWWOMBZth7eUiVpA1nVDpAs+4sdeq6fwLWfdrUqr4EVbu1pSfC/cG6aiqd69iD2qnI9L3gTVQa1xGqhHK64r4Grf/ZyvqIcNnKNzuL3t6jXK0Tp+jLb3C/opYU9e42zR0gx7gGokIVkJ1MvzAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="11" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="10" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGxJREFUKFNjYGBg+D+zo+M/kMYP3r179x+EQYp3794N0oCMUTTDFYUKhv4vNy7/D6JXdWDX8N+FwQWMYSa6uAD5QKykpAQTg5sOFgCZ9v+dIFgBToUwq0Emg6wGKcZmIshoDCdAnYIRIjh9DADV5lNYJp9YagAAAABJRU5ErkJggg==">
+                <vector name="origin" x="-5" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="4">
+            <canvas name="mail" width="21" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABUAAAAeCAYAAADD0FVVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXZJREFUSEvNlQ2RgzAQhbGABSychViIBSxgAQu1EAtYqBYsbHnbvsyS5q89buaYycCEzbdvf5IMwzWPHBiMSx6FbdsmIYQmmAb2bVXoPJ593+W2rjpq4GhsFyXhRRuobAGhRr0TiG8sfEFPCglc5lnBtbzGPBH49DBKWJ/5c4M7DdhVgVi8/Cw64F1hdxF/Exn9ruAUWgKqp2maxDmnIC4EhEAfPoQq6AACjAEnVMzQcyrhvKgUCywQhpgjOA15nQfBgE0OqqHa6r4aUp0QbNNhBTCqdCuV5CsQi2z1GQ3+UW3vFhU/eg0d+SQIb4aM/1SP7x5wFQrI11CqZPWhknn+CpoWw6aA4FYHvBWPG8H2bmmu1AG5w1Xm46BIoQRb5T1FooMTlH2cQn8LjM4s+CqonrlMSy80F3axkL1F+hsom72hQs8G2LZSoPsZe752TvIU67WNwH8N1fww9F6lsGMNsjcAJu191ChAWqj2vd+qaOb6ib38ACj6dJfExfOXAAAAAElFTkSuQmCC">
+                <vector name="origin" x="9" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="11" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAAsAAAAICAYAAAAvOAWIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHNJREFUKFN9UAkNwCAMrAUsYGEWagEtWKiFWagFPNVCxzVjYdmA5MJ3X0pE5K01P0W8n/dLVd3MHgGEMJjwMogPOINYUvF61NhVNiImdmC4Mvd7R855vH1T4OqWgrQljxpIQA0IVs6IiSpznbvW76SWk7gAR+JZ64BDAAcAAAAASUVORK5CYII=">
+                <vector name="origin" x="-6" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="shootF">
+        <imgdir name="0">
+            <canvas name="mail" width="28" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAABwAAAAeCAYAAAA/xX6fAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAActJREFUSEu9lgm1gzAQRbGABSzUQixgAQu1EAu1UAtYQAsW8v8b+qaTKUtYWs7JCS1JbubNklTV+0nm/euvqa1bAPdAOd72cxud/Z7ut3spVBbAM46j9gub1e9936tBAkJzUG+tTMAYtGEYEhYBFL1ZUC3ipiwMEsgAC33GKoUQMsnSWCuMYx8xKgzvkzl1wnxA+J29V0EAGNw0jTRA0fgbixFGRbCYwAAaUmofKdXtqFCMI3wpRgRMCHsqwR6yxhCl4R0bJax9TsBQBRsXmwHpo9BGoEAIJJRyEuaAp1JNLECzVkI+QGw7kG6zG1PJAWXkemDspk3tzO8PoCwC+fDAx4QSCBCa8/9hSTVnISfAWNimBEEEn7Eyy1f6j1CCxLf/FtKXZ/yYWWej06aRpIgJoEuBKumrwtB3l1loA4ZB44vEpT5cWnzt/9NpgfradV1WZz3Q1uHLgb7Oshaz8F8GhFVLBy9Pm5UxxYUgk3Nl93rEnYGK3+C/grKVHXFHZdUTvbBcTWXvlaN7oTIRJwNLVsEC2ZyC8epXgeyEyX3JztsF/Cnsl9apJPa+UijN+6AuDJpsgqsmW0lrrxZrl7HP64QBbUGyW92SCn9TMuM5wRG9VAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="21" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="12" height="10" basedata="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAG1JREFUKFNjYICA/1AM5RKm/ocKhsI0EdT8v9y4HIxBmkB4VQfcRpBmDABXCNP4/53gfxcXl/9KSkrItsI1ojgFZDpIIQiDNKFpxOo5sAEwTTCNSLbhDBEMjcSEJIomgho60hBOI6gYLULhwQsAC4hUaP4/3GoAAAAASUVORK5CYII=">
+                <vector name="origin" x="3" y="16"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="31" height="30" basedata="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAeCAYAAADU8sWcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbxJREFUSEvFlw2RhDAMhbGABSycBSxgAQtroRbWwlrAAlqwkLuX8pgAnUJ74W5nOuwuJN/LDyk0TfzIutaff3uQ19eLAnJHd1UKtusTGun7fre6rrsSVyVMhnbYFsAAHZcVg2uOgnNlk5/PsizJ0l5FlBQjS6sC6DgDUPA0TfIOoaq3TgKRGWRgnmd1TAC+mwZWIMG18FQ9FYKSEUBITEer4vifEVXVG0kBgCP9EICl0FlkeIu0w6ICzJ3kDw59ECxAACN4+DwIBwiREk4BTLnesk3/TOS8HQFj9yN6lAJQrjD6TlBNLyO3Iiwc5wE2A8ql5ttQ0nt9jRwQ2+kUBQEQ4rF/7MCA21rbycjIkX6Uwh1uOx0ZOMJZf1c4ZzvhBLPTWWscXSNno8UCx2mW2oweqTmdcqfLge05j5rrkw+cjuOoe34ObgW6weEUcILtTma/47wV6CFAHRJ+4VAFegk4pfxGNGpjZ/4Nm9M03DkpGJtxtzOPa6XwbZbTSYEDBXPulw6czbjCwf+DK0THOnGUFqb7N7bxNer4MnFza9yBa7p8azAaF7zT7WwTA+jWQ8Xxef2W0XqRtU3afQNGYPMp2kXHuQAAAABJRU5ErkJggg==">
+                <vector name="origin" x="22" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="10" height="9" basedata="iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFtJREFUKFNjYMAN/uORg0v9DxUMBSnEq/h/uXE5QYVgU0CmgRSv6gCbCDcVxvmvpKQExiBJkCIYG9mtcEUuLi7/QRikCEajuxVsEsxUZA24PIWigZDPQc5C8QgAGHs+bQsUXmMAAAAASUVORK5CYII=">
+                <vector name="origin" x="-7" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="2">
+            <uol name="mail" value="../1/mail"/>
+            <uol name="mailArm" value="../1/mailArm"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="proneStab">
+        <imgdir name="0">
+            <canvas name="mail" width="48" height="15" basedata="iVBORw0KGgoAAAANSUhEUgAAADAAAAAPCAYAAACiLkz/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYFJREFUSEu1lgtxwzAQRB0IoWAKpSAKoVAKoWAspWBOpqBmr17N9qKLLCvxjEbW9/adTp/L9Jkvv5j28hmT52eF2H9p27YcJd93L5+3PjDSREPouq5h0nYPhXH3r7t3wICkY0PN4CvRrTYFIcTPMuV5nhXmmJrOXk2Pt8RrO0GWtOS8XQ0AIG5VOiXWux8Klx7x6EsA/BMipWQwKAvIEIRNSIO9IqP+FJ8fH8TWAFCHFRnZ6CZePdXatC1AjodwdUqBeNTbKuxgDK0zEGUpadTnLbG+PZqH4m0VCLCHEQAA1AtgG4qxiEnPQvhxNc8j1pkouNjeAdwJVb0oyxGGzjwRbtdbRiJEdEH500XDw4/RuIdw2kDO4xS5lrEKhIj2RdlINQAFwT9EEaoFh746RgXzP00pIy3ff/cBci1TE8PJn1BlCekBDuBENaOjdRQdiUc9Yp9a1LEKUJaQ9P69Qghv8J1l9byzjzuggDC04Dzd2K33yNODLXiUvatfdHE96fwFn8ijqHk5BdEAAAAASUVORK5CYII=">
+                <vector name="origin" x="33" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverHighest"/>
+            </canvas>
+            <canvas name="mailArm" width="10" height="7" basedata="iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAYAAAAxrNxjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGhJREFUKFNljwENwDAIBLFQC1iYBSzUwizUAloqbhZY/lMW2jUhH/iDT0WO11sP1DnPHgYBN6cu+LcQ4xqEp0vE06h+C2ffNUC4lDBMVQ0zoybMGEBQXAKQ0AauDUIwatXo+sGMqUr/BV41TF8Z9C0SAAAAAElFTkSuQmCC">
+                <vector name="origin" x="4" y="4"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="48" height="15" basedata="iVBORw0KGgoAAAANSUhEUgAAADAAAAAPCAYAAACiLkz/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYFJREFUSEu1lgtxwzAQRB0IoWAKpSAKoVAKoWAspWBOpqBmr17N9qKLLCvxjEbW9/adTp/L9Jkvv5j28hmT52eF2H9p27YcJd93L5+3PjDSREPouq5h0nYPhXH3r7t3wICkY0PN4CvRrTYFIcTPMuV5nhXmmJrOXk2Pt8RrO0GWtOS8XQ0AIG5VOiXWux8Klx7x6EsA/BMipWQwKAvIEIRNSIO9IqP+FJ8fH8TWAFCHFRnZ6CZePdXatC1AjodwdUqBeNTbKuxgDK0zEGUpadTnLbG+PZqH4m0VCLCHEQAA1AtgG4qxiEnPQvhxNc8j1pkouNjeAdwJVb0oyxGGzjwRbtdbRiJEdEH500XDw4/RuIdw2kDO4xS5lrEKhIj2RdlINQAFwT9EEaoFh746RgXzP00pIy3ff/cBci1TE8PJn1BlCekBDuBENaOjdRQdiUc9Yp9a1LEKUJaQ9P69Qghv8J1l9byzjzuggDC04Dzd2K33yNODLXiUvatfdHE96fwFn8ijqHk5BdEAAAAASUVORK5CYII=">
+                <vector name="origin" x="33" y="12"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverHighest"/>
+            </canvas>
+            <canvas name="mailArm" width="19" height="7" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAHCAYAAADqF3ZBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIJJREFUKFOdkYENwCAIBHUEV3CFrsAKzuIKztLhXIHmqRhKa9PU5AMxcg8Yw3l4RIRo8l8p162KBljjG0ze9N5tI4FLKiIFck+cc7ZgD+VGbcoCpUiBewsCgohI5LplmAEGc9uIdZxFCvNQgPUOQBhDxuxxLUuwG//Lbi8GtzFXv3IAV6d14plQ2r8AAAAASUVORK5CYII=">
+                <vector name="origin" x="20" y="5"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="prone">
+        <imgdir name="0">
+            <uol name="mail" value="../../proneStab/0/mail"/>
+            <uol name="mailArm" value="../../proneStab/0/mailArm"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="heal">
+        <imgdir name="0">
+            <uol name="mail" value="../../alert/1/mail"/>
+            <uol name="mailArm" value="../../alert/1/mailArm"/>
+        </imgdir>
+        <imgdir name="1">
+            <uol name="mail" value="../../swingO2/1/mail"/>
+            <uol name="mailArm" value="../../swingO2/1/mailArm"/>
+        </imgdir>
+        <imgdir name="2">
+            <uol name="mail" value="../../swingO2/0/mail"/>
+            <uol name="mailArm" value="../../swingO2/0/mailArm"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="fly">
+        <imgdir name="0">
+            <canvas name="mail" width="20" height="33" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZBJREFUSEutlQERgzAMRZkELGBhFrCABSxgAQuzMAtYmBYsdPywnwttWNsD7nqFNn35SdryaK49wSx/XEEBFPCs6xqWZZFvC+RA3HtOFXQKwwS9sX/Nc+I1VgVlsIttRbKF4tuEoaptiIBM45jAGJJMEETPu+w2vOdG5mhDVYTG+QM0TM8p9E2vIQjoE8LwCqEd1gQKe68YqpBAwqGKsOG9A+HQNk+ZAjEJYywEHI3herB5lG1y2Crului6TkCExqoAQoNdERBqCB3aQUPEOEGYL1YICBQK1FQZ3wQBBuWwzakUI+aPEPRUaFNwGWhTUKVQQ/5tauYurnaRQhbFhmvfWWX0sM3lUE7NGSweL4EJsO+3E7E1C/DGSoEKJZCqrZMamIYdA+DgNuhPkaSBUFOU7JlOVJoQBcpLhBdKaQoOiiyUJ4aXSOkWOmyjSIXsQYKrgLwXsdgJzf4pvSvRHdNfRGmucmQFnqjMrU/mJVf2v1NNcBYosKYA/xyryruA+xnfQkfVbysO1N0JFJX/1H0Bz5JufQzUBWMAAAAASUVORK5CYII=">
+                <vector name="origin" x="8" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="7" height="8" basedata="iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAEdJREFUGFdjYECA/0AmCGMF/0MFQ3EqAEt0pIF1Y5gA16mkpISiACwBw6s6ELr/uzC4gDFIEkQjS4JcB1cAshPdWLACNMwAAHDsMPL/etInAAAAAElFTkSuQmCC">
+                <vector name="origin" x="-5" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="19" height="34" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAiCAYAAAC9duLEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXVJREFUSEutlQuxgzAQRakELGChFmIBC1jAQizUQi1goVqwsK93eXdnkwJJSzqTCQnLydn8euuu/cR9fvsVBYjgt66rLMuibcLY8PXRQAbZBaGTo7D2IzlqYgOjR4xaGK+aHoi2UzdbnxYA8zQlIEsTLwnhiJtGL8/Y6TvG0IbAPAuZ77OELpi2Ql4i40OkH9cPIOLziTczwjAKnmFD0PjcYBjMl4N51WXVQHwEGApT3APFafvmbG/JMAwKITC3AQQFcUUYLAgc+9HSQj8heF9lBgDMFOhWE21CAIIxYs/sNIDzRQBqmvm0L8F82tVmlub/huVc5ataNOMC+BT9M1cTNWKLKxrCe3O+yxGQ/SUQ9qBCWsESoIfnA9SYfdjt2daC7PAz3RYwM+Q59HP5rVlimNv9CjNDAmtujLOrSYEoPPxNgDhCKDW7v2SnhjHEZkCF4ZoqHfQas8SuBdBSbTF/diO3gGmqLVfW/levnAY7ZtzI7PgDv5VhvYT8RtQAAAAASUVORK5CYII=">
+                <vector name="origin" x="8" y="14"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <uol name="mailArm" value="../0/mailArm"/>
+        </imgdir>
+    </imgdir>
+    <imgdir name="jump">
+        <imgdir name="0">
+            <canvas name="mail" width="24" height="27" basedata="iVBORw0KGgoAAAANSUhEUgAAABgAAAAbCAYAAABm409WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXtJREFUSEutVguxgzAQTCVgAQvPAhZiAQtYwEIt1AIWqgUL99ijmzlCaD6FmQwludvPXQh9uPsuMVCP+2CdA7DgWtdVlmXR5xwBg3LBAbgKHMEYVHWh6KAayp/zrCPnQG1ay8Z2cGbXATqNYxE4S6fBAKaynbGT1+zCnFVNkpx6EMj0N8nghmBZgd8i/inS+fVEgvjS5h4ISAbVBPevnQAC7ChRHsqDYCQDCOowWJ4U+DzuWzW3NeN16ftegUkSqwYwBuKaCKCWJL7zoSSYJzDWmx0AFA6UxOwiPBMY4HCG2FoXmsT6ExR3OrAlu53AluwnB6FEn5eMtY93U5MDNtmWx/7mLsIdsdU90Pdh2F6obVyRcL4aHInjdoBdgcfzNQSq9hs41lsJNJGNjeyHo5rzJClRr8lMIMEnMXXGqEvrIiI5NDzZyAJVp8ZTUHw2XZWk5HBMkqR2ViApUJ48dVPbOMZSkgYC/UhhxCQprOqPRmQn+3fnV4JT3/4BhI9UMcZkxJEAAAAASUVORK5CYII=">
+                <vector name="origin" x="10" y="13"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="22" height="21" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKJJREFUSEvtldENgCAQQ28FV2AFV2AFVnAFV3AWl0TbcAZNTETrHySX8wPeNQ0WM83KOwYlXzkN6Rc4octE1VLlh+IQggxOqNe6aFTnaJEFMLoKjFtwwOGx0grCLyW/dh3YHXjqwDzO0gDhXEBR5Zd8quV+nwPRPUhaqBBS4pLH6m+qfQt1YQgggKsgMsPU8gK0iOVeT7d6wMnOr976AHTYsQFuJnJKjLCfEAAAAABJRU5ErkJggg==">
+                <vector name="origin" x="9" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="sit">
+        <imgdir name="0">
+            <canvas name="mail" width="20" height="22" basedata="iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAShJREFUOE+tlQ0RgzAMhbGABSzMQi3UwixgoRZmAQtYmBYsZHuBl5XSUrqjdz22hnz5L13XtuT7Ona6SuendJnnWXcCFazM+TnMdU6VEmX7D3nB+yxYgguqoGvpZQrrbxgBrAUozq3WFfQW8S+R3i8KJawJOAyDAgEgzE8/IM6xr4asnuHl8TFauPQOTxik0VrTWO6ggOV7b2ES1uKhesX8KXQrSAxrLgqAUAKM4eH5b1GQlvuB9C4Xci2HLL89owruZOjPOAW5ttEm5o7bIT5P5aW20baILdIzhpnKqt5hXuNKbiFo66D/omk4pOVwnwEGRexkjAzYNK8EZprUDHFKrsysjhi8uwOoxWC4OSDySvkVL21WWc3w3F1FNXnxgkkrV/oQnd57H/sSxiYQEyuLAAAAAElFTkSuQmCC">
+                <vector name="origin" x="12" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailChestOverPants"/>
+            </canvas>
+            <canvas name="mailArm" width="18" height="14" basedata="iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGlJREFUOE9jYKAM/KdI++7du/+HCob+d2FwARlEkWGD0KD/7wT/r+pg+N+RBvYaZd5TUlL6D8KDwiCwK0Deo4qLQEkAFE4Uew2UjqiRlkCJmmLXwHIGarSnpaX9B2EXF3CSJw9QbADUWgAK60URtKPlDwAAAABJRU5ErkJggg==">
+                <vector name="origin" x="8" y="9"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="mailArmOverHair"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="ladder">
+        <imgdir name="0">
+            <canvas name="mail" width="22" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAdCAYAAACuc5z4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXNJREFUSEvNluFxwyAMhb1CVvAKWYEVvAIreAVWyApdwTt5BZWn5qmYQlBafpQ7HT5f8kk8HsLL8j0kPyKmD9luG+HTEsh+3zUALxL8ufoLeJYk8pEWkfM2tVIsVdZ11UCCWdUaOISg8JlghRM8G67VAl5p3bNdy5Zdq6rGtJ3kcZ5n+WN7fqQkx3FIWIK9o1WLdxerGhhQwusZUMDhd4JQFJ5fnQGDA1AOJCOUEMyAQsoUX7vKwFhe2natjhFD1MrK6mjXkaMu4PKYc+kEF7532VSdgVH3D4KxZMQ71vzakGw7Wq+umECeVO9pVTArJhx/ZnCTkGDkgtJvCjYvZ0laFVPj/wFmC4UcWDbmnhSQw60xNy7G7NfnJtKnvXnkX2otgDIIL7tfK4EHrhJ4KuYlMTrKVnHV9JsdDlDuR6+j1TexNX38sdOtLvekG0wX0MMN/WwVbJcejfWqos0c3xjDdmkaP7NrVc6N+dWXk6cl/gB/AitPNSwBWDawAAAAAElFTkSuQmCC">
+                <vector name="origin" x="11" y="15"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="backPants"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="22" height="29" basedata="iVBORw0KGgoAAAANSUhEUgAAABYAAAAdCAYAAACuc5z4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXNJREFUSEvVloGNwyAMRdMRukJWuBVYISuwQlZghVuhK2SnrODmu/2Wk0IhFdXpkCxQWj3sb2O4DH2GOMylBxJAma6TGtY9oGAY9CvwWxpE1qtg7um1ej6Oo1lP+P8CawIpxVEGiu7LJffNV5OVGpIWQlC4B0sKSeafWe35g64x1nX1G9j6NyVZlsXKLVcRCgEcJcMNEB6ghB9nQAEPQ1ArVYKk+CgZ7MxixyYA+IHNWqHUbZcAwOl9mmb1jhZDNE/fefuSEB5VgjEzCswMH/PZ06Z6Y3jNCQcQ0lG+1pOmkqB8YEyo95hAn5MWuIZHjwnHNxqA9Bjet7ZM/SMlKHnsdf57sEmxJRBhs9fmpIAkrZVhiYtxq9dnEn2/za1rybOKAJRWg9egehMgbHapmse5jla6TLUaoBm0Y6crzafBKJ8DfHfseZRLzT3n9aMPb3IcvNyB8R/CXWRvnxQeWpQLEX1y3ddeM75ua9fXqYdR06PkDoJrNLfR4KaBAAAAAElFTkSuQmCC">
+                <vector name="origin" x="11" y="15"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="backPants"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+    <imgdir name="rope">
+        <imgdir name="0">
+            <canvas name="mail" width="19" height="35" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAjCAYAAAB2KjFhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaJJREFUSEutlg2NwzAMhUthFErhKITCKJTCKITCKByFciqFnJ6vz3MaJ06lVYq2Nc7nf2fL0j7Feee9CuXK8/GEUCQYyonA6+clawCUfcj2FFegwDpV2AOWcjxCjWfgKsU4Z70o67rKwsadmEGeZwnUF9iYCD4z655r6JOlAbG+ZTesaqyr3LwRLwWlJZXf/G+dwgDKKWs2z41e4cpBgLgAVBh+oBAJfOdc8Bioft/3vWCfNQZg3j4wCSSBrO7jOARoPwkCADAPpDGgNgJxGDAsC6J7UU02bUUF1i3CouxX7rLpLZCga5zcGZVSkrbC48EAwZrpFrEMQELtuCEEoMgyjRctIxAKsOAuLWNGe3Grgg+LrmNJrDbFOsrmd2HQLC6eizOObjJWdNW20TWbkiHEads2TQKHX++zGzOCAJsFdmFftYww6xInx103dQzD3etFYUe0s+dO+uhyifYVqiUxSjksROlAZtRS05ewHY5hOw3+R0g7ccri+2im6WynK0ZYwzA9HKHV/H+wmvVSYcNPTdpICPvRPNOLxS2a9mVzr/4B4juusntkieIAAAAASUVORK5CYII=">
+                <vector name="origin" x="10" y="17"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="backPants"/>
+            </canvas>
+        </imgdir>
+        <imgdir name="1">
+            <canvas name="mail" width="19" height="23" basedata="iVBORw0KGgoAAAANSUhEUgAAABMAAAAXCAYAAADpwXTaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVFJREFUOE+9VVEVwjAMHBKwMAtYqAUszAIWagELWJinWSjvDq5cRzMGH+y9vI42uV4uWTgMr6fY+8Heo9fQv1xOl3I+nuHgTluYJQ2JcR5TynLkph1sgeqsxuSJBEiipJQaBzDE83Ro1nmeyQimc4t/gIFdTrnetiwLAX0F0DVnAuFC2C03ZIYyjiM3kSYA5YhggMEEpDOtSBHxjW4ChJP0Wwf6b7DrAaliRBdDAarKApJeJnpYfVKGfnh6DAGyxch7qQqqojgzsMZlMG+HXjNW4cVMgACBIVUxU0WjJqeza6Vm9spJs/+CIRWm+DQVQ2lKK6WK/TBNOEOnaZq4wiR4tPbAeIOAAPYrYMPgW2ZiXKeGa9ObFNGeNPZvs86zIKhp6rUPh4PNM8409ZjGigW9gamBo+ncdP+O0c1s1Mzdim71Tef7+/x97vhXWqddf98BbD8ce/CdrcoAAAAASUVORK5CYII=">
+                <vector name="origin" x="9" y="10"/>
+                <imgdir name="map">
+                    <vector name="navel" x="0" y="0"/>
+                </imgdir>
+                <string name="z" value="backPants"/>
+            </canvas>
+        </imgdir>
+    </imgdir>
+</imgdir>

@@ -1,0 +1,44 @@
+/*
+	This file is part of the odinms Maple Story Server
+    Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
+                       Matthias Butz <matze@odinms.de>
+                       Jan Christian Meyer <vimes@odinms.de>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License version 3
+    as published by the Free Software Foundation. You may not use, modify
+    or distribute this program under any other version of the
+    GNU Affero General Public License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/**
+-- Odin JavaScript --------------------------------------------------------------------------------
+	During The Ride To Ellinia
+-- By ---------------------------------------------------------------------------------------------
+	Information
+-- Version Info -----------------------------------------------------------------------------------
+	1.2 - Update to support lastest script [Information]
+	1.1 - The right statement to bring out the music [Information]
+	1.0 - First Version by Information
+---------------------------------------------------------------------------------------------------
+**/
+
+function enter(pi) {
+	var nextMap = 200090000;
+	var eim = pi.getPlayer().getEventInstance();
+	var target = eim.getMapInstance(nextMap);
+	var targetPortal = target.getPortal("under00");
+	pi.getPlayer().changeMap(target, targetPortal);
+	if(pi.getPlayer().getClient().getChannelServer().getEventSM().getEventManager("Boats").getProperty("haveBalrog1").equals("true")) {
+		pi.changeMusic("Bgm04/ArabPirate");
+	}
+	return true;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>MapleStory Portable 帮助</title>
+<style>body{font-family:"Microsoft YaHei",sans-serif;max-width:760px;margin:2em auto;line-height:1.7;padding:0 1em}code{background:#f0f0f0;padding:1px 5px;border-radius:3px}h1{font-size:1.5em}h2{font-size:1.15em;border-bottom:1px solid #ccc;padding-bottom:.2em}</style>
+</head>
+<body>
+<h1>MapleStory Portable（冒险岛 GMS v062 单机便携版）</h1>
+<h2>一键启动</h2>
+<p>双击 <code>MapleStoryPortable.exe</code>：自动启动数据库、世界服、登录服、频道服，随后打开<strong>默认全屏</strong>游戏客户端；退出游戏后自动正常关闭全部服务。账号 <code>admin</code>，密码 <code>admin</code>。</p>
+<h2>便携说明</h2>
+<ul>
+<li>本机已验证复制到含中文和空格的新路径后，服务可启动并正常关闭。换电脑还需满足 Windows/.NET Framework 4.x 和旧客户端的图形兼容要求。</li>
+<li>游戏进度保存在 <code>Data\mysql\</code>；删除后下次启动自动从 <code>App\DefaultData</code> 初始存档重开。备份进度 = 复制 Data 目录。</li>
+<li>新机器上如被安全软件拦截，参阅 <code>Other\使用说明.txt</code> 的「安全软件拦截」一节。</li>
+</ul>
+<h2>全屏 / 窗口切换</h2>
+<p>游戏默认原生全屏。游戏获得焦点后按 <strong>Alt+Enter</strong> 切换到窗口模式，再按一次切回全屏。启动器不再强制窗口大小或为窗口化重启游戏。</p>
+<p>其他程序占用端口时，启动器会停止并提示；只回收路径和端口均确认属于本包的遗留服务。运行日志与存档留在 <code>Data</code>；启动器源码在 <code>Other\Source\build\Launcher.cs</code>，文档在 <code>Other</code>（使用说明.txt、更新日志.md、新手入门 GM 资料）。</p>
+<h2>启动画面</h2>
+<p>启动 Nexon 画面已替换为 MapleStory 枫叶 logo（2026-09-28 更新，图案已按屏幕中心对齐）。换图工具：<code>Other\Tools\WzLogoPatch\bin\WzLogoPatch.exe</code>（<code>fit</code> 缩放居中、<code>replace</code> 替换并自动校验）；还原：把 <code>Other\Backups\UI.wz.before-nexon-logo-20260928</code> 复制回 <code>App\MapleStory\Client\UI.wz</code>。</p>
+<h2>目录结构</h2>
+<ul>
+<li><code>MapleStoryPortable.exe</code> — 一键启动器（源码 <code>Other\Source\build\Launcher.cs</code>）</li>
+<li><code>App\DefaultData\mysql\</code> — 初始存档</li>
+<li><code>App\MapleStory\Client\</code> — 客户端与 WZ/DLL</li>
+<li><code>App\MapleStory\Runtime\</code> — Java 与 MySQL 程序</li>
+<li><code>App\MapleStory\Server\</code> — 服务端 JAR、脚本、XML、配置与密钥</li>
+<li><code>Data\mysql\</code> — 游戏进度　<code>Data\logs\</code> — 服务日志</li>
+<li><code>Other\Source\</code> — 服务端源码　<code>Other\</code> — 文档与 GM 资料　<code>Other\Tools\</code> — WZ 修改工具</li>
+</ul>
+<p>工具项目清单：<a href="Other/Tools/GameAudit/tool-inventory-20261005/工具项目清单.md">2026-10-05 清单</a>；详细说明：<a href="Other/使用说明.txt">使用说明</a>。</p>
+</body>
+</html>
