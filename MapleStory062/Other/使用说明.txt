@@ -1,0 +1,95 @@
+﻿====================================================
+ MapleStory Portable —— 冒险岛 GMS v062 单机便携版
+====================================================
+
+【游戏介绍】
+本包使用 GMS062 客户端和配套本地服务端，保留中文化及自定义内容。
+从新手地图开始，完成任务、打怪升级、转职和收集装备。
+本说明和 Other\help.html 为玩家入口；本文件中的根目录指 MapleStory062。
+客户端、服务端、运行库和存档仅供062使用，不能与072或079混用。
+
+【一键启动】
+1. 将完整且配套的GMS062客户端放入 App\MapleStory\Client。
+2. 双击根目录 MapleStoryPortable.exe，等待数据库、世界服、登录服和频道服就绪。
+3. 服务就绪后自动打开客户端；初始账号admin，密码admin，已有存档以实际账号为准。
+4. 退出游戏后等待启动器完成服务关闭和数据库正常关闭，再移动目录或拔盘。
+首次存档缺失时使用 App\DefaultData\mysql 模板，不覆盖已有存档。
+启动器检查同目录互斥和端口归属，其他程序占用端口时停止启动。
+
+【常用操作】
+- 方向键移动或爬梯，普通传送门附近按上键，双击NPC对话。
+- 攻击、跳跃、拾取及技能按键可在游戏键盘设置查看和调整。
+- 升级后分配属性点和技能点，按职业条件寻找导师转职。
+- 领奖前预留背包空位，核对任务接取状态、击杀数量和收集条件。
+- 删除角色输入固定生日20090513；仅适用于本062包，重要角色先备份。
+- 中文输入异常时可尝试微软拼音旧版兼容模式或兼容旧游戏的输入法。
+
+【频道、商城与拍卖】
+商城使用游戏内入口。既有说明记录商城进出修复，实际功能以当前包为准。
+各频道、拍卖和自定义NPC菜单按本版本配置与对话执行，费用和奖励以确认提示为准。
+不能套用072的十频道、最高会员待遇、删除按钮或周末集市规则。
+
+【启动画面】
+- 启动 Nexon 画面已替换为 MapleStory 枫叶 logo（2026-09-28 更新，UI.wz → Logo.img → Nexon → 0
+  原地覆写，图案已按屏幕中心对齐，游戏内居中显示）。
+- 想换图：准备一张 PNG（任意尺寸），然后用自带工具（无需联网、无需装环境）：
+    Other\Tools\WzLogoPatch\bin\WzLogoPatch.exe fit <你的图.png> <输出.png> 400 300 640 400
+    Other\Tools\WzLogoPatch\bin\WzLogoPatch.exe replace App\MapleStory\Client\UI.wz Logo.img/Nexon/0 <输出.png>
+  fit 自动裁掉白边、按比例缩放到 640×400 以内并对齐屏幕中心；若图片本身已是 1024×602，
+  可用 recenter <你的图.png> <输出.png> 400 300 只做居中。replace 自带回读逐像素校验，失败会拒绝写入。
+- 还原旧画面：把 Other\Backups\UI.wz.before-nexon-logo-20260928 复制回 App\MapleStory\Client\UI.wz。
+  （注意：还原回去的是上一版紫底"怪盗基德"宣传图，本包中原始官方 Nexon logo 早已不存在。）
+
+【显示模式】
+默认使用800×600原生全屏；游戏获得焦点后按Alt+Enter请求切换窗口或全屏。
+启动器在游戏会话中临时设置所需兼容标志，退出后恢复；异常标记在下次启动处理。
+不强制窗口大小；显示效果取决于系统、显卡和旧客户端图形兼容性。
+
+【便携与存档备份】
+需要Windows及.NET Framework 4.x；运行使用本包Java与MySQL，不依赖系统安装。
+旧版Windows尚未逐系统验收，不能把路径测试通过视为所有系统兼容。
+游戏进度保存在 Data\mysql，启动器设置在 Data\settings，日志在 Data\logs。
+正常退出并确认服务和数据库关闭后，再复制整个Data作为备份。
+恢复前保持服务关闭，另存当前Data；不要删除或初始化现有存档来排错。
+App\DefaultData\mysql仅为初始模板，不随玩家进度更新。
+
+【服务端设置】
+配置位于 App\MapleStory\Server 内的properties文件，修改前备份并检查原编码。
+使用本版本配置和实际脚本说明核对倍率、端口及奖励，不套用其他版本的设置项。
+修改后重新启动对应服务，数据库配置日常无需修改。
+
+【目录结构】
+MapleStoryPortable.exe          日常启动入口
+Other\使用说明.txt             玩家文字说明
+Other\help.html                游戏介绍与帮助页
+App\DefaultData\mysql          首次初始化存档模板
+App\MapleStory\Client          GMS062客户端EXE、WZ和DLL
+App\MapleStory\Runtime         本包Java及MySQL
+App\MapleStory\Server          服务端dist、scripts、XML和配置
+Data\mysql                     游戏存档
+Data\settings、Data\logs       启动器设置及日志
+Other\Source、Other\Tools      源码及维护工具（本地维护资料）
+Other\Backups                  历史备份（本地维护资料）
+
+【常见问题与日志】
+- 启动失败先读启动器提示及Data\logs日志，核对客户端版本和文件是否完整。
+- 端口占用时先确认进程归属，不直接关闭未知进程。
+- 安全软件拦截时记录文件、检出名称和来源后核查，不能仅凭旧文档判定当前文件安全。
+- 中文输入、黑屏和图形报错分别核对输入法及旧客户端图形支持。
+- 反馈时注明GMS062、角色、地图、NPC/任务名称、操作步骤和相关日志，不发送密码。
+
+【更新日志】
+2026-10-12：按072的玩家说明结构整理文字说明和帮助页，统一入口到Other目录。
+本次只整理文档，未修改客户端、服务端、存档或游戏规则。
+既有记录包括2026-09-27商城返回修复、2026-09-28启动画面更新及2026-10-05目录整理。
+详细历史依据和备份保留在本地Other资料中；记录不代表本次重新实测了所有功能。
+
+【开发与维护】
+布局检查：MapleStoryPortable.exe --verify-layout（只核对必要文件）。
+服务检查：MapleStoryPortable.exe --verify-services（必须使用隔离存档副本）。
+源码：Other\Source\build\Launcher.cs。
+构建：Other\Source\build\BuildLauncher.exe --deploy。
+修改源码后核实Server\dist与Runtime\jre\lib\ext中的实际运行JAR。
+维护前阅读本地AGENTS.md，保留原编码、用户修改及现有存档。
+
+说明更新：2026-10-12

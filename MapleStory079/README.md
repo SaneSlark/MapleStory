@@ -2,6 +2,8 @@
 
 本目录是独立的国服 CMS079 便携包。客户端、服务端、运行库、配置和存档仅供本版本使用，不得与 062 或 072 混用。本文中的“根目录”指 `MapleStory079` 目录。
 
+玩家使用说明统一位于 [Other/使用说明.txt](Other/使用说明.txt) 和 [Other/help.html](Other/help.html)，与 062、072 使用相同的文档结构。本文保留技术背景和历史更新记录；当前玩家操作以这两个说明文件为入口。
+
 维护前阅读[本版本规则](AGENTS.md)及[仓库规则](../AGENTS.md)；其他版本介绍见[仓库 README](../README.md)。
 
 双击 `MapleStoryPortable.exe`：自动启动数据库和游戏服务端，等待加载完成后启动客户端。未放入客户端时会提示放置位置。启动、保存及停服均由 C# 完成，不依赖 PowerShell 或 CMD。兼容目标为 Windows 7 SP1 及以上系统，支持 32 位和 64 位，需要 .NET Framework 4.x（建议 4.8）。运行不需要安装 Java、数据库或配置 JAVA_HOME，不注册 Windows 服务。启动器、Java 和 MariaDB 均使用 Windows x86 版本；实际 32 位 Windows 和 Win7 SP1 尚未实测。

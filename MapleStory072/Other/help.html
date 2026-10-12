@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冒险岛 CMS072 便携版 · 游戏介绍与说明</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f3eb;color:#343b35;font-family:"Microsoft YaHei",sans-serif;line-height:1.85}main{max-width:900px;margin:32px auto;padding:32px;background:#fffdf8;border:1px solid #e2dfd2;border-radius:12px}h1{font-size:28px;color:#356348;margin:0 0 12px}h2{font-size:21px;color:#356348;border-bottom:1px solid #e2dfd2;padding-bottom:8px;margin-top:32px}p{margin:12px 0}li{margin:7px 0}a{color:#356348}code{background:#eeeede;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #e2dfd2;padding:10px}th{background:#f2f4e9}.lead{color:#63715e}.note{padding:12px 16px;background:#f2f4e9;border-left:4px solid #7a9866}@media(max-width:600px){main{margin:0;padding:20px;border:0;border-radius:0}h1{font-size:24px}}
+</style>
+</head>
+<body><main>
+<h1>冒险岛 CMS072 单机便携版</h1>
+<p class="lead">从彩虹岛出发，探索金银岛、挑战怪物、完成任务，重新走进熟悉的冒险世界。</p>
+<p><a href="使用说明.txt">文字版使用说明</a> · <a href="../README.md">项目介绍</a></p>
+<nav aria-label="说明目录"><a href="#intro">游戏介绍</a><a href="#start">开始游戏</a><a href="#play">操作与成长</a><a href="#services">便携版功能</a><a href="#market">集市与交通</a><a href="#save">存档与设置</a><a href="#faq">常见问题</a></nav>
+
+<h2 id="intro">游戏介绍</h2>
+<p>冒险岛是一款横版卷轴角色扮演游戏。你将从新手成长为冒险家，在不同地图中打怪升级、收集装备、学习技能，并通过 NPC 对话与任务了解这个世界。战士、魔法师、弓箭手和飞侠拥有不同的战斗方式，可以按自己的喜好选择发展路线。</p>
+<p>本包以大陆 CMS072 客户端为依据，配套本地数据库与服务端，适合在自己的电脑上体验旧版冒险岛。包含原有冒险内容及拍卖综合服务等自定义功能；部分任务、脚本和高版本遗留内容仍可能存在兼容差异。</p>
+
+<h2 id="start">开始游戏</h2>
+<ol>
+<li>双击根目录的 <code>MapleStoryPortable.exe</code>，在 Windows 提权提示中允许运行。</li>
+<li>等待启动器准备存档、启动数据库与游戏服务，然后自动打开客户端。首次启动可能需要更长时间。</li>
+<li>使用已有游戏账号登录，选择世界与频道，再选择角色或点击“创建角色”。账号密码以你的存档为准。</li>
+<li>进入游戏后，按新手 NPC 的提示逐步熟悉移动、攻击、任务与装备。</li>
+</ol>
+<p class="note">日常请通过便携启动器进入游戏。角色删除按钮等客户端兼容功能由启动器在本次游戏会话中启用。</p>
+<p>启动器采用黑底白字的状态窗口，内容自动更新；显示区域不能选择、点击或用鼠标滚轮滚动。游戏正常或异常退出并完成关停后窗口自动关闭，排查问题请查看日志。</p>
+<p>退出时使用游戏内的退出功能，等待启动器完成数据库与服务端关停后，再关闭电脑、移动文件夹或拔出移动存储设备。</p>
+
+<p>保存账号等客户端设置随包保存在 <code>Data/settings/client-settings.xml</code>；删除整个 Data 后，下次启动重新初始化存档和本包客户端设置。游戏退出后，启动器恢复电脑原有客户端设置。</p>
+<h2 id="play">操作与成长</h2>
+<table>
+<thead><tr><th scope="col">操作</th><th scope="col">说明</th></tr></thead>
+<tbody>
+<tr><td>移动与攀爬</td><td>方向键左右移动，上下攀爬绳索或梯子；普通传送门附近按上键进入。</td></tr>
+<tr><td>跳跃、攻击与拾取</td><td>通过游戏内“键盘设置”查看或调整对应按键，也可以安排技能与药水快捷键。</td></tr>
+<tr><td>对话与菜单</td><td>双击 NPC 打开对话，按提示选择选项；Tab 可切换部分界面中的选项。</td></tr>
+<tr><td>角色、背包与任务</td><td>通过游戏菜单或已设置的快捷键查看属性、装备、技能与任务进度。</td></tr>
+<tr><td>显示模式</td><td>游戏获得焦点后按 Alt+Enter 切换全屏与窗口；实际显示效果取决于客户端及电脑环境。</td></tr>
+</tbody></table>
+<p>升级后留意属性点与技能点，并在满足条件时寻找职业导师转职。装备需要满足职业、等级和属性要求；战斗前准备好恢复生命与魔法的药水。</p>
+<p>任务可能同时要求击杀数量与收集物品，请以任务条件和进度为准。背包预留空位后再领取奖励；任务物品的掉落还会受到任务状态和掉落条件影响。</p>
+
+<h2 id="services">本包提供的功能</h2>
+<ul>
+<li><strong>10 个频道：</strong>当前开放 1～10 频道，可在游戏内选择或切换；切换频道继续使用同一角色存档。</li>
+<li><strong>拍卖综合服务：</strong>点击客户端的拍卖入口打开服务 NPC，提供超级传送、排名、百货、转职、会员、仓库、技能、重置和清理等菜单。操作前请阅读对应费用与确认提示。</li>
+<li><strong>超级传送：</strong>按城镇、练级、BOSS 等分类选择地图，子菜单按标注等级升序排列。标注等级用于参考，传送费用和限制以实际对话为准。</li>
+<li><strong>导游妮妮：</strong>提供世界旅游和返程服务，前往旅游地点前请确认金币与费用。</li>
+<li><strong>会员工资：</strong>当前默认有效会员等级为最高 5 级，可从拍卖会员菜单每日领取一次 100 万金币工资；附加奖励与限制以菜单提示为准。</li>
+<li><strong>商城：</strong>可从游戏内进入商城，查看商品与账号余额；购买前留意价格、数量与有效期。</li>
+<li><strong>删除角色：</strong>在角色选择界面选中角色，点击“删除角色”并确认。删除会清理该角色及其随身物品、任务等数据，请先备份存档；家族族长需要先处理家族身份。</li>
+</ul>
+
+<h2 id="market">集市与交通</h2>
+<p>找咪咪进入集市，向五位商人购买商品，找阿得拉按买价的两倍回售。当前采用海外旧资料的固定参考价，不代表 CMS072 官方浮动行情。每次交易一件，新购商品有效期七天，请预留装饰栏空间并在过期前回售。</p>
+<table><thead><tr><th scope="col">商品</th><th scope="col">买入金币</th><th scope="col">回收金币</th></tr></thead><tbody>
+<tr><td>香料</td><td>425</td><td>850</td></tr>
+<tr><td>泰国纪念品</td><td>950</td><td>1900</td></tr>
+<tr><td>烤鳗鱼</td><td>850</td><td>1700</td></tr>
+<tr><td>鲨鱼标本</td><td>12000</td><td>24000</td></tr>
+<tr><td>乌鸦羽毛帽</td><td>10000</td><td>20000</td></tr>
+</tbody></table>
+<p>勇士部落、天空之城、神木村、玛加提亚的咪咪与阿得拉已拉开距离；上海城市广场不再投放这两个 NPC。烦斯乐养鸡玩法已取消，相关 NPC 隐藏，养鸡、成长与每日粉末任务关闭；已有任务和道具保留，进行中的任务可自行放弃。</p>
+<p>各地中巴与出租车的名称和路线已按客户端核对，乘车前查看目的地及费用。两辆星级出租车前往蚂蚁广场（普通 10000、新手 1000 金币）；快速出租车提供冰峰雪域至冰雪峡谷Ⅱ、玩具城至时间通道（均 45000），以及神木村至龙林入口（55000）。勇士部落驾驶员洪前往上海外滩收费 1000 金币。送货员已恢复显示，完整寄送功能仍待核实。</p>
+
+<p class="note">本包组件和存档仅供CMS072使用，不能与062或079混用。Runtime已移出开发资料及调试符号，约1283MiB降至497MiB；运行和构建组件保留，回退资料在本地Other\RuntimeCleanup\20261012。</p>
+<h2 id="save">存档、便携与设置</h2>
+<p>角色、装备、任务和账号等游戏进度保存在 <code>Data\mysql\</code>。备份时先正常退出游戏，等待服务停止，再复制整个 <code>Data</code> 文件夹。恢复时也应保持游戏与服务关闭，并先另存当前数据。</p>
+<p>移动便携包时请复制完整文件夹，保留目录结构。包内自带 Java 7 与 MySQL 5.7；换电脑后仍需满足 Windows、.NET Framework 4.x 和旧客户端图形运行要求。</p>
+<p>服务端设置位于 <code>App\MapleStory\Server\settings.ini</code>，修改后需重启游戏服务才能生效。当前配置如下：</p>
+<table><thead><tr><th scope="col">设置</th><th scope="col">当前值与作用</th></tr></thead><tbody>
+<tr><td><code>defaultVipLevel</code></td><td>5；默认有效会员等级，可设为 0～5，不降低角色已有会员等级。</td></tr>
+<tr><td><code>channelCount</code></td><td>10；开放频道数，可设为 1～10。</td></tr>
+<tr><td><code>expRate</code></td><td>10；普通地图怪物击杀基础经验倍率。彩虹岛及教学地图不额外应用此倍率。</td></tr>
+<tr><td><code>mesoRate</code></td><td>2；怪物掉落金币金额倍率。</td></tr>
+<tr><td><code>dropRate</code></td><td>2；怪物物品掉落概率倍率，包含 BOSS，不表示每只怪固定掉落两件物品。</td></tr>
+<tr><td><code>scrollingMessage</code></td><td>游戏内顶部滚动公告。</td></tr>
+</tbody></table>
+<p>普通任务经验和脚本固定奖励不一定跟随怪物倍率变化。<code>bossDropRate</code> 当前仅用于 NPC 爆率查询显示，实际 BOSS 掉落使用 <code>dropRate</code>。</p>
+
+<h2 id="faq">常见问题</h2>
+<ul>
+<li><strong>游戏无法启动：</strong>先查看启动器提示及 <code>Data\logs\launcher.log</code>。端口被其他程序占用时，关闭对应程序后重试。</li>
+<li><strong>删除按钮没有出现：</strong>关闭客户端，再通过根目录的便携启动器启动，确保使用最新部署的启动器。</li>
+<li><strong>任务不能完成或物品不掉落：</strong>核对任务是否接取、击杀与收集条件是否全部满足、背包是否有空位。仍有问题时记录地图、NPC、任务名称和操作过程。</li>
+<li><strong>自由市场无法进入：</strong>通过城镇自由市场入口进入时，角色需达到 5 级。</li>
+<li><strong>更换电脑后黑屏或图形报错：</strong>检查旧客户端所需的 DirectX 图形支持，并尝试 Alt+Enter 切换显示模式。</li>
+<li><strong>遇到异常如何反馈：</strong>保留截图和 <code>Data\logs\server.log</code>，写明角色、地图、频道以及能重现问题的步骤。</li>
+</ul>
+<p>说明更新：2026-10-12。更新摘要见同目录的“使用说明.txt”，详细维护依据、备份与验证记录见根目录 AGENTS.md。</p>
+<p class="lead">游戏内容与奖励以当前客户端、NPC 对话和实际配置为准。祝你在冒险岛玩得愉快！</p>
+</main></body></html>

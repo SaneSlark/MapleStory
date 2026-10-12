@@ -1,0 +1,106 @@
+====================================================
+ MapleStory Portable —— 冒险岛 CMS v079 单机便携版
+====================================================
+
+【游戏介绍】
+本包使用国服CMS079客户端，配套本地服务端、Java及MariaDB数据库。
+体验地图探索、任务、技能和装备，同时保留包内自定义NPC和玩法。
+本说明和 Other\help.html 为玩家入口；本文件中的根目录指 MapleStory079。
+客户端、运行库、配置和存档仅供079使用，不能与062或072混用。
+
+【一键启动】
+1. 将完整国服079客户端放入 App\MapleStory\Client，保留MapleStory.exe、WZ和DLL。
+2. 双击根目录 MapleStoryPortable.exe，等待数据库、登录、频道和商城服务就绪。
+3. 启动器自动调用 App\MapleStory\Launcher 中的CMSLauncher及Hook启动客户端。
+4. 当前启用自动注册，可按登录提示使用新的账号密码；已有账号以存档为准。
+5. 游戏退出后，启动器通知服务端保存、停服，再正常关闭数据库。
+关闭启动器窗口会请求游戏退出；若有确认框，请完成退出并等待保存。
+成功后清理临时目录并自动退出；服务尚未保存关闭时不要拔盘或强制结束进程。
+已有数据库缺少版本或导入完成标记时停止自动操作，不重建现有存档。
+
+【常用操作】
+- 方向键移动和爬梯，普通传送门附近按上键，双击NPC交互。
+- 攻击、跳跃、拾取和技能按键可在游戏内键盘设置查看及调整。
+- 升级后检查属性点和技能点，按对应职业条件寻找导师。
+- 完成任务前核对接取、前置、击杀数量和收集条件，领奖前预留背包空位。
+- 中文输入异常时可尝试微软拼音的旧版兼容模式或兼容输入法。
+
+【新手引导与创建角色】
+本包支持客户端已有的冒险家、骑士团及战神建角选项，外观与初始装备按079资源核对。
+默认每次登录显示男女选择，新建角色沿用本次选择；已有角色性别不改变。
+RoyMS.ChooseGenderOnLogin=false时，仅尚未选择性别的新账号弹出选择框。
+新手首次进图按本版本NPC和任务提示操作，不套用072的具体任务修复结论。
+删除角色按079客户端提示执行，不能套用062固定生日或072会话删除补丁。
+
+【频道、商城与拍卖】
+频道数量与端口以 Data\Config\server.properties 实际配置为准。
+商城使用游戏内入口，商品按本客户端资源校验，购买前核对价格、数量及有效期。
+拍卖在当前配置中进入NPC菜单，具体费用、条件及奖励以079对话为准。
+自定义资源和玩法仍需逐项适配，不能把资源校准视为全部功能验收。
+钓鱼奖励和间隔由本包fish.properties配置，奖励道具必须在079客户端存在。
+
+【显示模式】
+图形兼容组件位于 App\MapleStory\Launcher，随包使用，不复制到系统目录。
+本包窗口模式保存在 Data\Config\client-display.ini，其他客户端设置在client-settings.ini。
+启动组件隔离本包设置；不要用其他版本的DLL、Hook或注册表处理办法替换它。
+当前已进行游戏窗口创建及退出测试，x86环境下的实际登录和游戏内容仍需验收。
+
+【便携与存档备份】
+兼容目标为Windows 7 SP1及以上的32位或64位系统，需.NET Framework 4.x，建议4.8。
+启动器、Java 7u352与MariaDB 10.4.12均为x86；Java最大堆1024MB。
+运行不依赖系统Java、已安装数据库或PowerShell；实际32位Windows和Win7仍需实机验证。
+进度在 Data\Database，配置在 Data\Config，日志在 Data\Logs。
+正常停服并确认数据库关闭后，再备份整个Data，尤其保留数据库密码配置。
+恢复时先另存当前Data，保持服务关闭。不要删除、重建或跨版本覆盖现有存档。
+日常退出不自动导出SQL，也不自动创建Data\Backups。
+
+【服务端设置】
+实际配置：Data\Config\server.properties、fish.properties。
+App\DefaultData仅提供首次配置模板，已有配置不会被模板覆盖。
+倍率、频道和活动设置按当前实际配置核对，修改前备份，按配置读取方式重新生效。
+账号性别选择使用RoyMS.ChooseGenderOnLogin；已有角色资料不随之改写。
+数据库连接由启动器生成，监听127.0.0.1:13379，数据库名maplestory。
+密码保存在Data\Config\db-passwd.ini；不要公开或在反馈中粘贴。
+保留数据库runtime-version.txt和schema-imported.txt，不随意改标记或直接替换数据目录。
+说明不固定列举频道数量，避免覆盖用户当前配置或套用旧历史值。
+
+【目录结构】
+MapleStoryPortable.exe          日常启动入口
+Other\使用说明.txt             玩家文字说明
+Other\help.html                游戏介绍与帮助页
+App\DefaultData                首次配置模板
+App\MapleStory\Client          CMS079客户端EXE、二进制WZ和DLL
+App\MapleStory\Launcher        CMSLauncher、Hook、图形及x86依赖
+App\MapleStory\Runtime         x86 Java 7和MariaDB 10.4.12
+App\MapleStory\Server          maple.jar、portable-patches.jar、lib、scripts、XML
+Data\Database、Data\Config     存档和实际配置
+Data\Logs                      运行日志
+Data\Run、Data\Temp            运行期临时目录，正常停服后清理
+Other\Source、Other\Maintenance 源码和维护工具（本地维护资料）
+Other\Validation               验证及回退资料（本地维护资料）
+
+【常见问题与日志】
+- 提示客户端缺失：检查完整国服079客户端，不以服务端XML代替客户端WZ。
+- 启动失败：查看Data\Logs\supervisor.log、server.log和database.err.log。
+- 数据库标记不匹配：保留当前Data，核对运行库版本及初始化记录，不强行重建。
+- 端口占用：先核实程序归属；其他版本也可能使用商城8600端口，建议一次运行一个版本。
+- 图形初始化报错：核对Launcher内完整配套DLL及系统图形条件。
+- 关闭后服务仍运行：保持目录连接，查看错误日志，等待正常保存与关闭。
+- 反馈时注明CMS079、地图、NPC/任务、操作步骤和日志，不发送账号密码。
+
+【更新日志】
+2026-10-12：统一为072风格的玩家说明及帮助页，六个文档文件可单独入库。
+2026-10-12：启动器、Java和MariaDB切换x86，取消64位系统限制，Java最大堆改为1GB。
+2026-10-12：Runtime移出源码、示例、头文件、静态库及调试符号，约338MiB降至227MiB。
+运行目录精简有同版本回退副本；未改变原存档，备份仍占用工作区空间。
+既有工作包括建角资源、商城和对话引用校准及便携设置隔离；细节见项目README。
+当前服务初始化、启动及保存停服验证通过；实际32位系统和游戏内流程尚未全面实测。
+
+【开发与维护】
+服务检查：MapleStoryPortable.exe --verify-services，必须使用隔离副本。
+启动器源码：Other\Source\Launcher.cs和PortableLifecycle.cs。
+构建入口：Other\Maintenance\Build-Launcher.exe；固定/platform:x86。
+Java构建：Other\Maintenance\Build-Patches.ps1，核对实际部署和加载的JAR。
+资源调整须更新对应079清单；维护前阅读本地AGENTS.md。
+
+说明更新：2026-10-12
