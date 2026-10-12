@@ -30,10 +30,13 @@
 默认每次登录显示男女选择，新建角色沿用本次选择；已有角色性别不改变。
 RoyMS.ChooseGenderOnLogin=false时，仅尚未选择性别的新账号弹出选择框。
 新手首次进图按本版本NPC和任务提示操作，不套用072的具体任务修复结论。
-删除角色按079客户端提示执行，不能套用062固定生日或072会话删除补丁。
+
+【删除角色】
+在角色选择界面选择角色按钮下方，不可见，鼠标盲点会出现，按079客户端的删除提示确认。
+重要角色请先正常停服并备份存档；本版删除流程仍需游戏内实测。
 
 【频道、商城与拍卖】
-频道数量与端口以 Data\Config\server.properties 实际配置为准。
+当前配置开放8个频道；频道数量与端口以 Data\Config\server.properties 实际配置为准。
 商城使用游戏内入口，商品按本客户端资源校验，购买前核对价格、数量及有效期。
 拍卖在当前配置中进入NPC菜单，具体费用、条件及奖励以079对话为准。
 自定义资源和玩法仍需逐项适配，不能把资源校准视为全部功能验收。
@@ -62,22 +65,28 @@ App\DefaultData仅提供首次配置模板，已有配置不会被模板覆盖�
 数据库连接由启动器生成，监听127.0.0.1:13379，数据库名maplestory。
 密码保存在Data\Config\db-passwd.ini；不要公开或在反馈中粘贴。
 保留数据库runtime-version.txt和schema-imported.txt，不随意改标记或直接替换数据目录。
-说明不固定列举频道数量，避免覆盖用户当前配置或套用旧历史值。
+当前server.properties配置（用户修改后以实际文件为准）：
+  RoyMS.Count=8       频道数
+  RoyMS.Exp=20        经验倍率
+  RoyMS.Meso=10       金币倍率
+  RoyMS.Drop=2        普通掉落倍率
+  RoyMS.BDrop=2       BOSS掉落倍率
+  RoyMS.AutoRegister=true    自动注册
+固定任务奖励及自定义脚本是否应用倍率，以对应实现及对话为准。
 
 【目录结构】
 MapleStoryPortable.exe          日常启动入口
-Other\使用说明.txt             玩家文字说明
-Other\help.html                游戏介绍与帮助页
 App\DefaultData                首次配置模板
 App\MapleStory\Client          CMS079客户端EXE、二进制WZ和DLL
 App\MapleStory\Launcher        CMSLauncher、Hook、图形及x86依赖
-App\MapleStory\Runtime         x86 Java 7和MariaDB 10.4.12
+App\MapleStory\Runtime         Java 7和MariaDB 10.4.12
 App\MapleStory\Server          maple.jar、portable-patches.jar、lib、scripts、XML
-Data\Database、Data\Config     存档和实际配置
-Data\Logs                      运行日志
-Data\Run、Data\Temp            运行期临时目录，正常停服后清理
-Other\Source、Other\Maintenance 源码和维护工具（本地维护资料）
-Other\Validation               验证及回退资料（本地维护资料）
+Data\*                         存档和实际配置、运行日志、运行期临时目录，正常停服后清理
+Other\Source                   源码（本地维护资料）
+Other\Tools                    维护工具（本地维护资料）
+Other\Backups                  验证及回退资料（本地维护资料）
+Other\help.html                游戏介绍与帮助页
+Other\使用说明.txt              玩家文字说明
 
 【常见问题与日志】
 - 提示客户端缺失：检查完整国服079客户端，不以服务端XML代替客户端WZ。
@@ -88,19 +97,30 @@ Other\Validation               验证及回退资料（本地维护资料）
 - 关闭后服务仍运行：保持目录连接，查看错误日志，等待正常保存与关闭。
 - 反馈时注明CMS079、地图、NPC/任务、操作步骤和日志，不发送账号密码。
 
-【更新日志】
-2026-10-12：统一为072风格的玩家说明及帮助页，六个文档文件可单独入库。
-2026-10-12：启动器、Java和MariaDB切换x86，取消64位系统限制，Java最大堆改为1GB。
-2026-10-12：Runtime移出源码、示例、头文件、静态库及调试符号，约338MiB降至227MiB。
-运行目录精简有同版本回退副本；未改变原存档，备份仍占用工作区空间。
-既有工作包括建角资源、商城和对话引用校准及便携设置隔离；细节见项目README。
-当前服务初始化、启动及保存停服验证通过；实际32位系统和游戏内流程尚未全面实测。
-
 【开发与维护】
 服务检查：MapleStoryPortable.exe --verify-services，必须使用隔离副本。
 启动器源码：Other\Source\Launcher.cs和PortableLifecycle.cs。
-构建入口：Other\Maintenance\Build-Launcher.exe；固定/platform:x86。
-Java构建：Other\Maintenance\Build-Patches.ps1，核对实际部署和加载的JAR。
+构建入口：Other\Tools\Build-Launcher.exe；固定/platform:x86。
+Java构建：Other\Tools\Build-Patches.ps1，核对实际部署和加载的JAR。
 资源调整须更新对应079清单；维护前阅读本地AGENTS.md。
 
 说明更新：2026-10-12
+
+【Other目录规范】
+Other根层统一保留以下内容：
+Backups：修改后的回退文件、历史版本及验证记录，按任务或日期分类。
+Source：参与编译的源码、工程文件和build构建输出。
+Tools：实际使用的维护、编译和资源工具及依赖。
+help.html、使用说明.txt：本版本玩家说明，内容同步维护。
+旧路径保留在历史记录中；079迁移映射位于Other\Backups\other-layout-20261012\path-map.json。
+
+【更新日志】
+
+2026-10-12
+- 统一为072风格的玩家说明及帮助页，六个文档文件可单独入库。
+- 启动器、Java和MariaDB切换x86，取消64位系统限制，Java最大堆改为1GB。
+- Runtime移出源码、示例、头文件、静态库及调试符号，约338MiB降至227MiB。
+
+运行目录精简有同版本回退副本；未改变原存档，备份仍占用工作区空间。
+既有工作包括建角资源、商城和对话引用校准及便携设置隔离；细节见项目README。
+当前服务初始化、启动及保存停服验证通过；实际32位系统和游戏内流程尚未全面实测。

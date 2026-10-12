@@ -15,13 +15,13 @@
 - Java 最大堆从 2048MB 调整为 1024MB；活动目录中的 248 个 EXE/DLL 全部核验为 x86，启动器 CLR 标记为必须 32 位运行。
 - 在当前 Windows 11 x64 主机上，中文及空格路径的隔离现有存档、全新初始化、服务启动和正常保存停服均通过。原始 `Data` 的 360 个文件哈希保持一致。
 - 实际 32 位 Windows、Win7 SP1 及游戏内登录、角色保存尚未实测。本次服务保存测试不等于玩家进度端到端验收。
-- 旧 x64 组件及源码备份、校验清单与测试记录位于 `Other/Validation/x86-migration-20261012`。后文早期更新记录中的 x64 描述属于历史状态。
+- 旧 x64 组件及源码备份、校验清单与测试记录位于 `Other/Backups/Validation/x86-migration-20261012`。后文早期更新记录中的 x64 描述属于历史状态。
 
 ## 运行库精简记录
 
-2026-10-12 已精简活动运行库：`App/MapleStory/Runtime` 从约 338MiB 降至 227MiB。Java 源码、示例、开发头文件以及原生静态库和调试符号移至本版本 `Other/RuntimeCleanup/20261012/original-files`，并保留逐文件哈希校验的 ZIP 备份。Java 编译与打包工具、完整 JRE、数据库程序、DLL、插件、字符集和初始化资源均保留。备份仍占用工作区空间，精简的是运行目录及其分发体积。
+2026-10-12 已精简活动运行库：`App/MapleStory/Runtime` 从约 338MiB 降至 227MiB。Java 源码、示例、开发头文件以及原生静态库和调试符号移至本版本 `Other/Backups/RuntimeCleanup/20261012/original-files`，并保留逐文件哈希校验的 ZIP 备份。Java 编译与打包工具、完整 JRE、数据库程序、DLL、插件、字符集和初始化资源均保留。备份仍占用工作区空间，精简的是运行目录及其分发体积。
 
-清单和验证记录见 `Other/RuntimeCleanup/20261012`。恢复时先正常停服，再按 `inventory-before.csv` 的 `RelativePath` 将 `original-files` 内容放回本版本的 Runtime；不得从 072 复制运行库。
+清单和验证记录见 `Other/Backups/RuntimeCleanup/20261012`。恢复时先正常停服，再按 `inventory-before.csv` 的 `RelativePath` 将 `original-files` 内容放回本版本的 Runtime；不得从 072 复制运行库。
 
 ## 客户端放置
 
@@ -39,7 +39,7 @@
 
 服务端仍保留客户端之外的扩展资源：Character.wz 多出 19035 份图片记录，Item.wz 多出 296 份。这些资源没有自动删除或替换成其他物品，使用它们的自定义玩法仍需逐项适配；本次校准不等同于完整原版还原。
 
-校准记录见 `Other/Validation/Client-Metadata-Sync.json` 和 `Client-Resource-Audit.json`；修改前的 XML 副本在 `Other/Validation/ClientMetadata-Original`，供人工核对或回退。维护工具为 `Other/Maintenance/Sync-ClientMetadata.py`，它读取客户端数据并更新服务端 XML，不修改客户端 WZ；完整重新校准需要一定时间。
+校准记录见 `Other/Backups/Validation/Client-Metadata-Sync.json` 和 `Client-Resource-Audit.json`；修改前的 XML 副本在 `Other/Backups/Validation/ClientMetadata-Original`，供人工核对或回退。维护工具为 `Other/Tools/Sync-ClientMetadata.py`，它读取客户端数据并更新服务端 XML，不修改客户端 WZ；完整重新校准需要一定时间。
 
 ## 退出与保存
 
@@ -123,7 +123,7 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 - 保留完整 Data，尤其 Database 和 Config/db-passwd.ini。
 - MariaDB 首次初始化后，启动器会删除默认的 `test` 库；游戏数据导入 `maplestory`，不创建赌博数据库。
 - Data/Database/runtime-version.txt 是数据库运行版本标记，不要随意修改。
-- 迁移前数据库保留在 Data/Database-10.11-Backup，旧 10.11 程序位于 Other/Archive/MariaDB-10.11；迁移通过 SQL 导出/恢复，未直接降级打开原数据。
+- 迁移前数据库保留在 Data/Database-10.11-Backup，旧 10.11 程序位于 Other/Backups/Archive/MariaDB-10.11；迁移通过 SQL 导出/恢复，未直接降级打开原数据。
 - 116 张表的完整 CHECKSUM TABLE 校验和一致；此处校验记录对应当时迁移的数据快照。
 - 迁移前 SQL 导出为 Data/Backups/compat-migration-10.11-to-10.4.sql。
 - 游戏没有可关闭的主窗口或弹出确认窗口时，启动器会等待用户在游戏内退出。
@@ -149,7 +149,7 @@ gender 取值 0 为男、1 为女。修改后新创建的角色即为对应性�
 
 保留 `Client` 中的原版客户端、WZ 与游戏 DLL；保留 `Launcher` 中的启动组件、图形修复 DLL 与 x86 运行库；保留 `Runtime` 和 `Server`。`Data/Config` 与 `Data/Database` 保存配置及游戏进度；`Data/Backups` 仅保留已有历史备份。
 
-旧清理清单针对整理前目录，已由本节替代。`Other/Downloads` 是下载缓存；`Other/Build/classes` 与 C++ 的 `*.obj` 是可重建的编译产物。删除构建工具或源码会影响重新编译，日常运行仅依赖根目录启动器、App 和 Data。
+旧清理清单针对整理前目录，已由本节替代。`Other/Tools/Downloads` 是下载缓存；`Other/Source/build/classes` 与 C++ 的 `*.obj` 是可重建的编译产物。删除构建工具或源码会影响重新编译，日常运行仅依赖根目录启动器、App 和 Data。
 
 ## 更新日志
 

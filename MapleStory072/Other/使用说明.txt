@@ -76,7 +76,6 @@
 - 勇士部落、天空之城、神木村、玛加提亚的咪咪与阿得拉已拉开距离。
   上海城市广场不再投放这两个NPC；其他保留地点可使用集市入口和回收服务。
 - 烦斯乐养鸡玩法已取消，两位相关NPC隐藏，养鸡、成长及每日粉末任务关闭。
-  现有任务记录和鸡蛋等道具保留，不自动清理；进行中的任务可自行放弃。
 - 各地中巴、星级出租车、危险地区快速出租车和骆驼中巴已按客户端资源
   核对名称及路线。两辆星级出租车前往蚂蚁广场，普通10000、新手1000金币；
   快速出租车从冰峰雪域前往冰雪峡谷Ⅱ、从玩具城前往时间通道（均45000），
@@ -120,11 +119,11 @@
 
 【目录结构】
 MapleStoryPortable.exe       日常一键启动入口
-Other\help.html             游戏介绍与帮助页
+
 App\AppInfo\                便携应用信息与图标
 App\DefaultData\mysql\      首次初始化存档模板
 App\MapleStory\Client\      CMS072客户端EXE、二进制WZ、DLL
-App\MapleStory\Runtime\     x86 Java 7、MySQL 5.7运行库
+App\MapleStory\Runtime\     Java 7、MySQL 5.7运行库
 App\MapleStory\Server\      服务端dist、脚本、WZ XML、settings.ini
 Data\mysql\                 现有账号、角色及物品存档
 Data\settings\              启动器设置与恢复记录
@@ -132,7 +131,8 @@ Data\logs\                  启动器、数据库和服务端日志
 Other\Source\               启动器、Java服务端源码与构建工具
 Other\Tools\                开发诊断及资源核对工具
 Other\Backups\              维护前的历史备份
-Other\使用说明.txt          本说明
+Other\help.html             游戏介绍与帮助页
+Other\使用说明.txt           游戏使用说明
 
 【常见问题与日志】
 - 启动失败：阅读启动器提示及 Data\logs\launcher.log。
@@ -150,11 +150,29 @@ Other\使用说明.txt          本说明
 - 反馈问题时提供地图、NPC/任务名称、角色、频道、操作步骤、截图，
   并保留 Data\logs\server.log 与 launcher.log；不要发送账号密码。
 
+【开发与维护】
+布局检查：MapleStoryPortable.exe --verify-layout
+仅核对目录和必要文件，不启动游戏服务。
+服务检查：MapleStoryPortable.exe --verify-services
+会启动数据库及游戏服务并验证关停；维护测试应使用独立存档副本。
+启动器源码：Other\Source\build\Launcher.cs、LauncherDisplay.cs
+构建部署：Other\Source\build\BuildLauncher.exe --deploy
+日常启动、检查及关停由C# EXE执行，不依赖PowerShell或Python。
+资源与玩法修复以本包CMS072客户端为依据，历史维护记录见根目录AGENTS.md。
+
+
+【Other目录规范】
+Other根层统一保留以下内容：
+Backups：修改后的回退文件、历史版本及验证记录，按任务或日期分类。
+Source：参与编译的源码、工程文件和build构建输出。
+Tools：实际使用的维护、编译和资源工具及依赖。
+help.html、使用说明.txt：本版本玩家说明，内容同步维护。
+
 【更新日志】
 2026-10-12
 - 统一三版本Other目录的说明入口；只放行使用说明.txt和help.html入库。
 - Runtime移出源码、示例、头文件、静态库及调试符号，约1283MiB降至497MiB。
-  同版本回退文件在Other\RuntimeCleanup\20261012，备份仍占工作区空间。
+  同版本回退文件在Other\Backups\RuntimeCleanup\20261012，备份仍占工作区空间。
 - 运行库版本和游戏规则未改；布局、服务启动及数据库关闭检查通过。
 
 2026-10-11
@@ -209,15 +227,3 @@ Other\使用说明.txt          本说明
 
 以上为主要更新摘要；详细修改依据、备份和验证结果见根目录AGENTS.md。
 部分界面及玩法仍需实际游戏复测，更新摘要不代表所有内容已逐项实测。
-
-【开发与维护】
-布局检查：MapleStoryPortable.exe --verify-layout
-仅核对目录和必要文件，不启动游戏服务。
-服务检查：MapleStoryPortable.exe --verify-services
-会启动数据库及游戏服务并验证关停；维护测试应使用独立存档副本。
-启动器源码：Other\Source\build\Launcher.cs、LauncherDisplay.cs
-构建部署：Other\Source\build\BuildLauncher.exe --deploy
-日常启动、检查及关停由C# EXE执行，不依赖PowerShell或Python。
-资源与玩法修复以本包CMS072客户端为依据，历史维护记录见根目录AGENTS.md。
-
-说明更新：2026-10-12

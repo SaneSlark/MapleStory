@@ -40,9 +40,9 @@
 
 ## 维护与资料
 
-2026-10-12 已精简活动运行库：`App/MapleStory/Runtime` 从约 1283MiB 降至 497MiB。Java 源码、示例、开发头文件以及原生静态库和调试符号移至本版本 `Other/RuntimeCleanup/20261012/original-files`，同时保留逐文件哈希校验的 ZIP 备份。Java 编译与打包工具、完整 JRE、数据库程序、DLL、插件、字符集和许可证保留。备份仍占用工作区空间，精简的是运行目录及其分发体积。
+2026-10-12 已精简活动运行库：`App/MapleStory/Runtime` 从约 1283MiB 降至 497MiB。Java 源码、示例、开发头文件以及原生静态库和调试符号移至本版本 `Other/Backups/RuntimeCleanup/20261012/original-files`，同时保留逐文件哈希校验的 ZIP 备份。Java 编译与打包工具、完整 JRE、数据库程序、DLL、插件、字符集和许可证保留。备份仍占用工作区空间，精简的是运行目录及其分发体积。
 
-清单和验证记录见 `Other/RuntimeCleanup/20261012`。恢复时先正常停服，再按 `inventory-before.csv` 的 `RelativePath` 将 `original-files` 内容放回本版本的 Runtime；不得从 079 复制运行库。
+清单和验证记录见 `Other/Backups/RuntimeCleanup/20261012`。恢复时先正常停服，再按 `inventory-before.csv` 的 `RelativePath` 将 `original-files` 内容放回本版本的 Runtime；不得从 079 复制运行库。
 
 维护前阅读[本版本规则](AGENTS.md)和[仓库规则](../AGENTS.md)。使用本包的工具构建和部署，核对源码与实际运行的 `mapleserver072.jar` 一致；保持旧脚本的原编码与换行。
 
