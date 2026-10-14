@@ -1,0 +1,45 @@
+
+var islandHelper = Packages.net.sf.odinms.scripting.npc.MapleIslandQuests;
+var islandStage = -1, islandSelected = null, islandChoices = [], islandEnding = false, islandQuiz = -1, islandLegacy = false;
+function islandStatus(id) { return islandManager.getQuestStatus(id).getId(); }
+function islandFinish() {
+    if (!islandHelper.complete(islandManager.getC(), islandSelected.id, islandManager.getNpc())) {
+        islandManager.sendOk("任务尚未完成，或奖励所需的背包空间不足。请确认任务物品、消灭数量以及背包空位。罗杰的任务还需要吃完苹果并恢复全部HP。");
+    } else islandManager.sendOk("任务完成！奖励已发放，请在任务栏查看后续任务。");
+    islandManager.dispose();
+}
+function islandAccept() {
+    if (!islandHelper.start(islandManager.getC(),islandSelected.id,islandManager.getNpc())) {
+        islandManager.sendOk("暂时不能接受任务，请确认前置任务、等级、职业和背包空间。");islandManager.dispose();return;
+    }
+    if (islandSelected.id == 1021) {
+        if (!islandManager.haveItem(2010007)) islandManager.gainItem(2010007,1);
+        var p=islandManager.getPlayer();
+        if (p.getHp()>25) {p.setHp(25);p.updateSingleStat(Packages.net.sf.odinms.client.MapleStat.HP,25);}
+        islandManager.sendOk("请打开背包，吃掉罗杰的苹果，并等HP完全恢复后再来找我。");
+    } else islandManager.sendOk("任务已接受。请按任务栏的要求完成后，再找指定的NPC交付。");
+    islandManager.dispose();
+}
+function islandDialogue(mode,type,selection) {
+    if (mode != 1) {islandManager.dispose();return;}
+    if (islandEnding && islandStatus(islandSelected.id) == 2) {islandManager.dispose();return;}
+    if (islandQuiz>=0) {
+        if (selection != islandSelected.quiz[islandQuiz].answer) {
+            islandManager.sendOk("答案不正确，请再想一想。重新与我对话即可再次挑战。");islandManager.dispose();return;
+        }
+        islandQuiz++;
+        if(islandQuiz<islandSelected.quiz.length) islandManager.sendSimple(islandSelected.quiz[islandQuiz].text);
+        else islandFinish();
+        return;
+    }
+    islandStage++;
+    if(islandStage==0) {
+        if(islandEnding && islandSelected.quiz.length>0) {islandQuiz=0;islandManager.sendSimple(islandSelected.quiz[0].text);}
+        else islandManager.sendYesNo(islandEnding?islandSelected.endText:islandSelected.startText);
+    } else if(islandEnding) islandFinish(); else islandAccept();
+}
+
+var islandSelected={"id": 1020, "name": "\u76ae\u5967\u7684\u5e9f\u5f03\u7269\u54c1\u56de\u6536", "startNpc": 10000, "endNpc": 10000, "quiz": [], "startText": "\u7528\u6536\u96c6\u6765\u7684\u5e9f\u6c14\u7269\u54c1\u5236\u4f5c\u7684\u65b0\u4e1c\u897f\u2026\u8fd8\u5269\u4e0b\u4e00\u4e9b\u6750\u6599\u5417\uff1f\u90a3\u6211\u5c31\u7528\u8fd9\u4e9b\u5269\u4e0b\u7684\u6750\u6599\u4e3a\u4f60\u505a\u4e2a\u6709\u7528\u7684\u4e1c\u897f\u5427\uff1f", "endText": "\u77e5\u9053\u6211\u5b8c\u6210\u4e86\u4f5c\u54c1\uff0c\u5c31\u8dd1\u6765\u627e\u6211\u4e86\uff1f\u4f60\u7684\u6d88\u606f\u8fd8\u6ee1\u7075\u901a\u7684\u561b~"};
+var islandManager=null;
+function start(mode,type,selection) {islandManager=qm;islandEnding=false;islandDialogue(mode,type,selection);}
+function end(mode,type,selection) {islandManager=qm;islandEnding=true;islandDialogue(mode,type,selection);}
