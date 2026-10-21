@@ -11,8 +11,7 @@ function action(mode,type,selection){
     var vip=cm.getPlayer().getVip();
     if(selection==100){
         if(vip<1){cm.sendOk("会员等级达到1后可以领取工资。");}
-        else if(cm.getBossLog("vipgz")>=1){cm.sendOk("今天已经领取过工资。");}
-        else {var tier=Math.min(5,vip)-1;if(cm.getPlayer().getMeso()+meso[tier]>2147483647){cm.sendOk("金币已接近上限，请先存入仓库再领取。");}else{cm.setBossLog("vipgz");cm.gainMeso(meso[tier]);cm.modifyNX(points[tier],1);cm.sendOk("已领取今日会员工资。");}}
+        else {var tier=Math.min(5,vip)-1;if(cm.getPlayer().getMeso()+meso[tier]>2147483647){cm.sendOk("金币已接近上限，请先存入仓库再领取。");}else{var claim=cm.tryClaimVipSalary();if(claim==0){cm.sendOk("今天已经领取过工资。");}else if(claim<0){cm.sendOk("工资领取记录保存失败，请稍后重试。");}else{cm.gainMeso(meso[tier]);cm.modifyNX(points[tier],1);cm.sendOk("已领取今日会员工资。");}}}
     } else if(selection>=0&&selection<maps.length){
         if(vip>=required[selection]){cm.warp(maps[selection],0);}else cm.sendOk("会员等级不足。");
     }

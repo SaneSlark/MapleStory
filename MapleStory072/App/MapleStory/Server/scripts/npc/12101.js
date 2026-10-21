@@ -19,7 +19,7 @@ function action(mode,type,selection){
  var q=Packages.server.quest.MapleQuest.getInstance(quiz.id);
  if(phase==0){
   if(!q.canStart(cm.getPlayer(),cm.getNpc())){active=false;cm.dispose();return;}
-  cm.startQuest(quiz.id);
+  cm.startQuestInScript(quiz.id);
   if(cm.getQuestStatus(quiz.id)!=1){active=false;cm.dispose();return;}
   phase=1;cm.sendSimple(quiz.question);return;
  }
@@ -31,7 +31,7 @@ function action(mode,type,selection){
  }
  if(phase==2){
   active=false;
-  if(q.canComplete(cm.getPlayer(),cm.getNpc()))cm.completeQuest(quiz.id);
-  cm.dispose();
+  if(q.canComplete(cm.getPlayer(),cm.getNpc()))cm.completeClientNpcQuest(quiz.id);
+  else cm.dispose();
  }
 }
