@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: package-cms072-${{ github.ref }}
@@ -58,3 +58,26 @@ jobs:
           compression-level: 0
           retention-days: 7
           if-no-files-found: error
+
+      # Automatically publish the freshly built package to the GitHub
+      # Release tagged v<PackageVersion>; existing assets are replaced.
+      - name: Publish GitHub Release
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = '${{ steps.version.outputs.version }}'
+          $tag = "v$version"
+          $dir = "MapleStory072/Other/Releases/$version"
+          $exe = Get-ChildItem -LiteralPath $dir -Filter '*.paf.exe' | Select-Object -First 1
+          if (!$exe) { throw "Packaged EXE not found in $dir" }
+          gh release view $tag --json id 2>$null | Out-Null
+          if ($LASTEXITCODE -eq 0) {
+              gh release upload $tag $exe.FullName "$dir/SHA256SUMS.txt" --clobber
+              if ($LASTEXITCODE -ne 0) { throw "gh release upload failed" }
+          } else {
+              gh release create $tag $exe.FullName "$dir/SHA256SUMS.txt" --target $env:GITHUB_SHA --title "MapleStory CMS072 $tag Portable" --notes "GitHub Actions 自动构建的 CMS072 便携安装包（PackageVersion $version）。"
+              if ($LASTEXITCODE -ne 0) { throw "gh release create failed" }
+          }
+          gh release view $tag --json tagName,assets
