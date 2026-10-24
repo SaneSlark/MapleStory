@@ -1,0 +1,83 @@
+name: Package CMS062 Portable
+
+on:
+  push:
+    branches: [v062]
+    paths:
+      - '.github/workflows/build-v062.yml'
+      - 'MapleStory062/App/**'
+      - 'MapleStory062/MapleStoryPortable.exe'
+      - 'MapleStory062/README.md'
+      - 'MapleStory062/Other/help.html'
+      - 'MapleStory062/Other/使用说明.txt'
+      - 'MapleStory062/Other/Tools/Build-Release.ps1'
+      - 'MapleStory062/Other/Tools/PortableApps.comInstaller/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: package-cms062-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    if: github.ref == 'refs/heads/v062'
+    runs-on: windows-2022
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Read package version
+        id: version
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $info = [IO.File]::ReadAllText('MapleStory062\App\AppInfo\appinfo.ini')
+          $version = [regex]::Match($info, '(?m)^PackageVersion=([0-9.]+)\s*$').Groups[1].Value
+          if (!$version) { throw 'Missing PackageVersion in appinfo.ini' }
+          "version=$version" >> $env:GITHUB_OUTPUT
+
+      # Only the final portable EXE is packaged here, using the version-local
+      # tool tracked under Other/Tools; no server JAR, launcher or database
+      # content is rebuilt in CI.
+      - name: Package final Portable
+        shell: powershell
+        run: '& ./MapleStory062/Other/Tools/Build-Release.ps1'
+
+      - name: Upload final Portable
+        uses: actions/upload-artifact@v4
+        with:
+          name: CMS062-v${{ steps.version.outputs.version }}
+          path: |
+            MapleStory062/Other/Releases/${{ steps.version.outputs.version }}/*.paf.exe
+            MapleStory062/Other/Releases/${{ steps.version.outputs.version }}/SHA256SUMS.txt
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
+
+      # Automatically publish the freshly built package to the GitHub
+      # Release tagged v<PackageVersion>; existing assets are replaced.
+      - name: Publish GitHub Release
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = '${{ steps.version.outputs.version }}'
+          $tag = "v$version"
+          $dir = "MapleStory062/Other/Releases/$version"
+          $exe = Get-ChildItem -LiteralPath $dir -Filter '*.paf.exe' | Select-Object -First 1
+          if (!$exe) { throw "Packaged EXE not found in $dir" }
+          gh release view $tag --json id 2>$null | Out-Null
+          if ($LASTEXITCODE -eq 0) {
+              gh release upload $tag $exe.FullName "$dir/SHA256SUMS.txt" --clobber
+              if ($LASTEXITCODE -ne 0) { throw "gh release upload failed" }
+          } else {
+              gh release create $tag $exe.FullName "$dir/SHA256SUMS.txt" --target $env:GITHUB_SHA --title "MapleStory CMS062 $tag Portable" --notes "GitHub Actions 自动构建的 CMS062 便携安装包（PackageVersion $version）。"
+              if ($LASTEXITCODE -ne 0) { throw "gh release create failed" }
+          }
+          gh release view $tag --json tagName,assets
