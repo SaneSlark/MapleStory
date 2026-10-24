@@ -31,9 +31,9 @@ function action(mode, type, selection) {
             cm.dispose(); return;
         }
         if (pending == 1020 && !cm.canHold(3010000, 1)) { cm.sendOk("设置栏空间不足，请留出一个空位后再来领奖。"); cm.dispose(); return; }
-        cm.completeClientNpcQuest(pending);
+        cm.completeQuestInScript(pending);
     } else {
-        if (q.canStart(cm.getPlayer(), cm.getNpc())) cm.startClientNpcQuest(pending);
+        if (q.canStart(cm.getPlayer(), cm.getNpc())) { cm.startQuestInScript(pending); cm.dispose(); }
         else cm.dispose();
     }
 }

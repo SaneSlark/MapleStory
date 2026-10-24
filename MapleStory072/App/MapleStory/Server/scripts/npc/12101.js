@@ -31,7 +31,7 @@ function action(mode,type,selection){
  }
  if(phase==2){
   active=false;
-  if(q.canComplete(cm.getPlayer(),cm.getNpc()))cm.completeClientNpcQuest(quiz.id);
+  if(q.canComplete(cm.getPlayer(),cm.getNpc()))cm.completeQuestInScript(quiz.id);
   else cm.dispose();
  }
 }
