@@ -79,7 +79,7 @@ function qOrigAction(mode, type, selection) {
 				} else if (cm.getQuestStatus(100100).equals(MapleQuestStatus.Status.STARTED)) {
 					cm.completeQuest(100101);
 					if (cm.getQuestStatus(100101).equals(MapleQuestStatus.Status.COMPLETED)) {
-						cm.sendOk("那么,请把这个转交给 #bArec#k.");
+						cm.sendOk("那么,请把这个转交给 #b艾瑞克#k.");
 					} else {
 						cm.sendOk("嘿, " + cm.getChar().getName() + "! 我需要一个#b黑珠#k. 去找到次元之门吧.");
 						cm.startQuest(100101);
@@ -111,7 +111,7 @@ function qOrigAction(mode, type, selection) {
 			cm.sendAcceptDecline("但我首先得考考你的能力. 你准备好了吗?");
 		} else if (status == 13) {
 			if (cm.haveItem(4031011)) {
-				cm.sendOk("请到 http://odinms.de/forum/ 报告这个BUG.\r\nstatus = 13");
+				cm.sendOk("请到 http://odinms.de/forum/ 报告这个问题.\r\n状态 = 13");
 			} else {
 				cm.startQuest(100009);
 				cm.sendOk("请你把这封信带给 #b二转教官#k 他就在废气北面的一座城市里. 他将会给你转职的指引.");

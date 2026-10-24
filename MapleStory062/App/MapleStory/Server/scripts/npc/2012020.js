@@ -31,7 +31,7 @@ function qQuestAction(mode, type, selection) {
     var opts = '';
     var n = 0;
     if (cm.getQuestStatus(3050) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "阿尔冯丝的微笑" + "#l"; n++; }
-    if (cm.getQuestStatus(9844) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ????" + "#l"; n++; }
+    if (cm.getQuestStatus(9844) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u661f\u7cbe\u7075\u7684\u8d23\u9a82" + "#l"; n++; }
     if ((cm.getQuestStatus(3044) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 40)) { opts += "\r\n#L" + n + "#[接受] " + "食人花蜜" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
@@ -51,7 +51,7 @@ function qQuestAction(mode, type, selection) {
         if ((cm.getQuestStatus(3044) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 40)) { qi++; if (selection == qi) { qact = 0; qid = 3044; } }
         if (qact == -1) { cm.dispose(); return true; }
         if (qid == 3050) qt = "哇！终于来了啊。您不知道我等得多么辛苦，光是想着好吃的食人花果汁，什么事都做不了。";
-        if (qid == 9844) qt = "#b#p9010010##k? ?? ?? ??? ????… ?? ?? ??? ?????.";
+        if (qid == 9844) qt = (qact == 1 ? "我责骂星精灵对任何人使用魔法。" : "啊！出来吧，欧巴！如果你听到我的话，请立即回应。");
         if (qid == 3044) qt = "那个~ 如果有空的话可以帮我一个忙吗。我有样东西特别想吃到... 请一定接受我的请求~";
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);

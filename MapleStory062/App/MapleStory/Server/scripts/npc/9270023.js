@@ -27,7 +27,7 @@ function action(mode, type, selection) {
 		else
 			status--;
 		if (status == 0) {
-			cm.sendSimple("Hi, 我是个整容医生，如果你有新加坡随机整形卡, 我可以帮助你随机更换你的面貌. 那么你要做什么!\r\n#L1#我要购买新加坡随机整形卡 " + price + " 元!#l\r\n\#L2#我已经有新加坡随机整形卡，现在使用!#l");
+			cm.sendSimple("你好, 我是个整容医生，如果你有新加坡随机整形卡, 我可以帮助你随机更换你的面貌. 那么你要做什么!\r\n#L1#我要购买新加坡随机整形卡 " + price + " 元!#l\r\n\#L2#我已经有新加坡随机整形卡，现在使用!#l");
 			} else if (status == 1) {
 			if (selection == 1) {
 				if(cm.getMeso() >= price) {

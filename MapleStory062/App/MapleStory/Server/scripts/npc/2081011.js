@@ -7,13 +7,13 @@ importPackage(net.sf.odinms.client);
 
 var status = -1;
 
-function start() {
+function recoveredOriginalStart() {
     status = -1;
     qfresh = true;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     cm.sendOk("……");
     cm.dispose();
@@ -30,7 +30,7 @@ function qQuestAction(mode, type, selection) {
         qfresh = false;
     var opts = '';
     var n = 0;
-    if ((cm.getQuestStatus(3714) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(3714) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(3706) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.haveItem(4001094, 1))) { opts += "\r\n#L" + n + "#[接受] " + "#t4032040#? ??? ?? ???? ??? ????, ???? #b#p9010000##k? ??? ????." + "#l"; n++; }
+    if ((cm.getQuestStatus(3714) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(3714) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(3706) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.haveItem(4001094, 1))) { opts += "\r\n#L" + n + "#[接受] " + "\u542c\u8bf4\u6709\u4eba\u5f88\u60f3\u5403#t4032040#\uff0c\u4f1a\u662f\u8c01\u5462\uff1f  \u6211\u4eec\u53bb#b#p9010000##k\u95ee\u95ee\u5427\u3002" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -46,7 +46,7 @@ function qQuestAction(mode, type, selection) {
         qid = -1;
         if ((cm.getQuestStatus(3714) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(3714) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(3706) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.haveItem(4001094, 1))) { qi++; if (selection == qi) { qact = 0; qid = 3714; } }
         if (qact == -1) { cm.dispose(); return true; }
-        if (qid == 3714) qt = "#p9010000#? #b???#k? ?? ?? #b#p9001105##k? #b#t4032040##k? ?? ????? ???. ??? ? ?? ?? ?? ??? #t4032040#? ??? ???? ???.";
+        if (qid == 3714) qt = (qact == 1 ? "月妙终于吃到了想吃的美食。" : "#p9001105# 说他已经吃过月庙年糕70年了，现在已经厌倦了年糕。现在他想吃#t2022352#……吃了#t2022352#的#p9001105#说他第一次吃这么好吃的东西，让他继续给他带来。");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;
@@ -61,4 +61,23 @@ function qQuestAction(mode, type, selection) {
     }
     cm.dispose();
     return true;
+}
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":3714,"name":"听说有人很想吃#t4032040#，会是谁呢？  我们去#b#p9010000##k问问吧。","startNpc":2081011,"endNpc":2081011}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

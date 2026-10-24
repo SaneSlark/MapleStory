@@ -1,18 +1,12 @@
-/* ============================================================
-   自动生成任务脚本 - 重新生成会被覆盖, 定制请修改生成器
-   任务: 3714 #t4032040#? ??? ?? ???? ??? ????, ???? #b#p9010000##k? ??? ????.
-   开始NPC: 2081011  结束NPC: 
-   ============================================================ */
-var status = -1;
-
-function start(mode, type, selection) {
-    if (mode == -1) { qm.dispose(); return; }
-    if (mode == 1) status++; else status--;
-    if (status < 0) { qm.dispose(); return; }
-    if (status == 0) qm.sendNext("#p9010000#? #b???#k? ?? ?? #b#p9001105##k? #b#t4032040##k? ?? ????? ???. ??? ? ?? ?? ?? ??? #t4032040#? ??? ???? ???.");
-    else {
-        qm.startQuest(qm.getQuest());
-        qm.dispose();
+// 任务条件、奖励与交接由原生助手处理；通用对话流程见quest/legacy.js。
+var activityId = 3714, activityMenu = null;
+function activityFlow() {
+    if (activityMenu == null) {
+        var reader = new java.util.Scanner(new java.io.File("scripts/quest/legacy.js"), "GBK");
+        try { activityMenu = eval(String(reader.useDelimiter("(?!)").next()))(qm, activityId); }
+        finally { reader.close(); }
     }
+    return activityMenu;
 }
-
+function start(mode, type, selection) { activityFlow().start(mode, type, selection); }
+function end(mode, type, selection) { activityFlow().end(mode, type, selection); }

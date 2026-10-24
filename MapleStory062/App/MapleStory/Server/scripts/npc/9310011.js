@@ -26,12 +26,12 @@
 
 var status = 0;
 
-function start() {
+function recoveredOriginalStart() {
     status = -1;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (mode == -1) {
         cm.dispose();
     } else {
@@ -66,7 +66,7 @@ function action(mode, type, selection) {
                 cm.removeFromParty(4001008, party); 
                 cm.removeFromParty(4001007, party);  
                 } 
-            cm.serverNotice("[NPC挑战使者]玩家:" + cm.c.getPlayer().getName() + " 带着绝招,进入了神的黄昏开始挑战PB!~~");
+            cm.serverNotice("[居民挑战使者]玩家:" + cm.c.getPlayer().getName() + " 带着绝招,进入了神的黄昏开始挑战PB!~~");
             cm.dispose(); 
                     } 
                 } 
@@ -76,4 +76,22 @@ function action(mode, type, selection) {
             }
         }
     }
+}
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9494,"name":"基诺科 的最后一个请求","startNpc":9110002,"endNpc":9310011},{"id":9495,"name":"街头小贩老板 叶耀 的新菜单","startNpc":9310011,"endNpc":9310011},{"id":9496,"name":"曹摄影师的中国指南","startNpc":9310011,"endNpc":9310012}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

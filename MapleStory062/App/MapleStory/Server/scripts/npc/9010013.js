@@ -26,7 +26,7 @@ function qOrigAction(mode, type, selection) {
 	else
 		status--;
 	if (status == 0) {
-		cm.sendYesNo("欢迎来到 #b废气都市#k组队训练场！现在是测试阶段！有什么事情和GM联系。");
+		cm.sendYesNo("欢迎来到 #b废气都市#k组队训练场！现在是测试阶段！有什么事情和管理员联系。");
 	} else if (status == 1) {
 		cm.sendNext("你需要去挑战么？");
 	} else if (status == 2) {

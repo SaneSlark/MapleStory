@@ -26,7 +26,7 @@ function action(mode, type, selection) {
 		else
 			status--;
 		if (status == 0) {
-			cm.sendYesNo("#e #b#h ##k 想尝试下失败的滋味么?那就来挑战#r勇士之魂#k,\r\n这里不是一般人能来的~当然,最后一关的奖励将是GM送的#r绝世装备#k!");
+			cm.sendYesNo("#e #b#h ##k 想尝试下失败的滋味么?那就来挑战#r勇士之魂#k,\r\n这里不是一般人能来的~当然,最后一关的奖励将是管理员送的#r绝世装备#k!");
 		        }else if (status == 1 ) {
 		   if(cm.getChar().getLevel() < 50){
                                       cm.sendOk("抱歉,你没有#r50#k级不能进去挑战~~希望你懂得游戏规则~");

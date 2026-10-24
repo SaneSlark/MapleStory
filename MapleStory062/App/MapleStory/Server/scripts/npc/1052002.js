@@ -268,7 +268,7 @@ function qOrigAction(mode, type, selection) {
 					cm.gainItem(4003000, 15 * qty);
 				else
 					cm.gainItem(item, qty);
-				cm.sendOk("OK.做好了，那去瞧瞧吧。");
+				cm.sendOk("好的.做好了，那去瞧瞧吧。");
 			}
 		cm.dispose();
 	}

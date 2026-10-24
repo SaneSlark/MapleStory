@@ -56,7 +56,7 @@ function qOrigAction(mode, type, selection) {
 				if (cm.getLevel() >= 10 && cm.getChar().getDex() >= 20)
 					cm.sendNext("你想成为 #r海盗#k吗?");
 					else{
-					cm.sendOk("你还没有转#r海盗#k的条件.需要等级10敏捷(DEX)20")
+					cm.sendOk("你还没有转#r海盗#k的条件.需要等级10敏捷20")
 					cm.dispose();
 						}
 				}	 

@@ -41,7 +41,7 @@ var bossmaps = Array(
 										Array(220080001,0,"时间塔的本源"), 
 										Array(240020402,0,"喷火龙栖息地"), 
 										Array(240020101,0,"格瑞芬多森林"), 
-										Array(801040100,0,"悪夢の果て"), 
+										Array(801040100,0,"悪梦の果て"), 
 										Array(240060200,0,"暗黑龙王洞穴"), 
 										Array(610010005,0,"幻想森林:僵尸I"), 
 										Array(610010012,0,"幻想森林:邪恶的崛起"), 
@@ -87,7 +87,7 @@ var monstermaps = Array(
 										Array(240040500,0,"龙之巢穴入口"), 
 										Array(240040000,0,"龙的峡谷"), 
 										Array(600020300,0,"狼蛛洞穴"), 
-										Array(801040004,0,"武器庫"), 
+										Array(801040004,0,"武器库"), 
 										Array(802000200,0,"未来东京（台场）"),
 										Array(802000300,0,"未来东京（机器人社区）"),
 										Array(802000400,0,"未来东京（废墟）"),
@@ -147,7 +147,7 @@ var townmaps = Array(
 										Array(925020000,0,"武陵道场入口"),
 										Array(930000000,0,"毒雾森林"),
 										Array(802000100,0,"古代森林"),
-										Array(800040500,0,"跳跃得GM装备地图"),
+										Array(800040500,0,"跳跃得管理员装备地图"),
 										Array(930000010,0,"森林入口"), 
 										Array(193000000,0,"网吧 海盗装备专卖"),
 										Array(702090101,0,"英语村"), 
@@ -190,7 +190,7 @@ function action(mode, type, selection) {
                }
                else if (status == 2) {
                    if (selection == 0) {
-                       cm.sendSimple("#fUI/UIWindow.img/QuestIcon/3/0#\r\n#L0#城镇地图#l\r\n#L1#练级地图#l\r\n#L2#BOSS地图#l");
+                       cm.sendSimple("#fUI/UIWindow.img/QuestIcon/3/0#\r\n#L0#城镇地图#l\r\n#L1#练级地图#l\r\n#L2#首领地图#l");
                    }
                    else if (selection == 1) {
                        cm.dispose();

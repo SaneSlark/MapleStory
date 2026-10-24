@@ -66,7 +66,7 @@ function action(mode, type, selection) {
                 cm.removeFromParty(4001008, party); 
                 cm.removeFromParty(4001007, party);  
                 } 
-            cm.serverNotice("[蜈蚣BOSS挑战]玩家:" + cm.c.getPlayer().getName() + " 进入了危险地山丘开始挑战蜈蚣!~~");
+            cm.serverNotice("[蜈蚣首领挑战]玩家:" + cm.c.getPlayer().getName() + " 进入了危险地山丘开始挑战蜈蚣!~~");
             cm.dispose(); 
                     } 
                 } 

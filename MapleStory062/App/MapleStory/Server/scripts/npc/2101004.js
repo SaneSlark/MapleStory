@@ -25,7 +25,7 @@ function qQuestAction(mode, type, selection) {
         qfresh = false;
     var opts = '';
     var n = 0;
-    if (cm.getQuestStatus(10096) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10096) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4e3a\u8482\u6839\u52a0\u6cb9" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -41,7 +41,7 @@ function qQuestAction(mode, type, selection) {
         qid = -1;
         if (cm.getQuestStatus(10096) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { qi++; if (selection == qi) { qact = 1; qid = 10096; } }
         if (qact == -1) { cm.dispose(); return true; }
-        if (qid == 10096) qt = "??? ?????? ???? ?? ???? ??.";
+        if (qid == 10096) qt = (qact == 1 ? "蒂根语 支持绿色运动。" : "我的名字是蒂根！这对你的好工作来说可能很难！您需要我的帮助吗？");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;

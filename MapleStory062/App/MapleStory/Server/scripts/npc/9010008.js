@@ -7,7 +7,7 @@ importPackage(net.sf.odinms.client);
 
 var status = 0;
 
-function start() {
+function recoveredOriginalStart() {
     qfresh = true;
     status = -1;
     action(1, 0, 0);
@@ -49,7 +49,7 @@ function qOrigAction(mode, type, selection) {
         }
     }
 }
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     qOrigAction(mode, type, selection);
 }
@@ -66,7 +66,7 @@ function qQuestAction(mode, type, selection) {
         qfresh = false;
     var opts = '';
     var n = 0;
-    if (cm.getQuestStatus(9251) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? (11? 24?)" + "#l"; n++; }
+    if (cm.getQuestStatus(9251) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5192\u9669\u5c9b\u4f34\u4fa3 (11\u670824\u65e5)" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -82,7 +82,7 @@ function qQuestAction(mode, type, selection) {
         qid = -1;
         if (cm.getQuestStatus(9251) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { qi++; if (selection == qi) { qact = 1; qid = 9251; } }
         if (qact == -1) { cm.dispose(); return true; }
-        if (qid == 9251) qt = "#b#p9010000##k? ????? ????? ??. ? ?? ?? ?? ?? ??? ??? ????";
+        if (qid == 9251) qt = (qact == 1 ? "手机认证成功了。要重新认证的话，去找佩蒂特吧。" : "这是一个声母测验...您对会被问到什么问题感到好奇吗？  联系 #p9010000# #b 今天的测验！我需要解决#k。");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;
@@ -99,3 +99,22 @@ function qQuestAction(mode, type, selection) {
     return true;
 }
 /* AUTO-QUEST-END */
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9250,"name":"冒险岛会员商店","startNpc":9010008,"endNpc":9010008},{"id":9251,"name":"冒险岛伴侣 (11月24日)","startNpc":9010008,"endNpc":9010008},{"id":9252,"name":"手机冒险岛飞侠篇 (11月25日)","startNpc":9010008,"endNpc":9010008},{"id":9253,"name":"冒险岛掌上世界 (11月26日)","startNpc":9010008,"endNpc":9010008}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
+}

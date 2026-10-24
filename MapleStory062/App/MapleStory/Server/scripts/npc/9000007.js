@@ -72,7 +72,7 @@ function qQuestAction(mode, type, selection) {
         qfresh = false;
     var opts = '';
     var n = 0;
-    if (cm.getQuestStatus(10087) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10087) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5929\u5730\u6b22\u547c" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -88,7 +88,7 @@ function qQuestAction(mode, type, selection) {
         qid = -1;
         if (cm.getQuestStatus(10087) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { qi++; if (selection == qi) { qact = 1; qid = 10087; } }
         if (qact == -1) { cm.dispose(); return true; }
-        if (qid == 10087) qt = "??? ?????? ???? ?? ???? ??.";
+        if (qid == 10087) qt = (qact == 1 ? "天地支持绿色运动。" : "绿色运动正在进行中。我会支持你。");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;

@@ -7,13 +7,13 @@ importPackage(net.sf.odinms.client);
 
 var status = -1;
 
-function start() {
+function recoveredOriginalStart() {
     status = -1;
     qfresh = true;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     cm.sendOk("……");
     cm.dispose();
@@ -37,8 +37,8 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3079) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "遗失的食人花果汁" + "#l"; n++; }
     if (cm.getQuestStatus(3089) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "珥玛借走的喷雾器1" + "#l"; n++; }
     if (cm.getQuestStatus(8055) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "环游冒险岛 3" + "#l"; n++; }
-    if (cm.getQuestStatus(9191) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
-    if (cm.getQuestStatus(9192) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9191) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u827e\u5c14\u739b\u7684\u5439\u6bdb\u6c42\u75b5" + "#l"; n++; }
+    if (cm.getQuestStatus(9192) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5e2e\u52a9\u827e\u5c14\u739b\u5de5\u4f5c" + "#l"; n++; }
     if ((cm.getQuestStatus(3005) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3004) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "消失的赫拉" + "#l"; n++; }
     if ((cm.getQuestStatus(3007) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3006) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "一个钥匙" + "#l"; n++; }
     if ((cm.getQuestStatus(3046) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getQuestStatus(3045) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED)) { opts += "\r\n#L" + n + "#[接受] " + "奈洛的礼物" + "#l"; n++; }
@@ -83,8 +83,8 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3079) qt = "给你，千万小心不要再弄丢了。我这里剩下的#b食人花果汁#k也已经没有多少了...";
         if (qid == 3089) qt = "什么事？我现在在打扫，非常忙。灰尘太多，你继续站在那里可能沾到很多灰尘。\r\n#b我来找回50年前借走的#t4031308#。";
         if (qid == 8055) qt = "欢迎光临！斯凯还跟你说了这里什么别的吗？天空之城空气清新，一切都仿佛漂浮在高处。";
-        if (qid == 9191) qt = "?? ?? ??? ??? ????? ??.. ? ?? ?? ?? ??? ?? ??? ????. ?? ?? ????? ??? 30? ??? ??? ??... ???..? \n\n#i4000058# #t4000058# #b30#k?";
-        if (qid == 9192) qt = "????? ???? ?? ??????? 20 ??? ? ?? ????";
+        if (qid == 9191) qt = "\u55ef\uff1f\u4f60\u662f\u6765\u95ee\u5019\u4e2d\u79cb\u8282\u7684\u5417\uff1f\u554a\u2026\u2026\u6211\u73b0\u5728\u592a\u5fd9\u4e86\uff0c\u6839\u672c\u6ca1\u65f6\u95f4\u8fc7\u8282\u3002\u5982\u679c\u4f60\u80af\u5e2e\u6211\u6536\u96c630\u4e2a\u732a\u7b3c\u8349\u7684\u79cd\u5b50\uff0c\u4e5f\u8bb8\u5c31\u6709\u7a7a\u4e86\u2026\u2026\\n\\n#i4000058# #t4000058# #b30#k\u4e2a";
+        if (qid == 9192) qt = (qact == 1 ? "你收集了 月光精灵 的所有月亮碎片了吗？  你还记得有20吗？" : "前几天我很感激。对了，我有件事想再拜托你……你能帮我一个忙吗？");
         if (qid == 3005) qt = "几个月前，主人突然离家至今未归。每天都有人来找主人，但他们只好回去。你有什么事吗？等她回来，我转告她吧。\r\n#b没有什么事\r\n#b没有跟赫拉亲近的人吗？\r\n#b你能推测赫拉去哪里吗？";
         if (qid == 3007) qt = "你见过冰峰雪域的杰德先生吗？他也不知道吗？哼...你听说过我主人#b母亲的遗物#k吗？在一个漆黑的夜晚，有人偷走那件遗物。从那时候起，她就变的越来越奇怪了。但我也不知道谁偷去了那件遗物。";
         if (qid == 3046) qt = "您正在寻找食人花汁吗？那个只有艾利逊才会做。";
@@ -121,4 +121,23 @@ function qQuestAction(mode, type, selection) {
     }
     cm.dispose();
     return true;
+}
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9191,"name":"艾尔玛的吹毛求疵","startNpc":9010000,"endNpc":2012010}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

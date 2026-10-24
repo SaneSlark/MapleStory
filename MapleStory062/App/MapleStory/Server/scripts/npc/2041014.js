@@ -37,7 +37,7 @@ function action(mode, type, selection) {
 		var sele = items[selection];
                 price = 1;
                 if(cm.getChar().getVip() < 3) {
-                    cm.sendOk("你不是超级VIP.");
+                    cm.sendOk("你不是超级贵宾.");
                     cm.dispose();
                     }
                 else if (cm.getMeso() < price) {

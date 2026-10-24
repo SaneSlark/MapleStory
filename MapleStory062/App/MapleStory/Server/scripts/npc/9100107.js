@@ -40,7 +40,7 @@ function action(mode, type, selection) {
 			cm.sendYesNo("我看见你有百宝卷,你要使用它?");
 			}
 			else if (!cm.haveItem(5220000)) {
-			cm.sendOk("你身上没有百宝卷#bGM#k交代我不能帮你!.");
+			cm.sendOk("你身上没有百宝卷#b管理员#k交代我不能帮你!.");
 			cm.dispose();
 			}
 		}

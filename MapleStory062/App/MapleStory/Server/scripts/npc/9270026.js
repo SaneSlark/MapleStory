@@ -76,7 +76,7 @@ function action(mode, type, selection) {
 				}
 				colors = Array();
 				colors = Array(current , current + 100, current + 200, current + 300, current +400, current + 500, current + 600, current + 700, current + 800);
-				cm.sendStyle("#e我可以改变你的眼色,让它比现在看起来漂亮. 你为什么不试着改变它下? 如果你有#i5152013##b新加坡換眼手术高级会员卡#k,我将会帮你改变你的眼色,那么选择一个你想要的新眼色吧!", colors);
+				cm.sendStyle("#e我可以改变你的眼色,让它比现在看起来漂亮. 你为什么不试着改变它下? 如果你有#i5152013##b新加坡换眼手术高级会员卡#k,我将会帮你改变你的眼色,那么选择一个你想要的新眼色吧!", colors);
 			}
 		}
 		else if (status == 2){

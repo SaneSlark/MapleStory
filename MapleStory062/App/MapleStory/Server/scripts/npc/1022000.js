@@ -58,7 +58,7 @@ function qOrigAction(mode, type, selection) {
 				} else if (cm.getQuestStatus(100100).equals(MapleQuestStatus.Status.STARTED)) {
 					cm.completeQuest(100101);
 					if (cm.getQuestStatus(100101).equals(MapleQuestStatus.Status.COMPLETED)) {
-						cm.sendOk("好的 ,现在把这个交给 #bTylus#k.");
+						cm.sendOk("好的 ,现在把这个交给 #b泰勒斯#k.");
 					} else {
 						cm.sendOk("嘿, " + cm.getChar().getName() + "! 我需要个#b黑珠#k.");
 						cm.startQuest(100101);
@@ -80,12 +80,12 @@ function qOrigAction(mode, type, selection) {
 			cm.sendOk("转职成功.");
 			cm.dispose();
 		} else if (status == 11) {
-			cm.sendNextPrev("转职有三个选择 #r剑客#k, #r准骑士#k or #r枪战士#k.")
+			cm.sendNextPrev("转职有三个选择 #r剑客#k, #r准骑士#k 或 #r枪战士#k.")
 		} else if (status == 12) {
 			cm.sendAcceptDecline("但是我必须先对你的能力进行考验. 你准备好了吗?");
 		} else if (status == 13) {
 			if (cm.haveItem(4031008)) {
-				cm.sendOk("有BUG请联系 http://ourms.uu1001.com/");
+				cm.sendOk("有问题请联系 http://ourms.uu1001.com/");
 			} else {
 				cm.startQuest(100003);
 				cm.sendOk("请把这封介绍信交给 #b二转教官#k 他就在部落附近. 他将告诉你转职的一些方式.");

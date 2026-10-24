@@ -66,7 +66,7 @@ function action(mode, type, selection) {
                 cm.removeFromParty(4001008, party); 
                 cm.removeFromParty(4001007, party);  
                 } 
-            cm.serverNotice("[NPC挑战使者]玩家:" + cm.c.getPlayer().getName() + " 带着绝招,进入了神的黄昏开始挑战PB!~~");
+            cm.serverNotice("[居民挑战使者]玩家:" + cm.c.getPlayer().getName() + " 带着绝招,进入了神的黄昏开始挑战PB!~~");
             cm.dispose(); 
                     } 
                 } 

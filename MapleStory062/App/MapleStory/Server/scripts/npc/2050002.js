@@ -33,7 +33,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3419) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "与葛雷士兵的交易" + "#l"; n++; }
     if (cm.getQuestStatus(8080) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "懒惰的外星人格雷" + "#l"; n++; }
     if (cm.getQuestStatus(8081) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "傲慢的外星人格雷" + "#l"; n++; }
-    if (cm.getQuestStatus(3453) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "Arti99 ％黑巧克力icial Combatant J99 ％黑巧克力no" + "#l"; n++; }
+    if (cm.getQuestStatus(3453) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "人工战斗员震诺" + "#l"; n++; }
     if (cm.getQuestStatus(3455) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "葛雷士兵" + "#l"; n++; }
     if (cm.getQuestStatus(3456) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "葛雷士兵" + "#l"; n++; }
     if (cm.getQuestStatus(9413) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "向外星人葛雷复仇" + "#l"; n++; }

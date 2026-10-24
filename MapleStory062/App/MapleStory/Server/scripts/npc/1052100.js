@@ -26,7 +26,7 @@ function action(mode, type, selection) {
         else
             status--;
         if (status == 0) {
-            cm.sendNext("你好,我是全职业1-4转Npc: #r[钱老板]#k.");
+            cm.sendNext("你好,我是全职业1-4转居民: #r[钱老板]#k.");
         } else if (status == 1) {
             if (cm.getLevel() < 180 && cm.getJob().equals(net.sf.odinms.client.MapleJob.BEGINNER)) {
                 if (cm.getLevel() < 8) {

@@ -38,7 +38,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3835) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "韩太守的所见" + "#l"; n++; }
     if (cm.getQuestStatus(3838) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "击倒肯德熊" + "#l"; n++; }
     if (cm.getQuestStatus(9849) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "诺功的考验" + "#l"; n++; }
-    if (cm.getQuestStatus(10099) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10099) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u8bfa\u5de5\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(3800) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 50)) { opts += "\r\n#L" + n + "#[接受] " + "诺功的教导1" + "#l"; n++; }
     if ((cm.getQuestStatus(3801) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 50) && (cm.getQuestStatus(3800) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "诺功的教导2" + "#l"; n++; }
     if ((cm.getQuestStatus(3802) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 50) && (cm.getQuestStatus(3801) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "诺功的教导3" + "#l"; n++; }
@@ -82,7 +82,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3835) qt = "嗯？什么事？锻炼体力？嗯？村外看到的熊怎么啦？因为不止一两只，所以不太清楚。都是诺功的弟子……长得都差不多。长得有点怪？";
         if (qid == 3838) qt = "打倒肯德熊了吗？是吗……希望能减轻它的负罪感。";
         if (qid == 9849) qt = "快乐山谷的体力锻炼教官。好像是#b#p2091000##k的声音。点击头上的灯泡吧。";
-        if (qid == 10099) qt = "??? ?????? ???? ?? ???? ??.";
+        if (qid == 10099) qt = (qact == 1 ? "诺功 支持绿色运动。" : "冒险家...");
         if (qid == 3800) qt = "仙人最重要的德就是耐心。没有耐心的人是绝对成为不了仙人的。所以你们都要坚持，努力吧! 呃，你是谁?  \r\n#b你是#p2091000#么?";
         if (qid == 3801) qt = "即使集中精力修炼也不是那么容易变强的。全身心地投入到修行中吧。 \r\n#b…那个，现在能让我成为仙人吗?";
         if (qid == 3802) qt = "大家都很努力修炼嘛。不错，应该要这样。这样才能成为仙人。\r\n#b… 现在可以成为仙人吗?";

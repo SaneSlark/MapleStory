@@ -48,7 +48,7 @@ function action(mode, type, selection) {
 		else
 			status--;
 		if (status == 0) {
-			cm.sendSimple("#r你好，如果你有射手VIP美发卡，我可以为你塑造一个新的形象.\r\n#L0##fUI/UIWindow.img/QuestIcon/6/0##d我没有VIP卡，我想买一张!#l\r\n#L1##fUI/UIWindow.img/QuestIcon/7/0#我想要换一种发型#l\r\n#L2##fUI/UIWindow.img/QuestIcon/7/0#我需要给发型换颜色");						
+			cm.sendSimple("#r你好，如果你有射手贵宾美发卡，我可以为你塑造一个新的形象.\r\n#L0##fUI/UIWindow.img/QuestIcon/6/0##d我没有贵宾卡，我想买一张!#l\r\n#L1##fUI/UIWindow.img/QuestIcon/7/0#我想要换一种发型#l\r\n#L2##fUI/UIWindow.img/QuestIcon/7/0#我需要给发型换颜色");						
 		} else if (status == 1) {
 			if (selection == 0) {
 				beauty = 0;
@@ -68,7 +68,7 @@ function action(mode, type, selection) {
  % 10));
 					}
 				}
-				cm.sendStyle("#r你好,欢迎来到射手美发中心！\r\n#b只要你有射手VIP美发卡，我就可以帮你换新的发型，快来挑选一个你喜欢的发型吧！", hairnew);
+				cm.sendStyle("#r你好,欢迎来到射手美发中心！\r\n#b只要你有射手贵宾美发卡，我就可以帮你换新的发型，快来挑选一个你喜欢的发型吧！", hairnew);
 			} else if (selection == 2) {
 				beauty = 2;
 				haircolor = Array();
@@ -77,7 +77,7 @@ function action(mode, type, selection) {
 				for(var i = 0; i < 8; i++) {
 					haircolor.push(current + i);
 				}
-				cm.sendStyle("#r你好,欢迎来到射手美发中心！\r\n#b只要你有射手VIP染发卡，我就可以帮你染发，快来挑选一个你喜欢的色彩吧！", haircolor);
+				cm.sendStyle("#r你好,欢迎来到射手美发中心！\r\n#b只要你有射手贵宾染发卡，我就可以帮你染发，快来挑选一个你喜欢的色彩吧！", haircolor);
 			}
 		}
 		else if (status == 2){

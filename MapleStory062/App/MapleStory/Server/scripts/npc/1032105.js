@@ -35,8 +35,8 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3049) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "胡小姐的甜蜜果浆" + "#l"; n++; }
     if (cm.getQuestStatus(9671) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "寂寞的胡小姐" + "#l"; n++; }
     if (cm.getQuestStatus(9744) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "胡小姐的礼物" + "#l"; n++; }
-    if (cm.getQuestStatus(9841) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ???" + "#l"; n++; }
-    if (cm.getQuestStatus(10085) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9841) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u66b4\u529b\u7334\u5b50" + "#l"; n++; }
+    if (cm.getQuestStatus(10085) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u57c3\u65af\u7279\u5c14\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(2064) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 21) && (cm.getQuestStatus(2063) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "胡小姐的拜托" + "#l"; n++; }
     if ((cm.getQuestStatus(2076) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 21) && (cm.getQuestStatus(2064) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "胡小姐的特制酱油" + "#l"; n++; }
     if ((cm.getQuestStatus(3049) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(3049) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(3048) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) && (cm.haveItem(4031201, 1))) { opts += "\r\n#L" + n + "#[接受] " + "胡小姐的甜蜜果浆" + "#l"; n++; }
@@ -69,8 +69,8 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3049) qt = "把材料都找来了啊～辛苦了，稍等会儿就能做给你了。";
         if (qid == 9671) qt = "一个朋友都没有……好寂寞啊！呜呜……哎？这是什么？难道是给我的糖果？真是太谢谢啦！";
         if (qid == 9744) qt = "正巧我做好的时候你就跟我说话了。这是我做的炸酱面。名字嘛，有点……奇怪啦，不过味道绝对没得说。";
-        if (qid == 9841) qt = "#b#p9010010##k? ?? ?? ??? ????… ?? ?? ??? ?????.";
-        if (qid == 10085) qt = "???? ?????? ???? ?? ???? ??.";
+        if (qid == 9841) qt = (qact == 1 ? "我责骂了那些打扰埃斯特尔的猴子。" : "快点，快点。事情很紧急，所以答应我你会帮助我。");
+        if (qid == 10085) qt = (qact == 1 ? "艾丝特 支持绿色运动。" : "哇，你正在参加绿色活动。我会为你加油。");
         if (qid == 2064) qt = "嗯。。。你到这里有什么事？啊。。。是我的特制酱油吗？是要做节日菜的时候用吗？但这是我母亲给我的，非常贵重的，我不会给别人。。。或者你接受我的委托，我就给你这个。怎么样？";
         if (qid == 2076) qt = "哎。。。这是冶炼好的#b#t4021000##k。有了这个我就把我母亲非常漂亮的项链给你吧。那我把我的特制酱油给你。请请你替我转告她我希望他们庆典圆满成功。";
         if (qid == 3049) qt = "需要#b甜蜜果浆#k吗？是珥玛叫您来这里的吧？\n奇怪我是怎么知道的吗？因为那种果浆我只有做给她而以啊。";

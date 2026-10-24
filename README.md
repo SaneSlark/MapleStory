@@ -2,6 +2,7 @@
 
 本分支 `v062` 仅维护 `MapleStory062/` 中的对应版本。仓库导航位于 [main 分支](https://github.com/SaneSlark/MapleStory/tree/main)。
 
+- [下载 v0.6.2.1 完整便携安装包](https://github.com/SaneSlark/MapleStory/releases/tag/v0.6.2.1)
 - [版本介绍](MapleStory062/README.md)
 - [使用说明](MapleStory062/Other/使用说明.txt)
 - [游戏帮助](MapleStory062/Other/help.html)

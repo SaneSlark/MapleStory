@@ -21,7 +21,7 @@
 */
 function enter (pi) {
     pi.showInstruction("\u6309 #e#b[\u2191]#k#n \u952e\u4f7f\u7528\u4f20\u9001\u95e8\uff0c\u524d\u5f80\u4e0b\u4e00\u5f20\u5730\u56fe\u3002", 230, 5);
-    return true;
+    return false; // Instruction only: release portal controls without pretending to warp.
 }
 
 

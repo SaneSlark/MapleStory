@@ -31,7 +31,7 @@ function qQuestAction(mode, type, selection) {
     var opts = '';
     var n = 0;
     if (cm.getQuestStatus(9004) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "解读秘密卷轴" + "#l"; n++; }
-    if (cm.getQuestStatus(10103) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10103) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u7cbe\u7075\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(9004) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(9004) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.haveItem(4031019, 1))) { opts += "\r\n#L" + n + "#[接受] " + "解读秘密卷轴" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
@@ -51,7 +51,7 @@ function qQuestAction(mode, type, selection) {
         if ((cm.getQuestStatus(9004) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(9004) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.haveItem(4031019, 1))) { qi++; if (selection == qi) { qact = 0; qid = 9004; } }
         if (qact == -1) { cm.dispose(); return true; }
         if (qid == 9004) qt = "你真的把#b#t4031072##k带来了！现在我可以轻松打开#b#t4031017##k了。怎么样？要我现在就帮你打开吗？";
-        if (qid == 10103) qt = "??? ?????? ???? ?? ???? ??.";
+        if (qid == 10103) qt = (qact == 1 ? "吉尼 支持绿色运动。" : "哇，你做得很好。我会支持你。");
         if (qid == 9004) qt = "哎？那不是#b#t4031019##k吗？哼。。。我知道点这个东西。这是玩具城成立前就存在的文件。里面封印着邪恶的力量。这原来是非常危险的东西。你不要随便打开。";
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);

@@ -58,7 +58,7 @@ function qOrigAction(mode, type, selection) {
 				} else if (cm.getQuestStatus(100100).equals(MapleQuestStatus.Status.STARTED)) {
 					cm.completeQuest(100101);
 					if (cm.getQuestStatus(100101).equals(MapleQuestStatus.Status.COMPLETED)) {
-						cm.sendOk("好了, 把它带给 #bRene#k.");
+						cm.sendOk("好了, 把它带给 #b蕾妮#k.");
 					} else {
 						cm.sendOk("嘿, " + cm.getChar().getName() + "! 我需要 #b黑珠#k. 去找到次元之门吧.");
 						cm.startQuest(100101);
@@ -81,7 +81,7 @@ function qOrigAction(mode, type, selection) {
 			cm.sendOk("转职成功.");
 			cm.dispose();
 		} else if (status == 11) {
-			cm.sendNextPrev("你可以选择下面两个职业发展 #r猎手#k or #r弩弓手#k.")
+			cm.sendNextPrev("你可以选择下面两个职业发展 #r猎手#k 或 #r弩弓手#k.")
 		} else if (status == 12) {
 			cm.sendAcceptDecline("不过你先得通过我的考验.你准备好了吗?");
 		} else if (status == 13) {

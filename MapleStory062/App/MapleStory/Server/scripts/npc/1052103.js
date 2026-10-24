@@ -37,9 +37,9 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(2032) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "药店老板的拜托" + "#l"; n++; }
     if (cm.getQuestStatus(2033) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "克利思" + "#l"; n++; }
     if (cm.getQuestStatus(2034) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "曼斯塔的拜托" + "#l"; n++; }
-    if (cm.getQuestStatus(9171) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
-    if (cm.getQuestStatus(9172) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ? ??" + "#l"; n++; }
-    if (cm.getQuestStatus(9173) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ???" + "#l"; n++; }
+    if (cm.getQuestStatus(9171) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5185\u62c9\u7684\u97e9\u670d" + "#l"; n++; }
+    if (cm.getQuestStatus(9172) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5e2e\u52a9\u5185\u62c9\u5b8c\u6210\u5de5\u4f5c" + "#l"; n++; }
+    if (cm.getQuestStatus(9173) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5185\u62c9\u7684\u6ee1\u6708" + "#l"; n++; }
     if ((cm.getQuestStatus(1118) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(1118) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.haveItem(4031686, 1))) { opts += "\r\n#L" + n + "#[接受] " + "内拉的爱情证书" + "#l"; n++; }
     if ((cm.getQuestStatus(2029) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 15)) { opts += "\r\n#L" + n + "#[接受] " + "防具店老板的拜托" + "#l"; n++; }
     if ((cm.getQuestStatus(2030) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 15) && (cm.getQuestStatus(2029) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "休咪的拜托" + "#l"; n++; }
@@ -89,9 +89,9 @@ function qQuestAction(mode, type, selection) {
         if (qid == 2032) qt = "果然是你。。。我早就知道你能解决这个问题~ 上次处理得不错，这次也这么好。真是不错！好。你已经完成了我的要求，我应该送你礼物。这是#b#p1051002##k给我的#b100个#t2000002##k。听说对冒险者很有用的东西。快拿去吧。";
         if (qid == 2033) qt = "果然是你。。。我早就知道你能解决这个问题~ 上次也处理得不错了，真是好样得！你已经解决了我的请求，我应该送你礼物。这是#b#p1052003##k给我的冶炼好的#b1个#t4011001##k和#b1个#t4011000##k。听说对冒险者很有用的东西。快拿去吧。";
         if (qid == 2034) qt = "果然是你。我早就知道你很快可以完成~ 上次也是做得不错~ 真是了不起阿！作为谢礼题，我应该送你礼物。#b#p1051000##k送了你一双鞋，希望对的你冒险之旅有帮助，赶快收下吧。";
-        if (qid == 9171) qt = "?????. ?? ??? ?? ?? ????? ????? ?? ?? ? ???.. ???, ?? ????";
-        if (qid == 9172) qt = "??! ???? 20 ??? ?? ? ???? ?? ????";
-        if (qid == 9173) qt = "???? ???? ??? ?????";
+        if (qid == 9171) qt = "\u4f60\u597d\u3002\u6211\u4eec\u66fe\u7ecf\u5728\u67d0\u4e2a\u65f6\u523b\u89c1\u8fc7\u9762\u5417\uff1f\u8fd9\u4e0d\u5947\u602a\u5417\uff1f\u6211\u611f\u89c9\u50cf\u662f\u7b2c\u4e00\u6b21\u89c1\u5230\u4f60\u2026\u2026\u4f46\u662f\u5230\u5e95\u53d1\u751f\u4e86\u4ec0\u4e48\u4e8b\uff1f";
+        if (qid == 9172) qt = (qact == 1 ? "哇！你已经消灭了所有 20 个橙色蘑菇了吗？" : "我还剩下什么生意？  \r\n#b#L0# 我会帮你干活的，这样内拉就可以休息一下了。 #l\r\n#L1# 内拉，中秋假期你打算做什么？ #l\r\n#L2# 我想转行做小偷。我应该去哪里？ #l\r\n#L3# 工地在哪里？ #l#k");
+        if (qid == 9173) qt = (qact == 1 ? "你在望着满月的时候许愿了吗？" : "中秋假期过得愉快吗？你是不是一边望着月亮一边许愿呢？  \r\n#b#L0# 我许愿了。 #l\r\n#L1# 不行。我无法许愿。 #k#l");
         if (qid == 1118) qt = "嗨! 您想要爱的见证...? 我听说爱的力量是很强的. 好希望能用它让我的病情好转... 您觉得你拥有真爱吗? 怎么样？您应该可以通过我的测试吧。";
         if (qid == 2029) qt = "哟？好像是陌生人嘛！我都不认识你，你肯定不是本地人。我叫#b#p1052103##k，是这个村落的消息通，没有我不知到的事。";
         if (qid == 2030) qt = "哟！正好刚才我收到一个请求。这次是总是坐在地铁站前面的#b#p1052102##k需要帮助。她几天前从朋友那里收到了一只小狗，她想给小狗做温暖而舒服的房子。";

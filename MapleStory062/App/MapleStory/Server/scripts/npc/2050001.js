@@ -47,7 +47,7 @@ function qQuestAction(mode, type, selection) {
     if ((cm.getQuestStatus(3408) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 40) && (cm.getQuestStatus(3407) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "打退外星人" + "#l"; n++; }
     if ((cm.getQuestStatus(3452) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 35)) { opts += "\r\n#L" + n + "#[接受] " + "机器章鱼是外星生物？" + "#l"; n++; }
     if ((cm.getQuestStatus(8077) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 85) && (cm.getQuestStatus(8076) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "现代科学之父" + "#l"; n++; }
-    if ((cm.getQuestStatus(3453) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 65)) { opts += "\r\n#L" + n + "#[接受] " + "Arti99 ％黑巧克力icial Combatant J99 ％黑巧克力no" + "#l"; n++; }
+    if ((cm.getQuestStatus(3453) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 65)) { opts += "\r\n#L" + n + "#[接受] " + "人工战斗员震诺" + "#l"; n++; }
     if ((cm.getQuestStatus(3454) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED || cm.getQuestStatus(3454) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(3453) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(3456) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(3457) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.haveItem(4031927, 1)) && (cm.haveItem(4031928, 1))) { opts += "\r\n#L" + n + "#[接受] " + "超声波解密机" + "#l"; n++; }
     if ((cm.getQuestStatus(3457) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getQuestStatus(3456) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "震诺发威" + "#l"; n++; }
     if (n == 0) return false;
@@ -88,7 +88,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3400) qt = "嗯。。。都没问题了。。。哼。。。检查好这个系统的错误后修改程序。。。嗯？你找我有什么事？哼？为了给我送信特地从维多利亚岛来这里的？哼。。。是吗？看看。";
         if (qid == 3404) qt = "哼…看样子你已经见过#b#p2050005#、#p2050006#、#p2050007##k，把所有新机器人信息的#b#t4031100##k让他们看过了。他们都很高兴吧？呵呵…谢天谢地！但是我给的#b#t4031100##k好像弄丢了，没办法…不管怎么说，你为我们地球防御总部付出了努力，还是要给你酬劳。";
         if (qid == 3406) qt = "呵呵…就是这个！你帮我拿来的这3个零件箱子，都是制作新型机器人核心装置必须用到的材料。由于是秘密事项，就不跟你详细说明了…不管怎么说，来回玩具城一定很累了吧。来，给你#b#t2030012##k作为报酬。";
-        if (qid == 3407) qt = "哼…竟然找回了3个机器人零件的箱子呀！途中应该受到很多外星人的阻扰，果然是个能干的人啊！藉此机会加入我们地球防御总部的成员如何…？ 呵呵…不管怎么说，辛苦了。既然这么辛苦了，就多给你几个弯曲胶囊，请一定要收下~！";
+        if (qid == 3407) qt = "哼…竟然找回了3个机器人零件的箱子呀！途中应该受到很多外星人的阻扰，果然是个能干的人啊！借此机会加入我们地球防御总部的成员如何…？ 呵呵…不管怎么说，辛苦了。既然这么辛苦了，就多给你几个弯曲胶囊，请一定要收下~！";
         if (qid == 3408) qt = "怎么可能…真的击退5个#b#o5120100##k了吗？尽管认为你不是一般人，但这还是超出我的想象啊！好…替我们军队守护了地球防御总部和玩具城，应该给你报酬才是呀。这一定会对你以后的旅行大有帮助，请不要拒绝，快收下吧！";
         if (qid == 3452) qt = "#m221000000#的#p2050001#说，有了一个新的研究课题！但听说。.若想要进行这项研究，势必要有别人的帮忙。.";
         if (qid == 3458) qt = "对不起, 这里是受限制的地区. 您最好到外面去，您的存在干扰到我的研究. \n哼... 这些是什么? 您干嘛拿给我? 哦, 是他托您的?";

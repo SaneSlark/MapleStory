@@ -35,7 +35,7 @@ function action(mode, type, selection) {
 					cm.gainItem(5152001, 1);
 					cm.sendOk("购买成功，并可以使用");
 				} else {
-					cm.sendOk("你身上没有足够的楓幣");
+					cm.sendOk("你身上没有足够的枫币");
 				}
 				cm.dispose();
 			} else if (selection == 2) {

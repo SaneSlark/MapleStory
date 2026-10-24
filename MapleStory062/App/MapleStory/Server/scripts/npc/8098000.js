@@ -1,5 +1,5 @@
 function act() {
-	var rand = (int) ((Math.random() * 2) + 1);
+	var rand = Math.floor((Math.random() * 2) + 1);
 	var q = 0;
 	var q2 = 0;
 	if (rand == 1) {

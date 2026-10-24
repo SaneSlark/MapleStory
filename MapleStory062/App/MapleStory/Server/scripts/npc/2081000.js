@@ -103,7 +103,7 @@ function qQuestAction(mode, type, selection) {
         qfresh = false;
     var opts = '';
     var n = 0;
-    if (cm.getQuestStatus(10102) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "?? ???? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10102) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u6751\u957f\u5854\u5854\u83ab\u7684\u6b22\u547c" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -119,7 +119,7 @@ function qQuestAction(mode, type, selection) {
         qid = -1;
         if (cm.getQuestStatus(10102) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { qi++; if (selection == qi) { qact = 1; qid = 10102; } }
         if (qact == -1) { cm.dispose(); return true; }
-        if (qid == 10102) qt = "?? ???? ?????? ???? ?? ???? ??.";
+        if (qid == 10102) qt = (qact == 1 ? "村长塔塔莫支持绿色运动。" : "你做得很好。我会为你加油。");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;

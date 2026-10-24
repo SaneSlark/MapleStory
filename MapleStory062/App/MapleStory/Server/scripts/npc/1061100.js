@@ -27,7 +27,7 @@ var wui = 0;
 var cost = 1000;
 
 function start() {
-	cm.sendYesNo ("你好，我是林中之城的桑拿房接待员! 里面能快速回复HP，你是不是要进去享受#b蒸汽浴#k?");
+	cm.sendYesNo ("你好，我是林中之城的桑拿房接待员! 里面能快速回复生命值，你是不是要进去享受#b蒸汽浴#k?");
 }
 
 function action(mode, type, selection) {

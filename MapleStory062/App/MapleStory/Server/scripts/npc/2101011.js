@@ -26,7 +26,7 @@ function qQuestAction(mode, type, selection) {
         qfresh = false;
     var opts = '';
     var n = 0;
-    if (cm.getQuestStatus(10097) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10097) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u585e\u626c \u7684\u6b22\u547c" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -42,7 +42,7 @@ function qQuestAction(mode, type, selection) {
         qid = -1;
         if (cm.getQuestStatus(10097) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { qi++; if (selection == qi) { qact = 1; qid = 10097; } }
         if (qact == -1) { cm.dispose(); return true; }
-        if (qid == 10097) qt = "??? ?????? ???? ?? ???? ??.";
+        if (qid == 10097) qt = (qact == 1 ? "塞扬 支持绿色运动。" : "…………啊？这是怎么回事？");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;

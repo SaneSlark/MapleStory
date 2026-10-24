@@ -22,7 +22,7 @@ function action(mode, type, selection) {
         else 
             status--; 
         if (status == 0) { 
-            cm.sendYesNo("你好, 我是满技能NPC，你想要满技能吗？....\r 你真的想要满技能?"); 
+            cm.sendYesNo("你好, 我是满技能居民，你想要满技能吗？....\r 你真的想要满技能?"); 
         } else if (status == 1) { 
             cm.sendNext("我已经帮你的技能全加满了."); 
         } else if (status == 2) { 

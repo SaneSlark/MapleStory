@@ -56,7 +56,7 @@ function action(mode, type, selection) {
 			status--;
 		}
 		if (status == 0) {
-			cm.sendNext("Hi, 我是魔法森林出租车驾驶员.");
+			cm.sendNext("你好, 我是魔法森林出租车驾驶员.");
 		} else if (status == 1) {
 			cm.sendNextPrev("我可以带你去其它神圣部落,收取很低廉的费用,初到贵地还可以打9折哟.")
 		} else if (status == 2) {

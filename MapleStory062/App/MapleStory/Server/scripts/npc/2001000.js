@@ -11,7 +11,7 @@ var face = Array(20000, 20001, 20002, 20003, 20004, 20005, 20006, 20007, 20008, 
 var facenew = Array();
 var colors = Array();
 
-function start() {
+function recoveredOriginalStart() {
     qfresh = true;
 	status = -1;
 	action(1, 0, 0);
@@ -35,9 +35,9 @@ function qOrigAction(mode, type, selection) {
 			//	cm.dispose();
 			//} else {
 				if(cm.getChar().getGender() == 0) {
-					cm.sendSimple("嘿!我是为能到达这里的#r男性VIP会员#k服务的！你想有怎样的改变?\r\n#L0#肤色#l\r\n#L1#发型#l\r\n#L2#头发颜色#l\r\n#L3#眼睛#l\r\n#L4#眼睛颜色#l");
+					cm.sendSimple("嘿!我是为能到达这里的#r男性贵宾会员#k服务的！你想有怎样的改变?\r\n#L0#肤色#l\r\n#L1#发型#l\r\n#L2#头发颜色#l\r\n#L3#眼睛#l\r\n#L4#眼睛颜色#l");
 				}else {
-					cm.sendOk("我能让#r男性VIP会员#k改头换面，如果你是女性的话就去找我的搭档!");
+					cm.sendOk("我能让#r男性贵宾会员#k改头换面，如果你是女性的话就去找我的搭档!");
 					cm.dispose();
 				}
 			//}
@@ -100,7 +100,7 @@ function qOrigAction(mode, type, selection) {
 		}
 	}
 }
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     qOrigAction(mode, type, selection);
 }
@@ -154,3 +154,22 @@ function qQuestAction(mode, type, selection) {
     return true;
 }
 /* AUTO-QUEST-END */
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":4484,"name":"克里夫的请求","startNpc":2001000,"endNpc":2001000},{"id":4485,"name":"头羊的行踪","startNpc":2001000,"endNpc":2002002},{"id":9261,"name":"桉的信","startNpc":1012110,"endNpc":2001000},{"id":9262,"name":"克里夫给的礼物","startNpc":2001000,"endNpc":1012110},{"id":9265,"name":"温馨小镇的过冬准备","startNpc":1022101,"endNpc":2001000},{"id":9266,"name":"寻找迷路的圣诞鹿","startNpc":2001000,"endNpc":2001000},{"id":9875,"name":"养圣诞树","startNpc":9010000,"endNpc":2001000},{"id":28001,"name":"派对准备","startNpc":2001000,"endNpc":2001000}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
+}

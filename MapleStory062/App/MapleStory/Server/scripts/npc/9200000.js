@@ -24,7 +24,7 @@ function action(mode, type, selection) {
             cm.dispose(); 
             return; 
         } if (status == 0) { 
-            cm.sendYesNo("嗨!我是BOSS怪物传送员,如果要欺负BOSS就来找我吧.."); 
+            cm.sendYesNo("嗨!我是首领怪物传送员,如果要欺负首领就来找我吧.."); 
         } else if (status == 1) { 
             var selStr = "选择你的目的地.#b"; 
                 for (var i = 0; i < maps.length; i++) { 

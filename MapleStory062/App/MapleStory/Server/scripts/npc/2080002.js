@@ -52,7 +52,7 @@ function action(mode, type, selection) {
 		if (status == 0) {
 			if(cm.getChar().isGM()
  == null) {
-				cm.sendOk("你不是GM!");
+				cm.sendOk("你不是管理员!");
 				cm.dispose();
 			} else {
 				if(cm.getChar().getGender() == 1) {

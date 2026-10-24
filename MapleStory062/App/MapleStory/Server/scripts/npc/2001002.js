@@ -24,7 +24,7 @@ function action(mode, type, selection) {
             cm.dispose(); 
             return; 
         } if (status == 0) { 
-            cm.sendYesNo("HI，我是VIP专用BOSS级的怪物传送员，GM考虑取消普通玩家的部分BOSS传送，不过你是VIP的话就不用担心了！"); 
+            cm.sendYesNo("你好，我是贵宾专用首领级的怪物传送员，管理员考虑取消普通玩家的部分首领传送，不过你是贵宾的话就不用担心了！"); 
         } else if (status == 1) { 
             var selStr = "选择你的目的地.#b"; 
                 for (var i = 0; i < maps.length; i++) { 

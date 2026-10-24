@@ -44,14 +44,14 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(6105) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "记忆者" + "#l"; n++; }
     if (cm.getQuestStatus(6133) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "卡伦的册子" + "#l"; n++; }
     if (cm.getQuestStatus(6134) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "转世重生" + "#l"; n++; }
-    if (cm.getQuestStatus(9371) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "?? ?? ??" + "#l"; n++; }
-    if (cm.getQuestStatus(9372) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ?? ?? ???。." + "#l"; n++; }
-    if (cm.getQuestStatus(10093) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ?? ?? ??" + "#l"; n++; }
-    if (cm.getQuestStatus(10109) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ??" + "#l"; n++; }
-    if (cm.getQuestStatus(20726) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ?? ?? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9371) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "封印邪恶的力量" + "#l"; n++; }
+    if (cm.getQuestStatus(9372) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5bfb\u627e\u8bb0\u5f97\u7684\u4eba..." + "#l"; n++; }
+    if (cm.getQuestStatus(10093) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4e3a\u90a3\u4e9b\u8bb0\u5f97\u7684\u4eba\u559d\u5f69" + "#l"; n++; }
+    if (cm.getQuestStatus(10109) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u9ed1\u5ba2\u6570\u636e\u5206\u6790" + "#l"; n++; }
+    if (cm.getQuestStatus(20726) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u90a3\u4e9b\u8bb0\u5f97\u7684\u4eba\u7684\u4fe1\u606f" + "#l"; n++; }
     if ((cm.getQuestStatus(6106) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && ((cm.getJob().getId() == 312 || cm.getJob().getId() == 322)) && (cm.getQuestStatus(6105) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "无意义存在者" + "#l"; n++; }
     if ((cm.getQuestStatus(6134) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && ((cm.getJob().getId() == 232)) && (cm.getQuestStatus(6133) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "转世重生" + "#l"; n++; }
-    if ((cm.getQuestStatus(20726) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 28) && ((cm.getJob().getId() == 1000 || cm.getJob().getId() == 1100 || cm.getJob().getId() == 1110 || cm.getJob().getId() == 1111 || cm.getJob().getId() == 1112 || cm.getJob().getId() == 1200 || cm.getJob().getId() == 1210 || cm.getJob().getId() == 1211 || cm.getJob().getId() == 1212 || cm.getJob().getId() == 1300 || cm.getJob().getId() == 1310 || cm.getJob().getId() == 1311 || cm.getJob().getId() == 1312 || cm.getJob().getId() == 1400 || cm.getJob().getId() == 1410 || cm.getJob().getId() == 1411 || cm.getJob().getId() == 1412 || cm.getJob().getId() == 1500 || cm.getJob().getId() == 1510 || cm.getJob().getId() == 1511 || cm.getJob().getId() == 1512)) && (cm.getQuestStatus(20725) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED)) { opts += "\r\n#L" + n + "#[接受] " + "???? ?? ?? ??" + "#l"; n++; }
+    if ((cm.getQuestStatus(20726) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 28) && ((cm.getJob().getId() == 1000 || cm.getJob().getId() == 1100 || cm.getJob().getId() == 1110 || cm.getJob().getId() == 1111 || cm.getJob().getId() == 1112 || cm.getJob().getId() == 1200 || cm.getJob().getId() == 1210 || cm.getJob().getId() == 1211 || cm.getJob().getId() == 1212 || cm.getJob().getId() == 1300 || cm.getJob().getId() == 1310 || cm.getJob().getId() == 1311 || cm.getJob().getId() == 1312 || cm.getJob().getId() == 1400 || cm.getJob().getId() == 1410 || cm.getJob().getId() == 1411 || cm.getJob().getId() == 1412 || cm.getJob().getId() == 1500 || cm.getJob().getId() == 1510 || cm.getJob().getId() == 1511 || cm.getJob().getId() == 1512)) && (cm.getQuestStatus(20725) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED)) { opts += "\r\n#L" + n + "#[接受] " + "\u90a3\u4e9b\u8bb0\u5f97\u7684\u4eba\u7684\u4fe1\u606f" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -102,14 +102,14 @@ function qQuestAction(mode, type, selection) {
         if (qid == 6105) qt = "竟然来打扰我这样的大忙人？这本书…? 弓手的终极技能?";
         if (qid == 6133) qt = "..有什么急事…";
         if (qid == 6134) qt = "果然都通过了…";
-        if (qid == 9371) qt = "??? ??? ????. ??? ??? ????? ??? #b#t4031282##k? ?? ? ? ???.";
-        if (qid == 9372) qt = "?... ??? ??? ?? ????? ?????... ?? ?? ? ?? ??? ??? ?? ? ???? ???? ??? ????? ?? ?? ??? ?? ??.";
-        if (qid == 10093) qt = "???? ?? ?? ?????? ???? ?? ???? ??.";
-        if (qid == 10109) qt = "#b(?? ?? ??? ????.)#k \r\n\r\n?..&#xD;&#xA;?? ???? ?? ??? ??? ???. ??? ? ???? ?? ??? ?? ?? ? ?? ???.&#xD;&#xA;";
-        if (qid == 20726) qt = "#o2230101#? ????. ??. ?? ??? ??? ?????.";
+        if (qid == 9371) qt = (qact == 1 ? "你在吗？你来得正是时候。现在材料已经拿到了，终于可以封印#b#t4031282##k了。" : "不，是的！ 我们怎么搞到 #t4031282#?这是永远不应该被孤立的东西。我需要快速封印#t4031282#... \r\n#L0# #b 即使你不封印，我也来这里是因为我听说你可以封印#t4031282#。");
+        if (qid == 9372) qt = "\u55ef...\u6211\u80fd\u611f\u89c9\u5230\u90aa\u6076\u7684\u80fd\u91cf\u975e\u5e38\u63a5\u8fd1...\u4f60\u662f\u5426\u643a\u5e26\u7740\u4e0d\u597d\u7684\u4e1c\u897f\uff1f\u5982\u679c\u5b83\u662f\u4e0d\u7965\u4e14\u5371\u9669\u7684\u7269\u54c1\uff0c\u6700\u597d\u8d76\u7d27\u6254\u6389\u3002";
+        if (qid == 10093) qt = (qact == 1 ? "那些记得的人支持绿色运动。" : "这是一护湖的绿色运动...我会帮助你。");
+        if (qid == 10109) qt = "#b \uff08\u770b\u4e00\u4e0b\u9ed1\u5ba2\u4fe1\u606f\u3002\uff09 #k \\r\\n\\r\\n \u55ef...& #x D;& #x A;\u683c\u96f7\u957f\u8001\u7684\u9ed1\u5ba2\u5c1d\u8bd5\u4ee5\u5931\u8d25\u544a\u7ec8\u3002\u4f46\u4ece\u8fd9\u4e9b\u75d5\u8ff9\u6765\u770b\uff0c\u8fd9\u4e2a\u6751\u5e84\u4f3c\u4e4e\u4e0d\u592a\u5bb9\u6613\u88ab\u9ed1\u5ba2\u5165\u4fb5\u3002& #x D;& #x A;";
+        if (qid == 20726) qt = (qact == 1 ? "#o2230101# 已被淘汰。好的。然后我会告诉你那个男孩的名字。" : "发生什么事了?  #o9300285#？  #o9300285# 拉妮。我从来没有听说过这样的名字。不过，前段时间，我在#m105040300#周围遇到了一个背着娃娃的男孩…… \r\n#b#L0# 背着娃娃的男孩？ #l\r\n#k");
         if (qid == 6106) qt = "寻找了解这本书的人… 那么去找一下#b#p1061012##k。";
         if (qid == 6134) qt = "知道你到底要什么… 想拥有#b超越死亡的力量#k是吧… 但这是违背自然的力量。除非拥有强大的精神力，任何人无法得到这种力量。";
-        if (qid == 20726) qt = "?... ?? ???? #o9300285#? #o9300285#??. ?? ??? ?? ? ?? ??. ?? ?? ??? #m105040300# ???? ??? ?? ??? ??? ?? ?? ?? ??... \n#b??? ?? ??? ?????\n#k";
+        if (qid == 20726) qt = (qact == 1 ? "#o2230101# 已被淘汰。好的。然后我会告诉你那个男孩的名字。" : "发生什么事了?  #o9300285#？  #o9300285# 拉妮。我从来没有听说过这样的名字。不过，前段时间，我在#m105040300#周围遇到了一个背着娃娃的男孩…… \r\n#b#L0# 背着娃娃的男孩？ #l\r\n#k");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;

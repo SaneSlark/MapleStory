@@ -34,13 +34,13 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3007) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "一个钥匙" + "#l"; n++; }
     if (cm.getQuestStatus(3016) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "找到的赫拉" + "#l"; n++; }
     if (cm.getQuestStatus(3106) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "传说中的雪人" + "#l"; n++; }
-    if (cm.getQuestStatus(9240) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "?? ?! ?? ??!!!" + "#l"; n++; }
-    if (cm.getQuestStatus(9747) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ?? ?? ???!!" + "#l"; n++; }
+    if (cm.getQuestStatus(9240) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "加油！祝你考试顺利！！！" + "#l"; n++; }
+    if (cm.getQuestStatus(9747) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u60c5\u4fa3\u9ed1\u5de7\u514b\u529b\uff01\uff01" + "#l"; n++; }
     if ((cm.getQuestStatus(3006) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3005) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "赫拉去哪儿？" + "#l"; n++; }
     if ((cm.getQuestStatus(3008) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3007) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "老太太" + "#l"; n++; }
     if ((cm.getQuestStatus(3017) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3016) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "小墓地" + "#l"; n++; }
     if ((cm.getQuestStatus(3105) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 90)) { opts += "\r\n#L" + n + "#[接受] " + "雪原的巨大生物" + "#l"; n++; }
-    if ((cm.getQuestStatus(20401) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 120) && ((cm.getJob().getId() == 1100 || cm.getJob().getId() == 1110 || cm.getJob().getId() == 1111 || cm.getJob().getId() == 1112 || cm.getJob().getId() == 1200 || cm.getJob().getId() == 1210 || cm.getJob().getId() == 1211 || cm.getJob().getId() == 1212 || cm.getJob().getId() == 1300 || cm.getJob().getId() == 1310 || cm.getJob().getId() == 1311 || cm.getJob().getId() == 1312 || cm.getJob().getId() == 1400 || cm.getJob().getId() == 1410 || cm.getJob().getId() == 1411 || cm.getJob().getId() == 1412 || cm.getJob().getId() == 1500 || cm.getJob().getId() == 1510 || cm.getJob().getId() == 1511 || cm.getJob().getId() == 1512)) && (cm.getQuestStatus(20400) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "?? ??" + "#l"; n++; }
+    if ((cm.getQuestStatus(20401) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 120) && ((cm.getJob().getId() == 1100 || cm.getJob().getId() == 1110 || cm.getJob().getId() == 1111 || cm.getJob().getId() == 1112 || cm.getJob().getId() == 1200 || cm.getJob().getId() == 1210 || cm.getJob().getId() == 1211 || cm.getJob().getId() == 1212 || cm.getJob().getId() == 1300 || cm.getJob().getId() == 1310 || cm.getJob().getId() == 1311 || cm.getJob().getId() == 1312 || cm.getJob().getId() == 1400 || cm.getJob().getId() == 1410 || cm.getJob().getId() == 1411 || cm.getJob().getId() == 1412 || cm.getJob().getId() == 1500 || cm.getJob().getId() == 1510 || cm.getJob().getId() == 1511 || cm.getJob().getId() == 1512)) && (cm.getQuestStatus(20400) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "僵尸狩猎" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -70,13 +70,13 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3007) qt = "从珥玛那听到了赫拉离家出走前多次说过关于#b老太太#k的内容。但是要获得关于老太太的信息，再要去看杰德。";
         if (qid == 3016) qt = "这不是我给赫拉的#b项链#k么？你见过赫拉吧！她过得怎么样？太好了！赫拉没事，我也可以放心继续研究。她说把这项链送给我吗？知道了，我会好好保管的。这是我送给你的礼物，不要客气。";
         if (qid == 3106) qt = "听说过斯卡德的故事吗？他说什么呢？ \r\n#b(给斯卡德讲听到的故事。)";
-        if (qid == 9240) qt = "??~ ??? ???? ??????? ?? ???? ??? ?. ?? ?????? ??? ?? ?? ??? ? ???? ????";
-        if (qid == 9747) qt = "#b#m200000200##k? #b#p2012010##k? ?? ?? ???? ?? ???? ??? ?? ??? ??? ? ??.";
+        if (qid == 9240) qt = "\u563f\uff0c\u6211\u51c6\u5907\u4e86\u5f88\u591a\u997c\u5e72\uff0c\u6240\u4ee5\u4f60\u4e0d\u7528\u7740\u6025\u3002\u4e3a\u4ec0\u4e48\u4e0d\u8ba9\u4f60\u7684\u670b\u53cb\u77e5\u9053\u4f60\u4e5f\u5728\u8d60\u9001\u997c\u5e72\u5462\uff1f";
+        if (qid == 9747) qt = (qact == 1 ? "#p2020006#的脸色顿时沉了下来。这不是一个被破坏的角色...#p2012010#的请求对#p2020006#不起作用...我认为它只给我带来了快乐。 #p2020006# 以后会更加努力地寻找海拉吗？" : "快过来！你能帮助我吗？ \r\n#L0##b 这是怎么回事？ #l");
         if (qid == 3006) qt = "你在找赫拉吗？她是我很好的朋友。但是这次她一句话也没交代就失踪了。 我也正在想她可能去的地方，但还没有头绪。#b几个月前她母亲去世后#k，赫拉就突然离家出走。估计很难找，你也放弃吧。";
         if (qid == 3008) qt = "赫拉说过#b老太太#k吗？嗯~ 在天空之城和冰峰雪域这两个村落里确实没有老太太，她说的是谁呢？啊！她说的人可能是#b斯皮罗纳#k吧。她住在天空之城公园某处的小屋里，那里有怪物出没。你问问她吧，怎么样？";
         if (qid == 3017) qt = "嗯...赫拉说问我关于#b#t4031056##k吗？她还说有在雪原某个地方弄丢的记录吗？对!几天前我调查村落周围的地质时，在雪原的山沟里看见了#b小墓地#k。那墓地可能是线索。";
         if (qid == 3105) qt = "现在还心有余悸。\r\n#b听说经历了一件惊人的事？";
-        if (qid == 20401) qt = "#b#m211000000##k? #b#p2020006##k? #p1103000#? ?? ?? ?? ????...";
+        if (qid == 20401) qt = (qact == 1 ? "根据#p2020006#，#p1103000#正在忙着猎杀僵尸。看来他们不仅仅是在狩猎，而是在寻找线索……" : "#p2020006#不知道#p1103000#现在在哪里，但确实他在#m211000000#待了一段时间，而且他正在#r僵尸狩猎#k中间。看起来他们是在寻找线索，而不仅仅是狩猎……");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;

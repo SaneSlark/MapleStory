@@ -56,7 +56,7 @@ function action(mode, type, selection) {
 			status--;
 		}
 		if (status == 0) {
-			cm.sendNext("你好，我是ZreHy常驻居民指派的传送NPC，你想去哪?");
+			cm.sendNext("你好，我是ZreHy常驻居民指派的传送居民，你想去哪?");
 		} else if (status == 1) {
 			cm.sendNextPrev("我能带你到4大主要城市，勇士部落 魔法密林 射手村 废气都市.")
 		} else if (status == 2) {

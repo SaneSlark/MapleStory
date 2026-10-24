@@ -29,7 +29,7 @@ function action(mode, type, selection) {
             if(cm.getChar().getVip() >= 0) {
             cm.sendYesNo("确定要继续吗?");
  }else {
-                 cm.sendOk("我是专为VIP服务的，你不是VIP，所以什么都看不到...")
+                 cm.sendOk("我是专为贵宾服务的，你不是贵宾，所以什么都看不到...")
                 }
        } else if (status == 3) {
                         if(cm.getChar().getLevel() < 180) {
@@ -47,7 +47,7 @@ function action(mode, type, selection) {
                 
                     item.setUpgradeSlots((item.getUpgradeSlots() + 1));
                     MapleInventoryManipulator.removeFromSlot(cm.getC(), MapleInventoryType.EQUIP, 1, 1, true);
-                    MapleInventoryManipulator.addFromDrop(cm.getChar().getClient(), item, "Edit by Coffee");
+                    MapleInventoryManipulator.addFromDrop(cm.getChar().getClient(), item, "编辑：Coffee");
                     
                     cm.sendOk("#b恭喜你成功拉!快快看你的包裹吧!#k");
                 

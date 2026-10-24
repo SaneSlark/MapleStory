@@ -41,7 +41,7 @@ function action(mode, type, selection) {
 		cm.dispose();
 	} else {
 		if (mode == 0 && status == 2) {
-			cm.sendOk("請你想好了以後再來找我");
+			cm.sendOk("请你想好了以后再来找我");
 			cm.dispose();
 			return;
 		}
@@ -52,9 +52,9 @@ function action(mode, type, selection) {
 		if (status == 0) {
 			if (cm.getJob().equals(net.sf.odinms.client.MapleJob.BEGINNER)) {
 				if (cm.getLevel() >= 10 && cm.getChar().getDex() >= 20)
-					cm.sendNext("你已經符合條件進行 #r海盗(Pirate)#k轉職");
+					cm.sendNext("你已经符合条件进行 #r海盗#k转职");
 				else {
-					cm.sendOk("你還沒有足夠的能力進行#r海盗(Pirate)#k轉職")
+					cm.sendOk("你还没有足够的能力进行#r海盗#k转职")
 					cm.dispose();
 				}
 			}  else {
@@ -85,18 +85,18 @@ function action(mode, type, selection) {
 					}
 					cm.dispose();
 				}else {
-					cm.sendOk("我是#r海盜(Pirate)#k1轉轉職官,2轉以上請到杜宜-Duey處轉職");
+					cm.sendOk("我是#r海盗(海盗)#k1转转职官,2转以上请到杜宜处转职");
 					cm.dispose();
 				}
 			}
 		} else if (status == 1) {
-			cm.sendNextPrev("#r[注意]:#k#b海盜不能按能力值(S鍵)否則掉線,海盜拳手1.2轉沒技能用,火槍手1轉沒技能用,並且一旦你選擇了該職業,你將永遠不能改變(除非轉生)請慎重選擇#k.");
+			cm.sendNextPrev("#r[注意]:#k#b海盗不能按能力值(S键)否则掉线,海盗拳手1.2转没技能用,火枪手1转没技能用,并且一旦你选择了该职业,你将永远不能改变(除非转生)请慎重选择#k.");
 		} else if (status == 2) {
-			cm.sendYesNo("你眞的想成爲一名#r海盗(Pirate)#k嗎?");
+			cm.sendYesNo("你真的想成为一名#r海盗#k吗?");
 		} else if (status == 3) {
 			if (cm.getJob().equals(net.sf.odinms.client.MapleJob.BEGINNER))
 				cm.changeJob(net.sf.odinms.client.MapleJob.PIRATE);
-			cm.sendOk("轉職成功,你已經成為一名#r海盜(Pirate)#k了");
+			cm.sendOk("转职成功,你已经成为一名#r海盗(海盗)#k了");
 			cm.dispose();
 		} else if (status == 11) {
 			cm.sendNextPrev("....")
@@ -104,7 +104,7 @@ function action(mode, type, selection) {
 			cm.sendAcceptDecline("....");
 		} else if (status == 13) {
 			if (cm.haveItem(4031010)) {
-				cm.sendOk("请到 http://odinms.de/forum/ 反馈这个BUG。\r\nstatus = 13");
+				cm.sendOk("请到 http://odinms.de/forum/ 反馈这个问题。\r\n状态 = 13");
 			} else {
 				cm.startQuest(100000);
 				cm.sendOk("....");

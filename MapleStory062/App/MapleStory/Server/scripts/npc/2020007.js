@@ -39,7 +39,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3107) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "雪人的愤怒" + "#l"; n++; }
     if (cm.getQuestStatus(3109) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "阻击雪人" + "#l"; n++; }
     if (cm.getQuestStatus(8057) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "环游冒险岛 5" + "#l"; n++; }
-    if (cm.getQuestStatus(10095) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "????? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10095) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u65af\u5361\u675c\u5c14\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(3020) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3019) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "收集狼皮" + "#l"; n++; }
     if ((cm.getQuestStatus(3021) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3020) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "勇士部落的贤者" + "#l"; n++; }
     if ((cm.getQuestStatus(3036) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 65) && (cm.getQuestStatus(3020) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "寻找尼克的痕迹" + "#l"; n++; }
@@ -89,7 +89,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3107) qt = "查到什么了吗？\r\n#b（给斯卡德讲了雪之精灵雕像的故事。）";
         if (qid == 3109) qt = "到现在也没有发生雪崩，看来你已经阻止了驮狼雪人……很厉害啊？！据说作为雪之精灵的孩子驮狼雪人非常强大……";
         if (qid == 8057) qt = "欢迎光临！马塞尔已经跟我说了你要来。唉，这里除了雪也没什么好看的，你就随便看看吧！走路小心点——很滑的！";
-        if (qid == 10095) qt = "????? ?????? ???? ?? ???? ??.";
+        if (qid == 10095) qt = (qact == 1 ? "斯卡德 支持绘画活动。" : "嘿，您正在为一护湖开展绿色活动。你会得到我的支持吗？");
         if (qid == 3020) qt = "哈哈~ 我会暂时保管这个戒指。你不可能拿回去的，因为你打不赢我。如果你想要戒指，就必须答应我的条件。怎么样？你答应吗？";
         if (qid == 3021) qt = "我年轻的时候，还没到这片大陆之前，我见过#b4位贤者#k。这戒指应该就是那时候听他们听过的戒指。你拿着这枚戒指去#b维多利亚岛找那4位贤者#k吧，你应该先找#b勇士部落#k的贤者。还有，以后有机会再来这里，你一定要来找我。";
         if (qid == 3036) qt = "哦哦。。。你是上次带着那奇怪的戒指的家伙吧~ 你过得怎么样？你来得正好。我一直想请你帮我完成我的心愿。怎么样？这是不容易的事，想不想挑战？";

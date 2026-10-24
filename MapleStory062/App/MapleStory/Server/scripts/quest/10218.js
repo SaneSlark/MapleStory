@@ -1,29 +1,12 @@
-/* ============================================================
-   自动生成任务脚本 - 重新生成会被覆盖, 定制请修改生成器
-   任务: 10218 ??? ????? ??
-   开始NPC: 9000021  结束NPC: 9000021
-   ============================================================ */
-var status = -1;
-
-function start(mode, type, selection) {
-    if (mode == -1) { qm.dispose(); return; }
-    if (mode == 1) status++; else status--;
-    if (status < 0) { qm.dispose(); return; }
-    if (status == 0) qm.sendNext("??? ? ??? ??? ????? ??? ??? ??? ??? ???? ?? ?????? ??? ????? ???? ? ??.");
-    else {
-        qm.startQuest(qm.getQuest());
-        qm.dispose();
+// 任务条件、奖励与交接由原生助手处理；通用对话流程见quest/legacy.js。
+var activityId = 10218, activityMenu = null;
+function activityFlow() {
+    if (activityMenu == null) {
+        var reader = new java.util.Scanner(new java.io.File("scripts/quest/legacy.js"), "GBK");
+        try { activityMenu = eval(String(reader.useDelimiter("(?!)").next()))(qm, activityId); }
+        finally { reader.close(); }
     }
+    return activityMenu;
 }
-
-function end(mode, type, selection) {
-    if (mode == -1) { qm.dispose(); return; }
-    if (mode == 1) status++; else status--;
-    if (status < 0) { qm.dispose(); return; }
-    if (status == 0) qm.sendNext("??? ? ??? ??? ????? ??? ??? ??? ??? ???? ?? ?????? ??? ????? ???? ? ??.");
-    else {
-        qm.completeQuest(qm.getQuest());
-        qm.dispose();
-    }
-}
-
+function start(mode, type, selection) { activityFlow().start(mode, type, selection); }
+function end(mode, type, selection) { activityFlow().end(mode, type, selection); }

@@ -1,9 +1,9 @@
 function start() {
 
 if(cm.getChar().getVip() >= 0 && cm.getChar().getMapId() == 910000018) {
-    cm.sendSimple ("#b你好, 我能为你召唤黑轮王BOSS.\r\n请你带来#i4140103#(最后一关赠品.).#l#k\r\n\r\n#L1#我要召唤Boss！#l#b ");
+    cm.sendSimple ("#b你好, 我能为你召唤黑轮王首领.\r\n请你带来#i4140103#(最后一关赠品.).#l#k\r\n\r\n#L1#我要召唤首领！#l#b ");
     } else {
-    cm.sendOk("我是Boss召唤师.\r\n.")
+    cm.sendOk("我是首领召唤师.\r\n.")
     }
 }
 function action(mode, type, selection) {
@@ -21,11 +21,11 @@ cm.dispose();
             if(cm.haveItem(4140103) == true){
 	cm.summonMob(9410015, 2000000000, 2000000, 1);
         cm.gainItem(4140103,-1);
-        cm.serverNotice("『Boss公告』：玩家: "+ cm.getChar().getName() +" 开始了黑轮Boss的挑战~祝他好运!~"); 
+        cm.serverNotice("『首领公告』：玩家: "+ cm.getChar().getName() +" 开始了黑轮首领的挑战~祝他好运!~"); 
 				   cm.dispose();
      }else{
         cm.sendOk("请确认你包裹里有#i4140103#");
-        cm.serverNotice("『Boss公告』：玩家: "+ cm.getChar().getName() +" 没有过关物品也能来到黑轮王的老家?!~");  
+        cm.serverNotice("『首领公告』：玩家: "+ cm.getChar().getName() +" 没有过关物品也能来到黑轮王的老家?!~");  
         cm.dispose();   }     
     } else if (selection == 2) {
         cm.gainMeso(-1000000);

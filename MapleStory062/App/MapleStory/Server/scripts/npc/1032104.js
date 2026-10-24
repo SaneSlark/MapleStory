@@ -7,13 +7,13 @@ importPackage(net.sf.odinms.client);
 
 var status = -1;
 
-function start() {
+function recoveredOriginalStart() {
     status = -1;
     qfresh = true;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     cm.sendOk("……");
     cm.dispose();
@@ -35,7 +35,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(2069) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "运送龙之头骨" + "#l"; n++; }
     if (cm.getQuestStatus(2152) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "传闻的真相-巴缇" + "#l"; n++; }
     if (cm.getQuestStatus(8050) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "今日日程" + "#l"; n++; }
-    if (cm.getQuestStatus(9528) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? (12? 17?)" + "#l"; n++; }
+    if (cm.getQuestStatus(9528) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4e07\u5723\u8282\u7cd6\u679c\u6d3e\u9001\uff01\uff01\uff01" + "#l"; n++; }
     if ((cm.getQuestStatus(2067) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 22) && (cm.getQuestStatus(2066) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "植物化石研究" + "#l"; n++; }
     if ((cm.getQuestStatus(2068) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 22) && (cm.getQuestStatus(2067) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "动物化石研究" + "#l"; n++; }
     if ((cm.getQuestStatus(2070) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 23) && (cm.getQuestStatus(2069) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "化石研究成果" + "#l"; n++; }
@@ -71,7 +71,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 2069) qt = "你回来了？我忘了告诉你，桉是性格非常孤僻的孩子。我忘记给你写一封信了。";
         if (qid == 2152) qt = "去找#m101000000#的植物学家#b#p1032104##k问问吧。";
         if (qid == 8050) qt = "好，收集到了吗？";
-        if (qid == 9528) qt = "?? ?? ?? ??????? ????? ? ??? ??? ?????? ?? ????? ?? ? ??? ??? ?????? ?????.";
+        if (qid == 9528) qt = "\u4f60\u4e3a\u4ec0\u4e48\u6765\u89c1\u6211\uff1f\u4f60\u7ed9\u5b69\u5b50\u4eec\u5e26\u4e86\u7cd6\u679c\u5417\uff1f\u6211\u5f88\u62c5\u5fc3\uff0c\u56e0\u4e3a\u6211\u6ca1\u6709\u4efb\u4f55\u7cd6\u679c\u53ef\u4ee5\u5206\u53d1\u7ed9\u5b69\u5b50\u4eec\uff0c\u4f46\u7ed3\u679c\u5f88\u597d\u3002";
         if (qid == 2067) qt = "你是以前拿芳博士的箱子去的那个人吧？好久不见！你还没忘记再来找我。正好我正在研究化石。你会帮我吗？";
         if (qid == 2068) qt = "这是20个植物样品。品质也不错。辛苦你了。对植物化石研究很有帮助。果然是芳博士推荐的人。我还有一件事情想拜托你。怎么样？你能帮我吗？";
         if (qid == 2070) qt = "好久不见了。很感谢你上次帮我。有了你的帮忙，我的研究进行得很顺利。";
@@ -101,4 +101,23 @@ function qQuestAction(mode, type, selection) {
     }
     cm.dispose();
     return true;
+}
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9528,"name":"万圣节糖果派送！！！","startNpc":1022006,"endNpc":1032104}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

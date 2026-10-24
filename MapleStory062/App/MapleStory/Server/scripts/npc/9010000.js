@@ -1,11 +1,11 @@
-function start() {
+function recoveredOriginalStart() {
     qfresh = true;
     if (qQuestAction(1, 0, 0)) return;
-	cm.sendOk ("#r0.  最新公告都在这里更新,每晚8点活动#k \r\n1.  点击右下角绿色窗口#b拍卖#k.享受快捷服务\r\n2.  在聊天窗输入#e#b@wnnpc#n#k 打开快捷服务\r\n3.  在聊天窗输入#e#b@ziyou#n#k 快速回自由市场\r\n4.  登陆其他帐号输入#b@zijiu [卡号的帐号]#k 卡号自救\r\n5.  在自由市场每分钟可以#b泡经验、金钱#k\r\n4.  快乐百宝箱出#b稀有装备、高级百宝券#k\r\n5.  高级快乐百宝箱出#b绝版装备、祝福卷\r\n#k6.  高级百宝箱豆豆票出#b绝世装备、神器#k\r\n6.  挑战勇士之魂得#b高级百宝券、GM装备#k,奖励递增\r\n7.  金币最高上限21亿,超过变负数,不过可以存#b仓库、银行#k\r\n8.  所有东东都可以靠自己的努力获取,#b人人平等#K");
+	cm.sendOk ("#r0.  最新公告都在这里更新,每晚8点活动#k \r\n1.  点击右下角绿色窗口#b拍卖#k.享受快捷服务\r\n2.  在聊天窗输入#e#b@wnnpc#n#k 打开快捷服务\r\n3.  在聊天窗输入#e#b@ziyou#n#k 快速回自由市场\r\n4.  登陆其他帐号输入#b@zijiu [卡号的帐号]#k 卡号自救\r\n5.  在自由市场每分钟可以#b泡经验、金钱#k\r\n4.  快乐百宝箱出#b稀有装备、高级百宝券#k\r\n5.  高级快乐百宝箱出#b绝版装备、祝福卷\r\n#k6.  高级百宝箱豆豆票出#b绝世装备、神器#k\r\n6.  挑战勇士之魂得#b高级百宝券、管理员装备#k,奖励递增\r\n7.  金币最高上限21亿,超过变负数,不过可以存#b仓库、银行#k\r\n8.  所有东东都可以靠自己的努力获取,#b人人平等#K");
 	cm.dispose();
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
 }
 
@@ -27,7 +27,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(4467) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "等级３0的特别礼物" + "#l"; n++; }
     if (cm.getQuestStatus(4468) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "等级４0的特别礼物" + "#l"; n++; }
     if (cm.getQuestStatus(4469) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "等级５0的特别礼物" + "#l"; n++; }
-    if (cm.getQuestStatus(10052) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? 2000?? ???" + "#l"; n++; }
+    if (cm.getQuestStatus(10052) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u67ab\u76842000\u5929\u7684\u6545\u4e8b" + "#l"; n++; }
     if (cm.getQuestStatus(10110) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "金大亨的邀请" + "#l"; n++; }
     if (cm.getQuestStatus(9981) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "4周年纪念升级活动" + "#l"; n++; }
     if (cm.getQuestStatus(10206) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "黑魔法师的足迹" + "#l"; n++; }
@@ -79,7 +79,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 4467) qt = "记得要在等级30时，做第二职业专职哦. 加油喔!";
         if (qid == 4468) qt = "这结阶段可能对您而言太困难了, 不过你知道吗? 如果有一群好友就会容易多了. 去玩具城组队任务或怪物嘉年华考考自己吧! 您将体验全新的和令人兴奋的感受~";
         if (qid == 4469) qt = "拥有组队队员不错吧? 您已有资格挑战女神之塔组队任务了, 不过也别忘记等级55的大海盗组队任务. 您将在枫险世界体会到永无止境的娱乐~~";
-        if (qid == 10052) qt = "? ??? ??? 2000?? ?? ????. ?? ???? ??? ???? ????. #b#h0##k?? ???? ???? ?????? ?? ????? ???????. ? ?? ?? ?????. '???...2000?? ??!' ??? ?? ?? ?? ??? ???.";
+        if (qid == 10052) qt = (qact == 1 ? "哇，我已经收集了所有 2000 个故事。有很多不同的故事。  #b#h0##k 我把你收集的故事交给了 太阳站 的图书管理员 维兹 先生。很快就会有一本很棒的书出版。 “枫……2000天的记录！”只是想想，我觉得这真是一件很酷的事情。" : "嗯...1997 天，1998 天，1999 天...哇！  #b#h0##k，看这个。在即将到来的#r10月、25日、#k日，正是冒险者们踏出一护岛世界冒险第一步的第#b#e2000日#k#n日！这不是真的、真的很棒吗？");
         if (qid == 10110) qt = "收到了枫险世界的大商家, #b金大亨#k寄出的信息. 说些什么?";
         if (qid == 9981) qt = "如果你提升等级，将会得到4周年纪念活动的枫叶。";
         if (qid == 10206) qt = "枫险世界管理员正在呼唤你.";
@@ -126,3 +126,22 @@ function qQuestAction(mode, type, selection) {
     return true;
 }
 /* AUTO-QUEST-END */
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9141,"name":"制作春节黄金饺子王","startNpc":9010000,"endNpc":9010000},{"id":9151,"name":"制作春节福禄寿春卷拼盘","startNpc":9010000,"endNpc":9010000},{"id":9152,"name":"丰富的中秋节","startNpc":9010000,"endNpc":2040015},{"id":9153,"name":"和星缘共度新春佳节","startNpc":9010000,"endNpc":9001104},{"id":9170,"name":"内拉的中秋节","startNpc":9010000,"endNpc":9010000},{"id":9180,"name":"李彦的中秋节","startNpc":9010000,"endNpc":9010000},{"id":9190,"name":"艾尔玛的中秋节","startNpc":9010000,"endNpc":9010000},{"id":9191,"name":"艾尔玛的吹毛求疵","startNpc":9010000,"endNpc":2012010},{"id":9270,"name":"新年活动: HappyNewYear","startNpc":9010000,"endNpc":9010000},{"id":9280,"name":"枫树常识：一种新的交通方式","startNpc":9010000,"endNpc":9010000},{"id":9281,"name":"枫树常识：官方网站","startNpc":9010000,"endNpc":9010000},{"id":9282,"name":"枫树知识：公会","startNpc":9010000,"endNpc":9010000},{"id":9283,"name":"枫叶常识：世界旅行","startNpc":9010000,"endNpc":9010000},{"id":9284,"name":"枫叶常识：4二次变更","startNpc":9010000,"endNpc":9010000},{"id":9330,"name":"明明夫人的祭祀桌","startNpc":9010000,"endNpc":1012106},{"id":9332,"name":"朴佥知祭祀桌","startNpc":9010000,"endNpc":2071000},{"id":9385,"name":"拜金回归的消息","startNpc":9010000,"endNpc":9000009},{"id":9391,"name":"伊卡洛斯丢失的邀请函","startNpc":9010000,"endNpc":1052106},{"id":9393,"name":"儿童怪物消灭","startNpc":9010000,"endNpc":9010000},{"id":9394,"name":"健太的请求","startNpc":9010000,"endNpc":2060005},{"id":9397,"name":"给 海神 的礼物","startNpc":9010000,"endNpc":2071008},{"id":9490,"name":"激动人心的世界旅行","startNpc":9010000,"endNpc":9110002},{"id":9513,"name":"阿宗厨师的要求","startNpc":9330016,"endNpc":9010000},{"id":9514,"name":"阿宗厨师的美味春卷","startNpc":9010000,"endNpc":9330016},{"id":9520,"name":"万圣节糖果包装！","startNpc":9010000,"endNpc":1012003},{"id":9522,"name":"做鬼装!","startNpc":9010000,"endNpc":1012106},{"id":9609,"name":"声母测验 (12 月 2 日)","startNpc":9010000,"endNpc":9010000},{"id":9625,"name":"声母测验","startNpc":9010000,"endNpc":9010000},{"id":9875,"name":"养圣诞树","startNpc":9010000,"endNpc":2001000}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
+}

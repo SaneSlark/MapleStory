@@ -13,7 +13,7 @@ function action() {
         cm.gainItem(1042003, 1);
 	cm.gainItem(1062007, 1);
 	cm.gainItem(1322013, 1);
-        cm.serverNotice("「勇士公告」 没有什么可以阻挡  "+ cm.getChar().getName() +" 的脚步, 经过11轮奋斗终于拿到传说中的GM装备  ！！ "); 
+        cm.serverNotice("「勇士公告」 没有什么可以阻挡  "+ cm.getChar().getName() +" 的脚步, 经过11轮奋斗终于拿到传说中的管理员装备  ！！ "); 
       cm.warp(910000000);
     cm.dispose()
 }

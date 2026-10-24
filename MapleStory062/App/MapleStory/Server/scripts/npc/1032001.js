@@ -58,7 +58,7 @@ function qOrigAction(mode, type, selection) {
 				} else if (cm.getQuestStatus(100100).equals(MapleQuestStatus.Status.STARTED)) {
 					cm.completeQuest(100101);
 					if (cm.getQuestStatus(100101).equals(MapleQuestStatus.Status.COMPLETED)) {
-						cm.sendOk("好德, 现在带这去 #bRobeira#k.");
+						cm.sendOk("好德, 现在带这去 #b鲁碧#k.");
 					} else {
 						cm.sendOk("嘿, " + cm.getChar().getName() + "! 我需要#b黑珠#k. 去找到次元之门吧.");
 						cm.startQuest(100101);

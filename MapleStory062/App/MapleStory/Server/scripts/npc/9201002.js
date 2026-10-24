@@ -120,7 +120,7 @@ function action(mode, type, selection) {
 						var wname = party.get(1).getName();
 						var hidd = party.get(0).getId();
 						var widd = party.get(1).getId();
-						var StringLine = hname + " and " + wname + "'s Wedding is going to be started in Cathedral at Channel " + cm.getC().getChannel() +".";
+						var StringLine = hname + " and " + wname + "的婚礼即将在大教堂开始，所在频道：" + cm.getC().getChannel() +".";
 						cm.worldMessage(5, StringLine);
 						var eimi = cm.getChar().getEventInstance();
 						eimi.setProperty("husband", hname);
@@ -177,7 +177,7 @@ function action(mode, type, selection) {
 						cm.getPlayer().setMarriageQuestLevel(100);
 						cm.dispose();
 					} else {
-						cm.sendNext("您还没有得到爸爸妈妈或者GM们的祝福!.");
+						cm.sendNext("您还没有得到爸爸妈妈或者管理员们的祝福!.");
 						cm.dispose();
 					}
 				} else {

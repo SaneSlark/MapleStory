@@ -38,12 +38,12 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(2149) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "传闻的真相-麦吉" + "#l"; n++; }
     if (cm.getQuestStatus(3070) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "邪摩斯的请托" + "#l"; n++; }
     if (cm.getQuestStatus(6110) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "麦吉的考验" + "#l"; n++; }
-    if (cm.getQuestStatus(9320) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??? ???" + "#l"; n++; }
+    if (cm.getQuestStatus(9320) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u98ce\u4e2d\u7684\u6545\u4e8b" + "#l"; n++; }
     if (cm.getQuestStatus(9321) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "旅行袋" + "#l"; n++; }
     if (cm.getQuestStatus(9325) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "葛温遗失的日记" + "#l"; n++; }
-    if (cm.getQuestStatus(9746) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ?? ?? ???!" + "#l"; n++; }
-    if (cm.getQuestStatus(10053) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ???" + "#l"; n++; }
-    if (cm.getQuestStatus(10089) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9746) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u60c5\u4fa3\u9ed1\u5de7\u514b\u529b\uff01" + "#l"; n++; }
+    if (cm.getQuestStatus(10053) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4e07\u5409\u7684\u5192\u9669\u6545\u4e8b" + "#l"; n++; }
+    if (cm.getQuestStatus(10089) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4e07\u5409\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(2005) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 15) && (cm.getQuestStatus(2004) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "变异蘑菇的血1" + "#l"; n++; }
     if ((cm.getQuestStatus(2006) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 15) && (cm.getQuestStatus(2005) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "变异蘑菇的血2" + "#l"; n++; }
     if ((cm.getQuestStatus(2047) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 45) && ((cm.getJob().getId() == 100 || cm.getJob().getId() == 110 || cm.getJob().getId() == 120 || cm.getJob().getId() == 130 || cm.getJob().getId() == 111 || cm.getJob().getId() == 121 || cm.getJob().getId() == 131 || cm.getJob().getId() == 112 || cm.getJob().getId() == 122 || cm.getJob().getId() == 132 || cm.getJob().getId() == 200 || cm.getJob().getId() == 210 || cm.getJob().getId() == 220 || cm.getJob().getId() == 230 || cm.getJob().getId() == 211 || cm.getJob().getId() == 221 || cm.getJob().getId() == 231 || cm.getJob().getId() == 212 || cm.getJob().getId() == 222 || cm.getJob().getId() == 232 || cm.getJob().getId() == 300 || cm.getJob().getId() == 310 || cm.getJob().getId() == 320 || cm.getJob().getId() == 311 || cm.getJob().getId() == 321 || cm.getJob().getId() == 312 || cm.getJob().getId() == 322 || cm.getJob().getId() == 400 || cm.getJob().getId() == 410 || cm.getJob().getId() == 420 || cm.getJob().getId() == 411 || cm.getJob().getId() == 421 || cm.getJob().getId() == 412 || cm.getJob().getId() == 422 || cm.getJob().getId() == 500 || cm.getJob().getId() == 510 || cm.getJob().getId() == 520 || cm.getJob().getId() == 511 || cm.getJob().getId() == 521 || cm.getJob().getId() == 512 || cm.getJob().getId() == 522)) && (cm.getQuestStatus(2008) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "英雄的战剑" + "#l"; n++; }
@@ -103,9 +103,9 @@ function qQuestAction(mode, type, selection) {
         if (qid == 9320) qt = "请别打扰我沉思. \r\n #b你还记得1000天前路过这里的旅客吗?#k";
         if (qid == 9321) qt = "你是来找那家伙的书包的吧?";
         if (qid == 9325) qt = "….但是… 我会再把它交给你. 请你别再把它丢弃了. 我也恳请你查出他的的下落再让我知道!!";
-        if (qid == 9746) qt = "#b#p9000007##k? ??? ??? ??? ??. #b#m103010000##k?? ??.";
-        if (qid == 10053) qt = "?? ???? ?? ?? ? ???.....?#b\r\n??? ?????? ?? ????.";
-        if (qid == 10089) qt = "??? ?????? ???? ?? ???? ??.";
+        if (qid == 9746) qt = (qact == 1 ? "我想我对 #p1022002# 做了一些坏事。但是，那个反应……老实说，这太有趣了。" : "嘿，#b#p1022002##k 你哥哥真的有女朋友吗？  \r\n#L0# #b 啊？这是我第一次听到这个......  #p1022002#的女朋友？ #l");
+        if (qid == 10053) qt = "\u53d1\u751f\u4e86\u4ec0\u4e48\u4e8b\uff1f\u6765\u627e\u6211\u7684\u76ee\u7684\u662f\u2026\u2026\uff1f #b\\r\\n#L0# \u6211\u60f3\u542c\u542c\u4f60\u7684\u5192\u9669\u6545\u4e8b\u3002 #l";
+        if (qid == 10089) qt = (qact == 1 ? "麦吉 支持绿色运动。" : "冒险岛绿色行动正在进行中~我会支持你的。");
         if (qid == 2005) qt = "想得到#b#t4031005##k？哈...像你这样小伙子恐怕不太可能。如果不是真正的强者，是不可能把#t4031005#弄到手的... 如果你真的想得到，就证明给我看你是个强者。";
         if (qid == 2006) qt = "但是你要把#b#t4031005##k用在哪儿呢？？这可是做贵重的物品所需要的材料...你要给#p1022100#做什么样的东西呢？不过... 这跟我无关。";
         if (qid == 2047) qt = "谁又打扰我?... 啊！你老是给我添麻烦。哈哈...没关系。像你这么强壮的人我也想跟你多聊聊。那次我给你的#t4031005#用在合适的事情上了吗？不过,那已经是过去的事了。";

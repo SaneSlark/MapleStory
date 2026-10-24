@@ -35,7 +35,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3328) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "妖精的藏有阳光的瓶子" + "#l"; n++; }
     if (cm.getQuestStatus(3335) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "雪原玫瑰" + "#l"; n++; }
     if (cm.getQuestStatus(3349) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "为了琵丽雅" + "#l"; n++; }
-    if (cm.getQuestStatus(10098) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10098) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u83f2\u8389\u4e9a\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(3322) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 70) && (cm.getQuestStatus(3321) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "琵丽雅的银坠饰" + "#l"; n++; }
     if ((cm.getQuestStatus(3323) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 45)) { opts += "\r\n#L" + n + "#[接受] " + "琵丽雅的担忧" + "#l"; n++; }
     if ((cm.getQuestStatus(3326) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 52) && (cm.getQuestStatus(3325) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "琦尼的秘密" + "#l"; n++; }
@@ -73,7 +73,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3328) qt = "旅行者……您从#p2012018#那里回来了吗？啊……这就是#p2012018#配的药啊。真是辛苦您了……您帮了我这么多的忙，真是太感谢您了。";
         if (qid == 3335) qt = "……您有什么事情吗？这个……花？是#t4031695#啊……这是很名贵的花，您为什么要送给我啊……嗯？您说是#p2111003#的礼物？";
         if (qid == 3349) qt = "这个笔记本……是#p2111002#失踪前使用过的……笔记本？啊啊……真是太感谢了！只要有这个，就能明白#p2111002#的真实想法了？";
-        if (qid == 10098) qt = "???? ?????? ???? ?? ???? ??.";
+        if (qid == 10098) qt = (qact == 1 ? "菲莉亚 支持绿色运动。" : "你做得很好。我会给你力量。");
         if (qid == 3322) qt = "您这是……有什么事情吗？您是来询问有关#p2111002#那个孩子的事情的吧？我不想再谈关于他的任何事情了！对他一点都不了解，就在那里说三道四的话……我不想听。\r\n#b我见到了#p2111002#。也和他说过话。";
         if (qid == 3323) qt = "啊啊……怎么办呢……这种时候要是他在就好了……怎么办才好呢……";
         if (qid == 3326) qt = "啊，您是……前些时间为#p2111005#去配药的旅行者啊。真是谢谢您。不过……\r\n#b#p2111005#怎么样了？";

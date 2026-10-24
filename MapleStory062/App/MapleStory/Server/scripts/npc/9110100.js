@@ -59,7 +59,7 @@ cm.dispose();
 } else if (selection == 2) { 
 if (cm.itemQuantity(4031225) >= 10) { 
 if ((cm.haveItem(4005000, 1)) && (cm.haveItem(4005001)) && (cm.haveItem(4005002)) && (cm.haveItem(4005003))) { 
-cm.sendOk("#r啊 这么快就搜集好了这些东西了我真是太感谢你咯 奖励GM的飞吻吧  开玩笑的这些东西给你！ "); 
+cm.sendOk("#r啊 这么快就搜集好了这些东西了我真是太感谢你咯 奖励管理员的飞吻吧  开玩笑的这些东西给你！ "); 
 cm.dispose(); 
 } 
   

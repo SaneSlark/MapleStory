@@ -7,13 +7,13 @@ importPackage(net.sf.odinms.client);
 
 var status = -1;
 
-function start() {
+function recoveredOriginalStart() {
     status = -1;
     qfresh = true;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     cm.sendOk("……");
     cm.dispose();
@@ -36,10 +36,10 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(4518) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "药的制造过程" + "#l"; n++; }
     if (cm.getQuestStatus(4539) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "药的制造过程" + "#l"; n++; }
     if (cm.getQuestStatus(9873) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "想吃西瓜的明明女士" + "#l"; n++; }
-    if (cm.getQuestStatus(9330) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "????? ???" + "#l"; n++; }
-    if (cm.getQuestStatus(9522) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? (12? 11?)" + "#l"; n++; }
-    if (cm.getQuestStatus(9523) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? (12? 12?)" + "#l"; n++; }
-    if (cm.getQuestStatus(9868) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "????? ???" + "#l"; n++; }
+    if (cm.getQuestStatus(9330) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u660e\u660e\u592b\u4eba\u7684\u796d\u7940\u684c" + "#l"; n++; }
+    if (cm.getQuestStatus(9522) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u505a\u9b3c\u88c5!" + "#l"; n++; }
+    if (cm.getQuestStatus(9523) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u505a\u9b3c\u88c5!" + "#l"; n++; }
+    if (cm.getQuestStatus(9868) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u660e\u660e\u592a\u592a\u7684\u89e3\u836f" + "#l"; n++; }
     if ((cm.getQuestStatus(2062) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 20)) { opts += "\r\n#L" + n + "#[接受] " + "明明女士的第一个担心" + "#l"; n++; }
     if ((cm.getQuestStatus(2063) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 21) && (cm.getQuestStatus(2062) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "明明女士的第二个担心" + "#l"; n++; }
     if ((cm.getQuestStatus(2154) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 20) && (cm.getQuestStatus(2153) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "故事的主人公" + "#l"; n++; }
@@ -78,10 +78,10 @@ function qQuestAction(mode, type, selection) {
         if (qid == 4518) qt = "好了！你带齐了制作这药所需要的一切。等等，我马上完成它。";
         if (qid == 4539) qt = "好。。。您已经拥有所有需要的药品。。　 等等。。。 我马上就去做。";
         if (qid == 9873) qt = "可能是因为天气太热，节日准备工作是在太累了。啊！您说给我送来了礼物？";
-        if (qid == 9330) qt = "??? ?????? ??? ?????. ?? ????? ??? ??????? ?? ?????. ???? ??? ??? ??? ??? ?? ??? ?????. ? ??? ????.";
-        if (qid == 9522) qt = "?? ????? ??? ? ?? ?? ??? ???????? ???? ?? ???????? ?? ?? ?? ? ??? ???? ?? ???.";
-        if (qid == 9523) qt = "??~ ?? ???? ??? ???? ???? ?? ????~";
-        if (qid == 9868) qt = "??, ??? ?? ?? ???. ?? ??? ?????. ?? ?? ??? ?? ????.";
+        if (qid == 9330) qt = "\u6211\u63a5\u5230\u4e86 \u5192\u9669\u5c9b \u63a5\u7ebf\u5458\u6253\u6765\u7684\u7535\u8bdd\u3002\u4f60\u5e26\u6765\u4e86\u6211\u8981\u7684\u4e1c\u897f\uff0c\u5bf9\u5417\uff1f\u6211\u5f88\u9ad8\u5174\u3002\u56e0\u4e3a\u627e\u4e0d\u5230\u6c34\u679c\uff0c\u6240\u4ee5\u65e0\u6cd5\u51c6\u5907\u796d\u7940\u684c\u3002\u8fd9\u5c06\u4f1a\u6709\u5f88\u5927\u7684\u5e2e\u52a9\u3002";
+        if (qid == 9522) qt = "\u6240\u4ee5\u4f60\u8bf4\u4f60\u6b63\u5728\u5bfb\u627e\u6750\u6599\u6765\u5236\u4f5c\u8863\u670d\u5206\u53d1\u7ed9\u5b69\u5b50\u4eec\uff1f\u4f60\u89c9\u5f97\u5b69\u5b50\u4eec\u771f\u7684\u4f1a\u559c\u6b22\u5417\uff1f\u8bf7\u7ed9\u6211\u6750\u6599\uff0c\u4ee5\u4fbf\u6211\u505a\u8863\u670d\u3002";
+        if (qid == 9523) qt = (qact == 1 ? "嘿~我要的东西你已经收集到了吗？实在是太奇妙了~" : "你又来了。我还没有足够的衣服给孩子们穿。你能帮助我吗？");
+        if (qid == 9868) qt = (qact == 1 ? "天哪，我找到了所有的成分。那么请稍等一下。我马上去配药。" : "你就是#p1022007#所说的那个人吗？我正在等待。  #p1022007# 我提到的药物快准备好了...但是...我突然在准备，所以我的药物用完了...对不起，你能给我一些材料吗？");
         if (qid == 2062) qt = "你好。我是#b#p1012106##k。嗯？你说我为什么这忙？其实我们村的节日快到了。要准备得东西太多，但没有人帮我。你会不会帮我？";
         if (qid == 2063) qt = "哎。。。你又来了。你收集来的装饰品已经被妥善处理。我们村落的节日快到了，但现在又有新的问题。怎么样？想听我说说吗？";
         if (qid == 2154) qt = "正忙着准备庆典所以就简单说吧……什么？阿洛伊爷爷？是不是他又闯什么祸了？哎……虽说健康但经常出海且闯祸……";
@@ -113,4 +113,23 @@ function qQuestAction(mode, type, selection) {
     }
     cm.dispose();
     return true;
+}
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9330,"name":"明明夫人的祭祀桌","startNpc":9010000,"endNpc":1012106},{"id":9522,"name":"做鬼装!","startNpc":9010000,"endNpc":1012106},{"id":9523,"name":"做鬼装!","startNpc":1012106,"endNpc":1012106},{"id":9527,"name":"万圣节糖果派送！！","startNpc":1012106,"endNpc":1040000}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

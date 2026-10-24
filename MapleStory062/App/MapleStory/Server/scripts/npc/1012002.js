@@ -115,7 +115,7 @@ function action(mode, type, selection) {
 			cm.sendSimple(selStr);
 		}
 		else if (selectedType == 5){ //arrow refine
-			var selStr = "箭?OK，没问题.#b";
+			var selStr = "箭?好的，没问题.#b";
 			var arrows = new Array ("弓箭","弩箭","青铜弓箭","青铜弩箭","钢铁弓箭","钢铁弩箭");
 			for (var i = 0; i < arrows.length; i++){
 				selStr += "\r\n#L" + i + "# " + arrows[i] + "#l";

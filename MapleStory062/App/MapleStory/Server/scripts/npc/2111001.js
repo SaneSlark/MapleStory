@@ -35,7 +35,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3348) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "为了阿卡德诺" + "#l"; n++; }
     if (cm.getQuestStatus(3354) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "德朗博士的药" + "#l"; n++; }
     if (cm.getQuestStatus(3356) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "德朗博士是谁" + "#l"; n++; }
-    if (cm.getQuestStatus(9879) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9879) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u75af\u72c2\u7684\u793c\u7269" + "#l"; n++; }
     if (cm.getQuestStatus(3306) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "重新获取阿卡德诺披风" + "#l"; n++; }
     if ((cm.getQuestStatus(3315) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 70) && (cm.getQuestStatus(3314) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "麦麦德的考试" + "#l"; n++; }
     if ((cm.getQuestStatus(3316) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 70) && (cm.getQuestStatus(3315) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "后街小贩的情报" + "#l"; n++; }
@@ -75,7 +75,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3348) qt = "来，快把#t4161033#给我……";
         if (qid == 3354) qt = "……你为什么会来这里……什么？你见到了#p2111002#的思念？他提到了有关#p2111005#的药的事情……？";
         if (qid == 3356) qt = "快过来。你去见过#p2111003#了吗？他那里有#p2111005#的药吗？……这就是他拿着的药？快给我看看。";
-        if (qid == 9879) qt = "?? ???? ??? ?? ?? ??? ????? ??? ??? ????.";
+        if (qid == 9879) qt = "\u4f60\u662f\u8c01\uff1f\u6211\u4e00\u4e2a\u4eba\u5446\u5728\u9ed1\u6697\u7684\u5730\u65b9\u5f88\u65e0\u804a\uff0c\u6240\u4ee5\u5f88\u9ad8\u5174\u4f60\u80fd\u8fc7\u6765\u6253\u62db\u547c\u3002";
         if (qid == 3306) qt = "既然你把材料都拿来了，我会给你重新发放卡帕莱特披风……但是你要注意。卡帕莱特披风是证明卡帕莱特身份的重要的东西，而且附有特殊的魔法。以后绝对不能弄丢。重新制作只能每3天制作一次。";
         if (qid == 3315) qt = "你是……不久之前刚拿到#t1102136#的年轻炼金术士啊……有什么事吗？是研究的过程中需要帮助吗？嗯？失踪的炼金术士？失踪的炼金术士……的话……是#r#p2111002##k吧。关于他的事情，你知道得越少越好。他曾经做过非常危险的研究……\r\n#b即使知道危险也要追根究底不正是卡帕莱特的炼金术士应有的精神吗？";
         if (qid == 3316) qt = "我并不完全信任你。不过正因为如此，我才能把这件事情托付给你。让你从和蒙特鸠和卡帕莱特任何一方都无关的第三者的视角来审视#p2111002#，对他希望的是什么，他的希望是正当的，还是错误的……作一个判断。";

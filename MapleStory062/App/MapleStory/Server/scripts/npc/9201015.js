@@ -45,17 +45,17 @@ function action(mode, type, selection) {
 		}
 		if (status == 0) {
                 
-			cm.sendNext("#b我是 管理员雇佣来的BOSS陪刷员！(*^__^*) 嘻嘻……");
+			cm.sendNext("#b我是 管理员雇佣来的首领陪刷员！(*^__^*) 嘻嘻……");
                 
 		} else if (status == 1) {
-			cm.sendNextPrev("#b我可以为你召唤出你希望的BOSS，但是您得给点钱我哟，祝你杀怪愉快.")
+			cm.sendNextPrev("#b我可以为你召唤出你希望的首领，但是您得给点钱我哟，祝你杀怪愉快.")
                  
 		} 
 
  		else if (status == 2) {if(cm.getChar().getVip() >= 0) {
-			cm.sendSimple ("#r请选择您要召唤的怪物种类?\r\n#b#L0#BOSS怪#l");
+			cm.sendSimple ("#r请选择您要召唤的怪物种类?\r\n#b#L0#首领怪#l");
                 }else {
-                 cm.sendOk("我是专为VIP服务的，你不是VIP，所以什么都看不到...")
+                 cm.sendOk("我是专为贵宾服务的，你不是贵宾，所以什么都看不到...")
                 }
 		} 
 		else if (status == 3) {

@@ -96,7 +96,7 @@ function action(mode, type, selection) {
         {
             if (cm.getJob().equals(net.sf.odinms.client.MapleJob.CAPTAIN) || cm.getJob().equals(net.sf.odinms.client.MapleJob.VIPER)) 
             {
-                cm.sendOk("嘿 #b#h ##k! \r\n#d你已经是 #r冒险岛#k 中的最高职业了.去试试你的4转技能吧,或者去猎杀一些强大的Boss吧.#k");
+                cm.sendOk("嘿 #b#h ##k! \r\n#d你已经是 #r冒险岛#k 中的最高职业了.去试试你的4转技能吧,或者去猎杀一些强大的首领吧.#k");
                 cm.dispose();
             }
             else

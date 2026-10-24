@@ -27,7 +27,7 @@ function action(mode, type, selection) {
             cm.dispose(); 
             return; 
         } if (status == 0) { 
-            cm.sendYesNo("HI，我是全美国最快的超级跑车驾驶员?"); 
+            cm.sendYesNo("你好，我是全美国最快的超级跑车驾驶员?"); 
         } else if (status == 1) { 
             var selStr = "选择你的目的地.#b"; 
                 for (var i = 0; i < maps.length; i++) { 

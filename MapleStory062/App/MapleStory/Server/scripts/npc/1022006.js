@@ -7,13 +7,13 @@ importPackage(net.sf.odinms.client);
 
 var status = -1;
 
-function start() {
+function recoveredOriginalStart() {
     status = -1;
     qfresh = true;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     cm.sendOk("……");
     cm.dispose();
@@ -38,9 +38,9 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(2145) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "调查木妖" + "#l"; n++; }
     if (cm.getQuestStatus(2146) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "怪木木妖" + "#l"; n++; }
     if (cm.getQuestStatus(2147) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "怪木木妖的种子" + "#l"; n++; }
-    if (cm.getQuestStatus(9524) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? (12? 13?)" + "#l"; n++; }
-    if (cm.getQuestStatus(9525) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? (12? 14?)" + "#l"; n++; }
-    if (cm.getQuestStatus(9840) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9524) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5236\u4f5c\u6728\u4e43\u4f0a\u670d\u88c5\uff01" + "#l"; n++; }
+    if (cm.getQuestStatus(9525) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u5236\u4f5c\u6728\u4e43\u4f0a\u670d\u88c5\uff01\uff01" + "#l"; n++; }
+    if (cm.getQuestStatus(9840) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u6e29\u65af\u987f\u535a\u58eb\u7684\u7814\u7a76" + "#l"; n++; }
     if (cm.getQuestStatus(9986) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "琦仙灵的最新消息" + "#l"; n++; }
     if ((cm.getQuestStatus(2065) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 20)) { opts += "\r\n#L" + n + "#[接受] " + "要找化石。。。" + "#l"; n++; }
     if ((cm.getQuestStatus(2066) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 20) && (cm.getQuestStatus(2065) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "运送化石箱子" + "#l"; n++; }
@@ -92,9 +92,9 @@ function qQuestAction(mode, type, selection) {
         if (qid == 2145) qt = "谢谢！看来不乐观啊。得再仔细观察观察。";
         if (qid == 2146) qt = "回来了。我拜托的事怎么样了？看看，不说也能感觉得到。大地的气息都不一样了。真的太辛苦你了。你做了一件光荣的事。";
         if (qid == 2147) qt = "99 ％黑巧克力99 ％黑巧克力";
-        if (qid == 9524) qt = "????? ???? ??? ???? ????. ?? ?? ??? ??? ???? ?? ??? ???? ?? ?? ?? ??? ?????";
-        if (qid == 9525) qt = "?? ?? ?? ???? ????? ?? ?? ?? ??? ????.";
-        if (qid == 9840) qt = "#b#p9010010##k? ?? ?? ??? ????… ?? ?? ??? ?????.";
+        if (qid == 9524) qt = "\u8fd9\u662f\u4e00\u4e2a\u5927\u95ee\u9898\uff0c\u56e0\u4e3a\u6ca1\u6709\u8db3\u591f\u7684\u670d\u88c5\u53ef\u4ee5\u5206\u53d1\u7ed9\u5b69\u5b50\u4eec\u3002\u4e0d\uff0c\u8fd9\u4e0d\u662f\u810f\u7ef7\u5e26\u5417\uff1f\u4f60\u771f\u7684\u6536\u96c6\u4e86\u6750\u6599\u7ed9\u5b69\u5b50\u4eec\u505a\u8863\u670d\u5417\uff1f";
+        if (qid == 9525) qt = (qact == 1 ? "木乃伊服装的材料你已经收集到了吗？我想我应该赶快准备做衣服了。" : "你又回来了。我确信你来这里是为了帮助孩子们制作参加万圣节派对的服装，对吗？");
+        if (qid == 9840) qt = (qact == 1 ? "#b#p1022006##k 协助博士的研究" : "啊！你能听到我的声音吗？如果你能听到我的声音，请帮我一个忙。");
         if (qid == 9986) qt = "你在找我吗? 你想要些什么? \r\n#b我想要雪丝绸的资料.";
         if (qid == 2065) qt = "你好，年轻人。很高兴在这里见到你。我是考古学家#b#p1022006##k。在这里研究古生物的化石。";
         if (qid == 2066) qt = "哦… 就是这个！谢谢。有了你的帮忙。我才能找回这些物品。但是。。。还有一个事情想拜托你，怎么样？你愿意帮我把？";
@@ -137,4 +137,23 @@ function qQuestAction(mode, type, selection) {
     }
     cm.dispose();
     return true;
+}
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9528,"name":"万圣节糖果派送！！！","startNpc":1022006,"endNpc":1032104}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

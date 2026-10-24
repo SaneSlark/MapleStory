@@ -45,7 +45,7 @@ function action(mode, type, selection) {
 		}
 		status++;
 		if (status == 0) {
-			cm.sendNext("我是Ria. 你可以花#b"+cm.getChar().getLevel()*100000+"金币#k 我可以送你去 #r领地的决判#k.");
+			cm.sendNext("我是丽亚. 你可以花#b"+cm.getChar().getLevel()*100000+"金币#k 我可以送你去 #r领地的决判#k.");
 		} else if (status == 1) {
 			cm.sendYesNo("你想要进入 #r领地的决判#k 吗?\r\n价格计算:#b等级 x 100000#k金币");
 		} else if (status == 2) {

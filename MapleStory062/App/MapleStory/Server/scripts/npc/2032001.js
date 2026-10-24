@@ -10,12 +10,12 @@ importPackage(net.sf.odinms.client);
 var status = 0;
 var selectedItem = -1;
 
-function start() {
+function recoveredOriginalStart() {
 	status = -1;
 	action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
 	if (mode == 1)
 		status++;
 	else
@@ -67,4 +67,22 @@ function action(mode, type, selection) {
 			}
 		cm.dispose();
 	}
+}
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":4004,"name":"#p9000009# 航行回来，看上去很疲惫，但因为航行中得到的宝箱，显得精神很好。","startNpc":9330018,"endNpc":2032001}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

@@ -27,12 +27,12 @@ var status = 0;
 var price = 20000;
 var map = Array(209000000);
 
-function start() {
+function recoveredOriginalStart() {
 	status = -1;
 	action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -70,4 +70,20 @@ cm.dispose();
 			}
 }
 }
+}
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":4996,"name":"异世界的传统","startNpc":9201091,"endNpc":9201091},{"id":4998,"name":"祝你异世界圣诞快乐","startNpc":9201091,"endNpc":9201091}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

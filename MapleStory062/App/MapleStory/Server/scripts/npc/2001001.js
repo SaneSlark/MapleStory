@@ -23,15 +23,15 @@
 ======>OdinMS NX Npc<======
 by [GM]Fatality of FusionMS
 */
-function start() {
+function recoveredOriginalStart() {
 if(cm.getChar().getVip() >= 1) {
-	cm.sendSimple ("HI，这里是VIP会员1号店，欢迎选购请选择您的类别.\r\n#L0#披风#l\r\n#L1#表情#l\r\n#L2#眼饰#l\r\n#L3#脸饰#l\r\n#L4#手套#l\r\n#L5#帽子#l\r\n#L6#帽子2#l\r\n#L7#套装#l\r\n#L8#上衣#l\r\n#L9#裤子#l\r\n#L10#戒指#l\r\n#L11#盾#l\r\n#L12#鞋子#l\r\n#L13#武器#l");
+	cm.sendSimple ("你好，这里是贵宾会员1号店，欢迎选购请选择您的类别.\r\n#L0#披风#l\r\n#L1#表情#l\r\n#L2#眼饰#l\r\n#L3#脸饰#l\r\n#L4#手套#l\r\n#L5#帽子#l\r\n#L6#帽子2#l\r\n#L7#套装#l\r\n#L8#上衣#l\r\n#L9#裤子#l\r\n#L10#戒指#l\r\n#L11#盾#l\r\n#L12#鞋子#l\r\n#L13#武器#l");
 }else {
     cm.sendOk("夜 是这么美...")
     }
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
 	cm.dispose();
 	if (selection == 0) {
 		cm.openShop (1000);
@@ -64,4 +64,20 @@ function action(mode, type, selection) {
 	} else {
 		cm.dispose();
 	}
+}
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9953,"name":"雪人的树枝","startNpc":2001001,"endNpc":2001001}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

@@ -7,13 +7,13 @@ importPackage(net.sf.odinms.client);
 
 var status = -1;
 
-function start() {
+function recoveredOriginalStart() {
     status = -1;
     qfresh = true;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function recoveredOriginalAction(mode, type, selection) {
     if (qQuestAction(mode, type, selection)) return;
     cm.sendOk("……");
     cm.dispose();
@@ -36,9 +36,9 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(2090) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "好无聊1" + "#l"; n++; }
     if (cm.getQuestStatus(2091) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "好无聊2" + "#l"; n++; }
     if (cm.getQuestStatus(4488) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "外卖热牛奶" + "#l"; n++; }
-    if (cm.getQuestStatus(9391) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "????? ???? ???" + "#l"; n++; }
-    if (cm.getQuestStatus(9842) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "????? ????" + "#l"; n++; }
-    if (cm.getQuestStatus(10088) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "????? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9391) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4f0a\u5361\u6d1b\u65af\u4e22\u5931\u7684\u9080\u8bf7\u51fd" + "#l"; n++; }
+    if (cm.getQuestStatus(9842) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4f0a\u5361\u6d1b\u65af\u7684\u8611\u83c7\u7403" + "#l"; n++; }
+    if (cm.getQuestStatus(10088) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4f0a\u5361\u6d1b\u65af\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(2083) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 32) && (cm.getQuestStatus(2091) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "伊卡鲁斯的滑翔翼" + "#l"; n++; }
     if ((cm.getQuestStatus(2084) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 37) && (cm.getQuestStatus(2083) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "伊卡鲁斯的热气球" + "#l"; n++; }
     if ((cm.getQuestStatus(2085) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 42) && (cm.getQuestStatus(2089) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED) && (cm.getQuestStatus(2084) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "寻找妖精维英…" + "#l"; n++; }
@@ -78,9 +78,9 @@ function qQuestAction(mode, type, selection) {
         if (qid == 2090) qt = "在堕落都市周围看不到的怪物是？\r\n#b1. 木妖#k \r\r#b2. 蓝蘑菇#k \r\n#b3. 绿水灵#k \r\n#b4. 漂漂猪#k \r\n#b5. 野狼#k";
         if (qid == 2091) qt = "哇！真的都弄来了啊~真谢谢你哦，现在我不会觉得无聊了。我该怎么报答你呢…那请收下这个吧~";
         if (qid == 4488) qt = "#b#9220005##k在温馨小镇#b#9220005##k有话告诉我...";
-        if (qid == 9391) qt = "???? ??? ?? #b#t04031301##k? ??????.. ?? ?? ? ?? ??? ? ? ??? .. ??, ?? #b#t04031301##k? ????? ??? ??? ??????? ?? ?? ???? ? ? ?? ??..";
-        if (qid == 9842) qt = "#b#p9010010##k? ?? ?? ??? ????… ?? ?? ??? ?????.";
-        if (qid == 10088) qt = "????? ?????? ???? ?? ???? ??.";
+        if (qid == 9391) qt = "\u6211\u4e22\u5931\u4e86\u4f5c\u4e3a\u513f\u7ae5\u8282\u793c\u7269\u6536\u5230\u7684#b#t04031301##k...\u6211\u60f3\u6211\u5fc5\u987b\u72ec\u81ea\u4fdd\u62a4\u8fd9\u4e2a\u5730\u65b9...\u4e0d\uff0c\u8fd9\u4e0d\u662f#b#t04031301##k\u5417\uff1f\u4f60\u4e0d\u80af\u7ed9\u6211\u5417\uff1f\u90a3\u6211\u4e5f\u53ef\u4ee5\u53bb\u52a8\u7269\u56ed\u4e86...";
+        if (qid == 9842) qt = (qact == 1 ? "#b#p1052106##k 帮我做了美味的蘑菇肉丸。" : "啊！危险，小心一点！工地上随时都要注意安全，尤其在工地顶部，必须#b小心坠落#k。什么意思？去顶部看看就知道了……我有些话想告诉你，要听吗？");
+        if (qid == 10088) qt = (qact == 1 ? "伊卡洛斯支持绿色运动。" : "您正在开展枫之谷绿色活动。");
         if (qid == 2083) qt = "如果能在那广阔的天空尽情飞翔那该有多好啊…在高高的天上飞翔会是什么心情呢？就算一次也好，真想再天上飞翔啊。\r\n真的能在天上飞吗？\r\n人类是无法飞翔的。";
         if (qid == 2084) qt = "咦，你是上次帮我弄来制作滑翔翼材料的…\r\n做出滑翔翼了吗？";
         if (qid == 2085) qt = "咦，你是上次帮我弄来制作热气球材料的…\r\n热气球做好了吗？";
@@ -113,4 +113,23 @@ function qQuestAction(mode, type, selection) {
     }
     cm.dispose();
     return true;
+}
+
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":4488,"name":"外卖热牛奶","startNpc":9220005,"endNpc":1052106},{"id":4489,"name":"感谢的祝福","startNpc":1052106,"endNpc":9220005},{"id":9391,"name":"伊卡洛斯丢失的邀请函","startNpc":9010000,"endNpc":1052106},{"id":9392,"name":"罗尼丢失的邀请函","startNpc":1052106,"endNpc":1061004}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

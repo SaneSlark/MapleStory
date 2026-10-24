@@ -45,7 +45,7 @@ function action(mode, type, selection) {
 						hairnew.push(fhair[i] + parseInt(cm.getHair() % 10));
 					}
 				}
-				cm.sendYesNo("如果您使用普通卡,您的头发将随机获得,我还是推荐你使用VIP卡 . 那么你要使用  #b#t5150010##k 改变你的发形状?");
+				cm.sendYesNo("如果您使用普通卡,您的头发将随机获得,我还是推荐你使用贵宾卡 . 那么你要使用  #b#t5150010##k 改变你的发形状?");
 			} else if (selection == 2) {
 				beauty = 2;
 				haircolor = Array();
@@ -53,7 +53,7 @@ function action(mode, type, selection) {
 				for(var i = 0; i < 8; i++) {
 					haircolor.push(current + i);
 				}
-				cm.sendYesNo("如果您使用普通卡,您的头发将随机获得,我还是推荐你使用VIP卡. 那么你要使用 #b#t5151000##k 改变你的发色?");
+				cm.sendYesNo("如果您使用普通卡,您的头发将随机获得,我还是推荐你使用贵宾卡. 那么你要使用 #b#t5151000##k 改变你的发色?");
 			}
 		}
 		else if (status == 2){
@@ -63,7 +63,7 @@ function action(mode, type, selection) {
 					cm.setHair(hairnew[Math.floor(Math.random() * hairnew.length)]);
 					cm.sendOk("你自己看看怎么样,随机发型哦!");
 				} else {
-					cm.sendOk("Hmmm...我没有看见你带卡来,那我是不能帮你换发型的");
+					cm.sendOk("嗯...我没有看见你带卡来,那我是不能帮你换发型的");
 					cm.dispose();
 				}
 			}
@@ -73,7 +73,7 @@ function action(mode, type, selection) {
 					cm.setHair(haircolor[Math.floor(Math.random() * haircolor.length)]);
 					cm.sendOk("你自己看看怎么样,随机发型哦!");
 				} else {
-					cm.sendOk("Hmmm...我没有看见你带卡来,那我是不能帮你换发型的...");
+					cm.sendOk("嗯...我没有看见你带卡来,那我是不能帮你换发型的...");
 					cm.dispose();
 				}
 			}

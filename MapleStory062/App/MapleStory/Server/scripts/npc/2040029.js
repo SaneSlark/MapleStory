@@ -34,7 +34,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3232) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "挂钟的拜托" + "#l"; n++; }
     if (cm.getQuestStatus(3234) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "时间塔的问题" + "#l"; n++; }
     if (cm.getQuestStatus(3235) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "工人表的电池" + "#l"; n++; }
-    if (cm.getQuestStatus(9846) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ????" + "#l"; n++; }
+    if (cm.getQuestStatus(9846) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u949f\u697c\u95ee\u9898\u89e3\u51b3" + "#l"; n++; }
     if ((cm.getQuestStatus(3232) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 33) && (cm.getQuestStatus(3231) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "挂钟的拜托" + "#l"; n++; }
     if ((cm.getQuestStatus(3233) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 33) && (cm.getQuestStatus(3232) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "运送完成" + "#l"; n++; }
     if ((cm.getQuestStatus(3234) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 34) && (cm.getQuestStatus(3233) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "时间塔的问题" + "#l"; n++; }
@@ -66,7 +66,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3232) qt = "哦。。。你终于找到了#b#t4031098##k吧。太好了。。。有这个我也能再开始工作。。那你给我#b#t4031094##k吧。我把它安装到我的身体上。";
         if (qid == 3234) qt = "你怎么来得这么晚? 我等你已经很久了。听说你已经都打退了100个#b#o3210207##k? 辛苦你了。你这么帮我，我就给你个谢礼。";
         if (qid == 3235) qt = "你回来了！看看。。。你真的收集#b200个#t4000111##k来了。太好了。你为我们这么辛苦，我给你礼物。请收下。";
-        if (qid == 9846) qt = "#b#p9010010##k? ?? ?? ??? ????… ?? ?? ??? ?????.";
+        if (qid == 9846) qt = (qact == 1 ? "帮助解决了钟楼的问题。" : "有人在吗？如果是这样，请给我一个答案。");
         if (qid == 3232) qt = "哼。。。我是#b#p2040029##k。你找我有什么事情？嗯？#b#p2040002##k给#b#t4031094##k了？嗯。。。他拜托我去时间塔安装那个吗？然后让时间塔再启动？那不是什么难做的事。但其实我个人有一个问题。。。";
         if (qid == 3233) qt = "哟！我的力气回来了！好！我马上去安装配件！好。。。结束了。从现在玩具城时间塔会开始正常启动。那你快点回去告诉#b#p2040002##k这个好消息吧。我要在这里进行我的工作。再见！";
         if (qid == 3234) qt = "你到这里有什么事吗？对。。。因为以前你帮我，我现在做事做得都没问题。特别#t4031098#这个质量特别好。我不用担心以后很长时间再发生发条动力不足的问题。哈哈。";

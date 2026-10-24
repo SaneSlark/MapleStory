@@ -1,4 +1,4 @@
 function start() {
-	cm.sendOk ("我的人生就如此么???");
+	cm.sendOk ("我的人生就这样了吗？");
 	cm.dispose();
 }

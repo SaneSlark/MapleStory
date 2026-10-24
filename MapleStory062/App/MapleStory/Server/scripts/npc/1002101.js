@@ -79,7 +79,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 9808) qt = "啊，是之前来打听#t4031607#的事情的朋友啊。怎么了？箱子里的枫叶又鲜活了？……什么？#t4031607#消失了只有#t4031610#留了下来？这就是#t4031610#吗？这样……哈哈哈哈哈";
         if (qid == 2077) qt = "选择战士吗？看到我之后也想成为威风凛凛的战士吧？如果已经下定决心的话，就果断的按下接受吧。";
         if (qid == 2078) qt = "听说过神箭手#b#p1012100##k的名声吗？以弓作为武器的弓箭手职业，在很远距离能以很高的命中率狩猎怪物。怎样？要走上#b弓箭手之路#k吗？";
-        if (qid == 2079) qt = "是的。需要相当的敏捷(Dex)与幸运(Luk)的#b飞侠#k这个职业还是有着相当大的魅力。如何？要走上飞侠的路吗？";
+        if (qid == 2079) qt = "是的。需要相当的敏捷与运气的#b飞侠#k这个职业还是有着相当大的魅力。如何？要走上飞侠的路吗？";
         if (qid == 2080) qt = "大法师#p1032001#啊.. 我也只是远远的见过呢.. 那个.. 听说他经常在魔法密林顶端的魔法图书馆里..怎样？想要走上法师之路吗？";
         if (qid == 2081) qt = "啊，这样长篇大论的进行说明可不像我.. 尽量简单的说，对于各个职业，达到#b10级#k之后可以成为#b战士, 弓箭手, 飞侠#k，达到#r8级#k之后可以选择成为#r法师#k。为了得到职业，对应每个不同的职业要去寻找不同村庄的某个人。";
         if (qid == 2212) qt = "哦~你是说想成为海盗？你心里已经下定决心，做好准备了？";
@@ -121,7 +121,7 @@ var islandStage = -1, islandSelected = null, islandChoices = [], islandEnding = 
 function islandStatus(id) { return islandManager.getQuestStatus(id).getId(); }
 function islandFinish() {
     if (!islandHelper.complete(islandManager.getC(), islandSelected.id, islandManager.getNpc())) {
-        islandManager.sendOk("任务尚未完成，或奖励所需的背包空间不足。请确认任务物品、消灭数量以及背包空位。罗杰的任务还需要吃完苹果并恢复全部HP。");
+        islandManager.sendOk("任务尚未完成，或奖励所需的背包空间不足。请确认任务物品、消灭数量以及背包空位。罗杰的任务还需要吃完苹果并恢复全部生命值。");
     } else islandManager.sendOk("任务完成！奖励已发放，请在任务栏查看后续任务。");
     islandManager.dispose();
 }
@@ -133,8 +133,8 @@ function islandAccept() {
         if (!islandManager.haveItem(2010007)) islandManager.gainItem(2010007,1);
         var p=islandManager.getPlayer();
         if (p.getHp()>25) {p.setHp(25);p.updateSingleStat(Packages.net.sf.odinms.client.MapleStat.HP,25);}
-        islandManager.sendOk("请打开背包，吃掉罗杰的苹果，并等HP完全恢复后再来找我。");
-    } else islandManager.sendOk("任务已接受。请按任务栏的要求完成后，再找指定的NPC交付。");
+        islandManager.sendOk("请打开背包，吃掉罗杰的苹果，并等生命值完全恢复后再来找我。");
+    } else islandManager.sendOk("任务已接受。请按任务栏的要求完成后，再找指定的居民交付。");
     islandManager.dispose();
 }
 function islandDialogue(mode,type,selection) {

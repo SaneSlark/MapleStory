@@ -42,8 +42,8 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(3840) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "弱化喵怪仙人" + "#l"; n++; }
     if (cm.getQuestStatus(3842) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "道功的危机" + "#l"; n++; }
     if (cm.getQuestStatus(3844) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "击退喵怪仙人" + "#l"; n++; }
-    if (cm.getQuestStatus(9850) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
-    if (cm.getQuestStatus(10100) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(9850) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u6ce2\u7279\u7684\u6d4b\u8bd5" + "#l"; n++; }
+    if (cm.getQuestStatus(10100) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u6ce2\u7279\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(3803) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55)) { opts += "\r\n#L" + n + "#[接受] " + "丢失的天书" + "#l"; n++; }
     if ((cm.getQuestStatus(3804) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3803) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "猫元灵大扫除" + "#l"; n++; }
     if ((cm.getQuestStatus(3810) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 55) && (cm.getQuestStatus(3809) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "神仙的条幅2" + "#l"; n++; }
@@ -104,8 +104,8 @@ function qQuestAction(mode, type, selection) {
         if (qid == 3840) qt = "从妙仙那儿收回猫咪娃娃了。谢谢。那么记录准备好的文章……";
         if (qid == 3842) qt = "来了……只要您能成功，可以大大削弱妖怪禅师的力量。嗯？那是什么？";
         if (qid == 3844) qt = "咳咳……回来了……解药……解药呢？啊！这就是……";
-        if (qid == 9850) qt = "??? ???? ?? #b#p2091001##k? ???? ??? ? ???..???? ??? ?????.";
-        if (qid == 10100) qt = "??? ????? ???? ?? ???? ??.";
+        if (qid == 9850) qt = (qact == 1 ? "击败大眼和密森后，他回到了杜东，杜东告诉他要继续努力，并说只有进一步的训练才是达到圣人的方法。" : "你的训练进展顺利吗？他一定很惊讶我的声音一路都能听到。好吧，如果你积累了武功，这都不算什么。好吧，没关系，你还有很长的路要走……");
+        if (qid == 10100) qt = (qact == 1 ? "波特支持绿色运动。& #x D;& #x A;" : "冒险家...有正在进行的活动吗？");
         if (qid == 3803) qt = "为了成为仙人来找 #m250000000#的人啊… 怎么样? 从#m250000000#那里学了不少东西了吧? \r\n#b没有。仙人们的话太深奥了。";
         if (qid == 3804) qt = "帮我搜集#t4000299#的年轻人。你以前拿给我的 #t4000299# 很不寻常哦。看看纸张这边斑斓的猫的脚印。只把它们认为是野猫随便踩的脚印是不是想的太简单了?";
         if (qid == 3810) qt = "托你的福拿到了 #t4031430#。 但是你还有什么事要找我么? 恩? #p2071010#说要借 #t4031431#? 虽然可以借但是… 呼。要是能帮我做点事的话就借你 #t4031431#。";

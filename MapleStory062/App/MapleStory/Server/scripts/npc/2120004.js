@@ -33,7 +33,7 @@ function qQuestAction(mode, type, selection) {
     if (cm.getQuestStatus(9929) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "玩偶匠人乔纳斯" + "#l"; n++; }
     if (cm.getQuestStatus(9930) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "完美的道具" + "#l"; n++; }
     if (cm.getQuestStatus(9931) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "苏菲莉亚的肖像画" + "#l"; n++; }
-    if (cm.getQuestStatus(10075) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "???? ???" + "#l"; n++; }
+    if (cm.getQuestStatus(10075) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u4e54\u7eb3\u65af\u7684\u9057\u61be" + "#l"; n++; }
     if (n == 0) return false;
     qact = -1;
     cm.sendSimple("有什么我能帮你的吗?\r\n" + opts);
@@ -55,7 +55,7 @@ function qQuestAction(mode, type, selection) {
         if (qid == 9929) qt = "既然和#p2120005#说要去烟囱那边，就进入熄灭的#b壁炉#k，去#m229000300#另一头看看吧。";
         if (qid == 9930) qt = "要制造出完美的娃娃的话，好像必须要有#b#t4031834##k。这样向#b#p2120004##k回答之后，他陷入了沉思。";
         if (qid == 9931) qt = "要制作和女儿相像的完美的娃娃的话，当然就需要#p2120004#——他女儿的#r肖像画#k。这样回答之后，#b#p2120004##k一脸忧郁地陷入了沉思。";
-        if (qid == 10075) qt = "? ?? ??? ? ? ????";
+        if (qid == 10075) qt = (qact == 1 ? "变身为佩托并解除了乔纳斯的诅咒。" : "打破诅咒？");
         if (qact == 1) cm.sendNext(qt);
         else cm.sendYesNo(qt);
         return true;

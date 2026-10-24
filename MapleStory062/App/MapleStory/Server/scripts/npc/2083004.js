@@ -142,7 +142,7 @@ function action(mode, type, selection) {
                     cm.sendOk("龙王远征队已经创建成功, 告诉你的组员马上申请加入！\r\n\r\n点我查看组员名单，关闭申请或者开始战斗！");
                     cm.dispose(); 
                 } else {
-                    cm.sendOk("这里是个错误，有人可能已经建立了一个龙王远征队.如果并非如此，请GM报告错误！");
+                    cm.sendOk("这里是个错误，有人可能已经建立了一个龙王远征队.如果并非如此，请管理员报告错误！");
                     cm.dispose();
                 }
             } else if (selection == 2) {

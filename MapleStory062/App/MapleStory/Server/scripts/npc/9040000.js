@@ -79,7 +79,7 @@ function action(mode, type, selection) {
                                                         map.getPortal(4).setScriptName("guildwaitingexit");
                                                         
                                                         eim.registerPlayer(cm.getPlayer());
-                                                        cm.guildMessage("你的家族已经登记进入公会对抗战. 请到" + cm.getC().getChannel() + "频道的遗址发掘营地找Shuang报到.");
+                                                        cm.guildMessage("你的家族已经登记进入公会对抗战. 请到" + cm.getC().getChannel() + "频道的遗址发掘营地找修安报到.");
 
                                                         //remove all GQ items from player entering
                                                         for (var i = 0; i < GQItems.length; i++) {

@@ -1,9 +1,9 @@
 var status = -1;
-function start (){
+function recoveredOriginalStart(){
     action(1,0,0);
 }
 
-function action(Mode,Type,Selection){
+function recoveredOriginalAction(Mode,Type,Selection){
     if(Mode != 1){
         cm.dispose();
         return;
@@ -23,4 +23,22 @@ function action(Mode,Type,Selection){
             cm.sendNext("双击就可以打开 <3");
         cm.dispose();
     }
+}
+
+
+
+// 活动菜单共用 legacy.js；本文件保留本NPC的任务和原有服务。
+var recoveredDefs = [{"id":9340,"name":"白色情人节：草莓糖","startNpc":2041017,"endNpc":2041017},{"id":9341,"name":"白色情人节：糖果篮","startNpc":2041017,"endNpc":2041017}];
+var recoveredMenu = null;
+function start() {
+    var reader = new java.util.Scanner(new java.io.File("scripts/npc/legacy.js"), "GBK");
+    try {
+        var factory = eval(String(reader.useDelimiter("(?!)").next()));
+        recoveredMenu = factory(cm, recoveredDefs, recoveredOriginalStart, recoveredOriginalAction, "暂时没有可以接取或交付的任务。");
+    } finally { reader.close(); }
+    recoveredMenu.start();
+}
+function action(mode, type, selection) {
+    if (recoveredMenu) recoveredMenu.action(mode, type, selection);
+    else cm.dispose();
 }

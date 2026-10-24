@@ -87,7 +87,7 @@ function action(mode, type, selection) {
 			"\r\n#L55#宠 物" +
 			"\r\n#L53#坐 骑"+
 			"\r\n#L57#椅 子" +
-			"\r\n#L52#Boss 召唤物" +
+			"\r\n#L52#首领 召唤物" +
 			"\r\n#L50#喇叭,召唤石" );
 	  } else if (selection == 87) {
                cm.sendSimple ("你要选哪个? #e#d" +

@@ -55,9 +55,9 @@ function action(mode, type, selection) {
 			//	cm.dispose();
 			//} else {
 				if(cm.getChar().getGender() == 1) {
-					cm.sendSimple("嘿!我是为能到达这里的#r女性VIP会员#k服务的！你想有怎样的改变?\r\n#L0#肤色#l\r\n#L1#发型#l\r\n#L2#头发颜色#l\r\n#L3#眼睛#l\r\n#L4#眼睛颜色#l");
+					cm.sendSimple("嘿!我是为能到达这里的#r女性贵宾会员#k服务的！你想有怎样的改变?\r\n#L0#肤色#l\r\n#L1#发型#l\r\n#L2#头发颜色#l\r\n#L3#眼睛#l\r\n#L4#眼睛颜色#l");
 				}else {
-					cm.sendOk("我能让#r女性VIP会员#k改头换面，如果你是男性的话就去找我的搭档!");
+					cm.sendOk("我能让#r女性贵宾会员#k改头换面，如果你是男性的话就去找我的搭档!");
 					cm.dispose();
 				}
 			//}

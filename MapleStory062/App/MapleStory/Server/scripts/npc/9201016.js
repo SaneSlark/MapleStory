@@ -56,7 +56,7 @@ function action(mode, type, selection) {
  		else if (status == 2) {if(cm.getChar().getVip() >= 0) {
 			cm.sendSimple ("#r请选择您要召唤的怪物种类?\r\n#b#L0#练级怪物#l\r\n#L1#娱乐怪物#l");
                 }else {
-                 cm.sendOk("我是专为VIP服务的，你不是VIP，所以什么都看不到...")
+                 cm.sendOk("我是专为贵宾服务的，你不是贵宾，所以什么都看不到...")
                 }
 		} 
 		else if (status == 3) {

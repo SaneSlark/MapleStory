@@ -54,13 +54,14 @@ function action(mode, type, selection) {
 				cm.sendNext("你的金币不够啊... 凑够 #b" + cost + " 金币#k 再来找我吧。");
 				cm.dispose();
 			} else {
-				if (cm.getChar().getMapId() == 250000100) {
-					em.setProperty("myRide", "1"); // 飞回天空之城
-				} else {
-					em.setProperty("myRide", "0"); // 飞往武陵
-				}
-				cm.gainMeso(-cost);
-				em.newInstance("Hak").registerPlayer(cm.getChar());
+                if (em.getProperty("isRiding") != null && String(em.getProperty("isRiding")) == "true") {cm.sendOk("仙鹤正在途中，请稍候再来。");cm.dispose();return;}
+                var here=cm.getChar().getMapId(),flight,destination,portal;
+                if(here==250000100){flight=200090300;destination=200000141;portal="h001";}
+                else if(here==200000141||here==251000000){flight=200090310;destination=250000100;portal="h002";}
+                else{cm.sendOk("这里不是仙鹤的乘坐地点。");cm.dispose();return;}
+                var instance=em.newInstance("Hak");
+                instance.setProperty("flightMap",String(flight));instance.setProperty("destination",String(destination));instance.setProperty("destinationPortal",portal);
+                cm.gainMeso(-cost);instance.registerPlayer(cm.getChar());
 				cm.dispose();
 			}
 		}

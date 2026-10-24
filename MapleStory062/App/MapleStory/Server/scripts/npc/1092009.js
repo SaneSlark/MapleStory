@@ -32,7 +32,7 @@ function qQuestAction(mode, type, selection) {
     var n = 0;
     if (cm.getQuestStatus(2176) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "清理海王港1" + "#l"; n++; }
     if (cm.getQuestStatus(2177) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "清理海王港2" + "#l"; n++; }
-    if (cm.getQuestStatus(10091) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "??? ??" + "#l"; n++; }
+    if (cm.getQuestStatus(10091) == net.sf.odinms.client.MapleQuestStatus.Status.STARTED) { opts += "\r\n#L" + n + "#[完成] " + "\u91cc\u5fb7\u7684\u6b22\u547c" + "#l"; n++; }
     if ((cm.getQuestStatus(2176) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 15)) { opts += "\r\n#L" + n + "#[接受] " + "清理海王港1" + "#l"; n++; }
     if ((cm.getQuestStatus(2177) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getLevel() >= 25) && (cm.getQuestStatus(2176) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "清理海王港2" + "#l"; n++; }
     if ((cm.getQuestStatus(2178) == net.sf.odinms.client.MapleQuestStatus.Status.NOT_STARTED) && (cm.getQuestStatus(2177) == net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED)) { opts += "\r\n#L" + n + "#[接受] " + "清理海王港3" + "#l"; n++; }
@@ -58,7 +58,7 @@ function qQuestAction(mode, type, selection) {
         if (qact == -1) { cm.dispose(); return true; }
         if (qid == 2176) qt = "哎哟~！你还真是动作快啊！";
         if (qid == 2177) qt = "哈哈哈哈哈哈~果然像电一样迅速啊。";
-        if (qid == 10091) qt = "??? ?????? ???? ?? ???? ??.";
+        if (qid == 10091) qt = (qact == 1 ? "里德支持绿色运动。" : "绿色运动正在进行中~需要我的支持吗？");
         if (qid == 2176) qt = "啊呼~这家伙身上的泥巴灰尘，洗了又洗也掉个没完。哎哟~我的抹布！！完全烂掉了。这可怎么办才好…… \r\n#b 有什么需要帮忙的吗？#k";
         if (qid == 2177) qt = "吱吱~吱吱~老鼠的叫声……我的天哪！啊？你不就是之前帮我弄来蝴蝶结的孩子吗？哈哈，来得正好。 \r\n#b 又有什么需要我帮忙的吗？#k";
         if (qid == 2178) qt = "呵呵呵~小伙子再拜托你一件事行吗？  \r\n#b 喝！这……这是什么味道？#k";

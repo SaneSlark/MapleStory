@@ -69,7 +69,7 @@ var bossmaps = Array(
 										Array(610020006,0,"#r174级#b 地狱使"), 
 										Array(610020012,0,"#r174级#b 邪导师"),
 										Array(701010321,0,"#r180级#b 变异蜈蚣"), 
-										Array(270050000,0,"#r180级#b 神的黄昏:终极BOSS"), 
+										Array(270050000,0,"#r180级#b 神的黄昏:终极首领"), 
 										Array(889210100,0,"#r50级#b    试炼 蓝蘑菇王"), 
 										Array(889210200,0,"#r78级#b    试炼 狮鹫兽"), 
 										Array(889210300,0,"#r79级#b    试炼 大眼鱼"), 
@@ -507,7 +507,7 @@ function action(mode, type, selection) {
 		}
                if (status == 0) {
                    if (selection == 0) {
-                       cm.sendSimple("#fUI/UIWindow.img/QuestIcon/3/0#\r\n#L0##b城镇地图#l\r\n#L1#练级地图#l\r\n#L2#BOSS地图#l");
+                       cm.sendSimple("#fUI/UIWindow.img/QuestIcon/3/0#\r\n#L0##b城镇地图#l\r\n#L1#练级地图#l\r\n#L2#首领地图#l");
                    }
                    else if (selection == 1) {
                        cm.dispose();
