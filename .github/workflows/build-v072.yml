@@ -1,0 +1,60 @@
+name: Package CMS072 Portable
+
+on:
+  push:
+    branches: [v072]
+    paths:
+      - '.github/workflows/build-v072.yml'
+      - 'MapleStory072/App/**'
+      - 'MapleStory072/MapleStoryPortable.exe'
+      - 'MapleStory072/README.md'
+      - 'MapleStory072/Other/help.html'
+      - 'MapleStory072/Other/使用说明.txt'
+      - 'MapleStory072/Other/Tools/Build-Release.ps1'
+      - 'MapleStory072/Other/Tools/PortableApps.comInstaller/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: package-cms072-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    if: github.ref == 'refs/heads/v072'
+    runs-on: windows-2022
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Read package version
+        id: version
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $info = [IO.File]::ReadAllText('MapleStory072\App\AppInfo\appinfo.ini')
+          $version = [regex]::Match($info, '(?m)^PackageVersion=([0-9.]+)\s*$').Groups[1].Value
+          if (!$version) { throw 'Missing PackageVersion in appinfo.ini' }
+          "version=$version" >> $env:GITHUB_OUTPUT
+
+      # Only the final portable EXE is packaged here, using the version-local
+      # tool tracked under Other/Tools; no server JAR, launcher or database
+      # content is rebuilt in CI.
+      - name: Package final Portable
+        shell: powershell
+        run: '& ./MapleStory072/Other/Tools/Build-Release.ps1'
+
+      - name: Upload final Portable 
+        uses: actions/upload-artifact@v4
+        with:
+          name: CMS072-v${{ steps.version.outputs.version }}
+          path: |
+            MapleStory072/Other/Releases/${{ steps.version.outputs.version }}/*.paf.exe
+            MapleStory072/Other/Releases/${{ steps.version.outputs.version }}/SHA256SUMS.txt
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
