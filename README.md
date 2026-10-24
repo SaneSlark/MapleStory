@@ -8,7 +8,7 @@
 | CMS072 | [v072](https://github.com/SaneSlark/MapleStory/tree/v072) | [使用说明](https://github.com/SaneSlark/MapleStory/blob/v072/MapleStory072/Other/使用说明.txt) | [0.7.2.2 Release](https://github.com/SaneSlark/MapleStory/releases/tag/v0.7.2.2) |
 | CMS079 | [v079](https://github.com/SaneSlark/MapleStory/tree/v079) | [使用说明](https://github.com/SaneSlark/MapleStory/blob/v079/MapleStory079/Other/使用说明.txt) | [0.7.9.0 Release](https://github.com/SaneSlark/MapleStory/releases/tag/v0.7.9.0) |
 
-以上为截至 2026-10-22 各版本的最新正式发布。下载对应 Release 的 `.paf.exe` 安装包，使用同一 Release 的 `SHA256SUMS.txt` 核对文件。各 Release 的目标分支分别为 `v062`、`v072`、`v079`，附件包含安装包和校验文件。
+以上为各版本的最新正式发布。下载对应 Release 的 `.paf.exe` 安装包，使用同一 Release 的 `SHA256SUMS.txt` 核对文件。各 Release 的目标分支分别为 `v062`、`v072`、`v079`，附件包含安装包和校验文件。
 
 各版本分支保留 `MapleStory062/`、`MapleStory072/` 或 `MapleStory079/` 目录结构。客户端、服务端、运行库、配置和存档必须与该版本配套，不得混用。安装包不包含现有玩家存档。建议安装到新目录；已有用户更新前应退出游戏并等待正常停服，再按对应版本说明备份存档和配置。CMS072 需备份自己的 `Data` 及 `Server/settings.ini`。
 
