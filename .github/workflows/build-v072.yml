@@ -62,7 +62,7 @@ jobs:
       # Automatically publish the freshly built package to the GitHub
       # Release tagged v<PackageVersion>; existing assets are replaced.
       - name: Publish GitHub Release
-        shell: powershell
+        shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -72,7 +72,7 @@ jobs:
           $dir = "MapleStory072/Other/Releases/$version"
           $exe = Get-ChildItem -LiteralPath $dir -Filter '*.paf.exe' | Select-Object -First 1
           if (!$exe) { throw "Packaged EXE not found in $dir" }
-          gh release view $tag --json id 2>$null | Out-Null
+          gh release view $tag --json id *>$null
           if ($LASTEXITCODE -eq 0) {
               gh release upload $tag $exe.FullName "$dir/SHA256SUMS.txt" --clobber
               if ($LASTEXITCODE -ne 0) { throw "gh release upload failed" }
