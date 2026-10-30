@@ -1,3 +1,5 @@
+var closed072=false,origin072=-1;
+function close072(){closed072=true;cm.dispose();}
 /*
 	NPC Name: 		The Forgotten Temple Manager
 	Map(s): 		Deep in the Shrine - Forgotten Twilight
@@ -6,21 +8,22 @@
 var status = -1;
 
 function start() {
+    origin072=cm.getMapId();
     if (cm.getPlayer().getLevel() < 120) {
         cm.sendOk("挑战品克缤需要等级120。");
-        cm.dispose();
+        close072();
         return;
     }
     if (cm.getPlayer().getClient().getChannel() != 1) {
         cm.sendOk("只能在频道1挑战品克缤。");
-        cm.dispose();
+        close072();
         return;
     }
     var em = cm.getEventManager("PinkBeanBattle");
 
     if (em == null) {
         cm.sendOk("活动尚未开启，请联系管理员。");
-        cm.dispose();
+        close072();
         return;
     }
     var eim_status = em.getProperty("state");
@@ -38,7 +41,7 @@ function start() {
             status = 0;
             if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                 cm.sendOk("你在过去12小时内已挑战过品克缤，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                cm.dispose();
+                close072();
                 return;
             }
             cm.sendYesNo("你愿意担任远征队队长吗？");
@@ -46,25 +49,25 @@ function start() {
         } else if (squadAvailability == 1) {
             if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                 cm.sendOk("你在过去12小时内已挑战过品克缤，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                cm.dispose();
+                close072();
                 return;
             }
             // -1 = Cancelled, 0 = not, 1 = true
             var type = cm.isSquadLeader("PinkBean");
             if (type == -1) {
                 cm.sendOk("远征队已结束，请重新报名。");
-                cm.dispose();
+                close072();
             } else if (type == 0) {
                 var memberType = cm.isSquadMember("PinkBean");
                 if (memberType == 2) {
                     cm.sendOk("你已被禁止加入这支远征队。");
-                    cm.dispose();
+                    close072();
                 } else if (memberType == 1) {
                     status = 5;
                     cm.sendSimple("请选择：\r\n#b#L0#加入品克缤远征队#l\r\n#b#L1#退出品克缤远征队#l\r\n#b#L2#查看远征队成员#l");
                 } else if (memberType == -1) {
                     cm.sendOk("远征队已结束，请重新报名。");
-                    cm.dispose();
+                    close072();
                 } else {
                     status = 5;
                     cm.sendSimple("请选择：\r\n#b#L0#加入品克缤远征队#l\r\n#b#L1#退出品克缤远征队#l\r\n#b#L2#查看远征队成员#l");
@@ -81,14 +84,14 @@ function start() {
                 if (squd != null) {
                     if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                         cm.sendOk("你在过去12小时内已挑战过品克缤，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                        cm.dispose();
+                        close072();
                         return;
                     }
                     cm.sendYesNo("远征队与首领的战斗已经开始。\r\n" + squd.getNextPlayer());
                     status = 3;
                 } else {
                     cm.sendOk("远征队与首领的战斗已经开始。");
-                    cm.safeDispose();
+                    close072();
                 }
             } else {
                 cm.sendYesNo("你回来了。是否重新加入远征队继续战斗？");
@@ -102,14 +105,14 @@ function start() {
             if (squd != null) {
                 if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                     cm.sendOk("你在过去12小时内已挑战过品克缤，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                    cm.dispose();
+                    close072();
                     return;
                 }
                 cm.sendYesNo("远征队与首领的战斗已经开始。\r\n" + squd.getNextPlayer());
                 status = 3;
             } else {
                 cm.sendOk("远征队与首领的战斗已经开始。");
-                cm.safeDispose();
+                close072();
             }
         } else {
             cm.sendYesNo("你回来了。是否重新加入远征队继续战斗？");
@@ -119,6 +122,9 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    if(closed072)return;
+    if(mode!=1 || cm.getMapId()!=origin072){close072();return;}
+
     switch (status) {
         case 0:
             if (mode == 1) {
@@ -128,13 +134,13 @@ function action(mode, type, selection) {
                     cm.sendOk("创建远征队时发生错误。");
                 }
             }
-            cm.dispose();
+            close072();
             break;
         case 2:
             if (!cm.reAdd("PinkBeanBattle", "PinkBean")) {
                 cm.sendOk("发生错误，请重试。");
             }
-            cm.safeDispose();
+            close072();
             break;
         case 3:
             if (mode == 1) {
@@ -144,7 +150,7 @@ function action(mode, type, selection) {
                     cm.sendOk("已为你保留位置。");
                 }
             }
-            cm.dispose();
+            close072();
             break;
         case 5:
             if (selection == 0) { // join
@@ -168,7 +174,7 @@ function action(mode, type, selection) {
                     cm.sendOk("发生未知错误，远征队申请未能完成。");
                 }
             }
-            cm.dispose();
+            close072();
             break;
         case 10:
             if (mode == 1) {
@@ -176,18 +182,18 @@ function action(mode, type, selection) {
                     if (!cm.getSquadList("PinkBean", 0)) {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
                     }
-                    cm.dispose();
+                    close072();
                 } else if (selection == 1) {
                     status = 11;
                     if (!cm.getSquadList("PinkBean", 1)) {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
-                        cm.dispose();
+                        close072();
                     }
                 } else if (selection == 2) {
                     status = 12;
                     if (!cm.getSquadList("PinkBean", 2)) {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
-                        cm.dispose();
+                        close072();
                     }
                 } else if (selection == 3) { // get insode
                     if (cm.getSquad("PinkBean") != null) {
@@ -196,21 +202,21 @@ function action(mode, type, selection) {
                     } else {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
                     }
-                    cm.dispose();
+                    close072();
                 }
             } else {
-                cm.dispose();
+                close072();
             }
             break;
         case 11:
             cm.banMember("PinkBean", selection);
-            cm.dispose();
+            close072();
             break;
         case 12:
             if (selection != -1) {
                 cm.acceptMember("PinkBean", selection);
             }
-            cm.dispose();
+            close072();
             break;
     }
 }

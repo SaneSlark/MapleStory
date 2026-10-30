@@ -31,15 +31,15 @@ function playerEntry(eim, player) {
     player.changeTeam(type == 2 || map.getAndSwitchTeam() ? 0 : 1);
     player.changeMap(map, map.getPortal(type == 0 ? 0 : (type == 3 ? (player.getTeam() == 0 ? 3 : 1) : (player.getTeam() == 0 ? 2 : 3))));
     eim.setProperty("" + player.getId(), "0");
-    eim.broadcastPlayerMsg(-7, player.getName() + " has entered.");
+    eim.broadcastPlayerMsg(-7, player.getName() + "已进入。");
     player.getStat().recalcLocalStats(player);
     player.getStat().heal(player);
 	
     var i = getMaxPlayerCount(type);
     broadcastType(eim, player);
     if (eim.getProperty("started").equals("0")) {
-        eim.broadcastPacket(WvsContext.getMidMsg("Current: " + eim.getPlayerCount() + "/ Needed to Start: " + i, true, 1));
-        eim.broadcastPacket(WvsContext.getMidMsg("Currently recruiting players for Battle Mode.", true, 0));
+        eim.broadcastPacket(WvsContext.getMidMsg("Current: " + eim.getPlayerCount() + "/ 开始所需人数：" + i, true, 1));
+        eim.broadcastPacket(WvsContext.getMidMsg("正在招募对战模式的参与者。", true, 0));
         if (eim.getPlayerCount() >= (player.isGM() ? 2 : i)) {
             eim.broadcastPacket(WvsContext.clearMidMsg());
             eim.broadcastPacket(CPacket.getPVPScore(0, false));
@@ -178,15 +178,15 @@ function getWinningTeam(eim) {
 }
 
 function playerDead(eim, player) {
-    player.getClient().getSession().write(CPacket.getPVPKilled(player.getName() + " has been defeated."));
+    player.getClient().getSession().write(CPacket.getPVPKilled(player.getName() + "已被击败。"));
     if (parseInt(eim.getProperty("ice")) == player.getId()) {
         eim.setProperty("ice", "0");
         eim.setProperty("red", "99999");
-        eim.broadcastPlayerMsg(-7, "The Ice Knight has been defeated.");
+        eim.broadcastPlayerMsg(-7, "冰骑士已被击败。");
         end(eim);
         return;
     }
-    eim.broadcastPlayerMsg(-7, player.getName() + " has been defeated.");
+    eim.broadcastPlayerMsg(-7, player.getName() + "已被击败。");
     var type = parseInt(eim.getProperty("type"));
     if (type != 3) {
         if (player.getTeam() == 0) {
@@ -200,13 +200,13 @@ function playerDead(eim, player) {
         var map = eim.getMapInstance(0);
         if (parseInt(eim.getProperty("redflag")) == player.getId()) {
             eim.setProperty("redflag", "0");
-            eim.broadcastPlayerMsg(-7, "The Red Flag has been dropped!");
+            eim.broadcastPlayerMsg(-7, "红旗掉落了！");
             map.spawnAutoDrop(2910000, player.getPosition());
             eim.broadcastPacket(CPacket.getCapturePosition(map));
             eim.broadcastPacket(CPacket.resetCapture());
         } else if (parseInt(eim.getProperty("blueflag")) == player.getId()) {
             eim.setProperty("blueflag", "0");
-            eim.broadcastPlayerMsg(-7, "The Blue Flag has been dropped!");
+            eim.broadcastPlayerMsg(-7, "蓝旗掉落了！");
             map.spawnAutoDrop(2910001, player.getPosition());
             eim.broadcastPacket(CPacket.getCapturePosition(map));
             eim.broadcastPacket(CPacket.resetCapture());
@@ -229,7 +229,7 @@ function championCheck(eim) {
     }
     if (champion != null) {
         eim.setProperty("champion", champion.getId() + "");
-        eim.broadcastPlayerMsg(-7, champion.getName() + " has been made the champion.");
+        eim.broadcastPlayerMsg(-7, champion.getName() + "成为了冠军。");
         champion.getClient().getSession().write(CPacket.showOwnChampionEffect());
         champion.getMap().broadcastMessage(champion, CPacket.showChampionEffect(champion.getId()), false);
     }

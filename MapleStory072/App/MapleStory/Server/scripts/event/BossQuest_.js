@@ -85,7 +85,7 @@ function playerExit(eim, player) {
 	dispose = true;
     }
     eim.saveBossQuestPoints(parseInt(eim.getProperty("points")), player);
-    player.dropMessage(6, "[The Boss Quest] Your current points have been awarded, spend them as you wish. Better luck next time!");
+    player.dropMessage(6, "[首领挑战] 已结算当前积分，可以前去兑换。祝你下次挑战顺利！");
     eim.unregisterPlayer(player);
 
     if (dispose) {
@@ -135,11 +135,11 @@ function allMonstersDead(eim) {
     var map = eim.getMapInstance(mapid, 0);
 
     if (monster_number > 19) {
-	map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[The Boss Quest] Congratulations! Your team has defeated all the bosses with " + points + " points!"));
-	map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[The Boss Quest] The points have been awarded, spend them as you wish."));
+	map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[首领挑战] 恭喜！你的队伍击败了全部首领，最终获得" + points + " points!"));
+	map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[首领挑战] 积分已发放，可以前去兑换。"));
 	disbandParty();
     } else {
-	map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[The Boss Quest] Your team now has " + points + " points! The next boss will spawn in 10 seconds."));
+	map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[首领挑战] 你的队伍目前拥有" + points + " points! The next boss will spawn in 10 seconds."));
 	map.broadcastMessage(tools.MaplePacketCreator.getClock(10));
 	eim.schedule("monsterSpawn", 1000);
     }
@@ -172,7 +172,7 @@ function monsterSpawn(eim) {
 
 function beginQuest(eim) {
     var map = eim.getMapInstance(mapid, 0);
-    map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[The Boss Quest] The creatures of the darkness are coming in 30 seconds. Prepare for the worst!"));
+    map.broadcastMessage(tools.MaplePacketCreator.serverNotice(6, "[首领挑战] 黑暗中的怪物将在30秒后出现，做好战斗准备！"));
     eim.schedule("monsterSpawn", 30000);
     map.broadcastMessage(tools.MaplePacketCreator.getClock(30));
 }

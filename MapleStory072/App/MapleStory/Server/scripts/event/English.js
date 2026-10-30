@@ -42,9 +42,9 @@ function playerEntry(eim, player) {
     var map = eim.getMapInstance(0);
     player.changeMap(map, map.getPortal(0));
 	if (eim.getProperty("mode").equals("0")) {
-		player.sendEnglishQuiz("What does Alphabet [" + eim.getProperty("question") + "] look like?");
+		player.sendEnglishQuiz("字母[" + eim.getProperty("question") + "]是什么样子的？");
 	} else if (eim.getProperty("mode").equals("1")) {
-		player.sendEnglishQuiz("Please get me all the letters for #i" + parseInt(eim.getProperty("question")) + "#.");
+		player.sendEnglishQuiz("请为我收集齐这个物品需要的全部字母：#i" + parseInt(eim.getProperty("question")) + "#.");
 	} else if (eim.getProperty("mode").equals("2")) {
 		player.sendEnglishQuiz(eim.getProperty("question"));
 	}

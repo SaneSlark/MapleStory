@@ -82,7 +82,7 @@ function clearPQ(eim) {
 function allMonstersDead(eim) {
     if (eim.getMapInstance(2).getAllMonstersThreadsafe().size() == 0) {
         eim.getMapInstance(2).spawnNpc(2085003, new java.awt.Point(700, -10));
-        eim.broadcastPlayerMsg(6, "Dragonica has been beaten! Have the leader go in the Portal to finish!");
+        eim.broadcastPlayerMsg(6, "首领已被击败！请队长进入传送口完成挑战！");
     }
 }
 

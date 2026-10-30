@@ -142,7 +142,7 @@ function removePlayer(eim, player) {
 function getParty(eim, property) {
     var chr = em.getChannelServer().getPlayerStorage().getCharacterById(parseInt(eim.getProperty(property)));
     if (chr == null || chr.getCarnivalParty() == null) {
-	eim.broadcastPlayerMsg(5, "The leader of the party " + property + " was not found.");
+	eim.broadcastPlayerMsg(5, "队长" + property + "不在场。");
 	disposeAll(eim);
 	return null;
     } else {
@@ -283,7 +283,7 @@ function playerDisconnected(eim, player) {
     player.setMap(eim.getMapInstance(exitMap));
     eim.unregisterPlayer(player);
     player.getCarnivalParty().removeMember(player);
-    eim.broadcastPlayerMsg(5, player.getName() + " has quit the Party Quest.");
+    eim.broadcastPlayerMsg(5, player.getName() + "退出了组队任务。");
     disposeAll(eim);
 }
 
@@ -311,7 +311,7 @@ function onMapLoad(eim, chr) {
 		eim.setProperty("Blue_Stage", "B");
 		eim.setProperty("boss", "true");
 		eim.setProperty("redTeamDamage", "100000");
-		eim.broadcastPlayerMsg(6, "Red Team has reached the boss map first and will get a 5% boost.");
+		eim.broadcastPlayerMsg(6, "红队率先到达首领地图，将获得5%的加成。");
         	var iter = eim.getPlayers().iterator();
         	while (iter.hasNext()) {
 		    var player = iter.next();
@@ -334,7 +334,7 @@ function onMapLoad(eim, chr) {
 		eim.setProperty("Red_Stage", "B");
 		eim.setProperty("boss", "true");
 		eim.setProperty("blueTeamDamage", "100000");
-		eim.broadcastPlayerMsg(6, "Blue Team has reached the boss map first and will get a 5% boost.");
+		eim.broadcastPlayerMsg(6, "蓝队率先到达首领地图，将获得5%的加成。");
         	var iter = eim.getPlayers().iterator();
         	while (iter.hasNext()) {
 		    var player = iter.next();

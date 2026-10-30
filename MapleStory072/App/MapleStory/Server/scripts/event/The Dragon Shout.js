@@ -27,7 +27,7 @@ function scheduledTimeout(eim) {
     eim.disposeIfPlayerBelow(100, 390009999);
     em.setProperty("state", "0");
     em.setProperty("leader", "true");
-        em.broadcastServerMsg(-5, "Hyperious: Congratulations, you have passed my test. Now for the rewards...", false);
+        em.broadcastServerMsg(-5, "Hyperious：恭喜，你通过了我的考验。现在领取奖励吧……", false);
 }
 
 function changedMap(eim, player, mapid) {
@@ -62,7 +62,7 @@ function end(eim) {
     if (eim.disposeIfPlayerBelow(100, 390009999)) {
         em.setProperty("state", "0");
         em.setProperty("leader", "true");
-        em.broadcastServerMsg(-5, "Hyperious: Congratulations, you have passed my test. Now for the rewards...", false);
+        em.broadcastServerMsg(-5, "Hyperious：恭喜，你通过了我的考验。现在领取奖励吧……", false);
     }
 }
 

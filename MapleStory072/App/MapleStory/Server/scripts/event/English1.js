@@ -27,7 +27,7 @@ function setup() {
 function playerEntry(eim, player) {
     var map = eim.getMapInstance(0);
     player.changeMap(map, map.getPortal(0));
-    player.sendEnglishQuiz("Please get me all the letters for #i" + parseInt(eim.getProperty("question")) + "#.");
+    player.sendEnglishQuiz("请为我收集齐这个物品需要的全部字母：#i" + parseInt(eim.getProperty("question")) + "#.");
 }
 
 function playerDead(eim, player) {

@@ -27,7 +27,7 @@ function setup() {
 function playerEntry(eim, player) {
     var map = eim.getMapInstance(0);
     player.changeMap(map, map.getPortal(0));
-    player.sendEnglishQuiz("What does Alphabet [" + eim.getProperty("question") + "] look like?");
+    player.sendEnglishQuiz("字母[" + eim.getProperty("question") + "]是什么样子的？");
 }
 
 function playerDead(eim, player) {

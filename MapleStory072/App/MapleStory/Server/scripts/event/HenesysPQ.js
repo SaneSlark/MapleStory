@@ -48,7 +48,7 @@ function playerDisconnected(eim, player) {
 
 function monsterValue(eim, mobId) {
     if (mobId == 9300061) {
-        eim.broadcastPlayerMsg(5, "The Moon Bunny has been killed.");
+        eim.broadcastPlayerMsg(5, "ÔÂÃîÒÑ±»»÷µ¹¡£");
         end(eim);
     }
     return 1;

@@ -82,7 +82,7 @@ em.setProperty("state", "1");
 }
 
 function playerEntry(eim, player) {
-    eim.broadcastPlayerMsg(5, "[Expedition] " + player.getName() + " has entered the map.");
+    eim.broadcastPlayerMsg(5, "[Expedition] " + player.getName() + "进入了地图。");
     var map = eim.getMapInstance(610030100 + (parseInt(em.getProperty("current_instance")) * 100));
     player.changeMap(map, map.getPortal(0));
 }
@@ -92,7 +92,7 @@ function spawnGuardians(eim) {
     if (map.getCharactersSize() <= 0) {
 	return;
     }
-    eim.broadcastPlayerMsg(5, "The Master Guardians have detected you.");
+    eim.broadcastPlayerMsg(5, "守护者已经发现了你。");
     for (var i = 0; i < 20; i++) { //spawn 20 guardians
 	var mob = em.getMonster(9400594);
 	eim.registerMonster(mob);
@@ -161,7 +161,7 @@ function monsterValue(eim, mobId) {
 }
 
 function playerExit(eim, player) {
-    eim.broadcastPlayerMsg(5, "[Expedition] " + player.getName() + " has left the map.");
+    eim.broadcastPlayerMsg(5, "[Expedition] " + player.getName() + "离开了地图。");
     eim.unregisterPlayer(player);
 
     if (eim.disposeIfPlayerBelow(0, 0)) {

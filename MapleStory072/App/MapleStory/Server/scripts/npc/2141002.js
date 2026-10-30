@@ -1,24 +1,11 @@
-var status = 0;
-
-function start() {
-	action(1, 0, 0);
-}
-
-function action(mode, type, selection) {
-	if (status == 0) {
-		cm.sendYesNo("你要返回么？");
-		status++;
-	} else {
-		if ((status == 1 && type == 1 && selection == -1 && mode == 0) || mode == -1) {
-			cm.dispose();
-		} else {
-			if (status == 1) {
-					cm.sendOk ("好吧！既然你想回去，那我无话可说！");
-					status++
-			} else if (status == 2) {
-					cm.warp(270050000, 0);
-					cm.dispose();
-			}
-		}
-	}
+// CMS072 map return and PinkBeanBattle playerExit contract.
+var closed=false,asked=false;
+function start(){if(cm.getMapId()!=270050100){closed=true;cm.dispose();return;}asked=true;cm.sendYesNo("要离开品克缤战场吗？");}
+function action(mode,type,selection){
+    if(closed)return;closed=true;
+    if(mode!=1 || !asked || cm.getMapId()!=270050100){cm.dispose();return;}
+    var player=cm.getPlayer(),eim=player.getEventInstance();
+    if(eim!=null){if(String(eim.getEventManager().getName())!="PinkBeanBattle"){cm.dispose();return;}eim.removePlayer(player);if(player.getEventInstance()==eim){cm.dispose();return;}}
+    if(cm.getMapId()==270050100)cm.warp(270050300,0);
+    cm.dispose();
 }

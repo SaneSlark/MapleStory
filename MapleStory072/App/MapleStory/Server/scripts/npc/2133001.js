@@ -24,6 +24,7 @@ var bosses = 0;
 importPackage(net.sf.odinms.client);
 
 function start() {
+    if(cm.getMapId()==930000600){cm.openNpc(cm.getNpc(),"party6_elin");return;}
 	status = -1;
 	action(1, 0, 0);
 }

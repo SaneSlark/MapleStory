@@ -154,7 +154,7 @@ function playerDisconnected(eim, player) {
 
 function monsterValue(eim, mobId) {
     if (mobId == 9300049 && em.getProperty("stage7").equals("0")) { //dark nep
-	eim.broadcastPlayerMsg(6, "Papa Pixie has been spawned.");
+	eim.broadcastPlayerMsg(6, "精灵爸爸已经出现。");
 	var mob = em.getMonster(9300039);
 	eim.registerMonster(mob);
 	em.setProperty("stage7", "0");
@@ -162,7 +162,7 @@ function monsterValue(eim, mobId) {
     } else if (mobId == 9300040) {
 	var st = parseInt(em.getProperty("stage2"));
 	if (st < 14) {
-	     eim.broadcastPlayerMsg(6, "Cellion has been spawned somewhere in the map.");
+	     eim.broadcastPlayerMsg(6, "红独角狮已经出现在地图的某个位置。");
 	     var mob = em.getMonster(9300040);
 	     em.setProperty("stage2", st+1);
 	     eim.registerMonster(mob);

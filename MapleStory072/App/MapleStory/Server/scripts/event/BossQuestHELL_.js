@@ -179,16 +179,16 @@ function allMonstersDead(eim) {
 
     eim.setProperty("points", totalp);
 
-    eim.broadcastPlayerMsg(5, "Your team've gained "+num+" points! With a total of "+totalp+".");
+    eim.broadcastPlayerMsg(5, "你的队伍获得了"+num+"积分！当前共有"+totalp+".");
     
     eim.saveBossQuest(num);
 
     if (mobnum < monster.length) {
-	eim.broadcastPlayerMsg(6, "Prepare! The next boss will appear in a glimpse of an eye!");
+	eim.broadcastPlayerMsg(6, "准备好！下一位首领马上就会出现！");
     } else {
 	eim.saveBossQuest(15000);
 	eim.saveNX(40000);
-	eim.broadcastPlayerMsg(5, "Your team've beaten the HELL mode and have gained an extra 15,000 points and extra 40,000 Cash!");
+	eim.broadcastPlayerMsg(5, "你的队伍通过了地狱模式，额外获得15,000积分和40,000点券！");
 	eim.giveAchievement(22);
 	}
 // When invoking unregisterMonster(MapleMonster mob) OR killed

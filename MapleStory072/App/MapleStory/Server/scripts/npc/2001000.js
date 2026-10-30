@@ -12,6 +12,7 @@ var facenew = Array();
 var colors = Array();
 
 function start() {
+    if(cm.getPlayer().getMapId()==209000000){cm.openNpc(cm.getNpc(),"desc_tree");return;}
     qfresh = true;
 	status = -1;
 	action(1, 0, 0);

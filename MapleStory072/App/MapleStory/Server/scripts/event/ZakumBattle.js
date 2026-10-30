@@ -27,6 +27,7 @@
 
 var exitMap;
 var minPlayers = 1;
+var admissionLock=new java.util.concurrent.locks.ReentrantLock();
  
 importPackage(net.sf.odinms.world);
 importPackage(net.sf.odinms.client);
@@ -35,15 +36,25 @@ importPackage(java.lang);
 
 function init() {
         em.setProperty("shuffleReactors","false");
+        em.setProperty("state","0");
 }
 
-function setup(eim) {
-	exitMap = em.getChannelServer().getMapFactory().getMap(211042300);
-	if (exitMap == null) 
-		debug(eim,"出口地图未正确连接。");
-	eim.setProperty("canEnter","true");
-	// not currently used; could display total duration taken to kill?
-        eim.setProperty("entryTimestamp",System.currentTimeMillis());
+function setup(existing) {
+    if(!admissionLock.tryLock())throw "Zakum admission busy";
+    var eim=null,created=false;
+    try{
+        exitMap=em.getMapFactory().getMap(211042300);
+        if(existing!=null && typeof existing.getMapInstance=="function")eim=existing;
+        else{
+            if(em.getInstance("ZakumBattle")!=null || String(em.getProperty("state"))!="0")throw "Zakum occupied";
+            if(em.getMapFactory().getMap(280030000).getCharactersSize()!=0)throw "Zakum map occupied";
+            eim=em.newInstance("ZakumBattle");created=true;
+        }
+        var map=eim.setInstanceMap(280030000);if(map.getCharactersSize()==0)map.resetFully();
+        eim.setProperty("canEnter","true");eim.setProperty("entryTimestamp",String(java.lang.System.currentTimeMillis()));
+        em.setProperty("state","1");return eim;
+    }catch(error){if(created&&eim!=null){eim.dispose();em.setProperty("state","0");}throw error;}
+    finally{admissionLock.unlock();}
 }
 
 function playerEntry(eim,player) {
@@ -69,19 +80,15 @@ function playerDead(eim,player) {
 }
 
 function playerDisconnected(eim,player) {
-	var party = eim.getPlayers();
-	if (player.getName().equals(eim.getProperty("leader"))) {
-		// tell members
-		var iter = party.iterator();
-		while (iter.hasNext()) {
-			var pl = iter.next();
-			pl.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,"副本的队长已掉线。"));
-		}
-	}
-	// and, if the party is too small
-	if (party.size() < minPlayers) {
-		end(eim,"剩余玩家人数不足，战斗结束。");
-	}
+    // EventInstanceManager unregisters the disconnected player and disposes
+    // the last-player instance after this numeric callback result.
+    return 0;
+}
+
+function changedMap(eim,player,mapid) {
+    if(mapid==280030000)return;
+    eim.unregisterPlayer(player);
+    if(eim.getPlayerCount()==0)eim.dispose();
 }
 
 function monsterValue(eim,mobId) { // potentially display time of death? does not seem to work
@@ -90,7 +97,7 @@ function monsterValue(eim,mobId) { // potentially display time of death? does no
 		var iter = party.iterator();
 		while (iter.hasNext()) {
 			var pl = iter.next();
-			pl.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,"恭喜击败扎昆！"));
+			pl.getClient().getSession().write(Packages.tools.packet.CWvsContext.serverNotice(6,"恭喜击败扎昆！"));
 		}
 	}
 	return -1;
@@ -114,7 +121,7 @@ function end(eim,msg) {
         var iter = eim.getPlayers().iterator();
         while (iter.hasNext()) {
                 var player = iter.next();
-                player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,msg));
+                player.getClient().getSession().write(Packages.tools.packet.CWvsContext.serverNotice(6,msg));
 		eim.unregisterPlayer(player);
 		if (player != null)
                 	player.changeMap(exitMap, exitMap.getPortal(0));
@@ -156,6 +163,6 @@ function debug(eim,msg) {
         var iter = eim.getPlayers().iterator();
         while (iter.hasNext()) {
  		var player = iter.next();
- 		player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,msg));
+ 		player.getClient().getSession().write(Packages.tools.packet.CWvsContext.serverNotice(6,msg));
 	}
 }

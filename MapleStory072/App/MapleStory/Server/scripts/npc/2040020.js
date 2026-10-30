@@ -1,3 +1,5 @@
+var done072=false,origin072=-1;
+function close072(){done072=true;cm.dispose();}
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -48,15 +50,19 @@ var qty;
 var equip;
 
 function start() {
+    origin072=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(done072)return;
+    if(mode!=1||cm.getMapId()!=origin072){close072();return;}
+
 	if (mode == 1)
 		status++;
 	else
-		cm.dispose();
+		close072();
 	if (status == 0 && mode == 1) {
 		var selStr = "#r请问你要需要我干什么..我是专业的手套制造商~~#r  #k.#b"
 		var options = new Array("制作手套","升级手套","制作拳套","升级拳套","制作材料");
@@ -144,7 +150,8 @@ function action(mode, type, selection) {
 			qty = 1;
 		}
 		else
-			qty = selection;
+			if(selection!=Math.floor(selection)||selection<1||selection>100){close072();return;}
+        qty = selection;
 
 		if (selectedType == 0){ //glove refine
 			var itemSet = new Array(1082002,1082029,1082030,1082031,1082032,1082037,1082042,1082046,1082075,1082065,1082092);
@@ -211,10 +218,15 @@ function action(mode, type, selection) {
 	}
 	else if (status == 4 && mode == 1) {
 		var complete = true;
+        done072=true;
+        if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close072();return;}
+        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close072();return;}
 		
 		if (cm.getMeso() < cost * qty)
 			{
+                complete=false;
 				cm.sendOk("很抱歉,你付不起我的手续费.")
+                close072();return;
 			}
 			else
 			{
@@ -229,7 +241,7 @@ function action(mode, type, selection) {
 						}
 						else {
 							var count = 0;
-							var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats[i]).iterator();
+							var iter = cm.getChar().getInventory(Packages.client.inventory.MapleInventoryType.ETC).listById(mats[i]).iterator();
 							while (iter.hasNext()) {
 								count += iter.next().getQuantity();
 							}
@@ -240,7 +252,7 @@ function action(mode, type, selection) {
 				}
 				else {
 					var count = 0;
-					var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats).iterator();
+					var iter = cm.getChar().getInventory(Packages.client.inventory.MapleInventoryType.ETC).listById(mats).iterator();
 					while (iter.hasNext()) {
 						count += iter.next().getQuantity();
 					}
@@ -269,6 +281,6 @@ function action(mode, type, selection) {
 					cm.gainItem(item, qty);
 				cm.sendOk("OK.做好了，那去瞧瞧吧。");
 			}
-		cm.dispose();
+		close072();
 	}
 }

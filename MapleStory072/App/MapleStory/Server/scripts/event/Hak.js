@@ -1,49 +1,49 @@
-/*
--- odinms JavaScript --
-        事件脚本
--------------------------
-   odinms MapleStory
------ Version Info ------
-     Version - 1.0.0
--------------------------
-*/
-importPackage(net.sf.odinms.tools);
-
-// 仙鹤航班：武陵(250000100) <-> 天空之城(200000100)
-var rideTo = new Array(250000100, 200000100);
-var birdRide = new Array(200090300, 200090310);
-var timeOnRide = 60; // Seconds
-
-function init() {
-	em.setProperty("isRiding", "false");
-}
+/* CMS072 per-passenger crane flight; user-defined fare 1500, duration 60s. */
+function init() {}
 
 function playerEntry(eim, player) {
-	var myRide = parseInt(em.getProperty("myRide"));
-	var onRide = eim.getMapFactory().getMap(birdRide[myRide]);
-	em.setProperty("isRiding", "true");
-	em.schedule("timeOut", timeOnRide * 1000);
-	player.changeMap(onRide, onRide.getPortal(0));
-	player.getClient().getSession().write(MaplePacketCreator.getClock(timeOnRide));
+    var rideId = parseInt(eim.getProperty("ride"));
+    var originId = parseInt(eim.getProperty("origin"));
+    var seconds = parseInt(eim.getProperty("seconds"));
+    if ((rideId != 200090300 && rideId != 200090310) || seconds != 60) throw new Error("Invalid crane flight");
+    var ride = eim.createInstanceMap(rideId);
+    if (ride == null || ride.getPortal(0) == null) throw new Error("Missing crane ride map");
+    // Keep disconnect/save recovery route-local without changing shared maps.
+    ride.setReturnMapId(originId);
+    ride.setForcedReturnMap(originId);
+    player.changeMap(ride, ride.getPortal(0));
+    player.getClient().getSession().write(MaplePacketCreator.getClock(seconds));
+    eim.schedule("timeOut", seconds * 1000);
+    eim.setProperty("entered", "true");
 }
 
-function timeOut() {
-	var myRide = parseInt(em.getProperty("myRide"));
-	var docked = em.getChannelServer().getMapFactory().getMap(rideTo[myRide]);
-	var iter = em.getInstance("Hak").getPlayers().iterator();
-	while (iter.hasNext()) {
-		var player = iter.next();
-		player.changeMap(docked, docked.getPortal(0));
-		em.getInstance("Hak").unregisterPlayer(player);
-	}
-	em.setProperty("isRiding", "false");
-	em.disposeInstance("Hak");
+function timeOut(eim) {
+    var destination = eim.getChannelServer().getMapFactory().getMap(parseInt(eim.getProperty("destination")));
+    if (destination == null || destination.getPortal(0) == null) {
+        eim.schedule("timeOut", 1000);
+        return;
+    }
+    var players = new Packages.java.util.ArrayList(eim.getPlayers());
+    var iterator = players.iterator();
+    while (iterator.hasNext()) {
+        var player = iterator.next();
+        eim.unregisterPlayer(player);
+        player.changeMap(destination, destination.getPortal(0));
+    }
+    eim.dispose();
+}
+
+function changedMap(eim, player, mapId) {
+    if (mapId != parseInt(eim.getProperty("ride"))) {
+        eim.unregisterPlayer(player);
+        if (eim.getPlayerCount() == 0) eim.dispose();
+    }
 }
 
 function playerDisconnected(eim, player) {
-	eim.unregisterPlayer(player);
-	if (eim.getPlayerCount() == 0) {
-		em.setProperty("isRiding", "false");
-		em.disposeInstance("Hak");
-	}
+    eim.unregisterPlayer(player);
+    if (eim.getPlayerCount() == 0) eim.dispose();
 }
+
+function playerDead(eim, player) {}
+function playerRevive(eim, player) { return false; }

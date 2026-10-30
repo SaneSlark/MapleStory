@@ -1,11 +1,3 @@
-/* 
- *  Rooney - Happy Ville NPC
- */
-
-var status = -1;
-var firstsel = 0;
-
-function action(mode, type, selection) {
-	cm.sendOk("¼ÙÆÚÓä¿ì~");
-	cm.safeDispose();
-}
+// CMS072 Rooney: native seasonal quests and Happyville travel.
+function start(){cm.openNpc(cm.getNpc(),"christmas_quests");}
+function action(mode,type,selection){cm.dispose();}

@@ -33,6 +33,7 @@ var facenew = Array();
 var colors = Array();
 
 function start() {
+    if(cm.getPlayer().getMapId()==209000000){cm.openNpc(cm.getNpc(),"go_victoria");return;}
 	status = -1;
 	action(1, 0, 0);
 }

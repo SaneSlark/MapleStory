@@ -121,7 +121,7 @@ function playerDisconnected(eim, player) {
 function monsterValue(eim, mobId) {
     if (mobId == 9300137 || mobId == 9300138) {
 	em.setProperty("stage7", "1");
-	eim.broadcastPlayerMsg(5, "The one you were protecting has been killed.");
+	eim.broadcastPlayerMsg(5, "需要保护的对象已被击倒。");
     } else if (mobId == 9300139 || mobId == 9300140) { //boss
 	//13 = boss, 14 = urete, 15 = romeo&juliet
 	eim.getMapInstance(13).spawnNpc(2112003, new java.awt.Point(-416, -126));

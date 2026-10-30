@@ -3,7 +3,7 @@ function init() {
     em.setProperty("state", "0");
 }
 
-function setup(eim, leaderid) {
+function originalSetup072(eim, leaderid) {
 	em.setProperty("leader", "true");
     var eim = em.newInstance("Pinkbean");
 	eim.setInstanceMap(270050100).resetFully();
@@ -74,3 +74,11 @@ function leftParty (eim, player) {}
 function disbandParty (eim) {}
 function playerDead(eim, player) {}
 function cancelSchedule() {}
+var admissionLock072=new java.util.concurrent.locks.ReentrantLock();
+function setup(a,b){
+    if(!admissionLock072.tryLock())throw "Boss admission busy";
+    try{
+        if(String(em.getProperty("state"))!="0" || em.getInstance("Pinkbean")!=null || em.getMapFactory().getMap(270050100).getCharactersSize()!=0)throw "Boss map occupied";
+        return originalSetup072(a,b);
+    }finally{admissionLock072.unlock();}
+}

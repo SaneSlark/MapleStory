@@ -1,79 +1,17 @@
-/*
-	This file is part of the OdinMS Maple Story Server
-    Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
-                       Matthias Butz <matze@odinms.de>
-                       Jan Christian Meyer <vimes@odinms.de>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License version 3
-    as published by the Free Software Foundation. You may not use, modify
-    or distribute this program under any other version of the
-    GNU Affero General Public License.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-/* Pison
-	Warp NPC to Lith Harbor (104000000)
-	located in Florina Beach (110000000)
-*/
-
-var status = 0;
-
-function start() {
-    status = -1;
-    action(1, 0, 0);
-}
-
-function action(mode, type, selection) {
-    if (mode == -1) {
-        cm.dispose();
-    } else {
-        if (mode == 1)
-            status++;
-        else
-            status--;
-        if (status == 0) {
-            cm.sendNext("你想去挑战 #bPB第一关#k 吗？总共有6关！你确定能通过吗？");
-        } else if (status == 1) {
-            if(cm.getLevel() >= 150 ){  
-                if (cm.getParty() == null) { 
-                    cm.sendOk("#e你好像还没有一个队伍,我是不能送你进去的."); 
-                    cm.dispose(); 
-                    } 
-            if (!cm.isLeader()) { 
-                cm.sendSimple("如果你想挑战一下PB, 那么你只能自己开队伍,一个人去单挑,所以不能和人家组队！"); 
-                cm.dispose(); 
-                    }else { 
-            var party = cm.getParty().getMembers(); 
-            var next = true; 
-                if (party.size() > 6){  
-                    next = false; 
-                    } 
-                if (next) { 
-            var em = cm.getEventManager("PB1");  
-                if (em == null) { 
-                    cm.sendOk("出错了！"); 
-                } else {  
-                em.startInstance(cm.getParty(),cm.getChar().getMap()); 
-                party = cm.getChar().getEventInstance().getPlayers(); 
-                cm.removeFromParty(4001008, party); 
-                cm.removeFromParty(4001007, party);  
-                } 
-            cm.serverNotice("[NPC挑战使者]玩家:" + cm.c.getPlayer().getName() + " 带着绝招,进入了神的黄昏开始挑战PB!~~");
-            cm.dispose(); 
-                    } 
-                } 
-            }else{ 
-                cm.sendOk("#e#r对不起,你的等级太低,去了也是送死."); 
-                cm.dispose(); 
-            }
-        }
-    }
+// Use the native arena/Chaos Marble reactor, not the missing PB1 event.
+var closed=false;
+function context(){var e=cm.getPlayer().getEventInstance();return cm.getMapId()==270050100 && e!=null && String(e.getEventManager().getName())=="PinkBeanBattle"?e:null;}
+function start(){if(context()==null){closed=true;cm.dispose();return;}cm.sendYesNo("要使用1个#t4001193#唤醒品克缤吗？");}
+function action(mode,type,selection){
+    if(closed)return;closed=true;
+    var e=context();if(mode!=1 || e==null){cm.dispose();return;}
+    if(String(e.getProperty("bossSummoned"))=="true"){cm.sendOk("战斗已经开始。");cm.dispose();return;}
+    if(!cm.haveItem(4001193,1)){cm.sendOk("需要1个#t4001193#。也可以将它放在祭坛上。");cm.dispose();return;}
+    var power=cm.getPlayer().getMap().getReactorById(2709000);
+    if(power==null){cm.dispose();return;}
+    var mobs=cm.getPlayer().getMap().getAllMonstersThreadsafe().iterator();
+    while(mobs.hasNext()){var id=mobs.next().getId();if(id>=8820000 && id<=8820018){cm.sendOk("战斗已经开始。");cm.dispose();return;}}
+    cm.gainItem(4001193,-1);power.forceStartReactor(cm.getPlayer().getClient());
+    if(String(e.getProperty("bossSummoned"))!="true")cm.gainItem(4001193,1);
+    cm.dispose();
 }

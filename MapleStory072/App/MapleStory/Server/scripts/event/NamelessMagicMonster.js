@@ -79,7 +79,7 @@ function allMonstersDead(eim) {
     var prop = eim.getProperty("summoned");
 
     if (prop.equals("0")) {
-	eim.broadcastPlayerMsg(5, "Free me from Kamuna says Dunas!");
+	eim.broadcastPlayerMsg(5, "DunasÀµ£∫»√Œ“∞⁄Õ—Kamuna£°");
 
 	eim.setProperty("summoned", "1");
 	var map = eim.getMapInstance(0);

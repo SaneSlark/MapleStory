@@ -1,3 +1,1 @@
-function enter(pi) {
-    pi.playerMessage(5, "此传送门暂未开放，请与查尔斯对话。");
-}
+function enter(pi){if(pi.getMapId()!=674030000)return false;pi.warp(674030100,0);return true;}

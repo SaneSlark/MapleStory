@@ -1,3 +1,3 @@
-// Client original greeting; explicitly unavailable event mechanics. No reward mutation.
-function start(){cm.sendOk("想要来试试看今天的手气如何吗？\r\n\r\n本包尚未恢复占卜服务的收费、抽取概率和发放规则。可以查看客户端中的御守介绍；不会扣金币或发放未经核实的奖励。\r\n\r\n蘑菇王的御守：蘑菇王的御守可以让你在一小时的时间内，发挥出跳跃力+20、移动速度+10的功效。\r\n\r\n皮亚奴斯的御守：皮亚奴斯的御守可以让你在一小时的时间内，发挥出攻击力、魔法攻击力+30的功效。\r\n\r\n帕普拉图斯的御守：帕普拉图斯的御守可以让你在一小时的时间内，发挥出回避率+50的功效。\r\n\r\n蝙蝠怪的御守：蝙蝠怪的御守可以让你在一小时的时间内，发挥出物理防御力、魔法防御力+30的功效。\r\n\r\n星光精灵的御守：星光精灵的御守可以让你在一小时的时间内，发挥出命中率+50的功效。\r\n\r\n猴子的御守：猴子的御守可以让你在一小时的时间内，发挥出最大HP提升50%与最大MP提升25%的功效。\r\n\r\n绿水灵的御守：绿水灵的御守可以让你在一小时的时间内，发挥出最大MP提升50%与最大HP提升25%的功效。\r\n\r\n扎昆的御守：扎昆的御守可以让你在一小时的时间内，发挥出移动速度+20、跳跃力+10的功效。");cm.dispose();}
+// CMS072 numeric NPC entry; one implementation under its original script name.
+function start(){cm.openNpc(cm.getNpc(), "fortuneteller");}
 function action(mode,type,selection){cm.dispose();}

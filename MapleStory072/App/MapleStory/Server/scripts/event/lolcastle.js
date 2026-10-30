@@ -49,7 +49,7 @@ function setup() {
 function announce() {
     em.setProperty("entryPossible", "true");
     if (i == 0) i = 5;
-    em.getChannelServer().broadcastPacket(tools.MaplePacketCreator.serverNotice(6, "[Event] Field of Judgement will open in " + i + " minutes"));
+    em.getChannelServer().broadcastPacket(tools.MaplePacketCreator.serverNotice(6, "[活动] 审判之地即将开放，剩余时间：" + i + " minutes"));
     i--;
 }
 
@@ -72,7 +72,7 @@ function mesoDistribution() {
 function start() {
     scheduleNew();
     em.getChannelServer().broadcastPacket(
-	tools.MaplePacketCreator.serverNotice(6, "[Event] Field of Judgement is now open"));
+	tools.MaplePacketCreator.serverNotice(6, "[活动] 审判之地现已开放。"));
     var iter = em.getInstances().iterator();
     while (iter.hasNext()) {
 	var eim = iter.next();

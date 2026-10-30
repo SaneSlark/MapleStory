@@ -20,6 +20,7 @@ Happyville Tree NPC by Mercury of Mercury MapleStory
 */
 var status = 0;
 function start() {
+    if(cm.getPlayer().getMapId()>=209000001&&cm.getPlayer().getMapId()<=209000015){cm.openNpc(cm.getNpc(),"out_tree");return;}
 status = -1;
 action(1, 0, 0);
 }

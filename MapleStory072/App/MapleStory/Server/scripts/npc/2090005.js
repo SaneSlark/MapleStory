@@ -1,68 +1,105 @@
-/*
--- odinms JavaScript --
-        NPC脚本
--------------------------
-   鹤（2090005）- 仙鹤出租车，三个放置点共用：
-   百草堂 251000000 → 武陵 250000100
-   武陵 250000100 → 天空之城 200000100
-   天空之城码头 200000141 → 武陵 250000100
-*/
-importPackage(net.sf.odinms.client);
-
-var status = 0;
-var cost = 5000; // 辛苦钱
+/* CMS072 crane binding. Fare/time explicitly set by the user: 1500 / 60s. */
+var fare = 1500;
+var flightSeconds = 60;
+var origin = -1;
+var routes = [];
+var selected = -1;
+var stage = "closed";
 var em;
 
 function start() {
-	status = -1;
-	em = cm.getEventManager("Hak");
-	action(1, 0, 0);
+    stage = "closed";
+    selected = -1;
+    routes = [];
+    origin = cm.getChar().getMapId();
+    em = cm.getEventManager("Hak");
+    if (origin == 200000141) {
+        routes = [[250000100, "武陵", 200090300]];
+    } else if (origin == 250000100) {
+        routes = [[200000100, "天空之城", 200090310], [251000000, "百草堂", 200090310]];
+    } else if (origin == 251000000) {
+        routes = [[250000100, "武陵", 200090300]];
+    } else {
+        cm.sendOk("这里不是仙鹤的乘坐地点。");
+        cm.dispose();
+        return;
+    }
+    if (em == null) {
+        cm.sendOk("仙鹤航班暂未开放，请稍后再来。");
+        cm.dispose();
+        return;
+    }
+    if (routes.length == 1) {
+        selected = 0;
+        confirmRoute();
+    } else {
+        stage = "select";
+        var text = "请选择目的地。每次乘坐需要 #b1500 金币#k，飞行时间为 #b60 秒#k。\r\n";
+        for (var i = 0; i < routes.length; i++) text += "#L" + i + "#" + routes[i][1] + "#l\r\n";
+        cm.sendSimple(text);
+    }
+}
+
+function confirmRoute() {
+    stage = "confirm";
+    cm.sendYesNo("前往#b" + routes[selected][1] + "#k需要 #b1500 金币#k，飞行时间为 #b60 秒#k。现在出发吗？");
 }
 
 function action(mode, type, selection) {
-	if (mode == -1) {
-		cm.dispose();
-	} else {
-		if (mode == 0) {
-			cm.sendNext("好吧，下次见。");
-			cm.dispose();
-			return;
-		}
-		if (mode == 1)
-			status++;
-		else
-			status--;
-		if (status == 0) {
-			if (em == null) {
-				cm.sendNext("脚本发生错误，请联系管理员解决。");
-				cm.dispose();
-			} else if (em.getProperty("isRiding") != null && em.getProperty("isRiding").equals("true")) {
-				cm.sendNext("仙鹤刚载着客人飞走了，请稍等片刻再回来。");
-				cm.dispose();
-			} else {
-				var curMap = cm.getChar().getMapId();
-				var route;
-				if (curMap == 251000000) {
-					route = "百草堂 <-> 武陵";
-				} else {
-					route = "武陵 <-> 天空之城";
-				}
-				cm.sendYesNo("你好，我是仙鹤。我的航线是#b" + route + "#k！给些辛苦钱我就送你，比走着去快多了是不是？只要 #b" + cost + " 金币#k，现在就出发吗？");
-			}
-		} else if (status == 1) {
-			if (cm.getMeso() < cost) {
-				cm.sendNext("你的金币不够啊... 凑够 #b" + cost + " 金币#k 再来找我吧。");
-				cm.dispose();
-			} else {
-				if (cm.getChar().getMapId() == 250000100) {
-					em.setProperty("myRide", "1"); // 飞回天空之城
-				} else {
-					em.setProperty("myRide", "0"); // 飞往武陵
-				}
-				cm.gainMeso(-cost);
-				em.newInstance("Hak").registerPlayer(cm.getChar());
-				cm.dispose();
-			}
-		}
-	}
+    if (mode != 1 || stage == "closed") {
+        stage = "closed";
+        cm.dispose();
+        return;
+    }
+    if (stage == "select") {
+        if (selection < 0 || selection >= routes.length || selection != Math.floor(selection)) {
+            stage = "closed";
+            cm.dispose();
+            return;
+        }
+        selected = selection;
+        confirmRoute();
+        return;
+    }
+    if (stage != "confirm") return;
+    stage = "closed";
+    var character = cm.getChar();
+    if (character.getMapId() != origin || character.getEventInstance() != null) {
+        cm.sendOk("请先结束当前活动，再从仙鹤乘坐地点出发。");
+        cm.dispose();
+        return;
+    }
+    if (cm.getMeso() < fare) {
+        cm.sendOk("乘坐仙鹤需要1500金币，你的金币不足。");
+        cm.dispose();
+        return;
+    }
+    var eim = null;
+    var charged = false;
+    try {
+        var factory = em.getChannelServer().getMapFactory();
+        var destination = factory.getMap(routes[selected][0]);
+        var departure = factory.getMap(origin);
+        if (destination == null || departure == null || destination.getPortal(0) == null || departure.getPortal(0) == null) throw new Error("Missing crane endpoint");
+        var instanceName = "Hak-" + character.getId() + "-" + Packages.java.lang.System.nanoTime();
+        eim = em.newInstance(instanceName);
+        eim.setProperty("origin", String(origin));
+        eim.setProperty("destination", String(routes[selected][0]));
+        eim.setProperty("ride", String(routes[selected][2]));
+        eim.setProperty("flightMap", String(routes[selected][2])); // native automatic-exit guard
+        eim.setProperty("seconds", String(flightSeconds));
+        eim.registerPlayer(character);
+        if (String(eim.getProperty("entered")) != "true") throw new Error("Crane boarding failed");
+        cm.gainMeso(-fare);
+        charged = true;
+    } catch (error) {
+        if (eim != null) {
+            eim.unregisterPlayer(character);
+            if (character.getMapId() == routes[selected][2]) character.changeMap(departure, departure.getPortal(0));
+            eim.dispose();
+        }
+        if (charged) cm.gainMeso(fare);
+        cm.sendOk("仙鹤暂时无法起飞，请稍后再试。本次不会扣除金币。");
+    }
+    cm.dispose();
 }

@@ -1,12 +1,18 @@
+var done072=false,origin072=-1;
+function close072(){done072=true;cm.dispose();}
+function start(){origin072=cm.getMapId();action(1,0,0);}
 var status = -1;
 
 var exchangeItem = 4000437;
 
 function action(mode, type, selection) {
+    if(done072)return;
+    if(mode!=1||cm.getMapId()!=origin072){close072();return;}
+
     if (mode == 1) {
 	status++;
     } else {
-	cm.dispose();
+	close072();
 	return;
     }
     if (status == 0) {
@@ -14,12 +20,13 @@ function action(mode, type, selection) {
     } else if (status == 1) {
 	if (!cm.haveItem(exchangeItem, 100)) {
 	    cm.sendNext("你没有足够的数量我需要100个#t4000437#");
-	    cm.dispose();
+	    close072();
 	} else {
-	    cm.sendGetNumber("嗯，这是个好主意！ 我可以给你 #i2050004#每100个 #i" + exchangeItem + "##t" + exchangeItem + "# 你想要给我多少 (当前道具: " + cm.getPlayer().itemQuantity(exchangeItem) + ")", java.lang.Math.min(300, cm.getPlayer().itemQuantity(exchangeItem) / 100), 1, java.lang.Math.min(300, cm.getPlayer().itemQuantity(exchangeItem) / 100));
+	    cm.sendGetNumber("嗯，这是个好主意！ 我可以给你 #i2050004#每100个 #i" + exchangeItem + "##t" + exchangeItem + "# 你想要给我多少 (当前道具: " + cm.getPlayer().itemQuantity(exchangeItem) + ")", Math.min(300, Math.floor(cm.getPlayer().itemQuantity(exchangeItem) / 100)), 1, Math.min(300, Math.floor(cm.getPlayer().itemQuantity(exchangeItem) / 100)));
 	}
-    } else if (status == 2) { 
-	if (selection >= 1 && selection <= cm.getPlayer().itemQuantity(exchangeItem) / 100) {
+    } else if (status == 2) {
+        done072=true; 
+	if (selection==Math.floor(selection) && selection >= 1 && selection <= 300 && selection <= Math.floor(cm.getPlayer().itemQuantity(exchangeItem) / 100)) {
 	    if (!cm.canHold(2050004, selection)) {
 		cm.sendOk("请空出一些其他栏位。");
 	    } else {
@@ -28,6 +35,6 @@ function action(mode, type, selection) {
 		cm.sendOk("谢谢你。");
 	    }
 	}
-        cm.dispose();
+        close072();
     }
 }

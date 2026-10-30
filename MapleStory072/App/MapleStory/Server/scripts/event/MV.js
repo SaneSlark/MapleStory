@@ -5,7 +5,7 @@ em.setProperty("state", "0");
 	em.setProperty("leader", "true");
 }
 
-function setup(eim, leaderid) {
+function originalSetup072(eim, leaderid) {
 em.setProperty("state", "1");
 	em.setProperty("leader", "true");
     var eim = em.newInstance("MV" + leaderid);
@@ -44,8 +44,9 @@ function playerDisconnected(eim, player) {
 }
 
 function monsterValue(eim, mobId) {
-    if (mobId == 9400589) { //MV
-	eim.broadcastPlayerMsg(6, "MV has been beaten!");
+    if (mobId == 9400748 && eim.getProperty("bossCleared072")!="true") {
+        eim.setProperty("bossCleared072","true"); //MV
+	eim.broadcastPlayerMsg(6, "MVÒÑ±»»÷°Ü£¡");
     	eim.restartEventTimer(60000); //1 mins
 	eim.schedule("warpWinnersOut", 55000);
     }
@@ -92,3 +93,12 @@ function disbandParty (eim) {
 }
 function playerDead(eim, player) {}
 function cancelSchedule() {}
+var admissionLock072=new java.util.concurrent.locks.ReentrantLock();
+function setup(a,b){
+    if(!admissionLock072.tryLock())throw "MV admission busy";
+    try{
+        if(String(em.getProperty("state"))!="0")throw "MV occupied";
+        for(var i=0;i<3;i++)if(em.getMapFactory().getMap([674030000,674030200,674030300][i]).getCharactersSize()!=0)throw "MV map occupied";
+        return originalSetup072(a,b);
+    }finally{admissionLock072.unlock();}
+}

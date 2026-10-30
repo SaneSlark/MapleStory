@@ -3,22 +3,32 @@
 */
 var stg6_combo = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
 var minPlayers = 2;
+var admissionLock=new java.util.concurrent.locks.ReentrantLock();
 
 function init() {
     em.setProperty("state", "0");
 }
 
 function monsterValue(eim, mobId) {
+    if(mobId==9300012)eim.setProperty("bossDefeated","true");
     return 1;
 }
 
 function setup(level, leaderid) {
-    em.setProperty("state", "1");
+    if(!admissionLock.tryLock())throw "LudiPQ admission busy";
+    var created=null,reserved=false;
+    try {
+    if(String(em.getProperty("state"))!="0" || em.getInstance("LudiPQ")!=null)throw "LudiPQ occupied";
+    var ids=[922010100,922010400,922010401,922010402,922010403,922010404,922010405,922010700,922010800,922010900];
+    for(var n=0;n<ids.length;n++)if(em.getMapFactory().getMap(ids[n]).getCharactersSize()!=0)throw "LudiPQ map occupied";
+    em.setProperty("state", "1");reserved=true;
 
     var eim = em.newInstance("LudiPQ");
+    created=eim;
     eim.setProperty("stage2", "0");
     var map = eim.setInstanceMap(922010100);
     map.resetPQ(level);
+    map.getPortal("next00").setScriptName("lpq1");
     //map = eim.setInstanceMap(922010200); //stage 2 - Unused
     //map.resetPQ(level);
     //map.getPortal("next00").setScriptName("lpq2");
@@ -29,6 +39,7 @@ function setup(level, leaderid) {
     //map.getPortal("next00").setScriptName("lpq3"); //Stage 3 - skipped entirely
     map = eim.setInstanceMap(922010400);
     map.resetPQ(level);
+    map.getPortal("next00").setScriptName("lpq4");
     eim.setInstanceMap(922010401).resetPQ(level);
     eim.setInstanceMap(922010402).resetPQ(level);
     eim.setInstanceMap(922010403).resetPQ(level);
@@ -79,9 +90,14 @@ function setup(level, leaderid) {
 		}
 	}
 
+    var combo=[0,0,0,0,0,0,0,0,0],picked=0;
+    while(picked<5){var at=Math.floor(Math.random()*9);if(combo[at]==0){combo[at]=1;picked++;}}
+    eim.setProperty("8combo",combo.join(""));
     eim.startEventTimer(1200000); //20 mins
 
     return eim;
+    }catch(error){if(reserved){if(created!=null)created.dispose();em.setProperty("state","0");}throw error;}
+    finally{admissionLock.unlock();}
 }
 
 function scheduledTimeout(eim) {
@@ -124,12 +140,14 @@ function changedMap(eim, player, mapid) {
 }
 
 function playerEntry(eim, player) {
-    var map = em.getMapFactory().getMap(922010100);
+    var map = eim.getMapInstance(0);
+    player.removeAll(4001022);player.removeAll(4001156);player.removeAll(4001023);
     player.changeMap(map, map.getPortal(0));
     player.tryPartyQuest(1202);
 }
 
 function playerRevive(eim, player) {
+    playerExit(eim,player);return false;
 }
 
 function playerDisconnected(eim, player) {
