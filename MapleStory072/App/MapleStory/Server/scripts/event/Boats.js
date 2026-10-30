@@ -1,5 +1,7 @@
 /* CMS072 scheduled transport compatibility; route timings preserved from existing scripts. */
 var service = {"name":"Boats","rideTime":600000,"routes":[{"dock":200000111,"wait":200000112,"ride":200090000,"cabin":200090001,"destination":101000300},{"dock":101000300,"wait":101000301,"ride":200090010,"cabin":200090011,"destination":200000100}]};
+// Compatibility probability; original CMS072 encounter parameters are unverified.
+var balrogChance = 0.5;
 var cycle = null;
 var transportTasks = [];
 var transportCancelled = false;
@@ -51,9 +53,34 @@ function takeoff() {
     }
     if(service.name=="Flight")for(var i=0;i<service.routes.length;i++)em.broadcastShip(service.routes[i].dock,3);
     queueTransport("arrived",service.rideTime);
+    if(Math.random()<balrogChance) queueTransport("balrogAttack",60000+Math.floor(Math.random()*180001));
+}
+function clearBalrogs() {
+    em.setProperty("haveBalrog","false");
+    if(cycle==null)return;
+    for(var i=0;i<service.routes.length;i++) {
+        var map=cycle.getMapFactory().getMap(service.routes[i].ride);
+        map.killMonster(8150000);
+        map.broadcastMessage(Packages.tools.packet.CField.musicChange("Bgm04/UponTheSky"));
+    }
+}
+function balrogAttack() {
+    if(transportCancelled || cycle==null || String(cycle.getProperty("phase"))!="riding" || String(em.getProperty("haveBalrog"))=="true")return;
+    em.setProperty("haveBalrog","true");
+    for(var i=0;i<service.routes.length;i++) {
+        var map=cycle.getMapFactory().getMap(service.routes[i].ride);
+        map.broadcastMessage(Packages.tools.packet.CField.musicChange("Bgm04/ArabPirate"));
+        em.broadcastShip(service.routes[i].ride,1034);
+        for(var j=0;j<2;j++) {
+            var mob=em.getMonster(8150000);
+            mob.setPosition(new Packages.java.awt.Point(j==0?-150:150,-200));
+            map.spawnMonster(mob,-2);
+        }
+    }
 }
 function arrived() {
     if(transportCancelled)return;
+    clearBalrogs();
     var passengers=new Packages.java.util.ArrayList(cycle.getPlayers()).iterator();
     while(passengers.hasNext()) {
         var player=passengers.next();
@@ -85,4 +112,5 @@ function cancelSchedule() {
     transportCancelled=true;em.setProperty("entry","false");
     for(var i=0;i<transportTasks.length;i++)if(transportTasks[i]!=null)transportTasks[i].cancel(false);
     transportTasks=[];
+    clearBalrogs();
 }
