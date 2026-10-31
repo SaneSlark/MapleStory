@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3110, 1, "修复雪之精灵的雕像", ["(把冰结晶移到雕像附近吧，结晶渗入到雕像破碎的部分慢慢修复了。)"], "阿尔卡斯特说已经准备完毕，并把冰结晶交给了我。据说施了魔法的冰结晶可以修复雕像……　\n\n#i4031791##t4031791#  #b#c4031791#/1"]], greeting="呜呜…", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

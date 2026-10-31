@@ -1,5 +1,5 @@
-var done072=false,origin072=-1;
-function close072(){done072=true;cm.dispose();}
+var done=false,origin=-1;
+function close(){done=true;cm.dispose();}
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -50,19 +50,19 @@ var qty;
 var equip;
 
 function start() {
-    origin072=cm.getMapId();
+    origin=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
-    if(done072)return;
-    if(mode!=1||cm.getMapId()!=origin072){close072();return;}
+    if(done)return;
+    if(mode!=1||cm.getMapId()!=origin){close();return;}
 
 	if (mode == 1)
 		status++;
 	else
-		close072();
+		close();
 	if (status == 0 && mode == 1) {
 		var selStr = "#r请问你要需要我干什么..我是专业的手套制造商~~#r  #k.#b"
 		var options = new Array("制作手套","升级手套","制作拳套","升级拳套","制作材料");
@@ -150,7 +150,7 @@ function action(mode, type, selection) {
 			qty = 1;
 		}
 		else
-			if(selection!=Math.floor(selection)||selection<1||selection>100){close072();return;}
+			if(selection!=Math.floor(selection)||selection<1||selection>100){close();return;}
         qty = selection;
 
 		if (selectedType == 0){ //glove refine
@@ -218,15 +218,15 @@ function action(mode, type, selection) {
 	}
 	else if (status == 4 && mode == 1) {
 		var complete = true;
-        done072=true;
-        if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close072();return;}
-        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close072();return;}
+        done=true;
+        if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close();return;}
+        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close();return;}
 		
 		if (cm.getMeso() < cost * qty)
 			{
                 complete=false;
 				cm.sendOk("很抱歉,你付不起我的手续费.")
-                close072();return;
+                close();return;
 			}
 			else
 			{
@@ -281,6 +281,6 @@ function action(mode, type, selection) {
 					cm.gainItem(item, qty);
 				cm.sendOk("OK.做好了，那去瞧瞧吧。");
 			}
-		close072();
+		close();
 	}
 }

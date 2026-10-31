@@ -1,7 +1,7 @@
 function start(){qfresh=true;if(!qQuestAction(1,0,0)){cm.sendOk("请通过任务栏查看当前的新手任务。");cm.dispose();}}
 function action(mode,type,selection){qQuestAction(mode,type,selection);}
 
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[];
 function qQuestAction(mode,type,selection) {

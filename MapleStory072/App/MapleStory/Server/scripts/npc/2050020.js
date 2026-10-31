@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3428, 1, "运载船的位置", ["运载船的位置"], "我把#b波特博士的信件#k给机库的工程师#b卡伊#k了。虽然我很希望那信是情书。但实际上是有关失踪的运输船的。没有意思！卡伊拜托我在鲁斯韦尔草原找运输船，确认驾驶员是否还生存。"], [3429, 0, "驾驶员的生存", ["到处都找不到#b#p2051001##k说的驾驶员，但在运输船的驾驶舱发现了好像谁很匆忙地写下的信件。把这封信件送给地球本部机库的工程师#b#p2051001##k。"], "在鲁斯韦尔草原发现了损坏的运输船。但哪里也找不到驾驶员。我只发现了一封信。我要把这封信件给卡伊送去。"]], greeting="你好，有什么事吗？", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

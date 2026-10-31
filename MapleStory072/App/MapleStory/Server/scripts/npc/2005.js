@@ -1,7 +1,7 @@
 function start(){qfresh=true;if(!qQuestAction(1,0,0)){cm.sendOk("请通过任务栏查看当前的新手任务。");cm.dispose();}}
 function action(mode,type,selection){qQuestAction(mode,type,selection);}
 
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[1019, 0, "叁的建议", "你好。我叫叁。我看你要见#p12100#。还没见过？"], [1024, 0, "解决爱情的烦恼？！", "呼呼～我有帮别人解决爱情的烦恼的高尚爱好。最近在给一位为了爱人而奋斗的年轻人提供帮助。爱情的烦恼解决者！是不是很帅？怎么样？你也想加入吗？"]];
 function qQuestAction(mode,type,selection) {

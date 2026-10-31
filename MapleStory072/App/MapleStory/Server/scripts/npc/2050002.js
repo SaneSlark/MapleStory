@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3419, 0, "与白外星人的交易", ["你好！外星人会说地球的语言，你很吃惊吧？哈哈。。。我们外星人是为你们帮助而来的。所以你不用太紧张。看起来你已经去过地球本部吧？那你可不可以帮我一下？"], "在库尔兰草原遇见了#b外星人 哥雷#k. 他说原来希望战争的是地球本部.然后他拜托我帮他在地球本部机库收集几个东西给拿来.觉得有点不安. 但没有办法. 我要去地球本部机库收集#b3个秘密文件#k。"], [3419, 1, "与白外星人的交易", ["哦。。。你真的收集完了3个#t4031116#啊？好。。。你这么辛苦的帮助我们，我就给你谢礼。这是随时会召唤我们的召唤包。但你要小心，因为我的朋友们很危险！"], "在库尔兰草原遇见了#b外星人 哥雷#k. 他说原来希望战争的是地球本部.然后他拜托我帮他在地球本部机库收集几个东西给拿来.觉得有点不安. 但没有办法. 我要去地球本部机库收集#b3个秘密文件#k。"]], greeting="地球防御本部的这些笨蛋，今天也这样黑白不分的攻击善良的外星人。无奈。。。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

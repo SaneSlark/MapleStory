@@ -24,6 +24,7 @@
  * @purpose Warps to Utah's Pig Farm for the quest Camila's Gem.
  */
 function enter(pi) {
+    if (pi.getMapId() != 100030000) return false;
 	if(recoveryQuestStarted(pi, 2073)) {
 		recoveryPortalSound(pi);
 		pi.warp(900000000, 0);
@@ -36,11 +37,11 @@ function enter(pi) {
 
 // Adapted for the bundled OdinMS runtime; retain the original quest/item gates.
 function recoveryQuestStarted(pi, id) {
-    return pi.getQuestStatus(id).equals(Packages.net.sf.odinms.client.MapleQuestStatus.Status.STARTED);
+    return pi.getQuestStatus(id) == 1;
 }
 function recoveryQuestCompleted(pi, id) {
-    return pi.getQuestStatus(id).equals(Packages.net.sf.odinms.client.MapleQuestStatus.Status.COMPLETED);
+    return pi.getQuestStatus(id) == 2;
 }
 function recoveryPortalSound(pi) {
-    pi.getPlayer().getClient().getSession().write(Packages.net.sf.odinms.tools.MaplePacketCreator.playSound("Game/Portal"));
+    pi.playPortalSE();
 }

@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3627, 1, "兴夫乐夫童话书(乐夫)", ["拿来了吗？给我！快给我！这种破烂的书不知道你要用来干什么，拿走吧。嘿嘿…只要有了这个王冠，我又能变成富翁啦，哈哈哈哈"], "赫丽奥斯塔图书馆的管理员威兹托我为他带来#b#t4031235##k。以前帮助乐夫之后有收到过这样东西，可是现在却找不到了。找到乐夫再次向他要童话书时，乐夫却说要拿给他#b#t4000100# 2个#k才能给我童话书。\n\n#t4000100# #b#c4000100##k/2"]], greeting="如果你是想要我帮你的话…就别浪费时间了！门都没有~", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

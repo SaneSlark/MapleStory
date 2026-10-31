@@ -1,3 +1,23 @@
+// CMS compatibility: transfer the event roster, not an unrelated party.
 function enter(pi) {
-	pi.warpParty(926100400,0, pi.getPlayer().getEventInstance().getPlayers());
+    var player = pi.getPlayer();
+    var eim = player.getEventInstance();
+    if (eim == null || player.getMapId() == 926100400) return false;
+    var players = eim.getPlayers();
+    var registered = false;
+    for (var i = 0; i < players.size(); i++) {
+        if (players.get(i).getId() == player.getId()) registered = true;
+    }
+    if (!registered) return false;
+    var target = eim.getMapInstance(926100400);
+    if (target == null) return false;
+    var portal = target.getPortal(0);
+    if (portal == null) return false;
+    for (var i = 0; i < players.size(); i++) {
+        var member = players.get(i);
+        if (member.getEventInstance() == eim && member.getMapId() != 926100400) {
+            member.changeMap(target, portal);
+        }
+    }
+    return true;
 }

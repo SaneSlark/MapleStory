@@ -7,14 +7,19 @@
 importPackage(net.sf.odinms.client);
 
 var status = 0;
+var advDone=false,advOrigin=-1,advJob=-1;
+var advAllowed=[111, 121, 131];
 var job;
 
 function start() {
+    advDone=false;advOrigin=cm.getMapId();advJob=cm.getJob();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(advDone)return;
+    if(mode!=1 || cm.getMapId()!=advOrigin || cm.getJob()!=advJob || advAllowed.indexOf(advJob)<0 || cm.getLevel()<120){advDone=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -42,7 +47,7 @@ function action(mode, type, selection) {
 				cm.sendYesNo("恭喜你!达到这样一个级别你真不容易啊. 你已经做好第四次转职的准备了吗?");
 			}		
 		} else if (status == 127) {
-            cm.changeJob(MapleJob.HERO.getId());
+            advDone=true;cm.changeJob(MapleJob.HERO.getId());
             cm.teachSkill(1120004,0,10); //Maple Warrior
             cm.teachSkill(1120005,0,10); //Monster Magnet
             cm.teachSkill(1121008,0,10); //Power Stance
@@ -54,7 +59,7 @@ function action(mode, type, selection) {
         } 
         else if (status == 130)
         {
-            cm.changeJob(MapleJob.PALADIN.getId());
+            advDone=true;cm.changeJob(MapleJob.PALADIN.getId());
             cm.teachSkill(1220005,0,10);//Maple Warrior
             cm.teachSkill(1221009,0,10); //Monster Magnet
             cm.teachSkill(1220006,0,10); //Power Stance
@@ -68,7 +73,7 @@ function action(mode, type, selection) {
         } 
         else if (status == 133)
         {
-            cm.changeJob(MapleJob.DARKKNIGHT.getId());
+            advDone=true;cm.changeJob(MapleJob.DARKKNIGHT.getId());
             cm.teachSkill(1320005,0,10);//Maple Warrior
             cm.teachSkill(1320006,0,10); //Monster Magnet
             cm.teachSkill(1321001,0,10); //Berserk

@@ -1,4 +1,4 @@
-/* CMS072 crane binding. Fare/time explicitly set by the user: 1500 / 60s. */
+/* CMS crane binding. Fare/time explicitly set by the user: 1500 / 60s. */
 var fare = 1500;
 var flightSeconds = 60;
 var origin = -1;

@@ -1,4 +1,4 @@
-// Compatibility adaptation; not an official CMS072 reward table.
+// Compatibility adaptation; not an official CMS reward table.
 // Source: 9310025.js; exact original outcome weights, conditioned on supported rewards.
 var ticket = 5220010;
 var status = -1;

@@ -36,7 +36,7 @@ function action() {
 	cm.dispose()
 }
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[];
 function qQuestAction(mode,type,selection) {

@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3210, 1, "工作没问题！", ["工作没问题！"], "玩具城玩具厂的#b厂长卡胡#k拜托我，替他找在玩具塔工作的10个玩具工人的照片，而且一定按照顺序找工人。。。要去玩具塔。"], [3211, 0, "玩具工人1", ["哟~~ 累呀。都是因为最近玩具塔多了很多怪物，经常破坏各个地方。等一下，你是说受玩具厂#b#p2040015##k的委托，来找我的吗？原来是这样，你说要拍照回去，好呀~ 请拍出我努力工作的样子吧。"], "找第一个玩具工人后拍了照片。"]], greeting="我是在玩具城的时间塔工作的人。最近这里有很多地方损坏了，需要保修。怪物也越来越多，妨碍了，修复工作。。。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

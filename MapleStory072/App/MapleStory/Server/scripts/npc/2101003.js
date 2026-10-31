@@ -11,7 +11,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[3931, 0, "拥有铁锤的男子", "你是谁？有什么事吗？什么？想加入沙子图团？你从哪儿听来的？不，这倒不重要。你真想成为沙子图团员吗？"], [3931, 1, "拥有铁锤的男子", "击退了#o2100105# 100只？真的吗？不敢相信啊？…… 嘿嘿，看来是真的哦？"], [3932, 0, "阿丁的考验", "啊啊～ 头痛啊。什么事？#o2100106#和 #o2100107# 一直在欺负居民们。王妃都不管居民的安危，只管收集那些奇怪的宝石，受苦的是那些居民。"], [3932, 1, "阿丁的考验", "什么？这么快就击退了#o2100106#和 #o2100107#？它们不是泛泛之辈啊…… 开玩笑吧？什么？这是#t4000326#和 #t4000327#...真的击退了它们？不可能！"], [3933, 0, "阿丁的沙子图团", ""], [3933, 1, "阿丁的沙子图团", "哈哈～ 好久没有过这么爽快的对练了。要对付贪心、会法术的王妃，需要强悍的人。依你这个实力，可以加入沙子图团。"]];
 function qQuestAction(mode,type,selection) {

@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3238, 1, "机械工 麦戈的文件", ["你终于回来了。啊啊！那就是我弄丢的#b#t4031130##。！终于找回来了。我几乎放弃了。太好了。你这么帮我，我这就给你礼物。请收下。"], "在玩具工厂见到了机械工 麦戈. 他说木马骑兵抢走了他的文件, 拜托我找回他的文件. 但要找该木马骑兵要进去秘密空间…"], [3238, 0, "机械工 麦戈的文件", ["哼。。。这怎么办。我弄丢了修理机器用的东西。没有这个东西我无法工作。你能不能帮我？"], "在玩具工厂见到了机械工 麦戈. 他说木马骑兵抢走了他的文件, 拜托我找回他的文件. 但要找该木马骑兵要进去秘密空间…"]], greeting="今天也是好天气。我是在玩具工厂工作的#b#p2041020##k。我的任务是设计制作玩具的机械的设计图。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

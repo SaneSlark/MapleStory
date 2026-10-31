@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3447, 1, "邪恶力量的破坏", ["把暗黑泰可因都破坏掉了吗？"], "消灭帕普拉图斯之后从它身上出现了黑泰可因，为了破坏散发出邪恶力量的黑泰可因，来到了冰峰雪域深处的熔岩地下城。在这喷射出熔岩的地方，将它破坏掉吧。"], [3447, 0, "邪恶力量的破坏", ["灼热的熔岩正在喷发，周围好像相当炎热，一靠近熔岩立刻感到一股热浪扑面而来。把暗黑泰可因扔进这里应该就能破坏掉它吧。"], "消灭帕普拉图斯之后从它身上出现了黑泰可因，为了破坏散发出邪恶力量的黑泰可因，来到了冰峰雪域深处的熔岩地下城。在这喷射出熔岩的地方，将它破坏掉吧。"]], greeting="你好，有什么事吗？", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

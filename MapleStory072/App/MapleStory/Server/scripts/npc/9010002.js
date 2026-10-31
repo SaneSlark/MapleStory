@@ -1,4 +1,4 @@
-var terminal072=false,sourceMap072=-1;
+var terminal=false,sourceMap=-1;
 /*mia
 	spawn NPC
 	- EI Nath
@@ -25,21 +25,21 @@ var qty=1;
 importPackage(net.sf.odinms.client);
 
 function start() {
-    sourceMap072=cm.getMapId();
+    sourceMap=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
-    if(terminal072)return;
-    if(mode!=1 || cm.getMapId()!=sourceMap072){terminal072=true;cm.dispose();return;}
+    if(terminal)return;
+    if(mode!=1 || cm.getMapId()!=sourceMap){terminal=true;cm.dispose();return;}
 
 	if (mode == -1) {
-		terminal072=true;cm.dispose();
+		terminal=true;cm.dispose();
 	} else {
 		if (status >= 2 && mode == 0) {
 			cm.sendOk("#b谢谢下次再光顾.");
-			terminal072=true;cm.dispose();
+			terminal=true;cm.dispose();
 			return;
 		}
 		if (mode == 1) {
@@ -72,13 +72,13 @@ function action(mode, type, selection) {
 					selStr += "\r\n#L" + i + "#" + bossname[i] + "(" + bosscost[i] + " 枫币)#l";
 				}
 			cm.sendSimple(selStr);
-		}else {terminal072=true;cm.dispose();}
+		}else {terminal=true;cm.dispose();}
 
 }
  else if (status == 4) {
-    var ids072=mobkind==0?mob:mobkind==1?boss:null;
-    if(ids072==null || selection!=Math.floor(selection) || selection<0 || selection>=ids072.length){terminal072=true;cm.dispose();return;}
-    if(Packages.server.life.MapleLifeFactory.getMonsterStats(ids072[selection])==null){cm.sendOk("本客户端没有这项召唤资源，未扣金币。");terminal072=true;cm.dispose();return;}
+    var ids=mobkind==0?mob:mobkind==1?boss:null;
+    if(ids==null || selection!=Math.floor(selection) || selection<0 || selection>=ids.length){terminal=true;cm.dispose();return;}
+    if(Packages.server.life.MapleLifeFactory.getMonsterStats(ids[selection])==null){cm.sendOk("本客户端没有这项召唤资源，未扣金币。");terminal=true;cm.dispose();return;}
 
 			if (mobkind==0) {
 		var prompt = "#b你想召唤多少只？";
@@ -93,42 +93,42 @@ function action(mode, type, selection) {
 		price=bosscost[selection];
 		cm.sendYesNo("#d召唤#r"+mobna+"#d需要#r"+price+"#d枫币，你确定要召唤？");
 			}
-			else {terminal072=true;cm.dispose();}	
+			else {terminal=true;cm.dispose();}	
 		} 
 
 
  else if (status == 5) {
 			if (mobkind==0) {
-				if(selection!=Math.floor(selection) || selection<1 || selection>100){terminal072=true;cm.dispose();return;}
+				if(selection!=Math.floor(selection) || selection<1 || selection>100){terminal=true;cm.dispose();return;}
                 qty = selection;
 				cm.sendYesNo("#d召唤#r"+qty+"#d只#r"+mobna+"#d需要#r"+price*qty+"#d枫币，你确定要召唤？");
 			}
 			else if (mobkind==1){
-				terminal072=true;
+				terminal=true;
                 if (price>0 && price<=2147483647 && cm.getMeso() >= price)
 				{ 
 				cm.spawnMonster(mobid);
 				cm.gainMeso(-price);
-				terminal072=true;cm.dispose();
+				terminal=true;cm.dispose();
 				}
 				else
 			cm.sendOk("#b对不起，你金币不足.");
-			terminal072=true;cm.dispose();
+			terminal=true;cm.dispose();
 				
 			}
-			else {terminal072=true;cm.dispose();}	
+			else {terminal=true;cm.dispose();}	
 		} 
 else if (status == 6) {				
-			terminal072=true;
+			terminal=true;
                 if (qty>=1 && qty<=100 && price>0 && price*qty<=2147483647 && cm.getMeso() >= price*qty)
 				{ 
 				cm.spawnMonster(mobid,qty);
 				cm.gainMeso(-price*qty);
-				terminal072=true;cm.dispose();
+				terminal=true;cm.dispose();
 				}
 				else
 			cm.sendOk("#b对不起，你金币不足.");
-			terminal072=true;cm.dispose();
+			terminal=true;cm.dispose();
 		}
 	}
 }	

@@ -1,4 +1,4 @@
-// Client resource names/maps; compatible repair dialogue, not original CMS072 dialogue.
+// Client resource names/maps; compatible repair dialogue, not original CMS dialogue.
 var routes=[{"origin": 120000000, "destinations": [{"map": 104000000, "name": "明珠港", "cost": 800, "beginner": 80}, {"map": 102000000, "name": "勇士部落", "cost": 1200, "beginner": 100}, {"map": 101000000, "name": "魔法密林", "cost": 1200, "beginner": 100}, {"map": 103000000, "name": "废弃都市", "cost": 1000, "beginner": 100}]}];
 var taxiName="诺特勒斯中巴";
 var state=0,origin=-1,choices=[],chosen=-1,fare=0;

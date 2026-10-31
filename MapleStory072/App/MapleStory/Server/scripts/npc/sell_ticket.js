@@ -1,4 +1,4 @@
-/* Existing CMS072 ticket IDs and prices, with cancellation/funds/bag guards. */
+/* Existing CMS ticket IDs and prices, with cancellation/funds/bag guards. */
 var ticketCatalog={
  "1032007":[[4031045,10000,"天空之城"]],
  "2012000":[[4031047,5000,"魔法密林"],[4031074,6000,"玩具城"],[4031331,30000,"神木村"],[4031576,6000,"阿里安特"]],

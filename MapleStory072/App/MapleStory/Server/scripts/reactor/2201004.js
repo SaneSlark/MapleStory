@@ -2,7 +2,7 @@
 Papulatus Reactor: Performs the Papulatus commands
 */
 
-function bossAct072(){
+function bossAct(){
 try {
     rm.mapMessage(5, "´ÎÔªÁÑ·ìÒÑ±»Ê±¿ÕÁÑ·ìµÄËéÆ¬ÌîÂú¡£");
     rm.changeMusic("Bgm09/TimeAttack");
@@ -19,6 +19,6 @@ function act(){
     if(eim!=null && String(eim.getProperty("bossSummoned"))=="true")return;
     var mobs=map.getAllMonstersThreadsafe().iterator();
     while(mobs.hasNext()){var id=mobs.next().getId();if(id>=8500000 && id<=8500002)return;}
-    bossAct072();
+    bossAct();
     if(eim!=null){eim.setProperty("bossSummoned","true");eim.setProperty("canEnter","false");}
 }

@@ -37,7 +37,7 @@ function action() {
 	cm.dispose()
 }
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[2124, 1, "沙子图团的补给品", ""], [2126, 1, "沙子图团的补给品！", ""], [3934, 0, "拥有短剑的女子", "……为什么这么盯着我呢？如果不转移视线的话，他会认为我在找茬吧…… 什么？沙子图团？你怎么知道这个名称？你是王妃的奸细吗？\\r\\n#L0##b#p2101000#告诉我墙壁的事，我是看到上面的字找到了您。#l"], [3935, 1, "呃拉斯卡的考验", "……你……拿到了#t4031574#。真是没有想到啊…… 了不起。你这种实力…… 完全有资格成为沙子图团员……"], [3936, 0, "呃拉斯卡的沙子图团", "我以为是外来人靠着稚气想进入沙子图团…… 对不起。是我低估你了。想进入沙子图团吗？那再考验你一次吧。"], [3936, 1, "呃拉斯卡的沙子图团", "拿来了两个#t4011008#啊。只能在阿里安特找到的宝石是非常坚硬，不好加工的。一旦加工就能长期保持形状。外表看起来和玻璃一样脆弱，但事实上比钻石还要坚硬。"]];
 function qQuestAction(mode,type,selection) {

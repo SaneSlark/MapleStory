@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3009, 1, "斯皮罗纳的黑水晶", ["斯皮罗纳的黑水晶"], "斯皮罗纳终于跟我约好了，如果我找她几天前在雪原弄丢的#b黑水晶#k她就告诉我她关于赫拉知道的所有事。黑水晶在哪里呢？"], [3010, 0, "被破坏的黑水晶", ["看见白雪覆盖的石头里有件闪闪发光的东西吗？你想去拿么？"], "在雪原的岩石下面发现了斯皮罗纳的#b黑水晶#k… 但是水晶好像被怪物破坏得很厉害。难道她怀疑我破坏了这水晶。"]], greeting="你好，有什么事吗？", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

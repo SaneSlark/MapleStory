@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[2159, 1, "帮助露尔", ["哈哈！已经击退了红螃蟹？太棒了！真的太棒了！"], "和丽尔长得一模一样，但性格很直爽的露尔！她的赌注是击退#r红螃蟹 50只#k。露尔希望我帮助她赢得赌注…… 我得帮她完成赌注来尽快结束这个愚蠢的赌局。\n\n#o3230102# #r#a21591##k"], [2159, 0, "帮助露尔", ["哼！你就是丽尔说的那个冒险家？谢谢你当裁判……不过不能因为和丽尔熟就偏向丽尔。这次比赛决不能让步。", "就算是这样，比赛内容也太难了。怎么击退红螃蟹呢？如果不是像您这样的冒险家，根本弄不到那么多……咳……怎么办……", "你好像也没有其他的事儿……没有偏向丽尔 ……看来也不怎麽喜欢丽尔……反正不能一个人结束这场比赛……决定了!你帮我一起击退#r红螃蟹#k。"], "和丽尔长得一模一样，但性格很直爽的露尔！她的赌注是击退#r红螃蟹 50只#k。露尔希望我帮助她赢得赌注…… 我得帮她完成赌注来尽快结束这个愚蠢的赌局。\n\n#o3230102# #r#a21591##k"]], greeting="欢迎您来到佛罗里那海边!", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

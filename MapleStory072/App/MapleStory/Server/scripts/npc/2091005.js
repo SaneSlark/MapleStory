@@ -71,7 +71,7 @@ function action(mode, type, selection) {
             }
         } else if (status == 1) {
             if (sel == 3) {
-                cm.setDojoRecord(true);
+                cm.setDojoRecord(true,false,0);
                 cm.sendOk("我已经帮您归零，好运。");
                 cm.dispose();
             } else if (sel == 2) {
@@ -100,7 +100,7 @@ function action(mode, type, selection) {
                     var item = 1132000 + record;
                     if (cm.canHold(item)) {
                         cm.gainItem(item, 1);
-                        cm.setDojoRecord(false);
+                        cm.setDojoRecord(false,false,0);
                         cm.sendOk("恭喜兑换成功！！");
                     } else {
                         cm.sendOk("请确认一下你的背包是否满了.");
@@ -179,16 +179,22 @@ function get_restinFieldID(id) {
     switch (id) {
         case 1:
             idd = 925020600;
+            break;
         case 2:
             idd = 925021200;
+            break;
         case 3:
             idd = 925021800;
+            break;
         case 4:
             idd = 925022400;
+            break;
         case 5:
             idd = 925023000;
+            break;
         case 6:
             idd = 925023600;
+            break;
     }
     for (var i = 0; i < 15; i++) {
         var canenterr = true;

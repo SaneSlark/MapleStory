@@ -27,17 +27,21 @@
 */
 
 var status = 0;
+var advDone=false,advOrigin=-1;
 var job;
 
 importPackage(net.sf.odinms.client);
 
 function start() {
+    advDone=false;advOrigin=cm.getMapId();
     qfresh = true;
 	status = -1;
 	action(1, 0, 0);
 }
 
 function qOrigAction(mode, type, selection) {
+    if(advDone)return;
+    if(mode==-1 || (mode==0 && type==1) || cm.getMapId()!=advOrigin){advDone=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -52,7 +56,7 @@ function qOrigAction(mode, type, selection) {
 			status--;
 		if (status == 0) {
 			if ((cm.getJob() == net.sf.odinms.client.MapleJob.BEGINNER.getId())) {
-				if (cm.getLevel() >= 10 && cm.getChar().getDex() >= 25)
+				if (cm.getLevel() >= 10 && cm.getChar().getStat().getDex() >= 25)
 					cm.sendNext("那么你已经决定成为一名#r飞侠#k?");
 				else {
 					cm.sendOk("你还需要加强修炼我才能给你指明怎样成为一名出色的 #r飞侠#k.")
@@ -95,6 +99,10 @@ function qOrigAction(mode, type, selection) {
 		} else if (status == 2) {
 			cm.sendYesNo("你真的想成为一名 #r飞侠#k 吗?");
 		} else if (status == 3) {
+            if(cm.getJob()!=0 || cm.getLevel()<10 || cm.getChar().getStat().getDex()<25){advDone=true;cm.dispose();return;}
+            if(cm.getInventory(1).getNumFreeSlot()<2 || cm.getInventory(2).getNumFreeSlot()<3 || !cm.canHold(1332000,1) || !cm.canHold(1472000,1) || !cm.canHold(2070000,5000) || !cm.canHold(2070000,5000) || !cm.canHold(2070000,5000)){advDone=true;cm.sendOk("请先为转职奖励留出背包空间。");cm.dispose();return;}
+            advDone=true;
+
 			if ((cm.getJob() == net.sf.odinms.client.MapleJob.BEGINNER.getId()))
 				cm.changeJob(net.sf.odinms.client.MapleJob.THIEF.getId());
 			cm.sendOk("转职成功!那么现在请你去为了更高的境界而奋斗吧.");
@@ -119,6 +127,7 @@ function qOrigAction(mode, type, selection) {
 		} else if (status == 21) {
 			cm.sendSimple("你想转为下面哪个职业呢?#b\r\n#L0#刺客#l\r\n#L1#侠客#l#k");
 		} else if (status == 22) {
+            if(!isFinite(selection)||Math.floor(selection)!=selection||selection<0||selection>=2){advDone=true;cm.dispose();return;}
 			var jobName;
 			if (selection == 0) {
 				jobName = "刺客";
@@ -129,6 +138,8 @@ function qOrigAction(mode, type, selection) {
 			}
 			cm.sendYesNo("你真的想成为一名 #r" + jobName + "#k?");
 		} else if (status == 23) {
+            if(cm.getJob()!=400||cm.getLevel()<30||cm.getQuestStatus(100011)!=2||typeof job!="number"||Math.floor(job/100)!=4){advDone=true;cm.dispose();return;}
+            advDone=true;
 			cm.changeJob(job);
 			cm.sendOk("转职成功!那么现在请你去为了更高的境界而奋斗吧.");
 		}
@@ -141,7 +152,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[2079, 1, "飞侠之路", "想要成为飞侠才来到这个隐密的地方吗？"], [2140, 0, "新手飞侠的第一次修炼", "成为飞侠并不意味着你已经具备强大的实力，目前的你只不过是脱离了入门阶段的小贼而已，想要凭借自身的力量进行战斗还很困难。 特别是对于你的情况来说。。。 怎么样?接受我#p1052001#大爷所提供的特别修炼吧?\\r\\n#L0# #b让我们开始修炼吧。#l  \\n\\n#L1# 相信你能凭借自身的力量通过的。 #I"], [2140, 1, "新手飞侠的第一次修炼", "捕捉到#o0130100# 20只了。 什么，这只是小事一桩?你可不要因此骄傲自满。 你的飞侠生涯只不过是刚开始而已。"], [2141, 0, "新手飞侠的第二次修炼", "哼。 新手你的实力比以前进步了嘛。 但也只不过是一点点的进步而已，离真正的飞侠还早着呢。 无论如何不继续跟着我#p1052001#大爷修炼是不行的? 怎么样? 接受修炼任务吗?"], [2141, 1, "新手飞侠的第二次修炼", "捕捉到#o0130100# 50只了。 还不错。。。 新手能做到这一步很不容易。 嗯? 怎么那种表情? 你以为自己做了多伟大的事情吗？ 别开玩笑了~ 还早着呢。"], [2142, 0, "新手飞侠的第三次修炼", "嗯。。。 新手你的实力又比以前进步了。 也许可以称为优秀?只要你更加努力一名出色的飞侠就要诞生了。。。 只不过。。。 你现在还不行。 想要更快成长必须再完成一项任务。"], [2142, 1, "新手飞侠的第三次修炼", "捕捉到#o0130100# 80只了，这次的任务你做的还不错。 "], [2143, 0, "新手飞侠最后阶段的修炼", "新手朋友。 你的修炼进度很不错。 虽然还有不足之处但现在总算有点飞侠的样子了，我真为你高兴。 那么我们现在就来测验一下你的实力吧? "], [2143, 1, "新手飞侠最后阶段的修炼", "成功捕捉到#o1120100# 10只了。 哈哈哈。 很不错。 曾经一无所知的新手也能做到这种程度了。 这也是拜我达克鲁大爷所赐吧? 呵呵。 真让人高兴。"], [3027, 1, "废弃都市的贤者", ""], [3028, 0, "达克鲁的拜托", "关于你我已经从射手村的#b#p1012100##k听说过了。我们不需要见面也可以通过心灵对话呀。一路上来辛苦了。不过听说你…正在找#b#t4031056##k...？当然我这里也有一张地图碎片，这件事我差不多都要遗忘了…"], [3028, 1, "达克鲁的拜托", ""], [3029, 0, "收集完的地图碎片", "你果然成功了。有了这个我就可以恢复了。来，按照约定给你找#b#t4031056##k需要的线索。不过你应该先确认你背包的其他窗口里有没有空间。"], [3526, 0, "追随遗忘的记忆   ", ""], [3945, 1, "巴一岚的推荐书！！！", "是谁啊？有东西要给我？让我看看"], [4714, 0, "达克鲁的敏捷碎块(1日)", "冒险家，你来啦？我已经恭候你多时了。我们5大职业转职教官都已经知道你的来意了，我们也准备好对你考验的题目了。我这边授予你的任务是：打倒在外面的怪物，并且收集来30个敏捷碎块。怎么样？有没有信心完成？"], [4714, 1, "达克鲁的敏捷碎块(1日)", "怎么样啊？冒险家，任务完成了么？"], [4724, 0, "达克鲁的敏捷碎块(7日)", "冒险家，你来啦？我已经恭候你多时了。我们5大职业转职教官都已经知道你的来意了，我们也准备好对你考验的题目了。我这边授予你的任务是：打倒在外面的怪物，并且收集来30个敏捷碎块。怎么样？有没有信心完成？"], [4724, 1, "达克鲁的敏捷碎块(7日)", "怎么样啊？冒险家，任务完成了么？"], [6140, 1, "达克鲁", "既然到这里了，就证明你决心踏入飞侠行列? 这样看来有点面熟... 当年啥都不懂的年轻冒险家为了做飞侠而找过我的，不敢相信现在成长为这么出色的飞侠，难道你是#p2081400#推荐的那个人？"], [6141, 0, "影子中的存在", "你也已经达到一定的境界，需要手下的，不是吗？想你这样的能人如果一个手下都没有，单独行动会有些不便..."], [6141, 1, "影子中的存在", "#k果然是出色的战斗力，你已经证明你的能力，手下一定会跟着你的。"], [9303, 1, "向'达克鲁'拜年", "我是废弃都市本地专门为飞侠们提供各种帮助的#b#p1052001##k。很多人都来找我帮忙，我可是个大忙人。你来找我有什么事吗？\\r\\n#b#L0# #b我是专程来给您拜年的。"], [9306, 0, "向凯琳问候", "特地远道而来问候新年，真的很感谢你啊。给你这个！拿这个去找诺特勒斯号的 #b#p1072008##k吧.很久没听到她的最新消息了。你去的话她肯定会非常欢迎的。"]];
 function qQuestAction(mode,type,selection) {
@@ -184,7 +195,7 @@ function qQuestAction(mode,type,selection) {
 /* AUTO-QUEST-END */
 
 // 062 stored these as custom quest actions; both available 062 databases have empty action tables.
-// Recovered item flow from 079 original instructor scripts and CMS072 item/map resources.
+// Recovered item flow from 079 original instructor scripts and CMS item/map resources.
 var legacyRoutes=[
  [100000,300,1012100,1072002,1072006,4031010,108000100],
  [100003,100,1022000,1072000,1072004,4031008,108000300],

@@ -1,4 +1,4 @@
-// CMS072 compatibility exit for the inactive summer-boating dock; not official event logic.
+// CMS compatibility exit for the inactive summer-boating dock; not official event logic.
 var active = false;
 function start() {
     active = false;

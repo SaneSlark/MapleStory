@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3036, 1, "寻找尼克的痕迹", ["寻找尼克的痕迹"], "受阿尔卡斯特的委托，又找到了当时找古代的书籍时被帮助的猎手斯卡得。 以前被废矿的怪物夺去妻子后他的孩子尼克为打退怪物进入废矿去了可是现在还没有消息…在废矿内部岩浆洞窟内可能有#b尼克遗物戒指#k需要找到……加上承诺儿子要收集100个#b猎犬的尖牙#k…！好像是一段相当艰难的旅程。"], [3037, 0, "尼克的戒指", ["#b#p2030007##k的下面有空隙，里面有个闪耀的东西。你能伸手取那东西给我吗？"], "岩浆洞窟内部在石像碎片下面 找到了好象是尼克的#b戒指#k。在戒指上面写着什么人的名字……斯卡得可能知道吧…\n\n#t4000079# #b#c4000079##k/100\n#t4031060# #b#c4031060##k/1"]], greeting="你好，有什么事吗？", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

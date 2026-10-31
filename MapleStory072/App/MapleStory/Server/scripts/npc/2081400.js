@@ -7,14 +7,19 @@
 importPackage(net.sf.odinms.client);
 
 var status = 0;
+var advDone=false,advOrigin=-1,advJob=-1;
+var advAllowed=[411, 421];
 var job;
 
 function start() {
+    advDone=false;advOrigin=cm.getMapId();advJob=cm.getJob();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(advDone)return;
+    if(mode!=1 || cm.getMapId()!=advOrigin || cm.getJob()!=advJob || advAllowed.indexOf(advJob)<0 || cm.getLevel()<120){advDone=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -39,7 +44,7 @@ function action(mode, type, selection) {
        	         		cm.sendYesNo("恭喜你达到120级! 那么现在你已经做好了转职成为侠盗的准备了吗??");
        	     		}		
         } else if (status == 106) {
-            cm.changeJob(MapleJob.NIGHTLORD.getId());
+            advDone=true;cm.changeJob(MapleJob.NIGHTLORD.getId());
             cm.teachSkill(4120002,0,10);//Maple Warrior
             cm.teachSkill(4121004,0,10);//Ninja Ambush
             cm.teachSkill(4121008,0,10);//Venomous Star
@@ -50,7 +55,7 @@ function action(mode, type, selection) {
         }
         else if (status == 109)
 	{
-            cm.changeJob(MapleJob.SHADOWER.getId());
+            advDone=true;cm.changeJob(MapleJob.SHADOWER.getId());
             cm.teachSkill(4221001,0,10);
             cm.teachSkill(4220002,0,10);//Assassinate
             cm.teachSkill(4221004,0,10);//Ninja Ambush

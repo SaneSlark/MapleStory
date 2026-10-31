@@ -1,4 +1,4 @@
-// CMS072: LPQ Check 1202 (35-50, six players); user-approved Shaolin compatibility.
+// CMS: LPQ Check 1202 (35-50, six players); user-approved Shaolin compatibility.
 var closed=false,partyId=-1;
 var rule=null;
 function chooseRule(){rule=cm.getNpc()==2040034?{map:221024500,event:"LudiPQ",min:35,max:50,size:6,title:"玩具城组队任务",detail:"需要6名35至50级队员，由队长带领，所有队员须在本地图。挑战限时20分钟。"}:

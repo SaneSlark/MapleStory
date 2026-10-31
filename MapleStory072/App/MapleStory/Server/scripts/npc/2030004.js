@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3017, 1, "小墓地", ["小墓地"], "受到赫拉的项链后杰德很高兴了。杰德说小墓地位于雪原的某处。"], [3018, 0, "老戒指", ["把坟墓挖开一点，就能看见白骨的手指上带的闪耀东西。你想往里面伸手拿来那东西吗？"], "在小墓地发现了#b老戒指#k。但是谁能告诉我这个东西是什么？没有别的办法。我只好去问#b阿尔卡斯特#k。"]], greeting="你好，有什么事吗？", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

@@ -15,7 +15,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[3928, 0, "拥有弓的男子", "……什么事？如果是没话找话绝不轻饶你…… 什么？想成为沙子图团员？嗯…… 你是看了墙上的图之后来找我的吧？ 是#p2101000#让你来的吧…… 但是，不能完全相信她的眼光。"], [3928, 1, "拥有弓的男子", "嗯…… 拿来粮食了？让我看看…… 一，二，三……噢，果然把所有东西都带过来了。"], [3929, 0, "携詹的考验", "找粮食做得不错，但任务还没结束。这些粮食不是为了沙子图团，而是为了阿里安特的人们准备的。需要把粮食分给大家。怎么样？如果你不是王妃的奸细，当然可以做对不对？"], [3929, 1, "携詹的考验", "好。果然把所有粮食都送到了。很好。你肯定不是王妃的奸细。"], [3930, 0, "携詹的沙子图团", "成为沙子图团员需要很多条件。其中最重要的是没有私欲。沙子图团会偷王妃贵重的宝物，但不是为了自己，而是为了#m260000000#的人们。"], [3930, 1, "携詹的沙子图团", "拿来10000金币了。放弃了那么多想买的东西，为了#m260000000#交了出来…… 值得赞扬。"]];
 function qQuestAction(mode,type,selection) {

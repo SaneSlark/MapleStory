@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3700, 0, "依托的任务", ["你好?我叫#b#p2081002##k。我正在孵蛋呢。可是蛋太大了，我抱不好。如果用温暖的莱西毛球把蛋盖起来就好了..帮我找莱西毛球好吗?"], "#m240000000#的 #p2081002#为了孵蛋需要温暖的 #o7130500#的羽毛，因此他委托我为他寻找 #b#t4000226##k和 #b#t4000229##k的羽毛。\n\n#t4000226#  #b#c4000226##k / 55\n#t4000229#  #b#c4000229##k / 75"], [3700, 1, "依托的任务", ["哇~谢谢。看起来好温暖啊。蛋啊蛋!我马上帮你暖和起来。"], "#m240000000#的 #p2081002#为了孵蛋需要温暖的 #o7130500#的羽毛，因此他委托我为他寻找 #b#t4000226##k和 #b#t4000229##k的羽毛。\n\n#t4000226#  #b#c4000226##k / 55\n#t4000229#  #b#c4000229##k / 75"]], greeting="如果我的身体再大一点的话可以抱着让蛋更暖和...", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

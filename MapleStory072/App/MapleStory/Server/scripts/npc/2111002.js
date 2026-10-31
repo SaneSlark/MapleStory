@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3320, 1, "疯老头知道的事情", ["……您是谁啊？这里是个人研究室……您怎么能随便进来呢……"], "#p2111006#耸了耸肩，一脸头疼的表情，皱起了眉头。在接下去的一瞬间，自己所在的场所不知不觉发生了变化！看上去很熟悉，但是却有点不一样的地方，这到底是在哪里呢？还有，#r那个人#k是谁呢？"], [3353, 1, "德朗博士所希望的", ["啊……您是谁啊？好像是第一次见面……您不能随便到研究室里来……不过我现在心情很好，应该没什么关系。呵呵。"], "询问有关过去的#p2111002#的情况，疯老头一脸欢快地再次把我送到了#p2111002#面前。这一次的#p2111002#，好像是比之前看到的他又过了一段时间之后的#p2111002#……"]], greeting="果然这样才对么…", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

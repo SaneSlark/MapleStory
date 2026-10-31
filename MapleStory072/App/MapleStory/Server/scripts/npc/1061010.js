@@ -1,24 +1,4 @@
-锘縡unction start() {
-    cm.sendYesNo("(浣犲彲浠ュ洖鍒板師鏉ョ殑涓栫晫! 浣犳効鎰忓洖鍘诲悧?)");
-}
-
-function action(mode, type, selection) {
-    if (mode == 1) {
-	var map = cm.getMapId();
-	//var tomap = "211040401";
-
-	if (map == 108010101) {
-	    tomap = 100000000;
-	} else if (map == 108010201) {
-	    tomap = 101000000;
-	} else if (map == 108010301) {
-	    tomap = 102000000;
-	} else if (map == 108010401) {
-	    tomap = 103000000;
-	} else if (map == 108010501) {
-	    tomap = 120000000;
-	}
-	cm.warp(tomap);
-    }
-    cm.dispose();
-}
+var done=false,origin=-1;
+var exits={"108010101":100000000,"108010201":101000000,"108010301":102000000,"108010401":103000000,"108010501":120000000};
+function start(){done=false;origin=cm.getMapId();if(exits[String(origin)]==null){done=true;cm.dispose();return;}cm.sendYesNo("要返回原来的世界吗？");}
+function action(mode,type,selection){if(done)return;done=true;if(mode==1&&cm.getMapId()==origin)cm.warp(exits[String(origin)],0);cm.dispose();}

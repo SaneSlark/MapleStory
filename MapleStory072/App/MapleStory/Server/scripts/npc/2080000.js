@@ -1,3 +1,6 @@
+var done=false,origin=-1,choices=null;
+function close(){done=true;cm.dispose();}
+function showMenu(text){choices=[];var match,pattern=/#L(-?\d+)#/g;while((match=pattern.exec(text))!=null)choices.push(Number(match[1]));cm.sendSimple(text);}
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -40,15 +43,20 @@ var cost;
 var stimID;
 
 function start() {
+    done=false;origin=cm.getMapId();choices=null;
 	status = -1;
 	action(1, 0, 0);
 }
 
-function action(mode, type, selection) {		
+function action(mode, type, selection) {
+    if(done)return;
+    if(mode!=1||cm.getMapId()!=origin){close();return;}
+    if(choices!=null){var allowed=choices;choices=null;if(!isFinite(selection)||Math.floor(selection)!=selection||allowed.indexOf(selection)<0){close();return;}}
+
 	if (mode == 1)
 		status++;
 	else
-		cm.dispose();
+		close();
 	if (status == 0 && mode == 1) {
 		var selStr = "#r一个龙的力量是不可低估的,即使只是他身体的一小部分. 如果你愿意拿出他身体的一部分, 我可以使用他的力量升级你的武器, #b武器要100级，升级后变为110级#k。#r心动就行动吧。#k#b"
 		var options = new Array("辅助剂说明","升级战士武器","升级弓手武器","升级法师法杖","升级飞侠兵刃",
@@ -57,7 +65,7 @@ function action(mode, type, selection) {
 			selStr += "\r\n#L" + i + "# " + options[i] + "#l";
 		}
 			
-		cm.sendSimple(selStr);
+		showMenu(selStr);
 	}
 	else if (status == 1 && mode == 1) {
 		selectedType = selection;
@@ -70,7 +78,7 @@ function action(mode, type, selection) {
 			stimulator = false;
 		if (selectedType == 0) { //What's a stim?
 			cm.sendNext("一个辅助剂与武器合成时可加强武器属性. 但也有10%的几率失败.")
-			cm.dispose();
+			close();
 		}
 		else if (selectedType == 1){ //warrior weapon
 			var selStr = "非常好, 哪一把武器将要使用龙的力量?#b";
@@ -79,7 +87,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < weapon.length; i++){
 				selStr += "\r\n#L" + i + "# " + weapon[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 		else if (selectedType == 2){ //bowman weapon
 			var selStr = "非常好, 哪一把武器将要使用龙的力量?#b";
@@ -87,7 +95,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < weapon.length; i++){
 				selStr += "\r\n#L" + i + "# " + weapon[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 		else if (selectedType == 3){ //magician weapon
 			var selStr = "非常好, 哪一把武器将要使用龙的力量?#b";
@@ -95,7 +103,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < weapon.length; i++){
 				selStr += "\r\n#L" + i + "# " + weapon[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 		else if (selectedType == 4){ //thief weapon
 			var selStr = "非常好, 哪一把武器将要使用龙的力量?#b";
@@ -103,7 +111,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < weapon.length; i++){
 				selStr += "\r\n#L" + i + "# " + weapon[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 	}
 	else if (status == 2 && mode == 1) {
@@ -174,9 +182,13 @@ function action(mode, type, selection) {
 	else if (status == 3 && mode == 1) {
 		var complete = true;
 		
-		if (cm.getMeso() < cost)
+		done=true;
+        if(typeof item!="number"||!isFinite(item)||Math.floor(item)!=item||typeof cost!="number"||!isFinite(cost)||cost<0||cost>2147483647||!isFinite(1)||1<1||Math.floor(1)!=1){close();return;}
+        if(!Packages.server.MapleItemInformationProvider.getInstance().itemExistsInClient(item)||!cm.canHold(item,1)){cm.sendOk("请确认当前客户端支持成品，并为成品留出足够的背包空间。");close();return;}
+        if (cm.getMeso() < cost)
 			{
 				cm.sendOk("我收的费用是为了神木村的大家。如果你付不起，就请回吧。")
+                complete=false;close();return;
 			}
 			else
 			{
@@ -191,7 +203,7 @@ function action(mode, type, selection) {
 						}
 						else {
 							var count = 0;
-							var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats[i]).iterator();
+							var iter = cm.getChar().getInventory(Packages.constants.GameConstants.getInventoryType(mats[i])).listById(mats[i]).iterator();
 							while (iter.hasNext()) {
 								count += iter.next().getQuantity();
 							}
@@ -202,7 +214,7 @@ function action(mode, type, selection) {
 				}
 				else {
 					var count = 0;
-					var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats).iterator();
+					var iter = cm.getChar().getInventory(Packages.constants.GameConstants.getInventoryType(mats)).listById(mats).iterator();
 					while (iter.hasNext()) {
 						count += iter.next().getQuantity();
 					}
@@ -237,7 +249,8 @@ function action(mode, type, selection) {
 					{
 						var ii = net.sf.odinms.server.MapleItemInformationProvider.getInstance();
 						var newItem = ii.randomizeStats(ii.getEquipById(item));
-						net.sf.odinms.server.MapleInventoryManipulator.addFromDrop(cm.getC(), newItem, "Created " + item  + " at Mos (2080000, map 240000000) using a stimulator");
+						newItem.setGMLog("Created " + item + " at Mos (2080000, map 240000000) using a stimulator");
+                        net.sf.odinms.server.MapleInventoryManipulator.addFromDrop(cm.getC(), newItem, false);
 						cm.sendOk("制作完成，真是件完美的武器.你要好好使用啊!");
 					}
 					else
@@ -251,7 +264,7 @@ function action(mode, type, selection) {
 					cm.sendOk("制作完成，真是件完美的武器.你要好好使用啊!");
 				}
 			}
-		cm.dispose();
+		close();
 	}
 }
 

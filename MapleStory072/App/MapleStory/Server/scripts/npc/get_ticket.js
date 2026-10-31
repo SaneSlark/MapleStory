@@ -1,4 +1,4 @@
-/* Existing CMS072 route/ticket IDs; charge one ticket only after successful boarding. */
+/* Existing CMS route/ticket IDs; charge one ticket only after successful boarding. */
 var transportRoutes={
   "101000300":["Boats",4031045,101000301],"200000111":["Boats",4031047,200000112],
   "200000121":["Trains",4031074,200000122],"220000110":["Trains",4031045,220000111],

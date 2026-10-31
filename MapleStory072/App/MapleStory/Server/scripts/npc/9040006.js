@@ -53,8 +53,8 @@ function start() {
                                                 if (combo == guess) {
                                                         cm.getPlayer().getMap().getReactorByName("watergate").hitReactor(cm.getC());
                                                         cm.sendOk("你可以通过了。");
-                                                        cm.showEffect("quest/party/clear");
-                                                        cm.playSound("Party1/Clear");
+                                                        cm.showEffect(true,"quest/party/clear");
+                                                        cm.playSound(true,"Party1/Clear");
                                                         var prev = eim.setProperty("stage3clear","true",true);
                                                         if (prev == null) {
                                                                 cm.getGuild().gainGP(25);

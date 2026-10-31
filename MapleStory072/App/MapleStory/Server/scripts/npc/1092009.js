@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[2176, 1, "清理诺特勒斯号1", ["哎哟~！你还真是动作快啊！"], "去找能代替里德大婶陈旧的抹布的#b蝴蝶结#k吧。\n\n#i4000002##t4000002# #b#c4000002##k / 50"], [2177, 1, "清理诺特勒斯号2", ["哈哈哈哈哈哈~果然像电一样迅速啊。"], "因为长期停靠在岸上所以船上总有老鼠出没。里德大婶因为老鼠非常头疼，那就给她带#b50个老鼠陷阱#k吧。据说老鼠陷阱向住在玩具塔的白鼠那获得……\n\n#i4000095##t4000095# #b#c4000095##k / 50"]], greeting="干净的周边环境可以让人们的心情大快，所以打扫是件很重要的事。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

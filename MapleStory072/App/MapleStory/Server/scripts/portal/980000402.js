@@ -1,4 +1,4 @@
-// CMS072 carnival revive: returnMap and team portals checked against this map.
+// CMS carnival revive: returnMap and team portals checked against this map.
 function enter(pi) {
     if (pi.getMapId() != 980000402) return false;
     var party = pi.getPlayer().getCarnivalParty();

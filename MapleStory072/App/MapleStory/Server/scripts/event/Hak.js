@@ -1,4 +1,4 @@
-/* CMS072 per-passenger crane flight; user-defined fare 1500, duration 60s. */
+/* CMS per-passenger crane flight; user-defined fare 1500, duration 60s. */
 function init() {}
 
 function playerEntry(eim, player) {

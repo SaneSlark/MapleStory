@@ -1,4 +1,4 @@
-// CMS072 Zakum jump quest stage 2; 079 Lira implementation, checked against client map/item resources.
+// CMS Zakum jump quest stage 2; 079 Lira implementation, checked against client map/item resources.
 var status=-1,done=false;
 function start(){status=-1;action(1,0,0);}
 function action(mode,type,selection){

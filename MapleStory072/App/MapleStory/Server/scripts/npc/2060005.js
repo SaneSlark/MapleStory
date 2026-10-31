@@ -25,13 +25,17 @@
 */
 
 var status = 0;
+var done=false,origin=-1;
 
 function start() {
+    done=false;origin=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(done)return;
+    if(mode!=1||cm.getMapId()!=origin){done=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -56,7 +60,9 @@ function action(mode, type, selection) {
 				cm.sendYesNo("学习技能不是白学的喔,给我#b5000000#k，我就传授给你！");
 			}
 		} else if (status == 3) {
-			cm.gainMeso(-5000000);
+			done=true;
+            if(cm.getLevel()<70||cm.getMeso()<5000000||cm.getInventory(1).getNumFreeSlot()<3||!cm.canHold(1902000,1)||!cm.canHold(1902001,1)||!cm.canHold(1912000,1)){cm.sendOk("请确认达到70级、金币充足，并留出三个装备空位。");cm.dispose();return;}
+            cm.gainMeso(-5000000);
 			cm.teachSkill(1004,1,0);
 			cm.teachSkill(1003,1,0);
 			cm.gainItem(1902000,1);

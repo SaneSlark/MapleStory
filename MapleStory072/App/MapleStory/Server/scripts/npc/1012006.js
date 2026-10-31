@@ -46,7 +46,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[4646, 0, "证明身为训练师的能力", "你想要成为像我一样优秀的训练师吗？像我这种等级的训练师，是可以轻而易举地带领多只宠物喔！如何？你也想要带领多只宠物，对吧？"], [4646, 1, "证明身为训练师的能力", "能力证明的工作，还顺利吗？"], [4647, 0, "训练师的秘方", "若你真的有心想要学习带领多只宠物的技能的话，就去想办法把宠物点心拿给我吧！"], [4647, 1, "训练师的秘方", ""], [4660, 0, "训练伶俐的宠物（宠物召唤）", "啊哈。您有一只这么伶俐的宠物啊。你来找我是需要对它进行训练吗？经过我的训练，可以将很远地方的宠物召唤到自己的身边。你觉得怎么样？"], [4660, 1, "训练伶俐的宠物（宠物召唤）", "饮料拿来了吗？呵呵，一想到能喝上好喝的饮料，我的心情不知不觉就好起来了。好吧，让我们来开始训练吧？？"], [4661, 0, "训练伶俐的宠物（自言自语）", "啊哈。您有一只这么伶俐的宠物啊。你来找我是需要对它进行训练吗？训练对宠物来说非常重要。当然经过我的手训练的宠物会更加特别。有时候会自言自语。你愿意委托我进行训练吗？"], [4661, 1, "训练伶俐的宠物（自言自语）", "饮料拿来了吗？呵呵，一想到能喝上好喝的饮料，我的心情不知不觉就好起来了。好吧，让我们来开始训练吧？？"]];
 function qQuestAction(mode,type,selection) {

@@ -1,5 +1,5 @@
-var done072=false,origin072=-1;
-function close072(){done072=true;cm.dispose();}
+var done=false,origin=-1;
+function close(){done=true;cm.dispose();}
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -46,19 +46,19 @@ var qty;
 var equip;
 
 function start() {
-    origin072=cm.getMapId();
+    origin=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
-    if(done072)return;
-    if(mode!=1||cm.getMapId()!=origin072){close072();return;}
+    if(done)return;
+    if(mode!=1||cm.getMapId()!=origin){close();return;}
 
 	if (mode == 1)
 		status++;
 	else
-		close072();
+		close();
 	if (status == 0 && mode == 1) {
 		var selStr = "#k我是比休斯,一位退休的弓箭手.然而,我曾经是雅典娜皮尔斯的学生,虽然我不再拿弓.但我可以为您做最好的弓..#b"
 		var options = new Array("制造一把弓","制造一把弩","做一副手套","升级手套","制造材料","制造箭");
@@ -156,7 +156,7 @@ function action(mode, type, selection) {
 			qty = 1;
 		}
 		else
-			if(selection!=Math.floor(selection)||selection<1||selection>100){close072();return;}
+			if(selection!=Math.floor(selection)||selection<1||selection>100){close();return;}
         qty = selection;
 
 		if (selectedType == 0){ //bow refine
@@ -241,14 +241,14 @@ function action(mode, type, selection) {
 	}
 	else if (status == 4 && mode == 1) {
 		var complete = true;
-        done072=true;
-        if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close072();return;}
-        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close072();return;}		
+        done=true;
+        if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close();return;}
+        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close();return;}		
 		if (cm.getMeso() < cost * qty)
 			{
                 complete=false;
 				cm.sendOk("对不起, 你没有足够的材料我不能帮你制作.")
-                close072();return;
+                close();return;
 			}
 			else
 			{
@@ -307,6 +307,6 @@ function action(mode, type, selection) {
 					cm.gainItem(item, qty);
 				cm.sendOk("一个完美的制作, 你拿去看看吧.");
 			}
-		close072();
+		close();
 	}
 }

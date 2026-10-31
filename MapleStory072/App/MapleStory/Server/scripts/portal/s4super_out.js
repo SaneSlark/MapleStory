@@ -1,4 +1,4 @@
-// CMS072 native training exit; existing timer and destinations retained.
+// CMS native training exit; existing timer and destinations retained.
 function enter(pi){
     if(pi.getMapId()!=912010000)return false;
     var eim=pi.getPlayer().getEventInstance();

@@ -1,7 +1,7 @@
-/* CMS072 scheduled transport compatibility; route timings preserved from existing scripts. */
+/* CMS scheduled transport compatibility; route timings preserved from existing scripts. */
 var service = {"name":"Boats","rideTime":600000,"routes":[{"dock":200000111,"wait":200000112,"ride":200090000,"cabin":200090001,"destination":101000300},{"dock":101000300,"wait":101000301,"ride":200090010,"cabin":200090011,"destination":200000100}]};
-// Compatibility probability; original CMS072 encounter parameters are unverified.
-var balrogChance = 0.5;
+// Compatibility probability; original CMS encounter parameters are unverified.
+var balrogChance = 0.9;
 var cycle = null;
 var transportTasks = [];
 var transportCancelled = false;
@@ -40,6 +40,7 @@ function playerEntry(eim, player) {
 function takeoff() {
     if(transportCancelled)return;
     stopEntry();
+    clearBalrogs();
     cycle.setProperty("phase","riding");
     em.setProperty("docked","false");
     var passengers=new Packages.java.util.ArrayList(cycle.getPlayers()).iterator();
@@ -60,7 +61,7 @@ function clearBalrogs() {
     if(cycle==null)return;
     for(var i=0;i<service.routes.length;i++) {
         var map=cycle.getMapFactory().getMap(service.routes[i].ride);
-        map.killMonster(8150000);
+        while(map.getMonsterById(8150000)!=null)map.killMonster(8150000);
         map.broadcastMessage(Packages.tools.packet.CField.musicChange("Bgm04/UponTheSky"));
     }
 }

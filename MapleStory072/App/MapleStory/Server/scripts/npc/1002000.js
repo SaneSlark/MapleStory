@@ -1,4 +1,3 @@
-function start() {
-	cm.sendOk ("唉~~~~长的太帅了也有罪么??");
-	cm.dispose();
-}
+// CMS numeric entry -> client-named implementation.
+function start(){cm.openNpc(cm.getNpc(), "rithTeleport");}
+function action(mode,type,selection){cm.dispose();}

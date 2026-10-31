@@ -25,13 +25,17 @@
 */
 
 var status = 0;
+var instructorDone=false,instructorOrigin=-1;
 
 function start() {
+    instructorDone=false;instructorOrigin=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(instructorDone)return;
+    if(mode!=1 || cm.getMapId()!=instructorOrigin || cm.getJob()!=100 || cm.getLevel()<30 || cm.getQuestStatus(100003)<1){instructorDone=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -67,13 +71,13 @@ function action(mode, type, selection) {
 			legacyStart(100004);
 			cm.sendOk("你现在去帮我收集 #b30 #t4031013##k,完成任务以后再来见我. 祝你好运.")
 		} else if (status == 4) {
-			cm.warp(108000300, 0);
+			instructorDone=true;cm.warp(108000300, 0);
 			cm.dispose();
 		}
 	}
 }	
 // 062 stored these as custom quest actions; both available 062 databases have empty action tables.
-// Recovered item flow from 079 original instructor scripts and CMS072 item/map resources.
+// Recovered item flow from 079 original instructor scripts and CMS item/map resources.
 var legacyRoutes=[
  [100000,300,1012100,1072002,1072006,4031010,108000100],
  [100003,100,1022000,1072000,1072004,4031008,108000300],

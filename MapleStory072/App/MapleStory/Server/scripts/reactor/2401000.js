@@ -1,4 +1,4 @@
-function bossAct072() {
+function bossAct() {
     rm.changeMusic("Bgm14/HonTale");
     rm.spawnMonster(8810026, 71, 260);
     rm.mapMessage("洞穴开始震动，暗黑龙王被召唤出来了。");
@@ -14,6 +14,6 @@ function act(){
     if(eim!=null && String(eim.getProperty("bossSummoned"))=="true")return;
     var mobs=map.getAllMonstersThreadsafe().iterator();
     while(mobs.hasNext()){var id=mobs.next().getId();if(id>=8810000 && id<=8810026)return;}
-    bossAct072();
+    bossAct();
     if(eim!=null){eim.setProperty("bossSummoned","true");eim.setProperty("canEnter","false");}
 }

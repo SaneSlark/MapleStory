@@ -7,14 +7,19 @@
 importPackage(net.sf.odinms.client);
 
 var status = 0;
+var advDone=false,advOrigin=-1,advJob=-1;
+var advAllowed=[211, 221, 231];
 var job;
 
 function start() {
+    advDone=false;advOrigin=cm.getMapId();advJob=cm.getJob();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(advDone)return;
+    if(mode!=1 || cm.getMapId()!=advOrigin || cm.getJob()!=advJob || advAllowed.indexOf(advJob)<0 || cm.getLevel()<120){advDone=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -42,7 +47,7 @@ function action(mode, type, selection) {
 				cm.sendYesNo("恭喜你!达到这样一个级别你真不容易啊. 你已经做好第四次转职的准备了吗?");
 			}		
 		} else if (status == 118) {
-            cm.changeJob(MapleJob.FP_ARCHMAGE.getId());
+            advDone=true;cm.changeJob(MapleJob.FP_ARCHMAGE.getId());
             cm.teachSkill(2121001,0,10);//Maple Warrior
             cm.teachSkill(2121005,0,10);//Big Bang
             cm.teachSkill(2121002,0,10);//Mana Reflection
@@ -53,7 +58,7 @@ function action(mode, type, selection) {
         }
         else if(status == 121) 
         {
-            cm.changeJob(MapleJob.IL_ARCHMAGE.getId());
+            advDone=true;cm.changeJob(MapleJob.IL_ARCHMAGE.getId());
             cm.teachSkill(2221001,0,10);//Maple Warrior
             cm.teachSkill(2221006,0,10);//Mana Reflection
             cm.teachSkill(2221005,0,10);//Ice Demon
@@ -64,7 +69,7 @@ function action(mode, type, selection) {
         }
         else if (status == 124) 
         {
-            cm.changeJob(MapleJob.BISHOP.getId());
+            advDone=true;cm.changeJob(MapleJob.BISHOP.getId());
             cm.teachSkill(2321001,0,10);//Big Bang
             cm.teachSkill(2321008,0,10);//Mana Reflection
             cm.teachSkill(2321005,0,10);//Bahamut

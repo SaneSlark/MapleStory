@@ -1,4 +1,4 @@
-/* CMS072 scheduled transport compatibility; route timings preserved from existing scripts. */
+/* CMS scheduled transport compatibility; route timings preserved from existing scripts. */
 var service = {"name":"Trains","rideTime":600000,"routes":[{"dock":200000121,"wait":200000122,"ride":200090100,"cabin":-1,"destination":220000100},{"dock":220000110,"wait":220000111,"ride":200090110,"cabin":-1,"destination":200000100}]};
 var cycle = null;
 var transportTasks = [];

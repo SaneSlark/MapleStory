@@ -1,3 +1,4 @@
+var finished = false, origin = -1;
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -31,11 +32,13 @@
 **/
 
 function start() {
+    finished = false; origin = cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if (finished || cm.getMapId() != origin || mode != 1) { finished = true; cm.dispose(); return; }
 	if (mode == 0) {
 		cm.dispose();
 		return;
@@ -50,7 +53,9 @@ function action(mode, type, selection) {
 		}
 	}
 	if (status == 1) {
-			cm.gainItem(4001019, -1);
+			finished = true;
+            if (!cm.haveItem(4001019)) { cm.sendOk("你需要魔法石觉醒卷轴才能传送。"); cm.dispose(); return; }
+            cm.gainItem(4001019, -1);
 			cm.warp(200082100);
 			cm.dispose();
 	}

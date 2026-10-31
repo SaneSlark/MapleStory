@@ -1,4 +1,4 @@
-// 062 three-column auction menu; CMS072 operator NPC 9010000.
+// 062 three-column auction menu; CMS operator NPC 9010000.
 var done=false;
 var names=["超级传送","世界排名","百货商店","职业转职","会员专区","随身仓库","全满技能","重置属性","清理背包"];
 var targets=[9040010,9040004,9100203,1052100,2002000,1032006,1032001,2003,9120003];

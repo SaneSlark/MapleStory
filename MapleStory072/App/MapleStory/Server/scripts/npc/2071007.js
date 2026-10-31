@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3623, 1, "莲婆婆的瓮", ["我给你做的最好的瓮，稍等一下。好，这个瓮看起来最好。"], "因为需要新的瓮，所以去找到了水碾屋的莲婆婆。婆婆说为了上一次我替她老公跑腿的事表示谢意，特别以优待价把瓮卖给我。#b5千金币#k真的很便宜的吗？"]], greeting="我家老爷说要去海边钓鱼…希望他没事…", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

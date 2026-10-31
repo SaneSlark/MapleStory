@@ -1,8 +1,8 @@
-var done072=false,origin072=-1;
-function start(){origin072=cm.getMapId();cm.sendYesNo("是否由队长带领同地图的队员进入盖福克斯挑战？");}
+var done=false,origin=-1;
+function start(){origin=cm.getMapId();cm.sendYesNo("是否由队长带领同地图的队员进入盖福克斯挑战？");}
 function action(mode, type, selection) {
-    if(done072)return;done072=true;
-    if(mode!=1 || origin072!=674030100 || cm.getMapId()!=origin072){cm.dispose();return;}
+    if(done)return;done=true;
+    if(mode!=1 || origin!=674030100 || cm.getMapId()!=origin){cm.dispose();return;}
 
 	
 	    if (cm.getPlayer().getParty() == null || !cm.isLeader()) {

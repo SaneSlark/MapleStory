@@ -7,14 +7,19 @@
 importPackage(net.sf.odinms.client);
 
 var status = 0;
+var advDone=false,advOrigin=-1,advJob=-1;
+var advAllowed=[511, 521];
 var job;
 
 function start() {
+    advDone=false;advOrigin=cm.getMapId();advJob=cm.getJob();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(advDone)return;
+    if(mode!=1 || cm.getMapId()!=advOrigin || cm.getJob()!=advJob || advAllowed.indexOf(advJob)<0 || cm.getLevel()<120){advDone=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -40,7 +45,7 @@ function action(mode, type, selection) {
        	         		cm.sendYesNo("恭喜你到达这个荣耀的等级，你要成为船长吗？");
        	     		}
         } else if (status == 106) {
-            cm.changeJob(MapleJob.BUCCANEER.getId());
+            advDone=true;cm.changeJob(MapleJob.BUCCANEER.getId());
 cm.teachSkill(5121000,0,10);
 cm.teachSkill(5121001,0,10);
 cm.teachSkill(5121002,0,10);
@@ -56,18 +61,14 @@ cm.teachSkill(5121010,0,10);
         }
         else if (status == 109)
 	{
-            cm.changeJob(MapleJob.CORSAIR.getId());
+            advDone=true;cm.changeJob(MapleJob.CORSAIR.getId());
 cm.teachSkill(5221000,0,10);
-cm.teachSkill(5221001,0,10);
-cm.teachSkill(5221002,0,10);
 cm.teachSkill(5221003,0,10);
 cm.teachSkill(5221004,0,10);
-cm.teachSkill(5221005,0,10);
 cm.teachSkill(5221007,0,10);
 cm.teachSkill(5221008,0,10);
 cm.teachSkill(5221009,0,10);
 cm.teachSkill(5221010,0,10);
-cm.teachSkill(5221011,0,10);
             cm.sendOk("祝你开心. 部分技能已经学会，技能等级上限还需要自己去提升喔, 祝你幸运!");
 	    cm.dispose();
 		}else

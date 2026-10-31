@@ -1,5 +1,5 @@
-// CMS072 merchant/item pairing; user-approved Hidden Street historical reference purchase price.
-// This fixed reference price does not reconstruct CMS072's original fluctuating market.
+// CMS merchant/item pairing; user-approved Hidden Street historical reference purchase price.
+// This fixed reference price does not reconstruct CMS's original fluctuating market.
 var state=0,choice=-1,origin=-1;
 var item=3994091,price=950;
 function start(){

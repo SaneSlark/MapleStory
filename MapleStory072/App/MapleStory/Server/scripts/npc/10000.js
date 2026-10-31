@@ -1,4 +1,4 @@
-// CMS072 Quest.wz: 1008 requires 5 of each item; 1020 follows 1008.
+// CMS Quest.wz: 1008 requires 5 of each item; 1020 follows 1008.
 var pending = -1, finishing = false, active = false;
 function start() {
     pending = -1; finishing = false; active = false;

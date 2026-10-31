@@ -1,4 +1,4 @@
-// CMS072 native map/mob; admission rules explicitly approved by the user.
+// CMS native map/mob; admission rules explicitly approved by the user.
 var admissionLock=new java.util.concurrent.locks.ReentrantLock();
 function init(){em.setProperty("state","0");}
 function setup(level,partyid){

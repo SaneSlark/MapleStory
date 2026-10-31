@@ -10,7 +10,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[3941, 0, "抢夺王妃的丝绸", ""], [3941, 1, "抢夺王妃的丝绸", "来，这里。请小心。这个丝绸是很难弄到的。如果有一些刮伤的话，王妃肯定会把#p2101004#先生关进监狱的。"]];
 function qQuestAction(mode,type,selection) {

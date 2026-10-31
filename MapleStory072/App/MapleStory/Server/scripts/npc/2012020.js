@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3044, 0, "食人花蜜", ["那个~ 如果有空的话可以帮我一个忙吗。我有样东西特别想吃到... 请一定接受我的请求~"], "见到了阿尔冯丝小绿，她说她非常喜欢喝食人花蜜，拜托我为她弄来食人花蜜。为了求得制作食人花蜜所用的材料食人花的花蜜，必须去见见艾利逊。"], [3050, 1, "阿尔冯丝的微笑", ["哇！终于来了啊。您不知道我等得多么辛苦，光是想着好吃的食人花果汁，什么事都做不了。"], "帮阿尔冯丝小绿找到了他一直想要喝的食人花果汁。"]], greeting="你好！希望你今天愉快!", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

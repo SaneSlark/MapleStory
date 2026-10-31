@@ -1,4 +1,4 @@
-// CMS072 map return and PinkBeanBattle playerExit contract.
+// CMS map return and PinkBeanBattle playerExit contract.
 var closed=false,asked=false;
 function start(){if(cm.getMapId()!=270050100){closed=true;cm.dispose();return;}asked=true;cm.sendYesNo("要离开品克缤战场吗？");}
 function action(mode,type,selection){

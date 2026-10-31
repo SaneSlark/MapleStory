@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[6231, 0, "三个风", ["怎么又来了，看来你还是需要新的技能啊。"], "#p2041028#说搜集三个风后去找#b#p2081400##k，#b#t04031457#，#t04031458#，#t04031459#。#k看起来都不好搜集。教技能。到底什么技能呢？能叫出#p2081400#的名字,　看来是在#p2081400#的底下做过事的人…\n\n#t04031457# #b#c04031457#/1#k \n#t04031458# #b#c04031458#/1#k \n#t04031459# #b#c04031459#/1#k"]], greeting="区区小事还要劳我大驾，虽然是他的命令，也不太爽！", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

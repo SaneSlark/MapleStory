@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[2187, 1, "破了个洞的诺特勒斯号", ["独角狮硬角拿来了吗？哈啊~真是太幸运了。快点给我。可以暂时先把这个洞堵住。"], "想堵住船上的破洞，就可以用独角狮硬角来修理。波尼的力气逐渐减弱，得尽快找到#b50个独角狮硬角#k。\n\n#i4000073##t4000073#  #b#c4000073#/50#k"], [2187, 0, "破了个洞的诺特勒斯号", ["手指快没劲了……已经坚持不下去了……我放手的话船就要沉下去了……谁来帮帮我啊。"], "想堵住船上的破洞，就可以用独角狮硬角来修理。波尼的力气逐渐减弱，得尽快找到#b50个独角狮硬角#k。\n\n#i4000073##t4000073#  #b#c4000073#/50#k"]], greeting="帮帮我吧。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

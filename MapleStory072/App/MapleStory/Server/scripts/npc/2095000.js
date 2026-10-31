@@ -1,112 +1,27 @@
-importPackage(java.lang);
-importPackage(Packages.tools);
-importPackage(Packages.client);
-importPackage(Packages.server);
-importPackage(Packages.database);
-
-var myDate = new Date();
-var year = myDate.getFullYear();
-var month = myDate.getMonth() + 1;
-var days = myDate.getDate();
-var status = 0;
-var 黑水晶 = 4021008;
-var 蓝色箭头 = "#fUI/UIWindow/Quest/icon2/7#";
-var 红色箭头 = "#fUI/UIWindow/Quest/icon6/7#";
-var 圆形 = "#fUI/UIWindow/Quest/icon3/6#";
-var 美化new = "#fUI/UIWindow/Quest/icon5/1#";
-var 感叹号 = "#fUI/UIWindow/Quest/icon0#";
-var 正方箭头 = "#fUI/Basic/BtHide3/mouseOver/0#";
-var 忠告 = "#k温馨提示：任何非法程序和外挂封号处理.封杀侥幸心理.";
-function start() {
-    status = -1;
-    action(1, 0, 0);
+/* Existing custom daily level reward, adapted to CMS's pooled DB/count log API.
+ * Same levels/rewards, daily key and atomic claim; not an official event restoration. */
+var done=false,origin=-1;
+function dailyKey(){var d=new Date();return "meirijiangli:"+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}
+function start(){done=false;origin=cm.getMapId();cm.sendSimple("每日等级奖励：10~29级10万金币；30~69级20万金币；70~119级30万金币、200点券和2个箱子；120级以上50万金币、500点券和4个箱子。\r\n#L1#领取今天的奖励#l");}
+function claimDaily(key){
+ var con=null,ps=null;
+ try {
+  cm.getBossLog(key); // Use the existing API to ensure its standard table exists.
+  con=Packages.database.DBConPool.getInstance().getDataSource().getConnection();
+  ps=con.prepareStatement("INSERT IGNORE INTO bosslog (characterid,bossid,count) VALUES (?,?,1)");
+  ps.setInt(1,cm.getPlayer().getId());ps.setString(2,key);
+  return ps.executeUpdate()==1;
+ }catch(e){return false;}finally{if(ps!=null)ps.close();if(con!=null)con.close();}
 }
-
-function action(mode, type, selection) {
-    if (mode == -1) {
-        cm.dispose();
-    } else {
-        if (status >= 0 && mode == 0) {
-            cm.dispose();
-            return;
-        }
-        if (mode == 1)
-            status++;
-        else
-            status--;
-        if (status == 0) {
-        	var strlen = "亲爱的#b#e#h ##n#k，这里是等级每日奖励中心\r\n";
-        	strlen += 美化new + "#b等级奖励内容：\r\n			0-9 无\r\n";
-			strlen += "			10-29 冒险币10w\r\n";
-			strlen += "			30-69 冒险币20w\r\n";
-			strlen += "			70-119 点券200 抽奖箱子x2 冒险币30w\r\n";
-			strlen += "			120以上 点券500 抽奖箱子x4 冒险币50w\r\n";
-			strlen +=" "+感叹号+"#L1##r注意好等级区间，确定要领取么？每天只能领取一次哦#l\r\n";
-			cm.sendSimple(strlen);
-		}else if(status == 1){
-			var id = cm.getPlayer().getId();
-        	var time = getBossLog("meirijiangli",id);
-        	if(time >= 1){
-        		cm.sendOk("每天只可以领取一次哦");
-        		cm.dispose();
-        		return;
-        	}
-		if (cm.getInventory(1).isFull() || cm.getInventory(2).isFull() || cm.getInventory(3).isFull() || cm.getInventory(4).isFull() || cm.getInventory(5).isFull()) {
-                cm.sendSimple("您的背包空间不足，各个栏目起码留出一个空位。");
-		cm.dispose();
-        		return;
-        	}
-        	var level = cm.getLevel();
-        	if(level < 10){
-        		cm.sendOk("没到十级不能领取奖励哦");
-        		cm.dispose();
-        	}else if(level < 30){
-        		cm.getPlayer().gainMeso(100000, true);
-			cm.setBossLog("meirijiangli");
-        		cm.sendOk("恭喜你获得10-29级奖励");
-        		cm.dispose();
-        	}else if(level < 70){
-        		cm.getPlayer().gainMeso(200000, true);
-			cm.setBossLog("meirijiangli");
-        		cm.sendOk("恭喜你获得30-69级奖励");
-        		cm.dispose();
-        	}else if(level < 120){
-        		cm.gainItem(2022336,2);
-        		cm.gainNX(200);
-        		cm.getPlayer().gainMeso(300000, true);
-			cm.setBossLog("meirijiangli");
-        		cm.sendOk("恭喜你获得70-119级奖励");
-        		cm.dispose();
-        	}else{
-        		cm.gainItem(2022336,4);
-        		cm.gainNX(500);
-        		cm.getPlayer().gainMeso(500000, true);
-			cm.setBossLog("meirijiangli");
-        		cm.sendOk("恭喜你获得120级奖励");
-        		cm.dispose();
-        	}
-        }
-            
-    }
-}
-
-function getBossLog(boss,id) {
-        var con = DatabaseConnection.getConnection();
-        var count = 0;
-        var ps;
-        //ps = con.prepareStatement("SELECT COUNT(*) FROM bosslog WHERE characterid = ? AND bossid = ? AND lastattempt >= subtime(CURRENT_TIMESTAMP, '23:0:0.0')");
-		var day = ""+year+"-"+month+"-"+days+"";
-		ps = con.prepareStatement("SELECT COUNT(*) FROM bosslog WHERE characterid = ? AND bossid = ? AND lastattempt >= ?");
-        ps.setInt(1, id);
-        ps.setString(2, boss);
-		ps.setString(3,day);
-        var rs = ps.executeQuery();
-        if (rs.next()) {
-            count = rs.getInt(1);
-        } else {
-            count = -1;
-        }
-        rs.close();
-        ps.close();
-        return count;
+function action(mode,type,selection){
+ if(done)return;done=true;
+ if(mode!=1||selection!=1||cm.getMapId()!=origin){cm.dispose();return;}
+ var level=cm.getLevel();if(level<10){cm.sendOk("达到10级后才能领取奖励。");cm.dispose();return;}
+ for(var inv=1;inv<=5;inv++)if(cm.getInventory(inv).isFull()){cm.sendOk("请在背包各栏至少留出一个空位。");cm.dispose();return;}
+ var meso=level<30?100000:level<70?200000:level<120?300000:500000;
+ var nx=level<70?0:level<120?200:500,boxes=level<70?0:level<120?2:4;
+ if(cm.getMeso()>2147483647-meso||(boxes>0&&!cm.canHold(2022336,boxes))){cm.sendOk("请检查金币上限和消耗栏空间。");cm.dispose();return;}
+ if(!claimDaily(dailyKey())){cm.sendOk("今天已领取奖励，或暂时无法读取领取记录。请稍后再试。");cm.dispose();return;}
+ if(boxes>0)cm.gainItem(2022336,boxes);if(nx>0)cm.gainNX(nx);cm.getPlayer().gainMeso(meso,true);
+ cm.sendOk("今天的等级奖励已领取。");cm.dispose();
 }

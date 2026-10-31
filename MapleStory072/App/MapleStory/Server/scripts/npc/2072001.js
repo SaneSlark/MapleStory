@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3601, 1, "兄弟俩的稻米搬运1", ["看到七南家院子内的稻米堆了，把带来的稻米悄悄放在那里。"], "住在童话村的七诚和七南是两兄弟。七诚说弟弟七南的粮食好像不够，托我把自家的一堆稻米悄悄拿到弟弟家前面的稻米堆中。"], [3603, 1, "兄弟俩的稻米搬运3", ["看到七南家院子内的稻米堆了，把带来的稻米悄悄放在了那里。"], "七诚觉得稻米堆好像没有减少，托我再将#t4031229#拿给弟弟。"]], greeting="我是七南家的稻穗", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

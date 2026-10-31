@@ -1,12 +1,12 @@
 var status = 0;
 var job;
 
-function start() {
+function escortStart() {
     status = -1;
-    action(1, 0, 0);
+    escortAction(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function escortAction(mode, type, selection) {
     if (mode == -1) {
         cm.dispose();
     } else {
@@ -143,3 +143,7 @@ function action(mode, type, selection) {
         }
     }
 }
+
+var escortMode=false;
+function start(){escortMode=cm.getQuestStatus(6192)==1 || (cm.getQuestStatus(6192)==2 && (cm.getJob()==112||cm.getJob()==122||cm.getJob()==132));if(escortMode)escortStart();else cm.openNpc(cm.getNpc(),"thirdAdvancement");}
+function action(mode,type,selection){if(escortMode)escortAction(mode,type,selection);else cm.dispose();}

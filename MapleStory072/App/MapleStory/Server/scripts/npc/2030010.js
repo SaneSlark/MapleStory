@@ -1,4 +1,4 @@
-// CMS072 map/event exit contract; no entry, reward or quest-condition changes.
+// CMS map/event exit contract; no entry, reward or quest-condition changes.
 var asked=false,closed=false;
 function validMap(){return cm.getMapId()==280030000;}
 function finish(){closed=true;cm.dispose();}

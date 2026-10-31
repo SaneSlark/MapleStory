@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[2207, 0, "懒惰的卡里可", ["你好~！走廊尽头那里有乘员们睡觉的寝室……你去过吗？去过？你见过它前面的卡里可吗？他可是每天都犯困的人。你知道啊！这个人本来想喝汤，可怎么样呢？一起试试？"], "每天在船员的寝室守候着天天犯困的卡里可。巴勒图对#b卡里可#k说如果扔掉#b火独眼兽的尾巴#k，就会有蛇出现，想看看他有什么反应。要试一次吗？\n\n#i 4000007##t 4000007#  #b#c 4000007#/10#k"]], greeting="我可是废弃都市权达开最有才能的弟子巴勒图！", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

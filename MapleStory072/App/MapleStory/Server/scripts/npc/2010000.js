@@ -261,7 +261,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[3000, 1, "查里中士", ""], [3001, 0, "巴伯下士", "那你下次要见面的人是#p2030001#嘛。。。他也肯定找到了什么东西。那你快点去吧。再见！"], [3039, 0, "查里中士的拜托", "什么？真的是#b#p2020003##k让你来找我的？ 我一个人也找不到，就担心了。但果然#b#p2020003##k是没事了。他原来很强的人嘛！哈哈"], [3039, 1, "查里中士的拜托", ""]];
 function qQuestAction(mode,type,selection) {

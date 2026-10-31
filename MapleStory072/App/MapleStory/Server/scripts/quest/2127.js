@@ -1,4 +1,4 @@
-// CMS072 Say 2127: five free trips, not five quest rewards.
+// CMS Say 2127: five free trips, not five quest rewards.
 var phase = 0, closed = false;
 function trips() {
     var text = qm.getQuestRecord(2127).getCustomData();

@@ -1,3 +1,6 @@
+var done=false,origin=-1,choices=null;
+function close(){done=true;cm.dispose();}
+function showMenu(text){choices=[];var match,pattern=/#L(-?\d+)#/g;while((match=pattern.exec(text))!=null)choices.push(Number(match[1]));cm.sendSimple(text);}
 /* Mr. Do
 	Mu Lung: Mu Lung (250000000)
 	
@@ -19,15 +22,20 @@ var cost;
 var qty;
 
 function start() {
+    done=false;origin=cm.getMapId();choices=null;
     status = -1;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {		
+function action(mode, type, selection) {
+    if(done)return;
+    if(mode!=1||cm.getMapId()!=origin){close();return;}
+    if(choices!=null){var allowed=choices;choices=null;if(!isFinite(selection)||Math.floor(selection)!=selection||allowed.indexOf(selection)<0){close();return;}}
+
     if (mode == 1)
         status++;
     else
-        cm.dispose();
+        close();
     if (status == 0 && mode == 1) {
         var selStr = "我真是一位多才多艺的人,你想要做什么?#b"
         var options = new Array("配制药","制作符咒","捐献药材");
@@ -35,14 +43,14 @@ function action(mode, type, selection) {
             selStr += "\r\n#L" + i + "# " + options[i] + "#l";
         }
 			
-        cm.sendSimple(selStr);
+        showMenu(selStr);
     }
     else if (status == 1 && mode == 1) {
         selectedType = selection;
         if (selectedType == 0) { 
             if(!cm.haveItem(4161030)){ //does not have the required item
                 cm.sendNext("如果想要配制药,你必须清楚合成比例,最危险的就是不懂比例就随意混合的人,我说的就是你.")
-                cm.dispose();
+                close();
             }
             else { //make a medicine
                 var itemSet = new Array(2022145,2022146,2022147,2022148,2022149,2022150,2050004,4031554);
@@ -50,7 +58,7 @@ function action(mode, type, selection) {
                 for (var i = 0; i < itemSet.length; i++){
                     selStr += "\r\n#L" + i + "# #i" + itemSet[i] + "##z" + itemSet[i] + "##l";
                 }
-                cm.sendSimple(selStr);
+                showMenu(selStr);
             }
         }
         else if (selectedType == 1){ //make a scroll
@@ -59,7 +67,7 @@ function action(mode, type, selection) {
             for (var i = 0; i < itemSet.length; i++){
                 selStr += "\r\n#L" + i + "# #z" + itemSet[i] + "##l";
             }
-            cm.sendSimple(selStr);
+            showMenu(selStr);
         }
         else if (selectedType == 2){ //donate etc. item
             var itemSet = new Array(4000276,4000277,4000278,4000279,4000280,4000291,4000292,4000286,4000287,4000293,4000294,4000298,4000284,4000288,4000285,4000282,4000295,4000289,4000296,4000297);
@@ -67,7 +75,7 @@ function action(mode, type, selection) {
             for (var i = 0; i < itemSet.length; i++){
                 selStr += "\r\n#L" + i + "# #z" + itemSet[i] + "##l";
             }
-            cm.sendSimple(selStr);
+            showMenu(selStr);
         }
     }
     else if (status == 2 && mode == 1) {
@@ -131,9 +139,13 @@ function action(mode, type, selection) {
         else
             qty = 1;
 		
+        done=true;
+        if(typeof item!="number"||!isFinite(item)||Math.floor(item)!=item||typeof cost!="number"||!isFinite(cost)||cost<0||cost>2147483647||!isFinite(qty)||qty<1||Math.floor(qty)!=qty){close();return;}
+        if(!Packages.server.MapleItemInformationProvider.getInstance().itemExistsInClient(item)||!cm.canHold(item,qty)){cm.sendOk("请确认当前客户端支持成品，并为成品留出足够的背包空间。");close();return;}
         if (cm.getMeso() < cost)
         {
             cm.sendOk("虽然没有集齐药材,不过还是要谢谢你.")
+                complete=false;close();return;
         }
         else
         {
@@ -185,7 +197,7 @@ function action(mode, type, selection) {
                 cm.sendOk("好人有好报,再见我的朋友.");
             }
         }
-        cm.dispose();
+        close();
     }
 }
 

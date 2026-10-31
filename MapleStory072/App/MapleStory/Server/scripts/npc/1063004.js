@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[2109, 0, "被污染的迷宫! <2-风独眼兽>", ["请消灭99只！ #r - #p1061011# -"], "消灭#o3230100# #b99 只#k后去找记忆者吧。\n\n#o3230100# #r#a21091##k"], [2115, 0, "被污染的迷宫!! <2-风独眼兽>", ["请消灭999只！ #r - #p1061011# -"], "消灭#o3230100# #b999 只#k后去找记忆者吧。 \n\n#o3230100# #r#a21151##k"]], greeting="你有能力捉到它们吗？", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

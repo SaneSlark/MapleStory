@@ -1,4 +1,4 @@
-// CMS072 quest 1028: Check.img gates and QuestInfo.img free passage.
+// CMS quest 1028: Check.img gates and QuestInfo.img free passage.
 // Dialogue is a compatibility repair based on the client's quest description.
 var prompted = false;
 var finished = false;

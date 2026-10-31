@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[2073, 1, "卡米拉的玻璃珠", ["你是谁？啊。那不是#p1012108#的宝物珠吗？嗯？#p1012108#给我的生日生物？啊啊。真高兴！没想到了她给我她的宝贝。。。这次农场的工作也差不多了，我要抽空去见她的面。真谢谢你替她带给我礼物。"], "在射手村见到了#p1012108#. #p1012108#拜托我替她把#b#t4031156##k带去给#b#p1012107##k.#m900000000#位于#m100030000#的附近…"]], greeting="你好~ 欢迎光临我们农场。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

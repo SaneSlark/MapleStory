@@ -1,4 +1,4 @@
-// CMS072 Happyville return using this version's existing CHRISTMAS slot.
+// CMS Happyville return using this version's existing CHRISTMAS slot.
 var done=false;
 function start(){done=false;if(cm.getPlayer().getMapId()!=209000000){cm.openNpc(cm.getNpc(),String(cm.getNpc()));return;}cm.sendYesNo("要离开幸福村，返回来时的地方吗？");}
 function action(mode,type,selection){

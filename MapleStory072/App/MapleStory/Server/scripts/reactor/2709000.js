@@ -4,7 +4,7 @@
 	Description:		Summons Pink Bean
 */
 
-function bossAct072() {
+function bossAct() {
  /*   rm.killMob(8820020);
     rm.killMob(8820021);
     rm.killMob(8820022);
@@ -23,6 +23,6 @@ function act(){
     if(eim!=null && String(eim.getProperty("bossSummoned"))=="true")return;
     var mobs=map.getAllMonstersThreadsafe().iterator();
     while(mobs.hasNext()){var id=mobs.next().getId();if(id>=8820000 && id<=8820018)return;}
-    bossAct072();
+    bossAct();
     if(eim!=null){eim.setProperty("bossSummoned","true");eim.setProperty("canEnter","false");}
 }

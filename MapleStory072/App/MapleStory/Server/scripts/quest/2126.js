@@ -1,4 +1,4 @@
-// CMS072 Check/Act authority. HeavenMS 2124/2126 used as a handoff reference.
+// CMS Check/Act authority. HeavenMS 2124/2126 used as a handoff reference.
 var phase = 0, closed = false;
 function end(mode, type, selection) {
     if (closed) return;

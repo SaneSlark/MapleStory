@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[2181, 0, "章鱼娃的信", ["是为了看动力室的石头来的吗？闪亮之石厉害吧？而且控制这石头的维尔族也了不起啊。", "既然来到这了我能拜托您一件事嘛？因为常年都没人来这儿……我现在真是充满苦恼啊。"], "维尔族的粮食全没了。章鱼娃的意思是不知道#b坎特#k有没有材料所以去找找坎特吧。当然，章鱼娃的信也要一起转达吧？"], [2183, 1, "为维尔族准备的晚餐", ["终于来了，等了好久啊。"], "终于做出了为维尔族准备的特殊饮食。要赶紧带给#b章鱼娃#k！"]], greeting="维尔族是唯一一个能制服闪亮之石的种族。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

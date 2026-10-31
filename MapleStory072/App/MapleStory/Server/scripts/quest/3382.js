@@ -20,7 +20,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 // Exchange rules adapted from HeavenMS scripts/quest/3382.js (AGPL-3.0).
-// Item IDs and NPC/prerequisites checked against CMS072 client exports.
+// Item IDs and NPC/prerequisites checked against CMS client exports.
 var phase = 0, closed = false, reward = 0, count = 0;
 function choice() {
     if (qm.haveItem(4001159, 25) && qm.haveItem(4001160, 25) && !qm.haveItem(1122010, 1, true, true)) return 1122010;

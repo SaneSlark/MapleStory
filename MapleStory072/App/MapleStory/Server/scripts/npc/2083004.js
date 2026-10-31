@@ -1,5 +1,5 @@
-var closed072=false,origin072=-1;
-function close072(){closed072=true;cm.dispose();}
+var closed=false,origin=-1;
+function close(){closed=true;cm.dispose();}
 /*
 	NPC Name: 		Mark of the Squad
 	Map(s): 		Entrance to Horned Tail's Cave
@@ -8,22 +8,22 @@ function close072(){closed072=true;cm.dispose();}
 var status = -1;
 
 function start() {
-    origin072=cm.getMapId();
+    origin=cm.getMapId();
     if (cm.getPlayer().getLevel() < 80) {
         cm.sendOk("挑战暗黑龙王需要等级80。");
-        close072();
+        close();
         return;
     }
     if (cm.getPlayer().getClient().getChannel() != 1 && cm.getPlayer().getClient().getChannel() != 3) {
         cm.sendOk("只能在频道1和3挑战暗黑龙王。");
-        close072();
+        close();
         return;
     }
     var em = cm.getEventManager("HorntailBattle");
 
     if (em == null) {
         cm.sendOk("活动尚未开启，请联系管理员。");
-        close072();
+        close();
         return;
     }
     var prop = em.getProperty("state");
@@ -41,7 +41,7 @@ function start() {
             status = 0;
             if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                 cm.sendOk("你在过去12小时内已挑战过暗黑龙王，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                close072();
+                close();
                 return;
             }
             cm.sendYesNo("你愿意担任远征队队长吗？");
@@ -49,25 +49,25 @@ function start() {
         } else if (squadAvailability == 1) {
             if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                 cm.sendOk("你在过去12小时内已挑战过暗黑龙王，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                close072();
+                close();
                 return;
             }
             // -1 = Cancelled, 0 = not, 1 = true
             var type = cm.isSquadLeader("Horntail");
             if (type == -1) {
                 cm.sendOk("远征队已结束，请重新报名。");
-                close072();
+                close();
             } else if (type == 0) {
                 var memberType = cm.isSquadMember("Horntail");
                 if (memberType == 2) {
                     cm.sendOk("你已被禁止加入这支远征队。");
-                    close072();
+                    close();
                 } else if (memberType == 1) {
                     status = 5;
                     cm.sendSimple("请选择：\r\n#b#L0#查看远征队成员#l\r\n#b#L1#加入远征队#l\r\n#b#L2#退出远征队#l");
                 } else if (memberType == -1) {
                     cm.sendOk("远征队已结束，请重新报名。");
-                    close072();
+                    close();
                 } else {
                     status = 5;
                     cm.sendSimple("请选择：\r\n#b#L0#查看远征队成员#l\r\n#b#L1#加入远征队#l\r\n#b#L2#退出远征队#l");
@@ -84,14 +84,14 @@ function start() {
                 if (squd != null) {
                     if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                         cm.sendOk("你在过去12小时内已挑战过暗黑龙王，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                        close072();
+                        close();
                         return;
                     }
                     cm.sendYesNo("远征队与首领的战斗已经开始。\r\n" + squd.getNextPlayer());
                     status = 3;
                 } else {
                     cm.sendOk("远征队与首领的战斗已经开始。");
-                    close072();
+                    close();
                 }
             } else {
                 cm.sendYesNo("你回来了。是否重新加入远征队继续战斗？");
@@ -105,14 +105,14 @@ function start() {
             if (squd != null) {
                 if (time + (12 * 3600000) >= cm.getCurrentTime() && !cm.getPlayer().isGM()) {
                     cm.sendOk("你在过去12小时内已挑战过暗黑龙王，剩余时间：" + cm.getReadableMillis(cm.getCurrentTime(), time + (12 * 3600000)));
-                    close072();
+                    close();
                     return;
                 }
                 cm.sendYesNo("远征队与首领的战斗已经开始。\r\n" + squd.getNextPlayer());
                 status = 3;
             } else {
                 cm.sendOk("远征队与首领的战斗已经开始。");
-                close072();
+                close();
             }
         } else {
             cm.sendYesNo("你回来了。是否重新加入远征队继续战斗？");
@@ -122,8 +122,8 @@ function start() {
 }
 
 function action(mode, type, selection) {
-    if(closed072)return;
-    if(mode!=1 || cm.getMapId()!=origin072){close072();return;}
+    if(closed)return;
+    if(mode!=1 || cm.getMapId()!=origin){close();return;}
 
     switch (status) {
         case 0:
@@ -134,13 +134,13 @@ function action(mode, type, selection) {
                     cm.sendOk("创建远征队时发生错误。");
                 }
             }
-            close072();
+            close();
             break;
         case 1:
             if (!cm.reAdd("HorntailBattle", "Horntail")) {
                 cm.sendOk("发生错误，请重试。");
             }
-            close072();
+            close();
             break;
         case 3:
             if (mode == 1) {
@@ -150,7 +150,7 @@ function action(mode, type, selection) {
                     cm.sendOk("已为你保留位置。");
                 }
             }
-            close072();
+            close();
             break;
         case 5:
             if (selection == 0) {
@@ -174,7 +174,7 @@ function action(mode, type, selection) {
                     cm.sendOk("你不在这支远征队中。");
                 }
             }
-            close072();
+            close();
             break;
         case 10:
             if (mode == 1) {
@@ -182,18 +182,18 @@ function action(mode, type, selection) {
                     if (!cm.getSquadList("Horntail", 0)) {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
                     }
-                    close072();
+                    close();
                 } else if (selection == 1) {
                     status = 11;
                     if (!cm.getSquadList("Horntail", 1)) {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
-                        close072();
+                        close();
                     }
                 } else if (selection == 2) {
                     status = 12;
                     if (!cm.getSquadList("Horntail", 2)) {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
-                        close072();
+                        close();
                     }
                 } else if (selection == 3) { // get insode
                     if (cm.getSquad("Horntail") != null) {
@@ -202,24 +202,24 @@ function action(mode, type, selection) {
                     } else {
                         cm.sendOk("发生未知错误，远征队申请未能完成。");
                     }
-                    close072();
+                    close();
                 }
             } else {
-                close072();
+                close();
             }
             break;
         case 11:
             cm.banMember("Horntail", selection);
-            close072();
+            close();
             break;
         case 12:
             if (selection != -1) {
                 cm.acceptMember("Horntail", selection);
             }
-            close072();
+            close();
             break;
         default:
-            close072();
+            close();
             break;
     }
 }

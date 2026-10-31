@@ -1,5 +1,5 @@
-var done072=false,origin072=-1;
-function close072(){done072=true;cm.dispose();}
+var done=false,origin=-1;
+function close(){done=true;cm.dispose();}
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -43,19 +43,19 @@ var qty = 1;
 var equip = false;
 
 function start() {
-    origin072=cm.getMapId();
+    origin=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
-    if(done072)return;
-    if(mode!=1||cm.getMapId()!=origin072){close072();return;}
+    if(done)return;
+    if(mode!=1||cm.getMapId()!=origin){close();return;}
 
 	if (mode == 1)
 		status++;
 	else
-		close072();
+		close();
 	if (status == 0 && mode == 1) {
 		if (cm.getLevel() >= 40) {
 			var selStr = "我只做极其#r稀有#k的物品#b"
@@ -69,7 +69,7 @@ function action(mode, type, selection) {
 		else
 		{
 			cm.sendOk("不，我不知道你在说些什么");
-			close072();
+			close();
 		}
 	}
 	else if (status == 1 && mode == 1) {
@@ -95,7 +95,7 @@ function action(mode, type, selection) {
 		}
 	}
 	else if (status == 2 && mode == 1) {
-		if(selection!=Math.floor(selection)||selection<1||selection>100){close072();return;}
+		if(selection!=Math.floor(selection)||selection<1||selection>100){close();return;}
         qty = selection;
 		var prompt = "您要我做 "
 		
@@ -128,15 +128,15 @@ function action(mode, type, selection) {
 	}
 	else if (status == 3 && mode == 1) {
 		var complete = true;
-        done072=true;
-        if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close072();return;}
-        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close072();return;}
+        done=true;
+        if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close();return;}
+        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close();return;}
 		
 		if (cm.getmeso() < cost * qty)
 			{
                 complete=false;
 				cm.sendOk("对不起,制作东东可不是是免费的.")
-                close072();return;
+                close();return;
 			}
 			else
 			{
@@ -188,6 +188,6 @@ function action(mode, type, selection) {
 				cm.gainItem(item, qty);
 				cm.sendOk("明智地使用它.");
 			}
-		close072();
+		close();
 	}
 }

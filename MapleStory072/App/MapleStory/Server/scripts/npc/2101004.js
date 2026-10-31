@@ -14,7 +14,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[3901, 0, "宫殿警卫 提干", "你在干嘛？为什么在宫殿前晃悠？这里不是一般人随便进出的地方！ 是#m260000000#的苏丹所在的地方！什么？想进宫殿里头？我怎么能相信你这样外来的探险家，让你进去呢？绝对不行！但是……"], [3901, 1, "宫殿警卫 提干", "嘻嘻嘻，好。你果然对苏丹忠诚。很值得信任哦？我给你#t4031582#吧。有这个之后，你就可以去宫殿的任何一个地方了。要感谢我哦。"], [3939, 0, "提干的头发", "什么事？一般人不能随便进出宫殿…… 特别是闲杂人等。不是闲杂人？那为什么在这边摇晃？什么？给你一根头发？为什么？要用在什么地方？"], [3939, 1, "提干的头发", "我不知道你想把它用在什么地方。但既然交换了，就成交了。不能再反悔了，我绝不会把锂矿石还给你，知道吗？是你要说换的，不能反悔哦。"]];
 function qQuestAction(mode,type,selection) {

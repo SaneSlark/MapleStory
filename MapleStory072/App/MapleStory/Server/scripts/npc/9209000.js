@@ -1,4 +1,4 @@
-// User-authorized resale at twice historical reference purchase prices; not official CMS072 dynamic pricing.
+// User-authorized resale at twice historical reference purchase prices; not official CMS dynamic pricing.
 var state=0, item=-1, origin=-1;
 var goods=[3994090,3994091,3994092,3994093,3994094];
 var prices=[850,1900,1700,24000,20000];

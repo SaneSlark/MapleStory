@@ -1,3 +1,6 @@
+var done=false,origin=-1,choices=null;
+function close(){done=true;cm.dispose();}
+function showMenu(text){choices=[];var match,pattern=/#L(-?\d+)#/g;while((match=pattern.exec(text))!=null)choices.push(Number(match[1]));cm.sendSimple(text);}
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -42,15 +45,20 @@ var matQty;
 var cost;
 
 function start() {
+    done=false;origin=cm.getMapId();choices=null;
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(done)return;
+    if(mode!=1||cm.getMapId()!=origin){close();return;}
+    if(choices!=null){var allowed=choices;choices=null;if(!isFinite(selection)||Math.floor(selection)!=selection||allowed.indexOf(selection)<0){close();return;}}
+
 	if (mode == 1)
 		status++;
 	else
-		cm.dispose();
+		close();
 	if (status == 0 && mode == 1) {
 		var selStr = "你想锻造道具么？我是因为使用了被禁止的魔法，所以被赶出来。现在在这里偷偷做这些事情。呼呼～这都不重要。怎么样？你想试试么？#b"
 		var options = new Array("制作手套","升级手套","升级帽子","制作短杖","制作长杖");
@@ -58,7 +66,7 @@ function action(mode, type, selection) {
 			selStr += "\r\n#L" + i + "# " + options[i] + "#l";
 		}
 			
-		cm.sendSimple(selStr);
+		showMenu(selStr);
 	}
 	else if (status == 1 && mode == 1) {
 		selectedType = selection;
@@ -69,7 +77,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < items.length; i++){
 				selStr += "\r\n#L" + i + "# " + items[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 		else if (selectedType == 1){ //glove upgrade
 			var selStr = "那么，什么样的手套，你是否期望升级到？#b";
@@ -79,7 +87,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < items.length; i++){
 				selStr += "\r\n#L" + i + "# " + items[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 		else if (selectedType == 2){ //hat upgrade
 			var selStr = "帽子？哪一个是你的理想?#b";
@@ -87,7 +95,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < items.length; i++){
 				selStr += "\r\n#L" + i + "# " + items[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 		else if (selectedType == 3){ //wand refine
 			var selStr = "魔杖，嗯？ 喜欢的小武器，便于携带？ 您寻找哪个类型？#b";
@@ -96,7 +104,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < items.length; i++){
 				selStr += "\r\n#L" + i + "# " + items[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 		else if (selectedType == 4){ //staff refine
 			var selStr = "啊, 一名长杖, 伟大的象征一个人的力量!这是你在寻找呢？#b";
@@ -105,7 +113,7 @@ function action(mode, type, selection) {
 			for (var i = 0; i < items.length; i++){
 				selStr += "\r\n#L" + i + "# " + items[i] + "#l";
 			}
-			cm.sendSimple(selStr);
+			showMenu(selStr);
 		}
 	}
 	else if (status == 2 && mode == 1) {
@@ -186,9 +194,13 @@ function action(mode, type, selection) {
 	}
 	else if (status == 3 && mode == 1) {
 		var complete = true;
-		if (cm.getMeso() < cost)
+		done=true;
+        if(typeof item!="number"||!isFinite(item)||Math.floor(item)!=item||typeof cost!="number"||!isFinite(cost)||cost<0||cost>2147483647||!isFinite(1)||1<1||Math.floor(1)!=1){close();return;}
+        if(!Packages.server.MapleItemInformationProvider.getInstance().itemExistsInClient(item)||!cm.canHold(item,1)){cm.sendOk("请确认当前客户端支持成品，并为成品留出足够的背包空间。");close();return;}
+        if (cm.getMeso() < cost)
 			{
 				cm.sendOk("小兄弟，你忘了带钱了吧？")
+                complete=false;close();return;
 			}
 			else
 			{
@@ -203,7 +215,7 @@ function action(mode, type, selection) {
 						}
 						else {
 							var count = 0;
-							var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats[i]).iterator();
+							var iter = cm.getChar().getInventory(Packages.constants.GameConstants.getInventoryType(mats[i])).listById(mats[i]).iterator();
 							while (iter.hasNext()) {
 								count += iter.next().getQuantity();
 							}
@@ -214,7 +226,7 @@ function action(mode, type, selection) {
 				}
 				else {
 					var count = 0;
-					var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats).iterator();
+					var iter = cm.getChar().getInventory(Packages.constants.GameConstants.getInventoryType(mats)).listById(mats).iterator();
 					while (iter.hasNext()) {
 						count += iter.next().getQuantity();
 					}
@@ -240,6 +252,6 @@ function action(mode, type, selection) {
 				cm.gainItem(item, 1);
 				cm.sendOk("太好了！锻造成功！希望下次再来！");
 			}
-		cm.dispose();
+		close();
 	}
 }

@@ -20,7 +20,7 @@ function action(mode, type, selection) {
 }
 
 
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[3910, 1, "舞姬的剑舞", ""], [3911, 0, "铸华丽的剑", "你希望我铸什么呢？嗯？舞姬之剑？看来是#p2101000#托付你来的。不能铸舞姬使用的装饰用剑。因为税率太高，我只做必要的剑。但是……"], [3911, 1, "铸华丽的剑", "嗯。看来是找到了装饰手把的材料了？来，给我看看。确实是找齐了。这样就可以铸#m260000000#中最华丽的剑了。"], [3912, 0, "传递华丽的剑", "嗯…… 终于来了。#p2101000#的剑刚好铸出来了。想看一眼吗？与其说是剑，更像是装饰品…… 对舞姬来说没有什么比这更好的了。现在拿过去吗？"]];
 function qQuestAction(mode,type,selection) {

@@ -1,12 +1,12 @@
-var done072=false,origin072=-1;
+var done=false,origin=-1;
 function start() {
-    origin072=cm.getMapId();
+    origin=cm.getMapId();
     cm.sendYesNo("您想要离开了？？");
 }
 
 function action(mode, type, selection) {
-    if(done072)return;done072=true;
-    if(cm.getMapId()!=origin072){cm.dispose();return;}
+    if(done)return;done=true;
+    if(cm.getMapId()!=origin){cm.dispose();return;}
     if (mode == 1) {
 	if (cm.getMapId() == 674030000 || cm.getMapId() == 674030200 || cm.getMapId() == 674030300) { //boss map
 		cm.warp(674030100,0);

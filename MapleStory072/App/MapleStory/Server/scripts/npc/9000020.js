@@ -1,5 +1,5 @@
 // Chinese world-tour dialogue adapted from the bundled 079 script.
-// Destinations and displayed names verified against bundled CMS072 resources.
+// Destinations and displayed names verified against bundled CMS resources.
 var destinations=[{"id": 500000000, "name": "水上市场"}, {"id": 701000000, "name": "上海外滩"}, {"id": 702000000, "name": "嵩山镇"}, {"id": 702100000, "name": "大雄宝殿"}, {"id": 800000000, "name": "古代神社"}, {"id": 801000000, "name": "昭和村"}], recovery=[{"id": 104020000, "name": "射手村西部树林"}, {"id": 200000000, "name": "天空之城"}, {"id": 211000000, "name": "冰峰雪域"}, {"id": 220000000, "name": "玩具城"}, {"id": 221000000, "name": "地球防御本部"}, {"id": 222000000, "name": "童话村"}, {"id": 230000000, "name": "水下世界"}, {"id": 240000000, "name": "神木村"}, {"id": 250000000, "name": "武陵"}, {"id": 251000000, "name": "百草堂"}, {"id": 260000000, "name": "阿里安特"}, {"id": 261000000, "name": "玛加提亚"}, {"id": 270000000, "name": "三个门"}];
 var state=0,done=false,source=0,cost=0,target=-1,isReturn=false,isRecovery=false;
 function touring(map){return (map>=500000000&&map<501000000)||(map>=701000000&&map<703000000)||(map>=800000000&&map<802000000);}

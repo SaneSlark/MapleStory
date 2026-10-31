@@ -3,11 +3,11 @@ function enter(pi) {
     var eim=pi.getPlayer().getEventInstance();
     if(eim==null){pi.warp(930000800,0);return true;}
     if(String(eim.getEventManager().getName())!="Ellin")return false;
-    var key072="exitReward072_"+pi.getPlayer().getId();
-    if(String(eim.getProperty(key072))=="true")return false;
+    var key="exitReward_"+pi.getPlayer().getId();
+    if(String(eim.getProperty(key))=="true")return false;
 
-	if (pi.canHold(4001198,1) && cleared072(pi) && (pi.getMap().getReactorByName("") == null || pi.getMap().getReactorByName("").getState() == 1)) {
-		eim.setProperty(key072,"true");
+	if (pi.canHold(4001198,1) && cleared(pi) && (pi.getMap().getReactorByName("") == null || pi.getMap().getReactorByName("").getState() == 1)) {
+		eim.setProperty(key,"true");
         pi.warp(930000800,0);
 		pi.gainExp_PQ(120, 1.0);
 		pi.getPlayer().endPartyQuest(1206);
@@ -20,7 +20,7 @@ function enter(pi) {
 	}
     return false;
 }
-function cleared072(pi){
+function cleared(pi){
     if(pi.getMap().getMonsterById(9300183)==null)return false;
     var it=pi.getMap().getAllMonstersThreadsafe().iterator();
     while(it.hasNext())if(it.next().getId()!=9300183)return false;

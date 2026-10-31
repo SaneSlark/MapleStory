@@ -1,4 +1,4 @@
-// CMS072 client-backed missing NPC entry. Native quest checks/actions own all rewards.
+// CMS client-backed missing NPC entry. Native quest checks/actions own all rewards.
 var entries=[[3205, 1, "迷路的兵", ["你看起来很忙的样子。但是我这里的确有对你有帮助的物品。只要帮我做点事情，我就会给你这个物品。要是改变心意的话，可以随时来找我。"], "在玩具塔93层见到了迷路的士兵。他说他为做守卫任务要去59楼，但怪物攻击他，不能去了。他拜托我替他收集#b30个旧运动眼镜，30个飞机推进器#k来。。。那么这次我来做？\n\n#t4000103# #b#c4000103##k/30\n#t4000123# #b#c4000123##k/30"], [3205, 0, "迷路的兵", ["这里是哪里呀？我是接受玩具塔 59层警备任务而来的，但是根本没有办法知道这里是哪里，更何况有这么多怪物挡路，根本没有办法去执行任务。如果可以的话，能否帮助我？"], "在玩具塔93层见到了迷路的士兵。他说他为做守卫任务要去59楼，但怪物攻击他，不能去了。他拜托我替他收集#b30个旧运动眼镜，30个飞机推进器#k来。。。那么这次我来做？\n\n#t4000103# #b#c4000103##k/30\n#t4000123# #b#c4000123##k/30"]], greeting="玩具塔很宽广吧。。。所以在这里生活，有时会迷路。。。", stage=0, choices=[], picked=null, page=0, closed=false;
 function finish(){closed=true;cm.dispose();}
 function start(){

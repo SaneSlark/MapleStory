@@ -1,4 +1,4 @@
-// CMS072 resource-compatible Hong route; repair dialogue, not original client dialogue.
+// CMS resource-compatible Hong route; repair dialogue, not original client dialogue.
 var done = false;
 function start() {
     done = false;

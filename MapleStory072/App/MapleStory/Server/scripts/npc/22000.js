@@ -93,7 +93,7 @@ function action(mode, type, selection) {
 }
 
 /* AUTO-QUEST-BEGIN */
-/* CMS072 client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
+/* CMS client Quest.wz Check/QuestInfo/Say; server validates requirements and applies Act rewards. */
 var qstatus=-1, qactive=false, qfresh=false, qchosen=null, qchoices=[];
 var qdata=[[1026, 1, "给桑克斯送营养饮料", "恩？什么事？啊…… 这不是#p2103#特效营养饮料吗？是受#p2103#的委托来的吧？真是感谢！有一个善良的恋人真是幸福哦。"], [1028, 0, "迈向明珠港！", ""]];
 function qQuestAction(mode,type,selection) {

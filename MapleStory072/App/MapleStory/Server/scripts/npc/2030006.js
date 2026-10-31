@@ -28,13 +28,17 @@
 importPackage(net.sf.odinms.client);
 
 var status = 0;
+var quizDone=false,quizPaid=false,quizOrigin=-1;
 
 function start() {
+    quizDone=false;quizPaid=false;quizOrigin=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(quizDone)return;
+    if(mode!=1 || cm.getMapId()!=quizOrigin || cm.getLevel()<70 || [110,120,130,210,220,230,310,320,410,420,510,520].indexOf(cm.getJob())<0 || !cm.haveItem(4031057,1) || cm.haveItem(4031058,1)){quizDone=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -61,10 +65,13 @@ function action(mode, type, selection) {
 				cm.sendOk("呵呵, 你没有 #b黑暗水晶#k哦.");
 				cm.dispose();
 			} else {
-				cm.gainItem(4005004, -1);
+				if(!cm.canHold(4031058,1)){quizDone=true;cm.sendOk("请先为智慧项链留出其他栏空间。");cm.dispose();return;}
+                quizPaid=true;cm.gainItem(4005004, -1);
 				cm.sendSimple("噜噜噜, 考验要开始了: \r\n魂的梦想?\r\n#L0#进军国足#l\r\n#L1#征服世界#l\r\n#L2#经营奸商#l\r\n#L3#追寻美女#l");
 			}
 		} else if (status == 3) {
+            quizDone=true;
+            if(!quizPaid || !cm.haveItem(4031057,1) || !cm.canHold(4031058,1)){cm.dispose();return;}
 			if (selection == 2) {
 				cm.gainItem(4031058, 1);
 				cm.sendOk("完全正确, 噜噜.");

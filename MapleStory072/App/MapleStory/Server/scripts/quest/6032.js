@@ -18,7 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 // Chinese adaptation of HeavenMS course dialogue (AGPL-3.0).
-// CMS072 Act already charges 10000 mesos at acceptance; no end charge.
+// CMS Act already charges 10000 mesos at acceptance; no end charge.
 var page = -1, closed = false;
 var pages = ["你来听制造技术的实际应用课程了吗？那我们开始吧。", "先确定要制作的物品，再按配方收集材料，并运用科学和炼金术知识进行加工。", "不同的装备需要不同的制造原理。例如制作负重耳环，就要理解与重量有关的延展性理论。", "课程学费已经在接受任务时收取，这里不会再收费。听完三门课程后，再来参加制造技术的结业考核吧。"];
 function end(mode, type, selection) {

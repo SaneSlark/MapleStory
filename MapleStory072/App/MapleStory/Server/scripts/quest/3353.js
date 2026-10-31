@@ -1,4 +1,4 @@
-// CMS072 Check/Act contract; 062 generator used only as a handoff reference.
+// CMS Check/Act contract; 062 generator used only as a handoff reference.
 var phase = 0, closed = false;
 function start(mode, type, selection) {
     if (closed) return;

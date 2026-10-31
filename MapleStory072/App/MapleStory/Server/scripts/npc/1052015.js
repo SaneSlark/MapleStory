@@ -26,8 +26,8 @@ function action(mode, type, selection) {
 				if(cm.haveItem(4000002)) {
 					cm.gainItem(4000002, -20);
 
-                                        cm.showEffect("quest/party/clear");
-                                        cm.playSound("Party1/Clear");
+                                        cm.showEffect(true,"quest/party/clear");
+                                        cm.playSound(true,"Party1/Clear");
                                         cm.getGuild().gainGP(10);						
                                         cm.dispose();
 				} else {

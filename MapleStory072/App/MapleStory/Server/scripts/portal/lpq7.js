@@ -1,4 +1,4 @@
-// CMS072 established LPQ route; require owning event and stage completion.
+// CMS established LPQ route; require owning event and stage completion.
 function enter(pi){
     if(pi.getMapId()!=922010700)return false;
     var eim=pi.getPlayer().getEventInstance();
