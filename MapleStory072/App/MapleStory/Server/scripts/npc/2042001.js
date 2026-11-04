@@ -1,4 +1,1 @@
-function start() {
-	cm.sendOk ("岁月如梭,人生就是梦");
-	cm.dispose();
-}
+function start(){cm.dispose();cm.openNpc(2042001,"mc_enter1");}

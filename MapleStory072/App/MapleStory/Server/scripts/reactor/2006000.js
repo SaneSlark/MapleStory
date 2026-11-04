@@ -1,9 +1,1 @@
-/*@author Jvlaple
- * Spawns Eak When 20 Clouds are Dropped.
-  *2006000.js
-  */
-  
-function act() {
-	rm.mapMessage(5, "随着光芒闪烁，一个人影从光中出现。");
-	rm.spawnNpc(2013001, 333, 99);
-}
+function act(){var eim=rm.getEventInstance();if(eim==null)return;var em=eim.getEventManager();if(String(em.getIv().invokeFunction("cloudReady",eim,rm.getReactor()))=="true")rm.spawnNpc(2013001,333,99);}

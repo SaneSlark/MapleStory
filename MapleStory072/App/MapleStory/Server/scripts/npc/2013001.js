@@ -1,5 +1,1 @@
-function start() {
-    if(cm.getPlayer().getMapId()==920011200){cm.openNpc(cm.getNpc(),"party3_play");return;}
-	cm.sendOk ("ºÜ¿áºÜÎÞÄÎ");
-	cm.dispose();
-}
+function start(){cm.dispose();cm.openNpc(2013001,"party3_play");}

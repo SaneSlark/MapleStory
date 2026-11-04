@@ -1,8 +1,1 @@
-/**
- *2006001.js - Spawns Minevra
- *@author Jvlaple
- */
- 
-function act() {
-	rm.spawnNpc(2013002);
-}
+function act(){var eim=rm.getEventInstance();if(eim!=null&&eim.getEventManager().getIv().invokeFunction("saveGoddess",eim,rm.getReactor()))rm.spawnNpc(2013002);}

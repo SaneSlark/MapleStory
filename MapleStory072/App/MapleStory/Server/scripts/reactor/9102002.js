@@ -1,30 +1,8 @@
-/*
-	This file is part of the MrCoffee Maple Story Server
-    Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
-					   Matthias Butz <matze@MrCoffee.de>
-					   Jan Christian Meyer <vimes@MrCoffee.de>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation version 3 as published by
-    the Free Software Foundation. You may not use, modify or distribute
-    this program under any other version of the GNU Affero General Public
-    License.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-/* @Author Jvlaple
- * 
- * Drops all primrose seed <3
-*/
-
+// Seed pair/chance from bundled v072 SQL/reactordrops.sql, scoped to this PQ.
 function act() {
-	rm.dropItems();
+    if (rm.getMap().getId() != 910010000) { rm.dropItems(); return; }
+    var eim = rm.getEventInstance();
+    if (eim == null || eim.getProperty("phase") != "flowers" || eim.getMapInstance(0) != rm.getMap()) return;
+    var seeds = [4001100, 4001095];
+    for (var i = 0; i < seeds.length; i++) if (Packages.server.Randomizer.nextInt(3) == 0) rm.dropSingleItem(seeds[i]);
 }

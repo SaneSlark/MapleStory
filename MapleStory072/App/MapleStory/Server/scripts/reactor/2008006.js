@@ -1,8 +1,1 @@
-
-function act() {
-    rm.mapMessage(6, "ÀÖÇúÔÚ¿ÕÖĞ»Øµ´¡£");
-	var em = rm.getEventManager("OrbisPQ");
-	if (em != null) {
-		em.setProperty("stage3", "1");
-	}
-}
+function act(){var eim=rm.getEventInstance();if(eim!=null)eim.getEventManager().getIv().invokeFunction("musicReady",eim,rm.getReactor());}

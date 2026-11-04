@@ -1,205 +1,117 @@
-var minPlayers = 2;
+var minPlayers = 6;
 var stg2_combo0 = Array("3", "2", "1");
 var stg2_combo1 = Array("0", "0", "1"); //unique combos only
 var stg2_combo2 = Array("0", "1", "1");
-var stg6_combo = Array("00", "01", "02", "03", "04", "05", "06", "07", "08");
+var stg6_combo = Array("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16");
 var cx = Array(200, -300, -300, -300, 200, 200, 200, -300, -300, 200, 200, -300, -300, 200); //even = 200 odd = -300
 var cy = Array(-2321, -2114, -2910, -2510, -1526, -2716, -717, -1310, -3357, -1912, -1122, -1736, -915, -3116);
 
-function init() {
-em.setProperty("state", "0");
-	em.setProperty("leader", "true");
-}
 
-function setup(level, leaderid) {
-	em.getProperties().clear();
-em.setProperty("state", "1");
-	em.setProperty("leader", "true");
-    var eim = em.newInstance("OrbisPQ" + leaderid);
-	em.setProperty("stage", "0"); //center stage
-	em.setProperty("pre", "0"); //first stage
-	em.setProperty("finished", "0"); //first stage
-	em.setProperty("stage2", "0"); //num.spawned in storage, 15 = done
-	em.setProperty("stage3", "0"); //lobby
-	em.setProperty("stage4", "0"); //sealed
-	var rand_combo = java.lang.Math.floor(java.lang.Math.random() * stg2_combo0.length);
-	var rand_num = java.lang.Math.random();
-	var combo0 = rand_num < 0.33 ? true : false;
-	var combo1 = rand_num < 0.66 ? true : false;
-	em.setProperty("stage4_0", combo0 ? stg2_combo0[rand_combo] : (combo1 ? stg2_combo1[rand_combo] : stg2_combo2[rand_combo]));
-	em.setProperty("stage4_1", combo0 ? stg2_combo1[rand_combo] : (combo1 ? stg2_combo2[rand_combo] : stg2_combo0[rand_combo]));
-	em.setProperty("stage4_2", combo0 ? stg2_combo2[rand_combo] : (combo1 ? stg2_combo0[rand_combo] : stg2_combo1[rand_combo]));
-	em.setProperty("stage6", "0"); //on way up ... hard
-
-	for (var b = 0; b < stg6_combo.length; b++) { //stage6_001
-		for (var y = 0; y < 4; y++) { //stage number
-			em.setProperty("stage6_" + stg6_combo[b] + "" + (y+1) + "", "0");
-		}
-	}
-	for (var b = 0; b < stg6_combo.length; b++) { //stage6_001	
-		var found = false;
-		while (!found) {
-			for (var x = 0; x < 4; x++) {
-				if (!found) {
-					var founded = false;
-					for (var z = 0; z < 4; z++) { //check if any other stages have this value set already.
-						if (em.getProperty("stage6_" + stg6_combo[b] + "" + (z+1) + "") == null) {
-							em.setProperty("stage6_" + stg6_combo[b] + "" + (z+1) + "", "0");
-						} else if (em.getProperty("stage6_" + stg6_combo[b] + "" + (z+1) + "").equals("1")) {
-							founded = true;
-							break;
-						}
-					}
-					if (!founded && java.lang.Math.random() < 0.25) {
-						em.setProperty("stage6_" + stg6_combo[b] + "" + (x+1) + "", "1");
-						found = true;
-						break;
-					}
-				}
-			}
-		}
-	}
-	//STILL not done yet! levers = 2 of them
-	for (var i = 0; i < 3; i++) {
-		em.setProperty("stage62_" + i + "", "0");
-	}
-	var found_1 = false;
-	while(!found_1) {
-		for (var i = 0; i < 3; i++) {
-			if (em.getProperty("stage62_" + i + "") == null) {
-				em.setProperty("stage62_" + i + "", "0");
-			} else if (!found_1 && java.lang.Math.random() < 0.2) {
-				em.setProperty("stage62_" + i + "", "1");
-				found_1 = true;
-			}
-		}
-	}
-	var found_2 = false;
-	while(!found_2) {
-		for (var i = 0; i < 3; i++) {
-			if (em.getProperty("stage62_" + i + "") == null) {
-				em.setProperty("stage62_" + i + "", "0");
-			} else if (!em.getProperty("stage62_" + i + "").equals("1") && !found_2 && java.lang.Math.random() < 0.2) {
-				em.setProperty("stage62_" + i + "", "1");
-				found_2 = true;
-			}
-		}
-	}
-	em.setProperty("stage7", "0"); //papa spawned
-	em.setProperty("done", "0");
-        eim.setInstanceMap(920010000).resetPQ(level);
-        var center = eim.setInstanceMap(920010100);
-	center.resetPQ(level);
-	//MSEA remove 2 stages: sealed room + lounge
-	center.getReactorByName("minerva").forceHitReactor(2);
-	center.getReactorByName("scar3").forceHitReactor(1); //sealed room
-	center.getReactorByName("scar5").forceHitReactor(1); //lounge
-        eim.setInstanceMap(920010200).resetPQ(level);
-        eim.setInstanceMap(920010300).resetPQ(level);
-        eim.setInstanceMap(920010400).resetPQ(level);
-        eim.setInstanceMap(920010500).resetPQ(level);
-        eim.setInstanceMap(920010600).resetPQ(level);
-        eim.setInstanceMap(920010601).resetPQ(level);
-        eim.setInstanceMap(920010602).resetPQ(level);
-        eim.setInstanceMap(920010603).resetPQ(level);
-        eim.setInstanceMap(920010604).resetPQ(level);
-        eim.setInstanceMap(920010700).resetPQ(level);
-        eim.setInstanceMap(920010800).resetPQ(level);
-        eim.setInstanceMap(920010900).resetPQ(level);
-        eim.setInstanceMap(920010910).resetPQ(level);
-        eim.setInstanceMap(920010911).resetPQ(level);
-        eim.setInstanceMap(920010912).resetPQ(level);
-        eim.setInstanceMap(920010920).resetPQ(level);
-        eim.setInstanceMap(920010921).resetPQ(level);
-        eim.setInstanceMap(920010922).resetPQ(level);
-        eim.setInstanceMap(920010930).resetPQ(level);
-        eim.setInstanceMap(920010931).resetPQ(level);
-        eim.setInstanceMap(920010932).resetPQ(level);
-        eim.setInstanceMap(920011000).resetPQ(level);
-        eim.setInstanceMap(920011100).resetPQ(level);
-    eim.startEventTimer(1200000); //20 min
-    return eim;
-}
-
-function playerEntry(eim, player) {
-    var map = eim.getMapInstance(0);
-    player.changeMap(map, map.getPortal(0));
-    player.tryPartyQuest(1203);
-}
-
-function playerRevive(eim, player) {
-}
-
-function scheduledTimeout(eim) {
-    end(eim);
-}
-
-function changedMap(eim, player, mapid) {
-    if (mapid < 920010000 || mapid > 920011100) {
-	eim.unregisterPlayer(player);
-
-	if (eim.disposeIfPlayerBelow(0, 0)) {
-		em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-	}
-    } else if (mapid == 920011100 && em.getProperty("done").equals("0")) { //bonus
-	em.setProperty("done", "1");
-	eim.restartEventTimer(60000); //minute
+var activityMaps = [920010000,920010100,920010200,920010300,920010400,920010500,920010600,920010601,920010602,920010603,920010604,920010700,920010800,920010900,920010910,920010911,920010912,920010920,920010921,920010922,920010930,920010931,920010932,920011000,920011100];
+var progressLock = new java.util.concurrent.locks.ReentrantLock();
+function init(){em.setProperty("state","0");em.setProperty("leader","true");em.setProperty("pre","0");}
+function setup(level, partyid){
+    if(em.getProperty("state")!="0")return null;
+    em.getProperties().clear();em.setProperty("state","1");em.setProperty("leader","true");
+    var eim=em.newInstance("OrbisPQ"+partyid);eim.setProperty("phase","entrance");
+    for(var key in {stage:0,pre:0,finished:0,stage2:0,stage3:0,stage4:0,stage6:0,stage7:0,done:0})em.setProperty(key,"0");
+    var combos=[[3,0,0],[2,0,1],[1,1,1]],chosen=combos[Math.floor(Math.random()*3)].slice();
+    for(var i=chosen.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),v=chosen[i];chosen[i]=chosen[j];chosen[j]=v;}
+    for(var i=0;i<3;i++)em.setProperty("stage4_"+i,""+chosen[i]);
+    for(var row=1;row<=16;row++){
+        var right=1+Math.floor(Math.random()*4),name=(row<10?"0":"")+row;
+        for(var col=1;col<=4;col++)em.setProperty("stage6_"+name+col,col==right?"1":"0");
     }
+    em.setProperty("loungeRow1",""+(1+Math.floor(Math.random()*3)));
+    em.setProperty("loungeRow2",""+(1+Math.floor(Math.random()*3)));
+    var first=Math.floor(Math.random()*5),second;
+    do{second=Math.floor(Math.random()*5);}while(first==second);
+    for(var lever=0;lever<5;lever++)em.setProperty("stage62_"+lever,lever==first||lever==second?"1":"0");
+    for(var i=0;i<activityMaps.length;i++){var map=eim.setInstanceMap(activityMaps[i]);map.resetFully();map.setSpawns(false);}
+    // Client reactor 2006000 states 0-19 are animation frames; only state 20 accepts 20 clouds.
+    var light=eim.getMapInstance(0).getReactorByName("eak");
+    if(light!=null && light.getReactorId()==2006000)light.forceHitReactor(20);
+    eim.startEventTimer(3600000);return eim;
 }
-
-function playerDisconnected(eim, player) {
+function clearMaterials(player){
+    for(var item=4001044;item<=4001063;item++)removeItem(player,item);
+    removeItem(player,4001074);
+}
+function removeItem(player,item){var count=player.getItemQuantity(item,false);if(count>0)Packages.server.MapleInventoryManipulator.removeById(player.getClient(),Packages.constants.GameConstants.getInventoryType(item),item,count,false,false);}
+function playerEntry(eim,player){clearMaterials(player);var map=eim.getMapInstance(0);player.changeMap(map,map.getPortal(0));player.tryPartyQuest(1203);}
+function cloudReady(eim,reactor){
+    progressLock.lock();try{
+        if(eim.getProperty("phase")!="entrance"||reactor.getMap()!=eim.getMapInstance(0)||reactor.getState()<21||em.getProperty("pre")=="1")return false;
+        em.setProperty("pre","1");return true;
+    }finally{progressLock.unlock();}
+}
+function enterTower(eim){
+    if(eim.getProperty("phase")!="entrance"||em.getProperty("pre")!="1")return false;
+    eim.setProperty("phase","rooms");warpPlayers(eim,1);return true;
+}
+function warpPlayers(eim,index){var map=eim.getMapInstance(index),players=eim.getPlayers();for(var i=0;i<players.size();i++)players.get(i).changeMap(map,map.getPortal(0));}
+function installPiece(eim,reactor){
+    progressLock.lock();try{
+        var id=reactor.getReactorId();if(eim.getProperty("phase")!="rooms"||reactor.getMap()!=eim.getMapInstance(1)||id<2008000||id>2008005||reactor.getState()<1||eim.getProperty("piece"+id)=="1")return;
+        eim.setProperty("piece"+id,"1");var count=0;for(var n=2008000;n<=2008005;n++)if(eim.getProperty("piece"+n)=="1")count++;
+        em.setProperty("stage",""+count);eim.getMapInstance(1).getReactorByName("minerva").forceHitReactor(count);
+    }finally{progressLock.unlock();}
+}
+function musicReady(eim,reactor){
+    if(eim.getProperty("phase")!="rooms"||reactor.getMap()!=eim.getMapInstance(4)||reactor.getState()<1)return;
+    em.setProperty("stage3","1");var stone=eim.getMapInstance(4).getReactorByName("stone3");if(stone!=null&&stone.getState()==0)stone.forceHitReactor(1);
+}
+function checkSealed(eim){
+    var map=eim.getMapInstance(5),areas=map.getAreas(),counts=[0,0,0],players=eim.getPlayers();
+    if(eim.getProperty("phase")!="rooms"||areas.size()!=3)return false;
+    for(var i=0;i<players.size();i++){var p=players.get(i);if(p.getMap()!=map)continue;for(var j=0;j<3;j++)if(areas.get(j).contains(p.getPosition())){counts[j]++;break;}}
+    for(var j=0;j<3;j++)if(counts[j]!=parseInt(em.getProperty("stage4_"+j)))return false;
+    em.setProperty("stage4","1");map.getReactorByName("stone4").forceHitReactor(1);return true;
+}
+function checkLevers(eim){
+    var map=eim.getMapInstance(11);if(eim.getProperty("phase")!="rooms")return false;
+    for(var i=0;i<5;i++){var r=map.getReactorByName(""+(i+1));if(r==null||(r.getState()==1)!=(em.getProperty("stage62_"+i)=="1"))return false;}
+    em.setProperty("stage6","1");map.getReactorByName("stone6").forceHitReactor(1);return true;
+}
+function enterGarden(eim){if(eim.getProperty("phase")!="rooms"||em.getProperty("stage")!="6")return false;eim.setProperty("phase","garden");warpPlayers(eim,12);return true;}
+function monsterValue(eim,id){
+    if(id==9300040&&eim.getProperty("phase")=="rooms"){
+        var n=parseInt(em.getProperty("stage2"));if(n<14){em.setProperty("stage2",""+(n+1));var mob=em.getMonster(9300040);eim.registerMonster(mob);eim.getMapInstance(3).spawnMonsterOnGroundBelow(mob,new java.awt.Point(cx[n],cy[n]));}
+    }
+    if(id==9300049&&eim.getProperty("phase")=="garden"&&em.getProperty("stage7")=="0"){
+        em.setProperty("stage7","1");var boss=em.getMonster(9300039);eim.registerMonster(boss);eim.getMapInstance(12).spawnMonsterOnGroundBelow(boss,new java.awt.Point(-830,563));
+    }
+    if(id==9300039&&eim.getProperty("phase")=="garden")eim.setProperty("bossDefeated","1");
     return 0;
 }
-
-function monsterValue(eim, mobId) {
-    if (mobId == 9300049 && em.getProperty("stage7").equals("0")) { //dark nep
-	eim.broadcastPlayerMsg(6, "精灵爸爸已经出现。");
-	var mob = em.getMonster(9300039);
-	eim.registerMonster(mob);
-	em.setProperty("stage7", "0");
-	eim.getMapInstance(12).spawnMonsterOnGroundBelow(mob, new java.awt.Point(-830, 563));
-    } else if (mobId == 9300040) {
-	var st = parseInt(em.getProperty("stage2"));
-	if (st < 14) {
-	     eim.broadcastPlayerMsg(6, "红独角狮已经出现在地图的某个位置。");
-	     var mob = em.getMonster(9300040);
-	     em.setProperty("stage2", st+1);
-	     eim.registerMonster(mob);
-	     eim.getMapInstance(3).spawnMonsterOnGroundBelow(mob, new java.awt.Point(cx[st], cy[st]));
-	}
-    }
-    return 1;
+function saveGoddess(eim,reactor){
+    if(eim.getProperty("phase")!="garden"||eim.getProperty("bossDefeated")!="1"||reactor.getMap()!=eim.getMapInstance(1)||reactor.getState()<7)return false;
+    eim.setProperty("phase","saved");return true;
 }
-
-function playerExit(eim, player) {
-    eim.unregisterPlayer(player);
-
-    if (eim.disposeIfPlayerBelow(0, 0)) {
-	em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-	}
+function clearPQ(eim){
+    if(eim.getProperty("phase")!="saved")return;
+    eim.setProperty("phase","bonus");em.setProperty("done","1");
+    var players=eim.getPlayers();for(var i=0;i<players.size();i++){clearMaterials(players.get(i));players.get(i).endPartyQuest(1203);}
+    eim.restartEventTimer(60000);warpPlayers(eim,24);
 }
-
-function end(eim) {
-    eim.disposeIfPlayerBelow(100, em.getProperty("done").equals("0") ? 920011200 : 920011300);
-	em.setProperty("state", "0");
-		em.setProperty("leader", "true");
+function end(eim){
+    var phase=eim.getProperty("phase");if(phase=="ending")return;eim.setProperty("phase","ending");
+    var players=eim.getPlayers();for(var i=0;i<players.size();i++)clearMaterials(players.get(i));
+    for(var i=0;i<activityMaps.length;i++){var map=eim.getMapInstance(i);if(map!=null){map.setSpawns(false);map.killAllMonsters(false);}}
+    eim.disposeIfPlayerBelow(100,phase=="bonus"?920011300:920011200);init();
 }
-
-function clearPQ(eim) {
-    end(eim);
+function changedMap(eim,player,mapid){
+    var phase=eim.getProperty("phase");if(phase=="ending")return;
+    for(var i=0;i<activityMaps.length;i++)if(mapid==activityMaps[i])return;
+    clearMaterials(player);var leader=eim.isLeader(player);eim.unregisterPlayer(player);
+    if(phase!="bonus"&&(leader||eim.getPlayerCount()<6))end(eim);else if(eim.getPlayerCount()==0)end(eim);
 }
-
-function allMonstersDead(eim) {
-}
-
-function leftParty (eim, player) {
-    // If only 2 players are left, uncompletable:
-	end(eim);
-}
-function disbandParty (eim) {
-	end(eim);
-}
-function playerDead(eim, player) {}
-function cancelSchedule() {}
+function playerDisconnected(eim,player){clearMaterials(player);eim.unregisterPlayer(player);if(eim.getProperty("phase")!="bonus"||eim.getPlayerCount()==0)end(eim);return 0;}
+function playerExit(eim,player){var map=eim.getMapFactory().getMap(eim.getProperty("phase")=="bonus"?920011300:920011200);player.changeMap(map,map.getPortal(0));}
+function scheduledTimeout(eim){end(eim);}
+function playerDead(eim,player){if(eim.getProperty("phase")!="bonus")end(eim);}
+function playerRevive(eim,player){playerExit(eim,player);return false;}
+function leftParty(eim,player){end(eim);}
+function disbandParty(eim){end(eim);}
+function allMonstersDead(eim){}
+function cancelSchedule(){var instances=new java.util.ArrayList(em.getInstances());for(var i=0;i<instances.size();i++)end(instances.get(i));}

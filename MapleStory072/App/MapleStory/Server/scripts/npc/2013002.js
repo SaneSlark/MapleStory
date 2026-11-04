@@ -1,4 +1,1 @@
-function start() {
-	cm.sendOk ("Ã°ÏÕµº»¶Ó­Äã");
-	cm.dispose();
-}			
+function start(){cm.dispose();cm.openNpc(2013002,"party3_minerva");}

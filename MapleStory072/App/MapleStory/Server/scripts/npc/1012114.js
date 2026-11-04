@@ -1,4 +1,1 @@
-function start() {
-	cm.sendOk ("∞¶~Ã´Àß¡À√ª»À∞Æ...");
-	cm.dispose();
-}
+function start() { cm.dispose(); cm.openNpc(1012114, "moonrabbit_tiger"); }
