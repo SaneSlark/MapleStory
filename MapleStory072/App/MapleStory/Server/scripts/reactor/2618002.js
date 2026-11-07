@@ -1,3 +1,1 @@
-function act() {
-	rm.getMap(rm.getMapId() + 1).getReactorByName(rm.getMapId() == 926100200 ? "rnj31_out" : "jnr31_out").forceHitReactor(1);
-}
+function act(){var p=rm.getPlayer(),e=p.getEventInstance();if(e==null||["Romeo","Juliet"].indexOf(String(e.getEventManager().getName()))<0||rm.getReactor().getState()<1)return;var prefix=e.getEventManager().getName()=="Romeo"?"rnj":"jnr",base=prefix=="rnj"?926100000:926110000;if(p.getMapId()!=base+200)return;var r=e.getMapInstance(base+200+1).getReactorByName(prefix+"31_out");if(r!=null)r.forceHitReactor(1);}

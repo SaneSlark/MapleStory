@@ -4,14 +4,17 @@
    开始NPC: 2101013  结束NPC: 2101013
    ============================================================ */
 var status = -1;
+var startClosed = false;
 
 function start(mode, type, selection) {
-    if (mode == -1) { qm.dispose(); return; }
+    if (startClosed) return;
+    if (mode == -1) { startClosed = true; qm.dispose(); return; }
     if (mode == 1) status++; else status--;
-    if (status < 0) { qm.dispose(); return; }
+    if (status < 0) { startClosed = true; qm.dispose(); return; }
     if (status == 0) qm.sendNext("作为沙子图团员，正在执行第一个任务…… 任务是抢夺王妃订的丝绸！以#p2101004#的模样去#b#m260010600##k，与王妃做丝绸生意的 #b#p2101013##k那儿拿到丝绸。");
     else {
-        qm.startQuest(qm.getQuest());
+        startClosed = true;
+        qm.startQuestInScript(qm.getQuest());
         qm.dispose();
     }
 }

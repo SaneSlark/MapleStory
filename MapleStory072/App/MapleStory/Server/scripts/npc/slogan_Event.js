@@ -44,3 +44,6 @@ function action(mode,type,selection){
         cm.dispose();
     }
 }
+
+var dragonMuseStart=start;
+start=function(){if(cm.getNpc()==2060006){cm.dispose();cm.openNpc(2060006,"2060006");return;}dragonMuseStart();};

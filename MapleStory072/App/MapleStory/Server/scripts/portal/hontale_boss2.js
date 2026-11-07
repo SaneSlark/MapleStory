@@ -1,12 +1,1 @@
-function enter(pi) {
-   var em = pi.getEventManager("HorntailBattle");
-
-    if (em != null) {
-	var prop = em.getProperty("preheadCheck");
-
-	if (prop != null && prop.equals("2")) {
-	    pi.mapMessage(6, "巨大的生物正在从洞穴深处逼近。")
-	    em.setProperty("preheadCheck", "3");
-	}
-    }
-}
+function enter(pi){var p=pi.getPlayer(),e=p.getEventInstance();if(pi.getMapId()!=240060100||e==null||String(e.getEventManager().getName())!="HorntailBattle")return false;return String(e.getEventManager().getIv().invokeFunction("beginHead",e,p,1))=="true";}

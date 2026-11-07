@@ -1,2 +1,8 @@
 function start(){cm.openNpc(cm.getNpc(),"thirdAdvancement");}
 function action(mode,type,selection){cm.dispose();}
+
+// Native lava-chain handoffs, using Check/Act rather than forced status or rewards.
+var zOldStart=start,zOldAction=action,zQuestChoices=[],zQuestStep=-1,zQuestChoice=null,zQuestOrigin=-1;
+var zQuestData=[[6271, 1, "奇妙的文章"], [6272, 0, "废矿的熔岩"]];
+start=function(){zQuestOrigin=cm.getMapId();zQuestChoices=[];zQuestStep=-1;var menu="";for(var i=0;i<zQuestData.length;i++){var d=zQuestData[i],q=Packages.server.quest.MapleQuest.getInstance(d[0]);if(d[1]==0?q.canStart(cm.getPlayer(),cm.getNpc()):cm.getQuestStatus(d[0])==1){menu+="\r\n#L"+zQuestChoices.length+"#[任务] "+d[2]+"#l";zQuestChoices.push(d);}}if(zQuestChoices.length==0){zOldStart();return;}zQuestStep=0;menu+="\r\n#L"+zQuestChoices.length+"#其他服务#l";cm.sendSimple(menu);};
+action=function(mode,type,selection){if(zQuestStep<0){zOldAction(mode,type,selection);return;}if(zQuestStep==2)return;if(mode!=1||cm.getMapId()!=zQuestOrigin){zQuestStep=2;cm.dispose();return;}if(zQuestStep==0){if(selection==zQuestChoices.length){zQuestStep=-1;zOldStart();return;}if(selection!=Math.floor(selection)||selection<0||selection>=zQuestChoices.length){zQuestStep=2;cm.dispose();return;}zQuestChoice=zQuestChoices[selection];zQuestStep=1;cm.sendYesNo("要"+(zQuestChoice[1]==0?"接受":"完成")+"任务【"+zQuestChoice[2]+"】吗？");return;}zQuestStep=2;var q=Packages.server.quest.MapleQuest.getInstance(zQuestChoice[0]);if(zQuestChoice[1]==0&&q.canStart(cm.getPlayer(),cm.getNpc())){cm.startClientNpcQuest(zQuestChoice[0]);return;}if(zQuestChoice[1]==1&&q.canComplete(cm.getPlayer(),null)){cm.completeClientNpcQuest(zQuestChoice[0]);return;}cm.sendOk("请先完成任务栏中列出的条件。");cm.dispose();};

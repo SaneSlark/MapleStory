@@ -82,3 +82,10 @@ function allMonstersDead(eim) {
 
 function cancelSchedule() {
 }
+
+var admissionLock=new java.util.concurrent.locks.ReentrantLock(),nativeSetup=setup;
+setup=function(){admissionLock.lock();try{if(String(em.getProperty("started"))=="true"||em.getInstance("s4aWorld")!=null||em.getMapFactory().getMap(910500000).getCharactersSize()>0)throw "Snipe trial occupied";return nativeSetup();}finally{admissionLock.unlock();}};
+function playerExit(e,p){e.unregisterPlayer(p);var m=em.getMapFactory().getMap(105090200);p.changeMap(m,m.getPortal(0));if(e.getPlayerCount()==0){e.dispose();em.setProperty("started","false");}}
+function playerRevive(e,p){return false;}
+function playerDisconnected(e,p){if(e.getPlayerCount()<=1)em.setProperty("started","false");return 0;}
+function cancelSchedule(){var a=new java.util.ArrayList(em.getInstances());for(var i=0;i<a.size();i++)a.get(i).disposeIfPlayerBelow(100,105090200);em.setProperty("started","false");}

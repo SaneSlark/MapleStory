@@ -39,3 +39,6 @@ function action(mode,type,selection){
         cm.dispose();
     }
 }
+
+// CMS072 native Mid-Autumn delivery; keep all existing NPC services.
+entries.push([9152,1,"\u4e30\u76db\u7684\u4e2d\u79cb\u8282",["\u6240\u9700\u6750\u6599\uff1a\r\n#t4031188# \u00d7 1"],"\u6240\u9700\u6750\u6599\uff1a\r\n#t4031188# \u00d7 1"]);

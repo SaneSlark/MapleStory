@@ -22,3 +22,6 @@ function act(){
     bossAct();
     if(eim!=null){eim.setProperty("bossSummoned","true");eim.setProperty("canEnter","false");}
 }
+
+var papuAct=act;
+act=function(){var guarded=new Packages.org.mozilla.javascript.Synchronizer(papuAct,rm.getMap());return guarded();};

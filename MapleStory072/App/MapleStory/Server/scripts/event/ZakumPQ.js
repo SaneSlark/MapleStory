@@ -1,163 +1,29 @@
-/* 
- * This file is part of the odinms Maple Story Server
-    Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
-                       Matthias Butz <matze@odinms.de>
-                       Jan Christian Meyer <vimes@odinms.de>
+var eventName="ZakumPQ",quest=0,minPlayers=1,exitMap=280090000,materials=[4001015,4001016,4001018],ids=[280010000, 280010010, 280010011, 280010020, 280010030, 280010031, 280010040, 280010041, 280010050, 280010060, 280010070, 280010071, 280010080, 280010081, 280010090, 280010091, 280010100, 280010101, 280010110, 280010120, 280010130, 280010140, 280010150, 280011000, 280011001, 280011002, 280011003, 280011004, 280011005, 280011006];
+var pqLock=new java.util.concurrent.locks.ReentrantLock();
+function init(){em.setProperty("state","0");em.setProperty("leader","true");}
+function clearMaterials(p){for(var n=0;n<materials.length;n++){var id=materials[n],count=p.getItemQuantity(id,false);if(count>0)Packages.server.MapleInventoryManipulator.removeById(p.getClient(),Packages.constants.GameConstants.getInventoryType(id),id,count,false,false);}}
+function playerEntry(e,p){clearMaterials(p);var m=e.getMapInstance(ids[0]);p.changeMap(m,m.getPortal(0));p.tryPartyQuest(quest);}
+function own(e,p){return p!=null&&p.getEventInstance()==e&&e.getProperty("phase")!="ending"&&ids.indexOf(p.getMapId())>=0&&p.getMap()==e.getMapInstance(p.getMapId());}
+function warpAll(e,id){var m=e.getMapInstance(id),ps=e.getPlayers();for(var n=0;n<ps.size();n++)ps.get(n).changeMap(m,m.getPortal(0));}
+function complete(e,id){if(e.getProperty("phase")=="complete"||e.getProperty("phase")=="ending")return;e.setProperty("phase","complete");var ps=e.getPlayers();for(var n=0;n<ps.size();n++){clearMaterials(ps.get(n));ps.get(n).endPartyQuest(quest);}if(id>0)warpAll(e,id);}
+function end(e){pqLock.lock();try{if(e.getProperty("phase")=="ending")return;e.setProperty("phase","ending");var ps=e.getPlayers();for(var n=0;n<ps.size();n++)clearMaterials(ps.get(n));if(e.disposeIfPlayerBelow(100,exitMap))init();}finally{pqLock.unlock();}}
+function changedMap(e,p,id){if(e.getProperty("phase")=="ending"||ids.indexOf(id)>=0)return;clearMaterials(p);var leader=e.isLeader(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(leader||e.getPlayerCount()<minPlayers))||e.getPlayerCount()==0)end(e);}
+function playerDisconnected(e,p){clearMaterials(p);var leader=e.isLeader(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(leader||e.getPlayerCount()<minPlayers))||e.getPlayerCount()==0)end(e);return 0;}
+function playerExit(e,p){var m=em.getChannelServer().getMapFactory().getMap(exitMap);p.changeMap(m,m.getPortal(0));}
+function playerRevive(e,p){playerExit(e,p);return false;}
+function leftParty(e,p){if(e.getProperty("phase")!="complete")end(e);else playerExit(e,p);}
+function disbandParty(e){end(e);}
+function scheduledTimeout(e){end(e);}
+function playerDead(e,p){}
+function monsterKilled(e,p,points){}
+function allMonstersDead(e){}
+function cancelSchedule(){var a=new java.util.ArrayList(em.getInstances());for(var n=0;n<a.size();n++)end(a.get(n));}
+function make(level,partyid){if(em.getProperty("state")!="0")return null;em.setProperty("state","1");var e=em.newInstance(eventName+partyid);e.setProperty("phase","stages");try{for(var n=0;n<ids.length;n++){var m=e.setInstanceMap(ids[n]);m.resetFully();m.setSpawns(false);}return e;}catch(error){end(e);throw error;}}
+function spawn(e,id,mobid,pos){var mob=em.getMonster(mobid);e.registerMonster(mob);e.getMapInstance(id).spawnMonsterOnGroundBelow(mob,pos);return mob;}
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License version 3
-    as published by the Free Software Foundation. You may not use, modify
-    or distribute this program under any other version of the
-    GNU Affero General Public License.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
- * @Author Lerk
- * 
- * Zakum Party Quest 
- */
- 
-importPackage(net.sf.odinms.world);
-
-var exitMap;
-var instanceId;
-
-function init() {
-	instanceId = 1;
-        em.setProperty("shuffleReactors","true");
-}
-
-function monsterValue(eim, mobId) {
-	return 1;
-}
-
-function setup() {
-	exitMap = em.getChannelServer().getMapFactory().getMap(280090000); //room of tragedy
-	var instanceName = "ZakumPQ" + instanceId;
-	
-	//ZPQ maps, center area then 1-1 through 16-6 increasing gradually
-	//var instanceMaps = new Array(280010000, 280010010, 280010011, 280010020, 280010030, 280010031, 280010040, 280010041, 280010050, 280010060, 
-	//	280010070, 280010071, 280010080, 280010081, 280010090, 280010091, 280010100, 280010101, 280010110, 280010120, 280010130, 280010140, 
-	//	280010150, 280011000, 280011001, 280011002, 280011003, 280011004, 280011005, 280011006);
-	var eim = em.newInstance(instanceName);
-	
-	var mf = eim.getMapFactory();
-	
-	instanceId++;
-	
-	var map = mf.getMap(280010000);
-	map.shuffleReactors();
-	
-	//no time limit yet until clock can be visible in all maps
-	//em.schedule("timeOut", 30 * 60000);
-	
-	return eim;
-}
-
-function playerEntry(eim, player) {
-	var map = eim.getMapInstance(280010000);
-	player.changeMap(map, map.getPortal(0));
-	
-	//TODO: hold time across map changes
-	//player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.getClock(1800));
-}
-
-function playerRevive(eim, player) {
-	if (eim.isLeader(player)) { //check for party leader
-		//boot whole party and end
-		var party = eim.getPlayers();
-		for (var i = 0; i < party.size(); i++) {
-			playerExit(eim, party.get(i));
-		}
-		eim.dispose();
-	}
-	else { //boot dead player
-		playerExit(eim, player);
-	}
-	return false; // don't execute the standard reviving code
-}
-
-function playerDead(eim, player) {
-}
-
-function playerDisconnected(eim, player) {
-	if (eim.isLeader(player)) { //check for party leader
-		//boot whole party and end
-		var party = eim.getPlayers();
-		for (var i = 0; i < party.size(); i++) {
-			if (party.get(i).equals(player)) {
-				removePlayer(eim, player);
-			}			
-			else {
-				playerExit(eim, party.get(i));
-			}
-		}
-		eim.dispose();
-	}
-	else { //boot d/ced player
-		removePlayer(eim, player);
-	}
-}
-
-function leftParty(eim, player) {
-	playerExit(eim, player);
-}
-
-function disbandParty(eim) {
-	//boot whole party and end
-	var party = eim.getPlayers();
-	for (var i = 0; i < party.size(); i++) {
-		playerExit(eim, party.get(i));
-	}
-	eim.dispose();
-}
-
-function playerExit(eim, player) {
-	eim.unregisterPlayer(player);
-	player.changeMap(exitMap, exitMap.getPortal(0));
-}
-
-//for offline players
-function removePlayer(eim, player) {
-	eim.unregisterPlayer(player);
-	player.getMap().removePlayer(player);
-	player.setMap(exitMap);
-}
-
-function clearPQ(eim) {
-	//ZPQ does nothing special with winners
-	var party = eim.getPlayers();
-	for (var i = 0; i < party.size(); i++) {
-		playerExit(eim, party.get(i));
-	}
-	eim.dispose();
-}
-
-function allMonstersDead(eim) {
-        //do nothing; ZPQ has nothing to do with monster killing
-}
-
-function cancelSchedule() {
-}
-
-function timeOut() {
-	var iter = em.getInstances().iterator();
-	while (iter.hasNext()) {
-		var eim = iter.next();
-		if (eim.getPlayerCount() > 0) {
-			var pIter = eim.getPlayers().iterator();
-			while (pIter.hasNext()) {
-				playerExit(eim, pIter.next());
-			}
-		}
-		eim.dispose();
-	}
-}
+// Thirty-minute compatibility timer retained from this package's historical event.
+function setup(level,partyid){pqLock.lock();try{var e=make(level,partyid);if(e==null)return null;e.startEventTimer(1800000);return e;}finally{pqLock.unlock();}}
+function monsterValue(e,id){return 0;}
+function clearPQ(e){if(e.getProperty("settled")=="1")end(e);}
+function settle(e,cm){pqLock.lock();try{var p=cm.getPlayer();if(!own(e,p)||p.getMapId()!=280010000||!e.isLeader(p)||e.getProperty("settled")=="1")return false;if(!cm.haveItem(4001018,1))return false;var scrolls=cm.haveItem(4001015,30),ps=e.getPlayers();for(var i=0;i<ps.size();i++){var m=ps.get(i);if(!Packages.server.MapleInventoryManipulator.checkSpace(m.getClient(),4031061,1,"")||(scrolls&&!Packages.server.MapleInventoryManipulator.checkSpace(m.getClient(),2030007,5,""))){cm.sendOk("请所有仍在本轮的队员在其他栏和消耗栏留出空间。");return false;}}e.setProperty("settled","1");cm.gainItem(4001018,-1);if(scrolls)cm.gainItem(4001015,-30);for(var i=0;i<ps.size();i++){var m=ps.get(i);Packages.server.MapleInventoryManipulator.addById(m.getClient(),4031061,1);if(scrolls)Packages.server.MapleInventoryManipulator.addById(m.getClient(),2030007,5);m.gainExp(scrolls?20000:12000,true,true,true);}end(e);return true;}finally{pqLock.unlock();}}

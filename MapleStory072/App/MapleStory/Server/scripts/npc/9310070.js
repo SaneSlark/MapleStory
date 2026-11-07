@@ -4,7 +4,7 @@ var maps=[209000000, 209000009, 920010000, 922020300];
 var required=[0,2,3,4];
 var meso=[1000000,1000000,1000000,1000000,1000000];
 var points=[5000,10000,20000,50000,100000];
-function start(){done=false;var text="会员专区：\r\n";for(var i=0;i<maps.length;i++)text+="#L"+i+"#前往 "+mapNames[maps[i]]+"#l\r\n";text+="#L100#100万金币 - 领取今日会员工资#l";cm.sendSimple(text);}
+function start(){done=false;var text="会员中心：\r\n";for(var i=0;i<maps.length;i++)text+="#L"+i+"#前往 "+mapNames[maps[i]]+"#l\r\n";text+="#L100#100万金币 - 领取今日会员工资#l";cm.sendSimple(text);}
 function action(mode,type,selection){
     if(done)return;done=true;
     if(mode!=1){cm.dispose();return;}

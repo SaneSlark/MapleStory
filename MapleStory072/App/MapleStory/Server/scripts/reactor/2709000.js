@@ -11,7 +11,7 @@ function bossAct() {
     rm.killMob(8820023);*/
 	//rm.scheduleWarp(3600, 270050300);
     rm.killAllMob();
-    rm.spawnMonster(8820008);
+    var e=rm.getPlayer().getEventInstance(),mob=Packages.server.life.MapleLifeFactory.getMonster(8820008);if(e!=null)e.registerMonster(mob);rm.getMap().spawnMonsterOnGroundBelow(mob,rm.getReactor().getPosition());
 	if (!rm.getPlayer().isGM()) {
 		rm.getMap().startSpeedRun();
 	}
@@ -26,3 +26,7 @@ function act(){
     bossAct();
     if(eim!=null){eim.setProperty("bossSummoned","true");eim.setProperty("canEnter","false");}
 }
+
+// Serialize first summons across player-local script engines.
+var nativeBossAct=act;
+act=function(){var guarded=new Packages.org.mozilla.javascript.Synchronizer(nativeBossAct,rm.getMap());return guarded();};

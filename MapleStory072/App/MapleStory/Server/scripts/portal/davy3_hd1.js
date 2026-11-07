@@ -1,3 +1,1 @@
-function enter(pi) {
-    pi.warp(925100302,0);
-}
+function enter(pi){var p=pi.getPlayer(),e=p.getEventInstance();if(p.getMapId()!=925100300||e==null||e.getEventManager().getName()!="Pirate")return false;var m=e.getMapInstance(925100302);p.changeMap(m,m.getPortal(0));return true;}

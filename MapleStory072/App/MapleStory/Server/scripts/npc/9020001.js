@@ -1,4 +1,1 @@
-function start() {
-	cm.sendOk ("岁月如梭,人生就是梦");
-	cm.dispose();
-}
+function start() { cm.dispose(); cm.openNpc(9020001, "party1_play"); }

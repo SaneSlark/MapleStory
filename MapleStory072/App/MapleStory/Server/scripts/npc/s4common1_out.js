@@ -1,0 +1,3 @@
+var done=false;
+function start(){cm.sendYesNo("要返回长老公馆吗？成功保护泰勒斯后，可领取本次任务需要的证明。");}
+function action(mode,type,selection){if(done)return;done=true;if(mode!=1||cm.getMapId()!=921100301){cm.dispose();return;}var p=cm.getPlayer(),e=p.getEventInstance();if(e==null||e.getEventManager().getName()!="ProtectTylus"||e.getProperty("phase")!="complete"){cm.dispose();cm.warp(211000001,0);return;}if(cm.getQuestStatus(6192)==1&&!cm.haveItem(4031495)){if(!cm.canHold(4031495,1)){cm.sendOk("请在其他栏留出一个空位。");cm.dispose();return;}if(e.getProperty("proof"+p.getId())!="1"){e.setProperty("proof"+p.getId(),"1");cm.gainItem(4031495,1);}}cm.dispose();cm.warp(211000001,0);}

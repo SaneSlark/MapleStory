@@ -4,14 +4,17 @@
    开始NPC: 1052103  结束NPC: 
    ============================================================ */
 var status = -1;
+var startClosed = false;
 
 function start(mode, type, selection) {
-    if (mode == -1) { qm.dispose(); return; }
+    if (startClosed) return;
+    if (mode == -1) { startClosed = true; qm.dispose(); return; }
     if (mode == 1) status++; else status--;
-    if (status < 0) { qm.dispose(); return; }
+    if (status < 0) { startClosed = true; qm.dispose(); return; }
     if (status == 0) qm.sendNext("根据#t4031894#上的情报，#p1052103#好像也是吉姆所说的情报员之一。去见见#b#p1052103##k吧。");
     else {
-        qm.startQuest(qm.getQuest());
+        startClosed = true;
+        qm.startQuestInScript(qm.getQuest());
         qm.dispose();
     }
 }

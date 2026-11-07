@@ -67,9 +67,11 @@ function action(mode, type, selection) {
 			selStr += "\r\n#L" + i + "# " + options[i] + "#l";
 		}
 			
+		var q=Packages.server.quest.MapleQuest.getInstance(6273);if(q.canStart(cm.getPlayer(),cm.getNpc())||cm.getQuestStatus(6273)==1)selStr+="\r\n#L6273#[任务] 熔岩容器#l";
 		cm.sendSimple(selStr);
 	}
 	else if (status == 1 && mode == 1) {
+		if(selection==6273){var q=Packages.server.quest.MapleQuest.getInstance(6273);done=true;if(q.canStart(cm.getPlayer(),cm.getNpc()))cm.startClientNpcQuest(6273);else if(q.canComplete(cm.getPlayer(),null))cm.completeClientNpcQuest(6273);else{cm.sendOk("需要30个#t4000081#、2个#t4021007#和1个#t4021009#，请查看任务栏。");cm.dispose();}return;}
 		selectedType = selection;
 		if (selectedType == 0){ //mineral refine
 			var selStr = "那么, 你想提炼什么?#b";

@@ -90,3 +90,5 @@ function action(mode, type, selection) {
 	}
     }
 }
+
+var pq072OriginalStart=start;start=function(){if(cm.getMapId()==101030104){cm.dispose();cm.openNpc(9040000,"guildquest1_enter");return;}pq072OriginalStart();};

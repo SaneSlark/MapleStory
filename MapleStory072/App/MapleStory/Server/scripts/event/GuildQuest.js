@@ -1,208 +1,37 @@
-/* 
- * This file is part of the odinms Maple Story Server
-    Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
-                       Matthias Butz <matze@odinms.de>
-                       Jan Christian Meyer <vimes@odinms.de>
+var eventName="GuildQuest",quest=0,minPlayers=6,exitMap=990001100,materials=[1032033,4001024,4001025,4001026,4001027,4001028,4001029,4001030,4001031,4001032,4001033,4001034,4001035,4001037],ids=[990000000, 990000100, 990000200, 990000300, 990000301, 990000400, 990000401, 990000410, 990000420, 990000430, 990000431, 990000440, 990000500, 990000501, 990000502, 990000600, 990000610, 990000611, 990000620, 990000630, 990000631, 990000640, 990000641, 990000700, 990000800, 990000900, 990001000, 990001101];
+var pqLock=new java.util.concurrent.locks.ReentrantLock();
+function init(){em.setProperty("state","0");em.setProperty("leader","true");}
+function clearMaterials(p){for(var n=0;n<materials.length;n++){var id=materials[n],count=p.getItemQuantity(id,false);if(count>0)Packages.server.MapleInventoryManipulator.removeById(p.getClient(),Packages.constants.GameConstants.getInventoryType(id),id,count,false,false);}}
+function playerEntry(e,p){clearMaterials(p);var m=e.getMapInstance(ids[0]);p.changeMap(m,m.getPortal(0));p.tryPartyQuest(quest);}
+function own(e,p){return p!=null&&p.getEventInstance()==e&&e.getProperty("phase")!="ending"&&ids.indexOf(p.getMapId())>=0&&p.getMap()==e.getMapInstance(p.getMapId());}
+function warpAll(e,id){var m=e.getMapInstance(id),ps=e.getPlayers();for(var n=0;n<ps.size();n++)ps.get(n).changeMap(m,m.getPortal(0));}
+function complete(e,id){if(e.getProperty("phase")=="complete"||e.getProperty("phase")=="ending")return;e.setProperty("phase","complete");var ps=e.getPlayers();for(var n=0;n<ps.size();n++){clearMaterials(ps.get(n));ps.get(n).endPartyQuest(quest);}if(id>0)warpAll(e,id);}
+function end(e){pqLock.lock();try{if(e.getProperty("phase")=="ending")return;e.setProperty("phase","ending");var ps=e.getPlayers();for(var n=0;n<ps.size();n++)clearMaterials(ps.get(n));if(e.disposeIfPlayerBelow(100,exitMap))init();}finally{pqLock.unlock();}}
+function changedMap(e,p,id){if(e.getProperty("phase")=="ending"||ids.indexOf(id)>=0)return;clearMaterials(p);var leader=e.isLeader(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(leader||e.getPlayerCount()<minPlayers))||e.getPlayerCount()==0)end(e);}
+function playerDisconnected(e,p){clearMaterials(p);var leader=e.isLeader(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(leader||e.getPlayerCount()<minPlayers))||e.getPlayerCount()==0)end(e);return 0;}
+function playerExit(e,p){var m=em.getChannelServer().getMapFactory().getMap(exitMap);p.changeMap(m,m.getPortal(0));}
+function playerRevive(e,p){playerExit(e,p);return false;}
+function leftParty(e,p){if(e.getProperty("phase")!="complete")end(e);else playerExit(e,p);}
+function disbandParty(e){end(e);}
+function scheduledTimeout(e){end(e);}
+function playerDead(e,p){}
+function monsterKilled(e,p,points){}
+function allMonstersDead(e){}
+function cancelSchedule(){var a=new java.util.ArrayList(em.getInstances());for(var n=0;n<a.size();n++)end(a.get(n));}
+function make(level,partyid){if(em.getProperty("state")!="0")return null;em.setProperty("state","1");var e=em.newInstance(eventName+partyid);e.setProperty("phase","stages");try{for(var n=0;n<ids.length;n++){var m=e.setInstanceMap(ids[n]);m.resetFully();m.setSpawns(false);}return e;}catch(error){end(e);throw error;}}
+function spawn(e,id,mobid,pos){var mob=em.getMonster(mobid);e.registerMonster(mob);e.getMapInstance(id).spawnMonsterOnGroundBelow(mob,pos);return mob;}
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License version 3
-    as published by the Free Software Foundation. You may not use, modify
-    or distribute this program under any other version of the
-    GNU Affero General Public License.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
- * @Author Lerk
- * 
- * Guild Quest 
- */
-
-var exitMap;
- 
-importPackage(net.sf.odinms.world);
-importPackage(net.sf.odinms.client);
-importPackage(net.sf.odinms.server.maps);
-importPackage(java.lang);
-
-function init() {
-        em.setProperty("shuffleReactors","false");
-}
-
-function monsterValue(eim, mobId) { //should only trigger on ergoth
-        if (mobId == 9300028) { //but, just to be safe...
-                var rubian = new Item(4001024, 0, 1);
-                var map = eim.getMapInstance(990000900);
-                var reactor = map.getReactorByName("boss");
-                map.spawnItemDrop(reactor, eim.getPlayers().get(0), rubian, reactor.getPosition(), true, false);
-        }
-        return -1;
-}
-
-function setup(eim) {
-	exitMap = em.getChannelServer().getMapFactory().getMap(990001100); //returning path
-	
-	//no time limit yet until clock can be visible in all maps
-        
-        //shuffle reactors in two maps for stage 3
-        eim.getMapInstance(990000501).shuffleReactors();
-        eim.getMapInstance(990000502).shuffleReactors();
-        
-        //force no-respawn on certain map reactors
-        eim.getMapInstance(990000611).getReactorByName("").setDelay(-1);
-        eim.getMapInstance(990000620).getReactorByName("").setDelay(-1);
-        eim.getMapInstance(990000631).getReactorByName("").setDelay(-1);
-        eim.getMapInstance(990000641).getReactorByName("").setDelay(-1);
-        
-        //activate three minutes after start
-        eim.setProperty("entryTimestamp",System.currentTimeMillis() + (3 * 60000));
-        eim.setProperty("canEnter","true");
-	eim.schedule("begin", 60000);
-}
-
-function begin(eim) {
-        eim.setProperty("canEnter","false");
-        eim.schedule("earringcheck", 15000);
-        var party = eim.getPlayers();
-        //if (party.size() < 6) { //not enough to start
-        //        end(eim,"There are no longer enough players to continue, and those remaining shall be warped out.");
-        //} else {
-		var iter = party.iterator();
-                while (iter.hasNext()) {
-                        iter.next().getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,"任务开始了。"));
-		}
-        //}
-}
-
-function playerEntry(eim, player) {
-	var map = eim.getMapInstance(990000000);
-	player.changeMap(map, map.getPortal(0));
-        player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.getClock((Long.parseLong(eim.getProperty("entryTimestamp")) - System.currentTimeMillis()) / 1000));
-	
-	//TODO: hold time across map changes
-	//player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.getClock(1800));
-}
-
-function playerRevive(eim, player) {
-        var returnMap = 990000200;
-        if (eim.getProperty("canEnter").equals("true")) {
-                returnMap = 990000000;
-        }
-        player.setHp(50);
-        player.setStance(0);
-        player.changeMap(eim.getMapInstance(returnMap), eim.getMapInstance(returnMap).getPortal(0));
-        return false;
-}
-
-function playerDead(eim, player) {
-}
-
-function playerDisconnected(eim, player) {
-        var party = eim.getPlayers();
-	if (player.getName().equals(eim.getProperty("leader"))) { //check for party leader
-		//boot all players and end
-		var iter = party.iterator();
-                while (iter.hasNext()) {
-			var pl = iter.next();
-                        pl.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,"副本的队长已掉线，其余玩家将被传送出去。"));
-			if (pl.equals(player)) {
-				removePlayer(eim, pl);
-			}			
-			else {
-				eim.unregisterPlayer(pl);
-				pl.changeMap(exitMap, exitMap.getPortal(0));
-			}
-		}
-		eim.dispose();
-	}
-	else { //boot d/ced player and check if enough players left
-		removePlayer(eim, player);
-                if (party.size() < 6) { //five after player booted
-                        end(eim,"剩余玩家人数不足以继续，其余玩家将被传送出去。");
-                }
-	}
-}
-
-function leftParty(eim, player) { //ignore for GQ
-}
-
-function disbandParty(eim) { //ignore for GQ
-}
-
-function playerExit(eim, player) {
-	eim.unregisterPlayer(player);
-	player.changeMap(exitMap, exitMap.getPortal(0));
-        var party = eim.getPlayers();
-        if (party.size() < 6) { //five after player booted
-                end(eim,"剩余玩家人数不足以继续，其余玩家将被传送出去。");
-        }
-}
-
-function end(eim, msg) {
-        var iter = eim.getPlayers().iterator();
-        while (iter.hasNext()) {
-                var player = iter.next();
-                player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,msg));
-		eim.unregisterPlayer(player);
-                player.changeMap(exitMap, exitMap.getPortal(0));
-	}
-	eim.dispose();
-}
-
-//for offline players
-function removePlayer(eim, player) {
-	eim.unregisterPlayer(player);
-	player.getMap().removePlayer(player);
-	player.setMap(exitMap);
-}
-
-function clearPQ(eim) {
-	var iter = eim.getPlayers().iterator();
-        var bonusMap = eim.getMapInstance(990001000);
-        while (iter.hasNext()) {
-                var player = iter.next();
-		player.changeMap(bonusMap, bonusMap.getPortal(0));
-                player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.getClock(40));
-	}
-        eim.schedule("finish", 40000)
-}
-
-function finish(eim) {
-        var iter = eim.getPlayers().iterator();
-        while (iter.hasNext()) {
-		var player = iter.next();
-		eim.unregisterPlayer(player);
-                player.changeMap(exitMap, exitMap.getPortal(0));
-	}
-	eim.dispose();
-}
-
-function allMonstersDead(eim) {
-        //do nothing; GQ has nothing to do with monster killing
-}
-
-function cancelSchedule() {
-}
-
-function timeOut() {
-	
-}
-
-function earringcheck(eim, player) {
-	var iter = eim.getPlayers().iterator();
-        while (iter.hasNext()) {
-		var pl = iter.next();
-                if (pl.getHp() > 0 && pl.getMapId() > 990000200 && pl.getInventory(MapleInventoryType.EQUIPPED).countById(1032033) == 0) {
-			pl.addHP(-30000);
-			pl.getMap().broadcastMessage(net.sf.odinms.tools.MaplePacketCreator.serverNotice(6,pl.getName() + " 因为没有佩戴耳环而死亡！"));
-                }
-        }
-        eim.schedule("earringcheck", 15000);
-}
+function init(){em.setProperty("state","0");em.setProperty("started","false");em.setProperty("guildid","-1");}
+function setup(z){pqLock.lock();try{if(em.getInstance("GuildQuest")!=null)return null;var e=em.newInstance("GuildQuest");em.setProperty("state","0");em.setProperty("started","false");e.setProperty("phase","waiting");e.setProperty("canEnter","true");e.setProperty("entryTimestamp",""+java.lang.System.currentTimeMillis());try{for(var n=0;n<ids.length;n++){var m=e.setInstanceMap(ids[n]);m.resetFully();m.setSpawns(false);}for(var id=990000501;id<=990000502;id++)e.getMapInstance(id).shuffleReactors();for(var n=0;n<4;n++)e.getMapInstance([990000611,990000620,990000631,990000641][n]).getReactorByName("").setDelay(-1);e.startEventTimer(180000);return e;}catch(error){end(e);throw error;}}finally{pqLock.unlock();}}
+function playerEntry(e,p){clearMaterials(p);var m=e.getMapInstance(990000000);p.changeMap(m,m.getPortal(0));}
+function leader(e,p){return p!=null&&String(p.getName())==String(e.getProperty("leader"));}
+function scheduledTimeout(e){if(e.getProperty("phase")=="waiting"){var ps=e.getPlayers(),young=false;for(var n=0;n<ps.size();n++)if(ps.get(n).getLevel()<=30)young=true;if(ps.size()<6||!young){e.broadcastPlayerMsg(5,"公会任务需要至少六人，且必须有一名30级以下成员完成专用通道。");end(e);return;}e.setProperty("phase","stages");e.setProperty("canEnter","false");em.setProperty("state","1");em.setProperty("started","true");e.restartEventTimer(3600000);e.schedule("earringcheck",15000);e.broadcastPlayerMsg(5,"公会任务开始，请取得并佩戴保护石后继续前进。");}else end(e);}
+function earringcheck(e){if(e.getProperty("phase")!="stages")return;var ps=e.getPlayers();for(var n=0;n<ps.size();n++){var p=ps.get(n);if(p.getMapId()>=990000300&&p.getMapId()<=990000900&&!p.hasEquipped(1032033)&&p.isAlive())p.addHP(-p.getStat().getHp());}e.schedule("earringcheck",15000);}
+function monsterValue(e,id){if(id==9300028)e.setProperty("bossDefeated","true");return 0;}
+function changedMap(e,p,id){if(e.getProperty("phase")=="ending"||ids.indexOf(id)>=0)return;var lead=leader(e,p);clearMaterials(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(lead||(e.getProperty("phase")=="stages"&&e.getPlayerCount()<6)))||e.getPlayerCount()==0)end(e);}
+function playerDisconnected(e,p){var lead=leader(e,p);clearMaterials(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(lead||(e.getProperty("phase")=="stages"&&e.getPlayerCount()<6)))||e.getPlayerCount()==0)end(e);return 0;}
+function playerRevive(e,p){var m=e.getMapInstance(e.getProperty("phase")=="waiting"?990000000:990000200);p.getStat().setHp(50,p);p.changeMap(m,m.getPortal(0));return true;}
+function leftParty(e,p){}
+function disbandParty(e){}
+function clearPQ(e){pqLock.lock();try{if(e.getProperty("phase")!="stages"||e.getProperty("bossclear")!="true"||e.getProperty("bossDefeated")!="true")return;e.setProperty("phase","complete");em.setProperty("state","2");warpAll(e,990001000);e.restartEventTimer(120000);}finally{pqLock.unlock();}}

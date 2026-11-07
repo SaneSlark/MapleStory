@@ -1,0 +1,2 @@
+function start(){var p=cm.getPlayer();if(cm.getMapId()!=990001100){cm.dispose();return;}if(p.hasEquipped(1032033)){cm.sendOk("请先卸下保护石，再离开遗址。");cm.dispose();return;}var items=[1032033,4001024,4001025,4001026,4001027,4001028,4001029,4001030,4001031,4001032,4001033,4001034,4001035,4001037];for(var n=0;n<items.length;n++)cm.removeAll(items[n]);cm.dispose();cm.warp(101030104,0);}
+function action(mode,type,selection){cm.dispose();}

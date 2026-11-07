@@ -65,7 +65,7 @@ function playerEntry(eim,player) {
 }
 
 function playerRevive(eim,player) {
-	player.setHp(500);
+	player.getStat().setHp(500,player);
 	player.setStance(0);
 	eim.unregisterPlayer(player);
 	player.changeMap(exitMap, exitMap.getPortal(0));
@@ -73,7 +73,7 @@ function playerRevive(eim,player) {
 	if (party.size() < minPlayers) {
 		end(eim,"剩余玩家人数不足，战斗结束。");
 	}
-	return false;
+	return true;
 }
 
 function playerDead(eim,player) {
@@ -153,7 +153,8 @@ function finish(eim) {
 function allMonstersDead(eim) { // nothing normally done with altar here
 }
 
-function cancelSchedule() { // no
+function cancelSchedule() {
+    var e=em.getInstance("ZakumBattle");if(e!=null)end(e,"\u6d3b\u52a8\u91cd\u65b0\u52a0\u8f7d\uff0c\u8bf7\u4ece\u5165\u53e3\u91cd\u65b0\u5f00\u59cb\u3002");
 }
 
 function timeOut() { // possibly useful
@@ -166,3 +167,6 @@ function debug(eim,msg) {
  		player.getClient().getSession().write(Packages.tools.packet.CWvsContext.serverNotice(6,msg));
 	}
 }
+
+// Admission and setup share one lock; a later arrival never resets a live altar.
+function admit(p){if(!admissionLock.tryLock())return false;try{if(p.getMapId()!=211042300||p.getLevel()<50||!p.isAlive()||p.getEventInstance()!=null||p.getItemQuantity(4001017,false)<1)return false;var e=em.getInstance("ZakumBattle");if(e==null){if(String(em.getProperty("state"))!="0")return false;e=setup(null);}else if(String(e.getProperty("canEnter"))!="true"||String(e.getProperty("bossSummoned"))=="true")return false;e.registerPlayer(p);return p.getMapId()==280030000;}finally{admissionLock.unlock();}}

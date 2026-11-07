@@ -51,7 +51,7 @@ function start() {
                                         var guess = getGroundItems();
                                         if (guess != null) {
                                                 if (combo == guess) {
-                                                        cm.getPlayer().getMap().getReactorByName("watergate").hitReactor(cm.getC());
+                                                        cm.getPlayer().getMap().getReactorByName("watergate").forceHitReactor(1);
                                                         cm.sendOk("你可以通过了。");
                                                         cm.showEffect(true,"quest/party/clear");
                                                         cm.playSound(true,"Party1/Clear");

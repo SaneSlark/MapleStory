@@ -1,48 +1,17 @@
-/* 
-    This file is part of the odinms Maple Story Server 
-    Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc>  
-                       Matthias Butz <matze@odinms.de> 
-                       Jan Christian Meyer <vimes@odinms.de> 
-
-    This program is free software: you can redistribute it and/or modify 
-    it under the terms of the GNU Affero General Public License version 3 
-    as published by the Free Software Foundation. You may not use, modify 
-    or distribute this program under any other version of the 
-    GNU Affero General Public License. 
-
-    This program is distributed in the hope that it will be useful, 
-    but WITHOUT ANY WARRANTY; without even the implied warranty of 
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
-    GNU Affero General Public License for more details. 
-
-    You should have received a copy of the GNU Affero General Public License 
-    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
-*/ 
-
-importPackage(net.sf.odinms.server.maps); 
-importPackage(net.sf.odinms.net.channel); 
-
-/* 
-    Return from 
-    Ariant Coliseum : Lobby 
-*/ 
-
-function enter(pi) { 
-    var returnMap = pi.getPlayer().getSavedLocation(SavedLocationType.FREE_MARKET); 
-    if (returnMap < 0) { 
-        returnMap = 100000000; 
-    } 
-    var target = pi.getPlayer().getClient().getChannelServer().getMapFactory().getMap(returnMap); 
-    var targetPortal; 
-    if (returnMap == 100000000) { 
-        targetPortal = target.getPortal(4); 
-    } else { 
-        targetPortal = target.getPortal(0); 
-    } 
-    if (targetPortal == null) { 
-        targetPortal = target.getPortal(0); 
-    } 
-    pi.getPlayer().clearSavedLocation(SavedLocationType.ARIANT_PQ); 
-    pi.getPlayer().changeMap(target, targetPortal); 
-    return true; 
-}  
+// CMS072 Ariant lobby exit; its return slot is independent of the free market.
+function enter(pi){
+ if(pi.getMapId()!=980010000)return false;
+ var player=pi.getPlayer(),type=Packages.server.maps.SavedLocationType.ARIANT_PQ;
+ var saved=player.getSavedLocation(type),factory=player.getClient().getChannelServer().getMapFactory();
+ var valid=saved>0 && saved!=999999999 && (saved<980010000 || saved>=980011000);
+ var target=valid?factory.getMap(saved):null;
+ if(target==null)target=factory.getMap(100000000);
+ if(target==null)return false;
+ var portal=target.getId()==100000000?target.getPortal(4):target.getPortal(0);
+ if(portal==null)portal=target.getPortal(0);
+ if(portal==null)return false;
+ player.changeMap(target,portal);
+ if(player.getMapId()!=target.getId())return false;
+ player.clearSavedLocation(type);
+ return true;
+}

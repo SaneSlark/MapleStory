@@ -1,0 +1,1 @@
+var done=false;function start(){if(done)return;done=true;var e=cm.getEventInstance();if(e!=null&&e.getEventManager().getName()=="Ellin")e.getEventManager().getIv().invokeFunction("step",e,cm);cm.dispose();}function action(mode,type,selection){cm.dispose();}

@@ -1,0 +1,3 @@
+var done=false;
+function start(){if(cm.getMapId()==925100500){done=true;var e=cm.getEventInstance();if(e!=null&&e.getEventManager().getName()=="Pirate")e.getEventManager().getIv().invokeFunction("next",e,cm.getPlayer());cm.dispose();return;}cm.sendSimple("海盗王已被击败！\r\n#L0#返回入口#l\r\n#L1#领取首次海盗帽（完成30次）#l");}
+function action(mode,type,selection){if(done)return;done=true;if(mode!=1||cm.getMapId()!=925100600){cm.dispose();return;}var p=cm.getPlayer(),e=p.getEventInstance();if(e==null||e.getEventManager().getName()!="Pirate"||e.getProperty("phase")!="complete"){cm.dispose();return;}if(selection==0){cm.dispose();cm.warp(251010404,0);return;}if(selection==1)e.getEventManager().getIv().invokeFunction("hat",e,cm);cm.dispose();}

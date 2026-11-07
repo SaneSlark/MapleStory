@@ -1,4 +1,2 @@
-function start() {
-	cm.sendOk ("岁月如梭,人生就是梦");
-	cm.dispose();
-}
+function start(){cm.dispose();cm.openNpc(2094002,"davyJohn_play");}
+function action(mode,type,selection){cm.dispose();}

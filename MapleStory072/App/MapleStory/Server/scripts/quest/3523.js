@@ -1,18 +1,20 @@
-/* ============================================================
-   自动生成任务脚本 - 重新生成会被覆盖, 定制请修改生成器
-   任务: 3523 追随遗忘的记忆
-   开始NPC: 1022000  结束NPC: 
-   ============================================================ */
-var status = -1;
-
-function start(mode, type, selection) {
-    if (mode == -1) { qm.dispose(); return; }
-    if (mode == 1) status++; else status--;
-    if (status < 0) { qm.dispose(); return; }
-    if (status == 0) qm.sendNext("按照旁观者的说法，要找回失去的记忆，必须回到开始的时候。冒险开始的时候……不就是离开枫之岛，踏上维多利亚岛的转职的时候吗？去见见#b#p1022000##k吧。");
-    else {
-        qm.startQuest(qm.getQuest());
-        qm.dispose();
+// CMS072 native mentor visit; parent quest reward stays with the Temple 1022000.
+var stage=0,closed=false;
+function valid(){return qm.getNpc()==1022000 && qm.getQuest()==3523 && qm.getQuestStatus(3507)==1 && Math.floor(qm.getPlayer().getJob()/100)==1;}
+function finish(){closed=true;qm.dispose();}
+function visit(mode,accept){
+    if(closed)return;
+    if(mode!=1 || !valid()){finish();return;}
+    var q=Packages.server.quest.MapleQuest.getInstance(3523);
+    if(stage==0){
+        if(accept ? !q.canStart(qm.getPlayer(),qm.getNpc()) : qm.getQuestStatus(3523)!=1){finish();return;}
+        stage=1;qm.sendNext("\u5f88\u4e45\u4e4b\u540e\u518d\u6b21\u89c1\u5230\u4e86#p1022000#\u3002\u4ed6\u8bf4\u5f88\u9ad8\u5174\u770b\u5230\u66fe\u7ecf\u662f\u9752\u6da9\u7684\u65b0\u624b\u7684\u4f60\u6210\u4e3a\u4e86\u51fa\u8272\u7684\u6218\u58eb\u3002\u770b\u5230\u5f88\u4e45\u4e0d\u89c1\u4f46\u8fd8\u8bb0\u5f97\u6211\u7684\u4ed6\uff0c\u6211\u7684\u5fc3\u91cc\u5145\u6ee1\u4e86\u6e29\u6696\u3002");return;
     }
+    closed=true;
+    if(accept)qm.startQuestInScript(3523);
+    if(qm.getQuestStatus(3523)==1 && q.canComplete(qm.getPlayer(),qm.getNpc()))qm.completeQuest(3523);
+    if(qm.getQuestStatus(3523)==2)qm.getPlayer().updateInfoQuest(7081,"1");
+    qm.dispose();
 }
-
+function start(mode,type,selection){visit(mode,true);}
+function end(mode,type,selection){visit(mode,false);}

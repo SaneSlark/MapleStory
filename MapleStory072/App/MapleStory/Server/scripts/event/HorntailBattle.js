@@ -1,80 +1,24 @@
-function init() {
-    // 0 = Not started, 1 = started, 2 = first head defeated, 3 = second head defeated
-    em.setProperty("state", "0");
-	em.setProperty("leader", "true");
-}
-
-function originalSetup(eim, leaderid) {
-    em.setProperty("state", "1");
-    em.setProperty("preheadCheck", "0");
-	em.setProperty("leader", "true");
-
-    var eim = em.newInstance("HorntailBattle");
-
-    eim.setInstanceMap(240060200).resetFully();
-
-    eim.startEventTimer(4500000); //now changed to 1 hour 15 mins
-    return eim;
-}
-
-function playerEntry(eim, player) {
-    var map = eim.getMapFactory().getMap(240060200);
-    player.changeMap(map, map.getPortal(0));
-}
-
-function changedMap(eim, player, mapid) {
-    switch (mapid) {
-	case 240060200:
-	    return;
-    }
-    eim.unregisterPlayer(player);
-
-    if (eim.disposeIfPlayerBelow(0, 0)) {
-	em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-    }
-}
-
-function playerDisconnected(eim, player) {
-    return 0;
-}
-
-function scheduledTimeout(eim) {
-    eim.disposeIfPlayerBelow(100, 240050400);
-    em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-}
-
-function playerExit(eim, player) {
-    eim.unregisterPlayer(player);
-
-    if (eim.disposeIfPlayerBelow(0, 0)) {
-	em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-    }
-}
-
-function monsterValue(eim, mobId) {
-    return 1;
-}
-
-function allMonstersDead(eim) {
-}
-
-function playerRevive(eim, player) {
-    return false;
-}
-
-function clearPQ(eim) {}
-function leftParty (eim, player) {}
-function disbandParty (eim) {}
-function playerDead(eim, player) {}
-function cancelSchedule() {}
+// CMS072 native two preliminary chambers and composite final boss.
+// Existing squad level/channel/cooldown rules and 75-minute event timer retained.
 var admissionLock=new java.util.concurrent.locks.ReentrantLock();
-function setup(a,b){
-    if(!admissionLock.tryLock())throw "Boss admission busy";
-    try{
-        if(String(em.getProperty("state"))!="0" || em.getInstance("HorntailBattle")!=null || em.getMapFactory().getMap(240060200).getCharactersSize()!=0)throw "Boss map occupied";
-        return originalSetup(a,b);
-    }finally{admissionLock.unlock();}
-}
+var rooms=[240060000,240060100,240060200];
+function init(){em.setProperty("state","0");em.setProperty("leader","true");}
+function setup(a,b){admissionLock.lock();var e=null;try{if(String(em.getProperty("state"))!="0"||em.getInstance("HorntailBattle")!=null)throw "Horntail occupied";for(var i=0;i<rooms.length;i++)if(em.getMapFactory().getMap(rooms[i]).getCharactersSize()!=0)throw "Horntail chamber occupied";e=em.newInstance("HorntailBattle");em.setProperty("state","1");for(var i=0;i<rooms.length;i++)e.setInstanceMap(rooms[i]).resetFully();e.startEventTimer(4500000);return e;}catch(error){if(e!=null)e.dispose();throw error;}finally{admissionLock.unlock();}}
+function playerEntry(e,p){var m=e.getMapInstance(240060000);p.changeMap(m,m.getPortal(0));}
+function own(e,p){return e!=null&&p.getEventInstance()==e&&String(e.getEventManager().getName())=="HorntailBattle";}
+function beginHead(e,p,n){admissionLock.lock();try{if(!own(e,p)||!p.isAlive()||n<0||n>1||p.getMapId()!=rooms[n]||(n==1&&e.getProperty("head0")!="clear"))return false;if(e.getProperty("head"+n)!=null)return false;var m=e.getMapInstance(rooms[n]),anchor=m.getReactorByName("tremble"+(n+1));if(anchor==null)return false;var mob=em.getMonster(8810000+n);e.setProperty("head"+n,"active");e.registerMonster(mob);m.spawnMonsterOnGroundBelow(mob,anchor.getPosition());return true;}finally{admissionLock.unlock();}}
+function advance(e,p){if(!own(e,p)||!p.isAlive())return false;var n=rooms.indexOf(p.getMapId());if(n<0||n>1||e.getProperty("head"+n)!="clear"||p.getMap().getMonsterById(8810000+n)!=null)return false;var m=e.getMapInstance(rooms[n+1]);p.changeMap(m,m.getPortal(n==0?"st00":"sp"));return true;}
+function monsterValue(e,id){if(id==8810000)e.setProperty("head0","clear");else if(id==8810001)e.setProperty("head1","clear");return 1;}
+function cleanSquad(){var s=em.getChannelServer().getMapleSquad("Horntail");if(s!=null&&s.getStatus()==2){s.clear();s.copy();}}
+function release(e){if(e.getPlayerCount()==0){e.dispose();cleanSquad();}}
+function changedMap(e,p,id){if(rooms.indexOf(id)>=0)return;e.unregisterPlayer(p);release(e);}
+function playerDisconnected(e,p){if(e.getPlayerCount()<=1){e.unregisterPlayer(p);release(e);}return 0;}
+function playerExit(e,p){e.unregisterPlayer(p);var m=em.getMapFactory().getMap(240000000);p.changeMap(m,m.getPortal(0));release(e);}
+function playerRevive(e,p){return false;}
+function scheduledTimeout(e){e.disposeIfPlayerBelow(100,240050400);cleanSquad();}
+function cancelSchedule(){var a=new java.util.ArrayList(em.getInstances());for(var i=0;i<a.size();i++)scheduledTimeout(a.get(i));}
+function allMonstersDead(e){}
+function clearPQ(e){}
+function leftParty(e,p){}
+function disbandParty(e){}
+function playerDead(e,p){}

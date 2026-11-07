@@ -189,3 +189,7 @@ function action(mode, type, selection) {
     }
     cm.dispose();
 }
+// Keep the menu and existing rules, but do not send players into incomplete ported courses.
+var bossRushStart=start,bossRushAction=action,bossRushClosed=false,bossRushOrigin=-1;
+start=function(){bossRushOrigin=cm.getMapId();bossRushClosed=false;bossRushStart();};
+action=function(mode,type,selection){if(bossRushClosed)return;bossRushClosed=true;if(mode!=1||cm.getMapId()!=bossRushOrigin){cm.dispose();return;}var name=selection==0?"BossQuestEASY":selection==1?"BossQuestMed":selection==2?"BossQuestHARD":selection==28?"BossQuestHELL":null;if(name!=null){var event=cm.getEventManager(name);if(event==null||String(event.getIv().invokeFunction("cms072ResourcesReady"))!="true"){cm.sendOk("本版客户端缺少这条首领挑战路线所需的完整资源，暂时无法开始。你的道具和积分会保留。");cm.dispose();return;}}bossRushAction(mode,type,selection);};

@@ -1,78 +1,9 @@
-function action(mode, type, selection) {
-    var em = cm.getEventManager("Juliet");
-    if (em == null) {
-	cm.sendOk("找不到脚本，请联系GM！");
-	cm.dispose();
-	return;
-    }
-    switch(cm.getPlayer().getMapId()) {
-	case 261000021:
-	    cm.removeAll(4001130);
-	    cm.removeAll(4001131);
-	    cm.removeAll(4001132);
-	    cm.removeAll(4001133);
-	    cm.removeAll(4001134);
-	    cm.removeAll(4001135);
-	    if (cm.getPlayer().getParty() == null || !cm.isLeader()) {
-		cm.sendOk("请找队长来和我谈。");
-	    } else {
-		var party = cm.getPlayer().getParty().getMembers();
-		var mapId = cm.getPlayer().getMapId();
-		var next = true;
-		var size = 0;
-		var it = party.iterator();
-		while (it.hasNext()) {
-			var cPlayer = it.next();
-			var ccPlayer = cm.getPlayer().getMap().getCharacterById(cPlayer.getId());
-			if (ccPlayer == null || ccPlayer.getLevel() < 70 || ccPlayer.getLevel() > 120) {
-				next = false;
-				break;
-			}
-			size += (ccPlayer.isGM() ? 4 : 1);
-		}	
-		if (next && (cm.getPlayer().isGM() || size >= 4)) {
-			em.startInstance(cm.getPlayer().getParty(), cm.getPlayer().getMap());
-		} else {
-			cm.sendOk("请你的队员大于4个人(含)都要70等以上(含)120等以下(120也可)都要在这张地图再来找我");
-		}
-	    }
-	    break;
-	case 926110000:
-	    cm.sendOk("你应该尝试在这里调查各地。看看库中的文件，直到你可以找到入口实验室.");
-	    break;
-	case 926110001:
-	    cm.sendOk("请消除所有的怪物。");
-	    break;
-	case 926110100:
-	    cm.sendOk("请把烧杯里的溢体装满。");
-	    break;
-	case 926110200:
-	    if (cm.haveItem(4001131,1)) {
-		cm.sendOk("哦，我的信找到了，谢谢！");
-		cm.gainItem(4001131,-1);
-		em.setProperty("stage", "1");
-	    } else if (cm.haveItem(4001134,1)) {
-		cm.gainItem(4001134,-1);
-		cm.sendOk("谢谢你，现在帮我找#t4001135#.");
-		em.setProperty("stage4", "1");
-	    } else if (cm.haveItem(4001135,1) && em.getProperty("stage4").equals("1")) {
-		cm.gainItem(4001135,-1);
-		cm.sendOk("谢谢你，已经过关了。.");
-		em.setProperty("stage4", "2");
-		cm.getMap().getReactorByName("jnr3_out3").hitReactor(cm.getClient());
-	    } else {
-	    	cm.sendOk("现在我们必须停止冲突，请帮我找出#t4001134# 和 #t4001135#。");
-	    }
-	    break;
-	case 926100300:
-	    cm.sendOk("我们一定要到实验室的顶部.");
-	    break;
-	case 926100400:
-	    cm.sendOk("当你准备好了，我们要快去救救我的爱人.");
-	    break;
-	case 926110401:
-	    cm.warpParty(926110500); //urete
-	    break;
-    }
-    cm.dispose();
-}
+function start(){cm.dispose();cm.openNpc(2112003,"pq072_rnj_npc");}
+function action(mode,type,selection){cm.dispose();}
+
+// Ordinary native quests coexist with the original service; Check/Act own conditions and rewards.
+var linkOriginalStart=start,linkOriginalAction=typeof action=="function"?action:null;
+var linkData=[[3370, 1, "罗密欧的花束"], [3371, 0, "朱丽叶的心"], [3372, 1, "西琳的裁缝法"], [3373, 0, "朱丽叶的答礼"], [3375, 1, "罗密欧的情书"], [3376, 1, "朱丽叶的感动"], [3376, 0, "朱丽叶的感动"], [3378, 0, "朱丽叶的盒饭"]],linkMaps=[261000021],linkChoices=[],linkPicked=null,linkStage=-1,linkOrigin=-1;
+function linkPlace(){return linkMaps.indexOf(cm.getMapId())>=0&&cm.getMapId()==linkOrigin&&cm.getPlayer().getEventInstance()==null;}
+start=function(){linkOrigin=cm.getMapId();linkChoices=[];linkStage=-1;if(!linkPlace()){linkOriginalStart();return;}var menu="";for(var i=0;i<linkData.length;i++){var d=linkData[i],q=Packages.server.quest.MapleQuest.getInstance(d[0]);if(q.hasStartScript()||q.hasEndScript())continue;if(d[1]==0?q.canStart(cm.getPlayer(),cm.getNpc()):cm.getQuestStatus(d[0])==1){menu+="\r\n#L"+linkChoices.length+"#"+(d[1]==0?"[接受] ":"[继续] ")+d[2]+"#l";linkChoices.push(d);}}if(linkChoices.length==0){linkOriginalStart();return;}linkStage=0;cm.sendSimple("有什么需要帮助的吗？"+menu+"\r\n#L"+linkChoices.length+"#其他服务与对话#l");};
+action=function(mode,type,selection){if(linkStage<0){if(linkOriginalAction!=null)linkOriginalAction(mode,type,selection);else cm.dispose();return;}if(linkStage==2)return;if(mode!=1||!linkPlace()){linkStage=2;cm.dispose();return;}if(linkStage==0){if(selection==linkChoices.length){linkStage=-1;linkOriginalStart();return;}if(selection!=Math.floor(selection)||selection<0||selection>=linkChoices.length){linkStage=2;cm.dispose();return;}linkPicked=linkChoices[selection];linkStage=1;cm.sendYesNo("要"+(linkPicked[1]==0?"接受":"完成")+"任务【"+linkPicked[2]+"】吗？");return;}linkStage=2;var q=Packages.server.quest.MapleQuest.getInstance(linkPicked[0]);if(q.hasStartScript()||q.hasEndScript()){cm.dispose();return;}if(linkPicked[1]==0&&q.canStart(cm.getPlayer(),cm.getNpc())){cm.startClientNpcQuest(linkPicked[0]);return;}if(linkPicked[1]==1&&q.canComplete(cm.getPlayer(),cm.getNpc())){cm.completeClientNpcQuest(linkPicked[0]);return;}cm.sendOk("请先完成任务栏中的条件，物品和进度会保留。");cm.dispose();};

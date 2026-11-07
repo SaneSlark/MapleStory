@@ -1,0 +1,1 @@
+function enter(pi){var p=pi.getPlayer(),e=p.getEventInstance();if(e==null||["Romeo","Juliet"].indexOf(String(e.getEventManager().getName()))<0)return false;return e.getEventManager().getIv().invokeFunction("portalById",e,p,pi.getPortal());}

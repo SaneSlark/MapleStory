@@ -4,14 +4,17 @@
    开始NPC: 2101003  结束NPC: 2101003
    ============================================================ */
 var status = -1;
+var startClosed = false;
 
 function start(mode, type, selection) {
-    if (mode == -1) { qm.dispose(); return; }
+    if (startClosed) return;
+    if (mode == -1) { startClosed = true; qm.dispose(); return; }
     if (mode == 1) status++; else status--;
-    if (status < 0) { qm.dispose(); return; }
+    if (status < 0) { startClosed = true; qm.dispose(); return; }
     if (status == 0) qm.sendNext("通过了#p2101003#的所有考验。现在可以成为沙子图团员了吧？去找#p2101003#问问吧。");
     else {
-        qm.startQuest(qm.getQuest());
+        startClosed = true;
+        qm.startQuestInScript(qm.getQuest());
         qm.dispose();
     }
 }

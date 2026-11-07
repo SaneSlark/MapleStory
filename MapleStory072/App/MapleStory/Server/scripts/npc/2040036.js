@@ -1,3 +1,2 @@
-// CMS LPQ stage controller.
-function start(){cm.openNpc(cm.getNpc(),"ludi_stage");}
+function start(){cm.dispose();cm.openNpc(2040036,"party2_play");}
 function action(mode,type,selection){cm.dispose();}

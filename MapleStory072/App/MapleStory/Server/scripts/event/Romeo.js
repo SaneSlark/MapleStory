@@ -1,172 +1,71 @@
-var minPlayers = 4;
+var eventName="Romeo",quest=1205,minPlayers=4,exitMap=926100700,materials=[4001130,4001131,4001132,4001133,4001134,4001135],ids=[926100000, 926100001, 926100100, 926100200, 926100201, 926100202, 926100203, 926100300, 926100301, 926100302, 926100303, 926100304, 926100400, 926100401, 926100500, 926100600],base=926100000,prefix="rnj",startNpc=2112004,angryNpc=2112000,wiseNpc=2112002,protectedMob=9300137,letter=4001130,crystal=4001160,portalCodes={"926100000_1": "rnj1_pt00", "926100001_1": "rnj1_out", "926100100_1": "rnj2_out", "926100200_1": "rnj3_in0", "926100200_2": "rnj3_in1", "926100200_3": "rnj3_out", "926100201_1": "rnj_201_0", "926100202_1": "rnj_202", "926100203_1": "rnj6_out", "926100203_2": "rnj6_act", "926100203_3": "rnj6_act", "926100300_1": "rnj4_r1", "926100300_2": "rnj4_r2", "926100300_3": "rnj4_r3", "926100300_4": "rnj4_r4", "926100301_14": "laneExit", "926100301_15": "rnj5_rp", "926100301_16": "rnj5_rp", "926100301_17": "rnj5_rp", "926100301_18": "rnj5_rp", "926100301_19": "rnj5_rp", "926100301_20": "rnj5_rp", "926100301_21": "rnj5_rp", "926100301_22": "rnj5_rp", "926100301_23": "rnj5_rp", "926100301_24": "rnj5_rp", "926100301_25": "rnj5_rp", "926100301_26": "rnj5_rp", "926100301_27": "rnj5_rp", "926100301_28": "rnj5_rp", "926100301_29": "rnj5_rp", "926100301_30": "rnj5_rp", "926100301_31": "rnj5_rp", "926100301_32": "rnj5_rp", "926100301_33": "rnj5_rp", "926100301_34": "rnj5_rp", "926100301_35": "rnj5_rp", "926100301_36": "rnj5_rp", "926100301_37": "rnj5_rp", "926100301_38": "rnj5_rp", "926100301_39": "rnj5_rp", "926100301_40": "rnj5_rp", "926100301_41": "rnj5_rp", "926100301_42": "rnj5_rp", "926100301_43": "rnj5_rp", "926100301_44": "rnj5_rp", "926100301_45": "rnj5_rp", "926100301_46": "rnj5_rp", "926100301_47": "rnj5_rp", "926100301_48": "rnj5_rp", "926100301_49": "rnj5_rp", "926100301_50": "rnj5_rp", "926100301_51": "rnj5_rp", "926100301_52": "rnj5_rp", "926100301_53": "rnj5_rp", "926100301_54": "rnj5_rp", "926100302_14": "laneExit", "926100302_15": "rnj5_rp", "926100302_16": "rnj5_rp", "926100302_17": "rnj5_rp", "926100302_18": "rnj5_rp", "926100302_19": "rnj5_rp", "926100302_20": "rnj5_rp", "926100302_21": "rnj5_rp", "926100302_22": "rnj5_rp", "926100302_23": "rnj5_rp", "926100302_24": "rnj5_rp", "926100302_25": "rnj5_rp", "926100302_26": "rnj5_rp", "926100302_27": "rnj5_rp", "926100302_28": "rnj5_rp", "926100302_29": "rnj5_rp", "926100302_30": "rnj5_rp", "926100302_31": "rnj5_rp", "926100302_32": "rnj5_rp", "926100302_33": "rnj5_rp", "926100302_34": "rnj5_rp", "926100302_35": "rnj5_rp", "926100302_36": "rnj5_rp", "926100302_37": "rnj5_rp", "926100302_38": "rnj5_rp", "926100302_39": "rnj5_rp", "926100302_40": "rnj5_rp", "926100302_41": "rnj5_rp", "926100302_42": "rnj5_rp", "926100302_43": "rnj5_rp", "926100302_44": "rnj5_rp", "926100302_45": "rnj5_rp", "926100302_46": "rnj5_rp", "926100302_47": "rnj5_rp", "926100302_48": "rnj5_rp", "926100302_49": "rnj5_rp", "926100302_50": "rnj5_rp", "926100302_51": "rnj5_rp", "926100302_52": "rnj5_rp", "926100302_53": "rnj5_rp", "926100302_54": "rnj5_rp", "926100303_14": "laneExit", "926100303_15": "rnj5_rp", "926100303_16": "rnj5_rp", "926100303_17": "rnj5_rp", "926100303_18": "rnj5_rp", "926100303_19": "rnj5_rp", "926100303_20": "rnj5_rp", "926100303_21": "rnj5_rp", "926100303_22": "rnj5_rp", "926100303_23": "rnj5_rp", "926100303_24": "rnj5_rp", "926100303_25": "rnj5_rp", "926100303_26": "rnj5_rp", "926100303_27": "rnj5_rp", "926100303_28": "rnj5_rp", "926100303_29": "rnj5_rp", "926100303_30": "rnj5_rp", "926100303_31": "rnj5_rp", "926100303_32": "rnj5_rp", "926100303_33": "rnj5_rp", "926100303_34": "rnj5_rp", "926100303_35": "rnj5_rp", "926100303_36": "rnj5_rp", "926100303_37": "rnj5_rp", "926100303_38": "rnj5_rp", "926100303_39": "rnj5_rp", "926100303_40": "rnj5_rp", "926100303_41": "rnj5_rp", "926100303_42": "rnj5_rp", "926100303_43": "rnj5_rp", "926100303_44": "rnj5_rp", "926100303_45": "rnj5_rp", "926100303_46": "rnj5_rp", "926100303_47": "rnj5_rp", "926100303_48": "rnj5_rp", "926100303_49": "rnj5_rp", "926100303_50": "rnj5_rp", "926100303_51": "rnj5_rp", "926100303_52": "rnj5_rp", "926100303_53": "rnj5_rp", "926100303_54": "rnj5_rp", "926100304_14": "laneExit", "926100304_15": "rnj5_rp", "926100304_16": "rnj5_rp", "926100304_17": "rnj5_rp", "926100304_18": "rnj5_rp", "926100304_19": "rnj5_rp", "926100304_20": "rnj5_rp", "926100304_21": "rnj5_rp", "926100304_22": "rnj5_rp", "926100304_23": "rnj5_rp", "926100304_24": "rnj5_rp", "926100304_25": "rnj5_rp", "926100304_26": "rnj5_rp", "926100304_27": "rnj5_rp", "926100304_28": "rnj5_rp", "926100304_29": "rnj5_rp", "926100304_30": "rnj5_rp", "926100304_31": "rnj5_rp", "926100304_32": "rnj5_rp", "926100304_33": "rnj5_rp", "926100304_34": "rnj5_rp", "926100304_35": "rnj5_rp", "926100304_36": "rnj5_rp", "926100304_37": "rnj5_rp", "926100304_38": "rnj5_rp", "926100304_39": "rnj5_rp", "926100304_40": "rnj5_rp", "926100304_41": "rnj5_rp", "926100304_42": "rnj5_rp", "926100304_43": "rnj5_rp", "926100304_44": "rnj5_rp", "926100304_45": "rnj5_rp", "926100304_46": "rnj5_rp", "926100304_47": "rnj5_rp", "926100304_48": "rnj5_rp", "926100304_49": "rnj5_rp", "926100304_50": "rnj5_rp", "926100304_51": "rnj5_rp", "926100304_52": "rnj5_rp", "926100304_53": "rnj5_rp", "926100304_54": "rnj5_rp", "926100400_2": "rnj12_in"};
 
-function init() {
-em.setProperty("state", "0");
-	em.setProperty("leader", "true");
+var pqLock=new java.util.concurrent.locks.ReentrantLock();
+function init(){em.setProperty("state","0");em.setProperty("leader","true");}
+function clearMaterials(p){for(var n=0;n<materials.length;n++){var id=materials[n],count=p.getItemQuantity(id,false);if(count>0)Packages.server.MapleInventoryManipulator.removeById(p.getClient(),Packages.constants.GameConstants.getInventoryType(id),id,count,false,false);}}
+function playerEntry(e,p){clearMaterials(p);var m=e.getMapInstance(ids[0]);p.changeMap(m,m.getPortal(0));recordStart(e,p);}
+function own(e,p){return p!=null&&p.getEventInstance()==e&&e.getProperty("phase")!="ending"&&ids.indexOf(p.getMapId())>=0&&p.getMap()==e.getMapInstance(p.getMapId());}
+function warpAll(e,id){var m=e.getMapInstance(id),ps=e.getPlayers();for(var n=0;n<ps.size();n++)ps.get(n).changeMap(m,m.getPortal(0));}
+function complete(e,id){if(e.getProperty("phase")=="complete"||e.getProperty("phase")=="ending")return;e.setProperty("phase","complete");var ps=e.getPlayers();for(var n=0;n<ps.size();n++){clearMaterials(ps.get(n));recordFinish(e,ps.get(n));}if(id>0)warpAll(e,id);}
+function end(e){pqLock.lock();try{if(e.getProperty("phase")=="ending")return;e.setProperty("phase","ending");var ps=e.getPlayers();for(var n=0;n<ps.size();n++)clearMaterials(ps.get(n));if(e.disposeIfPlayerBelow(100,exitMap))init();}finally{pqLock.unlock();}}
+function changedMap(e,p,id){if(e.getProperty("phase")=="ending"||ids.indexOf(id)>=0)return;clearMaterials(p);var leader=e.isLeader(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(leader||e.getPlayerCount()<minPlayers))||e.getPlayerCount()==0)end(e);}
+function playerDisconnected(e,p){clearMaterials(p);var leader=e.isLeader(p);e.unregisterPlayer(p);if((e.getProperty("phase")!="complete"&&(leader||e.getPlayerCount()<minPlayers))||e.getPlayerCount()==0)end(e);return 0;}
+function playerExit(e,p){var m=em.getChannelServer().getMapFactory().getMap(exitMap);p.changeMap(m,m.getPortal(0));}
+function playerRevive(e,p){playerExit(e,p);return false;}
+function leftParty(e,p){if(e.getProperty("phase")!="complete")end(e);else playerExit(e,p);}
+function disbandParty(e){end(e);}
+function scheduledTimeout(e){end(e);}
+function playerDead(e,p){}
+function monsterKilled(e,p,points){}
+function allMonstersDead(e){}
+function cancelSchedule(){var a=new java.util.ArrayList(em.getInstances());for(var n=0;n<a.size();n++)end(a.get(n));}
+function make(level,partyid){if(em.getProperty("state")!="0")return null;em.setProperty("state","1");var e=em.newInstance(eventName+partyid);e.setProperty("phase","stages");try{for(var n=0;n<ids.length;n++){var m=e.setInstanceMap(ids[n]);m.resetFully();m.setSpawns(false);}return e;}catch(error){end(e);throw error;}}
+function spawn(e,id,mobid,pos){var mob=em.getMonster(mobid);e.registerMonster(mob);e.getMapInstance(id).spawnMonsterOnGroundBelow(mob,pos);return mob;}
+
+function setup(level,partyid){pqLock.lock();try{var e=make(level,partyid);if(e==null)return null;for(var k in {stage:0,stage1:0,stage4:0,stage5:0,stage7:0})e.setProperty(k,"0");
+ for(var row=0;row<10;row++){var choices=[0,1,2,3];for(var n=3;n>0;n--){var j=Math.floor(Math.random()*(n+1)),tmp=choices[n];choices[n]=choices[j];choices[j]=tmp;}for(var lane=0;lane<4;lane++)e.setProperty("jump"+lane+"_"+row,""+choices[lane]);}
+ for(var key in portalCodes){var parts=key.split("_"),m=e.getMapInstance(parseInt(parts[0]));m.getPortal(parseInt(parts[1])).setScriptName("pq072_rnj_portal");}
+ e.getMapInstance(base+100).setSpawns(true);e.getMapInstance(base+200).setSpawns(true);
+ e.getMapInstance(base+203).spawnNpc(angryNpc,new java.awt.Point(200,188));
+ e.startEventTimer(2700000);return e;}finally{pqLock.unlock();}}
+function monsterValue(e,id){if((id==9300137||id==9300138)&&e.getProperty("bossDefeated")!="true")e.setProperty("stage7","1");if(id==9300139||id==9300140){e.setProperty("bossDefeated","true");e.setProperty("phase","complete");if(e.getProperty("victoryNPC")!="1"){e.setProperty("victoryNPC","1");e.getMapInstance(base+401).spawnNpc(startNpc,new java.awt.Point(-416,-116));e.getMapInstance(base+500).spawnNpc(e.getProperty("stage7")=="1"?wiseNpc-1:wiseNpc,new java.awt.Point(232,150));if(e.getProperty("stage7")=="1"){e.getMapInstance(base+600).spawnNpc(2112008,new java.awt.Point(111,128));e.getMapInstance(base+600).spawnNpc(2112009,new java.awt.Point(211,128));}else e.getMapInstance(base+600).spawnNpc(wiseNpc,new java.awt.Point(320,128));}}return 0;}
+function clearPQ(e){if(e.getProperty("bossDefeated")=="true")warpAll(e,base+600);}
+function search(e,cm){pqLock.lock();try{if(!own(e,cm.getPlayer())||cm.getMapId()!=base)return;if(Math.random()<0.1){e.setProperty("stage1","1");e.getMapInstance(base).getReactorByName("d00").forceHitReactor(1);cm.sendOk("发现了通往实验室的入口。");}else if(Math.random()<0.05&&e.getProperty("letterFound")!="1"){if(!cm.canHold(letter,1)){cm.sendOk("请在其他栏留出空间。");return;}e.setProperty("letterFound","1");cm.gainItem(letter,1);cm.sendOk("你找到了一封信。");}else cm.sendOk("继续调查这里的书籍和实验装置。");}finally{pqLock.unlock();}}
+function lanesReady(e){for(var n=0;n<4;n++)if(e.getProperty("laneDone"+n)!="1")return false;return true;}
+function beginBoss(e,p){if(!own(e,p)||!e.isLeader(p)||p.getMapId()!=base+400||!lanesReady(e))return false;if(e.getProperty("bossSpawned")!="1"){e.setProperty("bossSpawned","1");e.getMapInstance(base+401).setSpawns(true);var protectedObject=e.getMapInstance(base+401).getMonsterById(protectedMob);if(protectedObject!=null&&protectedObject.getEventInstance()==null)e.registerMonster(protectedObject);spawn(e,base+401,e.getProperty("stage")=="2"?9300140:9300139,new java.awt.Point(240,150));}warpAll(e,base+401);return true;}
+function talk(e,cm){pqLock.lock();try{var p=cm.getPlayer();if(!own(e,p))return;var offset=p.getMapId()-base;if(offset==200){if(cm.haveItem(letter)&&e.getProperty("stage")=="0"){cm.gainItem(letter,-1);e.setProperty("stage","1");cm.sendOk("谢谢你找回信件。请继续寻找两份研究资料。");return;}var files=[4001134,4001135];for(var n=0;n<2;n++)if(e.getProperty("file"+n)!="1"&&cm.haveItem(files[n])){cm.gainItem(files[n],-1);e.setProperty("file"+n,"1");}if(e.getProperty("file0")=="1"&&e.getProperty("file1")=="1"){e.setProperty("stage4","2");p.getMap().getReactorByName(prefix+"3_out3").forceHitReactor(1);cm.sendOk("两份资料已收齐，可以继续前进。");}else cm.sendOk("请打开左右房间，收集两份不同的研究资料。");}
+ else if(offset==203){if(e.getProperty("stage")=="1")e.setProperty("stage","2");if(e.getProperty("stage5")=="1"&&p.getMap().getAllMonstersThreadsafe().size()==0){e.setProperty("stage5","2");p.getMap().getReactorByName(prefix+"6_out").forceHitReactor(1);cm.sendOk("怪物已被击败，通往跳台实验室的门打开了。");}else cm.sendOk("请调查实验室并击败所有出现的怪物。");}
+ else if(offset==300)cm.sendOk("四名队员分别进入四条路线，逐层寻找正确跳台，抵达顶层出口后集合。");
+ else if(offset==400){if(!beginBoss(e,p))cm.sendOk("请四名队员分别完成一条跳台路线，并由队长带领大家进入最终实验室。");}
+ else if(offset==401&&e.getProperty("bossDefeated")=="true")warpAll(e,base+500);
+ else if(offset==500&&e.getProperty("bossDefeated")=="true")warpAll(e,base+600);
+ else cm.sendOk("请调查装置、清理怪物，并与同伴合作完成实验室的关卡。");}finally{pqLock.unlock();}}
+function settle(e,cm,choice){pqLock.lock();try{var p=cm.getPlayer();if(!own(e,p)||p.getMapId()!=base+600||e.getProperty("bossDefeated")!="true"||e.getProperty("stage7")=="1")return;if(choice==1){if(!cm.haveItem(4001159,25)||!cm.haveItem(4001160,25)){cm.sendOk("兑换荷鲁斯之眼需要两种珠子各25个。");return;}if(!cm.canHold(1122010,1)){cm.sendOk("请在装备栏留出空间。");return;}cm.gainItem(4001159,-25);cm.gainItem(4001160,-25);cm.gainItem(1122010,1);return;}if(choice!=0)return;var key="claimed"+p.getId();if(e.getProperty(key)!="1"){if(!cm.canHold(crystal,1)){cm.sendOk("请在其他栏留出空间。");return;}e.setProperty(key,"1");cm.gainItem(crystal,1);clearMaterials(p);recordFinish(e,p);}var m=em.getChannelServer().getMapFactory().getMap(exitMap);p.changeMap(m,m.getPortal(0));}finally{pqLock.unlock();}}
+function portal(e,p,code,portal){pqLock.lock();try{if(!own(e,p))return false;var offset=p.getMapId()-base,target=-1;
+ if(code=="laneExit"){var lane=offset-301;if(lane<0||lane>3||e.getProperty("laneOwner"+lane)!=""+p.getId())return false;e.setProperty("laneDone"+lane,"1");target=base+400;}
+ else if(code==prefix+"1_pt00"){if(offset!=0||e.getProperty("stage1")!="1")return false;target=base+1;}
+ else if(code==prefix+"1_out"){if(offset!=1||p.getMap().getAllMonstersThreadsafe().size()!=0)return false;target=base+100;}
+ else if(code==prefix+"2_out"){if(offset!=100)return false;for(var n=1;n<=3;n++)if(p.getMap().getReactorByName("beaker"+n).getState()<7)return false;target=base+200;}
+ else if(code==prefix+"3_in0"||code==prefix+"3_in1"){if(offset!=200)return false;var n=code==prefix+"3_in0"?1:2;if(p.getMap().getReactorByName(prefix+"3_out"+n).getState()<1)return false;target=base+200+n;}
+ else if(code==prefix+"_201_0"||code==prefix+"_202"){if(offset!=201&&offset!=202)return false;target=base+200;}
+ else if(code==prefix+"3_out"){if(offset!=200||e.getProperty("stage4")!="2")return false;target=base+203;}
+ else if(code==prefix+"6_act"){if(offset!=203)return false;if(e.getProperty("stage5")=="0"){e.setProperty("stage5","1");for(var id=9300142;id<=9300146;id++)for(var n=0;n<10;n++)spawn(e,base+203,id,portal.getPosition());}return true;}
+ else if(code==prefix+"6_out"){if(offset!=203||e.getProperty("stage5")!="2")return false;target=base+300;}
+ else if(code.indexOf(prefix+"4_r")==0){if(offset!=300)return false;var lane=parseInt(code.slice(-1))-1,owner=e.getProperty("laneOwner"+lane);if(owner!=null&&owner!=""+p.getId())return false;for(var n=0;n<4;n++)if(n!=lane&&e.getProperty("laneOwner"+n)==""+p.getId())return false;e.setProperty("laneOwner"+lane,""+p.getId());target=base+301+lane;}
+ else if(code==prefix+"5_rp"){var lane=offset-301,name=String(portal.getName());if(lane<0||lane>3||name.length!=4||e.getProperty("laneOwner"+lane)!=""+p.getId())return false;var row=parseInt(name.charAt(2)),col=parseInt(name.charAt(3)),map=p.getMap(),right=e.getProperty("jump"+lane+"_"+row)==""+col;var next=right?map.getPortal("pt"+(row+1)+"0"):map.getPortal(0);if(right&&next==null)next=map.getPortal("out00");if(next==null)return false;p.changeMap(map,next);return true;}
+ else if(code==prefix+"12_in")return beginBoss(e,p);
+ if(target<0)return false;var m=e.getMapInstance(target);p.changeMap(m,m.getPortal(0));return true;}finally{pqLock.unlock();}}
+function portalById(e,p,pt){var code=portalCodes[p.getMapId()+"_"+pt.getId()];return code!=null&&portal(e,p,code,pt);}
+
+// CMS072 has no PQuest.img/rank table. Preserve existing raw info and only
+// supply entry/completion counters when the generic party-quest API is disabled.
+function pqField(p,key,value){
+ if(Packages.server.quest.MapleQuest.getInstance(quest).isPartyQuest()){if(value==null)return p.getOneInfo(quest,key);p.updateOneInfo(quest,key,""+value);return value;}
+ var raw=String(p.getInfoQuest(quest)||""),pairs=raw.length==0?[]:raw.split(";"),found=-1;
+ for(var i=0;i<pairs.length;i++)if(pairs[i].split("=")[0]==key){found=i;break;}
+ if(value==null)return found<0?null:pairs[found].substring(key.length+1);
+ if(found<0)pairs.push(key+"="+value);else pairs[found]=key+"="+value;
+ p.updateInfoQuest(quest,pairs.join(";"));return value;
 }
-
-function setup(level, leaderid) {
-	em.getProperties().clear();
-em.setProperty("state", "1");
-	em.setProperty("leader", "true");
-    var eim = em.newInstance("Romeo" + leaderid);
-	em.setProperty("stage", "0"); //whether book.. gave report, whether urete.. accepted it
-	em.setProperty("stage1", "0"); //whether book..opened door
-	em.setProperty("stage3", "0"); //how many beakers.. activated
-	em.setProperty("stage4", "0"); //how many files.. gave
-	em.setProperty("stage5", "0"); //mobs spawned/portal opened
-	em.setProperty("summoned", "0");
-	var y;
-	for (y = 0; y < 4; y++) { //stage number
-		em.setProperty("stage6_" + y, "0");
-		for (var b = 0; b < 10; b++) {
-			for (var c = 0; c < 4; c++) {
-				//em.broadcastYellowMsg("stage6_" + y + "_" + b + "_" + c + " = 0");
-				em.setProperty("stage6_ " + y + "_" + b + "_" + c + "", "0");
-			}
-		}
-	}
-	var i;
-	for (y = 0; y < 4; y++) { //stage number
-		for (i = 0; i < 10; i++) {		
-			var found = false;
-			while (!found) {
-				for (var x = 0; x < 4; x++) {
-					if (!found) {
-						var founded = false;
-						for (var z = 0; z < 4; z++) { //check if any other stages have this value set already.
-							//em.broadcastYellowMsg("stage6_" + z + "_" + i + "_" + x + " check");
-							if (em.getProperty("stage6_" + z + "_" + i + "_" + x + "") == null) {
-								em.setProperty("stage6_" + z + "_" + i + "_" + x + "", "0");
-							} else if (em.getProperty("stage6_" + z + "_" + i + "_" + x + "").equals("1")) {
-								founded = true;
-								break;
-							}
-						}
-						if (!founded && java.lang.Math.random() < 0.25) {
-							//em.broadcastYellowMsg("stage6_" + z + "_" + i + "_" + x + " = 1");
-							em.setProperty("stage6_" + y + "_" + i + "_" + x + "", "1");
-							found = true;
-							break;
-						}
-					}
-				}
-			}
-			//BUT, stage6_0_0_0 set, then stage6_1_0_0 also not set!
-		}
-	}
-	em.setProperty("stage7", "0"); //whether they were killed or not.
-        eim.setInstanceMap(926100000).resetPQ(level);
-        eim.setInstanceMap(926100001).resetPQ(level);
-	eim.setInstanceMap(926100100).resetPQ(level);
-	eim.setInstanceMap(926100200).resetPQ(level);
-        var map = eim.setInstanceMap(926100201);
-	map.resetPQ(level);
-        map = eim.setInstanceMap(926100202);
-	map.resetPQ(level);
-	map = eim.setInstanceMap(926100203);
-	map.resetPQ(level);
-	map.spawnNpc(2112000, new java.awt.Point(200, 188)); //urete MADMAN
-	eim.setInstanceMap(926100300).resetPQ(level);
-	eim.setInstanceMap(926100301).resetPQ(level);
-	eim.setInstanceMap(926100302).resetPQ(level);
-	eim.setInstanceMap(926100303).resetPQ(level);
-	eim.setInstanceMap(926100304).resetPQ(level);
-	eim.setInstanceMap(926100400).resetPQ(level);
-	eim.setInstanceMap(926100401).resetPQ(level);
-	eim.setInstanceMap(926100500).resetPQ(level); //spawn urete based on properties ?????
-	eim.setInstanceMap(926100600).resetPQ(level); //spawn romeo&juliet OR fallen romeo/juliet based on properties???
-
-    eim.startEventTimer(1200000); //20 mins
-    return eim;
-}
-
-function playerEntry(eim, player) {
-    var map = eim.getMapInstance(0);
-    player.changeMap(map, map.getPortal(0));
-    player.tryPartyQuest(1205);
-}
-
-function playerRevive(eim, player) {
-}
-
-function scheduledTimeout(eim) {
-    end(eim);
-}
-
-function changedMap(eim, player, mapid) {
-    if (mapid < 926100000 || mapid > 926100600) {
-	eim.unregisterPlayer(player);
-
-	if (eim.disposeIfPlayerBelow(0, 0)) {
-		em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-	}
-    }
-    if (mapid == 926100401 && (em.getProperty("summoned") == null || em.getProperty("summoned").equals("0"))) { //last stage
-	var mobId = 9300139;
-	if (em.getProperty("stage").equals("2")) {
-	    mobId = 9300140;
-	}
-	var mob = em.getMonster(mobId);
-	eim.registerMonster(mob);
-	em.setProperty("summoned", "1");
-	eim.getMapInstance(mapid).spawnMonsterOnGroundBelow(mob, new java.awt.Point(240,150));
-    }
-}
-
-function playerDisconnected(eim, player) {
-    return 0;
-}
-
-function monsterValue(eim, mobId) {
-    if (mobId == 9300137 || mobId == 9300138) {
-	em.setProperty("stage7", "1");
-	eim.broadcastPlayerMsg(5, "需要保护的对象已被击倒。");
-    } else if (mobId == 9300139 || mobId == 9300140) { //boss
-	//13 = boss, 14 = urete, 15 = romeo&juliet
-	eim.getMapInstance(13).spawnNpc(2112004, new java.awt.Point(-416, -116));
-	if (em.getProperty("stage7").equals("0")) {
-		eim.getMapInstance(14).spawnNpc(2112002, new java.awt.Point(232, 150));
-		eim.getMapInstance(15).spawnNpc(2112018, new java.awt.Point(111, 128));
-		eim.getMapInstance(15).spawnNpc(2112002, new java.awt.Point(320, 128));
-	} else {
-		eim.getMapInstance(14).spawnNpc(2112001, new java.awt.Point(232, 150));
-		eim.getMapInstance(15).spawnNpc(2112009, new java.awt.Point(111, 128));
-		eim.getMapInstance(15).spawnNpc(2112008, new java.awt.Point(211, 128));
-	}
-    }
-    return 1;
-}
-
-function playerExit(eim, player) {
-    eim.unregisterPlayer(player);
-
-    if (eim.disposeIfPlayerBelow(0, 0)) {
-	em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-	}
-}
-
-function end(eim) {
-    eim.disposeIfPlayerBelow(100, 926100700);
-	em.setProperty("state", "0");
-		em.setProperty("leader", "true");
-}
-
-function clearPQ(eim) {
-    end(eim);
-}
-
-function allMonstersDead(eim) {
-}
-
-function leftParty (eim, player) {
-    // If only 2 players are left, uncompletable:
-	end(eim);
-}
-function disbandParty (eim) {
-	end(eim);
-}
-function playerDead(eim, player) {}
-function cancelSchedule() {}
+function recordStart(e,p){if(quest<=0)return;p.tryPartyQuest(quest);if(Packages.server.quest.MapleQuest.getInstance(quest).isPartyQuest())return;e.setProperty("startedAt"+p.getId(),""+java.lang.System.currentTimeMillis());pqField(p,"try",(parseInt(pqField(p,"try",null)||"0")||0)+1);}
+function recordFinish(e,p){if(quest<=0||e.getProperty("recorded"+p.getId())=="1")return;e.setProperty("recorded"+p.getId(),"1");p.endPartyQuest(quest);if(Packages.server.quest.MapleQuest.getInstance(quest).isPartyQuest())return;var count=(parseInt(pqField(p,"cmp",null)||"0")||0)+1;pqField(p,"cmp",count);var tries=parseInt(pqField(p,"try",null)||"0")||count;pqField(p,"CR",Math.ceil(count*100/Math.max(1,tries)));var started=parseInt(e.getProperty("startedAt"+p.getId())||"0");if(started>0){var seconds=Math.floor((java.lang.System.currentTimeMillis()-started)/1000),bestMin=pqField(p,"min",null),bestSec=pqField(p,"sec",null);if(bestMin==null||seconds<(parseInt(bestMin)||0)*60+(parseInt(bestSec)||0)){pqField(p,"min",Math.floor(seconds/60));pqField(p,"sec",seconds%60);}}}

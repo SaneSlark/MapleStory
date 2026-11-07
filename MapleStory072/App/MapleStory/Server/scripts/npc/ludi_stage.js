@@ -1,7 +1,6 @@
-// CMS local path 1 -> 4 -> 7 -> 8 -> 9, matching existing LudiPQ setup.
+// CMS072 full native nine-stage path; native stage6 portal targets are retained.
 var closed=false;
-var contracts={"922010100":[2040036,1,0,4001022,25],"922010400":[2040039,4,1,4001022,6],
- "922010700":[2040042,7,4,4001156,3],"922010800":[2040043,8,7,0,0],"922010900":[2040044,9,8,4001023,1]};
+var contracts={"922010100":[2040036,1,0,4001022,25],"922010200":[2040037,2,1,4001022,10],"922010300":[2040038,3,2,4001022,32],"922010400":[2040039,4,3,4001022,6],"922010500":[2040040,5,4,4001022,24],"922010700":[2040042,7,6,4001022,3],"922010800":[2040043,8,7,0,0],"922010900":[2040044,9,8,4001023,1]};
 function context(){
     var row=contracts[String(cm.getMapId())],eim=cm.getPlayer().getEventInstance();
     if(row==null || cm.getNpc()!=row[0] || eim==null || String(eim.getEventManager().getName())!="LudiPQ")return null;

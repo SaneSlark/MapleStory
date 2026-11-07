@@ -25,7 +25,7 @@ function playerExit(eim,player){
     player.changeMap(map,map.getPortal(0));
     if(eim.disposeIfPlayerBelow(0,0))em.setProperty("state","0");
 }
-function playerRevive(eim,player){playerExit(eim,player);return false;}
+function playerRevive(eim,player){player.getStat().setHp(50,player);playerExit(eim,player);return true;}
 function playerDisconnected(eim,player){return 0;}
 function leftParty(eim,player){playerExit(eim,player);}
 function disbandParty(eim){scheduledTimeout(eim);}
@@ -33,3 +33,5 @@ function monsterValue(eim,id){if(id==9600025)eim.setProperty("bossDefeated","tru
 function playerDead(){}
 function allMonstersDead(){}
 function cancelSchedule(){}
+
+function cancelSchedule(){var a=new java.util.ArrayList(em.getInstances());for(var i=0;i<a.size();i++)a.get(i).disposeIfPlayerBelow(100,702100000);}

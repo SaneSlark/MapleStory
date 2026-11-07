@@ -31,62 +31,85 @@
 
 var temp;
 var cost;
+var closed=false, origin=-1;
 
 function start() {
+    closed=false; origin=cm.getMapId();
     qfresh = true;
+    qactive = false;
+    qstatus = -1;
+    qchosen = null;
+    qchoices = [];
+    temp = 0;
+    cost = 0;
 	status = -1;
 	action(1, 0, 0);
 }
 
 function qOrigAction(mode, type, selection) {
 	if(mode == -1) {
-		cm.dispose();
+		closed=true;cm.dispose();
 		return;
 	}
 	if(mode == 0 && (status == 0 || status == 1 || status == 2)) {
-		cm.dispose();
+		closed=true;cm.dispose();
 		return;
 	} else if(mode == 0) {
 		cm.sendOk("请仔细考虑。做好决定之后，再来告诉我吧。");
-		cm.dispose();
+		closed=true;cm.dispose();
 		return;
 	}
 	if(mode == 1) {
 		status++;
 	}
 	if(status == 0) {
-		cm.sendSimple("...有何吩咐?\r\n#L0##b购买魔法种子#k#l\r\n#L1##b别点#k#l");
+		cm.sendSimple("...有何吩咐?\r\n#L0##b购买魔法种子#k#l");
 	} else if(status == 1) {
+        if(selection!=0) {closed=true;cm.dispose();return;}
 		if(selection == 0) {
-			cm.sendSimple("你看起来像是从外地来的吧,需要帮忙么#L0##b我有一些 #t4031346#.#k#l");
+			cm.sendSimple("你看起来像是从外地来的吧,需要帮忙么\r\n#L0##b我有一些 #t4031346#.#k#l");
 		} else {
 			cm.sendNext("点了也白点...");
-			cm.dispose();
+			closed=true;cm.dispose();
 		}
 	} else if(status == 2) {
+        if(selection!=0) {closed=true;cm.dispose();return;}
 		cm.sendGetNumber("#b#t4031346##k 是很贵重物品,我不能就这样给你,当然我可以便宜点卖给你#b#t4031346##k 每个要 #b30,000 金币#k . 你准备买多少个?",0,0,99);
 	} else if(status == 3) {
+		if(selection < 0 || selection > 99 || selection != Math.floor(selection)) {
+			closed=true;cm.dispose();
+			return;
+		}
 		if(selection == 0) {
 			cm.sendOk("没有免费的午餐.");
-			cm.dispose();
+			closed=true;cm.dispose();
+			return;
 		} else {
 			temp = selection;
 			cost = temp * 30000;
 			cm.sendYesNo("购买 #b"+temp+" 个#t4031346##k 需要 #b"+cost+" 金币#k. 你确定要购买吗?");
 		}
 	} else if(status == 4) {
-		if(cm.getMeso() < cost || !cm.canHold(4031346)) {
+        closed=true;
+		if(temp < 1 || temp > 99 || cost !== temp * 30000) {
+			closed=true;cm.dispose();
+			return;
+		}
+		if(cm.getMeso() < cost || !cm.canHold(4031346, temp)) {
 			cm.sendOk("请检查包裹窗是否已满.");
 		} else {
 			cm.sendOk("欢迎下次光临~");
 			cm.gainItem(4031346, temp);
 			cm.gainMeso(-cost);
 		}
-		cm.dispose();
+		closed=true;cm.dispose();
 	}
 }
 
 function action(mode, type, selection) {
+    if(closed) return;
+    if(cm.getNpc()!=2081000 || cm.getMapId()!=origin || origin!=240000000 || cm.getPlayer().getEventInstance()!=null) {closed=true;cm.dispose();return;}
+    if(mode!=1) {closed=true;cm.dispose();return;}
     if (qQuestAction(mode, type, selection)) return;
     qOrigAction(mode, type, selection);
 }
@@ -112,24 +135,24 @@ function qQuestAction(mode,type,selection) {
         if(typeof qOrigAction=="function") menu+="\r\n#L"+qchoices.length+"#其他服务与对话#l";
         qactive=true; qstatus=0; cm.sendSimple(menu); return true;
     }
-    if(mode!=1) { qactive=false; qfresh=false; cm.dispose(); return true; }
+    if(mode!=1) { qactive=false; qfresh=false; closed=true;cm.dispose(); return true; }
     if(qstatus==0) {
         if(selection==qchoices.length && typeof qOrigAction=="function") {qactive=false;return false;}
-        if(selection<0 || selection>=qchoices.length) { cm.dispose(); return true; }
+        if(selection!=Math.floor(selection) || selection<0 || selection>=qchoices.length) { closed=true;cm.dispose(); return true; }
         qchosen=qchoices[selection]; qstatus=1;
-        cm.sendYesNo(qchosen[3] || qchosen[2]); return true;
+        cm.sendYesNo((qchosen[3] || qchosen[2]).replace(/\\r\\n/g,"\r\n").replace(/\\n/g,"\r\n").replace(/#L[0-9]+#/g,"\r\n").replace(/#l/g,"")); return true;
     }
     if(qstatus==1) {
-        qstatus=2;
+        qstatus=2; closed=true;
         var q=Packages.server.quest.MapleQuest.getInstance(qchosen[0]);
         if(qchosen[1]==0) {
             if(q.canStart(cm.getPlayer(),cm.getNpc())) { cm.startClientNpcQuest(qchosen[0]); return true; }
         } else {
-            if(q.canComplete(cm.getPlayer(),null)) { cm.completeClientNpcQuest(qchosen[0]); return true; }
+            if(q.canComplete(cm.getPlayer(),cm.getNpc())) { cm.completeClientNpcQuest(qchosen[0]); return true; }
             else cm.sendOk("任务条件尚未完成，请查看任务栏中的物品和狩猎要求。");
         }
-        cm.dispose(); return true;
+        closed=true;cm.dispose(); return true;
     }
-    cm.dispose(); return true;
+    closed=true;cm.dispose(); return true;
 }
 /* AUTO-QUEST-END */

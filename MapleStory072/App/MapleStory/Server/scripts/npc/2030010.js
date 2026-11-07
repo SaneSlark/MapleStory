@@ -3,6 +3,7 @@ var asked=false,closed=false;
 function validMap(){return cm.getMapId()==280030000;}
 function finish(){closed=true;cm.dispose();}
 function start(){
+    if(cm.getMapId()==280020000||cm.getMapId()==280020001){closed=true;cm.dispose();cm.openNpc(2030010,"Zakum06");return;}
     if(!validMap()){finish();return;}
     asked=true;cm.sendYesNo("ÒªÀë¿ªÔúÀ¥¼ÀÌ³Âğ£¿");
 }

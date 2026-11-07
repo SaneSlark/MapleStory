@@ -1,0 +1,5 @@
+// CMS072 native Lira binding. Historical reward: one breath, first-clear 10000 EXP.
+var asked=false,done=false;
+function valid(){var p=cm.getPlayer();return cm.getMapId()==280020001&&p.isAlive()&&/(^|;)z072trip=[12](;|$)/.test(String(p.getInfoQuest(7000)))&&p.getPosition().distanceSq(new java.awt.Point(6155,-278))<=40000;}
+function start(){if(!valid()){done=true;cm.sendOk("请从阿杜比斯处开始试炼，走完两段道路后到终点找我。");cm.dispose();return;}asked=true;cm.sendYesNo("领取火山的呼吸并返回入口吗？");}
+function action(mode,type,selection){if(done)return;done=true;if(mode!=1||!asked||!valid()){cm.dispose();return;}if(!cm.canHold(4031062,1)){cm.sendOk("请先在其他栏留出空间。");cm.dispose();return;}var p=cm.getPlayer(),s=String(p.getInfoQuest(7000)),legacy=p.getQuestNoAdd(Packages.server.quest.MapleQuest.getInstance(100202));var paid=/(^|;)z072jexp=1(;|$)/.test(s)||(legacy!=null&&(legacy.getStatus()==2||String(legacy.getCustomData())=="1"));cm.gainItem(4031062,1);s=s.replace(/(^|;)z072trip=[^;]*/g,"$1z072trip=0");if(!paid){s+=(s.length?";":"")+"z072jexp=1";}p.updateInfoQuest(7000,s);if(!paid)cm.gainExp(10000);cm.warp(211042300,0);cm.dispose();}

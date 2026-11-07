@@ -6,5 +6,9 @@ function act(){
     if(String(eim.getProperty("bossSummoned"))=="true"||String(eim.getProperty("bossCleared"))=="true")return;
     if(rm.getMap().getMonsterById(9400748)!=null)return;
     eim.setProperty("bossSummoned","true");
-    try{rm.spawnMonster(9400748,1);}catch(error){eim.setProperty("bossSummoned","false");throw error;}
+    try{var mob=Packages.server.life.MapleLifeFactory.getMonster(9400748);eim.registerMonster(mob);rm.getMap().spawnMonsterOnGroundBelow(mob,rm.getReactor().getPosition());}catch(error){eim.setProperty("bossSummoned","false");throw error;}
 }
+
+// Serialize first summons across player-local script engines.
+var nativeBossAct=act;
+act=function(){var guarded=new Packages.org.mozilla.javascript.Synchronizer(nativeBossAct,rm.getMap());return guarded();};

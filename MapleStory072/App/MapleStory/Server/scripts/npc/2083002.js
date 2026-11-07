@@ -1,6 +1,6 @@
 // CMS map/event exit contract; no entry, reward or quest-condition changes.
 var asked=false,closed=false;
-function validMap(){return cm.getMapId()==240060200;}
+function validMap(){return [240050400,240060000,240060100,240060200].indexOf(cm.getMapId())>=0;}
 function finish(){closed=true;cm.dispose();}
 function start(){
     if(!validMap()){finish();return;}

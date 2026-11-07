@@ -1,10 +1,1 @@
-function act() {
-	var em = rm.getEventManager("Pirate");
-	if (em != null) {
-		rm.mapMessage(6, "一道门已被开启。");
-		em.setProperty("stage4", parseInt(em.getProperty("stage4")) + 1);
-		if (em.getProperty("stage4").equals("4")) { //all 5 done
-			rm.mapMessage(6, "Proceed!");
-		}
-	}
-}
+function act(){var e=rm.getPlayer().getEventInstance();if(e!=null&&e.getEventManager().getName()=="Pirate"&&rm.getMapId()==925100400){var done=true;for(var n=1;n<=4;n++)if(rm.getMap().getReactorByName("sMob"+n).getState()<1)done=false;if(done){rm.getMap().setSpawns(false);rm.mapMessage(6,"四道船门已关闭，请清理剩余怪物。");}}}

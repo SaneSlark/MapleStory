@@ -82,3 +82,5 @@ function setup(a,b){
         return originalSetup(a,b);
     }finally{admissionLock.unlock();}
 }
+
+function cancelSchedule(){var a=new java.util.ArrayList(em.getInstances());for(var i=0;i<a.size();i++)a.get(i).disposeIfPlayerBelow(100,270050300);}

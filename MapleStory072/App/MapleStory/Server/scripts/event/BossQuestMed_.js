@@ -233,3 +233,7 @@ function onMapLoad(eim, player) {
 
 function cancelSchedule() {
 }
+// Validate the declared CMS072 resource contract before creating an instance.
+function cms072ResourcesReady(){var root=java.lang.System.getProperty("wzpath");root=(root==null?"":String(root))+"wz/";if(!new java.io.File(root+"Map.wz/Map/Map2/220080001.img.xml").isFile())return false;if(9250156>0&&!new java.io.File(root+"Npc.wz/9250156.img.xml").isFile())return false;for(var n=0;n<monster.length;n++)if(!new java.io.File(root+"Mob.wz/"+monster[n]+".img.xml").isFile())return false;return true;}
+var bossResourceSetup=setup;
+setup=function(){if(!cms072ResourcesReady())throw "CMS072 boss rush resource contract unavailable";return bossResourceSetup.apply(this,arguments);};

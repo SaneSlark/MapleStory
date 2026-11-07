@@ -1,9 +1,1 @@
-function enter(pi) {
-	if (pi.getPlayer().getMapId() == 240060000) {
-	pi.warp(240060100, "st00");
-	}
-	else if (pi.getPlayer().getMapId() == 240060100) {
-	pi.warp(240060200, "sp");
-	}
-	return true;	
-}
+function enter(pi){var p=pi.getPlayer(),e=p.getEventInstance();if(e==null||String(e.getEventManager().getName())!="HorntailBattle")return false;if(String(e.getEventManager().getIv().invokeFunction("advance",e,p))!="true"){pi.playerMessage(5,"请先击败这间洞穴中的头领。");return false;}return true;}

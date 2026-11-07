@@ -2,7 +2,7 @@
 var done=false,origin=-1;
 function start(){
     origin=cm.getMapId();
-    if(origin!=930000600){done=true;cm.openNpc(cm.getNpc(),"2133001");return;}
+    if(origin!=930000600){done=true;cm.dispose();cm.openNpc(cm.getNpc(),"party6_middle072");return;}
     cm.sendYesNo("是否结算挑战并离开？需要先击败石头人的所有战斗阶段，并在背包中留出空位。");
 }
 function action(mode,type,selection){

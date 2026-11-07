@@ -9,7 +9,9 @@ function monsterValue(eim, mobId) {
     return 1;
 }
 
-function setup() {
+var admissionLock=new java.util.concurrent.locks.ReentrantLock();
+function setup(){admissionLock.lock();try{if(em.getInstance("FireDemon")!=null||em.getMapFactory().getMap(921100000).getCharactersSize()>0)throw "FireDemon occupied";return createRun();}finally{admissionLock.unlock();}}
+function createRun() {
     var eim = em.newInstance("FireDemon");
 
     var map = eim.getMapFactory().getMap(921100000);
@@ -28,6 +30,7 @@ function playerDead(eim, player) {
 }
 
 function playerRevive(eim, player) {
+    player.getStat().setHp(50,player);playerExit(eim,player);return true;
 }
 
 function scheduledTimeout(eim) {
@@ -38,7 +41,7 @@ function changedMap(eim, player, mapid) {
     if (mapid != 921100000) {
 	eim.unregisterPlayer(player);
 
-	eim.disposeIfPlayerBelow(0, 0);
+	if(eim.getPlayerCount()==0)eim.dispose();
     }
 }
 
@@ -61,6 +64,7 @@ function playerExit(eim, player) {
     eim.unregisterPlayer(player);
     var map = eim.getMapFactory().getMap(211042300);
     player.changeMap(map, map.getPortal(0));
+    if(eim.getPlayerCount()==0)eim.dispose();
 }
 
 function clearPQ(eim) {
@@ -72,4 +76,5 @@ function allMonstersDead(eim) {
 }
 
 function cancelSchedule() {
+    var e=em.getInstance("FireDemon");if(e!=null)e.disposeIfPlayerBelow(100,211042300);
 }

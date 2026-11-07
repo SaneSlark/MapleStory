@@ -56,3 +56,5 @@ function enter(pi) {
 	return false;
     }*/
 }
+var papuEnter=enter;
+enter=function(pi){if(pi.getMapId()!=220080000||!pi.getPlayer().isAlive()||pi.getPlayer().getEventInstance()!=null)return false;var guarded=new Packages.org.mozilla.javascript.Synchronizer(papuEnter,pi.getMap(220080001));return guarded(pi);};

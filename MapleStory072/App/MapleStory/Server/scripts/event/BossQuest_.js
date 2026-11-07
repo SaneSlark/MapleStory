@@ -179,3 +179,7 @@ function beginQuest(eim) {
 
 function cancelSchedule() {
 }
+// Validate the declared CMS072 resource contract before creating an instance.
+function cms072ResourcesReady(){var root=java.lang.System.getProperty("wzpath");root=(root==null?"":String(root))+"wz/";if(!new java.io.File(root+"Map.wz/Map/Map5/551030200.img.xml").isFile())return false;if(0>0&&!new java.io.File(root+"Npc.wz/0.img.xml").isFile())return false;for(var n=0;n<monster.length;n++)if(!new java.io.File(root+"Mob.wz/"+monster[n]+".img.xml").isFile())return false;return true;}
+var bossResourceSetup=setup;
+setup=function(){if(!cms072ResourcesReady())throw "CMS072 boss rush resource contract unavailable";return bossResourceSetup.apply(this,arguments);};

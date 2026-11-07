@@ -424,3 +424,5 @@ function action(mode, type, selection) {
               
             }
 }
+
+var pq072OriginalStart=start;start=function(){if(cm.getMapId()==990000900){cm.dispose();cm.openNpc(9040010,"guildquest1_bonus");return;}pq072OriginalStart();};

@@ -1,10 +1,2 @@
-function action(mode, type, selection) {
-	    cm.removeAll(4001130);
-	    cm.removeAll(4001131);
-	    cm.removeAll(4001132);
-	    cm.removeAll(4001133);
-	    cm.removeAll(4001134);
-	    cm.removeAll(4001135);
-    cm.warp(926100600,0);
-    cm.dispose();
-}
+function start(){cm.dispose();cm.openNpc(2112001,"pq072_rnj_npc");}
+function action(mode,type,selection){cm.dispose();}
