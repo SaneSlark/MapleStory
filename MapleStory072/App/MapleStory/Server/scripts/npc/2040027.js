@@ -27,12 +27,15 @@
 **/
 
 var status = 0;
+var rockClosed = false;
 
 function start() {
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if (rockClosed) return;
+    if (mode != 1) { rockClosed = true; cm.dispose(); return; }
 	if (status == 0) {
 		cm.sendYesNo("你想回到玩具塔第3个魔法石吗?");
 		status++;
@@ -41,7 +44,8 @@ function action(mode, type, selection) {
 			cm.dispose();
 		} else {
 			if (status == 1) {
-				if(cm.haveItem(4001020)) {
+				rockClosed = true;
+                if(cm.haveItem(4001020)) {
 					cm.gainItem(4001020, -1);
 
 					cm.warp(221021700, 0);

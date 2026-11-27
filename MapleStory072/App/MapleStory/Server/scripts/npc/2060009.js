@@ -1,3 +1,4 @@
+var dolphinClosed=false,dolphinOrigin=-1;
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -25,16 +26,19 @@
 var status = 0;
 
 function start() {
+    dolphinOrigin=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(dolphinClosed)return;
+    if(mode!=1||cm.getMapId()!=dolphinOrigin){dolphinClosed=true;cm.dispose();return;}
 	if (mode == -1) {
-		cm.dispose();
+		dolphinClosed=true;cm.dispose();
 	} else {
 		if (mode == 0 && status == 0) {
-			cm.dispose();
+			dolphinClosed=true;cm.dispose();
 			return;
 		}
 		if (mode == 1)
@@ -44,6 +48,7 @@ function action(mode, type, selection) {
 		if (status == 0) {
 			cm.sendSimple ("我是海豚出租车! 今天天气真好,你需要我为你服务么?\r\n#L0#学习骑术#l\r\n#L1#学习群宠#l\r\n#L2#去百草堂#l");
 		} else if (status == 1) {
+            if(selection!=0&&selection!=1&&selection!=2){dolphinClosed=true;cm.dispose();return;}
 			if (selection == 0)
 			{
 				if(cm.getLevel() >= 70) {
@@ -52,7 +57,7 @@ function action(mode, type, selection) {
 				} else {
 					cm.sendOk("您的等级还不够学习骑术技能!请继续修炼吧!");
 				}
-				cm.dispose();
+				dolphinClosed=true;cm.dispose();
 			} 
 			else 	if (selection == 1)
 			{
@@ -62,15 +67,16 @@ function action(mode, type, selection) {
 				} else {
 					cm.sendOk("您的等级还不够学习群宠技能!请继续修炼吧!");
 				}
-				cm.dispose();
+				dolphinClosed=true;cm.dispose();
 			} 
 
 			 else {
 				cm.sendNext ("好的, 下次见.祝你顺利");
 			}
 		} else if (status == 2) {
+            dolphinClosed=true;
 			cm.warp(251000100, 0);
-			cm.dispose();
+			dolphinClosed=true;cm.dispose();
 		}
 	}
 }	

@@ -1,3 +1,5 @@
+var ticketClosed=false;
+var originMap=-1;
 importPackage(net.sf.odinms.client);
 
 var status = 0;
@@ -8,11 +10,15 @@ var maps = Array(103000900, 103000903, 103000906);
 var selectedMap = -1;
 
 function start() {
+    originMap=cm.getMapId();
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(ticketClosed)return;
+    if(cm.getMapId()!=originMap){ticketClosed=true;cm.dispose();return;}
+    if(mode!=1){ticketClosed=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -50,14 +56,20 @@ function action(mode, type, selection) {
 			cm.sendSimple(selStr);
 			}
 		} else if (status == 2) {
+            ticketClosed=true;
+            var currentZones=cm.getQuestStatus(2057)!=0?3:cm.getQuestStatus(2056)!=0?2:cm.getQuestStatus(2055)!=0?1:0;
+            if(selection!=Math.floor(selection)||selection<0||selection>=zones||selection>=currentZones){cm.dispose();return;}
 			if (!(cm.haveItem(tickets[selection]))) {
 				cm.sendOk("ÄãÃ»ÓÐÂòÆ±.");
 				cm.dispose();
 			} else {
 			selectedMap = selection;
-			cm.gainItem(tickets[selectedMap],-1);
-			cm.warp(maps[selectedMap],0);
-			cm.dispose();
+			try {
+                cm.warp(maps[selectedMap],0);
+                if(cm.getMapId()==maps[selectedMap]) cm.gainItem(tickets[selectedMap],-1);
+            } finally {
+                cm.dispose();
+            }
 			}
 		} 
 	}

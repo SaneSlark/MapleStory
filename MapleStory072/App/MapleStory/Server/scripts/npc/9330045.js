@@ -1,194 +1,34 @@
-/* Kedrick
-	Fishking King NPC
-*/
-
-var status = -1;
-var sel;
-
-function action(mode, type, selection) {
-    if (mode == 1) {
-	status++;
-    } else {
-	status--;
+// CMS072 fishing supplies. Prices and timing remain this package's settings.
+// Native fish-material rewards belong to quest 8682 at NPC 9300015.
+var status=-1,closed=false;
+var rules=Packages.server.FishingSettings072.get();
+function periodText(days){return days==0?"永久":"有效期"+days+"天";}
+function finish(text){closed=true;if(text)cm.sendOk(text);cm.dispose();}
+function action(mode,type,selection){
+    if(closed)return;
+    if(!rules.enabled){finish("钓鱼当前未开放。");return;}
+    if(mode!=1){finish();return;}
+    status++;
+    if(status==0){
+        if(cm.getPlayer().getMapId()!=741000208&&cm.getLevel()<rules.entryMinLevel){finish("达到"+rules.entryMinLevel+"级后才可以进入钓鱼场。");return;}
+        cm.sendSimple("你好，我是渔场管理人余夫。钓鱼需要有效的鱼竿、钓鱼用椅子和鱼饵。\r\n\r\n#L1#进入钓鱼场#l\r\n\r\n#L2##v3011000#钓鱼用椅子"+(rules.chairMinLevel>0?"（"+rules.chairMinLevel+"级起购）":"")+"："+rules.chairPrice+"点券，"+periodText(rules.chairDays)+"#l\r\n#L3##v5340001#高级鱼竿："+rules.rodPrice+"点券，"+periodText(rules.rodDays)+"#l\r\n#L4##v2300001#高级鱼饵"+rules.baitCount+"个："+rules.baitPrice+"点券#l\r\n\r\n#L8#鱼类兑换#l\r\n#L7#钓鱼说明#l");
+        return;
     }
-
-    if (status == 0) {
-	//cm.sendSimple("你想要做什么？\n\r #b#L0#进入钓鱼场#l \n\r #L1#买鱼饵#l \n\r #L2#买钓鱼椅#l \n\r #L3#用美味的饵可以#l \n\r #L4#钓鱼指南#l \n\r #L5##i1142146:#贸易500金蛋（渔王勋章[期：30天]）#l");
-	
-            var text = "";
-            for (i = 0; i < 10; i++) {
-                text += "";
-            }
-	
-	
-	
-            text += "你好！钓鱼请购买钓鱼椅#v3011000#钓鱼杆#v5340001#还有鱼饵#v2300000#好了介绍这么多，加油！\r\n"//3
-            text += "#L5##v4031636##v4031640#    →  #r钓鱼兑换中心#k  ←   #v4031644##v4031648##l\r\n"//3
-            text += "#L2##v3011000# 10000点券（1天权）  #l"//3
-            text += "#L3##v5340001# 5000点券（1天权）#l\r\n"//3
-           // text += "#L6##v2300000# 200W鱼饵（100个）#l"//3
-            text += "#L4##v2300000# 1000点券（100个）#l\r\n"//3
-           // text += "#L4##v2300001# 2000点券（100个）\r\n\r\n#l"//3
-            text += "#L1##r#e进入钓鱼场#k#l\r\n\r\n"//3
-		   
-      /*      text += "#v5021007##v5021007##v5021007##v5021007##v5021007##v5021007##v5021007##v5021007##v5021007#\r\n"//3
-            text += "#v5021007#欢迎各位参加雪花冒险岛第一届#r钓鱼大赛#k！#v5021007#\r\n\r\n"//3
-            text += "#L10##v3011000##v5340001##v2300001#领取。#l\r\n"//3
-            text += "#L11##v4031627##v4031628##v4031630##v4031631#查询当前钓鱼积分#l\r\n"//3
-			
-			 sl = cm.getPlayer().getItemQuantity(4031627, false);
-            sl = cm.getPlayer().getItemQuantity(4031627, false);
-            slA = cm.getPlayer().getItemQuantity(4031628, false);
-            slB = cm.getPlayer().getItemQuantity(4031630, false);
-            slC = cm.getPlayer().getItemQuantity(4031631, false);
-            //slD = cm.getPlayer().getItemQuantity(4031632, false);
-            slE = cm.getPlayer().getItemQuantity(4031633, false);
-            slF = cm.getPlayer().getItemQuantity(4031634, false);
-            slG = cm.getPlayer().getItemQuantity(4031635, false);
-            slH = cm.getPlayer().getItemQuantity(4031636, false);
-            slI = cm.getPlayer().getItemQuantity(4031637, false);
-            slJ = cm.getPlayer().getItemQuantity(4031638, false);
-            slK = cm.getPlayer().getItemQuantity(4031639, false);
-            slL = cm.getPlayer().getItemQuantity(4031640, false);
-            slM = cm.getPlayer().getItemQuantity(4031641, false);
-            slN = cm.getPlayer().getItemQuantity(4031642, false);
-            slO = cm.getPlayer().getItemQuantity(4031643, false);
-            slP = cm.getPlayer().getItemQuantity(4031644, false);
-            slQ = cm.getPlayer().getItemQuantity(4031645, false);
-            slR = cm.getPlayer().getItemQuantity(4031646, false);
-            slS = cm.getPlayer().getItemQuantity(4031647, false);
-            slT = cm.getPlayer().getItemQuantity(4031648, false);
-            //slU = cm.getPlayer().getItemQuantity(4031629, false);
-			slD=0;
-			slU=0;
-			var jifen = sl + slA + slB + slC + slD + slE + slF + slG + slH + slI + slJ + slK + slL + slM + slN + slO + slP + slQ + slR + slS + slT + slU;
-			cm.喇叭(1,"玩家：["+cm.getName()+"] "+jifen+" ！");
-			
-			
-		   */
-		   
-		   
-		   
-		   
-		   
-		//if (cm.getPlayer().getClient().getChannel() != 1) {
-			//cm.sendOk("只能在1线钓鱼哦！");
-		//	cm.dispose();
-			//return;
-		//}
-	//
-		   if (cm.getPlayer().getMapId()==741000208){
-            cm.sendSimple(text);
-		   }else{
-			//cm.sendOk("等GM通知。");
-			//cm.dispose();
-				//cm.喇叭(3,"玩家："+cm.getName()+" a。");
-				  
-		if (cm.getLevel() > 29){
-			//cm.givePartyExp(651111100);//给队伍所有人经验
-            cm.sendSimple(text);
-		}else{
-			cm.sendOk("30级以上才可以参加哦。");
-			cm.dispose();
-		}
-           // cm.sendSimple(text);
-		   }
-    //cm.sendSimple("你好！我是渔场管理员。\n\r如果你想要进行钓鱼，请购买钓鱼竿分#v5340001#/#v5340000#两种，高级10秒钓一次鱼，普通的是20秒一次，好了介绍这么多，多多搜集兑换丰厚奖励吧！\n\r #b#L0# #v4000411#  进入钓鱼场.#l \n\r #L2##v3011000#  1000万金币购买钓鱼椅.#l \n\r #L3##v5350000# 购买高级鱼饵100个1000W#l \n\r #L4##v4161001#   钓鱼指南.#l \n\r #L6##v4031630#   兑换钓鱼积分.#l \n\r #L5##v4001200#   小鱼抽奖处.#l");
-       } else if (status == 1) {
-	if (sel == 0) {
-		
-	} else if (selection == 1) {
-			cm.warp(741000208, 0);
-		    cm.dispose();
-	} else if (selection == 10) {
-     if (cm.getBossLog('钓鱼大赛') == 1) {
-		    cm.sendOk("只能领取一次！");
-		    cm.dispose();
-		 } else {
-		if (cm.haveItem(3011000)) {
-		cm.sendOk("你已经有一把钓鱼椅。每个角色只能有1个钓鱼椅。");
-	    } else {
-		    cm.gainItem(3011000, 1, 1);
-		    cm.gainItem(5340001, 1, 1);
-		    cm.gainItem(2300001, 100, 1);
-			cm.setBossLog('钓鱼大赛');
-		    cm.sendOk("祝你快乐钓鱼！");
-		    cm.dispose();
-		}
-		}
-	} else if (selection == 11) {
-		    cm.sendOk("稍等");
-		    cm.dispose();
-	} else if (selection == 2) {
-	    if (cm.haveItem(3011000)) {
-		cm.sendOk("你已经有一把钓鱼椅。每个角色只能有1个钓鱼椅。");
-	    } else {
-		  if (cm.getLevel() > 49){
-				if (cm.canHold(3011000) && cm.getPlayer().getCSPoints(1) >= 10000) {
-		    cm.gainNX(-10000);
-		    cm.gainItem(3011000, 1,24);
-		    cm.sendOk("祝你快乐钓鱼！");
-		    cm.dispose();
-				} else {
-		    cm.sendOk("请检查是否有所需的金币或足够的背包空间。");
-		    cm.dispose();
-				}
-		  }else{
-		    cm.sendOk("最少要50级才可以来钓鱼！");
-		    cm.dispose();
-		  }	
-	    }
-	}else if (selection == 3) {
-	    if (cm.haveItem(5340001)) {
-		cm.sendOk("你已经有一把高级鱼竿了。");
-	    } else {
-		if (cm.getPlayer().getCSPoints(1) >= 5000) {
-		    cm.gainNX(-5000);	//加减点券
-		    cm.gainItem(5340001, 1,24);
-		    cm.sendOk("祝你快乐钓鱼！");
-		    cm.dispose();
-		} else {
-		    cm.sendOk("请检查是否有所需的金币或足够的背包空间。");
-		    cm.dispose();
-		}
-	    }
-	}else if (selection == 6) {
-		if (cm.canHold(2300001) && cm.getMeso() >= 2000000) {
-		    cm.gainMeso(-2000000);
-		    cm.gainItem(2300000, 100);
-		    cm.sendOk("祝你快乐钓鱼！");
-		    cm.dispose();
-		} else {
-		    cm.sendOk("请检查是否有所需的金币或足够的背包空间。");
-		    cm.dispose();
-		}
-	}else if (selection == 4) {
-		if (cm.getPlayer().getCSPoints(1) >= 1000) {
-		    cm.gainNX(-1000);	//加减点券
-		    cm.gainItem(2300001, 100);
-		    cm.sendOk("祝你快乐钓鱼！");
-		    cm.dispose();
-		} else {
-		    cm.sendOk("请检查是否有所需的金币或足够的背包空间。");
-		    cm.dispose();
-		}
-	}else if (selection == 5) {
-		cm.openNpc(9330045, 5);
-	}
-    } else if (status == 2) {
-	if (sel == 1) {
-	    if (cm.canHold(2300001,120) && cm.getMeso() >= 300000) {
-		if (!cm.haveItem(2300001)) {
-		    cm.gainMeso(-300000);
-		    cm.gainItem(2300001, 120);
-		    cm.sendNext("快乐钓鱼~");
-		} else {
-		    cm.sendNext("你已经有了钓鱼的诱饵。");
-		}
-	    } else {
-		cm.sendOk("请检查是否有所需的300000金币或足够的背包空间。");
-	    }
-	    cm.safeDispose();
-	}
+    if(status!=1){finish();return;}
+    if(selection==1){cm.warp(741000208,0);finish();return;}
+    if(selection==8){closed=true;cm.dispose();cm.openNpc(9330045,"fishing_exchange");return;}
+    if(selection==7){
+        finish("准备有效的#v5340000##t5340000#或#v5340001##t5340001#、#v3011000##t3011000#，并携带#v2300000##t2300000#或#v2300001##t2300001#，在钓鱼场坐下即可。\r\n\r\n普通鱼竿每"+rules.normalSeconds+"秒尝试一次，高级鱼竿每"+rules.advancedSeconds+"秒尝试一次；每次正常收获消耗1个鱼饵。站起、更换椅子或离开钓鱼场会停止钓鱼。");return;
     }
+    if(selection!=2&&selection!=3&&selection!=4){finish();return;}
+    var id=selection==2?3011000:selection==3?5340001:2300001;
+    var quantity=selection==4?rules.baitCount:1;
+    var price=selection==2?rules.chairPrice:selection==3?rules.rodPrice:rules.baitPrice;
+    if(selection==2&&cm.getLevel()<rules.chairMinLevel){finish("购买钓鱼椅需要达到"+rules.chairMinLevel+"级。");return;}
+    if(selection!=4&&cm.haveItem(id)){finish(selection==2?"你已经有一把钓鱼椅。每个角色只能有1个钓鱼椅。":"你已经有一把高级鱼竿了。");return;}
+    if(!cm.canHold(id,quantity)||cm.getPlayer().getCSPoints(1)<price){finish("请检查是否有所需的点券或足够的背包空间。");return;}
+    cm.getPlayer().modifyCSPoints(1,-price,true);
+    if(selection==4)cm.gainItem(id,quantity);
+    else cm.gainItemPeriod(id,1,selection==2?rules.chairDays:rules.rodDays);
+    finish("购买成功，祝你快乐钓鱼！");
 }

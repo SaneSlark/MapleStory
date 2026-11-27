@@ -5,9 +5,9 @@
 */
 
 function start() {
-    if(cm.getQuestStatus(2166) == 1) {
+    if(cm.getQuestStatus(2166) == 1 && cm.getMapId()==120000301) {
         cm.sendNext("这是一个美丽的，闪亮的岩石。我能感觉到它周围的神秘力量。");
-		cm.forceCompleteQuest(2166);
+		cm.updateInfoQuest(2166,"5");
     } else
         cm.sendNext("我用我的手摸了摸发亮的岩石，我感到一种神秘的力量流进我的身体。");
     cm.dispose();

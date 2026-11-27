@@ -30,6 +30,7 @@ importPackage(net.sf.odinms.tools);
 var returnMap;
 var map;
 var eim;
+var timeoutTask = null;
 
 function init() {
 	em.setProperty("noEntry","false");
@@ -43,11 +44,12 @@ function playerEntry(eim, player) {
 	player.changeMap(map, map.getPortal(0));
 	map.shuffleReactors();
 	em.setProperty("noEntry","true");
-	em.schedule("timeOut", 600000);
+	timeoutTask = em.schedule("timeOut", 600000, eim);
 	player.getClient().getSession().write(net.sf.odinms.tools.MaplePacketCreator.getClock(600));
 }
 
 function playerExit(eim, player) {
+    if (eim == null || em.getInstance("DollHouse") != eim) return;
 	em.setProperty("noEntry","false");
 	player.changeMap(returnMap, returnMap.getPortal(4));
 	eim.unregisterPlayer(player);
@@ -56,17 +58,14 @@ function playerExit(eim, player) {
 	eim.dispose();
 }
 
-function timeOut() {
-	em.setProperty("noEntry","false");
-	var player = eim.getPlayers().get(0);
-	player.changeMap(returnMap, returnMap.getPortal(4));
-	eim.unregisterPlayer(player);
-	em.cancel();
-	em.disposeInstance("DollHouse");
-	eim.dispose();
+function timeOut(instance) {
+    // Ignore a late callback belonging to an earlier round.
+    if (instance == null || em.getInstance("DollHouse") != instance) return;
+    clear(instance);
 }
 
 function playerDisconnected(eim, player) {
+    if (eim == null || em.getInstance("DollHouse") != eim) return 0;
 	em.setProperty("noEntry","false");
 	player.getMap().removePlayer(player);
 	player.setMap(returnMap);
@@ -74,9 +73,18 @@ function playerDisconnected(eim, player) {
 	em.cancel();
 	em.disposeInstance("DollHouse");
 	eim.dispose();
+    return 0;
 }
 
 function clear(eim) {
+    if (eim == null || em.getInstance("DollHouse") != eim) return;
+    var players = eim.getPlayers();
+    if (players == null || players.size() == 0) {
+        em.setProperty("noEntry", "false");
+        cancelSchedule();
+        eim.dispose();
+        return;
+    }
 	em.setProperty("noEntry","false");
 	var player = eim.getPlayers().get(0);
 	player.changeMap(returnMap, returnMap.getPortal(4));
@@ -87,4 +95,8 @@ function clear(eim) {
 }
 
 function cancelSchedule() {
+    if (timeoutTask != null) {
+        timeoutTask.cancel(false);
+        timeoutTask = null;
+    }
 }

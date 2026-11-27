@@ -1,3 +1,4 @@
+var suppliesClosed=false;
 var sel;
 var status = -1;
 
@@ -6,8 +7,11 @@ function start() {
 }
 
 function action(mode, type, selection) {
-if(mode!=1){cm.dispose();return;}
-if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客户端中，无法购买，未扣金币。");cm.dispose();return;}
+    if(suppliesClosed)return;
+    if(status==-1 && [3,4,5,6,7,11,12].indexOf(selection)<0){suppliesClosed=true;cm.dispose();return;}
+    if(selection!=Math.floor(selection)||selection<0){suppliesClosed=true;cm.dispose();return;}
+if(mode!=1){suppliesClosed=true;cm.dispose();return;}
+if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客户端中，无法购买，未扣金币。");suppliesClosed=true;cm.dispose();return;}
     if (mode == 1) {
 	status++;
 	if (status == 0) {
@@ -17,7 +21,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		var intPoints = cm.getPlayer().getMeso();
 	        if (intPoints < 300000) {
 		    cm.sendOk("你至少需要300 000金币。");
-		    cm.dispose();
+		    suppliesClosed=true;cm.dispose();
 	        } else {
 		    cm.sendGetNumber("你需要多少个？（普通捕捉球单价300 000金币）（当前金币：" + intPoints + "）（当前捕捉球数量：" + cm.getPlayer().itemQuantity(3992017) + ")", 1, 1, intPoints / 300000);
 	        }
@@ -26,7 +30,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		var intPoints = cm.getPlayer().getMeso();
 	        if (intPoints < 600000) {
 		    cm.sendOk("你至少需要600 000金币。");
-		    cm.dispose();
+		    suppliesClosed=true;cm.dispose();
 	        } else {
 		    cm.sendGetNumber("你需要多少个？（高级捕捉球单价600 000金币）（当前金币：" + intPoints + "）（当前捕捉球数量：" + cm.getPlayer().itemQuantity(3992018) + ")", 1, 1, intPoints / 600000);
 	        }
@@ -35,7 +39,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		var intPoints = cm.getPlayer().getMeso();
 	        if (intPoints < 1200000) {
 		    cm.sendOk("你至少需要1 200 000金币。");
-		    cm.dispose();
+		    suppliesClosed=true;cm.dispose();
 	        } else {
 		    cm.sendGetNumber("你需要多少个？（超级捕捉球单价1 200 000金币）（当前金币：" + intPoints + "）（当前捕捉球数量：" + cm.getPlayer().itemQuantity(3992019) + ")", 1, 1, intPoints / 1200000);
 	        }
@@ -50,7 +54,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-5000000);
 		    cm.gainItem(4140102, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 7:
 		var intPoints = cm.getPlayer().getMeso();
@@ -62,7 +66,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-10000000);
 		    cm.gainItem(4140101, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 8:
 		var intPoints = cm.getPlayer().getMeso();
@@ -74,7 +78,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-15000000);
 		    cm.gainItem(4032444, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 9:
 		var intPoints = cm.getPlayer().getMeso();
@@ -86,7 +90,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-15000000);
 		    cm.gainItem(4032445, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 10:
 		var intPoints = cm.getPlayer().getMeso();
@@ -98,7 +102,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-15000000);
 		    cm.gainItem(4032446, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 11:
 		var intPoints = cm.getPlayer().getMeso();
@@ -110,7 +114,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-20000000);
 		    cm.gainItem(4031110, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 12:
 		var intPoints = cm.getPlayer().getMeso();
@@ -122,7 +126,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-20000000);
 		    cm.gainItem(4031109, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 20:
 		var intPoints = cm.getPlayer().getMeso();
@@ -134,7 +138,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-75000000);
 		    cm.gainItem(3994185, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	    case 21:
 		var intPoints = cm.getPlayer().getMeso();
@@ -146,7 +150,7 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 		    cm.gainMeso(-25000000);
 		    cm.gainItem(3800088, 1);
 		}
-		cm.dispose();
+		suppliesClosed=true;cm.dispose();
 		break;
 	}
 	} else {
@@ -187,9 +191,9 @@ if(status==-1 && [8,9,10,20,21].indexOf(selection)>=0){cm.sendOk("该商品不在本客
 			}
 		}
 	    }
-	    cm.dispose();
+	    suppliesClosed=true;cm.dispose();
 	}
     } else {
-	cm.dispose();
+	suppliesClosed=true;cm.dispose();
     }
 }

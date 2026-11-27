@@ -8,6 +8,8 @@ importPackage(net.sf.odinms.client);
 var status = -1;
 
 function start() {
+    if (cm.getNpc() != 2084001) { cm.openNpc(2084001, "goldrich"); return; }
+
     status = -1;
     qfresh = true;
     action(1, 0, 0);

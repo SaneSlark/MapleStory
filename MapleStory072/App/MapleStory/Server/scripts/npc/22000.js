@@ -1,3 +1,4 @@
+var travelClosed=false,travelOrigin=-1;
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -32,18 +33,22 @@
 var status = 0;
 
 function start() {
+    travelOrigin=cm.getMapId();
     qfresh = true;
 	status = -1;
 	action(1, 0, 0);
 }
 
 function qOrigAction(mode, type, selection) {
+    if(travelClosed)return;
+    if(cm.getMapId()!=travelOrigin){travelClosed=true;cm.dispose();return;}
+    if(mode!=1){travelClosed=true;cm.dispose();return;}
 	if (mode == -1) {
-		cm.dispose();
+		travelClosed=true;cm.dispose();
 	} else {
 	if (status >= 0 && mode == 0) {
 		cm.sendOk("恩... 我想你还不打算离开这里?");
-		cm.dispose();
+		travelClosed=true;cm.dispose();
 		return;
 	}
 	if (mode == 1)
@@ -65,25 +70,26 @@ function qOrigAction(mode, type, selection) {
 			if (cm.getLevel() >= 7) {
 				if (cm.getMeso() < 150) {
 					cm.sendOk("我想你现在还没那么多钱,等你有 #e150 金币#n,再来找我也不迟.");
-					cm.dispose();
+					travelClosed=true;cm.dispose();
 				} else {
 					cm.sendNext("再见,我会想你的.");
 				}
 			} else {
 				cm.sendOk("我想象... 你现在还需要多锻炼锻炼. 等你到7级以后就可以前往明珠港.");
-				cm.dispose();
+				travelClosed=true;cm.dispose();
 			}
 		}
 	} else if (status == 3) {
-		if (cm.haveItem(4031801)) {
-			cm.gainItem(4031801, -1);
-			cm.warp(104000000);
-			cm.dispose();
-		} else {
-			cm.gainMeso(-150);
-			cm.warp(104000000);
-			cm.dispose();
-			}
+        travelClosed=true;
+        if(!cm.haveItem(4031801) && (cm.getLevel()<7||cm.getMeso()<150)){cm.sendOk("请确认已达到7级，并带足150金币。");travelClosed=true;cm.dispose();return;}
+        var hasLetter=cm.haveItem(4031801);
+        try {
+            cm.warp(104000000);
+            if(cm.getMapId()==104000000){
+                if(hasLetter)cm.gainItem(4031801,-1);
+                else cm.gainMeso(-150);
+            }
+        } finally { cm.dispose(); }
 		}
 	}
 }
@@ -113,10 +119,10 @@ function qQuestAction(mode,type,selection) {
         if(typeof qOrigAction=="function") menu+="\r\n#L"+qchoices.length+"#其他服务与对话#l";
         qactive=true; qstatus=0; cm.sendSimple(menu); return true;
     }
-    if(mode!=1) { qactive=false; qfresh=false; cm.dispose(); return true; }
+    if(mode!=1) { qactive=false; qfresh=false; travelClosed=true;cm.dispose(); return true; }
     if(qstatus==0) {
         if(selection==qchoices.length && typeof qOrigAction=="function") {qactive=false;return false;}
-        if(selection<0 || selection>=qchoices.length) { cm.dispose(); return true; }
+        if(selection<0 || selection>=qchoices.length) { travelClosed=true;cm.dispose(); return true; }
         qchosen=qchoices[selection]; qstatus=1;
         cm.sendYesNo(qchosen[3] || qchosen[2]); return true;
     }
@@ -129,8 +135,8 @@ function qQuestAction(mode,type,selection) {
             if(q.canComplete(cm.getPlayer(),null)) { cm.completeClientNpcQuest(qchosen[0]); return true; }
             else cm.sendOk("任务条件尚未完成，请查看任务栏中的物品和狩猎要求。");
         }
-        cm.dispose(); return true;
+        travelClosed=true;cm.dispose(); return true;
     }
-    cm.dispose(); return true;
+    travelClosed=true;cm.dispose(); return true;
 }
 /* AUTO-QUEST-END */

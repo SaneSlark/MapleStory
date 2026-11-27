@@ -54,42 +54,14 @@ function qOrigAction(mode, type, selection) {
 			} else if (cm.haveItem(5000029,2) || cm.haveItem(5000030,2) || cm.haveItem(5000031,2) || cm.haveItem(5000032,2) || cm.haveItem(5000033,2)) {
 				cm.sendSimple("你有一只没有召唤出来的龙，还有一只已经召唤出来的龙。我可以帮你移除其中一只。记住，被移除的龙的数据将会丢失。\r\n#r#L0#移除我点券栏的第一格。#l#k\r\n#b#L1#移除我背包里的第一只龙。#l#k\r\n#g#L2#不用了，谢谢。#l#k");
 			} else {
-				var id = PetGiver.getSummonedPetItemId(cm.getC());
-				var name = cm.getChar().getPet(0).getName();
-				var level = cm.getChar().getPet(0).getLevel();
-				var closeness = cm.getChar().getPet(0).getCloseness();
-				var fullness = cm.getChar().getPet(0).getFullness();
-				if (id < 5000029 || id > 5000033) {
-					cm.sendOk("出了点问题，再试一次吧。");
-					cm.dispose();
-				}
-				var rand = 1 + Math.floor(Math.random() * 10);
-				var after = 0;
-				if (rand >= 1 && rand <= 3) {
-					after = 5000030;
-				} else if (rand >= 4 && rand <= 6) {
-					after = 5000031;
-				} else if (rand >= 7 && rand <= 9) {
-					after = 5000032;
-				} else if (rand == 10) {
-					after = 5000033;
-				} else {
-					cm.sendOk("出了点问题，再试一次吧。");
-					cm.dispose();
-				}
-				if (name.equals(MapleItemInformationProvider.getInstance().getName(id))) {
-					name = MapleItemInformationProvider.getInstance().getName(after);
-				}
-				cm.getChar().unequipPet(cm.getChar().getPet(0), false);
-				cm.gainItem(5380000, -1);
-				cm.gainItem(id, -1);
-				PetGiver.gainPet(cm.getC(), after, name, level, closeness, fullness);
-				cm.sendOk("你的龙现在进化了!! 它原来是 #i" + id + "##t" + id + "#, 现在变成了 #i" + after + "##t" + after + "#!");
-				cm.dispose();
+				// This package has no PetGiver.gainPet implementation. Never remove a pet before an unsupported evolution.
+                cm.sendOk("当前宠物进化接口尚未实现，不能安全完成进化。未扣除宠物或进化道具。");
+                cm.dispose();return;
+
 			}
 		} else if (status == 2) {
 			if (selection == 0) {
-				MapleInventoryManipulator.removeFromSlot(cm.getC(), MapleInventoryType.CASH, 1, 1, true);
+				MapleInventoryManipulator.removeFromSlot(cm.getC(), Packages.client.inventory.MapleInventoryType.CASH, 1, 1, true);
 				cm.sendOk("你点券栏的第一格已经移除。");
 			} else if (selection == 1) {
 				if (cm.haveItem(5000029, 2)) {

@@ -1,3 +1,4 @@
+var ticketClosed=false;
 importPackage(net.sf.odinms.client);
 
 var status = 0;
@@ -14,6 +15,8 @@ function start() {
 }
 
 function qOrigAction(mode, type, selection) {
+    if(ticketClosed)return;
+    if(mode!=1){ticketClosed=true;cm.dispose();return;}
 	if (mode == -1) {
 		cm.dispose();
 	} else {
@@ -51,11 +54,15 @@ function qOrigAction(mode, type, selection) {
 			cm.sendSimple(selStr);
 			}
 		} else if (status == 2) {
+            ticketClosed=true;
+            var currentZones=cm.getQuestStatus(2057)!=0?3:cm.getQuestStatus(2056)!=0?2:cm.getQuestStatus(2055)!=0?1:0;
+            if(selection!=Math.floor(selection)||selection<0||selection>=zones||selection>=currentZones){cm.dispose();return;}
 			if (cm.getMeso() < cost[selection]) {
 				cm.sendOk("您没有足够的钱.");
 				cm.dispose();
 			} else {
-			selectedItem = selection;
+			if(!cm.canHold(tickets[selection],1)){cm.sendOk("请先为车票留出背包空间。");cm.dispose();return;}
+            selectedItem = selection;
 			cm.gainMeso(-cost[selectedItem]);
 			cm.gainItem(tickets[selectedItem],1);
 			cm.dispose();

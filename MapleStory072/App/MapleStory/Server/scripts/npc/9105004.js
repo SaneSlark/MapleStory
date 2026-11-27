@@ -1,11 +1,17 @@
+var snowClosed=false, snowMap=-1;
 var status = -1;
 
 function action(mode, type, selection) {
+    if(snowClosed)return;
+    if(mode!=1){snowClosed=true;snowClosed=true;cm.dispose();return;}
+    if(snowMap==-1)snowMap=cm.getMapId();
+    if(cm.getMapId()!=snowMap){snowClosed=true;snowClosed=true;cm.dispose();return;}
+    if(status==0 && (selection!=Math.floor(selection)||selection<0||(snowMap==889100100?selection>2:selection!=0))){snowClosed=true;snowClosed=true;cm.dispose();return;}
     if (mode == 1) {
 	status++;
     } else {
 	if (status == 0) {
-	    cm.dispose();
+	    snowClosed=true;cm.dispose();
 		return;
 	}
 	status--;
@@ -17,13 +23,13 @@ function action(mode, type, selection) {
     	} else if (status == 1) {
 	        if (selection == 0) {
 		    cm.warp(889100000,0); //exit map lobby
-		    cm.dispose();
+		    snowClosed=true;cm.dispose();
 			} else if (selection == 1) {
 			cm.warp(889100010,0); //exit map lobby
-		    cm.dispose();
+		    snowClosed=true;cm.dispose();
 			} else if (selection == 2) {
 			cm.warp(889100020,0); //exit map lobby
-		    cm.dispose();
+		    snowClosed=true;cm.dispose();
 			}
 		}
 	    break;
@@ -37,7 +43,7 @@ function action(mode, type, selection) {
    		    var em = cm.getEventManager("Christmas");
     		    if (em == null) {
 			cm.sendOk("请稍后再试。");
-			cm.dispose();
+			snowClosed=true;cm.dispose();
 			return;
     		    }
 		    if (cm.getPlayer().getParty() == null || !cm.isLeader()) {
@@ -67,7 +73,7 @@ function action(mode, type, selection) {
 				cm.sendOk("所有队员都必须来到这里。");
 			}
 		    }
-	        cm.dispose();
+	        snowClosed=true;cm.dispose();
             }
 	    break;
 	case 889100001:
@@ -81,13 +87,17 @@ function action(mode, type, selection) {
 			} else if (cm.getPlayer().getMap().countMonsterById(9400319) > 0 || cm.getPlayer().getMap().countMonsterById(9400320) > 0 || cm.getPlayer().getMap().countMonsterById(9400321) > 0) {
 				cm.sendOk("请击败克罗斯！");
 			} else {
-				var s = ((cm.getMapId() % 100) / 10) | 0;
+				var instance=cm.getPlayer().getEventInstance();
+                if(String(instance.getProperty("rewardClaimed"))=="1"){snowClosed=true;cm.dispose();return;}
+                instance.setProperty("rewardClaimed","1");
+                snowClosed=true;
+                var s = ((cm.getMapId() % 100) / 10) | 0;
 				cm.givePartyExp((s == 0 ? 2500 : (s == 1 ? 7500 : 20000)));
 				cm.givePartyNX((s == 0 ? 250 : (s == 1 ? 500 : 750)));
 				cm.warpParty(cm.getMapId() + 1);
 			}
 		}
-		cm.dispose();
+		snowClosed=true;cm.dispose();
 		break;
     }
 }

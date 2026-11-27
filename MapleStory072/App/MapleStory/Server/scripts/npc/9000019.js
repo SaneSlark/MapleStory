@@ -1,3 +1,4 @@
+var wagerClosed=false;
 importPackage(net.sf.odinms.client);
 
 var status = 0;
@@ -10,6 +11,8 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    if(wagerClosed)return;
+    if(mode!=1){wagerClosed=true;cm.dispose();return;}
     if (mode == -1) {
         cm.dispose();
     } else {
@@ -27,9 +30,15 @@ function action(mode, type, selection) {
         } else if (status == 1) {
             cm.sendGetText("你想下注多少金额呢?如果赢了的话可以获得#r3倍#k的收益和GM送的小礼品!");
         } else if (status == 2) {
-            fee = cm.getText();
+            var input=String(cm.getText()).replace(/^\s+|\s+$/g, "");
+            if(!/^[0-9]+$/.test(input)){wagerClosed=true;cm.sendOk("请输入有效的整数金额。");cm.dispose();return;}
+            fee=Number(input);
+            if(!isFinite(fee)||fee<100000||fee>100000000){wagerClosed=true;cm.sendOk("金额必须在100000到100000000之间。");cm.dispose();return;}
             cm.sendYesNo("你确定要下注 #r" + fee + "#k 冒险币吗?请先检查你有没有那么多钱哦!");
         } else if (status == 3) {
+            wagerClosed=true;
+            if(!isFinite(fee)||fee!=Math.floor(fee)||fee<100000||fee>100000000){cm.dispose();return;}
+            if(chance>=3 && !cm.canHold(5220000,1) || chance==4 && !cm.canHold(2022240,1)){cm.sendOk("请先为奖励留出足够的背包空间，未扣金币。");cm.dispose();return;}
             if (cm.getMeso() < fee) {
                 cm.sendOk("哦呵，不好意思你没那么多钱了，去赚点钱再来吧，这可不是免费的,快去当掉一些东西再来吧!");
                 cm.dispose();
@@ -39,10 +48,10 @@ function action(mode, type, selection) {
             } else if (cm.getMeso() < 100000) {
                 cm.sendOk("对不起,你的金币不足100000,所以不能参于此次下注!");
                 cm.dispose();
-            } else if (cm.getText() > 100000000) {
+            } else if (fee > 100000000) {
                 cm.sendOk("哦不好意思哦!这里最大赌注不能超过1亿!");
                 cm.dispose();
-            } else if (cm.getText() < 100000) {
+            } else if (fee < 100000) {
                 cm.sendOk("你押的钱太少咯,最低赌金要10万噢!");
                 cm.dispose();
             } else {

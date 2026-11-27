@@ -1,3 +1,4 @@
+var dollClosed=false;
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -34,11 +35,13 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    if(dollClosed)return;
+    if(mode!=1){dollClosed=true;dollClosed=true;cm.dispose();return;}
     if (mode == -1) {
-        cm.dispose();
+        dollClosed=true;cm.dispose();
     } else {
         if (status >= 0 && mode == 0) {
-            cm.dispose();
+            dollClosed=true;cm.dispose();
         }
         if (mode == 1)
             status++;
@@ -48,16 +51,18 @@ function action(mode, type, selection) {
             if ((cm.getQuestStatus(3230) == MapleQuestStatus.Status.STARTED)) {
                 if (cm.haveItem(4031094)) {
                     cm.completeQuest(3230);
-                    cm.gainItem(4031094, -1);
+                    if(cm.getQuestStatus(3230)!=2){cm.sendOk("任务尚未完成，钟摆已保留，请确认任务条件后再来。");dollClosed=true;dollClosed=true;cm.dispose();return;}
+					cm.gainItem(4031094, -1);
                     greeting = "非常感谢你帮我找到钟摆,现在准备要回去么?";
-                }
+                } else {
                 greeting = "你还没找到钟摆,现在准备要回去么?";
+                }
 				
             }
             cm.sendYesNo(greeting);
         } else if (status == 1) {
             cm.warp(221024400,0);
-            cm.dispose();
+            dollClosed=true;cm.dispose();
         }
     }
 }	

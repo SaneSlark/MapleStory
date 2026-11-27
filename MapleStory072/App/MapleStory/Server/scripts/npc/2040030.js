@@ -1,3 +1,4 @@
+var bookFinished=false;
 /* Author: aaroncsn(MapleSea Like)(Need to add creation of minigame)
 	NPC Name: 		Wisp
 	Map(s): 		Ludibrium: Eos Tower Entrance(220000400)
@@ -6,6 +7,8 @@
 var status = -1;
 
 function action(mode, type, selection) {
+    if(bookFinished)return;
+    if(status>=15 && mode!=1){bookFinished=true;cm.dispose();return;}
     if (status == 1 && mode == 0 || status == 5 && mode == 1 || status == 10 && mode == 1 || status == 13 && mode == 1 || status == 15 && mode == 0　|| status == 0 && mode == -1) {
 	cm.dispose();
 	return;
@@ -126,7 +129,8 @@ function action(mode, type, selection) {
 	} else if (status == 15) {
 	cm.sendYesNo("将减去25万枫币，确定要购买吗？");
     } else if (status == 16) {
-	if (cm.getMeso() < 250000) {
+    bookFinished=true;
+	if (cm.getMeso() < 250000 || !cm.canHold(4160011,1)) {
 	    cm.sendOk("请确认是否有足够的枫币，或者其他栏是否满了。");
 	} else {
 	    cm.gainMeso(-250000);

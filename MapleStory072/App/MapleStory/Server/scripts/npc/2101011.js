@@ -6,8 +6,7 @@
 function start() {
     qfresh = true;
     if (qQuestAction(1, 0, 0)) return;
-    cm.warp (670010200, 4);
-    cm.changeMusic("Bgm14/Ariant");
+    cm.sendOk("没有什么事的话，就不要打扰我。");
     cm.dispose();
 }
 function action(mode, type, selection) {

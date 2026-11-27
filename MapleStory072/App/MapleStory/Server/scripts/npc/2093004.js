@@ -24,12 +24,18 @@
 **/
 
 var status = 0;
+var flowClosed = false;
+var originMap = -1;
 
 function start() {
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if (flowClosed) return;
+    if (mode != 1) { flowClosed = true; cm.dispose(); return; }
+    if (status == 0) originMap = cm.getChar().getMapId();
+    else if (cm.getChar().getMapId() != originMap) { flowClosed = true; cm.dispose(); return; }
 	if (status == 0) {
 		cm.sendYesNo("我是海豚出租车司机! 你愿意到海底世界吗？");
 		status++;
@@ -41,7 +47,8 @@ function action(mode, type, selection) {
 					cm.sendNext ("好吧，再见，一路顺风！");
 					status++
 			} else if (status == 2) {
-					cm.warp(230000000, 0);
+					flowClosed = true;
+                    cm.warp(230000000, 0);
 					cm.dispose();
 			}
 		}

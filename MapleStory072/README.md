@@ -4,6 +4,13 @@
 
 **仅使用本目录的 072 组件，不与 062 或 079 混用。** 部分遗留任务、脚本和玩法仍有兼容差异，具体状态以本包使用说明及维护记录为准。
 
+## v0.7.2.7
+
+[下载与更新说明](https://github.com/SaneSlark/MapleStory/releases/tag/v0.7.2.7)
+
+- 同步本轮 NPC、任务、活动、客户端资源与钓鱼更新。
+- 钓鱼物品成功入包后发送获得特效和左下角拾取提示，勋章 1142071 显示为「文明用语勋章」。
+
 ## v0.7.2.6
 
 [下载与更新说明](https://github.com/SaneSlark/MapleStory/releases/tag/v0.7.2.6)
@@ -87,7 +94,7 @@
 | `MapleStoryPortable.exe` | 日常启动入口 |
 | `App/MapleStory/Client` | CMS072 客户端、二进制 WZ 和 DLL |
 | `App/MapleStory/Server/dist` | 主程序 `mapleserver072.jar` 及依赖 |
-| `App/MapleStory/Server/settings.ini` | 服务端及数据库连接配置 |
+| `App/MapleStory/Server/settings.ini` | 数据库、登录、安全、倍率、频道、商城、活动及鱼类兑换价格 |
 | `App/MapleStory/Server/scripts`、`wz` | 脚本及服务端 XML 资源，均位于 Server 下 |
 | `App/MapleStory/Runtime` | 本包 Java 和 MySQL |
 | `App/DefaultData/mysql` | 现有存档缺失时使用的初始模板 |

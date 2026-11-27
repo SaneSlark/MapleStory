@@ -36,6 +36,7 @@ importPackage(net.sf.odinms.client);
 
 var status = 0;
 var selectedType = -1;
+var recipeCounts = [7, 9, 24, 4];
 var selectedItem = -1;
 var item;
 var mats;
@@ -68,6 +69,7 @@ function action(mode, type, selection) {
 		cm.sendSimple(selStr);
 	}
 	else if (status == 1 && mode == 1) {
+		if (selection != Math.floor(selection) || selection < 0 || selection >= recipeCounts.length) { close(); return; }
 		selectedType = selection;
 		if (selectedType == 0){ //mineral refine
 			var selStr = "那么, 你愿意拿什么种类的矿石来提炼?#b";
@@ -112,6 +114,7 @@ function action(mode, type, selection) {
 			status++;
 	}
 	else if (status == 2 && mode == 1) {
+		if (selection != Math.floor(selection) || selection < 0 || selection >= recipeCounts[selectedType]) { close(); return; }
 		selectedItem = selection;
 		if (selectedType == 0){ //mineral refine
 			var itemSet = new Array(4011000,4011001,4011002,4011003,4011004,4011005,4011006);
@@ -139,14 +142,17 @@ function action(mode, type, selection) {
 		cm.sendGetNumber(prompt,1,1,100)
 	}
 	else if (status == 3 && mode == 1) {
-		if (equip)
-		{
-			selectedItem = selection;
-			qty = 1;
-		}
-		else
-			if(selection!=Math.floor(selection)||selection<1||selection>100){close();return;}
-        qty = selection;
+        if (selection != Math.floor(selection) || selection < (equip ? 0 : 1)
+                || selection > (equip ? recipeCounts[selectedType] - 1 : 100)) {
+            close();
+            return;
+        }
+        if (equip) {
+            selectedItem = selection;
+            qty = 1;
+        } else {
+            qty = selection;
+        }
 
 		if (selectedType == 2){ //helmet refine
 			var itemSet = new Array(1002042,1002041,1002002,1002044,1002003,1002040,1002007,1002052,1002011,1002058,1002009,1002056,1002087,1002088,1002049,1002050,1002047,1002048,1002099,1002098,1002085,1002028,1002022,1002101);
@@ -242,6 +248,13 @@ function action(mode, type, selection) {
 			if (!complete) 
 				cm.sendOk("你没有足够的材料哦，凑齐材料在来吧，我等着你.");
 			else {
+                var before = cm.getPlayer().getItemQuantity(item, false);
+                cm.gainItem(item, qty);
+                if (cm.getPlayer().getItemQuantity(item, false) != before + qty) {
+                    cm.sendOk("成品未能放进背包，未扣除材料和金币。");
+                    close();
+                    return;
+                }
 				if (mats instanceof Array) {
 					for (var i = 0; i < mats.length; i++){
 						cm.gainItem(mats[i], -matQty[i] * qty);
@@ -251,7 +264,6 @@ function action(mode, type, selection) {
 					cm.gainItem(mats, -matQty * qty);
 					
 				cm.gainMeso(-cost * qty);
-				cm.gainItem(item,qty);
 				cm.sendOk("一个完美的制作，那去看看吧.");
 			}
 		close();

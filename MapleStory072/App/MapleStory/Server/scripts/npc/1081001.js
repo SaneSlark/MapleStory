@@ -1,3 +1,4 @@
+var returnClosed=false,returnOrigin=-1;
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -29,17 +30,21 @@ importPackage(net.sf.odinms.server.maps);
 var status = 0;
 
 function start() {
+    returnOrigin=cm.getMapId();
+    if(returnOrigin!=110000000){returnClosed=true;cm.dispose();return;}
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(returnClosed)return;
+    if(cm.getMapId()!=returnOrigin||mode<0){returnClosed=true;cm.dispose();return;}
 	if (mode == -1) {
-		cm.dispose();
+		returnClosed=true;cm.dispose();
 	} else {
 		if (status >= 2 && mode == 0) {
 			cm.sendOk("那么，再见.");
-			cm.dispose();
+			returnClosed=true;cm.dispose();
 			return;
 		}
 		if (mode == 1)
@@ -53,17 +58,18 @@ function action(mode, type, selection) {
 		} else if (status == 2) {
 			if (cm.getMeso() < 0) {
 				cm.sendOk("你很抱歉，你没有足够的金币.")
-				cm.dispose();
+				returnClosed=true;cm.dispose();
 			} else {
 				cm.sendYesNo("你确定要回#b明珠港#k么?好吧,那我们出发..");
 			}
 		} else if (status == 3) {
+            returnClosed=true;
 			var map = cm.getChar().getSavedLocation(SavedLocationType.FLORINA);
 			if (map == -1) {
 				map = 104000000;
 			}
 			cm.warp(map, 0);
-			cm.dispose();
+			returnClosed=true;cm.dispose();
 		}
 	}
 }

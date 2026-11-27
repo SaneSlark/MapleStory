@@ -1,49 +1,8 @@
-/**
-  Bell (NLC Ticket Usher and Platform Usher)
-  in Maps: 600010001,600010002,103000100,600010004
-  Final by aexr
-**/
-
-var status = 0;
-
+// CMS072 has neither this NPC nor the former NLC destination maps. Do not warp into unsupported content.
 function start() {
-    action(1, 0, 0);
+    cm.sendOk("\u8fd9\u6761\u4e58\u8f66\u8def\u7ebf\u6682\u672a\u5f00\u653e\u3002");
+    cm.dispose();
 }
-
 function action(mode, type, selection) {
-    if (status == 0) {
-        if (cm.getChar().getMapId() == 103000100) {
-            cm.sendYesNo("你是想去 新叶城 吗?去得话,请上车吧");
-        } else if (cm.getChar().getMapId() == 600010001) {
-            cm.sendYesNo("你是想去 废弃都市 吗?去得话,请上车吧");
-        } else if (cm.getChar().getMapId() == 600010004) {
-            cm.sendYesNo("你想回去 废弃都市 吗?");
-        } else if (cm.getChar().getMapId() == 600010002) {
-            cm.sendYesNo("你想回去 新叶城 吗?");
-        }
-        status++;
-    } else {
-        if ((status == 1 && type == 1 && selection == -1 && mode == 0) || mode == -1) {
-            cm.dispose();
-        } else {
-            if (status == 1) {
-                cm.sendNext ("那好吧,下次再见");
-                status++
-            } else if (status == 2) {
-                if (cm.getChar().getMapId() == 103000100) {
-                    cm.warp(600010004, 0);
-                    cm.dispose();
-                } else if (cm.getChar().getMapId() == 600010001) {
-                    cm.warp(600010002, 0);
-                    cm.dispose();
-                } else if (cm.getChar().getMapId() == 600010004) {
-                    cm.warp(103000100, 0);
-                    cm.dispose();
-                } else if (cm.getChar().getMapId() == 600010002) {
-                    cm.warp(600010001, 0);
-                    cm.dispose();
-                }
-            }
-        }
-    }
+    cm.dispose();
 }

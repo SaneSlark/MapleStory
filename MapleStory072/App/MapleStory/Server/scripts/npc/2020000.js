@@ -38,6 +38,7 @@ importPackage(net.sf.odinms.client);
 
 var status = 0;
 var selectedType = -1;
+var recipeCounts = [7, 9, 2, 5, 3, 6];
 var selectedItem = -1;
 var item;
 var mats;
@@ -72,6 +73,7 @@ function action(mode, type, selection) {
 	}
 	else if (status == 1 && mode == 1) {
 		if(selection==6273){var q=Packages.server.quest.MapleQuest.getInstance(6273);done=true;if(q.canStart(cm.getPlayer(),cm.getNpc()))cm.startClientNpcQuest(6273);else if(q.canComplete(cm.getPlayer(),null))cm.completeClientNpcQuest(6273);else{cm.sendOk("需要30个#t4000081#、2个#t4021007#和1个#t4021009#，请查看任务栏。");cm.dispose();}return;}
+		if (selection != Math.floor(selection) || selection < 0 || selection >= recipeCounts.length) { close(); return; }
 		selectedType = selection;
 		if (selectedType == 0){ //mineral refine
 			var selStr = "那么, 你想提炼什么?#b";
@@ -130,6 +132,7 @@ function action(mode, type, selection) {
 			status++;
 	}
 	else if (status == 2 && mode == 1) {
+		if (selection != Math.floor(selection) || selection < 0 || selection >= recipeCounts[selectedType]) { close(); return; }
 		selectedItem = selection;
 		if (selectedType == 0){ //mineral refine
 			var itemSet = new Array(4011000,4011001,4011002,4011003,4011004,4011005,4011006);
@@ -187,14 +190,17 @@ function action(mode, type, selection) {
 		cm.sendGetNumber(prompt,1,1,100)
 	}
 	else if (status == 3 && mode == 1) {
-		if (equip)
-		{
-			selectedItem = selection;
-			qty = 1;
-		}
-		else
-			if(selection!=Math.floor(selection)||selection<1||selection>100){close();return;}
-        qty = selection;
+        if (selection != Math.floor(selection) || selection < (equip ? 0 : 1)
+                || selection > (equip ? recipeCounts[selectedType] - 1 : 100)) {
+            close();
+            return;
+        }
+        if (equip) {
+            selectedItem = selection;
+            qty = 1;
+        } else {
+            qty = selection;
+        }
 		
 		if (selectedType == 5){ //arrow refine
 			var itemSet = new Array(2060000,2061000,2060001,2061001,2060002,2061002);
@@ -234,7 +240,8 @@ function action(mode, type, selection) {
 		var complete = true;
         done=true;
         if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close();return;}
-        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close();return;}
+        var outputQty=item>=2060000&&item<=2060002?1000-(item-2060000)*100:item>=2061000&&item<=2061002?1000-(item-2061000)*100:item==4003000?15*qty:qty;
+        if(!cm.canHold(item,outputQty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close();return;}
 		
 		if (cm.getMeso() < cost * qty)
 			{
@@ -278,6 +285,13 @@ function action(mode, type, selection) {
 			if (!complete) 
 				cm.sendOk("你的材料不够哦，准备好了再来吧.");
 			else {
+                var before = cm.getPlayer().getItemQuantity(item, false);
+                cm.gainItem(item, outputQty);
+                if (cm.getPlayer().getItemQuantity(item, false) != before + outputQty) {
+                    cm.sendOk("成品未能放进背包，未扣除材料和金币。");
+                    close();
+                    return;
+                }
 				if (mats instanceof Array) {
 					for (var i = 0; i < mats.length; i++){
 						cm.gainItem(mats[i], -matQty[i] * qty);
@@ -289,14 +303,6 @@ function action(mode, type, selection) {
 				if (cost > 0)
 					cm.gainMeso(-cost * qty);
 				
-				if (item >= 2060000 && item <= 2060002) //bow arrows
-					cm.gainItem(item, 1000 - (item - 2060000) * 100);
-				else if (item >= 2061000 && item <= 2061002) //xbow arrows
-					cm.gainItem(item, 1000 - (item - 2061000) * 100);
-				else if (item == 4003000)//screws
-					cm.gainItem(4003000, 15 * qty);
-				else
-					cm.gainItem(item, qty);
 				cm.sendOk("完成了. 果然我还是宝刀未老啊.");
 			}
 		close();

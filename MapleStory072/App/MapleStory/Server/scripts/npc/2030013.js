@@ -34,6 +34,7 @@ function action(mode, type, selection) {
 			cm.sendSimple("这里是扎昆祭台, 如果你想挑战请带上#b#t4001017##k, 你是不是要去挑战扎昆 .\r\n\#L3##b我要进去,欺负阿昆!#l");
 			} else if (status == 1) {
                 closed=true;
+                if(selection!=3){cm.dispose();return;}
 			if (selection == 1) {
 				   if(cm.getMeso() >= 100000000) {
 					cm.gainMeso(-100000000);

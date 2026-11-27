@@ -1,3 +1,4 @@
+var refineClosed=false;
 /* Spiruna
 	Orbis : Old Man's House (200050001)
 	
@@ -16,6 +17,8 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    if(refineClosed)return;
+    if(mode!=1){refineClosed=true;cm.dispose();return;}
 	if (mode == 1)
 		status++;
 	else
@@ -37,6 +40,9 @@ function action(mode, type, selection) {
 	}
 	else if (status == 2 && mode == 1) {
 		var complete = true;
+        refineClosed=true;
+        if(selection!=Math.floor(selection)||selection<1||selection>100||cm.getQuestStatus(3034)!=2){cm.dispose();return;}
+        if(!cm.canHold(4005004,selection)){cm.sendOk("请先为成品留出足够的背包空间。");cm.dispose();return;}
 		var itemID = 4005004;
 		var matID = 4004004;
 		var matQty = 10;
@@ -44,12 +50,13 @@ function action(mode, type, selection) {
 		
 		if (cm.getMeso() < cost * selection)
 			{
-				cm.sendOk("很抱歉,我可不会免费帮你锻造.")
+				cm.sendOk("很抱歉,我可不会免费帮你锻造.");
+                cm.dispose();return;
 			}
 			else
 			{
 				var count = 0;
-				var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(matID).iterator();
+				var iter = cm.getChar().getInventory(Packages.client.inventory.MapleInventoryType.ETC).listById(matID).iterator();
 				while (iter.hasNext()) {
 					count += iter.next().getQuantity();
 				}

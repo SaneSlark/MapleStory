@@ -41,6 +41,7 @@ function scheduledTimeout(eim) {
 		eim.setProperty("stage", "1");
 		eim.setProperty("ok", "1");
 		eim.getMapInstance(0).killAllMonsters(true);
+		var map = eim.getMapInstance(0);
 		var mob = em.getMonster(9400319 + parseInt(eim.getProperty("mode"))); // Tylus
 		eim.restartEventTimer(600000);
 		eim.registerMonster(mob);

@@ -54,7 +54,10 @@ function action(mode,type,selection){
     if(state==3){
         if(cm.getMeso()<service.price){cm.sendOk("金币不足。");cm.dispose();return;}
         if(!cm.canHold(service.ticket,1)){cm.sendOk("请先空出现金栏的一格。");cm.dispose();return;}
-        cm.gainMeso(-service.price);cm.gainItem(service.ticket,1);cm.sendOk("会员卡已放入现金栏。");cm.dispose();return;
+        var before=cm.getPlayer().getItemQuantity(service.ticket,false);
+        cm.gainItem(service.ticket,1);
+        if(cm.getPlayer().getItemQuantity(service.ticket,false)!=before+1){cm.sendOk("\u4f1a\u5458\u5361\u672a\u80fd\u653e\u5165\u80cc\u5305\uff0c\u672a\u6263\u91d1\u5e01\u3002");cm.dispose();return;}
+        cm.gainMeso(-service.price);cm.sendOk("会员卡已放入现金栏。");cm.dispose();return;
     }
     if(state!=2||chosen<0||cm.getPlayer().getGender()!=gender||cm.getPlayer().getHair()!=originalHair||cm.getPlayer().getFace()!=originalFace){cm.dispose();return;}
     if(!cm.haveItem(service.ticket,1)){cm.sendOk("需要一张#t"+service.ticket+"#才能办理这项服务。");cm.dispose();return;}

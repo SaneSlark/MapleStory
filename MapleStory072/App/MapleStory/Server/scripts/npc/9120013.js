@@ -1,3 +1,4 @@
+var quizClosed=false;
 importPackage(net.sf.odinms.client);
 
 var status;
@@ -15,8 +16,10 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    if(quizClosed)return;
+    if(mode!=1){quizClosed=true;quizClosed=true;cm.dispose();return;}
 	if (mode == -1) {
-		cm.dispose();
+		quizClosed=true;cm.dispose();
 	}		
 	else {
 		if (mode == 1)
@@ -29,14 +32,15 @@ function action(mode, type, selection) {
 			}
 			else { //quest not started or already completed
 				cm.sendOk("喵喵~~喵~~~~~~~~!");
-				cm.dispose();
+				quizClosed=true;cm.dispose();
 			}
 		}
 		else if (status == 1 && mode == 1) {
 			var hasChicken = true;
+            if(cm.getQuestStatus(8012)!=1||cm.haveItem(4031064)||!cm.canHold(4031064,1)){quizClosed=true;cm.sendOk("请确认任务正在进行、尚未取得弹珠，并为弹珠留出背包空间。");quizClosed=true;cm.dispose();return;}
 			
 			var count = 0;
-			var iter = cm.getChar().getInventory(MapleInventoryType.USE).listById(2020001).iterator();
+			var iter = cm.getChar().getInventory(Packages.client.inventory.MapleInventoryType.USE).listById(2020001).iterator();
 			while (iter.hasNext()) {
 				count += iter.next().getQuantity();
 			}
@@ -45,7 +49,7 @@ function action(mode, type, selection) {
 			
 			if (!hasChicken) {
 				cm.sendOk("什么？不行！300个！三百个！一个都不能少。你想多给我也不介意，但至少要300个。可不是谁都能像你一样吃得这么饱……");
-				cm.dispose();
+				quizClosed=true;cm.dispose();
 			}
 			else {
 				cm.gainItem(2020001, -300)
@@ -55,23 +59,25 @@ function action(mode, type, selection) {
 		else if (status == 7 && mode == 1) { //2-6 are the questions
 			if (selection != correctAnswer.pop()){
 				cm.sendNext("唔……反正人类总是会犯错的！想再挑战一次的话，就给我带300个炸鸡来。")
-				cm.dispose();
+				quizClosed=true;cm.dispose();
 			}
 			else {
 				cm.sendNext("可恶，你居然全部答对了。我虽然不太喜欢人类，但我最讨厌不守信用，所以，说好的橙色弹珠给你。")
 			}
 		}
 		else if (status == 8 && mode == 1) { //gain marble
-			cm.gainItem(4031064, 1);
+			quizClosed=true;
+            if(cm.getQuestStatus(8012)!=1||cm.haveItem(4031064)||!cm.canHold(4031064,1)){cm.sendOk("任务状态或背包空间发生变化，请确认后再来领取。");quizClosed=true;cm.dispose();return;}
+            cm.gainItem(4031064, 1);
 			cm.sendOk("我们的交易到此结束，非常感谢！你可以走了！");
-			cm.dispose();
+			quizClosed=true;cm.dispose();
 		}
 		else if (status >= 2 && status <= 6 && mode == 1) {//questions
 			var cont = true;
 			if (status > 2) {
 				if (selection != correctAnswer.pop()){
 					cm.sendNext("唔……反正人类总是会犯错的！想再挑战一次的话，就给我带300个炸鸡来。")
-					cm.dispose();
+					quizClosed=true;cm.dispose();
 					cont = false;
 				}
 			}

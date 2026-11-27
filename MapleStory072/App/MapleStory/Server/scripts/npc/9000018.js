@@ -9,6 +9,7 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    if(mode!=1||selection!=Math.floor(selection)||selection<0||selection>=testpq.length){cm.dispose();return;}
     cm.dispose();
     if(cm.getPlayer().isGM()){
 	cm.openNpc(testpq[selection][0]);

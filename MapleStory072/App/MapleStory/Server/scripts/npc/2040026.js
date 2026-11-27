@@ -28,6 +28,7 @@
 **/
 
 var status = 0;
+var rockClosed = false;
 var maps = new Array(221022900, 221020000);
 var mapNames = new Array("第2层玩具塔魔法石", "第4层玩具塔魔法石");
 var selectedMap = -1;
@@ -37,6 +38,8 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    if (rockClosed) return;
+    if (mode != 1) { rockClosed = true; cm.dispose(); return; }
 	if (status == 0) {
 		var where = "你想去哪里?";
 		for (var i = 0; i < maps.length; i++) {
@@ -48,15 +51,17 @@ function action(mode, type, selection) {
 		if ((status == 1 && type == 1 && selection == -1 && mode == 0) || mode == -1) {
 			cm.dispose();
 		} else {
-			if (status == 1 && selection == -1) {
-				status++;
-			}
+
 			if (status == 1) {
-				selectedMap = selection;
+				if (selection != Math.floor(selection) || selection < 0 || selection >= maps.length) { rockClosed = true; cm.dispose(); return; }
+                selectedMap = selection;
+                status = 2;
 				cm.sendYesNo("你要去 " + mapNames[selectedMap] + "?");
+                return;
 			} else
 			if (status == 2) {
-				if(cm.haveItem(4001020)) {
+				rockClosed = true;
+                if(cm.haveItem(4001020)) {
 					cm.gainItem(4001020, -1);
 
 					cm.warp(maps[selectedMap], 0);

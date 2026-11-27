@@ -4,14 +4,14 @@ var maps=[209000000, 209000009, 920010000, 922020300];
 var required=[0,2,3,4];
 var meso=[1000000,1000000,1000000,1000000,1000000];
 var points=[5000,10000,20000,50000,100000];
-function start(){done=false;var text="会员中心：\r\n";for(var i=0;i<maps.length;i++)text+="#L"+i+"#前往 "+mapNames[maps[i]]+"#l\r\n";text+="#L100#100万金币 - 领取今日会员工资#l";cm.sendSimple(text);}
+function start(){done=false;var text="会员中心：\r\n";for(var i=0;i<maps.length;i++)text+="#L"+i+"#前往 "+mapNames[maps[i]]+"#l\r\n";text+="#L100#领取今日会员福利#l";cm.sendSimple(text);}
 function action(mode,type,selection){
     if(done)return;done=true;
     if(mode!=1){cm.dispose();return;}
     var vip=cm.getPlayer().getVip();
     if(selection==100){
-        if(vip<1){cm.sendOk("会员等级达到1后可以领取工资。");}
-        else {var tier=Math.min(5,vip)-1;if(cm.getPlayer().getMeso()+meso[tier]>2147483647){cm.sendOk("金币已接近上限，请先存入仓库再领取。");}else{var claim=cm.tryClaimVipSalary();if(claim==0){cm.sendOk("今天已经领取过工资。");}else if(claim<0){cm.sendOk("工资领取记录保存失败，请稍后重试。");}else{cm.gainMeso(meso[tier]);cm.modifyNX(points[tier],1);cm.sendOk("已领取今日会员工资。");}}}
+        if(vip<1){cm.sendOk("会员等级达到1后可以领取福利。");}
+        else {var tier=Math.min(5,vip)-1;if(cm.getPlayer().getMeso()+meso[tier]>2147483647){cm.sendOk("金币已接近上限，请先存入仓库再领取。");}else{var claim=cm.tryClaimVipSalary();if(claim==0){cm.sendOk("今天已经领取过福利。");}else if(claim<0){cm.sendOk("福利领取记录保存失败，请稍后重试。");}else{cm.gainMeso(meso[tier]);cm.modifyNX(points[tier],1);cm.sendOk("已领取今日会员福利。");}}}
     } else if(selection>=0&&selection<maps.length){
         if(vip>=required[selection]){if((maps[selection]==209000000||maps[selection]==209000009)&&(cm.getPlayer().getMapId()<209000000||cm.getPlayer().getMapId()>=209000100))cm.saveLocation("CHRISTMAS");cm.warp(maps[selection],0);}else cm.sendOk("会员等级不足。");
     }

@@ -1,3 +1,15 @@
+var voteClosed=false,voteMap=-1;
+function action(mode,type,selection){
+    if(voteClosed)return;
+    if(mode!=1||cm.getMapId()!=voteMap){voteClosed=true;cm.dispose();return;}
+    if(status==-1){if(selection!=0){voteClosed=true;cm.dispose();return;}}
+    else if(status==0){if([0,1,4].indexOf(selection)<0){voteClosed=true;cm.dispose();return;}}
+    else if(status==1){if(selection!=Math.floor(selection)||selection<0||selection>6){voteClosed=true;cm.dispose();return;}voteClosed=true;}
+    else if(status==2){if([2,3].indexOf(selection)<0){voteClosed=true;cm.dispose();return;}voteClosed=true;}
+    else if(status==5){voteClosed=true;}
+    else{voteClosed=true;cm.dispose();return;}
+    voteLegacyAction(mode,type,selection);
+}
 var status = -1;
 var nitems = Array("200万金币", "10000点券", "#v2340000#祝福卷轴 (等级70以上)", "#v2049100#混沌卷轴60% (等级70以上)", "#v5220000#快乐百宝券 × 25", "#v5050000#洗能力点卷轴 × 5", "#v5050000#洗能力点卷轴 × 26", "#v5062000#神奇魔方 × 4", "#v5062000#神奇魔方 × 21", "#v2022179#玛瑙苹果 × 4", "#v2022179#玛瑙苹果 × 21", "#v5062001#高级神奇魔方 × 2", "#v2530000#幸运日卷轴（等级70以上）", "#v2531000#保护卷轴（等级70以上）");
 var np = Array(1, 1, 5, 2, 1, 1, 5, 1, 5, 1, 5, 9, 5, 10);
@@ -11,10 +23,10 @@ var hairnew;
 var itemowner = "Vesper";
 
 function start() {
-    action(1, 0, 0);
+    voteMap=cm.getMapId();status=-1;action(1,0,0);
 }
 
-function action(mode, type, selection) {
+function voteLegacyAction(mode, type, selection) {
 if(mode!=1){cm.dispose();return;}
 if((status==1 && selection>=7 && selection<=13) || (status==2 && [0,1].indexOf(selection)>=0)){cm.sendOk("该兑换物品不在本客户端中，未扣积分。");cm.dispose();return;}
     if (mode != 1) {
@@ -23,7 +35,7 @@ if((status==1 && selection>=7 && selection<=13) || (status==2 && [0,1].indexOf(s
     }
     status++;
     if (status == 0) {
-        cm.sendSimple("你好，我负责#r#e投票积分兑换#n#k。每次投票可以获得积分，你目前有#e#r" + cm.getPlayer().getVPoints() + "#n#k投票积分，可以兑换以下物品：\r\n\r\n#b#L0#兑换普通物品#l\r\n#L1#兑换特殊物品#l"/* + "\r\n#L2#Trade for Royal Hair(35 vote points)#l\r\n#L3#Trade for Minigame Item#l*/ + "\r\n#L4#重置全部能力值（20投票积分，不重置体力或魔法力）#l#k");
+        cm.sendSimple("你好，我负责#r#e投票积分兑换#n#k。每次投票可以获得积分，你目前有#e#r" + cm.getPlayer().getVPoints() + "#n#k投票积分，可以兑换以下物品：\r\n\r\n#b#L0#兑换普通物品#l\r\n#L1#兑换特殊物品#l"/* + "\r\n#L2#Trade for Royal Hair(35 vote points)#l\r\n#L3#Trade for Minigame Item#l*/ + "\r\n#L4#重置全部能力值（35投票积分，不重置体力或魔法力）#l#k");
     } else if (status == 1) {
         status += selection;
         var selStr;

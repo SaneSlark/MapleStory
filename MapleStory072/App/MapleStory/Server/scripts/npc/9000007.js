@@ -1,3 +1,4 @@
+var tradeClosed=false;
 // White Scroll Maker By Sawyer of LynnStory
 //Nana(H) (9201001)
 importPackage(net.sf.odinms.client);
@@ -13,12 +14,14 @@ function start() {
 
 
 function qOrigAction(mode, type, selection) {
+    if(tradeClosed)return;
+    if(mode!=1){tradeClosed=true;tradeClosed=true;cm.dispose();return;}
 	if (mode == -1) {
-		cm.dispose();
+		tradeClosed=true;cm.dispose();
 	} else {
 		if (status >= 2 && mode == 0) {
 			cm.sendOk("嗷呜!?");
-			cm.dispose();
+			tradeClosed=true;cm.dispose();
 			return;
 		}
 		if (mode == 1)
@@ -34,24 +37,29 @@ function qOrigAction(mode, type, selection) {
 			}
 			else if (!cm.haveItem(4005000, 20)) {
 			cm.sendOk("你所收集的 力量水晶20个#k#v4005000#没有达到我所要求的数量.");
-			cm.dispose();
+			tradeClosed=true;cm.dispose();
 			}
 			else if (!cm.haveItem(1402035)) {
 			cm.sendOk("你还没有#k#v1402035#");
-			cm.dispose();
+			tradeClosed=true;cm.dispose();
 			}
-			else if (!cm.getMeso() <= 500000000) {
+			else if (cm.getMeso() < 500000000) {
 			cm.sendOk("很抱歉，你身上的金币不够支付本次制作卷轴的费用.");
-			cm.dispose();
+			tradeClosed=true;cm.dispose();
 			}
 			
 		}
 		else if (status == 2) {
+            tradeClosed=true;
+            if(!cm.haveItem(4005000,20)||!cm.haveItem(1402035,1)||cm.getMeso()<500000000){cm.sendOk("材料或金币不足，未进行兑换。");tradeClosed=true;cm.dispose();return;}
+            // One input weapon frees one slot; two output weapons require one additional free slot.
+            if(cm.getPlayer().getInventory(Packages.client.inventory.MapleInventoryType.EQUIP).getNumFreeSlot()<1 || !cm.canHold(1402037,1)||!cm.canHold(1402036,1)){cm.sendOk("请先在装备栏留出至少一个空位。");tradeClosed=true;cm.dispose();return;}
 			cm.gainItem(4005000, -20);
 			cm.gainItem(1402035, -1);
 			cm.gainMeso(-500000000);
 			cm.gainItem(1402037, 1);
-			cm.gainItem(1402036, 1);			
+			cm.gainItem(1402036, 1);
+            tradeClosed=true;cm.dispose();
 }
 }
 }
@@ -81,10 +89,10 @@ function qQuestAction(mode,type,selection) {
         if(typeof qOrigAction=="function") menu+="\r\n#L"+qchoices.length+"#其他服务与对话#l";
         qactive=true; qstatus=0; cm.sendSimple(menu); return true;
     }
-    if(mode!=1) { qactive=false; qfresh=false; cm.dispose(); return true; }
+    if(mode!=1) { qactive=false; qfresh=false; tradeClosed=true;cm.dispose(); return true; }
     if(qstatus==0) {
         if(selection==qchoices.length && typeof qOrigAction=="function") {qactive=false;return false;}
-        if(selection<0 || selection>=qchoices.length) { cm.dispose(); return true; }
+        if(selection<0 || selection>=qchoices.length) { tradeClosed=true;cm.dispose(); return true; }
         qchosen=qchoices[selection]; qstatus=1;
         cm.sendYesNo(qchosen[3] || qchosen[2]); return true;
     }
@@ -97,8 +105,8 @@ function qQuestAction(mode,type,selection) {
             if(q.canComplete(cm.getPlayer(),null)) { cm.completeClientNpcQuest(qchosen[0]); return true; }
             else cm.sendOk("任务条件尚未完成，请查看任务栏中的物品和狩猎要求。");
         }
-        cm.dispose(); return true;
+        tradeClosed=true;cm.dispose(); return true;
     }
-    cm.dispose(); return true;
+    tradeClosed=true;cm.dispose(); return true;
 }
 /* AUTO-QUEST-END */

@@ -1,3 +1,11 @@
+var elevatorTask=null, elevatorCancelled=true;
+function queueElevator(method,delay){if(!elevatorCancelled)elevatorTask=em.schedule(method,delay);}
+function cancelSchedule(){
+    elevatorCancelled=true;
+    if(elevatorTask!=null)elevatorTask.cancel(false);
+    elevatorTask=null;
+    em.setProperty("isUp","false");em.setProperty("isDown","false");
+}
 /*
 -- odinms JavaScript --
         NPC½Å±¾ 
@@ -15,6 +23,7 @@ var returnMap;
 var arrive;
 
 function init() {
+    cancelSchedule();elevatorCancelled=false;
 	elevator_m = em.getChannelServer().getMapFactory().getMap(222020211);
 	em.setProperty("isUp","false");
 	em.setProperty("isDown","false");
@@ -23,6 +32,7 @@ function init() {
 }
 
 function onDown() {
+    if(elevatorCancelled)return;
 	em.getChannelServer().getMapFactory().getMap(222020100).resetReactors();
 	arrive = em.getChannelServer().getMapFactory().getMap(222020100);
 	returnMap = em.getChannelServer().getMapFactory().getMap(222020100);
@@ -30,17 +40,19 @@ function onDown() {
 	elevator_s = em.getChannelServer().getMapFactory().getMap(222020110);
 	elevator_m = em.getChannelServer().getMapFactory().getMap(222020111);
 	em.setProperty("isDown","true");
-	em.schedule("goingUp", 60000);
+	queueElevator("goingUp", 60000);
 }
 
 function goingUp() {
+    if(elevatorCancelled)return;
 	warpToM();
 	em.setProperty("isDown","false");
-	em.schedule("onUp", 50000);
+	queueElevator("onUp", 50000);
 	//em.getChannelServer().getMapFactory().getMap(222020100).setReactorState();
 }
 
 function onUp() {
+    if(elevatorCancelled)return;
 	em.getChannelServer().getMapFactory().getMap(222020200).resetReactors();
 	arrive = em.getChannelServer().getMapFactory().getMap(222020200);
 	returnMap = em.getChannelServer().getMapFactory().getMap(222020200);
@@ -48,13 +60,14 @@ function onUp() {
 	elevator_s = em.getChannelServer().getMapFactory().getMap(222020210);
 	elevator_m = em.getChannelServer().getMapFactory().getMap(222020211);
 	em.setProperty("isUp","true");
-	em.schedule("goingDown", 60000);
+	queueElevator("goingDown", 60000);
 }
 
 function goingDown() {
+    if(elevatorCancelled)return;
 	warpToM();
 	em.setProperty("isUp","false");
-	em.schedule("onDown", 50000);
+	queueElevator("onDown", 50000);
 	//em.getChannelServer().getMapFactory().getMap(222020200).setReactorState();
 }
 

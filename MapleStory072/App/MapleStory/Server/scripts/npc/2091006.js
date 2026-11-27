@@ -1,13 +1,18 @@
+var flowClosed=false,originMap=-1;
 importPackage(Packages.server.maps);
 
 var status = -1;
 var readNotice = 0;
 
 function start() {
+    originMap=cm.getMapId();
     cm.sendSimple("#e< 公告 >#n\r\n凡是有勇气挑战武陵道场者，欢迎你前来武陵道场！-武公-\r\n\r\n#b#L0#挑战武陵道场！#l\r\n#L1#详细阅读公告#l");
 }
 
 function action(mode, type, selection) {
+    if(flowClosed)return;
+    if(mode!=1||cm.getMapId()!=originMap){flowClosed=true;cm.dispose();return;}
+    if(status==-1&&readNotice==0&&selection!=0&&selection!=1){flowClosed=true;cm.dispose();return;}
     if (mode >= 0) {
         if (selection == 1 || readNotice == 1) {
             if (status == -1) {
@@ -16,7 +21,7 @@ function action(mode, type, selection) {
                 status = 1;
             } else if (status == 1) {
                 cm.sendPrev("备注：欢迎你来挑战。如果你没有勇气的话，找其他伙伴一起也无妨。");
-                cm.dispose();
+                flowClosed=true;cm.dispose();
             }
         } else {
             if (status == -1 && mode == 1) {
@@ -29,10 +34,10 @@ function action(mode, type, selection) {
                     cm.saveLocation("DOJO");
                     cm.warp(925020000, 4);
                 }
-                cm.dispose();
+                flowClosed=true;cm.dispose();
             } else
-                cm.dispose();
+                flowClosed=true;cm.dispose();
         }
     } else
-        cm.dispose();
+        flowClosed=true;cm.dispose();
 }

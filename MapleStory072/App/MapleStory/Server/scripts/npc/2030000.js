@@ -24,12 +24,18 @@
 **/
 
 var status = 0;
+var flowClosed = false;
+var originMap = -1;
 
 function start() {
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if (flowClosed) return;
+    if (mode != 1) { flowClosed = true; cm.dispose(); return; }
+    if (status == 0) originMap = cm.getChar().getMapId();
+    else if (cm.getChar().getMapId() != originMap) { flowClosed = true; cm.dispose(); return; }
 	if (status == 0) {
 		cm.sendYesNo("你是要进入更危险的区域吗,你做好准备了没有!");
 		status++;
@@ -37,7 +43,8 @@ function action(mode, type, selection) {
 		if ((status == 1 && type == 1 && selection == -1 && mode == 0) || mode == -1) {
 			cm.dispose();
 		} else {
-			cm.warp(211040500, 4);
+			flowClosed = true;
+                    cm.warp(211040500, 4);
 			cm.dispose();
 		}
 	}

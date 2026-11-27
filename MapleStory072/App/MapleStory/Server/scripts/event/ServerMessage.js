@@ -1,3 +1,4 @@
+var messageCancelled=true;
 var Message = new Array(
     "击败怪物、完成成就和挑战武陵道场可以获得点券。",
     "输入 @help 可查看可用的玩家指令。",
@@ -22,7 +23,7 @@ var Message = new Array(
     "击败怪物时，有机会随机获得点券。",
     "可以使用友谊戒指、友谊服装、情侣戒指和情侣服装。",
     "召集家族成员，一起挑战家族任务！",
-    "可以在魔法密林找妖精玛丽，进行宠物进化或复活。",
+    "与妖精玛丽交谈可查看当前可用的宠物服务。",
     "输入 @npc 进入坐骑商店，可以购买相应的坐骑。",
     "遇到游戏问题，请及时到论坛反馈。",
     "可以在印章商人处制作15%和65%的卷轴。");
@@ -30,18 +31,23 @@ var Message = new Array(
 var setupTask;
 
 function init() {
+    cancelSchedule();messageCancelled=false;
     scheduleNew();
 }
 
 function scheduleNew() {
+    if(messageCancelled)return;
     setupTask = em.schedule("start", 900000);
 }
 
 function cancelSchedule() {
-	setupTask.cancel(false);
+	messageCancelled=true;
+    if(setupTask!=null)setupTask.cancel(false);
+    setupTask=null;
 }
 
 function start() {
+    if(messageCancelled)return;
     scheduleNew();
     em.broadcastYellowMsg("[小贴士] " + Message[Math.floor(Math.random() * Message.length)]);
 }

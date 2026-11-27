@@ -1,3 +1,4 @@
+var craftClosed=false;
 /*
 	This file is part of the OdinMS Maple Story Server
     Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc> 
@@ -54,6 +55,10 @@ function start() {
 }
 
 function qOrigAction(mode, type, selection) {
+    if(craftClosed)return;
+    if(mode!=1){craftClosed=true;cm.dispose();return;}
+    if(selection!=Math.floor(selection)||selection<0){craftClosed=true;cm.dispose();return;}
+    if(status==0 && selection>=5 || (status==1 || status==2 && equip) && selection>=[11,14,7,13,3][selectedType] || status==2 && !equip && (selection<1||selection>100)){craftClosed=true;cm.dispose();return;}
 	if (mode == 1)
 		status++;
 	else
@@ -212,10 +217,14 @@ function qOrigAction(mode, type, selection) {
 	}
 	else if (status == 4 && mode == 1) {
 		var complete = true;
+        craftClosed=true;
+        var outputQty=item==4003000?15*qty:qty;
+        if(typeof item!="number"||!isFinite(cost)||qty<1||qty>100||qty!=Math.floor(qty)||!cm.canHold(item,outputQty)){cm.sendOk("请为成品留出足够的背包空间，并确认制作数量。");cm.dispose();return;}
 		
 		if (cm.getMeso() < cost * qty)
 			{
-				cm.sendOk("恐怕你付不起我的手工费。")
+				cm.sendOk("恐怕你付不起我的手工费。");
+                cm.dispose();return;
 			}
 			else
 			{
@@ -230,7 +239,7 @@ function qOrigAction(mode, type, selection) {
 						}
 						else {
 							var count = 0;
-							var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats[i]).iterator();
+							var iter = cm.getChar().getInventory(Packages.client.inventory.MapleInventoryType.ETC).listById(mats[i]).iterator();
 							while (iter.hasNext()) {
 								count += iter.next().getQuantity();
 							}
@@ -241,7 +250,7 @@ function qOrigAction(mode, type, selection) {
 				}
 				else {
 					var count = 0;
-					var iter = cm.getChar().getInventory(MapleInventoryType.ETC).listById(mats).iterator();
+					var iter = cm.getChar().getInventory(Packages.client.inventory.MapleInventoryType.ETC).listById(mats).iterator();
 					while (iter.hasNext()) {
 						count += iter.next().getQuantity();
 					}

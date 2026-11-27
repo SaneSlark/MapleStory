@@ -1,3 +1,15 @@
+var oreClosed=false,oreOrigin=-1;
+function action(mode,type,selection){
+    if(oreClosed)return;
+    if(mode!=1||cm.getMapId()!=oreOrigin){oreClosed=true;cm.dispose();return;}
+    if(status==-1){if(selection!=0){oreClosed=true;cm.dispose();return;}}
+    else if(status==0){
+        oreClosed=true;
+        if(selection!=Math.floor(selection)||selection<0||selection>=ores.length){cm.dispose();return;}
+        if(cm.getMeso()>2147483647-mesos[selection]){cm.sendOk("金币接近上限，无法完整领取报酬，未扣矿石。请先将部分金币存入仓库。");cm.dispose();return;}
+    }else{oreClosed=true;cm.dispose();return;}
+    oreLegacyAction(mode,type,selection);
+}
 /*
 *   班森奶奶的珠宝公司
 *   By: Razoer·瞌睡鱼               如果需要改动，请自行修改，请保留本人创意提名~
@@ -10,11 +22,11 @@ var mesos = [500000, 600000, 700000, 800000, 1000000, 1200000, 2000000, 2500000,
 var exps = [1000000, 1200000, 1500000, 1800000, 2000000, 2200000, 3000000, 5000000, 5200000, 5500000, 5800000, 6000000, 6500000, 7000000, 8000000, 10000000, 12000000, 12000000, 12000000, 12000000, 20000000, 40000000, 100000000];
 
 function start() {
-    status = -1;
+    oreOrigin=cm.getMapId();status = -1;
     action(1, 0, 0);
 }
 
-function action(mode, type, selection) {
+function oreLegacyAction(mode, type, selection) {
     if (mode == -1) {
         cm.dispose();
     } else {

@@ -8,10 +8,10 @@ var transportRoutes={
 var boardingOrigin=-1, boardingRoute=null, boardingDone=false;
 function start() {
     boardingDone=false;boardingOrigin=cm.getMapId();boardingRoute=transportRoutes[String(boardingOrigin)];
-    if(boardingRoute==null) {cm.sendOk("这里不是本航线的检票地点。");cm.dispose();return;}
+    if(boardingRoute==null) {cm.sendOk("这里不是本航线的检票地点。");boardingDone=true;cm.dispose();return;}
     var manager=cm.getEventManager(boardingRoute[0]);
-    if(manager==null || manager.getInstance(boardingRoute[0])==null) {cm.sendOk("本航线尚未就绪，请稍后再来。");cm.dispose();return;}
-    if(String(manager.getProperty("entry"))!="true") {cm.sendOk("本次航班已停止检票，请等候下一班。");cm.dispose();return;}
+    if(manager==null || manager.getInstance(boardingRoute[0])==null) {cm.sendOk("本航线尚未就绪，请稍后再来。");boardingDone=true;cm.dispose();return;}
+    if(String(manager.getProperty("entry"))!="true") {cm.sendOk("本次航班已停止检票，请等候下一班。");boardingDone=true;cm.dispose();return;}
     cm.sendYesNo("请准备好对应船票。确认后检票进入候船室，现在登船吗？");
 }
 function action(mode,type,selection) {
@@ -30,8 +30,10 @@ function action(mode,type,selection) {
         if(!boarded)throw new Error("Boarding failed");
         cm.gainItem(boardingRoute[1],-1);
     } catch(error) {
-        instance.unregisterPlayer(cm.getChar());
-        if(boarded)cm.warp(boardingOrigin,0);
+        var passenger=cm.getChar(),owned=passenger.getEventInstance()==instance;
+        if(owned)instance.unregisterPlayer(passenger);
+        // Roll back our partial waiting/ride transfer, without removing another event.
+        if(passenger.getEventInstance()==null&&(cm.getMapId()==boardingRoute[2]||(owned&&cm.getMapId()!=boardingOrigin)))cm.warp(boardingOrigin,0);
         cm.sendOk("暂时无法登船，本次不会扣除船票。");
     }
     cm.dispose();

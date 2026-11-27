@@ -73,6 +73,7 @@ function action(mode, type, selection) {
                         if (cm.getPlayer().getMapId() != 2) { cm.dispose(); return; }
                         if (cm.getInventory(1).getNumFreeSlot() < 12 || cm.getInventory(2).getNumFreeSlot() < 5 || cm.getInventory(4).getNumFreeSlot() < 1 || cm.getInventory(5).getNumFreeSlot() < 4) { cm.sendOk("请先腾出背包空间: 装备 12, 消耗 5, 其它 1, 现金 4."); cm.dispose(); return; }
 			                cm.warp(40000,0);
+                        if(cm.getMapId()!=40000){cm.dispose();return;}
 			                cm.resetStats(4, 4, 4, 4);
 					cm.gainItem(1302067, 1);
 					cm.gainItem(1002186, 1);

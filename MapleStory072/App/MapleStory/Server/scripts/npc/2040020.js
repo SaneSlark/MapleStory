@@ -41,6 +41,7 @@ importPackage(net.sf.odinms.client);
 
 var status = 0;
 var selectedType = -1;
+var recipeCounts = [11, 14, 7, 13, 3];
 var selectedItem = -1;
 var item;
 var mats;
@@ -73,6 +74,7 @@ function action(mode, type, selection) {
 		cm.sendSimple(selStr);
 	}
 	else if (status == 1 && mode == 1) {
+		if (selection != Math.floor(selection) || selection < 0 || selection >= recipeCounts.length) { close(); return; }
 		selectedType = selection;
 		if (selectedType == 0){ //glove refine
 			var selStr = "那么,请问你要制作什么?#b";
@@ -127,6 +129,7 @@ function action(mode, type, selection) {
 			status++;
 	}
 	else if (status == 2 && mode == 1) {
+		if (selection != Math.floor(selection) || selection < 0 || selection >= recipeCounts[selectedType]) { close(); return; }
 		selectedItem = selection;
 		if (selectedType == 4){ //material refine
 			var itemSet = new Array (4003001,4003001,4003000);
@@ -144,14 +147,17 @@ function action(mode, type, selection) {
 		cm.sendGetNumber(prompt,1,1,100)
 	}
 	else if (status == 3 && mode == 1) {
-		if (equip)
-		{
-			selectedItem = selection;
-			qty = 1;
-		}
-		else
-			if(selection!=Math.floor(selection)||selection<1||selection>100){close();return;}
-        qty = selection;
+        if (selection != Math.floor(selection) || selection < (equip ? 0 : 1)
+                || selection > (equip ? recipeCounts[selectedType] - 1 : 100)) {
+            close();
+            return;
+        }
+        if (equip) {
+            selectedItem = selection;
+            qty = 1;
+        } else {
+            qty = selection;
+        }
 
 		if (selectedType == 0){ //glove refine
 			var itemSet = new Array(1082002,1082029,1082030,1082031,1082032,1082037,1082042,1082046,1082075,1082065,1082092);
@@ -220,7 +226,8 @@ function action(mode, type, selection) {
 		var complete = true;
         done=true;
         if(typeof qty!="number"||qty!=Math.floor(qty)||qty<1||qty>100||typeof cost!="number"||cost<0||cost*qty>2147483647||!isFinite(cost*qty)||typeof item!="number"){close();return;}
-        if(!cm.canHold(item,qty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close();return;}
+        var outputQty=item==4003000?15*qty:qty;
+        if(!cm.canHold(item,outputQty)){cm.sendOk("请先为制作成品留出足够的背包空间。");close();return;}
 		
 		if (cm.getMeso() < cost * qty)
 			{
@@ -264,6 +271,13 @@ function action(mode, type, selection) {
 			if (!complete) 
 				cm.sendOk("你没有足够的材料，请准备好材料再来.");
 			else {
+                var before = cm.getPlayer().getItemQuantity(item, false);
+                cm.gainItem(item, outputQty);
+                if (cm.getPlayer().getItemQuantity(item, false) != before + outputQty) {
+                    cm.sendOk("成品未能放进背包，未扣除材料和金币。");
+                    close();
+                    return;
+                }
 				if (mats instanceof Array) {
 					for (var i = 0; i < mats.length; i++){
 						cm.gainItem(mats[i], -matQty[i] * qty);
@@ -275,10 +289,6 @@ function action(mode, type, selection) {
 				if (cost > 0)
 					cm.gainMeso(-cost * qty);
 				
-				if (item == 4003000)//screws
-					cm.gainItem(4003000, 15 * qty);
-				else
-					cm.gainItem(item, qty);
 				cm.sendOk("OK.做好了，那去瞧瞧吧。");
 			}
 		close();

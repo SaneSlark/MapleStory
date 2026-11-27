@@ -5,6 +5,8 @@
 */
 
 function start(){
+    if (cm.getNpc() != 2081004) { cm.openNpc(2081004, "babyfood"); return; }
+
 	cm.sendOk("嗯……婴儿奶粉？你已经过了喝这个的年纪吧？");
 	cm.dispose();
 	}

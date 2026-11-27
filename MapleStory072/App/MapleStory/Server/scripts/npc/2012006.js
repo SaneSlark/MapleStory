@@ -26,19 +26,25 @@ Platform Usher (In Orbis) 2012006
 importPackage(net.sf.odinms.client);
 
 var status = 0;
+var platformClosed=false,originMap=-1,selectedRoute=-1;
+var routeTickets=[4031047,4031074,0,4031331,4031576];
 
 function start() {
+    originMap=cm.getMapId();
+    if(originMap!=200000100){platformClosed=true;cm.dispose();return;}
 	status = -1;
 	action(1, 0, 0);
 }
 
 function action(mode, type, selection) {
+    if(platformClosed)return;
+    if(mode!=1||cm.getMapId()!=originMap){platformClosed=true;cm.dispose();return;}
 	if (mode == -1) {
-		cm.dispose();
+		platformClosed=true;cm.dispose();
 	} else {
 		if (mode == 0) {
 			cm.sendOk("下次再见.");
-			cm.dispose();
+			platformClosed=true;cm.dispose();
 			return;
 		}
 		if (mode == 1)
@@ -51,13 +57,15 @@ function action(mode, type, selection) {
 			cm.sendSimple("#w你现在想做什么呢?\r\n\r\n#L0#我想去通往魔法密林的码头#l\r\n#L1#我想去通往玩具城的码头#l\r\n#L2#我想去飞往武陵的码头#l\r\n#L3#我想去通往神木村的码头#l\r\n#L4#我想去通往阿里安特的码头#l");
 			status=1;
 		} else if (status == 2) {
+                if(selection!=Math.floor(selection)||selection<0||selection>=routeTickets.length){platformClosed=true;cm.dispose();return;}
+                selectedRoute=selection;
 				if (selection == 0){
 				        if (cm.haveItem(4031047)){	
 				        	cm.sendNext("好的 #h #, 我将带你到魔法密林的码头。");
 					status = 9;
 				         }else{
 					cm.sendOk("你身上没有到魔法密林的船票!");
-					cm.dispose();
+					platformClosed=true;cm.dispose();
 					return;
 				         }		
 				} 
@@ -67,7 +75,7 @@ function action(mode, type, selection) {
 					status = 19;
 				          }else{
 					cm.sendOk("你身上没有到玩具城的船票!");
-					cm.dispose();	 
+					platformClosed=true;cm.dispose();
 					return;
 				          }	
 				}
@@ -81,7 +89,7 @@ function action(mode, type, selection) {
 				       	 status = 39;
 				          }else{
 					  cm.sendOk("你身上没有到神木村的船票!");
-					  cm.dispose();
+					  platformClosed=true;cm.dispose();
 					  return;
 				          }	
 				}
@@ -91,25 +99,33 @@ function action(mode, type, selection) {
 				       	 status = 49;
 				          }else{
 					  cm.sendOk("你身上没有到阿里安特的船票!");
-					  cm.dispose();
+					  platformClosed=true;cm.dispose();
 					  return;
 				          }	
 				}
 		} else if(status == 10){
-			cm.warp(200000110, 0);// Ellinia walkway
-			cm.dispose();
+			finishPlatform(0,200000110);
 		} else if (status==20){
-			cm.warp(200000120, 0);// Ludi Walkway
-			cm.dispose();
+			finishPlatform(1,200000120);
 		} else if (status==30){
-			cm.warp(200000140, 0);// Mu Lung Walkway
-			cm.dispose();
+			finishPlatform(2,200000140);
 		} else if (status==40){
-			cm.warp(200000130, 0);// Leafre Walkway
-			cm.dispose();
+			finishPlatform(3,200000130);
 		} else if (status==50){
-			cm.warp(200000151, 0);// Ariant Walkway
-			cm.dispose();
+			finishPlatform(4,200000151);
 		}
 	}
+}
+// This NPC selects a platform; boarding scripts retain their own ticket debit.
+function finishPlatform(route, mapId) {
+    platformClosed=true;
+    if(selectedRoute!=route || cm.getMapId()!=originMap || (routeTickets[route]!=0 && !cm.haveItem(routeTickets[route]))) {
+        cm.dispose();
+        return;
+    }
+    try {
+        cm.warp(mapId,0);
+    } finally {
+        cm.dispose();
+    }
 }

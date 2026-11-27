@@ -15,7 +15,8 @@ function start(){
 }
 function showPage(){
     var pages=picked[3];
-    if(page<pages.length-1)cm.sendNext(pages[page]);
+    if(picked[0]==3114&&picked[1]==0&&page<pages.length-1)cm.sendSimple(pages[page]);
+    else if(page<pages.length-1)cm.sendNext(pages[page]);
     else cm.sendYesNo(pages[page]);
 }
 function action(mode,type,selection){
@@ -31,6 +32,7 @@ function action(mode,type,selection){
         stage=1;page=0;showPage();return;
     }
     if(stage==1){
+        if(picked[0]==3114&&picked[1]==0&&page<picked[3].length-1&&selection!=0){finish();return;}
         if(page<picked[3].length-1){page++;showPage();return;}
         closed=true;
         var q=Packages.server.quest.MapleQuest.getInstance(picked[0]);
@@ -39,3 +41,5 @@ function action(mode,type,selection){
         cm.dispose();
     }
 }
+
+entries.push([3114, 0, "\u827e\u5229\u6770\u7684\u957f\u89c9", ["\u611f\u8c22\u60a8\uff0c\u5192\u9669\u5bb6\u3002\u591a\u4e8f\u60a8\uff0c\u4e0d\u7528\u5728\u62c5\u5fc3\u90a3\u4e9b\u5f71\u5b50\u4e86\u3002\u6211\u73b0\u5728\u5f97\u7761\u4e00\u89c9\u4e86\u3002\u7761\u5230\u5973\u795e\u56de\u6765\u4e3a\u6b62\u2026\u2026 #E \r\n\r\n#L0# #b\u5e94\u8be5\u662f\u4e00\u4e2a\u6f2b\u957f\u7684\u89c9\u3002#k#l", "\u662f\u5417\u3002\u54e6\u2026\u2026 \u5bf9\u4e86\uff0c\u5192\u9669\u5bb6\u60a8\u559c\u6b22\u97f3\u4e50\u5417\uff1f\u6ca1\u4ec0\u4e48\u6bd4\u4f34\u7740\u7f8e\u5999\u7684\u97f3\u4e50\u5165\u7761\u66f4\u6109\u5feb\u4e86\u3002\u6211\u4e00\u76f4\u662f\u4f34\u7740\u5973\u795e\u7684\u7ad6\u7434\u58f0\u5165\u7761\u7684\u2026\u2026 \u8fd9\u4e2a\u6bd4\u8f83\u96be\u5427\u3002#E \r\n\r\n#L0# #b\u9700\u8981\u6211\u5e2e\u4f60\u5417\uff1f#k#l", "\u554a...? \u770b\u6765\u60a8\u5bf9\u97f3\u4e50\u633a\u6709\u7814\u7a76\u7684\u3002\u53ef\u4ee5\u62dc\u6258\u4f60\u5417\uff1f"], "\u8bf7\u6309\u7167#t4161036#\u7684\u66f2\u8c31\u5b8c\u6574\u6f14\u594f\u5973\u795e\u7684\u7ad6\u7434\u3002"]);
